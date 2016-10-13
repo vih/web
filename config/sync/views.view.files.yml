@@ -568,7 +568,7 @@ display:
           decimal: .
           separator: ','
           format_plural: true
-          format_plural_string: "1 sted\x03@count steder"
+          format_plural_string: !!binary MSBzdGVkA0Bjb3VudCBzdGVkZXI=
           prefix: ''
           suffix: ''
           plugin_id: numeric
@@ -1010,7 +1010,7 @@ display:
           decimal: .
           separator: ','
           format_plural: false
-          format_plural_string: "1\x03@count"
+          format_plural_string: !!binary MQNAY291bnQ=
           prefix: ''
           suffix: ''
           plugin_id: numeric
