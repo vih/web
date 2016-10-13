@@ -11,10 +11,10 @@
 # Ignore Composer-managed dependencies.
 vendor/
 
-
-
 # Custom
 .idea
 private
 tmp
+logs
+sessions
 /docroot/sites/default/settings*.php
