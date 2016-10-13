@@ -10,3 +10,10 @@
 
 # Ignore Composer-managed dependencies.
 vendor/
+
+
+
+# Custom
+.idea
+private
+tmp
