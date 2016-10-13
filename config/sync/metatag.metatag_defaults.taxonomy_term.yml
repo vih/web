@@ -1,0 +1,11 @@
+uuid: ba52c09d-31f1-497f-8a6c-3aee47fa21a6
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ShncZd3oX-UZDBGDUrgbRiZ2BmIJYSLHvIIPjq6tRAQ
+id: taxonomy_term
+label: 'Ord i ordforråd'
+tags:
+  title: '[term:name] | [site:name]'
+  description: '[term:description]'

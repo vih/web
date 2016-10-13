@@ -1,0 +1,14 @@
+uuid: bc178b17-baf0-45d3-8811-f8f644f3dc10
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.media_creator
+  module:
+    - user
+id: user_add_role_action.media_creator
+label: 'Tilføj rollen Media Creator til de valgte brugere'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: media_creator

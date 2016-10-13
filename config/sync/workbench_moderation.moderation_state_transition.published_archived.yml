@@ -1,0 +1,14 @@
+uuid: d0cfe903-c25c-4a69-8f7f-26d79d4f85ad
+langcode: da
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.archived
+    - workbench_moderation.moderation_state.published
+_core:
+  default_config_hash: n1R8yl6YLhQY2aPEXy5LQCU77k6ZfU2nRhHS3POl1fA
+id: published_archived
+label: Arkiv
+stateFrom: published
+stateTo: archived
+weight: -3

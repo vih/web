@@ -1,0 +1,10 @@
+uuid: 345d4ae2-a1f0-4e79-9673-7d78a8c21c25
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q0hYjxO3nkaaqrRfXnX3Kx5MPktx3EueHEj36vP40dM
+id: published
+label: Udgivet
+published: true
+default_revision: true

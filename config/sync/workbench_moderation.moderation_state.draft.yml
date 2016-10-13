@@ -1,0 +1,10 @@
+uuid: bac2d72c-4284-4ae0-93c0-d4cee63b0e27
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: E8rvf3S2TDty4MHxR-ghhPB5UcR61WAPj1RKt6lBLaA
+id: draft
+label: Kladde
+published: false
+default_revision: false
