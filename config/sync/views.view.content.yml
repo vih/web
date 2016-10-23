@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: fUDNcSYKNw6cTMPsX3G9VhsUGov5yUe6_TBHbcnZHyo
 id: content
-label: Indhold
+label: Content
 module: node
 description: 'Find og håndtér indhold.'
 tag: default
@@ -562,7 +562,7 @@ display:
           entity_field: moderation_state
           plugin_id: string
       sorts: {  }
-      title: Indhold
+      title: Content
       empty:
         area_text_custom:
           id: area_text_custom
@@ -605,14 +605,14 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: Indhold
+        title: Content
         description: ''
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: Indhold
+        title: Content
         description: 'Find og håndtér indhold'
         menu_name: admin
         weight: -10
