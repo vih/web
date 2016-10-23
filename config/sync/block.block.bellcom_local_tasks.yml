@@ -1,0 +1,22 @@
+uuid: 86b220c6-c2c4-443a-b25e-c249c4f222d1
+langcode: da
+status: true
+dependencies:
+  theme:
+    - bellcom
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: bellcom_local_tasks
+theme: bellcom
+region: header
+weight: 10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
