@@ -1,0 +1,114 @@
+// |--------------------------------------------------------------------------
+// | Footer
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .footer
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$footer-bg-color: $body-secondary;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Footer
+.footer {
+  background-color: $footer-bg-color;
+  padding: 20px 0 !important;
+  text-align: center;
+  border-top: 0;
+
+  p {
+    color: $text-color-secondary;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Footer
+  .footer {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Footer
+  .footer {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Footer
+  .footer {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Footer
+  .footer {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Footer
+  .footer {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Footer
+  .footer {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Footer
+  .footer {}
+}
+
+// Print
+@media print {
+
+  // Footer
+  .footer {}
+}
+
+// Touch
+.touchevents {
+
+  // Footer
+  .footer {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Footer
+  .footer {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Footer mixin
+@mixin footer-mixin() {}

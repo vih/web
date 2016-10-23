@@ -1,0 +1,108 @@
+{# Begin - outer wrapper #}
+<div class="outer-wrapper">
+
+    {# Begin - inner wrapper #}
+    <div class="inner-wrapper">
+
+        {# Begin - content #}
+        <div class="content">
+            <div class="container">
+
+                {# Begin - navbar #}
+                {% if page.navigation or page.navigation_collapsible %}
+                    {% block navbar %}
+                        {%
+                        set navbar_classes = [
+                        'navbar',
+                        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+                        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+                        ]
+                        %}
+                        <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+                            <div class="navbar-header">
+                                {{ page.navigation }}
+                                {# .btn-navbar is used as the toggle for collapsed navbar content #}
+                                {% if page.navigation_collapsible %}
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                {% endif %}
+                            </div>
+
+                            {# Navigation (collapsible) #}
+                            {% if page.navigation_collapsible %}
+                                <div class="navbar-collapse collapse">
+                                    {{ page.navigation_collapsible }}
+                                </div>
+                            {% endif %}
+                        </header>
+                    {% endblock %}
+                {% endif %}
+                {# End - navbar #}
+
+            </div>
+            <div class="container">
+
+                {# Begin - highlighted #}
+                {% if page.highlighted %}
+                    {% block highlighted %}
+                        <div class="highlighted">{{ page.highlighted }}</div>
+                    {% endblock %}
+                {% endif %}
+                {# End - highlighted #}
+
+                {# Begin - breadcrumbs #}
+                {% if breadcrumb %}
+                    {% block breadcrumb %}
+                        {{ breadcrumb }}
+                    {% endblock %}
+                {% endif %}
+                {# End - breadcrumbs #}
+
+                {# Begin - action Links #}
+                {% if action_links %}
+                    {% block action_links %}
+                        <ul class="action-links">{{ action_links }}</ul>
+                    {% endblock %}
+                {% endif %}
+                {# End - action Links #}
+
+                {# Begin - help #}
+                {% if page.help %}
+                    {% block help %}
+                        {{ page.help }}
+                    {% endblock %}
+                {% endif %}
+                {# End - help #}
+
+            </div>
+
+            {# Begin - content #}
+            {% block content %}
+                <div class="container">
+                    <a id="main-content"></a>
+
+                    {{ page.content }}
+                </div>
+            {% endblock %}
+            {# End - content #}
+
+        </div>
+        {# End - content #}
+
+        {# Begin - footer #}
+        <footer class="footer">
+            <div class="container">
+                <p>Copyright 2movepeople.dk</p>
+            </div>
+        </footer>
+        {# End - footer #}
+
+    </div>
+    {# End - inner wrapper #}
+
+</div>
+{# End - outer wrapper #}

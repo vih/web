@@ -1,0 +1,10 @@
+name: Site
+type: theme
+description: A beautiful client theme.
+package: Bellcom
+core: 8.x
+screenshot: dist/img/screenshot.png
+libraries:
+  - 'site/theme'
+
+base theme: bellcom
