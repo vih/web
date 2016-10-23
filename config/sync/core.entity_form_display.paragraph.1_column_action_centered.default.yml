@@ -1,0 +1,50 @@
+uuid: 04ac9795-1b28-40b1-b601-1b7f0b4f89f8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.1_column_action_centered.field_background_image
+    - field.field.paragraph.1_column_action_centered.field_body
+    - field.field.paragraph.1_column_action_centered.field_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.1_column_action_centered
+  module:
+    - image
+    - link
+    - text
+    - workbench_moderation
+id: paragraph.1_column_action_centered.default
+targetEntityType: paragraph
+bundle: 1_column_action_centered
+mode: default
+content:
+  field_background_image:
+    type: entity_browser_file
+    weight: 8
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_body:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_link:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+hidden:
+  created: true
+  status: true
+  uid: true

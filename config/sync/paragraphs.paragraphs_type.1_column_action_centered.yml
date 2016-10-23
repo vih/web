@@ -1,0 +1,6 @@
+uuid: 9046df7c-a952-4f4c-b0f4-2f38377e4194
+langcode: da
+status: true
+dependencies: {  }
+id: 1_column_action_centered
+label: 'Action - centered - 1 column'

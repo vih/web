@@ -1,0 +1,46 @@
+uuid: 5870a199-1dfd-4b0c-96a6-0919b24ab0f5
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.1_column_action_centered.field_background_image
+    - field.field.paragraph.1_column_action_centered.field_body
+    - field.field.paragraph.1_column_action_centered.field_link
+    - paragraphs.paragraphs_type.1_column_action_centered
+  module:
+    - image
+    - link
+    - text
+id: paragraph.1_column_action_centered.default
+targetEntityType: paragraph
+bundle: 1_column_action_centered
+mode: default
+content:
+  field_background_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_body:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  created: true
+  uid: true
