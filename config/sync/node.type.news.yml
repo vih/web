@@ -1,0 +1,18 @@
+uuid: 3ffa5cf5-e510-46cc-94dc-0263321be61b
+langcode: da
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Nyhed
+type: news
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

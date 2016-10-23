@@ -1,0 +1,18 @@
+uuid: f2e78e2a-a4db-43c1-9928-a66b7f54ad34
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.title
+field_name: title
+entity_type: node
+bundle: news
+label: Overskrift
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

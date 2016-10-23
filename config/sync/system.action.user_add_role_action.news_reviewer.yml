@@ -1,0 +1,14 @@
+uuid: b33ee607-d17c-44ad-8782-63334fff7eaf
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.news_reviewer
+  module:
+    - user
+id: user_add_role_action.news_reviewer
+label: 'Tilføj rollen Nyhed Reviewer til de valgte brugere'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: news_reviewer
