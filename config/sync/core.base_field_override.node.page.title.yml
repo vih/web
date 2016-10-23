@@ -1,0 +1,18 @@
+uuid: e0ea8ea7-184a-4dee-b490-960cd6ddc37e
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.title
+field_name: title
+entity_type: node
+bundle: page
+label: Overskrift
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

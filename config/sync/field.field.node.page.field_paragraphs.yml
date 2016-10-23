@@ -1,0 +1,30 @@
+uuid: e1842bf4-2185-4891-b66a-2496dcaff0de
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.page
+    - paragraphs.paragraphs_type.1_column_action_centered
+  module:
+    - entity_reference_revisions
+id: node.page.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: page
+label: Sektioner
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      1_column_action_centered: 1_column_action_centered
+    target_bundles_drag_drop:
+      1_column_action_centered:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions
