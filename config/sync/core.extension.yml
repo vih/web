@@ -38,6 +38,7 @@ module:
   lightning_media_video: 0
   lightning_workflow: 0
   link: 0
+  linkit: 0
   locale: 0
   media_entity: 0
   media_entity_document: 0

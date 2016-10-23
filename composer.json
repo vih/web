@@ -23,7 +23,8 @@
         "drupal/lightning": "^8.1.0",
         "drupal/bootstrap": "^8.3.0-rc2",
         "drupal/devel": "^8.1.0-alpha1",
-        "drupal/paragraphs": "^8.1"
+        "drupal/paragraphs": "^8.1",
+        "drupal/linkit": "^8.4"
     },
     "repositories": [
         {

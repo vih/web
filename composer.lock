@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2819fe1524cf98224d973fc808015e9e",
-    "content-hash": "bd4e41bbe8d01d33f21a001e6fa37bb3",
+    "hash": "2ee1b71b2b27f565443c5c30b2029012",
+    "content-hash": "342d070ae4ae200e332d6135d0e85cb6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1211,7 +1211,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/entity_embed-8.x-1.0-beta2.zip",
-                "reference": null,
+                "reference": "0a8d4b38b1a16c8c929ad941b4e3be2925fbcc3f",
                 "shasum": null
             },
             "require": {
@@ -1398,7 +1398,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/layout_plugin-8.x-1.0-alpha23.zip",
-                "reference": null,
+                "reference": "a0a5ee04d162b90b690a09d1db29d541e9d2773c",
                 "shasum": null
             },
             "require": {
@@ -1450,7 +1450,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/lightning-8.x-1.11.zip",
-                "reference": null,
+                "reference": "410f6399eecdcb587341f862af19af2fa9d80029",
                 "shasum": null
             },
             "require": {
@@ -1638,6 +1638,45 @@
             "description": "A fast and feature-rich Drupal distribution.",
             "homepage": "https://www.drupal.org/project/lightning",
             "time": "2016-10-14 18:31:50"
+        },
+        {
+            "name": "drupal/linkit",
+            "version": "8.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/linkit",
+                "reference": "a3e3369aef72b3cec15e705b21987c4d66be0c0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-4.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/core": "8.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-8.x-4.x": "8.4.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Emil Stjerneman",
+                    "email": "emil@stjerneman.com",
+                    "homepage": "https://stjerneman.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Linkit",
+            "homepage": "http://drupal.org/project/linkit",
+            "time": "2016-02-09 20:50:33"
         },
         {
             "name": "drupal/media_entity",
@@ -1888,7 +1927,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/multiversion-8.x-1.0-alpha10.zip",
-                "reference": null,
+                "reference": "1eb13a4919e27aef8d2557747402bd96686e07b1",
                 "shasum": null
             },
             "require": {
@@ -2068,7 +2107,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.0.zip",
-                "reference": null,
+                "reference": "7d70adcb69416f35eb2d2596340461df8efda009",
                 "shasum": null
             },
             "require": {
@@ -2150,7 +2189,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/replication-8.x-1.0-alpha4.zip",
-                "reference": null,
+                "reference": "6361d76da3571301f679e3cea81c5b6f4a6f8b50",
                 "shasum": null
             },
             "require": {
@@ -2375,7 +2414,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/workspace-8.x-1.0-alpha3.zip",
-                "reference": null,
+                "reference": "6b21cbeada234f6bfb0e3ca24ddd11033578c9ff",
                 "shasum": null
             },
             "require": {
