@@ -1,9 +1,14 @@
-theme:
+fonts:
   css:
     base:
       'https://fonts.googleapis.com/css?family=Raleway:300,500,800': { type: external }
+
+styling:
+  css:
     theme:
       dist/css/stylesheet.css: {}
+
+scripts:
   js:
     dist/js/core.js: {}
     dist/js/modernizr.js: {}

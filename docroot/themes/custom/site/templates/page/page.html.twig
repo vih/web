@@ -1,108 +1,315 @@
-{# Begin - outer wrapper #}
+<!-- Begin - outer wrapper -->
 <div class="outer-wrapper">
 
-    {# Begin - inner wrapper #}
-    <div class="inner-wrapper">
+    <!-- Begin - sidebar left -->
+    <div class="sidebar sidebar-left">
 
-        {# Begin - content #}
-        <div class="content">
-            <div class="container">
+        <!-- Begin - inner wrapper -->
+        <div class="sidebar-inner-wrapper">
 
-                {# Begin - navbar #}
-                {% if page.navigation or page.navigation_collapsible %}
-                    {% block navbar %}
-                        {%
-                        set navbar_classes = [
-                        'navbar',
-                        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
-                        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
-                        ]
-                        %}
-                        <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-                            <div class="navbar-header">
-                                {{ page.navigation }}
-                                {# .btn-navbar is used as the toggle for collapsed navbar content #}
-                                {% if page.navigation_collapsible %}
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                        <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                {% endif %}
-                            </div>
-
-                            {# Navigation (collapsible) #}
-                            {% if page.navigation_collapsible %}
-                                <div class="navbar-collapse collapse">
-                                    {{ page.navigation_collapsible }}
-                                </div>
-                            {% endif %}
-                        </header>
-                    {% endblock %}
-                {% endif %}
-                {# End - navbar #}
-
+            <!-- Begin - logo -->
+            <div class="sidebar-logo">
+                {#<a href="<?php echo $front_page; ?>" class="sidebar-logo-link">#}
+                    {#<img src="<?php echo $path_img . '/logo-sidebar-wide.png'; ?>"#}
+                         {#class="sidebar-logo-image sidebar-logo-image-wide"#}
+                         {#alt="<?php echo $site_name . t(' logo'); ?>"/>#}
+                    {#<img src="<?php echo $path_img . '/logo-sidebar-narrow.png'; ?>"#}
+                         {#class="sidebar-logo-image sidebar-logo-image-narrow"#}
+                         {#alt="<?php echo $site_name . t(' logo'); ?>"/>#}
+                {#</a>#}
             </div>
-            <div class="container">
+            <!-- End - logo -->
 
-                {# Begin - highlighted #}
-                {% if page.highlighted %}
-                    {% block highlighted %}
-                        <div class="highlighted">{{ page.highlighted }}</div>
-                    {% endblock %}
-                {% endif %}
-                {# End - highlighted #}
-
-                {# Begin - breadcrumbs #}
-                {% if breadcrumb %}
-                    {% block breadcrumb %}
-                        {{ breadcrumb }}
-                    {% endblock %}
-                {% endif %}
-                {# End - breadcrumbs #}
-
-                {# Begin - action Links #}
-                {% if action_links %}
-                    {% block action_links %}
-                        <ul class="action-links">{{ action_links }}</ul>
-                    {% endblock %}
-                {% endif %}
-                {# End - action Links #}
-
-                {# Begin - help #}
-                {% if page.help %}
-                    {% block help %}
-                        {{ page.help }}
-                    {% endblock %}
-                {% endif %}
-                {# End - help #}
-
-            </div>
-
-            {# Begin - content #}
-            {% block content %}
-                <div class="container">
-                    <a id="main-content"></a>
-
-                    {{ page.content }}
-                </div>
-            {% endblock %}
-            {# End - content #}
+            {% if page.sidebar_left %}
+                {% block sidebar_left %}
+                    {{ page.sidebar_left }}
+                {% endblock %}
+            {% endif %}
 
         </div>
-        {# End - content #}
-
-        {# Begin - footer #}
-        <footer class="footer">
-            <div class="container">
-                <p>Copyright 2movepeople.dk</p>
-            </div>
-        </footer>
-        {# End - footer #}
+        <!-- End - inner wrapper -->
 
     </div>
-    {# End - inner wrapper #}
+    <!-- End - sidebar left -->
+
+    <!-- Begin - inner wrapper -->
+    <div class="inner-wrapper" role="document">
+
+        <!-- Begin - simple navigation -->
+        <nav class="simple-navigation">
+
+            <!-- Begin - button list -->
+            <ul class="simple-navigation-list simple-navigation-list-left">
+
+                <!-- Begin - button -->
+                <li class="simple-navigation-button">
+                    <a href="#" data-sidebar-toggle="left"><span class="fa icon fa-bars"></span></a>
+                </li>
+                <!-- End - button -->
+
+            </ul>
+            <!-- End - button list -->
+
+            <!-- Begin - logo -->
+            {#<a href="<?php echo $front_page; ?>" class="simple-navigation-logo-link">#}
+                {#<img src="<?php echo $path_img . '/logo-simple-navigation.png'; ?>" class="simple-navigation-logo-image"#}
+                     {#alt="<?php echo t('fredericia.dk logo'); ?>"/>#}
+            {#</a>#}
+            <!-- End - logo -->
+
+        </nav>
+        <!-- End - simple navigation -->
+
+        <!-- Begin - content -->
+        <div class="content"> <!-- Begin - main navigation -->
+            <nav class="main-navigation-wrapper">
+                <section class="main-navigation-bar">
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- Begin - content -->
+                            <div class="col-md-4">
+                                {#<a href="<?php echo $front_page; ?>" class="main-navigation-logo-link">#}
+                                    {#<img src="<?php echo $path_img; ?>/logo-main-navigation.png" alt="" class="main-navigation-logo-image">#}
+                                {#</a>#}
+                            </div>
+                            <!-- End - content -->
+
+                            {% if page.main_navigation %}
+                                <!-- Begin - content -->
+                                {% block main_navigation %}
+                                    <div class="col-md-8 main-navigation-right">
+                                        <!-- Begin - navigation -->
+                                        {{ page.main_navigation }}
+                                        <!-- End - navigation -->
+                                    </div>
+                                {% endblock %}
+                                <!-- End - content -->
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </section>
+            </nav>
+            <!-- End - main navigation -->
+
+            <!-- Begin - content inner -->
+            <div class="content-inner">
+                <div class="container">
+
+                    {# Header #}
+                    {% if page.header %}
+                        {% block header %}
+                            <div role="heading">
+                                {{ page.header }}
+                            </div>
+                        {% endblock %}
+                    {% endif %}
+
+                    {# Highlighted #}
+                    {% if page.highlighted %}
+                        {% block highlighted %}
+                            <div class="highlighted">{{ page.highlighted }}</div>
+                        {% endblock %}
+                    {% endif %}
+
+                    {# Breadcrumbs #}
+                    {% if breadcrumb %}
+                        {% block breadcrumb %}
+                            {{ breadcrumb }}
+                        {% endblock %}
+                    {% endif %}
+
+                    {# Action Links #}
+                    {% if action_links %}
+                        {% block action_links %}
+                            <ul class="action-links">{{ action_links }}</ul>
+                        {% endblock %}
+                    {% endif %}
+
+                    {# Help #}
+                    {% if page.help %}
+                        {% block help %}
+                            {{ page.help }}
+                        {% endblock %}
+                    {% endif %}
+
+                    <!-- Begin - content -->
+                    <section{{ content_attributes.addClass(content_classes) }}>
+                        {% block content %}
+                            <a id="main-content"></a>
+
+                            <div class="card card-block">
+                                {{ page.content }}
+                            </div>
+                        {% endblock %}
+                    </section>
+                    <!-- End - content -->
+
+                </div>
+            </div>
+            <!-- End - content inner -->
+
+        </div>
+        <!-- End - content -->
+
+        <!-- Begin - footer -->
+        <footer class="footer">
+
+            {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
+                <!-- Begin - footer top -->
+                <div class="footer-top-outer">
+                    <div class="container">
+                        <div class="footer-top-inner">
+                            <div class="row">
+
+                                {% if page.footer_top_first %}
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    {{ page.footer_top_first }}
+                                </div>
+                                {% endif %}
+
+                                {% if page.footer_top_second %}
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    {{ page.footer_top_second }}
+                                </div>
+                                {% endif %}
+
+                                {% if page.footer_top_third %}
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        {{ page.footer_top_third }}
+                                    </div>
+                                {% endif %}
+
+                                {% if page.footer_top_fourth %}
+                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                        {{ page.footer_top_fourth }}
+                                    </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End - footer top -->
+            {% endif %}
+
+            <!-- Begin - footer bottom -->
+            <div class="footer-bottom-outer">
+                <div class="footer-bottom-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="footer-bottom-copyright">
+                                    <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, insulinplan.dk. All rights reserved.{% endtrans %}</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="footer-bottom-social">
+                                    <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, insulinplan.dk. All rights reserved.{% endtrans %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End - footer bottom -->
+
+        </footer>
+        <!-- End - footer -->
+
+    </div>
+    <!-- End - inner wrapper -->
 
 </div>
-{# End - outer wrapper #}
+<!-- End - outer wrapper -->
+
+
+
+
+
+
+{# Navbar #}
+{#{% if page.navigation or page.navigation_collapsible %}#}
+    {#{% block navbar %}#}
+        {#{%#}
+        {#set navbar_classes = [#}
+        {#'navbar',#}
+        {#theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',#}
+        {#theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,#}
+        {#]#}
+        {#%}#}
+        {#<header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">#}
+            {#{% if not navbar_attributes.hasClass('container') %}#}
+            {#<div class="{{ container }}">#}
+                {#{% endif %}#}
+                {#<div class="navbar-header">#}
+                    {#{{ page.navigation }}#}
+                    {# .btn-navbar is used as the toggle for collapsed navbar content #}
+                    {#{% if page.navigation_collapsible %}#}
+                        {#<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">#}
+                            {#<span class="sr-only">{{ 'Toggle navigation'|t }}</span>#}
+                            {#<span class="icon-bar"></span>#}
+                            {#<span class="icon-bar"></span>#}
+                            {#<span class="icon-bar"></span>#}
+                        {#</button>#}
+                    {#{% endif %}#}
+                {#</div>#}
+
+                {# Navigation (collapsible) #}
+                {#{% if page.navigation_collapsible %}#}
+                    {#<div id="navbar-collapse" class="navbar-collapse collapse">#}
+                        {#{{ page.navigation_collapsible }}#}
+                    {#</div>#}
+                {#{% endif %}#}
+                {#{% if not navbar_attributes.hasClass('container') %}#}
+            {#</div>#}
+            {#{% endif %}#}
+        {#</header>#}
+    {#{% endblock %}#}
+{#{% endif %}#}
+
+{# Main #}
+{#{% block main %}#}
+    {#<div role="main" class="main-container {{ container }} js-quickedit-main-content">#}
+        {#<div class="row">#}
+
+            {# Header #}
+            {#{% if page.header %}#}
+                {#{% block header %}#}
+                    {#<div class="col-sm-12" role="heading">#}
+                        {#{{ page.header }}#}
+                    {#</div>#}
+                {#{% endblock %}#}
+            {#{% endif %}#}
+
+            {# Content #}
+            {#{%#}
+            {#set content_classes = [#}
+            {#page.sidebar_first and page.sidebar_second ? 'col-sm-6',#}
+            {#page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',#}
+            {#page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',#}
+            {#page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'#}
+            {#]#}
+            {#%}#}
+            {#<section{{ content_attributes.addClass(content_classes) }}>#}
+
+
+                {# Content #}
+                {#{% block content %}#}
+                    {#<a id="main-content"></a>#}
+                    {#{{ page.content }}#}
+                {#{% endblock %}#}
+            {#</section>#}
+
+        {#</div>#}
+    {#</div>#}
+{#{% endblock %}#}
+
+{#{% if page.footer %}#}
+    {#{% block footer %}#}
+        {#<footer class="footer {{ container }}" role="contentinfo">#}
+            {#{{ page.footer }}#}
+        {#</footer>#}
+    {#{% endblock %}#}
+{#{% endif %}#}

@@ -1,0 +1,167 @@
+// |--------------------------------------------------------------------------
+// | Header
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .header
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$header-background-color: $body-bg;
+$header-logo-height: 80px;
+
+// Responsive
+$header-top-top-padding: 20px;
+$header-top-bottom-padding: $header-top-top-padding;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Header
+.header {
+  background-color: $header-background-color;
+  @include transition(background-color $transition-time-short ease-in-out, transform $transition-time cubic-bezier(0.5, 0.13, 0.5, 0.87));
+}
+
+// Top
+.header-top-outer {
+  @include opacity(1);
+  @include transition(opacity $transition-time ease-in-out);
+
+  .header-top-inner {
+    padding-top: $header-top-top-padding;
+    padding-bottom: $header-top-bottom-padding;
+    text-align: center;
+  }
+}
+
+// Bottom
+.header-bottom-outer {
+
+  .header-bottom-inner {
+    min-height: 86px;
+    max-width: 96%;
+    margin: auto;
+    background-color: $body-bg-secondary;
+    @include box-sizing(border-box);
+    @include transition(background-color $transition-time-short ease-in-out, transform $transition-time cubic-bezier(0.5, 0.13, 0.5, 0.87));
+  }
+}
+
+// Logo
+.header-logo-link {
+
+  .header-logo-image {
+    height: $header-logo-height;
+  }
+}
+
+// Sticky
+.header-is-sticky {
+
+  &.header,
+  .header {
+    z-index: $zindex-navbar-fixed;
+    @include translate3d(0, (0 - ($header-logo-height + $header-top-top-padding + $header-top-bottom-padding)), 0);
+  }
+
+  .header-top-outer {
+    @include opacity(0);
+  }
+
+  .header-bottom-outer {
+
+    .header-bottom-inner {
+      background-color: $body-bg;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Header
+  .header {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Header
+  .header {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Header
+  .header {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Header
+  .header {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Header
+  .header {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Header
+  .header {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Header
+  .header {}
+}
+
+// Print
+@media print {
+
+  // Header
+  .header {}
+}
+
+// Touch
+.touchevents {
+
+  // Header
+  .header {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Header
+  .header {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Header mixin
+@mixin header-mixin() {}

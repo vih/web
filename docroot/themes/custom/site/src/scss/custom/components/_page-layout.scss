@@ -1,0 +1,126 @@
+// |--------------------------------------------------------------------------
+// | Page layout
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .content-inner
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Responsive
+$xs-page-layout-content-inner-padding-top: 20px;
+$sm-page-layout-content-inner-padding-top: 30px;
+$md-page-layout-content-inner-padding-top: 40px;
+
+$xs-page-layout-content-inner-padding-bottom: 25px;
+$sm-page-layout-content-inner-padding-bottom: 40px;
+$md-page-layout-content-inner-padding-bottom: 60px;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Page layout
+.content {}
+
+.btn {
+  @include button-3d();
+  font-weight: $font-weight-bold;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Page layout
+  .content-inner {
+    padding-top: $xs-page-layout-content-inner-padding-top;
+    padding-bottom: $xs-page-layout-content-inner-padding-bottom;
+  }
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Page layout
+  .content-inner {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Page layout
+  .content-inner {
+    padding-top: $sm-page-layout-content-inner-padding-top;
+    padding-bottom: $sm-page-layout-content-inner-padding-bottom;
+  }
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Page layout
+  .content-inner {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Page layout
+  .content-inner {
+    padding-top: $md-page-layout-content-inner-padding-top;
+    padding-bottom: $md-page-layout-content-inner-padding-bottom;
+  }
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Page layout
+  .content-inner {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Page layout
+  .content-inner {}
+}
+
+// Print
+@media print {
+
+  // Page layout
+  .content-inner {}
+}
+
+// Touch
+.touchevents {
+
+  // Page layout
+  .content-inner {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Page layout
+  .content-inner {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Page layout mixin
+@mixin content-mixin-inner() {}

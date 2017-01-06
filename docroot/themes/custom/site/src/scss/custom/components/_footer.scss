@@ -10,7 +10,19 @@
 // Variables
 // --------------------------------------------------
 
-$footer-bg-color: $body-secondary;
+$footer-background-color: $brand-primary;
+
+// Bottom
+$footer-bottom-background-color: #fff;
+
+// Responsive
+$xs-footer-top-padding-bottom: 50px;
+$sm-footer-top-padding-bottom: 70px;
+$md-footer-top-padding-bottom: 85px;
+
+$xs-footer-bottom-padding-top-bottom: 5px;
+$sm-footer-bottom-padding-top-bottom: 8px;
+$md-footer-bottom-padding-top-bottom: 10px;
 
 // --------------------------------------------------
 // Styling
@@ -18,14 +30,65 @@ $footer-bg-color: $body-secondary;
 
 // Footer
 .footer {
-  background-color: $footer-bg-color;
-  padding: 20px 0 !important;
-  text-align: center;
+  background-color: $footer-background-color;
+  padding: 0 !important;
   border-top: 0;
+  @include angled_background(before);
+
+  .menu {
+
+    > li {
+
+      a {
+        padding: 6px 0;
+        color: $text-color;
+
+        &,
+        &:hover {
+          background-color: transparent;
+        }
+
+        &:hover {
+          color: $headings-color;
+        }
+      }
+
+      &:first-child a {
+        padding-top: 0;
+      }
+
+      &:last-child a {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .region-footer-top-first,
+  .region-footer-top-second {
+
+    .block-title {
+      font-weight: $headings-font-weight-bold;
+    }
+  }
+
+  .block-title {
+    margin: 0;
+    margin-bottom: 25px;
+  }
+}
+
+.footer-bottom-outer {
 
   p {
-    color: $text-color-secondary;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: #fff;
   }
+
+  .footer-bottom-copyright {}
+
+  .footer-bottom-social {}
 }
 
 // --------------------------------------------------
@@ -41,6 +104,14 @@ $footer-bg-color: $body-secondary;
 
   // Footer
   .footer {}
+
+  .footer-top-outer {
+    padding-bottom: $xs-footer-top-padding-bottom 0;
+  }
+
+  .footer-bottom-outer {
+    padding: $xs-footer-bottom-padding-top-bottom 0;
+  }
 }
 
 // Mobile - only
@@ -55,6 +126,14 @@ $footer-bg-color: $body-secondary;
 
   // Footer
   .footer {}
+
+  .footer-top-outer {
+    padding-bottom: $sm-footer-top-padding-bottom 0;
+  }
+
+  .footer-bottom-outer {
+    padding: $sm-footer-bottom-padding-top-bottom 0;
+  }
 }
 
 // Tablet - only
@@ -69,6 +148,14 @@ $footer-bg-color: $body-secondary;
 
   // Footer
   .footer {}
+
+  .footer-top-outer {
+    padding-bottom: $md-footer-top-padding-bottom 0;
+  }
+
+  .footer-bottom-outer {
+    padding: $md-footer-bottom-padding-top-bottom 0;
+  }
 }
 
 // Desktop - only

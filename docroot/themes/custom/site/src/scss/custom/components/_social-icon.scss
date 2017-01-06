@@ -1,0 +1,207 @@
+// |--------------------------------------------------------------------------
+// | Social icon
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .social-icon-list
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$social-icon-list-icon-height: 48px;
+$social-icon-list-icon-width: 48px;
+
+$social-icon-list-icon-size: 20px;
+
+$social-icon-list-icon-color: $headings-color;
+$social-icon-list-icon-background-color: #fff;
+
+$social-icon-list-icon-hover-color: #fff;
+$social-icon-list-icon-hover-background-color: $headings-color;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Social icon
+.social-icon-list {
+  @extend .list-inline;
+
+  li {
+    padding-bottom: 10px;
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    height: $social-icon-list-icon-height;
+    width: $social-icon-list-icon-width;
+    border-radius: 100%;
+    background-color: $social-icon-list-icon-background-color;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: $social-icon-list-icon-color;
+
+    .icon {
+      font-family: FontAwesome;
+      font-size: $social-icon-list-icon-size;
+      line-height: $social-icon-list-icon-height;
+      vertical-align: middle;
+
+      @extend .fa;
+    }
+
+    &:hover {
+      background-color: $social-icon-list-icon-hover-background-color;
+      color: $social-icon-list-icon-hover-color;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Social icon
+.social-icon-list {
+
+  .social-icon-list-facebook {
+
+    .icon:before {
+      content: $fa-var-facebook;
+    }
+  }
+
+  .social-icon-list-twitter {
+
+    .icon:before {
+      content: $fa-var-twitter;
+    }
+  }
+
+  .social-icon-list-linkedin {
+
+    .icon:before {
+      content: $fa-var-linkedin;
+    }
+  }
+
+  .social-icon-list-instagram {
+
+    .icon:before {
+      content: $fa-var-instagram;
+    }
+  }
+
+  .social-icon-list-youtube {
+
+    .icon:before {
+      content: $fa-var-youtube;
+    }
+  }
+
+  .social-icon-list-vimeo {
+
+    .icon:before {
+      content: $fa-var-vimeo;
+    }
+  }
+
+  .social-icon-list-pinterest {
+
+    .icon:before {
+      content: $fa-var-pinterest-p;
+    }
+  }
+
+  .social-icon-list-googleplus {
+
+    .icon:before {
+      content: $fa-var-google-plus;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Print
+@media print {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// Touch
+.touchevents {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Social icon
+  .social-icon-list {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Social icon mixin
+@mixin social-icon-mixin-list() {}

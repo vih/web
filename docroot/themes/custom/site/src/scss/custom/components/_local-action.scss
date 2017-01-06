@@ -1,0 +1,125 @@
+// |--------------------------------------------------------------------------
+// | Action links
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .action-links
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Action links
+.action-links {
+  margin-top: 0;
+  @extend .text-right;
+  @extend .list-inline;
+
+  li {
+    padding: 0;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .btn {
+
+    &:after {
+      font-family: FontAwesome;
+      content: $fa-var-plus-circle;
+      margin-left: 5px;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Action links
+  .action-links {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Action links
+  .action-links {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Action links
+  .action-links {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Action links
+  .action-links {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Action links
+  .action-links {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Action links
+  .action-links {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Action links
+  .action-links {}
+}
+
+// Print
+@media print {
+
+  // Action links
+  .action-links {}
+}
+
+// Touch
+.touchevents {
+
+  // Action links
+  .action-links {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Action links
+  .action-links {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Action links mixin
+@mixin action-mixin-links() {}

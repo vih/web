@@ -1,3 +1,12 @@
-@import 'vendor-loader';
-@import 'variable-overrides/loader';
+// Variables and mixins
+@import 'mixins/loader';
+@import 'variables/loader';
+
+// Vendor
+@import 'vendor/loader';
+
+// Drupal 8 specific overrides (load from Bootstrap theme in themes/contrib/bootstrap)
+@import '../../../../contrib/bootstrap/starterkits/sass/sass/overrides';
+
+// Theme
 @import 'custom/loader';

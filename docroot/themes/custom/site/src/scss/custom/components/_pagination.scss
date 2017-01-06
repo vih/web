@@ -1,0 +1,154 @@
+// |--------------------------------------------------------------------------
+// | Pagination
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .pagination
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$pagination-element-spacing: 8px;
+$pagination-element-border-width: 3px;
+$pagination-element-border-color: transparent;
+$pagination-element-border-radius: 50%;
+$pagination-element-height: 46px;
+$pagination-element-width: 46px;
+
+$pagination-element-active-border-width: $pagination-element-border-width;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Pagination
+.pagination {
+
+  > li {
+
+    > a,
+    > span {
+      padding: 0;
+      margin: 0 $pagination-element-spacing;
+      border-width: $pagination-element-border-width;
+      border-color: $pagination-element-border-color;
+      border-radius: $pagination-element-border-radius;
+      width: $pagination-element-width;
+      height: $pagination-element-height;
+      text-align: center;
+      line-height: ($pagination-element-height - (2 * $pagination-element-border-width));
+    }
+
+    &:first-child {
+      > a,
+      > span {
+        margin-left: 0;
+        @include border-left-radius($pagination-element-border-radius);
+      }
+    }
+
+    &:last-child {
+      > a,
+      > span {
+        @include border-right-radius($pagination-element-border-radius);
+      }
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+
+    &,
+    &:hover,
+    &:focus {
+      border-width: $pagination-element-active-border-width;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Pagination
+  .pagination {}
+}
+
+// Print
+@media print {
+
+  // Pagination
+  .pagination {}
+}
+
+// Touch
+.touchevents {
+
+  // Pagination
+  .pagination {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Pagination
+  .pagination {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Pagination mixin
+@mixin pagination-mixin() {}

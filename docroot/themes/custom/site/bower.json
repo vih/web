@@ -5,13 +5,16 @@
     "bootstrap-sass": "~3.*",
     "fontawesome": "~4.*",
     "page-layout": "~1.0.1",
-    "bs3-easy-breakpoints": "~1.0.0",
     "textual-breakpoints-positioning": "~1.0.0",
+    "bs3-easy-breakpoints": "~1.0.0",
     "bs3-extra-brand-colors": "~1.0.0",
     "bs3-card": "~1.0.0",
+    "navigation-list": "~1.0.2",
+    "content-transitions": "~1.0.0",
+    "typography-helper": "~1.0.0",
     "base-scss-file": "~1.*",
     "jquery-sticky": "sticky-js#^1.0.3",
-    "material-design-lite": "mdl#^1.2.0"
+    "bootstrap-chosen": "^1.0.1"
   },
   "authors": [
     "Morten Nissen <mn@bellcom.dk> (http://bellcom.dk)"

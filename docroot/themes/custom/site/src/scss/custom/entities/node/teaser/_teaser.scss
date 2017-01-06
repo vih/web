@@ -1,0 +1,184 @@
+// |--------------------------------------------------------------------------
+// | Teaser
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .node-teaser
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.node-teaser {
+
+  .node-teaser-top + .node-teaser-bottom {
+    margin-top: 15px;
+  }
+
+  .node-teaser-profile-image {
+    width: 85px;
+
+    img {
+      @extend .img-circle;
+      width: 70px;
+    }
+  }
+
+  .node-teaser-treatment-center {
+    color: $brand-tertiary;
+  }
+
+  .node-teaser-full-name {
+    @extend .heading-h4;
+    font-weight: $headings-font-weight-bold;
+    margin: 0;
+    margin-bottom: 5px;
+
+    &,
+    a {
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: $headings-color;
+      }
+    }
+  }
+
+  .dived-table-cell {
+    @extend .div-vertical-align-middle;
+  }
+
+  .node-teaser-number-of-measurements {
+    color: $text-muted;
+  }
+
+  .node-teaser-actions {
+    text-align: right;
+
+    .node-teaser-actions-top + .node-teaser-actions-bottom {
+      padding-top: 8px;
+    }
+
+    p {
+      white-space: nowrap;
+    }
+
+    a:not(.btn) {
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+        color: $brand-secondary;
+      }
+    }
+  }
+
+  .list-border {
+    display: inline-block;
+    border: 1px solid #f4f6f8;
+
+    > li {
+      padding: 10px 20px;
+      border-right: 1px solid #f4f6f8;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Print
+@media print {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// Touch
+.touchevents {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Teaser
+  .node-teaser {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Teaser mixin
+@mixin node-mixin-teaser() {}

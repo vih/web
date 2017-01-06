@@ -53,7 +53,7 @@ module.exports = function (grunt) {
             core: {
                 options: {
                     map: true,
-                    browsers: gruntConfig.autoprefixer.browsers.other
+                    browsers: gruntConfig.autoprefixer.browsers
                 },
                 src: '<%= config.directory.dist %>/css/stylesheet.css'
             }

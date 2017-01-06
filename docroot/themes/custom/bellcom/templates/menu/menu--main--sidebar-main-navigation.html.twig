@@ -1,0 +1,49 @@
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+
+  {% if items %}
+
+    {# List #}
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('sidebar-navigation') }}>
+    {% else %}
+      <ul{{ attributes.addClass('sidebar-navigation-dropdown-menu') }}>
+    {% endif %}
+
+    {% for item in items %}
+      {%
+        set item_classes = [
+          item.in_active_trail ? 'active',
+        ]
+      %}
+
+        {# List item #}
+        {% if item.below and item.is_expanded %}
+          <li{{ item.attributes.addClass('sidebar-navigation-dropdown', item_classes) }}>
+        {% else %}
+          <li{{ item.attributes.addClass('sidebar-navigation-link', item_classes) }}>
+        {% endif %}
+
+        {# Link #}
+        {{ link(item.title, item.url) }}
+
+        {# Submenu #}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes.removeClass('sidebar-navigation'), menu_level + 1) }}
+        {% endif %}
+
+      </li>
+    {% endfor %}
+
+    </ul>
+  {% endif %}
+
+{% endmacro %}
