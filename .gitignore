@@ -11,10 +11,59 @@
 # Ignore Composer-managed dependencies.
 vendor/
 
-# Custom
+# --------------------------------------------------
+# - Custom ignore
+# --------------------------------------------------
+
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+*~
+
+# OS or Editor folders
+._*
+.cache
+.DS_Store
 .idea
-private
-tmp
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+nbproject
+Thumbs.db
+
+# Komodo
+.komodotools
+*.komodoproject
+
+# grunt-html-validation
+validation-report.json
+validation-status.json
+
+# Folders to ignore
+bower_components
+node_modules
 logs
 sessions
-/docroot/sites/default/settings*.php
+tmp
+share
+others
+private
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
