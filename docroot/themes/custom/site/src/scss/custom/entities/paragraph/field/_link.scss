@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Teaser
+// | Link
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .node-teaser
+// | - .field--name-field-link
 // |
 
 // --------------------------------------------------
@@ -14,13 +14,65 @@
 // Styling
 // --------------------------------------------------
 
-// Teaser
-.node-teaser {
+// Link
+.field--name-field-link {
+
+  a {
+    @extend .btn;
+  }
 }
 
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
+
+// Background image
+.paragraph-background-image {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// White
+.paragraph-background-color-white {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// Primary
+.paragraph-background-color-primary {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-default;
+    }
+  }
+}
+
+// Secondary
+.paragraph-background-color-secondary {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
 
 // --------------------------------------------------
 // Responsive
@@ -29,76 +81,76 @@
 // Mobile - and up
 @include media-breakpoint-up(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Print
 @media print {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // Touch
 .touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // No touch
 .no-touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // Link
+  .field--name-field-link {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Teaser mixin
-@mixin node-mixin-teaser() {}
+// Link mixin
+@mixin field--name-mixin-field-link() {}

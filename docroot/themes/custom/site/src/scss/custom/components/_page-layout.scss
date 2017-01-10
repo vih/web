@@ -26,11 +26,6 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 // Page layout
 .content {}
 
-.btn {
-  @include button-3d();
-  font-weight: $font-weight-bold;
-}
-
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

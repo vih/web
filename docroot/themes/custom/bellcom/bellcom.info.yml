@@ -3,6 +3,7 @@ type: theme
 description: Should never be used as a stand-alone theme.
 package: Bellcom
 core: 8.x
+hidden: true
 screenshot: dist/images/screenshot.png
 
 base theme: bootstrap

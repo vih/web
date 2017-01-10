@@ -10,7 +10,7 @@
 // Variables
 // --------------------------------------------------
 
-$card-background-color: #fff;
+$card-background-color: #edeeee;
 
 // --------------------------------------------------
 // Styling
@@ -20,7 +20,6 @@ $card-background-color: #fff;
 .card {
 
   .card-title {
-    padding: $card-spacer-x;
 
     &,
     h1, h2, h3, h4, h5, h6,
@@ -29,15 +28,26 @@ $card-background-color: #fff;
       font-size: $font-size-base;
       @include line-height($font-size-base);
       font-weight: $font-weight-bold;
-      color: #bac6ce;
+      color: $headings-color;
+      text-transform: uppercase;
       margin: 0;
+      margin-bottom: 15px;
     }
   }
 
   &.card-block,
   .card-block {
     background-color: $card-background-color;
-    @include box-shadow(0 1px 1px 0 rgba(225, 230, 234, 1));
+    padding: ($card-spacer-x * 2);
+  }
+
+  .card-text {
+    color: #808080;
+  }
+
+  .card-published-at {
+    font-size: $font-size-small;
+    color: $brand-secondary;
   }
 }
 

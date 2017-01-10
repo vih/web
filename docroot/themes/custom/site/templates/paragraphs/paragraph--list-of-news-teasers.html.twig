@@ -1,0 +1,16 @@
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    <div class="paragraph-inner">
+
+        <div class="container">
+            {{ content }}
+            {{ embedded_view }}
+        </div>
+    </div>
+</div>

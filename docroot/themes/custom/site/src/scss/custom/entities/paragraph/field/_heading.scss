@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Teaser
+// | Heading
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .node-teaser
+// | - .field--name-field-heading
 // |
 
 // --------------------------------------------------
@@ -14,8 +14,11 @@
 // Styling
 // --------------------------------------------------
 
-// Teaser
-.node-teaser {
+// Heading
+.field--name-field-heading {
+  @extend h3;
+  text-transform: uppercase;
+  font-weight: $headings-font-weight-bold;
 }
 
 // --------------------------------------------------
@@ -29,76 +32,76 @@
 // Mobile - and up
 @include media-breakpoint-up(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Print
 @media print {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // Touch
 .touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // No touch
 .no-touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // Heading
+  .field--name-field-heading {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Teaser mixin
-@mixin node-mixin-teaser() {}
+// Heading mixin
+@mixin field--name-mixin-field-heading() {}

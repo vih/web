@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Teaser
+// | Description
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .node-teaser
+// | - .field--name-field-description
 // |
 
 // --------------------------------------------------
@@ -14,8 +14,11 @@
 // Styling
 // --------------------------------------------------
 
-// Teaser
-.node-teaser {
+// Description
+.field--name-field-description {
+  @extend h1;
+  text-transform: uppercase;
+  font-weight: $headings-font-weight-bold;
 }
 
 // --------------------------------------------------
@@ -29,76 +32,76 @@
 // Mobile - and up
 @include media-breakpoint-up(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Print
 @media print {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // Touch
 .touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // No touch
 .no-touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // Description
+  .field--name-field-description {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Teaser mixin
-@mixin node-mixin-teaser() {}
+// Description mixin
+@mixin field--name-mixin-field-description() {}

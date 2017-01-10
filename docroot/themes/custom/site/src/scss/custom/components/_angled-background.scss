@@ -1,0 +1,156 @@
+// |--------------------------------------------------------------------------
+// | Angled background
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .angled-background-color
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Angled background color
+$angled-background-color-angle: 5deg;
+$angled-background-color-padding-top: 30px;
+$angled-background-color-padding-bottom: 110px;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Angled background color
+.angled-background-color {
+  padding-top: $angled-background-color-padding-top;
+  padding-bottom: $angled-background-color-padding-bottom;
+}
+
+.angled-background-color-inner {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+
+  &:before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: -$angled-background-color-padding-top;
+    margin-bottom: -$angled-background-color-padding-bottom;
+    min-height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    @include backface-visibility(hidden);
+    @include skew(0, $angled-background-color-angle);
+    transform-origin: center center;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.angled-background-color-white {
+
+  &:before {
+    background-color: #fff;
+  }
+}
+
+.angled-background-color-primary {
+
+  &:before {
+    background-color: $brand-primary;
+  }
+}
+
+.angled-background-color-secondary {
+
+  &:before {
+    background-color: $brand-secondary;
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Print
+@media print {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// Touch
+.touchevents {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Angled background
+  .angled-background-color {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Angled background mixin
+@mixin angled-background-mixin-color() {}

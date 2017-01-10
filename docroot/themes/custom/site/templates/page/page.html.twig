@@ -36,13 +36,13 @@
     <div class="inner-wrapper" role="document">
 
         <!-- Begin - simple navigation -->
-        <nav class="simple-navigation">
+        <nav class="navigation-bar">
 
             <!-- Begin - button list -->
-            <ul class="simple-navigation-list simple-navigation-list-left">
+            <ul class="navigation-bar-list navigation-bar-list-left">
 
                 <!-- Begin - button -->
-                <li class="simple-navigation-button">
+                <li class="navigation-bar-button">
                     <a href="#" data-sidebar-toggle="left"><span class="fa icon fa-bars"></span></a>
                 </li>
                 <!-- End - button -->
@@ -51,8 +51,8 @@
             <!-- End - button list -->
 
             <!-- Begin - logo -->
-            {#<a href="<?php echo $front_page; ?>" class="simple-navigation-logo-link">#}
-                {#<img src="<?php echo $path_img . '/logo-simple-navigation.png'; ?>" class="simple-navigation-logo-image"#}
+            {#<a href="<?php echo $front_page; ?>" class="navigation-bar-logo-link">#}
+                {#<img src="<?php echo $path_img . '/logo-navigation-bar.png'; ?>" class="navigation-bar-logo-image"#}
                      {#alt="<?php echo t('fredericia.dk logo'); ?>"/>#}
             {#</a>#}
             <!-- End - logo -->
@@ -61,7 +61,9 @@
         <!-- End - simple navigation -->
 
         <!-- Begin - content -->
-        <div class="content"> <!-- Begin - main navigation -->
+        <div class="content">
+
+            <!-- Begin - main navigation -->
             <nav class="main-navigation-wrapper">
                 <section class="main-navigation-bar">
                     <div class="container">
@@ -101,7 +103,11 @@
                     {% if page.header %}
                         {% block header %}
                             <div role="heading">
-                                {{ page.header }}
+                                <div class="angled-background-color angled-background-color-white">
+                                    <div class="angled-background-color-inner">
+                                        {{ page.header }}
+                                    </div>
+                                </div>
                             </div>
                         {% endblock %}
                     {% endif %}
@@ -116,14 +122,22 @@
                     {# Breadcrumbs #}
                     {% if breadcrumb %}
                         {% block breadcrumb %}
-                            {{ breadcrumb }}
+                            <div class="angled-background-color angled-background-color-white">
+                                <div class="angled-background-color-inner">
+                                    {{ breadcrumb }}
+                                </div>
+                            </div>
                         {% endblock %}
                     {% endif %}
 
                     {# Action Links #}
                     {% if action_links %}
                         {% block action_links %}
-                            <ul class="action-links">{{ action_links }}</ul>
+                            <div class="angled-background-color angled-background-color-white">
+                                <div class="angled-background-color-inner">
+                                    <ul class="action-links">{{ action_links }}</ul>
+                                </div>
+                            </div>
                         {% endblock %}
                     {% endif %}
 
@@ -134,19 +148,18 @@
                         {% endblock %}
                     {% endif %}
 
-                    <!-- Begin - content -->
-                    <section{{ content_attributes.addClass(content_classes) }}>
-                        {% block content %}
-                            <a id="main-content"></a>
-
-                            <div class="card card-block">
-                                {{ page.content }}
-                            </div>
-                        {% endblock %}
-                    </section>
-                    <!-- End - content -->
-
                 </div>
+
+                <!-- Begin - content -->
+                <section{{ content_attributes.addClass(content_classes) }}>
+                    {% block content %}
+                        <a id="main-content"></a>
+
+                        {{ page.content }}
+                    {% endblock %}
+                </section>
+                <!-- End - content -->
+
             </div>
             <!-- End - content inner -->
 
@@ -155,66 +168,72 @@
 
         <!-- Begin - footer -->
         <footer class="footer">
+            <div class="footer-inner">
 
-            {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
-                <!-- Begin - footer top -->
-                <div class="footer-top-outer">
-                    <div class="container">
-                        <div class="footer-top-inner">
+                {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
+                    <!-- Begin - footer top -->
+                    <div class="footer-top-outer">
+                        <div class="container">
+                            <div class="footer-top-inner">
+                                <div class="row">
+
+                                    {% if page.footer_top_first %}
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            {{ page.footer_top_first }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if page.footer_top_second %}
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            {{ page.footer_top_second }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if page.footer_top_third %}
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            {{ page.footer_top_third }}
+                                        </div>
+                                    {% endif %}
+
+                                    {% if page.footer_top_fourth %}
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            {{ page.footer_top_fourth }}
+                                        </div>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End - footer top -->
+                {% endif %}
+
+                <!-- Begin - footer bottom -->
+                <div class="footer-bottom-outer">
+                    <div class="footer-bottom-inner">
+                        <div class="container">
                             <div class="row">
-
-                                {% if page.footer_top_first %}
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    {{ page.footer_top_first }}
-                                </div>
-                                {% endif %}
-
-                                {% if page.footer_top_second %}
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    {{ page.footer_top_second }}
-                                </div>
-                                {% endif %}
-
-                                {% if page.footer_top_third %}
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        {{ page.footer_top_third }}
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="footer-bottom-copyright">
+                                        <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, Vejle Idrætshøjskole. All rights reserved.{% endtrans %}</p>
                                     </div>
-                                {% endif %}
-
-                                {% if page.footer_top_fourth %}
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
-                                        {{ page.footer_top_fourth }}
-                                    </div>
-                                {% endif %}
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End - footer top -->
-            {% endif %}
-
-            <!-- Begin - footer bottom -->
-            <div class="footer-bottom-outer">
-                <div class="footer-bottom-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="footer-bottom-copyright">
-                                    <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, insulinplan.dk. All rights reserved.{% endtrans %}</p>
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="footer-bottom-social">
-                                    <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, insulinplan.dk. All rights reserved.{% endtrans %}</p>
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="footer-bottom-social">
+                                        <ul class="list-inline pull-right">
+                                            <li><a href="#"><span class="icon fa fa-instagram"></span></a></li>
+                                            <li><a href="#"><span class="icon fa fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="icon fa fa-facebook"></span></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- End - footer bottom -->
+
             </div>
-            <!-- End - footer bottom -->
-
         </footer>
         <!-- End - footer -->
 

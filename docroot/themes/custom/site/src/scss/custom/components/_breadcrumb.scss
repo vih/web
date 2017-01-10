@@ -1,0 +1,223 @@
+// |--------------------------------------------------------------------------
+// | Breadcrumb
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .breadcrumb
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$breadcrumb-arrow-width: 20px;
+$breadcrumb-home-background-color: #fff;
+$breadcrumb-background-color: #f7f7f7;
+$breadcrumb-active-background-color: $brand-primary;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Breadcrumb
+.breadcrumb {
+  display: inline-block;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  background-color: #fff;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding: 11px 20px;
+
+    // Must be home button
+    &:first-child {
+
+      a {
+        font-size: 0;
+
+        &:before {
+          @extend .icon;
+          display: inline-block;
+          color: #afafaf;
+          font-size: $font-size-base;
+          content: $fa-var-home;
+        }
+      }
+    }
+
+    &.active {
+      background-color: $breadcrumb-active-background-color;
+
+      &,
+      a {
+        color: #fff;
+      }
+    }
+
+    &,
+    a {
+      font-size: $font-size-small;
+      text-transform: uppercase;
+    }
+
+    a {}
+
+    + li {
+      padding-left: floor(($breadcrumb-arrow-width + 20px));
+    }
+  }
+
+
+  // ARROW
+  li {
+
+    // This applies to all
+    + li {
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+      }
+
+      &:before {
+        border-width: $breadcrumb-arrow-width;
+        margin-top: -$breadcrumb-arrow-width;
+        border-left-color: $breadcrumb-background-color;
+      }
+
+      &:after {
+        border-width: ($breadcrumb-arrow-width + 1px);
+        margin-top: -($breadcrumb-arrow-width + 1px);
+        border-left-color: $border-color;
+      }
+    }
+
+    // Dont show bordered arrow (between regular elements) on home and active (last)
+    &:first-child,
+    &.active {
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:first-child {
+
+      + li {
+
+        &:before {
+          border-left-color: $breadcrumb-home-background-color;
+        }
+      }
+    }
+
+    + li:not(.active) {
+
+      &:before {
+        border-left-color: $breadcrumb-background-color;
+      }
+    }
+
+    + .active {
+
+      &:before {
+        border-left-color: $breadcrumb-background-color;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Print
+@media print {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Touch
+.touchevents {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

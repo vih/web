@@ -1,0 +1,146 @@
+// |--------------------------------------------------------------------------
+// | Background color
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph-background-color
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$paragraph-background-color-white: #fff;
+$paragraph-background-color-primary: $brand-primary;
+$paragraph-background-color-secondary: $brand-secondary;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Background color
+.paragraph-background-color {
+  padding-top: $paragraph-inner-sizing-top;
+  padding-bottom: $paragraph-inner-sizing-bottom;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// White
+.paragraph-background-color-white {
+
+  .paragraph-inner {
+    @include angled_background($paragraph-background-color-white);
+
+    h1, h2, h3, h4, h5, h6, p {
+      color: $text-color;
+    }
+  }
+}
+
+// Primary
+.paragraph-background-color-primary {
+
+  .paragraph-inner {
+    @include angled_background($paragraph-background-color-primary);
+
+    h1, h2, h3, h4, h5, h6, p {
+      color: #fff;
+    }
+  }
+}
+
+// Secondary
+.paragraph-background-color-secondary {
+
+  .paragraph-inner {
+    @include angled_background($paragraph-background-color-secondary);
+
+    h1, h2, h3, h4, h5, h6, p {
+      color: #fff;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Print
+@media print {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// Touch
+.touchevents {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Background color
+  .paragraph-background-color {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Background color mixin
+@mixin paragraph-mixin-background-color() {}

@@ -1,5 +1,38 @@
 // mixin
-@mixin angled_background($pseudo, $flip: false, $angle: 4deg) {
+@mixin angled_background($background-color: #fff, $flip: false, $angle: 5deg) {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: -$paragraph-inner-sizing-top;
+    margin-bottom: -$paragraph-inner-sizing-bottom;
+    min-height: 100%;
+    background-color: $background-color;
+    content: '';
+    z-index: -1;
+    @include backface-visibility(hidden);
+
+    @if $flip {
+      @include skew(0, $angle * -1);
+      transform-origin: 0 0;
+    } @else {
+      @include skew(0, $angle);
+      transform-origin: center center;
+    }
+  }
+}
+
+
+
+
+@mixin angled_background_1($pseudo, $flip: false, $angle: 2deg) {
   // Possible values for $pseudo are: before, after, both
   @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
     position: relative;

@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Teaser
+// | List of news teasers
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .node-teaser
+// | - .paragraph--type--list-of-news-teasers
 // |
 
 // --------------------------------------------------
@@ -14,8 +14,12 @@
 // Styling
 // --------------------------------------------------
 
-// Teaser
-.node-teaser {
+// List of news teasers
+.paragraph--type--list-of-news-teasers {
+
+  .field--name-field-heading {
+    margin-bottom: 50px;
+  }
 }
 
 // --------------------------------------------------
@@ -29,76 +33,76 @@
 // Mobile - and up
 @include media-breakpoint-up(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Print
 @media print {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // Touch
 .touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // No touch
 .no-touchevents {
 
-  // Teaser
-  .node-teaser {}
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Teaser mixin
-@mixin node-mixin-teaser() {}
+// List of news teasers mixin
+@mixin paragraph-type-mixin-column-action-centered() {}

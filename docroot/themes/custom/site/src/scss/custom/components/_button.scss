@@ -1,0 +1,193 @@
+// |--------------------------------------------------------------------------
+// | Button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .btn
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$button-container-width: 60px;
+$button-arrow-width: 22px;
+
+// Variants
+$button-default-icon-background: darken($btn-default-bg, 14%);
+$button-primary-icon-background: #00a5e2;
+$button-secondary-icon-background: darken($btn-secondary-bg, 14%);
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Button
+.btn {
+  @extend .btn;
+  position: relative;
+  border-radius: 0;
+  min-width: 100px;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  border: 0;
+  padding-left: floor( ($button-container-width + $button-arrow-width + $padding-base-horizontal) );
+
+  &:before {
+    @extend .icon;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $button-container-width;
+    content: $fa-var-arrow-right;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 6px;
+    font-size: 30px;
+  }
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    content: " ";
+    height: 0;
+    width: 0;
+    left: $button-container-width;
+    border: solid transparent;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-width: $button-arrow-width;
+    margin-top: -$button-arrow-width;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Default
+.btn-default {
+  @extend .btn-default;
+
+  &:before {
+    background-color: $button-default-icon-background;
+    color: $btn-default-color;
+  }
+
+  &:after {
+    border-left-color: $button-default-icon-background;
+  }
+}
+
+// Primary
+.btn-primary {
+  @extend .btn-primary;
+
+  &,
+  &:hover {
+    background-color: #00bcff;
+  }
+
+  &:before {
+    background-color: $button-primary-icon-background;
+  }
+
+  &:after {
+    border-left-color: $button-primary-icon-background;
+  }
+}
+
+// Secondary
+.btn-secondary {
+  @extend .btn-secondary;
+
+  &:before {
+    background-color: $button-secondary-icon-background;
+  }
+
+  &:after {
+    border-left-color: $button-secondary-icon-background;
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Button
+  .btn {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Button
+  .btn {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Button
+  .btn {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Button
+  .btn {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Button
+  .btn {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Button
+  .btn {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Button
+  .btn {}
+}
+
+// Print
+@media print {
+
+  // Button
+  .btn {}
+}
+
+// Touch
+.touchevents {
+
+  // Button
+  .btn {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Button
+  .btn {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Button mixin
+@mixin btn-mixin() {}

@@ -9,7 +9,11 @@
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function site_preprocess_html(array &$variables) {
-  $variables['attributes']['class'][] = 'footer-attached';
+ $variables['attributes']['class'][] = 'footer-attached';
+ $variables['attributes']['class'][] = 'navigation-bar-enabled-xs';
+ $variables['attributes']['class'][] = 'sidebar-left-enabled-xs';
+ $variables['attributes']['class'][] = 'sidebar-left-hidden-xs';
+ $variables['attributes']['class'][] = 'sidebar-left-content-push-xs';
 }
 
 /**
@@ -99,8 +103,36 @@ function site_theme_suggestions_menu_alter(array &$suggestions, array $variables
 function site_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
+}
 
-//  xdebug_break();
+/*
+ * Implements hook_preprocess_paragraph().
+ */
+function site_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+
+  // Background image
+  if (!$paragraph->field_background_image->isEmpty()) {
+    $image = $paragraph->field_background_image->entity->url();
+
+    $variables['attributes']['class'][] = 'paragraph-background-image';
+    $variables['background_image'] = $image;
+  }
+
+  // No background images has been set, so we can try to set a background color
+  else {
+
+    // Background color
+    if (!$paragraph->field_background_color->isEmpty()) {
+      $background_color = $paragraph->field_background_color->getValue();
+      $variables['attributes']['class'][] = 'paragraph-background-color';
+      $variables['attributes']['class'][] = 'paragraph-background-color-' . $background_color[0]['value'];
+    }
+  }
+}
+
+function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
+  $variables['embedded_view'] = views_embed_view('news', 'embedded_teaser_list');
 }
 
 /**

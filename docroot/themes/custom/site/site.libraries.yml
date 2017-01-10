@@ -12,7 +12,7 @@ scripts:
   js:
     dist/js/core.js: {}
     dist/js/modernizr.js: {}
-    http://127.0.0.1:35729/livereload.js: { type: external }
+    http://127.0.0.1:35729/livereload.js: {}
   dependencies:
     - core/drupal
     - core/jquery

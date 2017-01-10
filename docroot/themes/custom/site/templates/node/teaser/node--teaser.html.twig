@@ -1,9 +1,6 @@
 <article{{ attributes.addClass(classes) }} class="node-teaser">
     <div class="card card-block">
         <h4 class="card-title">{{ label }}</h4>
-        <h6 class="card-subtitle text-muted">
-            {% trans %} Created by {{ author_name }} on {{ date }} {% endtrans %}
-        </h6>
 
         {% if node.hasField('field_due_date') %}
             <p class="card-text">
@@ -15,11 +12,9 @@
             <p class="card-text">{{ content.body }}</p>
         {% endif %}
 
-        <a href="{{ url }}" class="btn btn-primary">
-            {% trans %} Show goal {% endtrans %}
-        </a>
-
-        {{ content.flag_status }}
+        <div class="card-published-at">
+            {{ node.createdTime | date("d-m-Y") }}
+        </div>
 
     </div>
 </article>
