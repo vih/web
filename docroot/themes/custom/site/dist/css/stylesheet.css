@@ -10563,15 +10563,20 @@ p:last-child,
   background-color: #fff;
   padding: 0; }
   .breadcrumb li {
+    background-color: #f7f7f7;
     position: relative;
     padding: 11px 20px; }
-    .breadcrumb li:first-child a {
-      font-size: 0; }
-      .breadcrumb li:first-child a:before {
-        display: inline-block;
-        color: #afafaf;
-        font-size: 16px;
-        content: ""; }
+    .breadcrumb li:first-child {
+      background-color: #fff; }
+      .breadcrumb li:first-child a {
+        font-size: 0; }
+        .breadcrumb li:first-child a:before {
+          display: inline-block;
+          color: #afafaf;
+          font-size: 16px;
+          content: ""; }
+    .breadcrumb li:not(:first-child) {
+      margin-left: -7px; }
     .breadcrumb li.active {
       background-color: #00a5e2; }
       .breadcrumb li.active,
@@ -10580,7 +10585,8 @@ p:last-child,
     .breadcrumb li,
     .breadcrumb li a {
       font-size: 14px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      color: #afafaf; }
     .breadcrumb li + li {
       padding-left: 40px; }
   .breadcrumb li + li:before, .breadcrumb li + li:after {
@@ -10596,18 +10602,22 @@ p:last-child,
   .breadcrumb li + li:before {
     border-width: 20px;
     margin-top: -20px;
-    border-left-color: #f7f7f7; }
+    border-left-color: #f7f7f7;
+    z-index: 2; }
   .breadcrumb li + li:after {
     border-width: 21px;
     margin-top: -21px;
-    border-left-color: #e6e7e7; }
-  .breadcrumb li:first-child:after, .breadcrumb li.active:after {
+    border-left-color: #e6e7e7;
+    z-index: 1; }
+  .breadcrumb li.active:after {
+    display: none; }
+  .breadcrumb li:first-child:before, .breadcrumb li:first-child:after {
     display: none; }
   .breadcrumb li:first-child + li:before {
     border-left-color: #fff; }
-  .breadcrumb li + li:not(.active):before {
-    border-left-color: #f7f7f7; }
-  .breadcrumb li + .active:before {
+  .breadcrumb li:first-child + li:after {
+    display: none; }
+  .breadcrumb li + li:before {
     border-left-color: #f7f7f7; }
 
 .header {

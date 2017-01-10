@@ -28,11 +28,13 @@ $breadcrumb-active-background-color: $brand-primary;
   padding: 0;
 
   li {
+    background-color: $breadcrumb-background-color;
     position: relative;
     padding: 11px 20px;
 
     // Must be home button
     &:first-child {
+      background-color: $breadcrumb-home-background-color;
 
       a {
         font-size: 0;
@@ -45,6 +47,10 @@ $breadcrumb-active-background-color: $brand-primary;
           content: $fa-var-home;
         }
       }
+    }
+
+    &:not(:first-child) {
+      margin-left: -7px;
     }
 
     &.active {
@@ -60,15 +66,13 @@ $breadcrumb-active-background-color: $brand-primary;
     a {
       font-size: $font-size-small;
       text-transform: uppercase;
+      color: #afafaf;
     }
-
-    a {}
 
     + li {
       padding-left: floor(($breadcrumb-arrow-width + 20px));
     }
   }
-
 
   // ARROW
   li {
@@ -93,17 +97,18 @@ $breadcrumb-active-background-color: $brand-primary;
         border-width: $breadcrumb-arrow-width;
         margin-top: -$breadcrumb-arrow-width;
         border-left-color: $breadcrumb-background-color;
+        z-index: 2;
       }
 
       &:after {
         border-width: ($breadcrumb-arrow-width + 1px);
         margin-top: -($breadcrumb-arrow-width + 1px);
         border-left-color: $border-color;
+        z-index: 1;
       }
     }
 
     // Dont show bordered arrow (between regular elements) on home and active (last)
-    &:first-child,
     &.active {
 
       &:after {
@@ -113,22 +118,24 @@ $breadcrumb-active-background-color: $brand-primary;
 
     &:first-child {
 
+      &:before,
+      &:after {
+        display: none;
+      }
+
       + li {
 
         &:before {
           border-left-color: $breadcrumb-home-background-color;
         }
+
+        &:after {
+          display: none;
+        }
       }
     }
 
-    + li:not(.active) {
-
-      &:before {
-        border-left-color: $breadcrumb-background-color;
-      }
-    }
-
-    + .active {
+    + li {
 
       &:before {
         border-left-color: $breadcrumb-background-color;
