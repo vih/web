@@ -1,0 +1,14 @@
+uuid: 5a3969d5-4929-4ff0-b6b9-7cf7d0af9483
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.slet_reviewer
+  module:
+    - user
+id: user_remove_role_action.slet_reviewer
+label: 'Fjern rollen slet Reviewer fra de valgte brugere'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: slet_reviewer

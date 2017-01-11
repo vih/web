@@ -1,6 +1,6 @@
 uuid: 4c611cc5-3b04-4ea9-9ee0-45c12af31197
 langcode: da
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: GT_zYl7I9VAILH8OxMRe-VDvFadCDHxRcnmBc5xEmf0
 id: site_main_menu
 theme: site
-region: sidebar_first
-weight: 10
+region: '-1'
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:

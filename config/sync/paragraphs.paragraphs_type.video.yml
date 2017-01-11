@@ -1,0 +1,7 @@
+uuid: 480a5adc-c175-4984-a88f-43d1749367bc
+langcode: da
+status: true
+dependencies: {  }
+id: video
+label: Video
+behavior_plugins: {  }

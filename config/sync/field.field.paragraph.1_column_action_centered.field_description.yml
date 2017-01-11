@@ -1,17 +1,17 @@
-uuid: 366defe7-444a-4173-8b04-a1b881c066ea
+uuid: 1ce5ed5d-251a-4883-af1e-8c37af195f6a
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_body
+    - field.storage.paragraph.field_description
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
     - text
-id: paragraph.1_column_action_centered.field_body
-field_name: field_body
+id: paragraph.1_column_action_centered.field_description
+field_name: field_description
 entity_type: paragraph
 bundle: 1_column_action_centered
-label: Indholdstekst
+label: Beskrivelse
 description: ''
 required: false
 translatable: false

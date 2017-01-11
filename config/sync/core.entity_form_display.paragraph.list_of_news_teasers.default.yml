@@ -1,0 +1,46 @@
+uuid: 69ec176c-6d6b-4613-aa8d-1800eddb4fc0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.list_of_news_teasers.field_background_color
+    - field.field.paragraph.list_of_news_teasers.field_background_image
+    - field.field.paragraph.list_of_news_teasers.field_heading
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.list_of_news_teasers
+  module:
+    - image
+    - workbench_moderation
+id: paragraph.list_of_news_teasers.default
+targetEntityType: paragraph
+bundle: list_of_news_teasers
+mode: default
+content:
+  field_background_color:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_background_image:
+    type: entity_browser_file
+    weight: 8
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_heading:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

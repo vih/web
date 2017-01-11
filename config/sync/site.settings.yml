@@ -1,0 +1,33 @@
+schemas:
+  bootstrap: 8000
+  bellcom: 8000
+  site: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: profiles/contrib/lightning/favicon.ico
+  url: 'http://vih.dev/profiles/contrib/lightning/favicon.ico'
+  use_default: 0
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+  node_user_picture: true
+logo:
+  path: profiles/contrib/lightning/lightning.png
+  url: ''
+  use_default: 0
+breadcrumb_home: 1
+region_wells:
+  main_navigation: ''
+  sidebar_left: ''
+  header: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  footer_top_first: ''
+  footer_top_second: ''
+  footer_top_third: ''
+  footer_top_fourth: ''
+table_responsive: '-1'
+table: ''
+general_startup_year: '2011'

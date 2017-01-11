@@ -1,0 +1,24 @@
+uuid: 831b508e-accc-4d68-9d99-04b34154e79e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.list_of_news_teasers.field_background_color
+    - field.field.paragraph.list_of_news_teasers.field_background_image
+    - field.field.paragraph.list_of_news_teasers.field_heading
+    - paragraphs.paragraphs_type.list_of_news_teasers
+id: paragraph.list_of_news_teasers.default
+targetEntityType: paragraph
+bundle: list_of_news_teasers
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_background_color: true
+  field_background_image: true

@@ -3,12 +3,13 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.1_column_action_centered.field_background_color
     - field.field.paragraph.1_column_action_centered.field_background_image
-    - field.field.paragraph.1_column_action_centered.field_body
+    - field.field.paragraph.1_column_action_centered.field_description
+    - field.field.paragraph.1_column_action_centered.field_heading
     - field.field.paragraph.1_column_action_centered.field_link
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
-    - image
     - link
     - text
 id: paragraph.1_column_action_centered.default
@@ -16,31 +17,32 @@ targetEntityType: paragraph
 bundle: 1_column_action_centered
 mode: default
 content:
-  field_background_image:
-    weight: 2
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-  field_body:
-    weight: 0
-    label: above
+  field_description:
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_link:
-    weight: 1
-    label: above
+  field_heading:
+    weight: 0
+    label: hidden
     settings:
-      trim_length: 80
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     type: link
 hidden:
   created: true
+  field_background_color: true
+  field_background_image: true
   uid: true

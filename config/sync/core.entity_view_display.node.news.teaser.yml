@@ -5,10 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
+    - field.field.node.news.field_image
     - node.type.news
   module:
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.news.teaser
 targetEntityType: node
 bundle: news
@@ -17,11 +25,11 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 0
     settings:
-      trim_length: 600
+      trim_length: 100
     third_party_settings: {  }
-  links:
-    weight: 100
 hidden:
+  field_image: true
   langcode: true
+  links: true

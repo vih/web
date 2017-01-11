@@ -1,0 +1,25 @@
+uuid: 772d06ab-7a14-4831-9c3e-b7dad96c081a
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6f2694b2-00ac-40df-9158-8f59e8972b3e'
+  module:
+    - block_content
+  theme:
+    - site
+id: sidefodlogo
+theme: site
+region: footer_top_first
+weight: -8
+provider: null
+plugin: 'block_content:6f2694b2-00ac-40df-9158-8f59e8972b3e'
+settings:
+  id: 'block_content:6f2694b2-00ac-40df-9158-8f59e8972b3e'
+  label: 'Sidefod - logo'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.page
     - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.list_of_news_teasers
+    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -23,8 +25,16 @@ settings:
   handler_settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
+      list_of_news_teasers: list_of_news_teasers
+      video: video
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
         weight: 2
+      list_of_news_teasers:
+        enabled: true
+        weight: 3
+      video:
+        enabled: true
+        weight: 4
 field_type: entity_reference_revisions

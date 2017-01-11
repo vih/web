@@ -1,0 +1,11 @@
+uuid: c5c4705c-da7d-4c93-a207-3a646f6ff5d2
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.slet
+id: node.slet
+target_entity_type_id: node
+target_bundle: slet
+default_langcode: site_default
+language_alterable: false

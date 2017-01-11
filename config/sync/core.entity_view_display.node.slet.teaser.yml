@@ -1,0 +1,27 @@
+uuid: c1f777d5-0a9f-46e1-bb1a-b2ed7ea4a39e
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slet.body
+    - node.type.slet
+  module:
+    - text
+    - user
+id: node.slet.teaser
+targetEntityType: node
+bundle: slet
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

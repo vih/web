@@ -1,0 +1,25 @@
+uuid: e7e790f1-6644-4dd0-b926-67a90facda4f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.slet.body
+    - node.type.slet
+  module:
+    - text
+    - user
+id: node.slet.default
+targetEntityType: node
+bundle: slet
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

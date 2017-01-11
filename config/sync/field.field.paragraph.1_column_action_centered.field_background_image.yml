@@ -11,7 +11,7 @@ id: paragraph.1_column_action_centered.field_background_image
 field_name: field_background_image
 entity_type: paragraph
 bundle: 1_column_action_centered
-label: Baggrund
+label: Baggrundsbillede
 description: ''
 required: false
 translatable: false

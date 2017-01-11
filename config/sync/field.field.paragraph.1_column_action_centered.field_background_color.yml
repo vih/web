@@ -1,0 +1,23 @@
+uuid: 38b51208-fe6e-4155-b46c-12c14d5c28fe
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.1_column_action_centered
+  module:
+    - options
+id: paragraph.1_column_action_centered.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: 1_column_action_centered
+label: Baggrundsfarve
+description: 'Vælg hvilken baggrundsfarve denne sektion skal have.'
+required: true
+translatable: false
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

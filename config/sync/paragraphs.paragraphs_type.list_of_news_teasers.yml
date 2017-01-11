@@ -1,0 +1,7 @@
+uuid: 50160aa0-7d5a-4ce1-b94a-3934f2d41929
+langcode: da
+status: true
+dependencies: {  }
+id: list_of_news_teasers
+label: 'Liste af nyhedsteasere'
+behavior_plugins: {  }

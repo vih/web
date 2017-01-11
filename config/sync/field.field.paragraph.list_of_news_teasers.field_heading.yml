@@ -1,0 +1,19 @@
+uuid: b3a0cbeb-ac30-4d63-91e1-c5878c884583
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.list_of_news_teasers
+id: paragraph.list_of_news_teasers.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: list_of_news_teasers
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

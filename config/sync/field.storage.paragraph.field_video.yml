@@ -1,16 +1,16 @@
-uuid: 07545cf8-aea9-4cf9-8967-a0ae9e3ef5da
+uuid: a6a41bac-ffaa-4f64-93a6-dd20b8efcd4d
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
-    - text
-id: paragraph.field_body
-field_name: field_body
+    - video_embed_field
+id: paragraph.field_video
+field_name: field_video
 entity_type: paragraph
-type: text_long
+type: video_embed_field
 settings: {  }
-module: text
+module: video_embed_field
 locked: false
 cardinality: 1
 translatable: true

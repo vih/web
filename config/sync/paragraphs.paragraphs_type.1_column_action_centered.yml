@@ -3,4 +3,5 @@ langcode: da
 status: true
 dependencies: {  }
 id: 1_column_action_centered
-label: 'Action - centered - 1 column'
+label: Hero
+behavior_plugins: {  }
