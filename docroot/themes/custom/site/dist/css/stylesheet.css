@@ -60,7 +60,8 @@ strong {
 dfn {
   font-style: italic; }
 
-h1, .heading-h1, .field--name-field-description {
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p {
   font-size: 2em;
   margin: 0.67em 0; }
 
@@ -1153,7 +1154,9 @@ hr {
 [role="button"] {
   cursor: pointer; }
 
-h1, .heading-h1, .field--name-field-description, h2, .heading-h2, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, .field--name-field-heading, h4, .heading-h4, h5, .heading-h5, h6, .heading-h6,
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, h2, .heading-h2, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, .field--name-field-heading, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, h5, .heading-h5, .field--name-field-highlighted, h6, .heading-h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -1162,9 +1165,9 @@ h1, .heading-h1, .field--name-field-description, h2, .heading-h2, h3, .heading-h
   h1 small, .heading-h1 small, .field--name-field-description small,
   h1 .small, .heading-h1 .small, .field--name-field-description .small, h2 small, .heading-h2 small,
   h2 .small, .heading-h2 .small, h3 small, .heading-h3 small, .node-list-simple-title small, .node-list-advanced-title small, .field--name-field-heading small,
-  h3 .small, .heading-h3 .small, .node-list-simple-title .small, .node-list-advanced-title .small, .field--name-field-heading .small, h4 small, .heading-h4 small,
-  h4 .small, .heading-h4 .small, h5 small, .heading-h5 small,
-  h5 .small, .heading-h5 .small, h6 small, .heading-h6 small,
+  h3 .small, .heading-h3 .small, .node-list-simple-title .small, .node-list-advanced-title .small, .field--name-field-heading .small, h4 small, .heading-h4 small, .paragraph--type--video .field--name-field-description small,
+  h4 .small, .heading-h4 .small, .paragraph--type--video .field--name-field-description .small, h5 small, .heading-h5 small, .field--name-field-highlighted small,
+  h5 .small, .heading-h5 .small, .field--name-field-highlighted .small, h6 small, .heading-h6 small,
   h6 .small, .heading-h6 .small,
   .h1 small,
   .h1 .small, .h2 small,
@@ -1177,7 +1180,8 @@ h1, .heading-h1, .field--name-field-description, h2, .heading-h2, h3, .heading-h
     line-height: 1;
     color: #777777; }
 
-h1, .heading-h1, .field--name-field-description, .h1,
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, .h1,
 h2,
 .heading-h2, .h2,
 h3,
@@ -1198,25 +1202,28 @@ h3,
   .h3 .small {
     font-size: 65%; }
 
-h4, .heading-h4, .h4,
+h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, .h4,
 h5,
-.heading-h5, .h5,
+.heading-h5,
+.field--name-field-highlighted, .h5,
 h6,
 .heading-h6, .h6 {
   margin-top: 11px;
   margin-bottom: 11px; }
-  h4 small, .heading-h4 small,
-  h4 .small, .heading-h4 .small, .h4 small,
+  h4 small, .heading-h4 small, .paragraph--type--video .field--name-field-description small,
+  h4 .small, .heading-h4 .small, .paragraph--type--video .field--name-field-description .small, .h4 small,
   .h4 .small,
-  h5 small, .heading-h5 small,
-  h5 .small, .heading-h5 .small, .h5 small,
+  h5 small, .heading-h5 small, .field--name-field-highlighted small,
+  h5 .small, .heading-h5 .small, .field--name-field-highlighted .small, .h5 small,
   .h5 .small,
   h6 small, .heading-h6 small,
   h6 .small, .heading-h6 .small, .h6 small,
   .h6 .small {
     font-size: 75%; }
 
-h1, .heading-h1, .field--name-field-description, .h1 {
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, .h1 {
   font-size: 36px; }
 
 h2, .heading-h2, .h2 {
@@ -1225,10 +1232,11 @@ h2, .heading-h2, .h2 {
 h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, .field--name-field-heading, .h3 {
   font-size: 24px; }
 
-h4, .heading-h4, .h4 {
+h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, .h4 {
   font-size: 18px; }
 
-h5, .heading-h5, .h5 {
+h5, .heading-h5, .field--name-field-highlighted, .h5 {
   font-size: 16px; }
 
 h6, .heading-h6, .h6 {
@@ -2811,121 +2819,132 @@ fieldset[disabled] .field--name-field-link a, .field--name-field-link
 fieldset[disabled] a {
   pointer-events: none; }
 
-.btn-default, .paragraph-background-color-primary .field--name-field-link a {
+.btn-default, .angled-background-color-primary .field--name-field-link a {
   color: #333;
   background-color: #fff;
   border-color: #ccc; }
-  .btn-default:focus, .paragraph-background-color-primary .field--name-field-link a:focus, .focus.btn-default, .paragraph-background-color-primary .field--name-field-link a.focus {
+  .btn-default:focus, .angled-background-color-primary .field--name-field-link a:focus, .focus.btn-default, .angled-background-color-primary .field--name-field-link a.focus {
     color: #333;
     background-color: #e6e5e5;
     border-color: #8c8c8c; }
-  .btn-default:hover, .paragraph-background-color-primary .field--name-field-link a:hover {
+  .btn-default:hover, .angled-background-color-primary .field--name-field-link a:hover {
     color: #333;
     background-color: #e6e5e5;
     border-color: #adadad; }
-  .btn-default:active, .paragraph-background-color-primary .field--name-field-link a:active, .active.btn-default, .paragraph-background-color-primary .field--name-field-link a.active,
-  .open > .dropdown-toggle.btn-default, .paragraph-background-color-primary .field--name-field-link
+  .btn-default:active, .angled-background-color-primary .field--name-field-link a:active, .active.btn-default, .angled-background-color-primary .field--name-field-link a.active,
+  .open > .dropdown-toggle.btn-default, .angled-background-color-primary .field--name-field-link
   .open > a.dropdown-toggle {
     color: #333;
     background-color: #e6e5e5;
     border-color: #adadad; }
-    .btn-default:active:hover, .paragraph-background-color-primary .field--name-field-link a:active:hover, .btn-default:active:focus, .paragraph-background-color-primary .field--name-field-link a:active:focus, .btn-default:active.focus, .paragraph-background-color-primary .field--name-field-link a:active.focus, .active.btn-default:hover, .paragraph-background-color-primary .field--name-field-link a.active:hover, .active.btn-default:focus, .paragraph-background-color-primary .field--name-field-link a.active:focus, .active.focus.btn-default, .paragraph-background-color-primary .field--name-field-link a.active.focus,
-    .open > .dropdown-toggle.btn-default:hover, .paragraph-background-color-primary .field--name-field-link
+    .btn-default:active:hover, .angled-background-color-primary .field--name-field-link a:active:hover, .btn-default:active:focus, .angled-background-color-primary .field--name-field-link a:active:focus, .btn-default:active.focus, .angled-background-color-primary .field--name-field-link a:active.focus, .active.btn-default:hover, .angled-background-color-primary .field--name-field-link a.active:hover, .active.btn-default:focus, .angled-background-color-primary .field--name-field-link a.active:focus, .active.focus.btn-default, .angled-background-color-primary .field--name-field-link a.active.focus,
+    .open > .dropdown-toggle.btn-default:hover, .angled-background-color-primary .field--name-field-link
     .open > a.dropdown-toggle:hover,
-    .open > .dropdown-toggle.btn-default:focus, .paragraph-background-color-primary .field--name-field-link
+    .open > .dropdown-toggle.btn-default:focus, .angled-background-color-primary .field--name-field-link
     .open > a.dropdown-toggle:focus,
-    .open > .dropdown-toggle.focus.btn-default, .paragraph-background-color-primary .field--name-field-link
+    .open > .dropdown-toggle.focus.btn-default, .angled-background-color-primary .field--name-field-link
     .open > a.dropdown-toggle.focus {
       color: #333;
       background-color: #d4d4d4;
       border-color: #8c8c8c; }
-  .btn-default:active, .paragraph-background-color-primary .field--name-field-link a:active, .active.btn-default, .paragraph-background-color-primary .field--name-field-link a.active,
-  .open > .dropdown-toggle.btn-default, .paragraph-background-color-primary .field--name-field-link
+  .btn-default:active, .angled-background-color-primary .field--name-field-link a:active, .active.btn-default, .angled-background-color-primary .field--name-field-link a.active,
+  .open > .dropdown-toggle.btn-default, .angled-background-color-primary .field--name-field-link
   .open > a.dropdown-toggle {
     background-image: none; }
-  .disabled.btn-default:hover, .paragraph-background-color-primary .field--name-field-link a.disabled:hover, .disabled.btn-default:focus, .paragraph-background-color-primary .field--name-field-link a.disabled:focus, .disabled.focus.btn-default, .paragraph-background-color-primary .field--name-field-link a.disabled.focus, [disabled].btn-default:hover, .paragraph-background-color-primary .field--name-field-link a[disabled]:hover, [disabled].btn-default:focus, .paragraph-background-color-primary .field--name-field-link a[disabled]:focus, [disabled].focus.btn-default, .paragraph-background-color-primary .field--name-field-link a[disabled].focus,
+  .disabled.btn-default:hover, .angled-background-color-primary .field--name-field-link a.disabled:hover, .disabled.btn-default:focus, .angled-background-color-primary .field--name-field-link a.disabled:focus, .disabled.focus.btn-default, .angled-background-color-primary .field--name-field-link a.disabled.focus, [disabled].btn-default:hover, .angled-background-color-primary .field--name-field-link a[disabled]:hover, [disabled].btn-default:focus, .angled-background-color-primary .field--name-field-link a[disabled]:focus, [disabled].focus.btn-default, .angled-background-color-primary .field--name-field-link a[disabled].focus,
   fieldset[disabled] .btn-default:hover,
-  fieldset[disabled] .paragraph-background-color-primary .field--name-field-link a:hover, .paragraph-background-color-primary .field--name-field-link
+  fieldset[disabled] .angled-background-color-primary .field--name-field-link a:hover, .angled-background-color-primary .field--name-field-link
   fieldset[disabled] a:hover,
   fieldset[disabled] .btn-default:focus,
-  fieldset[disabled] .paragraph-background-color-primary .field--name-field-link a:focus, .paragraph-background-color-primary .field--name-field-link
+  fieldset[disabled] .angled-background-color-primary .field--name-field-link a:focus, .angled-background-color-primary .field--name-field-link
   fieldset[disabled] a:focus,
   fieldset[disabled] .focus.btn-default,
-  fieldset[disabled] .paragraph-background-color-primary .field--name-field-link a.focus, .paragraph-background-color-primary .field--name-field-link
+  fieldset[disabled] .angled-background-color-primary .field--name-field-link a.focus, .angled-background-color-primary .field--name-field-link
   fieldset[disabled] a.focus {
     background-color: #fff;
     border-color: #ccc; }
-  .btn-default .badge, .paragraph-background-color-primary .field--name-field-link a .badge {
+  .btn-default .badge, .angled-background-color-primary .field--name-field-link a .badge {
     color: #fff;
     background-color: #333; }
 
-.btn-primary, .paragraph-background-image .field--name-field-link a, .paragraph-background-color-white .field--name-field-link a, .paragraph-background-color-secondary .field--name-field-link a {
+.btn-primary, .angled-background-image .field--name-field-link a, .angled-background-color-white .field--name-field-link a, .angled-background-color-gray .field--name-field-link a, .angled-background-color-secondary .field--name-field-link a {
   color: #fff;
   background-color: #00a5e2;
   border-color: #006990; }
-  .btn-primary:focus, .paragraph-background-image .field--name-field-link a:focus, .paragraph-background-color-white .field--name-field-link a:focus, .paragraph-background-color-secondary .field--name-field-link a:focus, .focus.btn-primary, .paragraph-background-image .field--name-field-link a.focus, .paragraph-background-color-white .field--name-field-link a.focus, .paragraph-background-color-secondary .field--name-field-link a.focus {
+  .btn-primary:focus, .angled-background-image .field--name-field-link a:focus, .angled-background-color-white .field--name-field-link a:focus, .angled-background-color-gray .field--name-field-link a:focus, .angled-background-color-secondary .field--name-field-link a:focus, .focus.btn-primary, .angled-background-image .field--name-field-link a.focus, .angled-background-color-white .field--name-field-link a.focus, .angled-background-color-gray .field--name-field-link a.focus, .angled-background-color-secondary .field--name-field-link a.focus {
     color: #fff;
     background-color: #0080af;
     border-color: #000c11; }
-  .btn-primary:hover, .paragraph-background-image .field--name-field-link a:hover, .paragraph-background-color-white .field--name-field-link a:hover, .paragraph-background-color-secondary .field--name-field-link a:hover {
+  .btn-primary:hover, .angled-background-image .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link a:hover {
     color: #fff;
     background-color: #0080af;
     border-color: #003d53; }
-  .btn-primary:active, .paragraph-background-image .field--name-field-link a:active, .paragraph-background-color-white .field--name-field-link a:active, .paragraph-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .paragraph-background-image .field--name-field-link a.active, .paragraph-background-color-white .field--name-field-link a.active, .paragraph-background-color-secondary .field--name-field-link a.active,
-  .open > .dropdown-toggle.btn-primary, .paragraph-background-image .field--name-field-link
-  .open > a.dropdown-toggle, .paragraph-background-color-white .field--name-field-link
-  .open > a.dropdown-toggle, .paragraph-background-color-secondary .field--name-field-link
+  .btn-primary:active, .angled-background-image .field--name-field-link a:active, .angled-background-color-white .field--name-field-link a:active, .angled-background-color-gray .field--name-field-link a:active, .angled-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .angled-background-image .field--name-field-link a.active, .angled-background-color-white .field--name-field-link a.active, .angled-background-color-gray .field--name-field-link a.active, .angled-background-color-secondary .field--name-field-link a.active,
+  .open > .dropdown-toggle.btn-primary, .angled-background-image .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-white .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-gray .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-secondary .field--name-field-link
   .open > a.dropdown-toggle {
     color: #fff;
     background-color: #0080af;
     border-color: #003d53; }
-    .btn-primary:active:hover, .paragraph-background-image .field--name-field-link a:active:hover, .paragraph-background-color-white .field--name-field-link a:active:hover, .paragraph-background-color-secondary .field--name-field-link a:active:hover, .btn-primary:active:focus, .paragraph-background-image .field--name-field-link a:active:focus, .paragraph-background-color-white .field--name-field-link a:active:focus, .paragraph-background-color-secondary .field--name-field-link a:active:focus, .btn-primary:active.focus, .paragraph-background-image .field--name-field-link a:active.focus, .paragraph-background-color-white .field--name-field-link a:active.focus, .paragraph-background-color-secondary .field--name-field-link a:active.focus, .active.btn-primary:hover, .paragraph-background-image .field--name-field-link a.active:hover, .paragraph-background-color-white .field--name-field-link a.active:hover, .paragraph-background-color-secondary .field--name-field-link a.active:hover, .active.btn-primary:focus, .paragraph-background-image .field--name-field-link a.active:focus, .paragraph-background-color-white .field--name-field-link a.active:focus, .paragraph-background-color-secondary .field--name-field-link a.active:focus, .active.focus.btn-primary, .paragraph-background-image .field--name-field-link a.active.focus, .paragraph-background-color-white .field--name-field-link a.active.focus, .paragraph-background-color-secondary .field--name-field-link a.active.focus,
-    .open > .dropdown-toggle.btn-primary:hover, .paragraph-background-image .field--name-field-link
-    .open > a.dropdown-toggle:hover, .paragraph-background-color-white .field--name-field-link
-    .open > a.dropdown-toggle:hover, .paragraph-background-color-secondary .field--name-field-link
+    .btn-primary:active:hover, .angled-background-image .field--name-field-link a:active:hover, .angled-background-color-white .field--name-field-link a:active:hover, .angled-background-color-gray .field--name-field-link a:active:hover, .angled-background-color-secondary .field--name-field-link a:active:hover, .btn-primary:active:focus, .angled-background-image .field--name-field-link a:active:focus, .angled-background-color-white .field--name-field-link a:active:focus, .angled-background-color-gray .field--name-field-link a:active:focus, .angled-background-color-secondary .field--name-field-link a:active:focus, .btn-primary:active.focus, .angled-background-image .field--name-field-link a:active.focus, .angled-background-color-white .field--name-field-link a:active.focus, .angled-background-color-gray .field--name-field-link a:active.focus, .angled-background-color-secondary .field--name-field-link a:active.focus, .active.btn-primary:hover, .angled-background-image .field--name-field-link a.active:hover, .angled-background-color-white .field--name-field-link a.active:hover, .angled-background-color-gray .field--name-field-link a.active:hover, .angled-background-color-secondary .field--name-field-link a.active:hover, .active.btn-primary:focus, .angled-background-image .field--name-field-link a.active:focus, .angled-background-color-white .field--name-field-link a.active:focus, .angled-background-color-gray .field--name-field-link a.active:focus, .angled-background-color-secondary .field--name-field-link a.active:focus, .active.focus.btn-primary, .angled-background-image .field--name-field-link a.active.focus, .angled-background-color-white .field--name-field-link a.active.focus, .angled-background-color-gray .field--name-field-link a.active.focus, .angled-background-color-secondary .field--name-field-link a.active.focus,
+    .open > .dropdown-toggle.btn-primary:hover, .angled-background-image .field--name-field-link
+    .open > a.dropdown-toggle:hover, .angled-background-color-white .field--name-field-link
+    .open > a.dropdown-toggle:hover, .angled-background-color-gray .field--name-field-link
+    .open > a.dropdown-toggle:hover, .angled-background-color-secondary .field--name-field-link
     .open > a.dropdown-toggle:hover,
-    .open > .dropdown-toggle.btn-primary:focus, .paragraph-background-image .field--name-field-link
-    .open > a.dropdown-toggle:focus, .paragraph-background-color-white .field--name-field-link
-    .open > a.dropdown-toggle:focus, .paragraph-background-color-secondary .field--name-field-link
+    .open > .dropdown-toggle.btn-primary:focus, .angled-background-image .field--name-field-link
+    .open > a.dropdown-toggle:focus, .angled-background-color-white .field--name-field-link
+    .open > a.dropdown-toggle:focus, .angled-background-color-gray .field--name-field-link
+    .open > a.dropdown-toggle:focus, .angled-background-color-secondary .field--name-field-link
     .open > a.dropdown-toggle:focus,
-    .open > .dropdown-toggle.focus.btn-primary, .paragraph-background-image .field--name-field-link
-    .open > a.dropdown-toggle.focus, .paragraph-background-color-white .field--name-field-link
-    .open > a.dropdown-toggle.focus, .paragraph-background-color-secondary .field--name-field-link
+    .open > .dropdown-toggle.focus.btn-primary, .angled-background-image .field--name-field-link
+    .open > a.dropdown-toggle.focus, .angled-background-color-white .field--name-field-link
+    .open > a.dropdown-toggle.focus, .angled-background-color-gray .field--name-field-link
+    .open > a.dropdown-toggle.focus, .angled-background-color-secondary .field--name-field-link
     .open > a.dropdown-toggle.focus {
       color: #fff;
       background-color: #00668b;
       border-color: #000c11; }
-  .btn-primary:active, .paragraph-background-image .field--name-field-link a:active, .paragraph-background-color-white .field--name-field-link a:active, .paragraph-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .paragraph-background-image .field--name-field-link a.active, .paragraph-background-color-white .field--name-field-link a.active, .paragraph-background-color-secondary .field--name-field-link a.active,
-  .open > .dropdown-toggle.btn-primary, .paragraph-background-image .field--name-field-link
-  .open > a.dropdown-toggle, .paragraph-background-color-white .field--name-field-link
-  .open > a.dropdown-toggle, .paragraph-background-color-secondary .field--name-field-link
+  .btn-primary:active, .angled-background-image .field--name-field-link a:active, .angled-background-color-white .field--name-field-link a:active, .angled-background-color-gray .field--name-field-link a:active, .angled-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .angled-background-image .field--name-field-link a.active, .angled-background-color-white .field--name-field-link a.active, .angled-background-color-gray .field--name-field-link a.active, .angled-background-color-secondary .field--name-field-link a.active,
+  .open > .dropdown-toggle.btn-primary, .angled-background-image .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-white .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-gray .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-secondary .field--name-field-link
   .open > a.dropdown-toggle {
     background-image: none; }
-  .disabled.btn-primary:hover, .paragraph-background-image .field--name-field-link a.disabled:hover, .paragraph-background-color-white .field--name-field-link a.disabled:hover, .paragraph-background-color-secondary .field--name-field-link a.disabled:hover, .disabled.btn-primary:focus, .paragraph-background-image .field--name-field-link a.disabled:focus, .paragraph-background-color-white .field--name-field-link a.disabled:focus, .paragraph-background-color-secondary .field--name-field-link a.disabled:focus, .disabled.focus.btn-primary, .paragraph-background-image .field--name-field-link a.disabled.focus, .paragraph-background-color-white .field--name-field-link a.disabled.focus, .paragraph-background-color-secondary .field--name-field-link a.disabled.focus, [disabled].btn-primary:hover, .paragraph-background-image .field--name-field-link a[disabled]:hover, .paragraph-background-color-white .field--name-field-link a[disabled]:hover, .paragraph-background-color-secondary .field--name-field-link a[disabled]:hover, [disabled].btn-primary:focus, .paragraph-background-image .field--name-field-link a[disabled]:focus, .paragraph-background-color-white .field--name-field-link a[disabled]:focus, .paragraph-background-color-secondary .field--name-field-link a[disabled]:focus, [disabled].focus.btn-primary, .paragraph-background-image .field--name-field-link a[disabled].focus, .paragraph-background-color-white .field--name-field-link a[disabled].focus, .paragraph-background-color-secondary .field--name-field-link a[disabled].focus,
+  .disabled.btn-primary:hover, .angled-background-image .field--name-field-link a.disabled:hover, .angled-background-color-white .field--name-field-link a.disabled:hover, .angled-background-color-gray .field--name-field-link a.disabled:hover, .angled-background-color-secondary .field--name-field-link a.disabled:hover, .disabled.btn-primary:focus, .angled-background-image .field--name-field-link a.disabled:focus, .angled-background-color-white .field--name-field-link a.disabled:focus, .angled-background-color-gray .field--name-field-link a.disabled:focus, .angled-background-color-secondary .field--name-field-link a.disabled:focus, .disabled.focus.btn-primary, .angled-background-image .field--name-field-link a.disabled.focus, .angled-background-color-white .field--name-field-link a.disabled.focus, .angled-background-color-gray .field--name-field-link a.disabled.focus, .angled-background-color-secondary .field--name-field-link a.disabled.focus, [disabled].btn-primary:hover, .angled-background-image .field--name-field-link a[disabled]:hover, .angled-background-color-white .field--name-field-link a[disabled]:hover, .angled-background-color-gray .field--name-field-link a[disabled]:hover, .angled-background-color-secondary .field--name-field-link a[disabled]:hover, [disabled].btn-primary:focus, .angled-background-image .field--name-field-link a[disabled]:focus, .angled-background-color-white .field--name-field-link a[disabled]:focus, .angled-background-color-gray .field--name-field-link a[disabled]:focus, .angled-background-color-secondary .field--name-field-link a[disabled]:focus, [disabled].focus.btn-primary, .angled-background-image .field--name-field-link a[disabled].focus, .angled-background-color-white .field--name-field-link a[disabled].focus, .angled-background-color-gray .field--name-field-link a[disabled].focus, .angled-background-color-secondary .field--name-field-link a[disabled].focus,
   fieldset[disabled] .btn-primary:hover,
-  fieldset[disabled] .paragraph-background-image .field--name-field-link a:hover, .paragraph-background-image .field--name-field-link
+  fieldset[disabled] .angled-background-image .field--name-field-link a:hover, .angled-background-image .field--name-field-link
   fieldset[disabled] a:hover,
-  fieldset[disabled] .paragraph-background-color-white .field--name-field-link a:hover, .paragraph-background-color-white .field--name-field-link
+  fieldset[disabled] .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link
   fieldset[disabled] a:hover,
-  fieldset[disabled] .paragraph-background-color-secondary .field--name-field-link a:hover, .paragraph-background-color-secondary .field--name-field-link
+  fieldset[disabled] .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link
+  fieldset[disabled] a:hover,
+  fieldset[disabled] .angled-background-color-secondary .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link
   fieldset[disabled] a:hover,
   fieldset[disabled] .btn-primary:focus,
-  fieldset[disabled] .paragraph-background-image .field--name-field-link a:focus, .paragraph-background-image .field--name-field-link
+  fieldset[disabled] .angled-background-image .field--name-field-link a:focus, .angled-background-image .field--name-field-link
   fieldset[disabled] a:focus,
-  fieldset[disabled] .paragraph-background-color-white .field--name-field-link a:focus, .paragraph-background-color-white .field--name-field-link
+  fieldset[disabled] .angled-background-color-white .field--name-field-link a:focus, .angled-background-color-white .field--name-field-link
   fieldset[disabled] a:focus,
-  fieldset[disabled] .paragraph-background-color-secondary .field--name-field-link a:focus, .paragraph-background-color-secondary .field--name-field-link
+  fieldset[disabled] .angled-background-color-gray .field--name-field-link a:focus, .angled-background-color-gray .field--name-field-link
+  fieldset[disabled] a:focus,
+  fieldset[disabled] .angled-background-color-secondary .field--name-field-link a:focus, .angled-background-color-secondary .field--name-field-link
   fieldset[disabled] a:focus,
   fieldset[disabled] .focus.btn-primary,
-  fieldset[disabled] .paragraph-background-image .field--name-field-link a.focus, .paragraph-background-image .field--name-field-link
+  fieldset[disabled] .angled-background-image .field--name-field-link a.focus, .angled-background-image .field--name-field-link
   fieldset[disabled] a.focus,
-  fieldset[disabled] .paragraph-background-color-white .field--name-field-link a.focus, .paragraph-background-color-white .field--name-field-link
+  fieldset[disabled] .angled-background-color-white .field--name-field-link a.focus, .angled-background-color-white .field--name-field-link
   fieldset[disabled] a.focus,
-  fieldset[disabled] .paragraph-background-color-secondary .field--name-field-link a.focus, .paragraph-background-color-secondary .field--name-field-link
+  fieldset[disabled] .angled-background-color-gray .field--name-field-link a.focus, .angled-background-color-gray .field--name-field-link
+  fieldset[disabled] a.focus,
+  fieldset[disabled] .angled-background-color-secondary .field--name-field-link a.focus, .angled-background-color-secondary .field--name-field-link
   fieldset[disabled] a.focus {
     background-color: #00a5e2;
     border-color: #006990; }
-  .btn-primary .badge, .paragraph-background-image .field--name-field-link a .badge, .paragraph-background-color-white .field--name-field-link a .badge, .paragraph-background-color-secondary .field--name-field-link a .badge {
+  .btn-primary .badge, .angled-background-image .field--name-field-link a .badge, .angled-background-color-white .field--name-field-link a .badge, .angled-background-color-gray .field--name-field-link a .badge, .angled-background-color-secondary .field--name-field-link a .badge {
     color: #00a5e2;
     background-color: #fff; }
 
@@ -4348,7 +4367,9 @@ a.badge:hover, a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-color: #eeeeee; }
-  .jumbotron h1, .jumbotron .heading-h1, .jumbotron .field--name-field-description,
+  .jumbotron h1, .jumbotron .heading-h1, .jumbotron .field--name-field-description, .jumbotron
+  .field--name-field-description p,
+  .field--name-field-description .jumbotron p,
   .jumbotron .h1 {
     color: inherit; }
   .jumbotron p {
@@ -4372,7 +4393,9 @@ a.badge:hover, a.badge:focus {
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
-      .jumbotron h1, .jumbotron .heading-h1, .jumbotron .field--name-field-description,
+      .jumbotron h1, .jumbotron .heading-h1, .jumbotron .field--name-field-description, .jumbotron
+      .field--name-field-description p,
+      .field--name-field-description .jumbotron p,
       .jumbotron .h1 {
         font-size: 72px; } }
 
@@ -4408,7 +4431,9 @@ a.thumbnail.active {
   margin-bottom: 22px;
   border: 1px solid transparent;
   border-radius: 4px; }
-  .alert h4, .alert .heading-h4 {
+  .alert h4, .alert .heading-h4, .alert .paragraph--type--video .field--name-field-description, .paragraph--type--video .alert .field--name-field-description, .alert
+  .paragraph--type--video .field--name-field-description p,
+  .paragraph--type--video .field--name-field-description .alert p {
     margin-top: 0;
     color: inherit; }
   .alert .alert-link {
@@ -8360,8 +8385,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0;
-  padding: 0; }
+  margin: 0; }
 
 .navigation-list {
   display: block;
@@ -8510,7 +8534,8 @@ body {
 .bold, strong {
   font-weight: 700; }
 
-h1, .heading-h1, .field--name-field-description, .heading-h1,
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, .heading-h1,
 h2,
 .heading-h2, .heading-h2,
 h3,
@@ -8519,14 +8544,18 @@ h3,
 .node-list-advanced-title,
 .field--name-field-heading, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
 h4,
-.heading-h4, .heading-h4,
+.heading-h4,
+.paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, .heading-h4,
 h5,
-.heading-h5, .heading-h5,
+.heading-h5,
+.field--name-field-highlighted, .heading-h5,
 h6,
 .heading-h6, .heading-h6,
 .lead {
   font-weight: 500; }
-  h1.light, .light.heading-h1, .light.field--name-field-description, .heading-h1.light,
+  h1.light, .light.heading-h1, .light.field--name-field-description,
+  .field--name-field-description p.light, .heading-h1.light,
   h2.light,
   .light.heading-h2, .heading-h2.light,
   h3.light,
@@ -8535,14 +8564,18 @@ h6,
   .light.node-list-advanced-title,
   .light.field--name-field-heading, .heading-h3.light, .light.node-list-simple-title, .light.node-list-advanced-title,
   h4.light,
-  .light.heading-h4, .heading-h4.light,
+  .light.heading-h4,
+  .paragraph--type--video .light.field--name-field-description,
+  .paragraph--type--video .field--name-field-description p.light, .heading-h4.light,
   h5.light,
-  .light.heading-h5, .heading-h5.light,
+  .light.heading-h5,
+  .light.field--name-field-highlighted, .heading-h5.light,
   h6.light,
   .light.heading-h6, .heading-h6.light,
   .lead.light {
     font-weight: 300; }
-  h1 strong, .heading-h1 strong, .field--name-field-description strong, h1.bold, .bold.heading-h1, .bold.field--name-field-description, .heading-h1 strong, .heading-h1.bold,
+  h1 strong, .heading-h1 strong, .field--name-field-description strong, h1.bold, .bold.heading-h1, .bold.field--name-field-description,
+  .field--name-field-description p.bold, .heading-h1 strong, .heading-h1.bold,
   h2 strong, .heading-h2 strong,
   h2.bold,
   .bold.heading-h2, .heading-h2 strong, .heading-h2.bold,
@@ -8552,12 +8585,15 @@ h6,
   .bold.node-list-simple-title,
   .bold.node-list-advanced-title,
   .bold.field--name-field-heading, .heading-h3 strong, .node-list-simple-title strong, .node-list-advanced-title strong, .heading-h3.bold, .bold.node-list-simple-title, .bold.node-list-advanced-title,
-  h4 strong, .heading-h4 strong,
+  h4 strong, .heading-h4 strong, .paragraph--type--video .field--name-field-description strong,
   h4.bold,
-  .bold.heading-h4, .heading-h4 strong, .heading-h4.bold,
-  h5 strong, .heading-h5 strong,
+  .bold.heading-h4,
+  .paragraph--type--video .bold.field--name-field-description,
+  .paragraph--type--video .field--name-field-description p.bold, .heading-h4 strong, .heading-h4.bold,
+  h5 strong, .heading-h5 strong, .field--name-field-highlighted strong,
   h5.bold,
-  .bold.heading-h5, .heading-h5 strong, .heading-h5.bold,
+  .bold.heading-h5,
+  .bold.field--name-field-highlighted, .heading-h5 strong, .heading-h5.bold,
   h6 strong, .heading-h6 strong,
   h6.bold,
   .bold.heading-h6, .heading-h6 strong, .heading-h6.bold,
@@ -8571,7 +8607,8 @@ span,
 input {
   letter-spacing: 0; }
 
-h1, .heading-h1, .field--name-field-description, .heading-h1,
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, .heading-h1,
 h2,
 .heading-h2, .heading-h2,
 h3,
@@ -8580,9 +8617,12 @@ h3,
 .node-list-advanced-title,
 .field--name-field-heading, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
 h4,
-.heading-h4, .heading-h4,
+.heading-h4,
+.paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, .heading-h4,
 h5,
-.heading-h5, .heading-h5,
+.heading-h5,
+.field--name-field-highlighted, .heading-h5,
 h6,
 .heading-h6, .heading-h6,
 .lead {
@@ -8595,7 +8635,8 @@ span,
 input,
 h1,
 .heading-h1,
-.field--name-field-description, .heading-h1,
+.field--name-field-description,
+.field--name-field-description p, .heading-h1,
 h2,
 .heading-h2, .heading-h2,
 h3,
@@ -8604,9 +8645,12 @@ h3,
 .node-list-advanced-title,
 .field--name-field-heading, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
 h4,
-.heading-h4, .heading-h4,
+.heading-h4,
+.paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, .heading-h4,
 h5,
-.heading-h5, .heading-h5,
+.heading-h5,
+.field--name-field-highlighted, .heading-h5,
 h6,
 .heading-h6, .heading-h6,
 .lead {
@@ -10556,6 +10600,32 @@ p:last-child,
     padding-top: 40px;
     padding-bottom: 60px; } }
 
+.banner {
+  background-color: #fff;
+  position: relative;
+  z-index: 1; }
+  .banner:after {
+    background-color: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .banner:after {
+    bottom: 0;
+    -webkit-transform: skewX(0) skewY(-5deg);
+    -ms-transform: skewX(0) skewY(-5deg);
+    -o-transform: skewX(0) skewY(-5deg);
+    transform: skewX(0) skewY(-5deg);
+    -webkit-transform-origin: 100%;
+        -ms-transform-origin: 100%;
+         -o-transform-origin: 100%;
+            transform-origin: 100%; }
+
 .breadcrumb {
   display: inline-block;
   border: 1px solid #e6e7e7;
@@ -10675,37 +10745,40 @@ p:last-child,
     margin: auto; }
 
 .footer {
+  background-color: #00a5e2;
   border-top: 0;
-  padding-top: 50px; }
+  margin: 0;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1; }
+  .footer:before {
+    background-color: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .footer:before {
+    top: 0;
+    -webkit-transform: skewX(0) skewY(5deg);
+    -ms-transform: skewX(0) skewY(5deg);
+    -o-transform: skewX(0) skewY(5deg);
+    transform: skewX(0) skewY(5deg);
+    -webkit-transform-origin: right top;
+        -ms-transform-origin: right top;
+         -o-transform-origin: right top;
+            transform-origin: right top; }
   .footer .footer-inner {
-    position: relative;
-    z-index: 1;
-    background-color: transparent !important;
     padding-bottom: 0; }
-    .footer .footer-inner:before {
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin-top: -30px;
-      margin-bottom: -110px;
-      min-height: 100%;
-      background-color: #00a5e2;
-      content: '';
-      z-index: -1;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-transform: skewX(0) skewY(5deg);
-      -ms-transform: skewX(0) skewY(5deg);
-      -o-transform: skewX(0) skewY(5deg);
-      transform: skewX(0) skewY(5deg);
-      -webkit-transform-origin: center center;
-          -ms-transform-origin: center center;
-           -o-transform-origin: center center;
-              transform-origin: center center; }
-  .footer .block h1, .footer .block .heading-h1, .footer .block .field--name-field-description, .footer .block h1.block-title, .footer .block .block-title.heading-h1, .footer .block .block-title.field--name-field-description,
+  .footer .block h1, .footer .block .heading-h1, .footer .block .field--name-field-description, .footer .block
+  .field--name-field-description p,
+  .field--name-field-description .footer .block p, .footer .block h1.block-title, .footer .block .block-title.heading-h1, .footer .block .block-title.field--name-field-description, .footer .block
+  .field--name-field-description p.block-title,
+  .field--name-field-description .footer .block p.block-title,
   .footer .block h2,
   .footer .block .heading-h2,
   .footer .block h2.block-title,
@@ -10723,9 +10796,17 @@ p:last-child,
   .footer nav h1,
   .footer nav .heading-h1,
   .footer nav .field--name-field-description,
+  .footer nav
+  .field--name-field-description p,
+  .field--name-field-description
+  .footer nav p,
   .footer nav h1.block-title,
   .footer nav .block-title.heading-h1,
   .footer nav .block-title.field--name-field-description,
+  .footer nav
+  .field--name-field-description p.block-title,
+  .field--name-field-description
+  .footer nav p.block-title,
   .footer nav h2,
   .footer nav .heading-h2,
   .footer nav h2.block-title,
@@ -10775,6 +10856,9 @@ p:last-child,
   .footer-bottom-outer .footer-bottom-social .list-inline {
     margin-bottom: 0; }
 
+.footer {
+  padding-top: 15px; }
+
 .footer-top-outer {
   padding: 20px; }
 
@@ -10782,12 +10866,16 @@ p:last-child,
   padding: 15px 0; }
 
 @media (min-width: 768px) {
+  .footer {
+    padding-top: 30px; }
   .footer-top-outer {
     padding: 25px; }
   .footer-bottom-outer {
     padding: 45px 0; } }
 
 @media (min-width: 992px) {
+  .footer {
+    padding-top: 50px; }
   .footer-top-outer {
     padding: 30px; }
   .footer-bottom-outer {
@@ -10796,7 +10884,13 @@ p:last-child,
 .card .card-title,
 .card .card-title h1,
 .card .card-title .heading-h1,
-.card .card-title .field--name-field-description, .card .card-title h2, .card .card-title .heading-h2, .card .card-title h3, .card .card-title .heading-h3, .card .card-title .node-list-simple-title, .card .card-title .node-list-advanced-title, .card .card-title .field--name-field-heading, .card .card-title h4, .card .card-title .heading-h4, .card .card-title h5, .card .card-title .heading-h5, .card .card-title h6, .card .card-title .heading-h6,
+.card .card-title .field--name-field-description,
+.card .card-title
+.field--name-field-description p,
+.field--name-field-description
+.card .card-title p, .card .card-title h2, .card .card-title .heading-h2, .card .card-title h3, .card .card-title .heading-h3, .card .card-title .node-list-simple-title, .card .card-title .node-list-advanced-title, .card .card-title .field--name-field-heading, .card .card-title h4, .card .card-title .heading-h4, .card .card-title .paragraph--type--video .field--name-field-description, .paragraph--type--video .card .card-title .field--name-field-description, .card .card-title
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .card .card-title p, .card .card-title h5, .card .card-title .heading-h5, .card .card-title .field--name-field-highlighted, .card .card-title h6, .card .card-title .heading-h6,
 .card .card-title .pane-title {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -10851,20 +10945,20 @@ p:last-child,
     border-width: 22px;
     margin-top: -22px; }
 
-.btn-default:before, .paragraph-background-color-primary .field--name-field-link a:before {
+.btn-default:before, .angled-background-color-primary .field--name-field-link a:before {
   background-color: #dbdbdb;
   color: #333; }
 
-.btn-default:after, .paragraph-background-color-primary .field--name-field-link a:after {
+.btn-default:after, .angled-background-color-primary .field--name-field-link a:after {
   border-left-color: #dbdbdb; }
 
-.btn-primary, .paragraph-background-image .field--name-field-link a, .paragraph-background-color-white .field--name-field-link a, .paragraph-background-color-secondary .field--name-field-link a, .btn-primary:hover, .paragraph-background-image .field--name-field-link a:hover, .paragraph-background-color-white .field--name-field-link a:hover, .paragraph-background-color-secondary .field--name-field-link a:hover {
+.btn-primary, .angled-background-image .field--name-field-link a, .angled-background-color-white .field--name-field-link a, .angled-background-color-gray .field--name-field-link a, .angled-background-color-secondary .field--name-field-link a, .btn-primary:hover, .angled-background-image .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link a:hover {
   background-color: #00bcff; }
 
-.btn-primary:before, .paragraph-background-image .field--name-field-link a:before, .paragraph-background-color-white .field--name-field-link a:before, .paragraph-background-color-secondary .field--name-field-link a:before {
+.btn-primary:before, .angled-background-image .field--name-field-link a:before, .angled-background-color-white .field--name-field-link a:before, .angled-background-color-gray .field--name-field-link a:before, .angled-background-color-secondary .field--name-field-link a:before {
   background-color: #00a5e2; }
 
-.btn-primary:after, .paragraph-background-image .field--name-field-link a:after, .paragraph-background-color-white .field--name-field-link a:after, .paragraph-background-color-secondary .field--name-field-link a:after {
+.btn-primary:after, .angled-background-image .field--name-field-link a:after, .angled-background-color-white .field--name-field-link a:after, .angled-background-color-gray .field--name-field-link a:after, .angled-background-color-secondary .field--name-field-link a:after {
   border-left-color: #00a5e2; }
 
 .btn-secondary:before {
@@ -10873,15 +10967,16 @@ p:last-child,
 .btn-secondary:after {
   border-left-color: #b82b00; }
 
-.angled-background-color {
-  padding-top: 30px;
-  padding-bottom: 110px; }
+.angled-background-color,
+.angled-background-image {
+  padding-top: 10px;
+  padding-bottom: 140px; }
 
-.angled-background-color-inner {
+.angled-background-color .angled-background-inner {
   position: relative;
   z-index: 1;
   background-color: transparent !important; }
-  .angled-background-color-inner:before {
+  .angled-background-color .angled-background-inner:before {
     display: block;
     position: absolute;
     content: '';
@@ -10889,8 +10984,8 @@ p:last-child,
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: -30px;
-    margin-bottom: -110px;
+    margin-top: -10px;
+    margin-bottom: -140px;
     min-height: 100%;
     background-color: #fff;
     z-index: -1;
@@ -10905,38 +11000,20 @@ p:last-child,
          -o-transform-origin: center center;
             transform-origin: center center; }
 
-.angled-background-color-white:before {
-  background-color: #fff; }
-
-.angled-background-color-primary:before {
-  background-color: #00a5e2; }
-
-.angled-background-color-secondary:before {
-  background-color: #ff3c00; }
-
-.field--name-field-heading {
-  text-transform: uppercase;
-  font-weight: 800; }
-
-.paragraph-background-color {
-  padding-top: 30px;
-  padding-bottom: 110px; }
-
-.paragraph-background-color-white .paragraph-inner {
+.angled-background-image {
   position: relative;
   z-index: 1;
   background-color: transparent !important; }
-  .paragraph-background-color-white .paragraph-inner:before {
+  .angled-background-image .angled-background-image-wrapper {
     display: block;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: -30px;
-    margin-bottom: -110px;
+    margin-top: -10px;
+    margin-bottom: -140px;
     min-height: 100%;
-    background-color: #fff;
     content: '';
     z-index: -1;
     -webkit-backface-visibility: hidden;
@@ -10949,100 +11026,7 @@ p:last-child,
         -ms-transform-origin: center center;
          -o-transform-origin: center center;
             transform-origin: center center; }
-  .paragraph-background-color-white .paragraph-inner h1, .paragraph-background-color-white .paragraph-inner .heading-h1, .paragraph-background-color-white .paragraph-inner .field--name-field-description, .paragraph-background-color-white .paragraph-inner h2, .paragraph-background-color-white .paragraph-inner .heading-h2, .paragraph-background-color-white .paragraph-inner h3, .paragraph-background-color-white .paragraph-inner .heading-h3, .paragraph-background-color-white .paragraph-inner .node-list-simple-title, .paragraph-background-color-white .paragraph-inner .node-list-advanced-title, .paragraph-background-color-white .paragraph-inner .field--name-field-heading, .paragraph-background-color-white .paragraph-inner h4, .paragraph-background-color-white .paragraph-inner .heading-h4, .paragraph-background-color-white .paragraph-inner h5, .paragraph-background-color-white .paragraph-inner .heading-h5, .paragraph-background-color-white .paragraph-inner h6, .paragraph-background-color-white .paragraph-inner .heading-h6, .paragraph-background-color-white .paragraph-inner p {
-    color: #212121; }
-
-.paragraph-background-color-primary .paragraph-inner {
-  position: relative;
-  z-index: 1;
-  background-color: transparent !important; }
-  .paragraph-background-color-primary .paragraph-inner:before {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: -30px;
-    margin-bottom: -110px;
-    min-height: 100%;
-    background-color: #00a5e2;
-    content: '';
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: skewX(0) skewY(5deg);
-    -ms-transform: skewX(0) skewY(5deg);
-    -o-transform: skewX(0) skewY(5deg);
-    transform: skewX(0) skewY(5deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center; }
-  .paragraph-background-color-primary .paragraph-inner h1, .paragraph-background-color-primary .paragraph-inner .heading-h1, .paragraph-background-color-primary .paragraph-inner .field--name-field-description, .paragraph-background-color-primary .paragraph-inner h2, .paragraph-background-color-primary .paragraph-inner .heading-h2, .paragraph-background-color-primary .paragraph-inner h3, .paragraph-background-color-primary .paragraph-inner .heading-h3, .paragraph-background-color-primary .paragraph-inner .node-list-simple-title, .paragraph-background-color-primary .paragraph-inner .node-list-advanced-title, .paragraph-background-color-primary .paragraph-inner .field--name-field-heading, .paragraph-background-color-primary .paragraph-inner h4, .paragraph-background-color-primary .paragraph-inner .heading-h4, .paragraph-background-color-primary .paragraph-inner h5, .paragraph-background-color-primary .paragraph-inner .heading-h5, .paragraph-background-color-primary .paragraph-inner h6, .paragraph-background-color-primary .paragraph-inner .heading-h6, .paragraph-background-color-primary .paragraph-inner p {
-    color: #fff; }
-
-.paragraph-background-color-secondary .paragraph-inner {
-  position: relative;
-  z-index: 1;
-  background-color: transparent !important; }
-  .paragraph-background-color-secondary .paragraph-inner:before {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: -30px;
-    margin-bottom: -110px;
-    min-height: 100%;
-    background-color: #ff3c00;
-    content: '';
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: skewX(0) skewY(5deg);
-    -ms-transform: skewX(0) skewY(5deg);
-    -o-transform: skewX(0) skewY(5deg);
-    transform: skewX(0) skewY(5deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center; }
-  .paragraph-background-color-secondary .paragraph-inner h1, .paragraph-background-color-secondary .paragraph-inner .heading-h1, .paragraph-background-color-secondary .paragraph-inner .field--name-field-description, .paragraph-background-color-secondary .paragraph-inner h2, .paragraph-background-color-secondary .paragraph-inner .heading-h2, .paragraph-background-color-secondary .paragraph-inner h3, .paragraph-background-color-secondary .paragraph-inner .heading-h3, .paragraph-background-color-secondary .paragraph-inner .node-list-simple-title, .paragraph-background-color-secondary .paragraph-inner .node-list-advanced-title, .paragraph-background-color-secondary .paragraph-inner .field--name-field-heading, .paragraph-background-color-secondary .paragraph-inner h4, .paragraph-background-color-secondary .paragraph-inner .heading-h4, .paragraph-background-color-secondary .paragraph-inner h5, .paragraph-background-color-secondary .paragraph-inner .heading-h5, .paragraph-background-color-secondary .paragraph-inner h6, .paragraph-background-color-secondary .paragraph-inner .heading-h6, .paragraph-background-color-secondary .paragraph-inner p {
-    color: #fff; }
-
-.paragraph-background-image {
-  position: relative;
-  z-index: 1;
-  background-color: transparent !important;
-  padding-top: 30px;
-  padding-bottom: 110px; }
-  .paragraph-background-image .paragraph-background-image-container {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: -30px;
-    margin-bottom: -110px;
-    min-height: 100%;
-    content: '';
-    z-index: -2;
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center;
-    -webkit-transform: skewX(0) skewY(5deg);
-    -ms-transform: skewX(0) skewY(5deg);
-    -o-transform: skewX(0) skewY(5deg);
-    transform: skewX(0) skewY(5deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center; }
-    .paragraph-background-image .paragraph-background-image-container .paragraph-background-image-element {
+    .angled-background-image .angled-background-image-wrapper .angled-background-image-element {
       position: absolute;
       top: 0;
       left: 0;
@@ -11051,12 +11035,81 @@ p:last-child,
       -webkit-background-size: cover;
               background-size: cover;
       z-index: -1; }
-  .paragraph-background-image .paragraph-inner h1, .paragraph-background-image .paragraph-inner .heading-h1, .paragraph-background-image .paragraph-inner .field--name-field-description, .paragraph-background-image .paragraph-inner h2, .paragraph-background-image .paragraph-inner .heading-h2, .paragraph-background-image .paragraph-inner h3, .paragraph-background-image .paragraph-inner .heading-h3, .paragraph-background-image .paragraph-inner .node-list-simple-title, .paragraph-background-image .paragraph-inner .node-list-advanced-title, .paragraph-background-image .paragraph-inner .field--name-field-heading, .paragraph-background-image .paragraph-inner h4, .paragraph-background-image .paragraph-inner .heading-h4, .paragraph-background-image .paragraph-inner h5, .paragraph-background-image .paragraph-inner .heading-h5, .paragraph-background-image .paragraph-inner h6, .paragraph-background-image .paragraph-inner .heading-h6, .paragraph-background-image .paragraph-inner p {
-    color: #fff; }
 
-.field--name-field-description {
+.angled-background-color-white .angled-background-inner:before {
+  background-color: #fff; }
+
+.angled-background-color-gray .angled-background-inner:before {
+  background-color: #f4f5f5; }
+
+.angled-background-color-primary .angled-background-inner:before {
+  background-color: #00a5e2; }
+
+.angled-background-color-secondary .angled-background-inner:before {
+  background-color: #ff3c00; }
+
+.field--name-field-heading {
   text-transform: uppercase;
   font-weight: 800; }
+
+.angled-background-image h1, .angled-background-image .heading-h1, .angled-background-image .field--name-field-description, .angled-background-image
+.field--name-field-description p,
+.field--name-field-description .angled-background-image p, .angled-background-image h2, .angled-background-image .heading-h2, .angled-background-image h3, .angled-background-image .heading-h3, .angled-background-image .node-list-simple-title, .angled-background-image .node-list-advanced-title, .angled-background-image .field--name-field-heading, .angled-background-image h4, .angled-background-image .heading-h4, .angled-background-image .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-image .field--name-field-description, .angled-background-image
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .angled-background-image p, .angled-background-image h5, .angled-background-image .heading-h5, .angled-background-image .field--name-field-highlighted, .angled-background-image h6, .angled-background-image .heading-h6, .angled-background-image p {
+  color: #fff; }
+
+.angled-background-color-white h1, .angled-background-color-white .heading-h1, .angled-background-color-white .field--name-field-description, .angled-background-color-white
+.field--name-field-description p,
+.field--name-field-description .angled-background-color-white p, .angled-background-color-white h2, .angled-background-color-white .heading-h2, .angled-background-color-white h3, .angled-background-color-white .heading-h3, .angled-background-color-white .node-list-simple-title, .angled-background-color-white .node-list-advanced-title, .angled-background-color-white .field--name-field-heading, .angled-background-color-white h4, .angled-background-color-white .heading-h4, .angled-background-color-white .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-white .field--name-field-description, .angled-background-color-white
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .angled-background-color-white p, .angled-background-color-white h5, .angled-background-color-white .heading-h5, .angled-background-color-white .field--name-field-highlighted, .angled-background-color-white h6, .angled-background-color-white .heading-h6, .angled-background-color-white p {
+  color: #212121; }
+
+.angled-background-color-gray h1, .angled-background-color-gray .heading-h1, .angled-background-color-gray .field--name-field-description, .angled-background-color-gray
+.field--name-field-description p,
+.field--name-field-description .angled-background-color-gray p, .angled-background-color-gray h2, .angled-background-color-gray .heading-h2, .angled-background-color-gray h3, .angled-background-color-gray .heading-h3, .angled-background-color-gray .node-list-simple-title, .angled-background-color-gray .node-list-advanced-title, .angled-background-color-gray .field--name-field-heading, .angled-background-color-gray h4, .angled-background-color-gray .heading-h4, .angled-background-color-gray .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-gray .field--name-field-description, .angled-background-color-gray
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .angled-background-color-gray p, .angled-background-color-gray h5, .angled-background-color-gray .heading-h5, .angled-background-color-gray .field--name-field-highlighted, .angled-background-color-gray h6, .angled-background-color-gray .heading-h6, .angled-background-color-gray p {
+  color: #212121; }
+
+.angled-background-color-primary h1, .angled-background-color-primary .heading-h1, .angled-background-color-primary .field--name-field-description, .angled-background-color-primary
+.field--name-field-description p,
+.field--name-field-description .angled-background-color-primary p, .angled-background-color-primary h2, .angled-background-color-primary .heading-h2, .angled-background-color-primary h3, .angled-background-color-primary .heading-h3, .angled-background-color-primary .node-list-simple-title, .angled-background-color-primary .node-list-advanced-title, .angled-background-color-primary .field--name-field-heading, .angled-background-color-primary h4, .angled-background-color-primary .heading-h4, .angled-background-color-primary .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-primary .field--name-field-description, .angled-background-color-primary
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .angled-background-color-primary p, .angled-background-color-primary h5, .angled-background-color-primary .heading-h5, .angled-background-color-primary .field--name-field-highlighted, .angled-background-color-primary h6, .angled-background-color-primary .heading-h6, .angled-background-color-primary p {
+  color: #fff; }
+
+.angled-background-color-secondary h1, .angled-background-color-secondary .heading-h1, .angled-background-color-secondary .field--name-field-description, .angled-background-color-secondary
+.field--name-field-description p,
+.field--name-field-description .angled-background-color-secondary p, .angled-background-color-secondary h2, .angled-background-color-secondary .heading-h2, .angled-background-color-secondary h3, .angled-background-color-secondary .heading-h3, .angled-background-color-secondary .node-list-simple-title, .angled-background-color-secondary .node-list-advanced-title, .angled-background-color-secondary .field--name-field-heading, .angled-background-color-secondary h4, .angled-background-color-secondary .heading-h4, .angled-background-color-secondary .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-secondary .field--name-field-description, .angled-background-color-secondary
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .angled-background-color-secondary p, .angled-background-color-secondary h5, .angled-background-color-secondary .heading-h5, .angled-background-color-secondary .field--name-field-highlighted, .angled-background-color-secondary h6, .angled-background-color-secondary .heading-h6, .angled-background-color-secondary p {
+  color: #fff; }
+
+.field--name-field-description,
+.field--name-field-description p {
+  text-transform: uppercase;
+  font-weight: 800; }
+
+.field--name-field-highlighted {
+  text-transform: uppercase;
+  font-weight: 800; }
+
+.angled-background-image .field--name-field-highlighted {
+  color: #fff; }
+
+.angled-background-color-white .field--name-field-highlighted {
+  color: #ff3c00; }
+
+.angled-background-color-gray .field--name-field-highlighted {
+  color: #ff3c00; }
+
+.angled-background-color-primary .field--name-field-highlighted {
+  color: #ff3c00; }
+
+.angled-background-color-secondary .field--name-field-highlighted {
+  color: #212121; }
 
 .paragraph--type--_-column-action-centered {
   text-align: center; }
@@ -11068,6 +11121,37 @@ p:last-child,
 
 .paragraph--type--list-of-news-teasers .field--name-field-heading {
   margin-bottom: 50px; }
+
+.paragraph--type--video .field--name-field-heading,
+.paragraph--type--video .field--name-field-description {
+  margin-bottom: 40px; }
+
+.paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p {
+  font-weight: 800; }
+
+.paragraph--type--video .field--name-field-highlighted {
+  margin-bottom: 80px; }
+
+.paragraph--type--video.angled-background-image .field--name-field-description,
+.paragraph--type--video.angled-background-image .field--name-field-description p {
+  color: #fff; }
+
+.paragraph--type--video.angled-background-color-white .field--name-field-description,
+.paragraph--type--video.angled-background-color-white .field--name-field-description p {
+  color: #a2a1a1; }
+
+.paragraph--type--video.angled-background-color-gray .field--name-field-description,
+.paragraph--type--video.angled-background-color-gray .field--name-field-description p {
+  color: #a2a1a1; }
+
+.paragraph--type--video.angled-background-color-primary .field--name-field-description,
+.paragraph--type--video.angled-background-color-primary .field--name-field-description p {
+  color: #fff; }
+
+.paragraph--type--video.angled-background-color-secondary .field--name-field-description,
+.paragraph--type--video.angled-background-color-secondary .field--name-field-description p {
+  color: #fff; }
 
 .node-list-simple .node-list-simple-profile-image {
   width: 45px; }

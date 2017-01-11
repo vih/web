@@ -16,6 +16,10 @@ $footer-background-color: $brand-primary;
 $footer-bottom-background-color: #fff;
 
 // Responsive
+$xs-footer-padding-top: 15px;
+$sm-footer-padding-top: 30px;
+$md-footer-padding-top: 50px;
+
 $xs-footer-top-padding-top-bottom: 20px;
 $sm-footer-top-padding-top-bottom: 25px;
 $md-footer-top-padding-top-bottom: 30px;
@@ -30,13 +34,16 @@ $md-footer-bottom-padding-top-bottom: 55px;
 
 // Footer
 .footer {
+  background-color: $footer-background-color;
   border-top: 0;
-  padding-top: 50px;
+  margin: 0;
+  padding-bottom: 0;
+  @include angled_background('before');
 
   .footer-inner {
-    @include angled_background($brand-primary);
     padding-bottom: 0;
   }
+
   .block,
   nav {
 
@@ -139,7 +146,9 @@ $md-footer-bottom-padding-top-bottom: 55px;
 @include media-breakpoint-up(xs) {
 
   // Footer
-  .footer {}
+  .footer {
+    padding-top: $xs-footer-padding-top;
+  }
 
   .footer-top-outer {
     padding: $xs-footer-top-padding-top-bottom;
@@ -161,7 +170,9 @@ $md-footer-bottom-padding-top-bottom: 55px;
 @include media-breakpoint-up(sm) {
 
   // Footer
-  .footer {}
+  .footer {
+    padding-top: $sm-footer-padding-top;
+  }
 
   .footer-top-outer {
     padding: $sm-footer-top-padding-top-bottom;
@@ -183,7 +194,9 @@ $md-footer-bottom-padding-top-bottom: 55px;
 @include media-breakpoint-up(md) {
 
   // Footer
-  .footer {}
+  .footer {
+    padding-top: $md-footer-padding-top;
+  }
 
   .footer-top-outer {
     padding: $md-footer-top-padding-top-bottom;

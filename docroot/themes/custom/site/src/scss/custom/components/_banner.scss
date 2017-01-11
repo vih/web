@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Link
+// | Banner
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .field--name-field-link
+// | - .banner
 // |
 
 // --------------------------------------------------
@@ -14,77 +14,15 @@
 // Styling
 // --------------------------------------------------
 
-// Link
-.field--name-field-link {
-
-  a {
-    @extend .btn;
-  }
+// Banner
+.banner {
+  background-color: #fff;
+  @include angled_background('after');
 }
 
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
-
-// Background image
-.angled-background-image {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// White
-.angled-background-color-white {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// Gray
-.angled-background-color-gray {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// Primary
-.angled-background-color-primary {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-default;
-    }
-  }
-}
-
-// Secondary
-.angled-background-color-secondary {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
 
 // --------------------------------------------------
 // Responsive
@@ -93,76 +31,76 @@
 // Mobile - and up
 @include media-breakpoint-up(xs) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Print
 @media print {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // Touch
 .touchevents {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // No touch
 .no-touchevents {
 
-  // Link
-  .field--name-field-link {}
+  // Banner
+  .banner {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Link mixin
-@mixin field--name-mixin-field-link() {}
+// Banner mixin
+@mixin banner-mixin() {}

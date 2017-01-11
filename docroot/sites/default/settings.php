@@ -764,3 +764,5 @@ $databases['default']['default'] = array (
 );
 $settings['install_profile'] = 'lightning';
 $config_directories['sync'] = '../config/sync';
+
+$settings['twig_tweak_enable_php_filter'] = TRUE;

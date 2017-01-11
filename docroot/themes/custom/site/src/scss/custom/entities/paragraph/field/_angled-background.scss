@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .paragraph-background-color
+// | - .angled-background
 // |
 
 // --------------------------------------------------
@@ -15,51 +15,51 @@
 // --------------------------------------------------
 
 // Background color
-.paragraph-background-image {
-  position: relative;
-  z-index: 1;
-  background-color: transparent !important;
-  padding-top: $paragraph-inner-sizing-top;
-  padding-bottom: $paragraph-inner-sizing-bottom;
-
-  .paragraph-background-image-container {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: -$paragraph-inner-sizing-top;
-    margin-bottom: -$paragraph-inner-sizing-bottom;
-    min-height: 100%;
-    content: '';
-    z-index: -2;
-    transform-origin: center center;
-    @include skew(0, 5deg);
-    transform-origin: center center;
-
-    .paragraph-background-image-element {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-size: cover;
-      z-index: -1;
-    }
-  }
-
-  .paragraph-inner {
-
-    h1, h2, h3, h4, h5, h6, p {
-      color: #fff;
-    }
-  }
-}
+.angled-background {}
 
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
+
+// Image
+.angled-background-image {
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+  }
+}
+
+// White
+.angled-background-color-white {
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: $text-color;
+  }
+}
+
+// Gray
+.angled-background-color-gray {
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: $text-color;
+  }
+}
+
+// Primary
+.angled-background-color-primary {
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+  }
+}
+
+// Secondary
+.angled-background-color-secondary {
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+  }
+}
 
 // --------------------------------------------------
 // Responsive
@@ -69,70 +69,70 @@
 @include media-breakpoint-up(xs) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Print
 @media print {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // Touch
 .touchevents {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // No touch
 .no-touchevents {
 
   // Background color
-  .paragraph-background-color {}
+  .angled-background {}
 }
 
 // --------------------------------------------------

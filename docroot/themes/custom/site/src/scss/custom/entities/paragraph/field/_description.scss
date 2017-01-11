@@ -16,9 +16,13 @@
 
 // Description
 .field--name-field-description {
-  @extend h1;
-  text-transform: uppercase;
-  font-weight: $headings-font-weight-bold;
+
+  &,
+  p {
+    @extend h1;
+    text-transform: uppercase;
+    font-weight: $headings-font-weight-bold;
+  }
 }
 
 // --------------------------------------------------

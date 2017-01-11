@@ -10,42 +10,87 @@
 // Variables
 // --------------------------------------------------
 
-// Angled background color
-$angled-background-color-angle: 5deg;
-$angled-background-color-padding-top: 30px;
-$angled-background-color-padding-bottom: 110px;
+// Angled background
+$angled-background-angle: 5deg;
+$angled-background-padding-top: 10px;
+$angled-background-padding-bottom: 140px;
+
+// Variants
+$angled-background-color-white: #fff;
+$angled-background-color-gray: #f4f5f5;
+$angled-background-color-primary: $brand-primary;
+$angled-background-color-secondary: $brand-secondary;
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-// Angled background color
-.angled-background-color {
-  padding-top: $angled-background-color-padding-top;
-  padding-bottom: $angled-background-color-padding-bottom;
+// Angled background
+.angled-background-color,
+.angled-background-image {
+  padding-top: $angled-background-padding-top;
+  padding-bottom: $angled-background-padding-bottom;
 }
 
-.angled-background-color-inner {
+// Color
+.angled-background-color {
+
+  .angled-background-inner {
+    position: relative;
+    z-index: 1;
+    background-color: transparent !important;
+
+    &:before {
+      display: block;
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-top: -$angled-background-padding-top;
+      margin-bottom: -$angled-background-padding-bottom;
+      min-height: 100%;
+      background-color: #fff;
+      z-index: -1;
+      @include backface-visibility(hidden);
+      @include skew(0, $angled-background-angle);
+      transform-origin: center center;
+    }
+  }
+}
+
+// Image
+.angled-background-image {
   position: relative;
   z-index: 1;
   background-color: transparent !important;
 
-  &:before {
+  .angled-background-image-wrapper {
     display: block;
     position: absolute;
-    content: '';
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: -$angled-background-color-padding-top;
-    margin-bottom: -$angled-background-color-padding-bottom;
+    margin-top: -$angled-background-padding-top;
+    margin-bottom: -$angled-background-padding-bottom;
     min-height: 100%;
-    background-color: #fff;
+    content: '';
     z-index: -1;
     @include backface-visibility(hidden);
-    @include skew(0, $angled-background-color-angle);
+    @include skew(0, $angled-background-angle);
     transform-origin: center center;
+
+    .angled-background-image-element {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      z-index: -1;
+    }
   }
 }
 
@@ -55,22 +100,41 @@ $angled-background-color-padding-bottom: 110px;
 
 .angled-background-color-white {
 
-  &:before {
-    background-color: #fff;
+  .angled-background-inner {
+
+    &:before {
+      background-color: $angled-background-color-white;
+    }
+  }
+}
+
+.angled-background-color-gray {
+
+  .angled-background-inner {
+
+    &:before {
+      background-color: $angled-background-color-gray;
+    }
   }
 }
 
 .angled-background-color-primary {
 
-  &:before {
-    background-color: $brand-primary;
+  .angled-background-inner {
+
+    &:before {
+      background-color: $angled-background-color-primary;
+    }
   }
 }
 
 .angled-background-color-secondary {
 
-  &:before {
-    background-color: $brand-secondary;
+  .angled-background-inner {
+
+    &:before {
+      background-color: $angled-background-color-secondary;
+    }
   }
 }
 

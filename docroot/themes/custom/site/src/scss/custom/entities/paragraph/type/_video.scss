@@ -1,0 +1,190 @@
+// |--------------------------------------------------------------------------
+// | Video
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph--type--video
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Video
+.paragraph--type--video {
+
+  .field--name-field-heading,
+  .field--name-field-description {
+    margin-bottom: 40px;
+  }
+
+  .field--name-field-description {
+
+    &,
+    p {
+      @extend h4;
+      font-weight: $headings-font-weight-bold;
+    }
+  }
+
+  .field--name-field-highlighted {
+    margin-bottom: 80px;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.paragraph--type--video {
+
+  // Background image
+  &.angled-background-image {
+
+    // Description
+    .field--name-field-description {
+
+      &,
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  // White
+  &.angled-background-color-white {
+
+    // Description
+    .field--name-field-description {
+
+      &,
+      p {
+        color: #a2a1a1;
+      }
+    }
+  }
+
+  // Gray
+  &.angled-background-color-gray {
+
+    // Description
+    .field--name-field-description {
+
+      &,
+      p {
+        color: #a2a1a1;
+      }
+    }
+  }
+
+  // Primary
+  &.angled-background-color-primary {
+
+    // Description
+    .field--name-field-description {
+
+      &,
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  // Secondary
+  &.angled-background-color-secondary {
+
+    // Description
+    .field--name-field-description {
+
+      &,
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Print
+@media print {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Touch
+.touchevents {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Video mixin
+@mixin paragraph-type-mixin-column-action-centered() {}

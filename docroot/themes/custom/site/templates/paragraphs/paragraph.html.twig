@@ -8,15 +8,14 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes) }}>
 
     {% if background_image %}
-        <div class="angled-background-image-wrapper">
-            <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
-        </div>
+    <div class="angled-background-image-wrapper">
+        <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+    </div>
     {% endif %}
 
     <div class="angled-background-inner">
         <div class="container">
             {{ content }}
-            {{ embedded_view }}
         </div>
     </div>
 </div>

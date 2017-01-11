@@ -9,6 +9,7 @@ base theme: bellcom
 regions:
   main_navigation: 'Main navigation'
   sidebar_left: 'Sidebar - left'
+  banner: 'Banner'
   header: 'Top Bar'
   highlighted: 'Highlighted'
   help: 'Help'

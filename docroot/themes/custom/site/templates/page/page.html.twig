@@ -97,58 +97,40 @@
 
             <!-- Begin - content inner -->
             <div class="content-inner">
-                <div class="container">
 
-                    {# Header #}
-                    {% if page.header %}
-                        {% block header %}
-                            <div role="heading">
-                                <div class="angled-background-color angled-background-color-white">
-                                    <div class="angled-background-color-inner">
+                {# Banner #}
+                {% if page.banner %}
+                    {% block banner %}
+                        <div class="banner">
+                            {{ page.banner }}
+                        </div>
+                    {% endblock %}
+                {% endif %}
+
+
+                {# Header #}
+                {% if page.header %}
+                    {% block header %}
+                        <div role="heading">
+                            <div class="angled-background-color angled-background-color-white">
+                                <div class="angled-background-inner">
+                                    <div class="container">
                                         {{ page.header }}
                                     </div>
                                 </div>
                             </div>
-                        {% endblock %}
-                    {% endif %}
+                        </div>
+                    {% endblock %}
+                {% endif %}
 
-                    {# Highlighted #}
-                    {% if page.highlighted %}
-                        {% block highlighted %}
+                {# Highlighted #}
+                {% if page.highlighted %}
+                    {% block highlighted %}
+                        <div class="container">
                             <div class="highlighted">{{ page.highlighted }}</div>
-                        {% endblock %}
-                    {% endif %}
-
-                    {# Breadcrumbs #}
-                    {% if breadcrumb %}
-                        {% block breadcrumb %}
-                            <div class="angled-background-color angled-background-color-white">
-                                <div class="angled-background-color-inner">
-                                    {{ breadcrumb }}
-                                </div>
-                            </div>
-                        {% endblock %}
-                    {% endif %}
-
-                    {# Action Links #}
-                    {% if action_links %}
-                        {% block action_links %}
-                            <div class="angled-background-color angled-background-color-white">
-                                <div class="angled-background-color-inner">
-                                    <ul class="action-links">{{ action_links }}</ul>
-                                </div>
-                            </div>
-                        {% endblock %}
-                    {% endif %}
-
-                    {# Help #}
-                    {% if page.help %}
-                        {% block help %}
-                            {{ page.help }}
-                        {% endblock %}
-                    {% endif %}
-
-                </div>
+                        </div>
+                    {% endblock %}
+                {% endif %}
 
                 <!-- Begin - content -->
                 <section{{ content_attributes.addClass(content_classes) }}>
