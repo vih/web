@@ -10875,7 +10875,8 @@ p:last-child,
 
 @media (min-width: 992px) {
   .footer {
-    padding-top: 50px; }
+    padding-top: 50px;
+    margin-top: 300px; }
   .footer-top-outer {
     padding: 30px; }
   .footer-bottom-outer {

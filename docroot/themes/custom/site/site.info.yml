@@ -25,3 +25,6 @@ libraries:
   - 'site/fonts'
   - 'site/styling'
   - 'site/scripts'
+
+#libraries-override:
+#  core/modernizr: false

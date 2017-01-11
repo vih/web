@@ -107,7 +107,6 @@
                     {% endblock %}
                 {% endif %}
 
-
                 {# Header #}
                 {% if page.header %}
                     {% block header %}
@@ -135,9 +134,21 @@
                 <!-- Begin - content -->
                 <section{{ content_attributes.addClass(content_classes) }}>
                     {% block content %}
+                        <!-- Begin - content -->
                         <a id="main-content"></a>
 
-                        {{ page.content }}
+                        {% if node %}
+                            {{ page.content }}
+                        {% else %}
+                            <div class="angled-background-color angled-background-color-white">
+                                <div class="angled-background-inner">
+                                    <div class="container">
+                                        {{ page.content }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <!-- End - content -->
                     {% endblock %}
                 </section>
                 <!-- End - content -->
