@@ -1,99 +1,57 @@
 <!-- Begin - outer wrapper -->
 <div class="outer-wrapper">
 
-    {#<!-- Begin - sidebar left -->#}
-    {#<div class="sidebar sidebar-left">#}
+    <!-- Begin - sidebar -->
+    <div class="sidebar mdl-layout__drawer">
 
-        {#<!-- Begin - inner wrapper -->#}
-        {#<div class="sidebar-inner-wrapper">#}
+        <!-- Begin - title -->
+        <span class="mdl-layout-title">Title</span>
+        <!-- End - title -->
 
-            {#<!-- Begin - logo -->#}
-            {#<div class="sidebar-logo">#}
-                {#<a href="<?php echo $front_page; ?>" class="sidebar-logo-link">#}
-                    {#<img src="<?php echo $path_img . '/logo-sidebar-wide.png'; ?>"#}
-                         {#class="sidebar-logo-image sidebar-logo-image-wide"#}
-                         {#alt="<?php echo $site_name . t(' logo'); ?>"/>#}
-                    {#<img src="<?php echo $path_img . '/logo-sidebar-narrow.png'; ?>"#}
-                         {#class="sidebar-logo-image sidebar-logo-image-narrow"#}
-                         {#alt="<?php echo $site_name . t(' logo'); ?>"/>#}
-                {#</a>#}
-            {#</div>#}
-            {#<!-- End - logo -->#}
+        <!-- Begin - navigation -->
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+        <!-- End - navigation -->
 
-            {#{% if page.sidebar_left %}#}
-                {#{% block sidebar_left %}#}
-                    {#{{ page.sidebar_left }}#}
-                {#{% endblock %}#}
-            {#{% endif %}#}
-
-        {#</div>#}
-        {#<!-- End - inner wrapper -->#}
-
-    {#</div>#}
-    {#<!-- End - sidebar left -->#}
+    </div>
+    <!-- End - sidebar -->
 
     <!-- Begin - inner wrapper -->
-    <div class="inner-wrapper" role="document">
+    <main class="inner-wrapper" role="document">
 
-        {#<!-- Begin - simple navigation -->#}
-        {#<nav class="navigation-bar">#}
+        <!-- Begin - navigation -->
+        <header class="header mdl-layout__header">
+            <div class="mdl-layout__header-row">
 
-            {#<!-- Begin - button list -->#}
-            {#<ul class="navigation-bar-list navigation-bar-list-left">#}
+                <!-- Begin - title -->
+                <span class="mdl-layout-title">Title</span>
+                <!-- End - title -->
 
-                {#<!-- Begin - button -->#}
-                {#<li class="navigation-bar-button">#}
-                    {#<a href="#" data-sidebar-toggle="left"><span class="fa icon fa-bars"></span></a>#}
-                {#</li>#}
-                {#<!-- End - button -->#}
+                <!-- Begin - spacer -->
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- End - spacer -->
 
-            {#</ul>#}
-            {#<!-- End - button list -->#}
+                <!-- Begin - navigation -->
+                <!-- We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+                <!-- End - navigation -->
 
-            {#<!-- Begin - logo -->#}
-            {#<a href="<?php echo $front_page; ?>" class="navigation-bar-logo-link">#}
-                {#<img src="<?php echo $path_img . '/logo-navigation-bar.png'; ?>" class="navigation-bar-logo-image"#}
-                     {#alt="<?php echo t('fredericia.dk logo'); ?>"/>#}
-            {#</a>#}
-            {#<!-- End - logo -->#}
-
-        {#</nav>#}
-        {#<!-- End - simple navigation -->#}
+            </div>
+        </header>
+        <!-- End - navigation -->
 
         <!-- Begin - content -->
         <div class="content">
-
-            {#<!-- Begin - main navigation -->#}
-            {#<nav class="main-navigation-wrapper">#}
-                {#<section class="main-navigation-bar">#}
-                    {#<div class="container">#}
-                        {#<div class="row">#}
-
-                            {#<!-- Begin - content -->#}
-                            {#<div class="col-md-4">#}
-                                {#<a href="<?php echo $front_page; ?>" class="main-navigation-logo-link">#}
-                                    {#<img src="<?php echo $path_img; ?>/logo-main-navigation.png" alt="" class="main-navigation-logo-image">#}
-                                {#</a>#}
-                            {#</div>#}
-                            {#<!-- End - content -->#}
-
-                            {#{% if page.main_navigation %}#}
-                                {#<!-- Begin - content -->#}
-                                {#{% block main_navigation %}#}
-                                    {#<div class="col-md-8 main-navigation-right">#}
-                                        {#<!-- Begin - navigation -->#}
-                                        {#{{ page.main_navigation }}#}
-                                        {#<!-- End - navigation -->#}
-                                    {#</div>#}
-                                {#{% endblock %}#}
-                                {#<!-- End - content -->#}
-                            {#{% endif %}#}
-
-                        {#</div>#}
-                    {#</div>#}
-                {#</section>#}
-            {#</nav>#}
-            {#<!-- End - main navigation -->#}
 
             {# Banner #}
             {% if page.banner %}
@@ -104,48 +62,42 @@
                 {% endblock %}
             {% endif %}
 
-            <!-- Begin - content inner -->
-            <div class="content-inner">
-
-                {# Header #}
-                {% if page.header %}
-                    {% block header %}
-                        <div role="heading">
-                            <div class="angled-background-color angled-background-color-white">
-                                <div class="angled-background-inner">
-                                    <div class="container">
-                                        {{ page.header }}
-                                    </div>
+            {# Header #}
+            {% if page.header %}
+                {% block header %}
+                    <div role="heading">
+                        <div class="angled-background-color angled-background-color-white">
+                            <div class="angled-background-inner">
+                                <div class="container">
+                                    {{ page.header }}
                                 </div>
                             </div>
                         </div>
-                    {% endblock %}
-                {% endif %}
+                    </div>
+                {% endblock %}
+            {% endif %}
 
-                <!-- Begin - content -->
-                <section{{ content_attributes.addClass(content_classes) }}>
-                    {% block content %}
-                        <!-- Begin - content -->
-                        <a id="main-content"></a>
+            <!-- Begin - content -->
+            <section{{ content_attributes.addClass(content_classes) }}>
+                {% block content %}
+                    <!-- Begin - content -->
+                    <a id="main-content"></a>
 
-                        {% if node %}
-                            {{ page.content }}
-                        {% else %}
-                            <div class="angled-background-color angled-background-color-white">
-                                <div class="angled-background-inner">
-                                    <div class="container">
-                                        {{ page.content }}
-                                    </div>
+                    {% if node %}
+                        {{ page.content }}
+                    {% else %}
+                        <div class="angled-background-color angled-background-color-white">
+                            <div class="angled-background-inner">
+                                <div class="container">
+                                    {{ page.content }}
                                 </div>
                             </div>
-                        {% endif %}
-                        <!-- End - content -->
-                    {% endblock %}
-                </section>
-                <!-- End - content -->
-
-            </div>
-            <!-- End - content inner -->
+                        </div>
+                    {% endif %}
+                    <!-- End - content -->
+                {% endblock %}
+            </section>
+            <!-- End - content -->
 
         </div>
         <!-- End - content -->
@@ -221,7 +173,7 @@
         </footer>
         <!-- End - footer -->
 
-    </div>
+    </main>
     <!-- End - inner wrapper -->
 
 </div>
