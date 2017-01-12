@@ -95,17 +95,17 @@
             </nav>
             <!-- End - main navigation -->
 
+            {# Banner #}
+            {% if page.banner %}
+                {% block banner %}
+                    <div class="banner">
+                        {{ page.banner }}
+                    </div>
+                {% endblock %}
+            {% endif %}
+
             <!-- Begin - content inner -->
             <div class="content-inner">
-
-                {# Banner #}
-                {% if page.banner %}
-                    {% block banner %}
-                        <div class="banner">
-                            {{ page.banner }}
-                        </div>
-                    {% endblock %}
-                {% endif %}
 
                 {# Header #}
                 {% if page.header %}

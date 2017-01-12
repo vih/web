@@ -16,8 +16,24 @@
 
 // Banner
 .banner {
+  position: relative;
   background-color: #fff;
   @include angled_background('after');
+
+  h1, h2, h3, h4, h5, h6,
+  .block-title {
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 40%;
+    @extend h1;
+    color: #fff;
+    font-weight: $headings-font-weight-bold;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // --------------------------------------------------
