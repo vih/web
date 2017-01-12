@@ -9,10 +9,10 @@
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function site_preprocess_html(array &$variables) {
- $variables['attributes']['class'][] = 'navigation-bar-enabled-xs';
- $variables['attributes']['class'][] = 'sidebar-left-enabled-xs';
- $variables['attributes']['class'][] = 'sidebar-left-hidden-xs';
- $variables['attributes']['class'][] = 'sidebar-left-content-push-xs';
+// $variables['attributes']['class'][] = 'navigation-bar-enabled-xs';
+// $variables['attributes']['class'][] = 'sidebar-left-enabled-xs';
+// $variables['attributes']['class'][] = 'sidebar-left-hidden-xs';
+// $variables['attributes']['class'][] = 'sidebar-left-content-push-xs';
 }
 
 /**

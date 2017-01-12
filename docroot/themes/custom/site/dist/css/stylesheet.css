@@ -8389,9 +8389,7 @@ body,
 
 body {
   overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0;
-  margin: 0; }
+  overflow-x: hidden; }
 
 .outer-wrapper,
 .inner-wrapper {
@@ -8403,31 +8401,29 @@ body {
      -moz-box-sizing: border-box;
           box-sizing: border-box; }
 
-.inner-wrapper {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background-color: #fff; }
-
 .outer-wrapper {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: strech;
-  -webkit-align-items: strech;
-      -ms-flex-align: strech;
-          align-items: strech;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   min-height: 100%; }
 
 .inner-wrapper {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  background-color: #fff; }
 
 .content {
   -webkit-box-flex: 1;
@@ -8638,6 +8634,78 @@ h6,
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   font-smoothing: antialiased; }
+
+.sidebar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 100%;
+  max-height: 100%;
+  width: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border-right: 1px solid blue;
+  background: #000;
+  -webkit-transform: translateX(-250px);
+      -ms-transform: translateX(-250px);
+       -o-transform: translateX(-250px);
+          transform: translateX(-250px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  -webkit-transition-property: -webkit-transform;
+       -o-transition-property: -o-transform;
+          transition-property: transform;
+  color: #fff;
+  overflow: visible;
+  overflow-y: auto;
+  z-index: 5; }
+  .sidebar.is-visible {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+         -o-transform: translateX(0);
+            transform: translateX(0); }
+
+.obfuscator {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  visibility: hidden;
+  -webkit-transition-property: background-color;
+       -o-transition-property: background-color;
+          transition-property: background-color; }
+  .obfuscator.is-visible {
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: visible; }
+  @supports (pointer-events: auto) {
+    .obfuscator {
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      -webkit-transition-property: opacity;
+           -o-transition-property: opacity;
+              transition-property: opacity;
+      visibility: visible;
+      pointer-events: none; }
+      .obfuscator.is-visible {
+        pointer-events: auto;
+        opacity: 1; } }
 
 .dived-table {
   display: table;
