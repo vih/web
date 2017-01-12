@@ -11,8 +11,6 @@ regions:
   sidebar_left: 'Sidebar - left'
   banner: 'Banner'
   header: 'Top Bar'
-  highlighted: 'Highlighted'
-  help: 'Help'
   content: 'Content'
   footer_top_first: 'Footer top - first'
   footer_top_second: 'Footer top - second'
