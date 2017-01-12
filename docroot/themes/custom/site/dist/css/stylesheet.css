@@ -10697,6 +10697,8 @@ p:last-child,
     right: 0;
     margin-left: auto;
     margin-right: auto; }
+  .banner img {
+    min-width: 100%; }
 
 .breadcrumb {
   display: inline-block;
@@ -11112,11 +11114,6 @@ p:last-child,
 .btn-secondary:after {
   border-left-color: #b82b00; }
 
-.angled-background-color,
-.angled-background-image {
-  padding-top: 10px;
-  padding-bottom: 140px; }
-
 .angled-background-color .angled-background-inner {
   position: relative;
   z-index: 1;
@@ -11129,8 +11126,6 @@ p:last-child,
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: -10px;
-    margin-bottom: -140px;
     min-height: 100%;
     background-color: #fff;
     z-index: -1;
@@ -11156,8 +11151,6 @@ p:last-child,
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: -10px;
-    margin-bottom: -140px;
     min-height: 100%;
     content: '';
     z-index: -1;
@@ -11192,6 +11185,55 @@ p:last-child,
 
 .angled-background-color-secondary .angled-background-inner:before {
   background-color: #ff3c00; }
+
+.angled-background-color,
+.angled-background-image {
+  padding-top: 10px;
+  padding-bottom: 50px; }
+
+.angled-background-color .angled-background-inner:before {
+  margin-top: -10px;
+  margin-bottom: -50px; }
+
+.angled-background-image .angled-background-image-wrapper {
+  margin-top: -10px;
+  margin-bottom: -50px; }
+
+@media (min-width: 768px) {
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: 10px;
+    padding-bottom: 70px; }
+  .angled-background-color .angled-background-inner:before {
+    margin-top: -10px;
+    margin-bottom: -70px; }
+  .angled-background-image .angled-background-image-wrapper {
+    margin-top: -10px;
+    margin-bottom: -70px; } }
+
+@media (min-width: 992px) {
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: 10px;
+    padding-bottom: 140px; }
+  .angled-background-color .angled-background-inner:before {
+    margin-top: -10px;
+    margin-bottom: -140px; }
+  .angled-background-image .angled-background-image-wrapper {
+    margin-top: -10px;
+    margin-bottom: -140px; } }
+
+@media (min-width: 1200px) {
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: 10px;
+    padding-bottom: 140px; }
+  .angled-background-color .angled-background-inner:before {
+    margin-top: -10px;
+    margin-bottom: -140px; }
+  .angled-background-image .angled-background-image-wrapper {
+    margin-top: -10px;
+    margin-bottom: -140px; } }
 
 .field--name-field-heading {
   text-transform: uppercase;
@@ -11269,10 +11311,24 @@ p:last-child,
 .paragraph--type--_-column-action-centered {
   text-align: center; }
   .paragraph--type--_-column-action-centered .field--name-field-heading {
-    text-align: left;
-    margin-bottom: 100px; }
+    text-align: left; }
   .paragraph--type--_-column-action-centered .field--name-field-description + .field--name-field-link {
     margin-top: 40px; }
+
+.paragraph--type--_-column-action-centered .field--name-field-heading {
+  margin-bottom: 30px; }
+
+@media (min-width: 768px) {
+  .paragraph--type--_-column-action-centered .field--name-field-heading {
+    margin-bottom: 50px; } }
+
+@media (min-width: 992px) {
+  .paragraph--type--_-column-action-centered .field--name-field-heading {
+    margin-bottom: 90px; } }
+
+@media (min-width: 1200px) {
+  .paragraph--type--_-column-action-centered .field--name-field-heading {
+    margin-bottom: 100px; } }
 
 .paragraph--type--list-of-news-teasers .field--name-field-heading {
   margin-bottom: 50px; }
