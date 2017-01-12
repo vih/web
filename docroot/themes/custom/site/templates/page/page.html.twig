@@ -1,14 +1,14 @@
 <!-- Begin - outer wrapper -->
 <div class="outer-wrapper">
 
-    <!-- Begin - sidebar left -->
-    <div class="sidebar sidebar-left">
+    {#<!-- Begin - sidebar left -->#}
+    {#<div class="sidebar sidebar-left">#}
 
-        <!-- Begin - inner wrapper -->
-        <div class="sidebar-inner-wrapper">
+        {#<!-- Begin - inner wrapper -->#}
+        {#<div class="sidebar-inner-wrapper">#}
 
-            <!-- Begin - logo -->
-            <div class="sidebar-logo">
+            {#<!-- Begin - logo -->#}
+            {#<div class="sidebar-logo">#}
                 {#<a href="<?php echo $front_page; ?>" class="sidebar-logo-link">#}
                     {#<img src="<?php echo $path_img . '/logo-sidebar-wide.png'; ?>"#}
                          {#class="sidebar-logo-image sidebar-logo-image-wide"#}
@@ -17,83 +17,83 @@
                          {#class="sidebar-logo-image sidebar-logo-image-narrow"#}
                          {#alt="<?php echo $site_name . t(' logo'); ?>"/>#}
                 {#</a>#}
-            </div>
-            <!-- End - logo -->
+            {#</div>#}
+            {#<!-- End - logo -->#}
 
-            {% if page.sidebar_left %}
-                {% block sidebar_left %}
-                    {{ page.sidebar_left }}
-                {% endblock %}
-            {% endif %}
+            {#{% if page.sidebar_left %}#}
+                {#{% block sidebar_left %}#}
+                    {#{{ page.sidebar_left }}#}
+                {#{% endblock %}#}
+            {#{% endif %}#}
 
-        </div>
-        <!-- End - inner wrapper -->
+        {#</div>#}
+        {#<!-- End - inner wrapper -->#}
 
-    </div>
-    <!-- End - sidebar left -->
+    {#</div>#}
+    {#<!-- End - sidebar left -->#}
 
     <!-- Begin - inner wrapper -->
     <div class="inner-wrapper" role="document">
 
-        <!-- Begin - simple navigation -->
-        <nav class="navigation-bar">
+        {#<!-- Begin - simple navigation -->#}
+        {#<nav class="navigation-bar">#}
 
-            <!-- Begin - button list -->
-            <ul class="navigation-bar-list navigation-bar-list-left">
+            {#<!-- Begin - button list -->#}
+            {#<ul class="navigation-bar-list navigation-bar-list-left">#}
 
-                <!-- Begin - button -->
-                <li class="navigation-bar-button">
-                    <a href="#" data-sidebar-toggle="left"><span class="fa icon fa-bars"></span></a>
-                </li>
-                <!-- End - button -->
+                {#<!-- Begin - button -->#}
+                {#<li class="navigation-bar-button">#}
+                    {#<a href="#" data-sidebar-toggle="left"><span class="fa icon fa-bars"></span></a>#}
+                {#</li>#}
+                {#<!-- End - button -->#}
 
-            </ul>
-            <!-- End - button list -->
+            {#</ul>#}
+            {#<!-- End - button list -->#}
 
-            <!-- Begin - logo -->
+            {#<!-- Begin - logo -->#}
             {#<a href="<?php echo $front_page; ?>" class="navigation-bar-logo-link">#}
                 {#<img src="<?php echo $path_img . '/logo-navigation-bar.png'; ?>" class="navigation-bar-logo-image"#}
                      {#alt="<?php echo t('fredericia.dk logo'); ?>"/>#}
             {#</a>#}
-            <!-- End - logo -->
+            {#<!-- End - logo -->#}
 
-        </nav>
-        <!-- End - simple navigation -->
+        {#</nav>#}
+        {#<!-- End - simple navigation -->#}
 
         <!-- Begin - content -->
         <div class="content">
 
-            <!-- Begin - main navigation -->
-            <nav class="main-navigation-wrapper">
-                <section class="main-navigation-bar">
-                    <div class="container">
-                        <div class="row">
+            {#<!-- Begin - main navigation -->#}
+            {#<nav class="main-navigation-wrapper">#}
+                {#<section class="main-navigation-bar">#}
+                    {#<div class="container">#}
+                        {#<div class="row">#}
 
-                            <!-- Begin - content -->
-                            <div class="col-md-4">
+                            {#<!-- Begin - content -->#}
+                            {#<div class="col-md-4">#}
                                 {#<a href="<?php echo $front_page; ?>" class="main-navigation-logo-link">#}
                                     {#<img src="<?php echo $path_img; ?>/logo-main-navigation.png" alt="" class="main-navigation-logo-image">#}
                                 {#</a>#}
-                            </div>
-                            <!-- End - content -->
+                            {#</div>#}
+                            {#<!-- End - content -->#}
 
-                            {% if page.main_navigation %}
-                                <!-- Begin - content -->
-                                {% block main_navigation %}
-                                    <div class="col-md-8 main-navigation-right">
-                                        <!-- Begin - navigation -->
-                                        {{ page.main_navigation }}
-                                        <!-- End - navigation -->
-                                    </div>
-                                {% endblock %}
-                                <!-- End - content -->
-                            {% endif %}
+                            {#{% if page.main_navigation %}#}
+                                {#<!-- Begin - content -->#}
+                                {#{% block main_navigation %}#}
+                                    {#<div class="col-md-8 main-navigation-right">#}
+                                        {#<!-- Begin - navigation -->#}
+                                        {#{{ page.main_navigation }}#}
+                                        {#<!-- End - navigation -->#}
+                                    {#</div>#}
+                                {#{% endblock %}#}
+                                {#<!-- End - content -->#}
+                            {#{% endif %}#}
 
-                        </div>
-                    </div>
-                </section>
-            </nav>
-            <!-- End - main navigation -->
+                        {#</div>#}
+                    {#</div>#}
+                {#</section>#}
+            {#</nav>#}
+            {#<!-- End - main navigation -->#}
 
             {# Banner #}
             {% if page.banner %}
