@@ -11,6 +11,7 @@ styling:
 scripts:
   js:
     dist/js/core.js: {}
+    http://127.0.0.1:35729/livereload.js: { type: external }
   dependencies:
     - core/drupal
     - core/modernizr

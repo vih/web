@@ -2,7 +2,7 @@
 (function ($) {
     'use strict';
 
-    // Enable BS3 sidebar
-    bs3Sidebar.init();
+    // Enable layout
+    layout.init();
 
 })(jQuery);

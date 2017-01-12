@@ -234,176 +234,63 @@
 // | This jQuery script is written by
 // | Morten Nissen
 // |
-var bs3Sidebar = (function ($) {
-  'use strict';
+var layout = (function ($) {
+    'use strict';
 
-  var pub = {};
+    var pub = {};
 
-  /**
-   * Instantiate
-   */
-  pub.init = function (options) {
-    registerEventHandlers();
-    registerBootEventHandlers();
-  }
-
-  /**
-   * Register event handlers
-   */
-  function registerEventHandlers() {
-
-    // Toggle sidebar
-    $('[data-sidebar-toggle]').on('click touchstart', function (event) {
-      event.preventDefault();
-
-      var $element = $(this);
-
-      toggleSidebar($element);
-    });
-
-    // Toggle dropdown
-    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click touchstart', function (event) {
-      event.preventDefault();
-
-      var $element = $(this);
-
-      toggleDropdown($element);
-    });
-  }
-
-  /**
-   * Register boot event handlers
-   */
-  function registerBootEventHandlers() {
-  }
-
-  /**
-   * Toggle sidebar
-   */
-  function toggleSidebar($element) {
-    var $body = $('body');
-    var attribute = $element.attr('data-sidebar-toggle');
-
-    if (attribute != 'left' && attribute != 'right') {
-      return false;
-    }
-
-    if (attribute == 'left' && $body.hasClass('sidebar-right-open')) {
-      $body.removeClass('sidebar-right-open');
-    }
-
-    if (attribute == 'right' && $body.hasClass('sidebar-left-open')) {
-      $body.removeClass('sidebar-left-open');
-    }
-
-    $body.toggleClass('sidebar-' + attribute + '-open');
-  }
-
-  /**
-   * Toggle dropdown
-   */
-  function toggleDropdown($element) {
-    var $parent = $element.parent().parent();
-    var parentIsActive = $parent.hasClass('active') || $parent.hasClass('active-trail') ? true : false;
-
-    if (parentIsActive) {
-      closeDropdown($parent);
-    }
-
-    else {
-      openDropdown($parent);
-    }
-  }
-
-  /**
-   * Open dropdown
-   */
-  function openDropdown($parent) {
-    var $dropdownMenu = $parent.find('> .sidebar-navigation-dropdown-menu');
-    var dropdownMenuHeight = $dropdownMenu.outerHeight(true);
-    var preAnimationCSS = { opacity: 0.1, height: 0, top: -20 };
-    var animationCSS = { opacity: 1, height: dropdownMenuHeight, top: 0 };
-    var callbackFunction = function () {
-      $dropdownMenu.attr('style', '');
+    /**
+     * Instantiate
+     */
+    pub.init = function (options) {
+        registerEventHandlers();
+        registerBootEventHandlers();
     };
 
-    closeAllDropdownMenus($parent);
+    /**
+     * Register event handlers
+     */
+    function registerEventHandlers() {
 
-    $parent.addClass('active');
+        // Toggle drawer
+        $('[data-toggle-drawer], .layout-obfuscator').on('click touchstart', function(event) {
+            event.preventDefault();
+            var $element = $(this);
 
-    $dropdownMenu
-      .addClass('active')
-      .css(preAnimationCSS);
+            toggleDrawer($element);
+        });
+    }
 
-    dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction);
-  }
+    /**
+     * Register boot event handlers
+     */
+    function registerBootEventHandlers() {
 
-  /**
-   * Close dropdown
-   */
-  function closeDropdown($parent) {
-    var $dropdownMenu = $parent.find('> .sidebar-navigation-dropdown-menu');
-    var animationCSS = { height: 0, opacity: 0.1 };
-    var callbackFunction = function () {
+    }
 
-      // Remove all active class' from dropdown menu and all child elements with active states
-      $dropdownMenu
-        .removeClass('active')
-        .attr('style', '')
-        .find('.active:not(a)')
-        .removeClass('active')
-        .attr('style', '');
+    function toggleDrawer($element) {
+        var $obfuscator = $('.layout-obfuscator'),
+            $drawer = $('.layout-drawer'),
+            drawer_status = ($drawer.hasClass('is-visible')) ? 'open' : 'closed',
+            aria_hidden_status = (drawer_status == 'open') ? false : true;
 
-      $dropdownMenu
-        .removeClass('active-trail')
-        .attr('style', '')
-        .find('.active-trail:not(a)')
-        .removeClass('active-trail')
-        .attr('style', '');
-    };
+        // Toggle visible state
+        $obfuscator.toggleClass('is-visible');
+        $drawer.toggleClass('is-visible');
 
-    $parent
-      .removeClass('active')
-      .removeClass('active-trail');
+        // Alter aria-hidden status
+        $drawer.attr('aria-hidden', aria_hidden_status);
+    }
 
-    dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction);
-  }
-
-  /**
-   * Close all dropdown menus
-   */
-  function closeAllDropdownMenus($parent) {
-    $parent
-      .siblings('.sidebar-navigation-dropdown.active, .sidebar-navigation-dropdown.active-trail')
-      .each(function () {
-        var $element = $(this);
-
-        closeDropdown($element);
-      });
-  }
-
-  /**
-   * Dropdown menu animated toggle
-   */
-  function dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction) {
-    $dropdownMenu.animate(
-      animationCSS,
-      {
-        duration: 400,
-        easing  : 'easeOutSine',
-        complete: callbackFunction
-      });
-  }
-
-  return pub;
+    return pub;
 })(jQuery);
 
 // Document ready
 (function ($) {
     'use strict';
 
-    // Enable BS3 sidebar
-    bs3Sidebar.init();
+    // Enable layout
+    layout.init();
 
 })(jQuery);
 

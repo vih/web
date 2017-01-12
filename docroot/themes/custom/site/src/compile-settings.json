@@ -14,7 +14,7 @@
   "concat": {
     "core": [
       "src/vendor/jquery-sticky/jquery.sticky.js",
-      "src/vendor/bs3-sidebar/js/bs3-sidebar.js",
+      "src/js/layout.js",
       "src/js/init.js"
     ]
   }
