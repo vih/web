@@ -1,6 +1,6 @@
 uuid: d2e61b59-9acb-4199-97e1-0c5937e89420
 langcode: da
-status: true
+status: false
 dependencies:
   module:
     - help
@@ -10,7 +10,7 @@ _core:
   default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
 id: site_help
 theme: site
-region: help
+region: '-1'
 weight: -8
 provider: null
 plugin: help_block

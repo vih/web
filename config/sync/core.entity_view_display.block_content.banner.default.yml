@@ -13,12 +13,12 @@ bundle: banner
 mode: default
 content:
   field_image:
-    weight: 1
+    type: image
+    weight: 0
     label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
 hidden:
   langcode: true
