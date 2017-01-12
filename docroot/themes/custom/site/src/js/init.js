@@ -5,7 +5,7 @@
     // Enable page layout
     pageLayout.init();
 
-    // Enable header
-    //header.init();
+    // Enable BS3 sidebar
+    bs3Sidebar.init();
 
 })(jQuery);
