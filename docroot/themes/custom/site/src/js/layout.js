@@ -10,7 +10,12 @@
 var layout = (function ($) {
     'use strict';
 
-    var pub = {};
+    var pub = {},
+        $wrapper = $('.layout-wrapper'),
+        $drawer = $('.layout-drawer'),
+        $header = $('.layout-header'),
+        $obfuscator = $('.layout-obfuscator'),
+        $document = $('.layout-document');
 
     /**
      * Instantiate
@@ -21,30 +26,32 @@ var layout = (function ($) {
     };
 
     /**
+     * Register boot event handlers
+     */
+    function registerBootEventHandlers() {}
+
+    /**
      * Register event handlers
      */
     function registerEventHandlers() {
 
         // Toggle drawer
-        $('[data-toggle-drawer], .layout-obfuscator').on('click touchstart', function(event) {
+        $('[data-toggle-drawer]').on('click touchstart', function(event) {
             event.preventDefault();
             var $element = $(this);
 
             toggleDrawer($element);
         });
+
+        // Waterfall header
+        waterfallHeader();
     }
 
     /**
-     * Register boot event handlers
+     * Toggle drawer
      */
-    function registerBootEventHandlers() {
-
-    }
-
     function toggleDrawer($element) {
-        var $obfuscator = $('.layout-obfuscator'),
-            $drawer = $('.layout-drawer'),
-            drawer_status = ($drawer.hasClass('is-visible')) ? 'open' : 'closed',
+        var drawer_status = ($drawer.hasClass('is-visible')) ? 'open' : 'closed',
             aria_hidden_status = (drawer_status == 'open') ? false : true;
 
         // Toggle visible state
@@ -53,6 +60,12 @@ var layout = (function ($) {
 
         // Alter aria-hidden status
         $drawer.attr('aria-hidden', aria_hidden_status);
+    }
+
+    /**
+     * Waterfall header
+      */
+    function waterfallHeader() {
     }
 
     return pub;

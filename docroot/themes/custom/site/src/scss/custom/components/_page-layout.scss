@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .content-inner
+// | - .layout-content-inner
 // |
 
 // --------------------------------------------------
@@ -24,7 +24,7 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 // --------------------------------------------------
 
 // Page layout
-.content {}
+.layout-content {}
 
 // --------------------------------------------------
 // Variants
@@ -38,7 +38,7 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 @include media-breakpoint-up(xs) {
 
   // Page layout
-  .content-inner {
+  .layout-content-inner {
     padding-top: $xs-page-layout-content-inner-padding-top;
     padding-bottom: $xs-page-layout-content-inner-padding-bottom;
   }
@@ -48,14 +48,14 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 @include media-breakpoint-only(xs) {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
   // Page layout
-  .content-inner {
+  .layout-content-inner {
     padding-top: $sm-page-layout-content-inner-padding-top;
     padding-bottom: $sm-page-layout-content-inner-padding-bottom;
   }
@@ -65,14 +65,14 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 @include media-breakpoint-only(sm) {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
   // Page layout
-  .content-inner {
+  .layout-content-inner {
     padding-top: $md-page-layout-content-inner-padding-top;
     padding-bottom: $md-page-layout-content-inner-padding-bottom;
   }
@@ -82,35 +82,35 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 @include media-breakpoint-only(md) {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // Print
 @media print {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // Touch
 .touchevents {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // No touch
 .no-touchevents {
 
   // Page layout
-  .content-inner {}
+  .layout-content-inner {}
 }
 
 // --------------------------------------------------

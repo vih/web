@@ -59,42 +59,21 @@ module.exports = function (grunt) {
             }
         },
 
-        modernizr: {
-            core: {
-                "cache": true,
-                "devFile": false,
-                "parseFiles": true,
-                "uglify": false,
-                "customTests": [],
-                "tests": [],
-                "options": [
-                    "setClasses"
-                ],
-                "excludeTests": [
-                    'hidden',
-                ],
-                "files": {
-                    "src": ['<%= config.directory.dist %>/js/core.js', '<%= config.directory.dist %>/css/stylesheet.css']
-                },
-                "dest": '<%= config.directory.dist %>/js/modernizr.js'
-            },
-        },
-
         watch: {
             options: {
                 dateFormat: function (time) {
-                    grunt.log.writeln('The watch finished in ' + time + 'ms at' + (new Date()).toString());
+                    grunt.log.writeln('The watch finished in ' + time);
                     grunt.log.writeln('Waiting for more changes...');
                 },
                 livereload: true
             },
             sass: {
                 files: ['<%= config.directory.src %>/scss/**/*.scss'],
-                tasks: ['build']
+                tasks: ['build-css']
             },
             js: {
                 files: '<%= config.directory.src %>/js/**/*.js',
-                tasks: ['build']
+                tasks: ['build-js']
             }
         }
     });
@@ -105,10 +84,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-modernizr');
     grunt.loadNpmTasks('grunt-autoprefixer');
 
     // Register
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['clean', 'concat', 'sass', 'modernizr', 'autoprefixer']);
+    grunt.registerTask('build-css', ['clean:css', 'sass', 'autoprefixer']);
+    grunt.registerTask('build-js', ['clean:js', 'concat']);
+    grunt.registerTask('build', ['clean', 'concat', 'sass', 'autoprefixer']);
 };

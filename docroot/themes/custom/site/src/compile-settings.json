@@ -5,15 +5,15 @@
       "Android >= 4",
       "Chrome >= 20",
       "Firefox >= 24",
-      "Explorer >= 8",
-      "iOS >= 6",
+      "Explorer >= 9",
+      "iOS >= 7",
       "Opera >= 12",
       "Safari >= 6"
     ]
   },
   "concat": {
     "core": [
-      "src/vendor/jquery-sticky/jquery.sticky.js",
+      "src/vendor/sticky-kit/jquery.sticky-kit.js",
       "src/js/layout.js",
       "src/js/init.js"
     ]

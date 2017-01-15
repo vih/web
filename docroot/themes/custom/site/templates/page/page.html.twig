@@ -1,67 +1,87 @@
-<!-- Begin - outer wrapper -->
-<div class="outer-wrapper layout-fixed-drawer">
+<!-- Begin - wrapper -->
+<div class="layout__wrapper layout__header--scroll">
+
+    <!-- Begin - obfuscator -->
+    <div class="layout__obfuscator"></div>
+    <!-- End - obfuscator -->
 
     <!-- Begin - drawer -->
-    <div class="layout-drawer is-visible" aria-hidden="true">
+    <div class="layout__drawer" aria-hidden="true">
 
         <!-- Begin - title -->
-        <span class="mdl-layout-title">Title</span>
+        <span class="layout-title">Title</span>
         <!-- End - title -->
-
-        <!-- Begin - navigation -->
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-        </nav>
-        <!-- End - navigation -->
 
     </div>
     <!-- End - drawer -->
 
-    <!-- Begin - obfuscator -->
-    <div class="layout-obfuscator is-visible"></div>
-    <!-- End - obfuscator -->
+    <!-- Begin - header -->
+    <header class="layout__header layout__header--waterfall">
+        <div class="layout__header-row">
 
-    <!-- Begin - inner wrapper -->
-    <main class="inner-wrapper" role="document">
+            <!-- Begin - drawer button -->
+            <div aria-expanded="false" data-toggle-drawer role="button" tabindex="0" class="layout__drawer-button">
+                <span class="icon"></span>
+            </div>
+            <!-- End - drawer toggle -->
 
-        <!-- Begin - drawer button -->
-        <div aria-expanded="false" data-toggle-drawer role="button" tabindex="0" class="layout-drawer-button">
-            <span class="icon"></span>
+            <!-- Begin - title -->
+            <span class="layout-title">Title</span>
+            <!-- End - title -->
+
+            <!-- Begin - contact information -->
+            <aside>
+                <a href="tel:004575820811"><span class="icon"></span> +45 7582 0811</a> <span>Mandag - fredag 08:00 - 15:00</span>
+            </aside>
+            <!-- End - contact information -->
+
+            <!-- Begin - tour -->
+            <aside>
+                <span class="icon"></span> Rundvisning <span>Det er gratis</span>
+            </aside>
+            <!-- End - tour -->
+
+            <!-- Begin - contact -->
+            <aside>
+                <a href="#"><span class="icon"></span> Kontakt</a>
+            </aside>
+            <!-- End - contact -->
+
+            <!-- Begin - spacer -->
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="layout-spacer"></div>
+            <!-- End - spacer -->
+
+            <!-- Begin - language selection -->
+            <aside>
+                <a href="#">DA</a>
+                <a href="#">EN</a>
+            </aside>
+            <!-- End - language selection -->
+
         </div>
-        <!-- End - drawer toggle -->
+        <div class="layout__header-row">
 
-        <!-- Begin - navigation -->
-        {#<header class="header mdl-layout__header">#}
-            {#<div class="mdl-layout__header-row">#}
+            <!-- Begin - navigation -->
+            <!-- We hide it in small screens. -->
+            <nav class="layout-navigation layout--large-screen-only">
+                <a class="layout-navigation__link" href="">Lange ophold</a>
+                <a class="layout-navigation__link" href="">Fag</a>
+                <a class="layout-navigation__link" href="">Sommerkursus</a>
+                <a class="layout-navigation__link" href="">Rundvising</a>
+                <a class="layout-navigation__link" href="">Om VIH</a>
+            </nav>
+            <!-- End - navigation -->
 
-                {#<!-- Begin - title -->#}
-                {#<span class="mdl-layout-title">Title</span>#}
-                {#<!-- End - title -->#}
+        </div>
+    </header>
+    <!-- End - header -->
 
-                {#<!-- Begin - spacer -->#}
-                {#<!-- Add spacer, to align navigation to the right -->#}
-                {#<div class="mdl-layout-spacer"></div>#}
-                {#<!-- End - spacer -->#}
-
-                {#<!-- Begin - navigation -->#}
-                {#<!-- We hide it in small screens. -->#}
-                {#<nav class="mdl-navigation mdl-layout--large-screen-only">#}
-                    {#<a class="mdl-navigation__link" href="">Link</a>#}
-                    {#<a class="mdl-navigation__link" href="">Link</a>#}
-                    {#<a class="mdl-navigation__link" href="">Link</a>#}
-                    {#<a class="mdl-navigation__link" href="">Link</a>#}
-                {#</nav>#}
-                {#<!-- End - navigation -->#}
-
-            {#</div>#}
-        {#</header>#}
-        <!-- End - navigation -->
+    <!-- Begin - document -->
+    <main class="layout__document" role="document">
 
         <!-- Begin - content -->
-        <div class="content">
+        <div class="layout__content">
 
             {# Banner #}
             {% if page.banner %}
@@ -113,14 +133,14 @@
         <!-- End - content -->
 
         <!-- Begin - footer -->
-        <footer class="footer">
-            <div class="footer-inner">
+        <footer class="layout__footer">
+            <div class="layout__footer-inner">
 
                 {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
                     <!-- Begin - footer top -->
-                    <div class="footer-top-outer">
+                    <div class="layout__footer-top-outer">
                         <div class="container">
-                            <div class="footer-top-inner">
+                            <div class="layout__footer-top-inner">
                                 <div class="row">
 
                                     {% if page.footer_top_first %}
@@ -155,17 +175,17 @@
                 {% endif %}
 
                 <!-- Begin - footer bottom -->
-                <div class="footer-bottom-outer">
-                    <div class="footer-bottom-inner">
+                <div class="layout__footer-bottom-outer">
+                    <div class="layout__footer-bottom-inner">
                         <div class="container">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6">
-                                    <div class="footer-bottom-copyright">
+                                    <div class="layout__footer-bottom-copyright">
                                         <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, Vejle Idrætshøjskole. All rights reserved.{% endtrans %}</p>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
-                                    <div class="footer-bottom-social">
+                                    <div class="layout__footer-bottom-social">
                                         <ul class="list-inline pull-right">
                                             <li><a href="#"><span class="icon fa fa-instagram"></span></a></li>
                                             <li><a href="#"><span class="icon fa fa-twitter"></span></a></li>
@@ -184,7 +204,7 @@
         <!-- End - footer -->
 
     </main>
-    <!-- End - inner wrapper -->
+    <!-- End - document -->
 
 </div>
-<!-- End - outer wrapper -->
+<!-- End - wrapper -->
