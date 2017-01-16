@@ -9329,6 +9329,8 @@ body {
     display: block;
     text-align: center;
     top: 40%;
+    font-size: 56px;
+    text-transform: uppercase;
     color: #fff;
     font-weight: 800;
     left: 0;
