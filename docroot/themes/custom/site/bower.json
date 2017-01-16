@@ -16,7 +16,8 @@
     "jquery-sticky": "sticky-js#^1.0.3",
     "bootstrap-chosen": "^1.0.1",
     "bs3-sidebar": "^0.0.4",
-    "sticky-kit": "^1.1.2"
+    "sticky-kit": "^1.1.2",
+    "material-design-icons": "^3.0.1"
   },
   "authors": [
     "Morten Nissen <mn@bellcom.dk> (http://bellcom.dk)"

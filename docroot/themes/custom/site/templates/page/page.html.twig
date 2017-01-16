@@ -13,7 +13,7 @@
 
     <!-- Begin - header -->
     <header class="layout__header layout__header--waterfall">
-        <div class="layout__header-row">
+        <div class="layout__header-row layout__header-row--top">
 
             <!-- Begin - drawer button -->
             <div aria-expanded="false" data-toggle-drawer role="button" tabindex="0" class="layout__drawer-button">
@@ -22,7 +22,7 @@
             <!-- End - drawer toggle -->
 
             <!-- Begin - title -->
-            <span class="layout-title">Title</span>
+            {#<span class="layout-title">Title</span>#}
             <!-- End - title -->
 
             <!-- Begin - contact information -->
@@ -56,17 +56,17 @@
             <!-- End - language selection -->
 
         </div>
-        <div class="layout__header-row">
+        <div class="layout__header-row layout__header-row--bottom">
 
             <!-- Begin - navigation -->
             <!-- We hide it in small screens. -->
-            <nav class="layout-navigation layout--large-screen-only">
-                <a class="layout-navigation__link" href="#">Lange ophold</a>
-                <a class="layout-navigation__link" href="#">Fag</a>
-                <a class="layout-navigation__link" href="#">Sommerkursus</a>
-                <a class="layout-navigation__link" href="#">Rundvising</a>
-                <a class="layout-navigation__link" href="#hjem">Om VIH</a>
-            </nav>
+            <ul class="layout-navigation layout-navigation--full-width layout--large-screen-only">
+                <li class="layout-navigation__link"><a href="#">Lange ophold</a></li>
+                <li class="layout-navigation__link"><a href="#">Fag</a></li>
+                <li class="layout-navigation__link"><a href="#">Sommerkursus</a></li>
+                <li class="layout-navigation__link"><a href="#">Rundvising</a></li>
+                <li class="layout-navigation__link"><a href="#">Om VIH</a></li>
+            </ul>
             <!-- End - navigation -->
 
         </div>

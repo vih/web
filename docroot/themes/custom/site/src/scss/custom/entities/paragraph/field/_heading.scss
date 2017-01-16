@@ -16,7 +16,7 @@
 
 // Heading
 .field--name-field-heading {
-  @extend h3;
+  @extend h2;
   text-transform: uppercase;
   font-weight: $headings-font-weight-bold;
 }

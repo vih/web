@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .node-teaser
+// | - .node-teaser-news
 // |
 
 // --------------------------------------------------
@@ -15,7 +15,16 @@
 // --------------------------------------------------
 
 // Teaser
-.node-teaser {}
+.node-teaser-news {
+
+  .field--name-body {
+
+    &,
+    p {
+      color: #928f8f;
+    }
+  }
+}
 
 // --------------------------------------------------
 // Variants
@@ -29,70 +38,70 @@
 @include media-breakpoint-up(xs) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Print
 @media print {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // Touch
 .touchevents {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // No touch
 .no-touchevents {
 
   // Teaser
-  .node-teaser {}
+  .node-teaser-news {}
 }
 
 // --------------------------------------------------

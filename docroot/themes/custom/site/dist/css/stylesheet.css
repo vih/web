@@ -60,7 +60,7 @@ strong {
 dfn {
   font-style: italic; }
 
-h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
 .banner .block-title, .field--name-field-description,
@@ -226,19 +226,18 @@ th {
   p,
   h2,
   .heading-h2,
+  .field--name-field-heading,
   h3,
   .heading-h3,
   .node-list-simple-title,
-  .node-list-advanced-title,
-  .field--name-field-heading {
+  .node-list-advanced-title {
     orphans: 3;
     widows: 3; }
-  h2, .heading-h2,
+  h2, .heading-h2, .field--name-field-heading,
   h3,
   .heading-h3,
   .node-list-simple-title,
-  .node-list-advanced-title,
-  .field--name-field-heading {
+  .node-list-advanced-title {
     page-break-after: avoid; }
   .navbar {
     display: none; }
@@ -1076,7 +1075,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.428571429;
   color: #212121;
@@ -1157,24 +1156,24 @@ hr {
 [role="button"] {
   cursor: pointer; }
 
-h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
 .banner .block-title, .field--name-field-description,
-.field--name-field-description p, h2, .heading-h2, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, .field--name-field-heading, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.field--name-field-description p, h2, .heading-h2, .field--name-field-heading, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
 .paragraph--type--video .field--name-field-description p, h5, .heading-h5, .field--name-field-highlighted, h6, .heading-h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: #5c4b51; }
-  h1 small, .heading-h1 small, .banner h1 small, .banner h2 small, .banner .heading-h2 small, .banner h3 small, .banner .heading-h3 small, .banner .node-list-simple-title small, .banner .node-list-advanced-title small, .banner .field--name-field-heading small, .banner h4 small, .banner .heading-h4 small, .banner .paragraph--type--video .field--name-field-description small, .paragraph--type--video .banner .field--name-field-description small,
+  color: #212121; }
+  h1 small, .heading-h1 small, .banner h1 small, .banner h2 small, .banner .heading-h2 small, .banner .field--name-field-heading small, .banner h3 small, .banner .heading-h3 small, .banner .node-list-simple-title small, .banner .node-list-advanced-title small, .banner h4 small, .banner .heading-h4 small, .banner .paragraph--type--video .field--name-field-description small, .paragraph--type--video .banner .field--name-field-description small,
   .paragraph--type--video .field--name-field-description .banner p small, .banner h5 small, .banner .heading-h5 small, .banner .field--name-field-highlighted small, .banner h6 small, .banner .heading-h6 small,
   .banner .block-title small, .field--name-field-description small,
-  h1 .small, .heading-h1 .small, .banner h2 .small, .banner .heading-h2 .small, .banner h3 .small, .banner .heading-h3 .small, .banner .node-list-simple-title .small, .banner .node-list-advanced-title .small, .banner .field--name-field-heading .small, .banner h4 .small, .banner .heading-h4 .small, .banner h5 .small, .banner .heading-h5 .small, .banner .field--name-field-highlighted .small, .banner h6 .small, .banner .heading-h6 .small,
-  .banner .block-title .small, .field--name-field-description .small, h2 small, .heading-h2 small,
-  h2 .small, .heading-h2 .small, h3 small, .heading-h3 small, .node-list-simple-title small, .node-list-advanced-title small, .field--name-field-heading small,
-  h3 .small, .heading-h3 .small, .node-list-simple-title .small, .node-list-advanced-title .small, .field--name-field-heading .small, h4 small, .heading-h4 small, .paragraph--type--video .field--name-field-description small,
+  h1 .small, .heading-h1 .small, .banner h2 .small, .banner .heading-h2 .small, .banner .field--name-field-heading .small, .banner h3 .small, .banner .heading-h3 .small, .banner .node-list-simple-title .small, .banner .node-list-advanced-title .small, .banner h4 .small, .banner .heading-h4 .small, .banner h5 .small, .banner .heading-h5 .small, .banner .field--name-field-highlighted .small, .banner h6 .small, .banner .heading-h6 .small,
+  .banner .block-title .small, .field--name-field-description .small, h2 small, .heading-h2 small, .field--name-field-heading small,
+  h2 .small, .heading-h2 .small, .field--name-field-heading .small, h3 small, .heading-h3 small, .node-list-simple-title small, .node-list-advanced-title small,
+  h3 .small, .heading-h3 .small, .node-list-simple-title .small, .node-list-advanced-title .small, h4 small, .heading-h4 small, .paragraph--type--video .field--name-field-description small,
   h4 .small, .heading-h4 .small, .paragraph--type--video .field--name-field-description .small, h5 small, .heading-h5 small, .field--name-field-highlighted small,
   h5 .small, .heading-h5 .small, .field--name-field-highlighted .small, h6 small, .heading-h6 small,
   h6 .small, .heading-h6 .small,
@@ -1189,31 +1188,31 @@ h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banne
     line-height: 1;
     color: #777777; }
 
-h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
 .banner .block-title, .field--name-field-description,
 .field--name-field-description p, .h1,
 h2,
-.heading-h2, .h2,
+.heading-h2,
+.field--name-field-heading, .h2,
 h3,
 .heading-h3,
 .node-list-simple-title,
-.node-list-advanced-title,
-.field--name-field-heading, .h3 {
+.node-list-advanced-title, .h3 {
   margin-top: 22px;
   margin-bottom: 11px; }
-  h1 small, .heading-h1 small, .banner h1 small, .banner h2 small, .banner .heading-h2 small, .banner h3 small, .banner .heading-h3 small, .banner .node-list-simple-title small, .banner .node-list-advanced-title small, .banner .field--name-field-heading small, .banner h4 small, .banner .heading-h4 small, .banner .paragraph--type--video .field--name-field-description small, .paragraph--type--video .banner .field--name-field-description small,
+  h1 small, .heading-h1 small, .banner h1 small, .banner h2 small, .banner .heading-h2 small, .banner .field--name-field-heading small, .banner h3 small, .banner .heading-h3 small, .banner .node-list-simple-title small, .banner .node-list-advanced-title small, .banner h4 small, .banner .heading-h4 small, .banner .paragraph--type--video .field--name-field-description small, .paragraph--type--video .banner .field--name-field-description small,
   .paragraph--type--video .field--name-field-description .banner p small, .banner h5 small, .banner .heading-h5 small, .banner .field--name-field-highlighted small, .banner h6 small, .banner .heading-h6 small,
   .banner .block-title small, .field--name-field-description small,
-  h1 .small, .heading-h1 .small, .banner h2 .small, .banner .heading-h2 .small, .banner h3 .small, .banner .heading-h3 .small, .banner .node-list-simple-title .small, .banner .node-list-advanced-title .small, .banner .field--name-field-heading .small, .banner h4 .small, .banner .heading-h4 .small, .banner h5 .small, .banner .heading-h5 .small, .banner .field--name-field-highlighted .small, .banner h6 .small, .banner .heading-h6 .small,
+  h1 .small, .heading-h1 .small, .banner h2 .small, .banner .heading-h2 .small, .banner .field--name-field-heading .small, .banner h3 .small, .banner .heading-h3 .small, .banner .node-list-simple-title .small, .banner .node-list-advanced-title .small, .banner h4 .small, .banner .heading-h4 .small, .banner h5 .small, .banner .heading-h5 .small, .banner .field--name-field-highlighted .small, .banner h6 .small, .banner .heading-h6 .small,
   .banner .block-title .small, .field--name-field-description .small, .h1 small,
   .h1 .small,
-  h2 small, .heading-h2 small,
-  h2 .small, .heading-h2 .small, .h2 small,
+  h2 small, .heading-h2 small, .field--name-field-heading small,
+  h2 .small, .heading-h2 .small, .field--name-field-heading .small, .h2 small,
   .h2 .small,
-  h3 small, .heading-h3 small, .node-list-simple-title small, .node-list-advanced-title small, .field--name-field-heading small,
-  h3 .small, .heading-h3 .small, .node-list-simple-title .small, .node-list-advanced-title .small, .field--name-field-heading .small, .h3 small,
+  h3 small, .heading-h3 small, .node-list-simple-title small, .node-list-advanced-title small,
+  h3 .small, .heading-h3 .small, .node-list-simple-title .small, .node-list-advanced-title .small, .h3 small,
   .h3 .small {
     font-size: 65%; }
 
@@ -1237,18 +1236,18 @@ h6,
   .h6 .small {
     font-size: 75%; }
 
-h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
 .banner .block-title, .field--name-field-description,
 .field--name-field-description p, .h1 {
   font-size: 36px; }
 
-h2, .heading-h2, .h2 {
-  font-size: 20px; }
-
-h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, .field--name-field-heading, .h3 {
+h2, .heading-h2, .field--name-field-heading, .h2 {
   font-size: 24px; }
+
+h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, .h3 {
+  font-size: 20px; }
 
 h4, .heading-h4, .paragraph--type--video .field--name-field-description,
 .paragraph--type--video .field--name-field-description p, .h4 {
@@ -2398,7 +2397,7 @@ input[type="search"] {
   .input-group-lg > .input-group-btn > input[type="month"].btn,
   .input-group-lg
   input[type="month"] {
-    line-height: 49px; } }
+    line-height: 61px; } }
 
 .form-group {
   margin-bottom: 15px; }
@@ -2532,8 +2531,8 @@ select[multiple].input-sm,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn, .field--name-field-link
 .input-group-lg > .input-group-btn > a {
-  height: 49px;
-  padding: 10px 16px;
+  height: 61px;
+  padding: 16px 18px;
   font-size: 20px;
   line-height: 1.3333333;
   border-radius: 0; }
@@ -2541,8 +2540,8 @@ select[multiple].input-sm,
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn {
-  height: 49px;
-  line-height: 49px; }
+  height: 61px;
+  line-height: 61px; }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
@@ -2554,24 +2553,24 @@ select[multiple].input-lg,
   height: auto; }
 
 .form-group-lg .form-control {
-  height: 49px;
-  padding: 10px 16px;
+  height: 61px;
+  padding: 16px 18px;
   font-size: 20px;
   line-height: 1.3333333;
   border-radius: 0; }
 
 .form-group-lg select.form-control {
-  height: 49px;
-  line-height: 49px; }
+  height: 61px;
+  line-height: 61px; }
 
 .form-group-lg textarea.form-control,
 .form-group-lg select[multiple].form-control {
   height: auto; }
 
 .form-group-lg .form-control-static {
-  height: 49px;
+  height: 61px;
   min-height: 42px;
-  padding: 11px 16px;
+  padding: 17px 18px;
   font-size: 20px;
   line-height: 1.3333333; }
 
@@ -2598,9 +2597,9 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-btn > a + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
-  width: 49px;
-  height: 49px;
-  line-height: 49px; }
+  width: 61px;
+  height: 61px;
+  line-height: 61px; }
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
@@ -2782,7 +2781,7 @@ select[multiple].input-lg,
 
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 11px;
+    padding-top: 17px;
     font-size: 20px; } }
 
 @media (min-width: 768px) {
@@ -2805,7 +2804,7 @@ select[multiple].input-lg,
   padding: 12px 18px;
   font-size: 16px;
   line-height: 1.428571429;
-  border-radius: 4px;
+  border-radius: 6px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2885,58 +2884,65 @@ fieldset[disabled] a {
     color: #fff;
     background-color: #333; }
 
-.btn-primary, .angled-background-image .field--name-field-link a, .angled-background-color-white .field--name-field-link a, .angled-background-color-gray .field--name-field-link a, .angled-background-color-secondary .field--name-field-link a {
+.btn-primary, .angled-background-image .field--name-field-link a, .angled-background-color-white .field--name-field-link a, .angled-background-color-light-gray .field--name-field-link a, .angled-background-color-gray .field--name-field-link a, .angled-background-color-secondary .field--name-field-link a {
   color: #fff;
   background-color: #00a5e2;
   border-color: #006990; }
-  .btn-primary:focus, .angled-background-image .field--name-field-link a:focus, .angled-background-color-white .field--name-field-link a:focus, .angled-background-color-gray .field--name-field-link a:focus, .angled-background-color-secondary .field--name-field-link a:focus, .focus.btn-primary, .angled-background-image .field--name-field-link a.focus, .angled-background-color-white .field--name-field-link a.focus, .angled-background-color-gray .field--name-field-link a.focus, .angled-background-color-secondary .field--name-field-link a.focus {
+  .btn-primary:focus, .angled-background-image .field--name-field-link a:focus, .angled-background-color-white .field--name-field-link a:focus, .angled-background-color-light-gray .field--name-field-link a:focus, .angled-background-color-gray .field--name-field-link a:focus, .angled-background-color-secondary .field--name-field-link a:focus, .focus.btn-primary, .angled-background-image .field--name-field-link a.focus, .angled-background-color-white .field--name-field-link a.focus, .angled-background-color-light-gray .field--name-field-link a.focus, .angled-background-color-gray .field--name-field-link a.focus, .angled-background-color-secondary .field--name-field-link a.focus {
     color: #fff;
     background-color: #0080af;
     border-color: #000c11; }
-  .btn-primary:hover, .angled-background-image .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link a:hover {
+  .btn-primary:hover, .angled-background-image .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-light-gray .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link a:hover {
     color: #fff;
     background-color: #0080af;
     border-color: #003d53; }
-  .btn-primary:active, .angled-background-image .field--name-field-link a:active, .angled-background-color-white .field--name-field-link a:active, .angled-background-color-gray .field--name-field-link a:active, .angled-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .angled-background-image .field--name-field-link a.active, .angled-background-color-white .field--name-field-link a.active, .angled-background-color-gray .field--name-field-link a.active, .angled-background-color-secondary .field--name-field-link a.active,
+  .btn-primary:active, .angled-background-image .field--name-field-link a:active, .angled-background-color-white .field--name-field-link a:active, .angled-background-color-light-gray .field--name-field-link a:active, .angled-background-color-gray .field--name-field-link a:active, .angled-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .angled-background-image .field--name-field-link a.active, .angled-background-color-white .field--name-field-link a.active, .angled-background-color-light-gray .field--name-field-link a.active, .angled-background-color-gray .field--name-field-link a.active, .angled-background-color-secondary .field--name-field-link a.active,
   .open > .dropdown-toggle.btn-primary, .angled-background-image .field--name-field-link
   .open > a.dropdown-toggle, .angled-background-color-white .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-light-gray .field--name-field-link
   .open > a.dropdown-toggle, .angled-background-color-gray .field--name-field-link
   .open > a.dropdown-toggle, .angled-background-color-secondary .field--name-field-link
   .open > a.dropdown-toggle {
     color: #fff;
     background-color: #0080af;
     border-color: #003d53; }
-    .btn-primary:active:hover, .angled-background-image .field--name-field-link a:active:hover, .angled-background-color-white .field--name-field-link a:active:hover, .angled-background-color-gray .field--name-field-link a:active:hover, .angled-background-color-secondary .field--name-field-link a:active:hover, .btn-primary:active:focus, .angled-background-image .field--name-field-link a:active:focus, .angled-background-color-white .field--name-field-link a:active:focus, .angled-background-color-gray .field--name-field-link a:active:focus, .angled-background-color-secondary .field--name-field-link a:active:focus, .btn-primary:active.focus, .angled-background-image .field--name-field-link a:active.focus, .angled-background-color-white .field--name-field-link a:active.focus, .angled-background-color-gray .field--name-field-link a:active.focus, .angled-background-color-secondary .field--name-field-link a:active.focus, .active.btn-primary:hover, .angled-background-image .field--name-field-link a.active:hover, .angled-background-color-white .field--name-field-link a.active:hover, .angled-background-color-gray .field--name-field-link a.active:hover, .angled-background-color-secondary .field--name-field-link a.active:hover, .active.btn-primary:focus, .angled-background-image .field--name-field-link a.active:focus, .angled-background-color-white .field--name-field-link a.active:focus, .angled-background-color-gray .field--name-field-link a.active:focus, .angled-background-color-secondary .field--name-field-link a.active:focus, .active.focus.btn-primary, .angled-background-image .field--name-field-link a.active.focus, .angled-background-color-white .field--name-field-link a.active.focus, .angled-background-color-gray .field--name-field-link a.active.focus, .angled-background-color-secondary .field--name-field-link a.active.focus,
+    .btn-primary:active:hover, .angled-background-image .field--name-field-link a:active:hover, .angled-background-color-white .field--name-field-link a:active:hover, .angled-background-color-light-gray .field--name-field-link a:active:hover, .angled-background-color-gray .field--name-field-link a:active:hover, .angled-background-color-secondary .field--name-field-link a:active:hover, .btn-primary:active:focus, .angled-background-image .field--name-field-link a:active:focus, .angled-background-color-white .field--name-field-link a:active:focus, .angled-background-color-light-gray .field--name-field-link a:active:focus, .angled-background-color-gray .field--name-field-link a:active:focus, .angled-background-color-secondary .field--name-field-link a:active:focus, .btn-primary:active.focus, .angled-background-image .field--name-field-link a:active.focus, .angled-background-color-white .field--name-field-link a:active.focus, .angled-background-color-light-gray .field--name-field-link a:active.focus, .angled-background-color-gray .field--name-field-link a:active.focus, .angled-background-color-secondary .field--name-field-link a:active.focus, .active.btn-primary:hover, .angled-background-image .field--name-field-link a.active:hover, .angled-background-color-white .field--name-field-link a.active:hover, .angled-background-color-light-gray .field--name-field-link a.active:hover, .angled-background-color-gray .field--name-field-link a.active:hover, .angled-background-color-secondary .field--name-field-link a.active:hover, .active.btn-primary:focus, .angled-background-image .field--name-field-link a.active:focus, .angled-background-color-white .field--name-field-link a.active:focus, .angled-background-color-light-gray .field--name-field-link a.active:focus, .angled-background-color-gray .field--name-field-link a.active:focus, .angled-background-color-secondary .field--name-field-link a.active:focus, .active.focus.btn-primary, .angled-background-image .field--name-field-link a.active.focus, .angled-background-color-white .field--name-field-link a.active.focus, .angled-background-color-light-gray .field--name-field-link a.active.focus, .angled-background-color-gray .field--name-field-link a.active.focus, .angled-background-color-secondary .field--name-field-link a.active.focus,
     .open > .dropdown-toggle.btn-primary:hover, .angled-background-image .field--name-field-link
     .open > a.dropdown-toggle:hover, .angled-background-color-white .field--name-field-link
+    .open > a.dropdown-toggle:hover, .angled-background-color-light-gray .field--name-field-link
     .open > a.dropdown-toggle:hover, .angled-background-color-gray .field--name-field-link
     .open > a.dropdown-toggle:hover, .angled-background-color-secondary .field--name-field-link
     .open > a.dropdown-toggle:hover,
     .open > .dropdown-toggle.btn-primary:focus, .angled-background-image .field--name-field-link
     .open > a.dropdown-toggle:focus, .angled-background-color-white .field--name-field-link
+    .open > a.dropdown-toggle:focus, .angled-background-color-light-gray .field--name-field-link
     .open > a.dropdown-toggle:focus, .angled-background-color-gray .field--name-field-link
     .open > a.dropdown-toggle:focus, .angled-background-color-secondary .field--name-field-link
     .open > a.dropdown-toggle:focus,
     .open > .dropdown-toggle.focus.btn-primary, .angled-background-image .field--name-field-link
     .open > a.dropdown-toggle.focus, .angled-background-color-white .field--name-field-link
+    .open > a.dropdown-toggle.focus, .angled-background-color-light-gray .field--name-field-link
     .open > a.dropdown-toggle.focus, .angled-background-color-gray .field--name-field-link
     .open > a.dropdown-toggle.focus, .angled-background-color-secondary .field--name-field-link
     .open > a.dropdown-toggle.focus {
       color: #fff;
       background-color: #00668b;
       border-color: #000c11; }
-  .btn-primary:active, .angled-background-image .field--name-field-link a:active, .angled-background-color-white .field--name-field-link a:active, .angled-background-color-gray .field--name-field-link a:active, .angled-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .angled-background-image .field--name-field-link a.active, .angled-background-color-white .field--name-field-link a.active, .angled-background-color-gray .field--name-field-link a.active, .angled-background-color-secondary .field--name-field-link a.active,
+  .btn-primary:active, .angled-background-image .field--name-field-link a:active, .angled-background-color-white .field--name-field-link a:active, .angled-background-color-light-gray .field--name-field-link a:active, .angled-background-color-gray .field--name-field-link a:active, .angled-background-color-secondary .field--name-field-link a:active, .active.btn-primary, .angled-background-image .field--name-field-link a.active, .angled-background-color-white .field--name-field-link a.active, .angled-background-color-light-gray .field--name-field-link a.active, .angled-background-color-gray .field--name-field-link a.active, .angled-background-color-secondary .field--name-field-link a.active,
   .open > .dropdown-toggle.btn-primary, .angled-background-image .field--name-field-link
   .open > a.dropdown-toggle, .angled-background-color-white .field--name-field-link
+  .open > a.dropdown-toggle, .angled-background-color-light-gray .field--name-field-link
   .open > a.dropdown-toggle, .angled-background-color-gray .field--name-field-link
   .open > a.dropdown-toggle, .angled-background-color-secondary .field--name-field-link
   .open > a.dropdown-toggle {
     background-image: none; }
-  .disabled.btn-primary:hover, .angled-background-image .field--name-field-link a.disabled:hover, .angled-background-color-white .field--name-field-link a.disabled:hover, .angled-background-color-gray .field--name-field-link a.disabled:hover, .angled-background-color-secondary .field--name-field-link a.disabled:hover, .disabled.btn-primary:focus, .angled-background-image .field--name-field-link a.disabled:focus, .angled-background-color-white .field--name-field-link a.disabled:focus, .angled-background-color-gray .field--name-field-link a.disabled:focus, .angled-background-color-secondary .field--name-field-link a.disabled:focus, .disabled.focus.btn-primary, .angled-background-image .field--name-field-link a.disabled.focus, .angled-background-color-white .field--name-field-link a.disabled.focus, .angled-background-color-gray .field--name-field-link a.disabled.focus, .angled-background-color-secondary .field--name-field-link a.disabled.focus, [disabled].btn-primary:hover, .angled-background-image .field--name-field-link a[disabled]:hover, .angled-background-color-white .field--name-field-link a[disabled]:hover, .angled-background-color-gray .field--name-field-link a[disabled]:hover, .angled-background-color-secondary .field--name-field-link a[disabled]:hover, [disabled].btn-primary:focus, .angled-background-image .field--name-field-link a[disabled]:focus, .angled-background-color-white .field--name-field-link a[disabled]:focus, .angled-background-color-gray .field--name-field-link a[disabled]:focus, .angled-background-color-secondary .field--name-field-link a[disabled]:focus, [disabled].focus.btn-primary, .angled-background-image .field--name-field-link a[disabled].focus, .angled-background-color-white .field--name-field-link a[disabled].focus, .angled-background-color-gray .field--name-field-link a[disabled].focus, .angled-background-color-secondary .field--name-field-link a[disabled].focus,
+  .disabled.btn-primary:hover, .angled-background-image .field--name-field-link a.disabled:hover, .angled-background-color-white .field--name-field-link a.disabled:hover, .angled-background-color-light-gray .field--name-field-link a.disabled:hover, .angled-background-color-gray .field--name-field-link a.disabled:hover, .angled-background-color-secondary .field--name-field-link a.disabled:hover, .disabled.btn-primary:focus, .angled-background-image .field--name-field-link a.disabled:focus, .angled-background-color-white .field--name-field-link a.disabled:focus, .angled-background-color-light-gray .field--name-field-link a.disabled:focus, .angled-background-color-gray .field--name-field-link a.disabled:focus, .angled-background-color-secondary .field--name-field-link a.disabled:focus, .disabled.focus.btn-primary, .angled-background-image .field--name-field-link a.disabled.focus, .angled-background-color-white .field--name-field-link a.disabled.focus, .angled-background-color-light-gray .field--name-field-link a.disabled.focus, .angled-background-color-gray .field--name-field-link a.disabled.focus, .angled-background-color-secondary .field--name-field-link a.disabled.focus, [disabled].btn-primary:hover, .angled-background-image .field--name-field-link a[disabled]:hover, .angled-background-color-white .field--name-field-link a[disabled]:hover, .angled-background-color-light-gray .field--name-field-link a[disabled]:hover, .angled-background-color-gray .field--name-field-link a[disabled]:hover, .angled-background-color-secondary .field--name-field-link a[disabled]:hover, [disabled].btn-primary:focus, .angled-background-image .field--name-field-link a[disabled]:focus, .angled-background-color-white .field--name-field-link a[disabled]:focus, .angled-background-color-light-gray .field--name-field-link a[disabled]:focus, .angled-background-color-gray .field--name-field-link a[disabled]:focus, .angled-background-color-secondary .field--name-field-link a[disabled]:focus, [disabled].focus.btn-primary, .angled-background-image .field--name-field-link a[disabled].focus, .angled-background-color-white .field--name-field-link a[disabled].focus, .angled-background-color-light-gray .field--name-field-link a[disabled].focus, .angled-background-color-gray .field--name-field-link a[disabled].focus, .angled-background-color-secondary .field--name-field-link a[disabled].focus,
   fieldset[disabled] .btn-primary:hover,
   fieldset[disabled] .angled-background-image .field--name-field-link a:hover, .angled-background-image .field--name-field-link
   fieldset[disabled] a:hover,
   fieldset[disabled] .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link
+  fieldset[disabled] a:hover,
+  fieldset[disabled] .angled-background-color-light-gray .field--name-field-link a:hover, .angled-background-color-light-gray .field--name-field-link
   fieldset[disabled] a:hover,
   fieldset[disabled] .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link
   fieldset[disabled] a:hover,
@@ -2947,6 +2953,8 @@ fieldset[disabled] a {
   fieldset[disabled] a:focus,
   fieldset[disabled] .angled-background-color-white .field--name-field-link a:focus, .angled-background-color-white .field--name-field-link
   fieldset[disabled] a:focus,
+  fieldset[disabled] .angled-background-color-light-gray .field--name-field-link a:focus, .angled-background-color-light-gray .field--name-field-link
+  fieldset[disabled] a:focus,
   fieldset[disabled] .angled-background-color-gray .field--name-field-link a:focus, .angled-background-color-gray .field--name-field-link
   fieldset[disabled] a:focus,
   fieldset[disabled] .angled-background-color-secondary .field--name-field-link a:focus, .angled-background-color-secondary .field--name-field-link
@@ -2956,13 +2964,15 @@ fieldset[disabled] a {
   fieldset[disabled] a.focus,
   fieldset[disabled] .angled-background-color-white .field--name-field-link a.focus, .angled-background-color-white .field--name-field-link
   fieldset[disabled] a.focus,
+  fieldset[disabled] .angled-background-color-light-gray .field--name-field-link a.focus, .angled-background-color-light-gray .field--name-field-link
+  fieldset[disabled] a.focus,
   fieldset[disabled] .angled-background-color-gray .field--name-field-link a.focus, .angled-background-color-gray .field--name-field-link
   fieldset[disabled] a.focus,
   fieldset[disabled] .angled-background-color-secondary .field--name-field-link a.focus, .angled-background-color-secondary .field--name-field-link
   fieldset[disabled] a.focus {
     background-color: #00a5e2;
     border-color: #006990; }
-  .btn-primary .badge, .angled-background-image .field--name-field-link a .badge, .angled-background-color-white .field--name-field-link a .badge, .angled-background-color-gray .field--name-field-link a .badge, .angled-background-color-secondary .field--name-field-link a .badge {
+  .btn-primary .badge, .angled-background-image .field--name-field-link a .badge, .angled-background-color-white .field--name-field-link a .badge, .angled-background-color-light-gray .field--name-field-link a .badge, .angled-background-color-gray .field--name-field-link a .badge, .angled-background-color-secondary .field--name-field-link a .badge {
     color: #00a5e2;
     background-color: #fff; }
 
@@ -3135,8 +3145,8 @@ fieldset[disabled] a {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, .field--name-field-link .btn-group-lg > a {
-  padding: 10px 16px;
+.btn-lg, .btn-group-lg > .btn, .field--name-field-link .btn-group-lg > a, .btn, .field--name-field-link a {
+  padding: 16px 18px;
   font-size: 20px;
   line-height: 1.3333333;
   border-radius: 6px; }
@@ -3414,7 +3424,7 @@ tbody.collapse.in {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .field--name-field-link .btn-group-lg.btn-group > a + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group > .btn + .dropdown-toggle, .field--name-field-link .btn-group > a + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3428,11 +3438,11 @@ tbody.collapse.in {
 .btn .caret, .field--name-field-link a .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, .field--name-field-link .btn-group-lg > a .caret {
+.btn-lg .caret, .btn .caret, .field--name-field-link a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .field--name-field-link .btn-group-lg > a .caret, .field--name-field-link .dropup .btn-group-lg > a .caret {
+.dropup .btn-lg .caret, .dropup .btn .caret, .dropup .field--name-field-link a .caret, .field--name-field-link .dropup a .caret {
   border-width: 0 5px 5px; }
 
 .btn-group-vertical > .btn, .field--name-field-link .btn-group-vertical > a,
@@ -3467,16 +3477,16 @@ tbody.collapse.in {
   border-radius: 0; }
 
 .btn-group-vertical > .btn:first-child:not(:last-child), .field--name-field-link .btn-group-vertical > a:first-child:not(:last-child) {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
 .btn-group-vertical > .btn:last-child:not(:first-child), .field--name-field-link .btn-group-vertical > a:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px; }
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px; }
 
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .field--name-field-link .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
@@ -3569,7 +3579,7 @@ tbody.collapse.in {
   .input-group-lg > .input-group-addon,
   .input-group-lg > .input-group-btn > .input-group-addon.btn, .field--name-field-link
   .input-group-lg > .input-group-btn > a.input-group-addon {
-    padding: 10px 16px;
+    padding: 16px 18px;
     font-size: 20px;
     border-radius: 0; }
   .input-group-addon input[type="radio"],
@@ -4221,7 +4231,7 @@ tbody.collapse.in {
 
 .pagination-lg > li > a,
 .pagination-lg > li > span {
-  padding: 10px 16px;
+  padding: 16px 18px;
   font-size: 20px;
   line-height: 1.3333333; }
 
@@ -4385,7 +4395,7 @@ a.badge:hover, a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-color: #eeeeee; }
-  .jumbotron h1, .jumbotron .heading-h1, .jumbotron .banner h2, .banner .jumbotron h2, .jumbotron .banner .heading-h2, .banner .jumbotron .heading-h2, .jumbotron .banner h3, .banner .jumbotron h3, .jumbotron .banner .heading-h3, .banner .jumbotron .heading-h3, .jumbotron .banner .node-list-simple-title, .banner .jumbotron .node-list-simple-title, .jumbotron .banner .node-list-advanced-title, .banner .jumbotron .node-list-advanced-title, .jumbotron .banner .field--name-field-heading, .banner .jumbotron .field--name-field-heading, .jumbotron .banner h4, .banner .jumbotron h4, .jumbotron .banner .heading-h4, .banner .jumbotron .heading-h4, .jumbotron .banner h5, .banner .jumbotron h5, .jumbotron .banner .heading-h5, .banner .jumbotron .heading-h5, .jumbotron .banner .field--name-field-highlighted, .banner .jumbotron .field--name-field-highlighted, .jumbotron .banner h6, .banner .jumbotron h6, .jumbotron .banner .heading-h6, .banner .jumbotron .heading-h6, .jumbotron
+  .jumbotron h1, .jumbotron .heading-h1, .jumbotron .banner h2, .banner .jumbotron h2, .jumbotron .banner .heading-h2, .banner .jumbotron .heading-h2, .jumbotron .banner .field--name-field-heading, .banner .jumbotron .field--name-field-heading, .jumbotron .banner h3, .banner .jumbotron h3, .jumbotron .banner .heading-h3, .banner .jumbotron .heading-h3, .jumbotron .banner .node-list-simple-title, .banner .jumbotron .node-list-simple-title, .jumbotron .banner .node-list-advanced-title, .banner .jumbotron .node-list-advanced-title, .jumbotron .banner h4, .banner .jumbotron h4, .jumbotron .banner .heading-h4, .banner .jumbotron .heading-h4, .jumbotron .banner h5, .banner .jumbotron h5, .jumbotron .banner .heading-h5, .banner .jumbotron .heading-h5, .jumbotron .banner .field--name-field-highlighted, .banner .jumbotron .field--name-field-highlighted, .jumbotron .banner h6, .banner .jumbotron h6, .jumbotron .banner .heading-h6, .banner .jumbotron .heading-h6, .jumbotron
   .banner .block-title,
   .banner .jumbotron .block-title, .jumbotron .field--name-field-description, .jumbotron
   .field--name-field-description p,
@@ -4413,7 +4423,7 @@ a.badge:hover, a.badge:focus {
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
-      .jumbotron h1, .jumbotron .heading-h1, .jumbotron .banner h2, .banner .jumbotron h2, .jumbotron .banner .heading-h2, .banner .jumbotron .heading-h2, .jumbotron .banner h3, .banner .jumbotron h3, .jumbotron .banner .heading-h3, .banner .jumbotron .heading-h3, .jumbotron .banner .node-list-simple-title, .banner .jumbotron .node-list-simple-title, .jumbotron .banner .node-list-advanced-title, .banner .jumbotron .node-list-advanced-title, .jumbotron .banner .field--name-field-heading, .banner .jumbotron .field--name-field-heading, .jumbotron .banner h4, .banner .jumbotron h4, .jumbotron .banner .heading-h4, .banner .jumbotron .heading-h4, .jumbotron .banner h5, .banner .jumbotron h5, .jumbotron .banner .heading-h5, .banner .jumbotron .heading-h5, .jumbotron .banner .field--name-field-highlighted, .banner .jumbotron .field--name-field-highlighted, .jumbotron .banner h6, .banner .jumbotron h6, .jumbotron .banner .heading-h6, .banner .jumbotron .heading-h6, .jumbotron
+      .jumbotron h1, .jumbotron .heading-h1, .jumbotron .banner h2, .banner .jumbotron h2, .jumbotron .banner .heading-h2, .banner .jumbotron .heading-h2, .jumbotron .banner .field--name-field-heading, .banner .jumbotron .field--name-field-heading, .jumbotron .banner h3, .banner .jumbotron h3, .jumbotron .banner .heading-h3, .banner .jumbotron .heading-h3, .jumbotron .banner .node-list-simple-title, .banner .jumbotron .node-list-simple-title, .jumbotron .banner .node-list-advanced-title, .banner .jumbotron .node-list-advanced-title, .jumbotron .banner h4, .banner .jumbotron h4, .jumbotron .banner .heading-h4, .banner .jumbotron .heading-h4, .jumbotron .banner h5, .banner .jumbotron h5, .jumbotron .banner .heading-h5, .banner .jumbotron .heading-h5, .jumbotron .banner .field--name-field-highlighted, .banner .jumbotron .field--name-field-highlighted, .jumbotron .banner h6, .banner .jumbotron h6, .jumbotron .banner .heading-h6, .banner .jumbotron .heading-h6, .jumbotron
       .banner .block-title,
       .banner .jumbotron .block-title, .jumbotron .field--name-field-description, .jumbotron
       .field--name-field-description p,
@@ -5178,7 +5188,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -8074,18 +8084,18 @@ body {
 .bold, strong {
   font-weight: 700; }
 
-h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
 .banner .block-title, .field--name-field-description,
 .field--name-field-description p, .heading-h1,
 h2,
-.heading-h2, .heading-h2,
+.heading-h2,
+.field--name-field-heading, .heading-h2,
 h3,
 .heading-h3,
 .node-list-simple-title,
-.node-list-advanced-title,
-.field--name-field-heading, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
+.node-list-advanced-title, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
 h4,
 .heading-h4,
 .paragraph--type--video .field--name-field-description,
@@ -8097,16 +8107,16 @@ h6,
 .heading-h6, .heading-h6,
 .lead {
   font-weight: 500; }
-  h1.light, .light.heading-h1, .banner h2.light, .banner .light.heading-h2, .banner h3.light, .banner .light.heading-h3, .banner .light.node-list-simple-title, .banner .light.node-list-advanced-title, .banner .light.field--name-field-heading, .banner h4.light, .banner .light.heading-h4, .banner h5.light, .banner .light.heading-h5, .banner .light.field--name-field-highlighted, .banner h6.light, .banner .light.heading-h6,
+  h1.light, .light.heading-h1, .banner h2.light, .banner .light.heading-h2, .banner .light.field--name-field-heading, .banner h3.light, .banner .light.heading-h3, .banner .light.node-list-simple-title, .banner .light.node-list-advanced-title, .banner h4.light, .banner .light.heading-h4, .banner h5.light, .banner .light.heading-h5, .banner .light.field--name-field-highlighted, .banner h6.light, .banner .light.heading-h6,
   .banner .light.block-title, .light.field--name-field-description,
   .field--name-field-description p.light, .heading-h1.light,
   h2.light,
-  .light.heading-h2, .heading-h2.light,
+  .light.heading-h2,
+  .light.field--name-field-heading, .heading-h2.light,
   h3.light,
   .light.heading-h3,
   .light.node-list-simple-title,
-  .light.node-list-advanced-title,
-  .light.field--name-field-heading, .heading-h3.light, .light.node-list-simple-title, .light.node-list-advanced-title,
+  .light.node-list-advanced-title, .heading-h3.light, .light.node-list-simple-title, .light.node-list-advanced-title,
   h4.light,
   .light.heading-h4,
   .paragraph--type--video .light.field--name-field-description,
@@ -8118,20 +8128,20 @@ h6,
   .light.heading-h6, .heading-h6.light,
   .lead.light {
     font-weight: 300; }
-  h1 strong, .heading-h1 strong, .banner h1 strong, .banner h2 strong, .banner .heading-h2 strong, .banner h3 strong, .banner .heading-h3 strong, .banner .node-list-simple-title strong, .banner .node-list-advanced-title strong, .banner .field--name-field-heading strong, .banner h4 strong, .banner .heading-h4 strong, .banner .paragraph--type--video .field--name-field-description strong, .paragraph--type--video .banner .field--name-field-description strong,
+  h1 strong, .heading-h1 strong, .banner h1 strong, .banner h2 strong, .banner .heading-h2 strong, .banner .field--name-field-heading strong, .banner h3 strong, .banner .heading-h3 strong, .banner .node-list-simple-title strong, .banner .node-list-advanced-title strong, .banner h4 strong, .banner .heading-h4 strong, .banner .paragraph--type--video .field--name-field-description strong, .paragraph--type--video .banner .field--name-field-description strong,
   .paragraph--type--video .field--name-field-description .banner p strong, .banner h5 strong, .banner .heading-h5 strong, .banner .field--name-field-highlighted strong, .banner h6 strong, .banner .heading-h6 strong,
-  .banner .block-title strong, .field--name-field-description strong, h1.bold, .bold.heading-h1, .banner h2.bold, .banner .bold.heading-h2, .banner h3.bold, .banner .bold.heading-h3, .banner .bold.node-list-simple-title, .banner .bold.node-list-advanced-title, .banner .bold.field--name-field-heading, .banner h4.bold, .banner .bold.heading-h4, .banner h5.bold, .banner .bold.heading-h5, .banner .bold.field--name-field-highlighted, .banner h6.bold, .banner .bold.heading-h6,
+  .banner .block-title strong, .field--name-field-description strong, h1.bold, .bold.heading-h1, .banner h2.bold, .banner .bold.heading-h2, .banner .bold.field--name-field-heading, .banner h3.bold, .banner .bold.heading-h3, .banner .bold.node-list-simple-title, .banner .bold.node-list-advanced-title, .banner h4.bold, .banner .bold.heading-h4, .banner h5.bold, .banner .bold.heading-h5, .banner .bold.field--name-field-highlighted, .banner h6.bold, .banner .bold.heading-h6,
   .banner .bold.block-title, .bold.field--name-field-description,
   .field--name-field-description p.bold, .heading-h1 strong, .heading-h1.bold,
-  h2 strong, .heading-h2 strong,
+  h2 strong, .heading-h2 strong, .field--name-field-heading strong,
   h2.bold,
-  .bold.heading-h2, .heading-h2 strong, .heading-h2.bold,
-  h3 strong, .heading-h3 strong, .node-list-simple-title strong, .node-list-advanced-title strong, .field--name-field-heading strong,
+  .bold.heading-h2,
+  .bold.field--name-field-heading, .heading-h2 strong, .heading-h2.bold,
+  h3 strong, .heading-h3 strong, .node-list-simple-title strong, .node-list-advanced-title strong,
   h3.bold,
   .bold.heading-h3,
   .bold.node-list-simple-title,
-  .bold.node-list-advanced-title,
-  .bold.field--name-field-heading, .heading-h3 strong, .node-list-simple-title strong, .node-list-advanced-title strong, .heading-h3.bold, .bold.node-list-simple-title, .bold.node-list-advanced-title,
+  .bold.node-list-advanced-title, .heading-h3 strong, .node-list-simple-title strong, .node-list-advanced-title strong, .heading-h3.bold, .bold.node-list-simple-title, .bold.node-list-advanced-title,
   h4 strong, .heading-h4 strong, .paragraph--type--video .field--name-field-description strong,
   h4.bold,
   .bold.heading-h4,
@@ -8154,18 +8164,18 @@ span,
 input {
   letter-spacing: 0; }
 
-h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+h1, .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
 .banner .block-title, .field--name-field-description,
 .field--name-field-description p, .heading-h1,
 h2,
-.heading-h2, .heading-h2,
+.heading-h2,
+.field--name-field-heading, .heading-h2,
 h3,
 .heading-h3,
 .node-list-simple-title,
-.node-list-advanced-title,
-.field--name-field-heading, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
+.node-list-advanced-title, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
 h4,
 .heading-h4,
 .paragraph--type--video .field--name-field-description,
@@ -8188,11 +8198,11 @@ h1,
 .banner h1,
 .banner h2,
 .banner .heading-h2,
+.banner .field--name-field-heading,
 .banner h3,
 .banner .heading-h3,
 .banner .node-list-simple-title,
 .banner .node-list-advanced-title,
-.banner .field--name-field-heading,
 .banner h4,
 .banner .heading-h4,
 .banner .paragraph--type--video .field--name-field-description,
@@ -8209,12 +8219,12 @@ h1,
 .field--name-field-description,
 .field--name-field-description p, .heading-h1,
 h2,
-.heading-h2, .heading-h2,
+.heading-h2,
+.field--name-field-heading, .heading-h2,
 h3,
 .heading-h3,
 .node-list-simple-title,
-.node-list-advanced-title,
-.field--name-field-heading, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
+.node-list-advanced-title, .heading-h3, .node-list-simple-title, .node-list-advanced-title,
 h4,
 .heading-h4,
 .paragraph--type--video .field--name-field-description,
@@ -8476,14 +8486,29 @@ body,
           flex-wrap: nowrap;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
 
 .layout-navigation__link {
   color: #fff;
   text-decoration: none;
-  margin: 0; }
-  .layout-navigation__link .material-icons {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+  .layout-navigation__link .icon, .layout-navigation__link .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout-navigation__link a:before, .layout-navigation__link .btn:before, .layout-navigation__link .field--name-field-link a:before, .field--name-field-link .layout-navigation__link a:before {
     vertical-align: middle; }
+  .layout-navigation--full-width .layout-navigation__link {
+    float: none;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding: 0;
+    text-align: center; }
 
 .layout__drawer {
   display: -webkit-box;
@@ -9183,7 +9208,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   color: inherit;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   list-style: none;
   min-width: 160px;
@@ -9294,9 +9319,9 @@ body {
             transform-origin: bottom right;
     height: 130px;
     z-index: 2; }
-  .banner .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6, .banner .block-title, .banner .field--name-field-description, .banner
+  .banner .heading-h1, .banner h1, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6, .banner .block-title, .banner .field--name-field-description, .banner
   .field--name-field-description p,
-  .field--name-field-description .banner p, .banner h2, .banner .heading-h2, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner .field--name-field-heading, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
+  .field--name-field-description .banner p, .banner h2, .banner .heading-h2, .banner .field--name-field-heading, .banner h3, .banner .heading-h3, .banner .node-list-simple-title, .banner .node-list-advanced-title, .banner h4, .banner .heading-h4, .banner .paragraph--type--video .field--name-field-description, .paragraph--type--video .banner .field--name-field-description, .banner
   .paragraph--type--video .field--name-field-description p,
   .paragraph--type--video .field--name-field-description .banner p, .banner h5, .banner .heading-h5, .banner .field--name-field-highlighted, .banner h6, .banner .heading-h6,
   .banner .block-title {
@@ -9428,6 +9453,48 @@ body {
     font-size: 16px;
     color: #fff; }
 
+.layout__header .layout__header-row--top {
+  height: 40px; }
+  .layout__header .layout__header-row--top .layout-navigation {
+    height: 40px; }
+    @media screen and (max-width: 1024px) {
+      .layout__header .layout__header-row--top .layout-navigation {
+        height: 40px; } }
+  .layout__header .layout__header-row--top .layout-navigation__link {
+    line-height: 40px; }
+    @media screen and (max-width: 1024px) {
+      .layout__header .layout__header-row--top .layout-navigation__link {
+        line-height: 32px; } }
+
+.layout__header .layout__header-row--bottom {
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e7e7; }
+  .layout__header .layout__header-row--bottom .layout-navigation {
+    height: 70px; }
+    @media screen and (max-width: 1024px) {
+      .layout__header .layout__header-row--bottom .layout-navigation {
+        height: 70px; } }
+  .layout__header .layout__header-row--bottom .layout-navigation__link {
+    line-height: 70px; }
+    @media screen and (max-width: 1024px) {
+      .layout__header .layout__header-row--bottom .layout-navigation__link {
+        line-height: 32px; } }
+  .layout__header .layout__header-row--bottom .layout-navigation__link {
+    border-right: 1px solid #e6e7e7;
+    border-bottom: 1px solid #e6e7e7; }
+    .layout__header .layout__header-row--bottom .layout-navigation__link:last-child {
+      border-right: 0; }
+  .layout__header .layout__header-row--bottom a {
+    display: block;
+    background-color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #212121; }
+    .layout__header .layout__header-row--bottom a:hover {
+      text-decoration: none;
+      background-color: #e6e7e7; }
+
 .layout__footer {
   background-color: #00a5e2;
   border-top: 0;
@@ -9458,7 +9525,7 @@ body {
             transform-origin: right top; }
   .layout__footer .layout__footer-inner {
     padding-bottom: 0; }
-  .layout__footer .block h1, .layout__footer .block .heading-h1, .layout__footer .block .banner h2, .banner .layout__footer .block h2, .layout__footer .block .banner .heading-h2, .banner .layout__footer .block .heading-h2, .layout__footer .block .banner h3, .banner .layout__footer .block h3, .layout__footer .block .banner .heading-h3, .banner .layout__footer .block .heading-h3, .layout__footer .block .banner .node-list-simple-title, .banner .layout__footer .block .node-list-simple-title, .layout__footer .block .banner .node-list-advanced-title, .banner .layout__footer .block .node-list-advanced-title, .layout__footer .block .banner .field--name-field-heading, .banner .layout__footer .block .field--name-field-heading, .layout__footer .block .banner h4, .banner .layout__footer .block h4, .layout__footer .block .banner .heading-h4, .banner .layout__footer .block .heading-h4, .layout__footer .block .banner h5, .banner .layout__footer .block h5, .layout__footer .block .banner .heading-h5, .banner .layout__footer .block .heading-h5, .layout__footer .block .banner .field--name-field-highlighted, .banner .layout__footer .block .field--name-field-highlighted, .layout__footer .block .banner h6, .banner .layout__footer .block h6, .layout__footer .block .banner .heading-h6, .banner .layout__footer .block .heading-h6, .layout__footer .block
+  .layout__footer .block h1, .layout__footer .block .heading-h1, .layout__footer .block .banner h2, .banner .layout__footer .block h2, .layout__footer .block .banner .heading-h2, .banner .layout__footer .block .heading-h2, .layout__footer .block .banner .field--name-field-heading, .banner .layout__footer .block .field--name-field-heading, .layout__footer .block .banner h3, .banner .layout__footer .block h3, .layout__footer .block .banner .heading-h3, .banner .layout__footer .block .heading-h3, .layout__footer .block .banner .node-list-simple-title, .banner .layout__footer .block .node-list-simple-title, .layout__footer .block .banner .node-list-advanced-title, .banner .layout__footer .block .node-list-advanced-title, .layout__footer .block .banner h4, .banner .layout__footer .block h4, .layout__footer .block .banner .heading-h4, .banner .layout__footer .block .heading-h4, .layout__footer .block .banner h5, .banner .layout__footer .block h5, .layout__footer .block .banner .heading-h5, .banner .layout__footer .block .heading-h5, .layout__footer .block .banner .field--name-field-highlighted, .banner .layout__footer .block .field--name-field-highlighted, .layout__footer .block .banner h6, .banner .layout__footer .block h6, .layout__footer .block .banner .heading-h6, .banner .layout__footer .block .heading-h6, .layout__footer .block
   .banner .block-title,
   .banner .layout__footer .block .block-title, .layout__footer .block .field--name-field-description, .layout__footer .block
   .field--name-field-description p,
@@ -9469,24 +9536,26 @@ body {
   .field--name-field-description .layout__footer .block p.block-title,
   .layout__footer .block h2,
   .layout__footer .block .heading-h2,
+  .layout__footer .block .field--name-field-heading,
   .layout__footer .block h2.block-title,
   .layout__footer .block .block-title.heading-h2,
+  .layout__footer .block .block-title.field--name-field-heading,
   .layout__footer .block h3,
   .layout__footer .block .heading-h3,
   .layout__footer .block .node-list-simple-title,
   .layout__footer .block .node-list-advanced-title,
-  .layout__footer .block .field--name-field-heading,
   .layout__footer .block h3.block-title,
   .layout__footer .block .block-title.heading-h3,
   .layout__footer .block .block-title.node-list-simple-title,
   .layout__footer .block .block-title.node-list-advanced-title,
-  .layout__footer .block .block-title.field--name-field-heading,
   .layout__footer nav h1,
   .layout__footer nav .heading-h1,
   .layout__footer nav .banner h2, .banner
   .layout__footer nav h2,
   .layout__footer nav .banner .heading-h2, .banner
   .layout__footer nav .heading-h2,
+  .layout__footer nav .banner .field--name-field-heading, .banner
+  .layout__footer nav .field--name-field-heading,
   .layout__footer nav .banner h3, .banner
   .layout__footer nav h3,
   .layout__footer nav .banner .heading-h3, .banner
@@ -9495,8 +9564,6 @@ body {
   .layout__footer nav .node-list-simple-title,
   .layout__footer nav .banner .node-list-advanced-title, .banner
   .layout__footer nav .node-list-advanced-title,
-  .layout__footer nav .banner .field--name-field-heading, .banner
-  .layout__footer nav .field--name-field-heading,
   .layout__footer nav .banner h4, .banner
   .layout__footer nav h4,
   .layout__footer nav .banner .heading-h4, .banner
@@ -9533,20 +9600,20 @@ body {
   .layout__footer nav p.block-title,
   .layout__footer nav h2,
   .layout__footer nav .heading-h2,
+  .layout__footer nav .field--name-field-heading,
   .layout__footer nav h2.block-title,
   .layout__footer nav .block-title.heading-h2,
+  .layout__footer nav .block-title.field--name-field-heading,
   .layout__footer nav h3,
   .layout__footer nav .heading-h3,
   .layout__footer nav .node-list-simple-title,
   .layout__footer nav .node-list-advanced-title,
-  .layout__footer nav .field--name-field-heading,
   .layout__footer nav h3.block-title,
   .layout__footer nav .block-title.heading-h3,
   .layout__footer nav .block-title.node-list-simple-title,
-  .layout__footer nav .block-title.node-list-advanced-title,
-  .layout__footer nav .block-title.field--name-field-heading {
+  .layout__footer nav .block-title.node-list-advanced-title {
     font-weight: 800;
-    font-size: 24px;
+    font-size: 18px;
     color: #fff;
     text-transform: uppercase;
     padding: 18px 0;
@@ -9605,14 +9672,84 @@ body {
   .layout__footer-bottom-outer {
     padding: 55px 0; } }
 
+.card .card-title,
+.card .card-title h1,
+.card .card-title .heading-h1,
+.card .card-title .banner h2, .banner
+.card .card-title h2,
+.card .card-title .banner .heading-h2, .banner
+.card .card-title .heading-h2,
+.card .card-title .banner .field--name-field-heading, .banner
+.card .card-title .field--name-field-heading,
+.card .card-title .banner h3, .banner
+.card .card-title h3,
+.card .card-title .banner .heading-h3, .banner
+.card .card-title .heading-h3,
+.card .card-title .banner .node-list-simple-title, .banner
+.card .card-title .node-list-simple-title,
+.card .card-title .banner .node-list-advanced-title, .banner
+.card .card-title .node-list-advanced-title,
+.card .card-title .banner h4, .banner
+.card .card-title h4,
+.card .card-title .banner .heading-h4, .banner
+.card .card-title .heading-h4,
+.card .card-title .banner h5, .banner
+.card .card-title h5,
+.card .card-title .banner .heading-h5, .banner
+.card .card-title .heading-h5,
+.card .card-title .banner .field--name-field-highlighted, .banner
+.card .card-title .field--name-field-highlighted,
+.card .card-title .banner h6, .banner
+.card .card-title h6,
+.card .card-title .banner .heading-h6, .banner
+.card .card-title .heading-h6,
+.card .card-title
+.banner .block-title,
+.banner
+.card .card-title .block-title,
+.card .card-title .field--name-field-description,
+.card .card-title
+.field--name-field-description p,
+.field--name-field-description
+.card .card-title p, .card .card-title h2, .card .card-title .heading-h2, .card .card-title .field--name-field-heading, .card .card-title h3, .card .card-title .heading-h3, .card .card-title .node-list-simple-title, .card .card-title .node-list-advanced-title, .card .card-title h4, .card .card-title .heading-h4, .card .card-title .paragraph--type--video .field--name-field-description, .paragraph--type--video .card .card-title .field--name-field-description, .card .card-title
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .card .card-title p, .card .card-title h5, .card .card-title .heading-h5, .card .card-title .field--name-field-highlighted, .card .card-title h6, .card .card-title .heading-h6,
+.card .card-title .pane-title {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #212121;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 15px; }
+
+.card.card-block,
+.card .card-block {
+  background-color: #edeeee;
+  padding: 2.5rem; }
+
+.card .card-text,
+.card .card-text p {
+  color: #212121; }
+
+.card .card-published-at {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ff3c00; }
+
 .btn, .field--name-field-link a {
   position: relative;
   border-radius: 0;
   min-width: 100px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   border: 0;
-  padding-left: 100px; }
+  padding-left: 104px;
+  letter-spacing: 1px; }
+  .btn .icon, .field--name-field-link a .icon, .btn .breadcrumb li:first-child a:before, .breadcrumb li:first-child .btn a:before, .field--name-field-link a .breadcrumb li:first-child a:before, .breadcrumb li:first-child .field--name-field-link a a:before, .btn .btn:before, .field--name-field-link a .btn:before, .btn .field--name-field-link a:before, .field--name-field-link .btn a:before, .field--name-field-link a a:before {
+    display: none; }
   .btn:before, .field--name-field-link a:before {
     position: absolute;
     top: 0;
@@ -9622,7 +9759,7 @@ body {
     content: "";
     text-align: right;
     padding-right: 10px;
-    padding-top: 6px;
+    padding-top: 10px;
     font-size: 30px; }
   .btn:after, .field--name-field-link a:after {
     position: absolute;
@@ -9634,8 +9771,8 @@ body {
     border: solid transparent;
     pointer-events: none;
     border-color: rgba(136, 183, 213, 0);
-    border-width: 22px;
-    margin-top: -22px; }
+    border-width: 26px;
+    margin-top: -26px; }
 
 .btn-default:before, .angled-background-color-primary .field--name-field-link a:before {
   background-color: #dbdbdb;
@@ -9644,13 +9781,13 @@ body {
 .btn-default:after, .angled-background-color-primary .field--name-field-link a:after {
   border-left-color: #dbdbdb; }
 
-.btn-primary, .angled-background-image .field--name-field-link a, .angled-background-color-white .field--name-field-link a, .angled-background-color-gray .field--name-field-link a, .angled-background-color-secondary .field--name-field-link a, .btn-primary:hover, .angled-background-image .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link a:hover {
+.btn-primary, .angled-background-image .field--name-field-link a, .angled-background-color-white .field--name-field-link a, .angled-background-color-light-gray .field--name-field-link a, .angled-background-color-gray .field--name-field-link a, .angled-background-color-secondary .field--name-field-link a, .btn-primary:hover, .angled-background-image .field--name-field-link a:hover, .angled-background-color-white .field--name-field-link a:hover, .angled-background-color-light-gray .field--name-field-link a:hover, .angled-background-color-gray .field--name-field-link a:hover, .angled-background-color-secondary .field--name-field-link a:hover {
   background-color: #00bcff; }
 
-.btn-primary:before, .angled-background-image .field--name-field-link a:before, .angled-background-color-white .field--name-field-link a:before, .angled-background-color-gray .field--name-field-link a:before, .angled-background-color-secondary .field--name-field-link a:before {
+.btn-primary:before, .angled-background-image .field--name-field-link a:before, .angled-background-color-white .field--name-field-link a:before, .angled-background-color-light-gray .field--name-field-link a:before, .angled-background-color-gray .field--name-field-link a:before, .angled-background-color-secondary .field--name-field-link a:before {
   background-color: #00a5e2; }
 
-.btn-primary:after, .angled-background-image .field--name-field-link a:after, .angled-background-color-white .field--name-field-link a:after, .angled-background-color-gray .field--name-field-link a:after, .angled-background-color-secondary .field--name-field-link a:after {
+.btn-primary:after, .angled-background-image .field--name-field-link a:after, .angled-background-color-white .field--name-field-link a:after, .angled-background-color-light-gray .field--name-field-link a:after, .angled-background-color-gray .field--name-field-link a:after, .angled-background-color-secondary .field--name-field-link a:after {
   border-left-color: #00a5e2; }
 
 .btn-secondary:before {
@@ -9722,6 +9859,9 @@ body {
 .angled-background-color-white .angled-background-inner:before {
   background-color: #fff; }
 
+.angled-background-color-light-gray .angled-background-inner:before {
+  background-color: #ecf2f4; }
+
 .angled-background-color-gray .angled-background-inner:before {
   background-color: #f4f5f5; }
 
@@ -9784,47 +9924,56 @@ body {
   text-transform: uppercase;
   font-weight: 800; }
 
-.angled-background-image h1, .angled-background-image .heading-h1, .angled-background-image .banner h2, .banner .angled-background-image h2, .angled-background-image .banner .heading-h2, .banner .angled-background-image .heading-h2, .angled-background-image .banner h3, .banner .angled-background-image h3, .angled-background-image .banner .heading-h3, .banner .angled-background-image .heading-h3, .angled-background-image .banner .node-list-simple-title, .banner .angled-background-image .node-list-simple-title, .angled-background-image .banner .node-list-advanced-title, .banner .angled-background-image .node-list-advanced-title, .angled-background-image .banner .field--name-field-heading, .banner .angled-background-image .field--name-field-heading, .angled-background-image .banner h4, .banner .angled-background-image h4, .angled-background-image .banner .heading-h4, .banner .angled-background-image .heading-h4, .angled-background-image .banner h5, .banner .angled-background-image h5, .angled-background-image .banner .heading-h5, .banner .angled-background-image .heading-h5, .angled-background-image .banner .field--name-field-highlighted, .banner .angled-background-image .field--name-field-highlighted, .angled-background-image .banner h6, .banner .angled-background-image h6, .angled-background-image .banner .heading-h6, .banner .angled-background-image .heading-h6, .angled-background-image
+.angled-background-image h1, .angled-background-image .heading-h1, .angled-background-image .banner h2, .banner .angled-background-image h2, .angled-background-image .banner .heading-h2, .banner .angled-background-image .heading-h2, .angled-background-image .banner .field--name-field-heading, .banner .angled-background-image .field--name-field-heading, .angled-background-image .banner h3, .banner .angled-background-image h3, .angled-background-image .banner .heading-h3, .banner .angled-background-image .heading-h3, .angled-background-image .banner .node-list-simple-title, .banner .angled-background-image .node-list-simple-title, .angled-background-image .banner .node-list-advanced-title, .banner .angled-background-image .node-list-advanced-title, .angled-background-image .banner h4, .banner .angled-background-image h4, .angled-background-image .banner .heading-h4, .banner .angled-background-image .heading-h4, .angled-background-image .banner h5, .banner .angled-background-image h5, .angled-background-image .banner .heading-h5, .banner .angled-background-image .heading-h5, .angled-background-image .banner .field--name-field-highlighted, .banner .angled-background-image .field--name-field-highlighted, .angled-background-image .banner h6, .banner .angled-background-image h6, .angled-background-image .banner .heading-h6, .banner .angled-background-image .heading-h6, .angled-background-image
 .banner .block-title,
 .banner .angled-background-image .block-title, .angled-background-image .field--name-field-description, .angled-background-image
 .field--name-field-description p,
-.field--name-field-description .angled-background-image p, .angled-background-image h2, .angled-background-image .heading-h2, .angled-background-image h3, .angled-background-image .heading-h3, .angled-background-image .node-list-simple-title, .angled-background-image .node-list-advanced-title, .angled-background-image .field--name-field-heading, .angled-background-image h4, .angled-background-image .heading-h4, .angled-background-image .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-image .field--name-field-description, .angled-background-image
+.field--name-field-description .angled-background-image p, .angled-background-image h2, .angled-background-image .heading-h2, .angled-background-image .field--name-field-heading, .angled-background-image h3, .angled-background-image .heading-h3, .angled-background-image .node-list-simple-title, .angled-background-image .node-list-advanced-title, .angled-background-image h4, .angled-background-image .heading-h4, .angled-background-image .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-image .field--name-field-description, .angled-background-image
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .angled-background-image p, .angled-background-image h5, .angled-background-image .heading-h5, .angled-background-image .field--name-field-highlighted, .angled-background-image h6, .angled-background-image .heading-h6, .angled-background-image p {
   color: #fff; }
 
-.angled-background-color-white h1, .angled-background-color-white .heading-h1, .angled-background-color-white .banner h2, .banner .angled-background-color-white h2, .angled-background-color-white .banner .heading-h2, .banner .angled-background-color-white .heading-h2, .angled-background-color-white .banner h3, .banner .angled-background-color-white h3, .angled-background-color-white .banner .heading-h3, .banner .angled-background-color-white .heading-h3, .angled-background-color-white .banner .node-list-simple-title, .banner .angled-background-color-white .node-list-simple-title, .angled-background-color-white .banner .node-list-advanced-title, .banner .angled-background-color-white .node-list-advanced-title, .angled-background-color-white .banner .field--name-field-heading, .banner .angled-background-color-white .field--name-field-heading, .angled-background-color-white .banner h4, .banner .angled-background-color-white h4, .angled-background-color-white .banner .heading-h4, .banner .angled-background-color-white .heading-h4, .angled-background-color-white .banner h5, .banner .angled-background-color-white h5, .angled-background-color-white .banner .heading-h5, .banner .angled-background-color-white .heading-h5, .angled-background-color-white .banner .field--name-field-highlighted, .banner .angled-background-color-white .field--name-field-highlighted, .angled-background-color-white .banner h6, .banner .angled-background-color-white h6, .angled-background-color-white .banner .heading-h6, .banner .angled-background-color-white .heading-h6, .angled-background-color-white
+.angled-background-color-white h1, .angled-background-color-white .heading-h1, .angled-background-color-white .banner h2, .banner .angled-background-color-white h2, .angled-background-color-white .banner .heading-h2, .banner .angled-background-color-white .heading-h2, .angled-background-color-white .banner .field--name-field-heading, .banner .angled-background-color-white .field--name-field-heading, .angled-background-color-white .banner h3, .banner .angled-background-color-white h3, .angled-background-color-white .banner .heading-h3, .banner .angled-background-color-white .heading-h3, .angled-background-color-white .banner .node-list-simple-title, .banner .angled-background-color-white .node-list-simple-title, .angled-background-color-white .banner .node-list-advanced-title, .banner .angled-background-color-white .node-list-advanced-title, .angled-background-color-white .banner h4, .banner .angled-background-color-white h4, .angled-background-color-white .banner .heading-h4, .banner .angled-background-color-white .heading-h4, .angled-background-color-white .banner h5, .banner .angled-background-color-white h5, .angled-background-color-white .banner .heading-h5, .banner .angled-background-color-white .heading-h5, .angled-background-color-white .banner .field--name-field-highlighted, .banner .angled-background-color-white .field--name-field-highlighted, .angled-background-color-white .banner h6, .banner .angled-background-color-white h6, .angled-background-color-white .banner .heading-h6, .banner .angled-background-color-white .heading-h6, .angled-background-color-white
 .banner .block-title,
 .banner .angled-background-color-white .block-title, .angled-background-color-white .field--name-field-description, .angled-background-color-white
 .field--name-field-description p,
-.field--name-field-description .angled-background-color-white p, .angled-background-color-white h2, .angled-background-color-white .heading-h2, .angled-background-color-white h3, .angled-background-color-white .heading-h3, .angled-background-color-white .node-list-simple-title, .angled-background-color-white .node-list-advanced-title, .angled-background-color-white .field--name-field-heading, .angled-background-color-white h4, .angled-background-color-white .heading-h4, .angled-background-color-white .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-white .field--name-field-description, .angled-background-color-white
+.field--name-field-description .angled-background-color-white p, .angled-background-color-white h2, .angled-background-color-white .heading-h2, .angled-background-color-white .field--name-field-heading, .angled-background-color-white h3, .angled-background-color-white .heading-h3, .angled-background-color-white .node-list-simple-title, .angled-background-color-white .node-list-advanced-title, .angled-background-color-white h4, .angled-background-color-white .heading-h4, .angled-background-color-white .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-white .field--name-field-description, .angled-background-color-white
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .angled-background-color-white p, .angled-background-color-white h5, .angled-background-color-white .heading-h5, .angled-background-color-white .field--name-field-highlighted, .angled-background-color-white h6, .angled-background-color-white .heading-h6, .angled-background-color-white p {
   color: #212121; }
 
-.angled-background-color-gray h1, .angled-background-color-gray .heading-h1, .angled-background-color-gray .banner h2, .banner .angled-background-color-gray h2, .angled-background-color-gray .banner .heading-h2, .banner .angled-background-color-gray .heading-h2, .angled-background-color-gray .banner h3, .banner .angled-background-color-gray h3, .angled-background-color-gray .banner .heading-h3, .banner .angled-background-color-gray .heading-h3, .angled-background-color-gray .banner .node-list-simple-title, .banner .angled-background-color-gray .node-list-simple-title, .angled-background-color-gray .banner .node-list-advanced-title, .banner .angled-background-color-gray .node-list-advanced-title, .angled-background-color-gray .banner .field--name-field-heading, .banner .angled-background-color-gray .field--name-field-heading, .angled-background-color-gray .banner h4, .banner .angled-background-color-gray h4, .angled-background-color-gray .banner .heading-h4, .banner .angled-background-color-gray .heading-h4, .angled-background-color-gray .banner h5, .banner .angled-background-color-gray h5, .angled-background-color-gray .banner .heading-h5, .banner .angled-background-color-gray .heading-h5, .angled-background-color-gray .banner .field--name-field-highlighted, .banner .angled-background-color-gray .field--name-field-highlighted, .angled-background-color-gray .banner h6, .banner .angled-background-color-gray h6, .angled-background-color-gray .banner .heading-h6, .banner .angled-background-color-gray .heading-h6, .angled-background-color-gray
+.angled-background-color-light-gray h1, .angled-background-color-light-gray .heading-h1, .angled-background-color-light-gray .banner h2, .banner .angled-background-color-light-gray h2, .angled-background-color-light-gray .banner .heading-h2, .banner .angled-background-color-light-gray .heading-h2, .angled-background-color-light-gray .banner .field--name-field-heading, .banner .angled-background-color-light-gray .field--name-field-heading, .angled-background-color-light-gray .banner h3, .banner .angled-background-color-light-gray h3, .angled-background-color-light-gray .banner .heading-h3, .banner .angled-background-color-light-gray .heading-h3, .angled-background-color-light-gray .banner .node-list-simple-title, .banner .angled-background-color-light-gray .node-list-simple-title, .angled-background-color-light-gray .banner .node-list-advanced-title, .banner .angled-background-color-light-gray .node-list-advanced-title, .angled-background-color-light-gray .banner h4, .banner .angled-background-color-light-gray h4, .angled-background-color-light-gray .banner .heading-h4, .banner .angled-background-color-light-gray .heading-h4, .angled-background-color-light-gray .banner h5, .banner .angled-background-color-light-gray h5, .angled-background-color-light-gray .banner .heading-h5, .banner .angled-background-color-light-gray .heading-h5, .angled-background-color-light-gray .banner .field--name-field-highlighted, .banner .angled-background-color-light-gray .field--name-field-highlighted, .angled-background-color-light-gray .banner h6, .banner .angled-background-color-light-gray h6, .angled-background-color-light-gray .banner .heading-h6, .banner .angled-background-color-light-gray .heading-h6, .angled-background-color-light-gray
+.banner .block-title,
+.banner .angled-background-color-light-gray .block-title, .angled-background-color-light-gray .field--name-field-description, .angled-background-color-light-gray
+.field--name-field-description p,
+.field--name-field-description .angled-background-color-light-gray p, .angled-background-color-light-gray h2, .angled-background-color-light-gray .heading-h2, .angled-background-color-light-gray .field--name-field-heading, .angled-background-color-light-gray h3, .angled-background-color-light-gray .heading-h3, .angled-background-color-light-gray .node-list-simple-title, .angled-background-color-light-gray .node-list-advanced-title, .angled-background-color-light-gray h4, .angled-background-color-light-gray .heading-h4, .angled-background-color-light-gray .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-light-gray .field--name-field-description, .angled-background-color-light-gray
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .angled-background-color-light-gray p, .angled-background-color-light-gray h5, .angled-background-color-light-gray .heading-h5, .angled-background-color-light-gray .field--name-field-highlighted, .angled-background-color-light-gray h6, .angled-background-color-light-gray .heading-h6, .angled-background-color-light-gray p {
+  color: #212121; }
+
+.angled-background-color-gray h1, .angled-background-color-gray .heading-h1, .angled-background-color-gray .banner h2, .banner .angled-background-color-gray h2, .angled-background-color-gray .banner .heading-h2, .banner .angled-background-color-gray .heading-h2, .angled-background-color-gray .banner .field--name-field-heading, .banner .angled-background-color-gray .field--name-field-heading, .angled-background-color-gray .banner h3, .banner .angled-background-color-gray h3, .angled-background-color-gray .banner .heading-h3, .banner .angled-background-color-gray .heading-h3, .angled-background-color-gray .banner .node-list-simple-title, .banner .angled-background-color-gray .node-list-simple-title, .angled-background-color-gray .banner .node-list-advanced-title, .banner .angled-background-color-gray .node-list-advanced-title, .angled-background-color-gray .banner h4, .banner .angled-background-color-gray h4, .angled-background-color-gray .banner .heading-h4, .banner .angled-background-color-gray .heading-h4, .angled-background-color-gray .banner h5, .banner .angled-background-color-gray h5, .angled-background-color-gray .banner .heading-h5, .banner .angled-background-color-gray .heading-h5, .angled-background-color-gray .banner .field--name-field-highlighted, .banner .angled-background-color-gray .field--name-field-highlighted, .angled-background-color-gray .banner h6, .banner .angled-background-color-gray h6, .angled-background-color-gray .banner .heading-h6, .banner .angled-background-color-gray .heading-h6, .angled-background-color-gray
 .banner .block-title,
 .banner .angled-background-color-gray .block-title, .angled-background-color-gray .field--name-field-description, .angled-background-color-gray
 .field--name-field-description p,
-.field--name-field-description .angled-background-color-gray p, .angled-background-color-gray h2, .angled-background-color-gray .heading-h2, .angled-background-color-gray h3, .angled-background-color-gray .heading-h3, .angled-background-color-gray .node-list-simple-title, .angled-background-color-gray .node-list-advanced-title, .angled-background-color-gray .field--name-field-heading, .angled-background-color-gray h4, .angled-background-color-gray .heading-h4, .angled-background-color-gray .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-gray .field--name-field-description, .angled-background-color-gray
+.field--name-field-description .angled-background-color-gray p, .angled-background-color-gray h2, .angled-background-color-gray .heading-h2, .angled-background-color-gray .field--name-field-heading, .angled-background-color-gray h3, .angled-background-color-gray .heading-h3, .angled-background-color-gray .node-list-simple-title, .angled-background-color-gray .node-list-advanced-title, .angled-background-color-gray h4, .angled-background-color-gray .heading-h4, .angled-background-color-gray .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-gray .field--name-field-description, .angled-background-color-gray
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .angled-background-color-gray p, .angled-background-color-gray h5, .angled-background-color-gray .heading-h5, .angled-background-color-gray .field--name-field-highlighted, .angled-background-color-gray h6, .angled-background-color-gray .heading-h6, .angled-background-color-gray p {
   color: #212121; }
 
-.angled-background-color-primary h1, .angled-background-color-primary .heading-h1, .angled-background-color-primary .banner h2, .banner .angled-background-color-primary h2, .angled-background-color-primary .banner .heading-h2, .banner .angled-background-color-primary .heading-h2, .angled-background-color-primary .banner h3, .banner .angled-background-color-primary h3, .angled-background-color-primary .banner .heading-h3, .banner .angled-background-color-primary .heading-h3, .angled-background-color-primary .banner .node-list-simple-title, .banner .angled-background-color-primary .node-list-simple-title, .angled-background-color-primary .banner .node-list-advanced-title, .banner .angled-background-color-primary .node-list-advanced-title, .angled-background-color-primary .banner .field--name-field-heading, .banner .angled-background-color-primary .field--name-field-heading, .angled-background-color-primary .banner h4, .banner .angled-background-color-primary h4, .angled-background-color-primary .banner .heading-h4, .banner .angled-background-color-primary .heading-h4, .angled-background-color-primary .banner h5, .banner .angled-background-color-primary h5, .angled-background-color-primary .banner .heading-h5, .banner .angled-background-color-primary .heading-h5, .angled-background-color-primary .banner .field--name-field-highlighted, .banner .angled-background-color-primary .field--name-field-highlighted, .angled-background-color-primary .banner h6, .banner .angled-background-color-primary h6, .angled-background-color-primary .banner .heading-h6, .banner .angled-background-color-primary .heading-h6, .angled-background-color-primary
+.angled-background-color-primary h1, .angled-background-color-primary .heading-h1, .angled-background-color-primary .banner h2, .banner .angled-background-color-primary h2, .angled-background-color-primary .banner .heading-h2, .banner .angled-background-color-primary .heading-h2, .angled-background-color-primary .banner .field--name-field-heading, .banner .angled-background-color-primary .field--name-field-heading, .angled-background-color-primary .banner h3, .banner .angled-background-color-primary h3, .angled-background-color-primary .banner .heading-h3, .banner .angled-background-color-primary .heading-h3, .angled-background-color-primary .banner .node-list-simple-title, .banner .angled-background-color-primary .node-list-simple-title, .angled-background-color-primary .banner .node-list-advanced-title, .banner .angled-background-color-primary .node-list-advanced-title, .angled-background-color-primary .banner h4, .banner .angled-background-color-primary h4, .angled-background-color-primary .banner .heading-h4, .banner .angled-background-color-primary .heading-h4, .angled-background-color-primary .banner h5, .banner .angled-background-color-primary h5, .angled-background-color-primary .banner .heading-h5, .banner .angled-background-color-primary .heading-h5, .angled-background-color-primary .banner .field--name-field-highlighted, .banner .angled-background-color-primary .field--name-field-highlighted, .angled-background-color-primary .banner h6, .banner .angled-background-color-primary h6, .angled-background-color-primary .banner .heading-h6, .banner .angled-background-color-primary .heading-h6, .angled-background-color-primary
 .banner .block-title,
 .banner .angled-background-color-primary .block-title, .angled-background-color-primary .field--name-field-description, .angled-background-color-primary
 .field--name-field-description p,
-.field--name-field-description .angled-background-color-primary p, .angled-background-color-primary h2, .angled-background-color-primary .heading-h2, .angled-background-color-primary h3, .angled-background-color-primary .heading-h3, .angled-background-color-primary .node-list-simple-title, .angled-background-color-primary .node-list-advanced-title, .angled-background-color-primary .field--name-field-heading, .angled-background-color-primary h4, .angled-background-color-primary .heading-h4, .angled-background-color-primary .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-primary .field--name-field-description, .angled-background-color-primary
+.field--name-field-description .angled-background-color-primary p, .angled-background-color-primary h2, .angled-background-color-primary .heading-h2, .angled-background-color-primary .field--name-field-heading, .angled-background-color-primary h3, .angled-background-color-primary .heading-h3, .angled-background-color-primary .node-list-simple-title, .angled-background-color-primary .node-list-advanced-title, .angled-background-color-primary h4, .angled-background-color-primary .heading-h4, .angled-background-color-primary .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-primary .field--name-field-description, .angled-background-color-primary
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .angled-background-color-primary p, .angled-background-color-primary h5, .angled-background-color-primary .heading-h5, .angled-background-color-primary .field--name-field-highlighted, .angled-background-color-primary h6, .angled-background-color-primary .heading-h6, .angled-background-color-primary p {
   color: #fff; }
 
-.angled-background-color-secondary h1, .angled-background-color-secondary .heading-h1, .angled-background-color-secondary .banner h2, .banner .angled-background-color-secondary h2, .angled-background-color-secondary .banner .heading-h2, .banner .angled-background-color-secondary .heading-h2, .angled-background-color-secondary .banner h3, .banner .angled-background-color-secondary h3, .angled-background-color-secondary .banner .heading-h3, .banner .angled-background-color-secondary .heading-h3, .angled-background-color-secondary .banner .node-list-simple-title, .banner .angled-background-color-secondary .node-list-simple-title, .angled-background-color-secondary .banner .node-list-advanced-title, .banner .angled-background-color-secondary .node-list-advanced-title, .angled-background-color-secondary .banner .field--name-field-heading, .banner .angled-background-color-secondary .field--name-field-heading, .angled-background-color-secondary .banner h4, .banner .angled-background-color-secondary h4, .angled-background-color-secondary .banner .heading-h4, .banner .angled-background-color-secondary .heading-h4, .angled-background-color-secondary .banner h5, .banner .angled-background-color-secondary h5, .angled-background-color-secondary .banner .heading-h5, .banner .angled-background-color-secondary .heading-h5, .angled-background-color-secondary .banner .field--name-field-highlighted, .banner .angled-background-color-secondary .field--name-field-highlighted, .angled-background-color-secondary .banner h6, .banner .angled-background-color-secondary h6, .angled-background-color-secondary .banner .heading-h6, .banner .angled-background-color-secondary .heading-h6, .angled-background-color-secondary
+.angled-background-color-secondary h1, .angled-background-color-secondary .heading-h1, .angled-background-color-secondary .banner h2, .banner .angled-background-color-secondary h2, .angled-background-color-secondary .banner .heading-h2, .banner .angled-background-color-secondary .heading-h2, .angled-background-color-secondary .banner .field--name-field-heading, .banner .angled-background-color-secondary .field--name-field-heading, .angled-background-color-secondary .banner h3, .banner .angled-background-color-secondary h3, .angled-background-color-secondary .banner .heading-h3, .banner .angled-background-color-secondary .heading-h3, .angled-background-color-secondary .banner .node-list-simple-title, .banner .angled-background-color-secondary .node-list-simple-title, .angled-background-color-secondary .banner .node-list-advanced-title, .banner .angled-background-color-secondary .node-list-advanced-title, .angled-background-color-secondary .banner h4, .banner .angled-background-color-secondary h4, .angled-background-color-secondary .banner .heading-h4, .banner .angled-background-color-secondary .heading-h4, .angled-background-color-secondary .banner h5, .banner .angled-background-color-secondary h5, .angled-background-color-secondary .banner .heading-h5, .banner .angled-background-color-secondary .heading-h5, .angled-background-color-secondary .banner .field--name-field-highlighted, .banner .angled-background-color-secondary .field--name-field-highlighted, .angled-background-color-secondary .banner h6, .banner .angled-background-color-secondary h6, .angled-background-color-secondary .banner .heading-h6, .banner .angled-background-color-secondary .heading-h6, .angled-background-color-secondary
 .banner .block-title,
 .banner .angled-background-color-secondary .block-title, .angled-background-color-secondary .field--name-field-description, .angled-background-color-secondary
 .field--name-field-description p,
-.field--name-field-description .angled-background-color-secondary p, .angled-background-color-secondary h2, .angled-background-color-secondary .heading-h2, .angled-background-color-secondary h3, .angled-background-color-secondary .heading-h3, .angled-background-color-secondary .node-list-simple-title, .angled-background-color-secondary .node-list-advanced-title, .angled-background-color-secondary .field--name-field-heading, .angled-background-color-secondary h4, .angled-background-color-secondary .heading-h4, .angled-background-color-secondary .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-secondary .field--name-field-description, .angled-background-color-secondary
+.field--name-field-description .angled-background-color-secondary p, .angled-background-color-secondary h2, .angled-background-color-secondary .heading-h2, .angled-background-color-secondary .field--name-field-heading, .angled-background-color-secondary h3, .angled-background-color-secondary .heading-h3, .angled-background-color-secondary .node-list-simple-title, .angled-background-color-secondary .node-list-advanced-title, .angled-background-color-secondary h4, .angled-background-color-secondary .heading-h4, .angled-background-color-secondary .paragraph--type--video .field--name-field-description, .paragraph--type--video .angled-background-color-secondary .field--name-field-description, .angled-background-color-secondary
 .paragraph--type--video .field--name-field-description p,
 .paragraph--type--video .field--name-field-description .angled-background-color-secondary p, .angled-background-color-secondary h5, .angled-background-color-secondary .heading-h5, .angled-background-color-secondary .field--name-field-highlighted, .angled-background-color-secondary h6, .angled-background-color-secondary .heading-h6, .angled-background-color-secondary p {
   color: #fff; }
@@ -9844,6 +9993,9 @@ body {
 .angled-background-color-white .field--name-field-highlighted {
   color: #ff3c00; }
 
+.angled-background-color-light-gray .field--name-field-highlighted {
+  color: #ff3c00; }
+
 .angled-background-color-gray .field--name-field-highlighted {
   color: #ff3c00; }
 
@@ -9858,18 +10010,18 @@ body {
   .paragraph--type--_-column-action-centered .field--name-field-heading {
     text-align: left; }
   .paragraph--type--_-column-action-centered .field--name-field-description + .field--name-field-link {
-    margin-top: 40px; }
+    margin-top: 50px; }
 
 .paragraph--type--_-column-action-centered .field--name-field-heading {
   margin-bottom: 30px; }
 
 @media (min-width: 768px) {
   .paragraph--type--_-column-action-centered .field--name-field-heading {
-    margin-bottom: 50px; } }
+    margin-bottom: 60px; } }
 
 @media (min-width: 992px) {
   .paragraph--type--_-column-action-centered .field--name-field-heading {
-    margin-bottom: 90px; } }
+    margin-bottom: 100px; } }
 
 @media (min-width: 1200px) {
   .paragraph--type--_-column-action-centered .field--name-field-heading {
@@ -9897,6 +10049,10 @@ body {
 .paragraph--type--video.angled-background-color-white .field--name-field-description p {
   color: #a2a1a1; }
 
+.paragraph--type--video.angled-background-color-light-gray .field--name-field-description,
+.paragraph--type--video.angled-background-color-light-gray .field--name-field-description p {
+  color: #a2a1a1; }
+
 .paragraph--type--video.angled-background-color-gray .field--name-field-description,
 .paragraph--type--video.angled-background-color-gray .field--name-field-description p {
   color: #a2a1a1; }
@@ -9908,6 +10064,10 @@ body {
 .paragraph--type--video.angled-background-color-secondary .field--name-field-description,
 .paragraph--type--video.angled-background-color-secondary .field--name-field-description p {
   color: #fff; }
+
+.node-teaser-news .field--name-body,
+.node-teaser-news .field--name-body p {
+  color: #928f8f; }
 
 .node-list-simple .node-list-simple-profile-image {
   width: 45px; }
@@ -9956,7 +10116,7 @@ body {
 .node-list-advanced .node-list-advanced-full-name a:active {
   font-size: 20px;
   font-weight: 700;
-  color: #5c4b51; }
+  color: #212121; }
 
 .node-list-advanced .node-list-advanced-treatment-center {
   color: #2ecc71; }
@@ -10017,7 +10177,7 @@ body {
 .user-profile-list-advanced .user-profile-full-name a:active {
   font-size: 20px;
   font-weight: 700;
-  color: #5c4b51; }
+  color: #212121; }
 
 .user-profile-list-advanced .user-profile-relationship {
   color: #2ecc71; }

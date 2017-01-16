@@ -68,6 +68,19 @@
     }
   }
 
+  // Light gray
+  &.angled-background-color-light-gray {
+
+    // Description
+    .field--name-field-description {
+
+      &,
+      p {
+        color: #a2a1a1;
+      }
+    }
+  }
+
   // Gray
   &.angled-background-color-gray {
 

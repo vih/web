@@ -42,10 +42,15 @@ $card-background-color: #edeeee;
   }
 
   .card-text {
-    color: #808080;
+
+    &,
+    p {
+      color: $text-color;
+    }
   }
 
   .card-published-at {
+    font-weight: $font-weight-bold;
     font-size: $font-size-small;
     color: $brand-secondary;
   }

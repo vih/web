@@ -11,7 +11,7 @@
 // --------------------------------------------------
 
 $button-container-width: 60px;
-$button-arrow-width: 22px;
+$button-arrow-width: 26px;
 
 // Variants
 $button-default-icon-background: darken($btn-default-bg, 14%);
@@ -25,13 +25,20 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
 // Button
 .btn {
   @extend .btn;
+  @extend .btn-lg;
   position: relative;
   border-radius: 0;
   min-width: 100px;
+  font-size: $font-size-base;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
   border: 0;
   padding-left: floor( ($button-container-width + $button-arrow-width + $padding-base-horizontal) );
+  letter-spacing: 1px;
+
+  .icon {
+    display: none;
+  }
 
   &:before {
     @extend .icon;
@@ -43,7 +50,7 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
     content: $fa-var-arrow-right;
     text-align: right;
     padding-right: 10px;
-    padding-top: 6px;
+    padding-top: 10px;
     font-size: 30px;
   }
 

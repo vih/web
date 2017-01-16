@@ -50,6 +50,18 @@
   }
 }
 
+// Light gray
+.angled-background-color-light-gray {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
 // Gray
 .angled-background-color-gray {
 

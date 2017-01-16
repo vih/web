@@ -11,8 +11,8 @@
 // --------------------------------------------------
 
 $xs-paragraph-action-heading-margin-bottom: 30px;
-$sm-paragraph-action-heading-margin-bottom: 50px;
-$md-paragraph-action-heading-margin-bottom: 90px;
+$sm-paragraph-action-heading-margin-bottom: 60px;
+$md-paragraph-action-heading-margin-bottom: 100px;
 $lg-paragraph-action-heading-margin-bottom: 100px;
 
 // --------------------------------------------------
@@ -30,7 +30,7 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
   .field--name-field-description {
 
     + .field--name-field-link {
-      margin-top: 40px;
+      margin-top: 50px;
     }
   }
 }

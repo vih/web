@@ -66,6 +66,38 @@
       color: #fff;
     }
   }
+
+  .layout__header-row--top {
+    @include layout-header-row-height(40px);
+  }
+
+  .layout__header-row--bottom {
+    @include layout-header-row-height(70px);
+    background-color: #fff;
+    border-bottom: 1px solid $border-color;
+
+    .layout-navigation__link {
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    a {
+      display: block;
+      background-color: #fff;
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      color: $text-color;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $border-color;
+      }
+    }
+  }
 }
 
 // --------------------------------------------------

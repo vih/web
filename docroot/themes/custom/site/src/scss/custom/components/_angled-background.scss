@@ -30,6 +30,7 @@ $lg-angled-background-padding-bottom: 140px;
 
 // Variants
 $angled-background-color-white: #fff;
+$angled-background-color-light-gray: #ecf2f4;
 $angled-background-color-gray: #f4f5f5;
 $angled-background-color-primary: $brand-primary;
 $angled-background-color-secondary: $brand-secondary;
@@ -106,6 +107,16 @@ $angled-background-color-secondary: $brand-secondary;
 
     &:before {
       background-color: $angled-background-color-white;
+    }
+  }
+}
+
+.angled-background-color-light-gray {
+
+  .angled-background-inner {
+
+    &:before {
+      background-color: $angled-background-color-light-gray;
     }
   }
 }

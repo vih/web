@@ -1,7 +1,7 @@
 fonts:
   css:
     base:
-      'https://fonts.googleapis.com/css?family=Raleway:300,500,800': { type: external }
+      'https://fonts.googleapis.com/css?family=Lato:300,500,800': { type: external }
 
 styling:
   css:
