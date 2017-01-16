@@ -53,12 +53,15 @@
             <div class="layout-spacer"></div>
             <!-- End - spacer -->
 
-            <!-- Begin - language selection -->
-            <aside class="layout-header-language-selection">
-                <a href="#">DA</a>
-                <a href="#">EN</a>
-            </aside>
-            <!-- End - language selection -->
+            <!-- Begin - black bar - right -->
+            {% if page.header_black_bar_right %}
+                {% block header_black_bar_right %}
+                    <aside class="layout-header-language-selection">
+                        {{ page.header_black_bar_right }}
+                    </aside>
+                {% endblock %}
+            {% endif %}
+            <!-- End - black bar - right -->
 
         </div>
         <div class="layout__header-row layout__header-row--bottom">

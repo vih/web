@@ -38,7 +38,14 @@
     }
   }
 
-  .layout-header-language-selection {}
+  .layout-header-language-selection {
+
+    ul {
+      @extend .list-inline;
+      line-height: 40px;
+      margin: 0;
+    }
+  }
 
   // Icon
   .layout-header-contact-information,
