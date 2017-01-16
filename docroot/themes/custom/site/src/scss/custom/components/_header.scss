@@ -45,7 +45,8 @@
   .layout-header-tour,
   .layout-header-contact,
   .layout-header-language-selection {
-    font-size: $font-size-small;
+    font-size: $font-size-extra-small;
+    text-transform: uppercase;
     padding-left: 18px;
     padding-right: 18px;
 
@@ -59,6 +60,8 @@
 
     span {
       color: $brand-secondary;
+      font-size: $font-size-extra-extra-small;
+      margin-left: 6px;
     }
 
     .icon {
