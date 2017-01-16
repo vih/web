@@ -1,10 +1,6 @@
 <!-- Begin - wrapper -->
 <div class="layout__wrapper layout__header--scroll">
 
-    <!-- Begin - obfuscator -->
-    <div class="layout__obfuscator"></div>
-    <!-- End - obfuscator -->
-
     <!-- Begin - drawer -->
     <div class="layout__drawer" aria-hidden="true">
 
@@ -30,19 +26,19 @@
             <!-- End - title -->
 
             <!-- Begin - contact information -->
-            <aside>
-                <a href="tel:004575820811"><span class="icon"></span> +45 7582 0811</a> <span>Mandag - fredag 08:00 - 15:00</span>
+            <aside class="layout-header-contact-information">
+                <a href="tel:004575820811"><span class="icon"></span> +45 7582 0811</a> <span>Mandag - fredag <strong>08:00 - 15:00</strong></span>
             </aside>
             <!-- End - contact information -->
 
             <!-- Begin - tour -->
-            <aside>
-                <span class="icon"></span> Rundvisning <span>Det er gratis</span>
+            <aside class="layout-header-tour">
+                <span class="icon"></span> Rundvisning <span><strong>Det er gratis</strong></span>
             </aside>
             <!-- End - tour -->
 
             <!-- Begin - contact -->
-            <aside>
+            <aside class="layout-header-contact">
                 <a href="#"><span class="icon"></span> Kontakt</a>
             </aside>
             <!-- End - contact -->
@@ -53,7 +49,7 @@
             <!-- End - spacer -->
 
             <!-- Begin - language selection -->
-            <aside>
+            <aside class="layout-header-language-selection">
                 <a href="#">DA</a>
                 <a href="#">EN</a>
             </aside>
@@ -65,11 +61,11 @@
             <!-- Begin - navigation -->
             <!-- We hide it in small screens. -->
             <nav class="layout-navigation layout--large-screen-only">
-                <a class="layout-navigation__link" href="">Lange ophold</a>
-                <a class="layout-navigation__link" href="">Fag</a>
-                <a class="layout-navigation__link" href="">Sommerkursus</a>
-                <a class="layout-navigation__link" href="">Rundvising</a>
-                <a class="layout-navigation__link" href="">Om VIH</a>
+                <a class="layout-navigation__link" href="#">Lange ophold</a>
+                <a class="layout-navigation__link" href="#">Fag</a>
+                <a class="layout-navigation__link" href="#">Sommerkursus</a>
+                <a class="layout-navigation__link" href="#">Rundvising</a>
+                <a class="layout-navigation__link" href="#hjem">Om VIH</a>
             </nav>
             <!-- End - navigation -->
 
@@ -205,6 +201,10 @@
 
     </main>
     <!-- End - document -->
+
+    <!-- Begin - obfuscator -->
+    <div class="layout__obfuscator"></div>
+    <!-- End - obfuscator -->
 
 </div>
 <!-- End - wrapper -->

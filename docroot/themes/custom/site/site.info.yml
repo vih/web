@@ -7,8 +7,10 @@ screenshot: dist/images/screenshot.png
 base theme: bellcom
 
 regions:
-  main_navigation: 'Main navigation'
-  sidebar_left: 'Sidebar - left'
+  drawer_left: 'Drawer - left'
+  header_black_bar_left: 'Black bar - left'
+  header_black_bar_right: 'Black bar - right'
+  header_navigation: 'Header - navigation'
   banner: 'Banner'
   header: 'Top Bar'
   content: 'Content'

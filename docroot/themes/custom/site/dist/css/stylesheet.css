@@ -9252,17 +9252,17 @@ body {
 #drupal-live-announce {
   display: none; }
 
-.layout-content-inner {
+.layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
 
 @media (min-width: 768px) {
-  .layout-content-inner {
+  .layout__content-inner {
     padding-top: 30px;
     padding-bottom: 40px; } }
 
 @media (min-width: 992px) {
-  .layout-content-inner {
+  .layout__content-inner {
     padding-top: 40px;
     padding-bottom: 60px; } }
 
@@ -9377,68 +9377,65 @@ body {
   .breadcrumb li + li:before {
     border-left-color: #f7f7f7; }
 
-.header {
-  background-color: #fff;
-  -webkit-transition: background-color 250ms ease-in-out, -webkit-transform 300ms cubic-bezier(0.5, 0.13, 0.5, 0.87);
-  -o-transition: background-color 250ms ease-in-out, -o-transform 300ms cubic-bezier(0.5, 0.13, 0.5, 0.87);
-  transition: background-color 250ms ease-in-out, transform 300ms cubic-bezier(0.5, 0.13, 0.5, 0.87); }
+.layout__header .layout-header-contact-information .icon, .layout__header .layout-header-contact-information .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-contact-information a:before, .layout__header .layout-header-contact-information .btn:before, .layout__header .layout-header-contact-information .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-contact-information a:before {
+  content: ""; }
 
-.header-top-outer {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transition: opacity 300ms ease-in-out;
-  -o-transition: opacity 300ms ease-in-out;
-  transition: opacity 300ms ease-in-out; }
-  .header-top-outer .header-top-inner {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center; }
+.layout__header .layout-header-tour .icon, .layout__header .layout-header-tour .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-tour a:before, .layout__header .layout-header-tour .btn:before, .layout__header .layout-header-tour .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-tour a:before {
+  content: ""; }
 
-.header-bottom-outer .header-bottom-inner {
-  min-height: 86px;
-  max-width: 96%;
-  margin: auto;
-  background-color: #fff;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: background-color 250ms ease-in-out, -webkit-transform 300ms cubic-bezier(0.5, 0.13, 0.5, 0.87);
-  -o-transition: background-color 250ms ease-in-out, -o-transform 300ms cubic-bezier(0.5, 0.13, 0.5, 0.87);
-  transition: background-color 250ms ease-in-out, transform 300ms cubic-bezier(0.5, 0.13, 0.5, 0.87); }
+.layout__header .layout-header-contact .icon, .layout__header .layout-header-contact .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-contact a:before, .layout__header .layout-header-contact .btn:before, .layout__header .layout-header-contact .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-contact a:before {
+  content: ""; }
 
-.header-logo-link .header-logo-image {
-  height: 80px; }
+.layout__header .layout-header-contact-information,
+.layout__header .layout-header-tour,
+.layout__header .layout-header-contact,
+.layout__header .layout-header-language-selection {
+  font-size: 14px;
+  padding-left: 18px;
+  padding-right: 18px; }
+  .layout__header .layout-header-contact-information a, .layout__header .layout-header-contact-information a:hover,
+  .layout__header .layout-header-tour a,
+  .layout__header .layout-header-tour a:hover,
+  .layout__header .layout-header-contact a,
+  .layout__header .layout-header-contact a:hover,
+  .layout__header .layout-header-language-selection a,
+  .layout__header .layout-header-language-selection a:hover {
+    color: #fff; }
+  .layout__header .layout-header-contact-information span,
+  .layout__header .layout-header-tour span,
+  .layout__header .layout-header-contact span,
+  .layout__header .layout-header-language-selection span {
+    color: #ff3c00; }
+  .layout__header .layout-header-contact-information .icon, .layout__header .layout-header-contact-information .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-contact-information a:before, .layout__header .layout-header-contact-information .btn:before, .layout__header .layout-header-contact-information .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-contact-information a:before,
+  .layout__header .layout-header-tour .icon,
+  .layout__header .layout-header-tour .breadcrumb li:first-child a:before, .breadcrumb li:first-child
+  .layout__header .layout-header-tour a:before,
+  .layout__header .layout-header-tour .btn:before,
+  .layout__header .layout-header-tour .field--name-field-link a:before, .field--name-field-link
+  .layout__header .layout-header-tour a:before,
+  .layout__header .layout-header-contact .icon,
+  .layout__header .layout-header-contact .breadcrumb li:first-child a:before, .breadcrumb li:first-child
+  .layout__header .layout-header-contact a:before,
+  .layout__header .layout-header-contact .btn:before,
+  .layout__header .layout-header-contact .field--name-field-link a:before, .field--name-field-link
+  .layout__header .layout-header-contact a:before,
+  .layout__header .layout-header-language-selection .icon,
+  .layout__header .layout-header-language-selection .breadcrumb li:first-child a:before, .breadcrumb li:first-child
+  .layout__header .layout-header-language-selection a:before,
+  .layout__header .layout-header-language-selection .btn:before,
+  .layout__header .layout-header-language-selection .field--name-field-link a:before, .field--name-field-link
+  .layout__header .layout-header-language-selection a:before {
+    font-size: 16px;
+    color: #fff; }
 
-.header-is-sticky.header,
-.header-is-sticky .header {
-  z-index: 1030;
-  -webkit-transform: translate3d(0, -120px, 0);
-  transform: translate3d(0, -120px, 0); }
-
-.header-is-sticky .header-top-outer {
-  opacity: 0;
-  filter: alpha(opacity=0); }
-
-.header-is-sticky .header-bottom-outer .header-bottom-inner {
-  background-color: #fff; }
-
-.navigation-wrapper {
-  background-color: #fff; }
-  .navigation-wrapper .navigation-top {
-    padding: 20px 0; }
-  .navigation-wrapper .navigation-bottom {
-    border-top: 4px solid #fff;
-    width: 96%;
-    margin: auto; }
-
-.layout-footer {
+.layout__footer {
   background-color: #00a5e2;
   border-top: 0;
   margin: 0;
   padding-bottom: 0;
   position: relative;
   z-index: 1; }
-  .layout-footer:before {
+  .layout__footer:before {
     display: block;
     position: absolute;
     left: 0;
@@ -9449,7 +9446,7 @@ body {
     z-index: -1;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
-  .layout-footer:before {
+  .layout__footer:before {
     top: 0;
     -webkit-transform: skewX(0) skewY(5deg);
     -ms-transform: skewX(0) skewY(5deg);
@@ -9459,218 +9456,154 @@ body {
         -ms-transform-origin: right top;
          -o-transform-origin: right top;
             transform-origin: right top; }
-  .layout-footer .layout-footer-inner {
+  .layout__footer .layout__footer-inner {
     padding-bottom: 0; }
-  .layout-footer .block h1, .layout-footer .block .heading-h1, .layout-footer .block .banner h2, .banner .layout-footer .block h2, .layout-footer .block .banner .heading-h2, .banner .layout-footer .block .heading-h2, .layout-footer .block .banner h3, .banner .layout-footer .block h3, .layout-footer .block .banner .heading-h3, .banner .layout-footer .block .heading-h3, .layout-footer .block .banner .node-list-simple-title, .banner .layout-footer .block .node-list-simple-title, .layout-footer .block .banner .node-list-advanced-title, .banner .layout-footer .block .node-list-advanced-title, .layout-footer .block .banner .field--name-field-heading, .banner .layout-footer .block .field--name-field-heading, .layout-footer .block .banner h4, .banner .layout-footer .block h4, .layout-footer .block .banner .heading-h4, .banner .layout-footer .block .heading-h4, .layout-footer .block .banner h5, .banner .layout-footer .block h5, .layout-footer .block .banner .heading-h5, .banner .layout-footer .block .heading-h5, .layout-footer .block .banner .field--name-field-highlighted, .banner .layout-footer .block .field--name-field-highlighted, .layout-footer .block .banner h6, .banner .layout-footer .block h6, .layout-footer .block .banner .heading-h6, .banner .layout-footer .block .heading-h6, .layout-footer .block
+  .layout__footer .block h1, .layout__footer .block .heading-h1, .layout__footer .block .banner h2, .banner .layout__footer .block h2, .layout__footer .block .banner .heading-h2, .banner .layout__footer .block .heading-h2, .layout__footer .block .banner h3, .banner .layout__footer .block h3, .layout__footer .block .banner .heading-h3, .banner .layout__footer .block .heading-h3, .layout__footer .block .banner .node-list-simple-title, .banner .layout__footer .block .node-list-simple-title, .layout__footer .block .banner .node-list-advanced-title, .banner .layout__footer .block .node-list-advanced-title, .layout__footer .block .banner .field--name-field-heading, .banner .layout__footer .block .field--name-field-heading, .layout__footer .block .banner h4, .banner .layout__footer .block h4, .layout__footer .block .banner .heading-h4, .banner .layout__footer .block .heading-h4, .layout__footer .block .banner h5, .banner .layout__footer .block h5, .layout__footer .block .banner .heading-h5, .banner .layout__footer .block .heading-h5, .layout__footer .block .banner .field--name-field-highlighted, .banner .layout__footer .block .field--name-field-highlighted, .layout__footer .block .banner h6, .banner .layout__footer .block h6, .layout__footer .block .banner .heading-h6, .banner .layout__footer .block .heading-h6, .layout__footer .block
   .banner .block-title,
-  .banner .layout-footer .block .block-title, .layout-footer .block .field--name-field-description, .layout-footer .block
+  .banner .layout__footer .block .block-title, .layout__footer .block .field--name-field-description, .layout__footer .block
   .field--name-field-description p,
-  .field--name-field-description .layout-footer .block p, .layout-footer .block h1.block-title, .layout-footer .block .block-title.heading-h1, .layout-footer .block
+  .field--name-field-description .layout__footer .block p, .layout__footer .block h1.block-title, .layout__footer .block .block-title.heading-h1, .layout__footer .block
   .banner .block-title,
-  .banner .layout-footer .block .block-title, .layout-footer .block .block-title.field--name-field-description, .layout-footer .block
+  .banner .layout__footer .block .block-title, .layout__footer .block .block-title.field--name-field-description, .layout__footer .block
   .field--name-field-description p.block-title,
-  .field--name-field-description .layout-footer .block p.block-title,
-  .layout-footer .block h2,
-  .layout-footer .block .heading-h2,
-  .layout-footer .block h2.block-title,
-  .layout-footer .block .block-title.heading-h2,
-  .layout-footer .block h3,
-  .layout-footer .block .heading-h3,
-  .layout-footer .block .node-list-simple-title,
-  .layout-footer .block .node-list-advanced-title,
-  .layout-footer .block .field--name-field-heading,
-  .layout-footer .block h3.block-title,
-  .layout-footer .block .block-title.heading-h3,
-  .layout-footer .block .block-title.node-list-simple-title,
-  .layout-footer .block .block-title.node-list-advanced-title,
-  .layout-footer .block .block-title.field--name-field-heading,
-  .layout-footer nav h1,
-  .layout-footer nav .heading-h1,
-  .layout-footer nav .banner h2, .banner
-  .layout-footer nav h2,
-  .layout-footer nav .banner .heading-h2, .banner
-  .layout-footer nav .heading-h2,
-  .layout-footer nav .banner h3, .banner
-  .layout-footer nav h3,
-  .layout-footer nav .banner .heading-h3, .banner
-  .layout-footer nav .heading-h3,
-  .layout-footer nav .banner .node-list-simple-title, .banner
-  .layout-footer nav .node-list-simple-title,
-  .layout-footer nav .banner .node-list-advanced-title, .banner
-  .layout-footer nav .node-list-advanced-title,
-  .layout-footer nav .banner .field--name-field-heading, .banner
-  .layout-footer nav .field--name-field-heading,
-  .layout-footer nav .banner h4, .banner
-  .layout-footer nav h4,
-  .layout-footer nav .banner .heading-h4, .banner
-  .layout-footer nav .heading-h4,
-  .layout-footer nav .banner h5, .banner
-  .layout-footer nav h5,
-  .layout-footer nav .banner .heading-h5, .banner
-  .layout-footer nav .heading-h5,
-  .layout-footer nav .banner .field--name-field-highlighted, .banner
-  .layout-footer nav .field--name-field-highlighted,
-  .layout-footer nav .banner h6, .banner
-  .layout-footer nav h6,
-  .layout-footer nav .banner .heading-h6, .banner
-  .layout-footer nav .heading-h6,
-  .layout-footer nav
+  .field--name-field-description .layout__footer .block p.block-title,
+  .layout__footer .block h2,
+  .layout__footer .block .heading-h2,
+  .layout__footer .block h2.block-title,
+  .layout__footer .block .block-title.heading-h2,
+  .layout__footer .block h3,
+  .layout__footer .block .heading-h3,
+  .layout__footer .block .node-list-simple-title,
+  .layout__footer .block .node-list-advanced-title,
+  .layout__footer .block .field--name-field-heading,
+  .layout__footer .block h3.block-title,
+  .layout__footer .block .block-title.heading-h3,
+  .layout__footer .block .block-title.node-list-simple-title,
+  .layout__footer .block .block-title.node-list-advanced-title,
+  .layout__footer .block .block-title.field--name-field-heading,
+  .layout__footer nav h1,
+  .layout__footer nav .heading-h1,
+  .layout__footer nav .banner h2, .banner
+  .layout__footer nav h2,
+  .layout__footer nav .banner .heading-h2, .banner
+  .layout__footer nav .heading-h2,
+  .layout__footer nav .banner h3, .banner
+  .layout__footer nav h3,
+  .layout__footer nav .banner .heading-h3, .banner
+  .layout__footer nav .heading-h3,
+  .layout__footer nav .banner .node-list-simple-title, .banner
+  .layout__footer nav .node-list-simple-title,
+  .layout__footer nav .banner .node-list-advanced-title, .banner
+  .layout__footer nav .node-list-advanced-title,
+  .layout__footer nav .banner .field--name-field-heading, .banner
+  .layout__footer nav .field--name-field-heading,
+  .layout__footer nav .banner h4, .banner
+  .layout__footer nav h4,
+  .layout__footer nav .banner .heading-h4, .banner
+  .layout__footer nav .heading-h4,
+  .layout__footer nav .banner h5, .banner
+  .layout__footer nav h5,
+  .layout__footer nav .banner .heading-h5, .banner
+  .layout__footer nav .heading-h5,
+  .layout__footer nav .banner .field--name-field-highlighted, .banner
+  .layout__footer nav .field--name-field-highlighted,
+  .layout__footer nav .banner h6, .banner
+  .layout__footer nav h6,
+  .layout__footer nav .banner .heading-h6, .banner
+  .layout__footer nav .heading-h6,
+  .layout__footer nav
   .banner .block-title,
   .banner
-  .layout-footer nav .block-title,
-  .layout-footer nav .field--name-field-description,
-  .layout-footer nav
+  .layout__footer nav .block-title,
+  .layout__footer nav .field--name-field-description,
+  .layout__footer nav
   .field--name-field-description p,
   .field--name-field-description
-  .layout-footer nav p,
-  .layout-footer nav h1.block-title,
-  .layout-footer nav .block-title.heading-h1,
-  .layout-footer nav
+  .layout__footer nav p,
+  .layout__footer nav h1.block-title,
+  .layout__footer nav .block-title.heading-h1,
+  .layout__footer nav
   .banner .block-title,
   .banner
-  .layout-footer nav .block-title,
-  .layout-footer nav .block-title.field--name-field-description,
-  .layout-footer nav
+  .layout__footer nav .block-title,
+  .layout__footer nav .block-title.field--name-field-description,
+  .layout__footer nav
   .field--name-field-description p.block-title,
   .field--name-field-description
-  .layout-footer nav p.block-title,
-  .layout-footer nav h2,
-  .layout-footer nav .heading-h2,
-  .layout-footer nav h2.block-title,
-  .layout-footer nav .block-title.heading-h2,
-  .layout-footer nav h3,
-  .layout-footer nav .heading-h3,
-  .layout-footer nav .node-list-simple-title,
-  .layout-footer nav .node-list-advanced-title,
-  .layout-footer nav .field--name-field-heading,
-  .layout-footer nav h3.block-title,
-  .layout-footer nav .block-title.heading-h3,
-  .layout-footer nav .block-title.node-list-simple-title,
-  .layout-footer nav .block-title.node-list-advanced-title,
-  .layout-footer nav .block-title.field--name-field-heading {
+  .layout__footer nav p.block-title,
+  .layout__footer nav h2,
+  .layout__footer nav .heading-h2,
+  .layout__footer nav h2.block-title,
+  .layout__footer nav .block-title.heading-h2,
+  .layout__footer nav h3,
+  .layout__footer nav .heading-h3,
+  .layout__footer nav .node-list-simple-title,
+  .layout__footer nav .node-list-advanced-title,
+  .layout__footer nav .field--name-field-heading,
+  .layout__footer nav h3.block-title,
+  .layout__footer nav .block-title.heading-h3,
+  .layout__footer nav .block-title.node-list-simple-title,
+  .layout__footer nav .block-title.node-list-advanced-title,
+  .layout__footer nav .block-title.field--name-field-heading {
     font-weight: 800;
     font-size: 24px;
     color: #fff;
     text-transform: uppercase;
     padding: 18px 0;
     margin: 0; }
-  .layout-footer p {
+  .layout__footer p {
     color: #fff; }
-  .layout-footer a, .layout-footer a:hover {
+  .layout__footer a, .layout__footer a:hover {
     color: #fff; }
-  .layout-footer .menu > li a {
+  .layout__footer .menu > li a {
     padding: 6px 0; }
-    .layout-footer .menu > li a, .layout-footer .menu > li a:hover {
+    .layout__footer .menu > li a, .layout__footer .menu > li a:hover {
       background-color: transparent; }
-    .layout-footer .menu > li a, .layout-footer .menu > li a:hover {
+    .layout__footer .menu > li a, .layout__footer .menu > li a:hover {
       color: #fff; }
-  .layout-footer .menu > li:first-child a {
+  .layout__footer .menu > li:first-child a {
     padding-top: 0; }
-  .layout-footer .menu > li:last-child a {
+  .layout__footer .menu > li:last-child a {
     padding-bottom: 0; }
 
-.layout-footer-bottom-outer {
+.layout__footer-bottom-outer {
   border-top: 1px solid #00ace4; }
-  .layout-footer-bottom-outer p {
+  .layout__footer-bottom-outer p {
     margin: 0;
     padding: 0;
     text-transform: uppercase; }
-  .layout-footer-bottom-outer .layout-footer-bottom-copyright {
+  .layout__footer-bottom-outer .layout__footer-bottom-copyright {
     line-height: 37px; }
-  .layout-footer-bottom-outer .layout-footer-bottom-social a, .layout-footer-bottom-outer .layout-footer-bottom-social a:hover {
+  .layout__footer-bottom-outer .layout__footer-bottom-social a, .layout__footer-bottom-outer .layout__footer-bottom-social a:hover {
     font-size: 26px;
     color: #fff; }
-  .layout-footer-bottom-outer .layout-footer-bottom-social .list-inline {
+  .layout__footer-bottom-outer .layout__footer-bottom-social .list-inline {
     margin-bottom: 0; }
 
-.layout-footer {
+.layout__footer {
   padding-top: 15px; }
 
-.layout-footer-top-outer {
+.layout__footer-top-outer {
   padding: 20px; }
 
-.layout-footer-bottom-outer {
+.layout__footer-bottom-outer {
   padding: 15px 0; }
 
 @media (min-width: 768px) {
-  .layout-footer {
+  .layout__footer {
     padding-top: 30px; }
-  .layout-footer-top-outer {
+  .layout__footer-top-outer {
     padding: 25px; }
-  .layout-footer-bottom-outer {
+  .layout__footer-bottom-outer {
     padding: 45px 0; } }
 
 @media (min-width: 992px) {
-  .layout-footer {
+  .layout__footer {
     padding-top: 50px; }
-  .layout-footer-top-outer {
+  .layout__footer-top-outer {
     padding: 30px; }
-  .layout-footer-bottom-outer {
+  .layout__footer-bottom-outer {
     padding: 55px 0; } }
-
-.card .card-title,
-.card .card-title h1,
-.card .card-title .heading-h1,
-.card .card-title .banner h2, .banner
-.card .card-title h2,
-.card .card-title .banner .heading-h2, .banner
-.card .card-title .heading-h2,
-.card .card-title .banner h3, .banner
-.card .card-title h3,
-.card .card-title .banner .heading-h3, .banner
-.card .card-title .heading-h3,
-.card .card-title .banner .node-list-simple-title, .banner
-.card .card-title .node-list-simple-title,
-.card .card-title .banner .node-list-advanced-title, .banner
-.card .card-title .node-list-advanced-title,
-.card .card-title .banner .field--name-field-heading, .banner
-.card .card-title .field--name-field-heading,
-.card .card-title .banner h4, .banner
-.card .card-title h4,
-.card .card-title .banner .heading-h4, .banner
-.card .card-title .heading-h4,
-.card .card-title .banner h5, .banner
-.card .card-title h5,
-.card .card-title .banner .heading-h5, .banner
-.card .card-title .heading-h5,
-.card .card-title .banner .field--name-field-highlighted, .banner
-.card .card-title .field--name-field-highlighted,
-.card .card-title .banner h6, .banner
-.card .card-title h6,
-.card .card-title .banner .heading-h6, .banner
-.card .card-title .heading-h6,
-.card .card-title
-.banner .block-title,
-.banner
-.card .card-title .block-title,
-.card .card-title .field--name-field-description,
-.card .card-title
-.field--name-field-description p,
-.field--name-field-description
-.card .card-title p, .card .card-title h2, .card .card-title .heading-h2, .card .card-title h3, .card .card-title .heading-h3, .card .card-title .node-list-simple-title, .card .card-title .node-list-advanced-title, .card .card-title .field--name-field-heading, .card .card-title h4, .card .card-title .heading-h4, .card .card-title .paragraph--type--video .field--name-field-description, .paragraph--type--video .card .card-title .field--name-field-description, .card .card-title
-.paragraph--type--video .field--name-field-description p,
-.paragraph--type--video .field--name-field-description .card .card-title p, .card .card-title h5, .card .card-title .heading-h5, .card .card-title .field--name-field-highlighted, .card .card-title h6, .card .card-title .heading-h6,
-.card .card-title .pane-title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 700;
-  color: #5c4b51;
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: 15px; }
-
-.card.card-block,
-.card .card-block {
-  background-color: #edeeee;
-  padding: 2.5rem; }
-
-.card .card-text {
-  color: #808080; }
-
-.card .card-published-at {
-  font-size: 14px;
-  color: #ff3c00; }
 
 .btn, .field--name-field-link a {
   position: relative;

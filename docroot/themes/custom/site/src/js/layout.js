@@ -11,11 +11,11 @@ var layout = (function ($) {
     'use strict';
 
     var pub = {},
-        $wrapper = $('.layout-wrapper'),
-        $drawer = $('.layout-drawer'),
-        $header = $('.layout-header'),
-        $obfuscator = $('.layout-obfuscator'),
-        $document = $('.layout-document');
+        $wrapper = $('.layout__wrapper'),
+        $drawer = $('.layout__drawer'),
+        $header = $('.layout__header'),
+        $obfuscator = $('.layout__obfuscator'),
+        $document = $('.layout__document');
 
     /**
      * Instantiate

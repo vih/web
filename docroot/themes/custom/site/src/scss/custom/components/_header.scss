@@ -3,80 +3,67 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .header
+// | - .layout__header
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-$header-background-color: $body-bg;
-$header-logo-height: 80px;
-
-// Responsive
-$header-top-top-padding: 20px;
-$header-top-bottom-padding: $header-top-top-padding;
-
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Header
-.header {
-  background-color: $header-background-color;
-  @include transition(background-color $transition-time-short ease-in-out, transform $transition-time cubic-bezier(0.5, 0.13, 0.5, 0.87));
-}
+.layout__header {
 
-// Top
-.header-top-outer {
-  @include opacity(1);
-  @include transition(opacity $transition-time ease-in-out);
+  .layout-header-contact-information {
 
-  .header-top-inner {
-    padding-top: $header-top-top-padding;
-    padding-bottom: $header-top-bottom-padding;
-    text-align: center;
-  }
-}
-
-// Bottom
-.header-bottom-outer {
-
-  .header-bottom-inner {
-    min-height: 86px;
-    max-width: 96%;
-    margin: auto;
-    background-color: $body-bg-secondary;
-    @include box-sizing(border-box);
-    @include transition(background-color $transition-time-short ease-in-out, transform $transition-time cubic-bezier(0.5, 0.13, 0.5, 0.87));
-  }
-}
-
-// Logo
-.header-logo-link {
-
-  .header-logo-image {
-    height: $header-logo-height;
-  }
-}
-
-// Sticky
-.header-is-sticky {
-
-  &.header,
-  .header {
-    z-index: $zindex-navbar-fixed;
-    @include translate3d(0, (0 - ($header-logo-height + $header-top-top-padding + $header-top-bottom-padding)), 0);
+    .icon {
+      content: $fa-var-phone;
+    }
   }
 
-  .header-top-outer {
-    @include opacity(0);
+  .layout-header-tour {
+
+    .icon {
+      content: $fa-var-bookmark-o;
+    }
   }
 
-  .header-bottom-outer {
+  .layout-header-contact {
 
-    .header-bottom-inner {
-      background-color: $body-bg;
+    .icon {
+      content: $fa-var-android;
+    }
+  }
+
+  .layout-header-language-selection {}
+
+  // Icon
+  .layout-header-contact-information,
+  .layout-header-tour,
+  .layout-header-contact,
+  .layout-header-language-selection {
+    font-size: $font-size-small;
+    padding-left: 18px;
+    padding-right: 18px;
+
+    a {
+
+      &,
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    span {
+      color: $brand-secondary;
+    }
+
+    .icon {
+      font-size: $font-size-base;
+      color: #fff;
     }
   }
 }
@@ -93,70 +80,70 @@ $header-top-bottom-padding: $header-top-top-padding;
 @include media-breakpoint-up(xs) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Print
 @media print {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // Touch
 .touchevents {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // No touch
 .no-touchevents {
 
   // Header
-  .header {}
+  .layout__header {}
 }
 
 // --------------------------------------------------
@@ -164,4 +151,4 @@ $header-top-bottom-padding: $header-top-top-padding;
 // --------------------------------------------------
 
 // Header mixin
-@mixin header-mixin() {}
+@mixin layout-mixin-header() {}
