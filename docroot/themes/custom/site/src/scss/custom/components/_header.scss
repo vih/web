@@ -86,6 +86,15 @@
     background-color: #fff;
     border-bottom: 1px solid $border-color;
 
+    .region {
+
+      &,
+      > nav {
+        display: block;
+        width: 100%;
+      }
+    }
+
     .layout-navigation__link {
       border-right: 1px solid $border-color;
       border-bottom: 1px solid $border-color;

@@ -9489,6 +9489,10 @@ body {
     @media screen and (max-width: 1024px) {
       .layout__header .layout__header-row--bottom .layout-navigation__link {
         line-height: 32px; } }
+  .layout__header .layout__header-row--bottom .region,
+  .layout__header .layout__header-row--bottom .region > nav {
+    display: block;
+    width: 100%; }
   .layout__header .layout__header-row--bottom .layout-navigation__link {
     border-right: 1px solid #e6e7e7;
     border-bottom: 1px solid #e6e7e7; }
