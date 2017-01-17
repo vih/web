@@ -9404,13 +9404,13 @@ body {
   .breadcrumb li + li:before {
     border-left-color: #f7f7f7; }
 
-.layout__header .layout-header-contact-information .icon, .layout__header .layout-header-contact-information .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-contact-information a:before, .layout__header .layout-header-contact-information .btn:before, .layout__header .layout-header-contact-information .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-contact-information a:before {
+.layout__header .layout-header-contact-information .icon:after {
   content: ""; }
 
-.layout__header .layout-header-tour .icon, .layout__header .layout-header-tour .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-tour a:before, .layout__header .layout-header-tour .btn:before, .layout__header .layout-header-tour .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-tour a:before {
+.layout__header .layout-header-tour .icon:after {
   content: ""; }
 
-.layout__header .layout-header-contact .icon, .layout__header .layout-header-contact .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout__header .layout-header-contact a:before, .layout__header .layout-header-contact .btn:before, .layout__header .layout-header-contact .field--name-field-link a:before, .field--name-field-link .layout__header .layout-header-contact a:before {
+.layout__header .layout-header-contact .icon:after {
   content: ""; }
 
 .layout__header .layout-header-language-selection ul {
@@ -9430,6 +9430,7 @@ body {
 .layout__header .layout-header-contact,
 .layout__header .layout-header-language-selection {
   font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   padding-left: 18px;
   padding-right: 18px; }
@@ -9467,8 +9468,10 @@ body {
   .layout__header .layout-header-language-selection .btn:before,
   .layout__header .layout-header-language-selection .field--name-field-link a:before, .field--name-field-link
   .layout__header .layout-header-language-selection a:before {
-    font-size: 16px;
-    color: #fff; }
+    line-height: 25px;
+    font-size: 18px;
+    color: #fff;
+    margin-right: 5px; }
 
 .layout__header .layout__header-row--top {
   height: 38px; }
@@ -9523,8 +9526,8 @@ body {
 .layout__header .layout__header-logo {
   position: absolute;
   background: #00bcff url("../images/logo.png") center center no-repeat;
-  -webkit-background-size: 100% 100%;
-          background-size: 100%;
+  -webkit-background-size: 120% 120%;
+          background-size: 120%;
   width: 105px;
   height: 105px; }
 

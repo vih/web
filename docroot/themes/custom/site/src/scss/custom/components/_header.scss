@@ -20,21 +20,30 @@
   .layout-header-contact-information {
 
     .icon {
-      content: $fa-var-phone;
+
+      &:after {
+        content: $fa-var-phone;
+      }
     }
   }
 
   .layout-header-tour {
 
     .icon {
-      content: $fa-var-bookmark-o;
+
+      &:after {
+        content: $fa-var-bookmark-o;
+      }
     }
   }
 
   .layout-header-contact {
 
     .icon {
-      content: $fa-var-android;
+
+      &:after {
+        content: $fa-var-android;
+      }
     }
   }
 
@@ -77,6 +86,7 @@
   .layout-header-contact,
   .layout-header-language-selection {
     font-size: $font-size-extra-small;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
     padding-left: 18px;
     padding-right: 18px;
@@ -96,8 +106,10 @@
     }
 
     .icon {
-      font-size: $font-size-base;
+      @include line-height(18px);
+      font-size: 18px;
       color: #fff;
+      margin-right: 5px;
     }
   }
 
@@ -150,7 +162,7 @@
   .layout__header-logo {
     position: absolute;
     background: #00bcff url('../images/logo.png') center center no-repeat;
-    background-size: 100%;
+    background-size: 120%;
     width: 105px;
     height: 105px;
   }
