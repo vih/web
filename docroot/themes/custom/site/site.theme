@@ -197,4 +197,7 @@ function site_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
 
-
+function site_preprocess_links__language_block(&$variables) {
+  $variables['links']['en']['link']['#title'] = 'En';
+  $variables['links']['da']['link']['#title'] = 'Da';
+}
