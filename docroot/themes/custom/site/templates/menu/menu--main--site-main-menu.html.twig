@@ -15,7 +15,7 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('layout-navigation layout-navigation--full-width layout--large-screen-only') }}>
     {% else %}
-      <ul{{ attributes.addClass('navigation-list-item-dropdown-menu') }}>
+      <ul{{ attributes.addClass('layout-navigation__dropdown-menu') }}>
     {% endif %}
 
     {% for item in items %}
@@ -27,7 +27,7 @@
 
         {# List item #}
         {% if item.below and item.is_expanded %}
-          <li{{ item.attributes.addClass('navigation-list-item-dropdown', item_classes) }}>
+          <li{{ item.attributes.addClass('layout-navigation__dropdown', item_classes) }}>
         {% else %}
           <li{{ item.attributes.addClass('layout-navigation__link', item_classes) }}>
         {% endif %}

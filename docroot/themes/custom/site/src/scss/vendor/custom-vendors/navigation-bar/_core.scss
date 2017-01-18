@@ -1,0 +1,151 @@
+// |--------------------------------------------------------------------------
+// | Simple navigation bar
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .navigation-bar
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Simple navigation bar
+.navigation-bar {
+  position: relative;
+  display: none;
+  background-color: $navigation-bar-background-color;
+  background-color: $navigation-bar-background-color-rgba;
+  height: $navigation-bar-height;
+  min-height: $navigation-bar-height;
+  line-height: $navigation-bar-height;
+  text-align: center;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Sticky
+.navigation-bar-sticky {
+
+  .navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $navigation-bar-sticky-zindex;
+  }
+}
+
+// Positioning
+.navigation-bar {
+
+  .navigation-bar-list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    &.navigation-bar-list-left {
+      left: 0;
+    }
+
+    &.navigation-bar-list-right {
+      right: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+
+  // Visibility
+  @include navigation-bar-mixin(xs);
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+
+  // Visibility
+  @include navigation-bar-mixin(sm);
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+
+  // Visibility
+  @include navigation-bar-mixin(md);
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Simple navigation bar
+  .navigation-bar {}
+
+  // Visibility
+  @include navigation-bar-mixin(lg);
+}
+
+// Print
+@media print {
+
+  // Simple navigation bar
+  .navigation-bar {}
+}
+
+// Touch
+.touchevents {
+
+  // Simple navigation bar
+  .navigation-bar {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Simple navigation bar
+  .navigation-bar {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------

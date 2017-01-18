@@ -1,0 +1,96 @@
+// |--------------------------------------------------------------------------
+// | Title
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .layout-title
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Title
+.layout-title {
+  display: block;
+  position: relative;
+
+  @include layout-typo-title();
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Title
+  .layout-title {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Title
+  .layout-title {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Title
+  .layout-title {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Title
+  .layout-title {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Title
+  .layout-title {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Title
+  .layout-title {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Title
+  .layout-title {}
+}
+
+// Print
+@media print {
+
+  // Title
+  .layout-title {}
+}
+
+// Touch
+.touchevents {
+
+  // Title
+  .layout-title {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Title
+  .layout-title {}
+}
+

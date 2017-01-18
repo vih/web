@@ -1,0 +1,63 @@
+// |--------------------------------------------------------------------------
+// | Variables
+// |--------------------------------------------------------------------------
+// |
+
+$navigation-bar-height: 60px;
+$navigation-bar-background-color: #00538f;
+$navigation-bar-background-color-rgba: rgba(red($navigation-bar-background-color), green($navigation-bar-background-color), blue($navigation-bar-background-color), 1);
+
+// --------------------------------------------------
+// Sticky
+// --------------------------------------------------
+
+$navigation-bar-sticky-zindex: $zindex-navbar-fixed;
+
+// --------------------------------------------------
+// List
+// --------------------------------------------------
+
+$navigation-bar-list-button-color: #ffffff;
+$navigation-bar-list-button-icon-color: $navigation-bar-list-button-color;
+$navigation-bar-nav-button-icon-font-size: floor(($navigation-bar-height * 0.4));
+
+// --------------------------------------------------
+// Logo
+// --------------------------------------------------
+
+$navigation-bar-logo-image-height: 104px;
+$navigation-bar-logo-image-width: 230px;
+
+// --------------------------------------------------
+// Search form
+// --------------------------------------------------
+
+$navigation-bar-list-search-form-zindex: $navigation-bar-sticky-zindex;
+$navigation-bar-list-search-form-min-width: 280px;
+$navigation-bar-list-search-form-background-color: $navigation-bar-background-color;
+$navigation-bar-list-search-form-background-color-rgba: transparent;
+$navigation-bar-list-search-form-input-font-size: $font-size-large;
+$navigation-bar-list-search-form-input-color: $navigation-bar-list-button-color;
+$navigation-bar-list-search-form-input-placeholder-color: lighten($navigation-bar-list-search-form-background-color, 50%);
+
+// --------------------------------------------------
+// Navigation
+// --------------------------------------------------
+
+// Button
+$navigation-bar-nav-button-background-color: darken($navigation-bar-background-color, 5%);
+$navigation-bar-nav-button-background-color-rgba: rgba(red($navigation-bar-nav-button-background-color), green($navigation-bar-nav-button-background-color), blue($navigation-bar-nav-button-background-color), 1);
+$navigation-bar-nav-button-icon-color: $text-color;
+
+$navigation-bar-nav-button-hover-background-color: darken($navigation-bar-nav-button-background-color, 5%);
+$navigation-bar-nav-button-hover-background-color-rgba: rgba(red($navigation-bar-nav-button-hover-background-color), green($navigation-bar-nav-button-hover-background-color), blue($navigation-bar-nav-button-hover-background-color), 1);
+$navigation-bar-nav-button-hover-icon-color: $navigation-bar-nav-button-icon-color;
+
+// Sidebar toggle
+$navigation-bar-nav-sidebar-toggle-background-color: darken($navigation-bar-background-color, 5%);
+$navigation-bar-nav-sidebar-toggle-background-color-rgba: rgba(red($navigation-bar-nav-sidebar-toggle-background-color), green($navigation-bar-nav-sidebar-toggle-background-color), blue($navigation-bar-nav-sidebar-toggle-background-color), 1);
+$navigation-bar-nav-sidebar-toggle-line-color: $text-color;
+
+$navigation-bar-nav-sidebar-toggle-hover-background-color: darken($navigation-bar-nav-sidebar-toggle-background-color, 5%);
+$navigation-bar-nav-sidebar-toggle-hover-background-color-rgba: rgba(red($navigation-bar-nav-sidebar-toggle-hover-background-color), green($navigation-bar-nav-sidebar-toggle-hover-background-color), blue($navigation-bar-nav-sidebar-toggle-hover-background-color), 1);
+$navigation-bar-nav-sidebar-toggle-hover-line-color: $navigation-bar-nav-sidebar-toggle-line-color;

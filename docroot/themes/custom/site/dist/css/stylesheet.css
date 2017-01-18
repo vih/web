@@ -8492,6 +8492,7 @@ body,
       -ms-flex-positive: 1;
           flex-grow: 1; }
 
+.layout-navigation__dropdown,
 .layout-navigation__link {
   color: #fff;
   text-decoration: none;
@@ -8499,9 +8500,16 @@ body,
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box; }
-  .layout-navigation__link .icon, .layout-navigation__link .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout-navigation__link a:before, .layout-navigation__link .btn:before, .layout-navigation__link .field--name-field-link a:before, .field--name-field-link .layout-navigation__link a:before {
+  .layout-navigation__dropdown .icon, .layout-navigation__dropdown .breadcrumb li:first-child a:before, .breadcrumb li:first-child .layout-navigation__dropdown a:before, .layout-navigation__dropdown .btn:before, .layout-navigation__dropdown .field--name-field-link a:before, .field--name-field-link .layout-navigation__dropdown a:before,
+  .layout-navigation__link .icon,
+  .layout-navigation__link .breadcrumb li:first-child a:before, .breadcrumb li:first-child
+  .layout-navigation__link a:before,
+  .layout-navigation__link .btn:before,
+  .layout-navigation__link .field--name-field-link a:before, .field--name-field-link
+  .layout-navigation__link a:before {
     vertical-align: middle; }
-  .layout-navigation--full-width .layout-navigation__link {
+  .layout-navigation--full-width .layout-navigation__dropdown, .layout-navigation--full-width
+  .layout-navigation__link {
     float: none;
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -9508,6 +9516,11 @@ body {
     border-right: 1px solid #e6e7e7;
     border-bottom: 1px solid #e6e7e7; }
     .layout__header .layout__header-row--bottom .layout-navigation__link:last-child {
+      border-right: 0; }
+  .layout__header .layout__header-row--bottom .layout-navigation__dropdown {
+    border-right: 1px solid #e6e7e7;
+    border-bottom: 1px solid #e6e7e7; }
+    .layout__header .layout__header-row--bottom .layout-navigation__dropdown:last-child {
       border-right: 0; }
   .layout__header .layout__header-row--bottom a {
     display: block;

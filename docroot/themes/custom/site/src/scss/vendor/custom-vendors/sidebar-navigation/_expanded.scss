@@ -1,0 +1,156 @@
+// |--------------------------------------------------------------------------
+// | Expanded
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sidebar-left-expanded
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$bs3-sidebar-left-expanded-width: $sidebar-expanded-width;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Expanded mixin
+@mixin sidebar-mixin-left-expanded($view-mode) {
+
+	.sidebar-left-enabled-#{$view-mode} {
+
+		&.sidebar-left-expanded-#{$view-mode} {
+
+			.sidebar-left {
+				width: ($bs3-sidebar-left-expanded-width + $bs3-sidebar-scrollbar-width);
+			}
+
+			.inner-wrapper {
+				left: $bs3-sidebar-left-expanded-width;
+			}
+		}
+	}
+}
+
+// Navigation mixin
+@mixin sidebar-mixin-navigation-expanded($view-mode) {
+
+	.sidebar-left-enabled-#{$view-mode} {
+
+		&.sidebar-left-expanded-#{$view-mode} {
+
+			@include sidebar-mixin-navigation-wide($view-mode);
+		}
+	}
+}
+
+// Logo mixin
+@mixin sidebar-mixin-logo-image-expanded($view-mode) {
+
+	.sidebar-left-enabled-#{$view-mode} {
+
+		&.sidebar-left-expanded-#{$view-mode} {
+
+			@include sidebar-mixin-logo-image-wide();
+		}
+	}
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Expanded
+.sidebar-left-expanded {}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@include media-breakpoint-up(xs) {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+	@include sidebar-mixin-left-expanded(xs);
+	@include sidebar-mixin-logo-image-expanded(xs);
+	@include sidebar-mixin-navigation-expanded(xs);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Tablet
+@include media-breakpoint-up(sm) {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+	@include sidebar-mixin-left-expanded(sm);
+	@include sidebar-mixin-logo-image-expanded(sm);
+	@include sidebar-mixin-navigation-expanded(sm);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Desktop
+@include media-breakpoint-up(md) {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+	@include sidebar-mixin-left-expanded(md);
+	@include sidebar-mixin-logo-image-expanded(md);
+	@include sidebar-mixin-navigation-expanded(md);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Large desktop
+@include media-breakpoint-up(lg) {
+
+	@include sidebar-mixin-left-expanded(lg);
+	@include sidebar-mixin-logo-image-expanded(lg);
+	@include sidebar-mixin-navigation-expanded(lg);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Print
+@media print {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Touch
+.touchevents {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// No touch
+.no-touchevents {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}

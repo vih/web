@@ -1,0 +1,17 @@
+// Logo
+.navigation-bar {
+
+  .navigation-bar-logo-link {
+    display: inline-block;
+    padding: floor( (($navigation-bar-height - ($navigation-bar-logo-image-height / 2)) / 2) ) 0;
+    line-height: normal;
+
+    .navigation-bar-logo-image {
+      max-width: floor( ($navigation-bar-logo-image-width / 2) );
+      max-height: floor( ($navigation-bar-logo-image-height / 2) );
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

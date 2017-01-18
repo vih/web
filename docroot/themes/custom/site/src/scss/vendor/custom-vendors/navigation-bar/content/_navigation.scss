@@ -1,0 +1,39 @@
+// Navigation
+.navigation-bar {
+
+  .navigation-bar-list {
+    min-height: inherit;
+    line-height: inherit;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      position: relative;
+      line-height: inherit;
+      float: left;
+      width: $navigation-bar-height;
+
+      &.navigation-bar-button {
+
+        a {
+          display: block;
+          line-height: inherit;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          border-radius: 0;
+          background-color: $navigation-bar-nav-button-background-color;
+          background-color: $navigation-bar-nav-button-background-color-rgba;
+          color: $navigation-bar-list-button-color;
+
+          .icon {
+            font-size: $navigation-bar-nav-button-icon-font-size;
+            @include line-height($navigation-bar-nav-button-icon-font-size);
+            color: $navigation-bar-list-button-icon-color;
+          }
+        }
+      }
+    }
+  }
+}

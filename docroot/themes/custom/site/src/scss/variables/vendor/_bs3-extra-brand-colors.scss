@@ -1,0 +1,56 @@
+// --------------------------------------------------
+// Secondary
+// --------------------------------------------------
+
+$brand-secondary: #ff3c00;
+
+// Button
+$btn-secondary-color: #fff;
+$btn-secondary-bg: $brand-secondary;
+$btn-secondary-border: darken($btn-secondary-bg, 5%);
+
+// Label
+$label-secondary-bg: $brand-secondary;
+
+// Panel
+$panel-secondary-text: #fff;
+$panel-secondary-border: $brand-secondary;
+$panel-secondary-heading-bg: $brand-secondary;
+
+// --------------------------------------------------
+// Tertiary
+// --------------------------------------------------
+
+$brand-tertiary: #2ecc71;
+
+// Button
+$btn-tertiary-color: #fff;
+$btn-tertiary-bg: $brand-tertiary;
+$btn-tertiary-border: darken($btn-tertiary-bg, 5%);
+
+// Label
+$label-tertiary-bg: $brand-tertiary;
+
+// Panel
+$panel-tertiary-text: #fff;
+$panel-tertiary-border: $brand-tertiary;
+$panel-tertiary-heading-bg: $brand-tertiary;
+
+// --------------------------------------------------
+// Quaternary
+// --------------------------------------------------
+
+$brand-quaternary: #f3b562;
+
+// Button
+$btn-quaternary-color: #fff;
+$btn-quaternary-bg: $brand-quaternary;
+$btn-quaternary-border: darken($btn-quaternary-bg, 5%);
+
+// Label
+$label-quaternary-bg: $brand-tertiary;
+
+// Panel
+$panel-quaternary-text: #fff;
+$panel-quaternary-border: $brand-quaternary;
+$panel-quaternary-heading-bg: $brand-quaternary;

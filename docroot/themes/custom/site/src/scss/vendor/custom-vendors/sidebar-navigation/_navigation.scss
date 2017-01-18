@@ -1,0 +1,593 @@
+// |--------------------------------------------------------------------------
+// | Navigation
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sidebar-navigation
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Icon
+$bs3-sidebar-navigation-link-icon-max-width: 25px;
+$bs3-sidebar-navigation-link-icon-identifier: $sidebar-navigation-link-icon-identifier;
+
+$bs3-sidebar-navigation-parent-level-link-icon-font-size: $sidebar-navigation-parent-level-link-icon-font-size;
+$bs3-sidebar-navigation-child-level-link-icon-font-size: $sidebar-navigation-child-level-link-icon-font-size;
+
+$bs3-sidebar-navigation-link-icon-font-color: $sidebar-navigation-link-icon-font-color;
+$bs3-sidebar-navigation-link-hover-icon-font-color: $sidebar-navigation-link-hover-icon-font-color;
+$bs3-sidebar-navigation-link-active-icon-font-color: $sidebar-navigation-link-active-icon-font-color;
+
+// Link
+$bs3-sidebar-navigation-link-border-color: $sidebar-navigation-link-border-color;
+$bs3-sidebar-navigation-link-border-color-rgba: $sidebar-navigation-link-border-color-rgba;
+$bs3-sidebar-navigation-link-border-width: $sidebar-navigation-link-border-width;
+
+$bs3-sidebar-navigation-link-font-color: $sidebar-navigation-link-font-color;
+$bs3-sidebar-navigation-link-hover-font-color: $sidebar-navigation-link-hover-font-color;
+$bs3-sidebar-navigation-link-active-font-color: $sidebar-navigation-link-active-font-color;
+
+$bs3-sidebar-navigation-link-background-color: $sidebar-navigation-link-background-color;
+$bs3-sidebar-navigation-link-background-color-rgba: $sidebar-navigation-link-background-color-rgba;
+$bs3-sidebar-navigation-link-hover-background-color: $sidebar-navigation-link-hover-background-color;
+$bs3-sidebar-navigation-link-hover-background-color-rgba: $sidebar-navigation-link-hover-background-color-rgba;
+$bs3-sidebar-navigation-link-active-background-color: $sidebar-navigation-link-active-background-color;
+$bs3-sidebar-navigation-link-active-background-color-rgba: $sidebar-navigation-link-active-background-color-rgba;
+
+$bs3-sidebar-navigation-parent-level-link-font-family: $font-family-sans-serif;
+$bs3-sidebar-navigation-parent-level-link-font-weight: $font-weight;
+$bs3-sidebar-navigation-parent-level-link-font-size: $font-size-base;
+$bs3-sidebar-navigation-parent-level-link-top-bottom-spacing: 12px;
+$bs3-sidebar-navigation-parent-level-link-indentation: 10px;
+
+$bs3-sidebar-navigation-child-level-link-font-family: $font-family-sans-serif;
+$bs3-sidebar-navigation-child-level-link-font-weight: $font-weight;
+$bs3-sidebar-navigation-child-level-link-font-size: $font-size-small;
+$bs3-sidebar-navigation-child-level-link-top-bottom-spacing: 8px;
+$bs3-sidebar-navigation-child-level-link-indentation: 10px;
+
+// Dropdown toggle
+$bs3-sidebar-navigation-dropdown-toggle-width: $sidebar-navigation-dropdown-toggle-width;
+
+$bs3-sidebar-navigation-dropdown-toggle-background-color: $sidebar-navigation-dropdown-toggle-background-color;
+$bs3-sidebar-navigation-dropdown-toggle-background-color-rgba: $sidebar-navigation-dropdown-toggle-background-color-rgba;
+
+$bs3-sidebar-navigation-dropdown-toggle-icon-font-family: $sidebar-navigation-dropdown-toggle-icon-font-family;
+$bs3-sidebar-navigation-dropdown-toggle-icon-color: $sidebar-navigation-dropdown-toggle-icon-color;
+$bs3-sidebar-navigation-dropdown-toggle-hover-icon-color: $sidebar-navigation-dropdown-toggle-hover-icon-color;
+$bs3-sidebar-navigation-dropdown-toggle-active-icon-color: $sidebar-navigation-dropdown-toggle-active-icon-color;
+$bs3-sidebar-navigation-dropdown-toggle-icon-icon: $sidebar-navigation-dropdown-toggle-icon-content;
+
+$bs3-sidebar-navigation-dropdown-toggle-icon-font-size: $bs3-sidebar-navigation-parent-level-link-font-size;
+$bs3-sidebar-navigation-parent-level-dropdown-toggle-icon-top-bottom-spacing: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+$bs3-sidebar-navigation-child-level-dropdown-toggle-icon-top-bottom-spacing: $bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+
+// Dropdown
+$bs3-sidebar-navigation-dropdown-active-background-color: $sidebar-navigation-dropdown-active-background-color;
+$bs3-sidebar-navigation-dropdown-active-background-color-rgba: $sidebar-navigation-dropdown-active-background-color-rgba;
+
+// --------------------------------------------------
+// Global
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Wide
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Narrow
+// --------------------------------------------------
+
+// Dropdown menu
+$bs3-sidebar-narrow-navigation-dropdown-menu-min-width: $sidebar-narrow-navigation-dropdown-menu-min-width;
+$bs3-sidebar-narrow-navigation-dropdown-menu-max-width: $sidebar-narrow-navigation-dropdown-menu-max-width;
+$bs3-sidebar-narrow-navigation-dropdown-menu-background-color: $sidebar-narrow-navigation-dropdown-menu-background-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-inner-spacing: $sidebar-narrow-navigation-dropdown-menu-inner-spacing;
+$bs3-sidebar-narrow-navigation-dropdown-menu-border-width: $sidebar-narrow-navigation-dropdown-menu-border-width;
+$bs3-sidebar-narrow-navigation-dropdown-menu-border-style: solid;
+$bs3-sidebar-narrow-navigation-dropdown-menu-border-color: $sidebar-narrow-navigation-dropdown-menu-border-color;
+
+// Link (not parent level icons)
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-top-bottom-padding: $sidebar-narrow-navigation-dropdown-menu-link-top-bottom-padding;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-left-right-padding: $sidebar-narrow-navigation-dropdown-menu-link-left-right-padding;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-font-size: $sidebar-narrow-navigation-dropdown-menu-link-font-size;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-font-color: $sidebar-narrow-navigation-dropdown-menu-link-font-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-background-color: $sidebar-narrow-navigation-dropdown-menu-link-background-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-border-width: $sidebar-narrow-navigation-dropdown-menu-link-border-width;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-border-style: solid;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-border-color: $sidebar-narrow-navigation-dropdown-menu-link-border-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-text-decoration: none;
+
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-font-color: $sidebar-narrow-navigation-dropdown-menu-link-hover-font-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-background-color: $sidebar-narrow-navigation-dropdown-menu-link-hover-background-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-background-color-rgba: $sidebar-narrow-navigation-dropdown-menu-link-hover-background-color-rgba;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-text-decoration: $bs3-sidebar-narrow-navigation-dropdown-menu-link-text-decoration;
+
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-font-color: $sidebar-narrow-navigation-dropdown-menu-link-active-font-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-background-color: $sidebar-narrow-navigation-dropdown-menu-link-active-background-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-background-color-rgba: $sidebar-narrow-navigation-dropdown-menu-link-active-background-color-rgba;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-text-decoration: $bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-text-decoration;
+
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-font-color: $sidebar-narrow-navigation-dropdown-menu-link-active-trail-font-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color: $sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color-rgba: $sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color-rgba;
+$bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-text-decoration: $bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-text-decoration;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Navigation mixin
+@mixin sidebar-mixin-navigation() {}
+
+// Link indentation
+@mixin sidebar-mixin-dropdown-link-indentation($indentation-level: 1) {
+	padding-left: floor(( ($bs3-sidebar-navigation-link-icon-max-width + $bs3-sidebar-navigation-parent-level-link-indentation) + ($bs3-sidebar-navigation-child-level-link-indentation * $indentation-level)));
+}
+
+// Navigation - narrow
+@mixin sidebar-mixin-navigation-narrow($view-mode) {
+
+	.sidebar-navigation {
+
+		> li {
+			position: relative;
+
+			> a {
+				font-size: 0;
+				padding-top: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				padding-bottom: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				text-align: center;
+
+				#{$bs3-sidebar-navigation-link-icon-identifier} {
+					font-size: $bs3-sidebar-navigation-parent-level-link-icon-font-size;
+					line-height: inherit;
+				}
+			}
+		}
+
+		.sidebar-navigation-dropdown-menu {
+			display: none;
+			position: absolute;
+			min-width: $bs3-sidebar-narrow-navigation-dropdown-menu-min-width;
+			max-width: $bs3-sidebar-narrow-navigation-dropdown-menu-max-width;
+			top: 0;
+			left: 100%;
+			padding: $bs3-sidebar-narrow-navigation-dropdown-menu-inner-spacing 0;
+			background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-background-color;
+			height: auto;
+			border-width: $bs3-sidebar-narrow-navigation-dropdown-menu-border-width;
+			border-style: $bs3-sidebar-narrow-navigation-dropdown-menu-border-style;
+			border-color: $bs3-sidebar-narrow-navigation-dropdown-menu-border-color;
+			@include transition(all $bs3-sidebar-transition-time);
+			z-index: 5000;
+			@include border-right-radius($border-radius-base);
+
+			> li {
+				display: block;
+				position: relative;
+				height: auto;
+				min-height: 0;
+				@include transition(all $bs3-sidebar-transition-time);
+
+				> a {
+					display: block;
+					border-bottom-width: $bs3-sidebar-narrow-navigation-dropdown-menu-link-border-width;
+					border-bottom-style: $bs3-sidebar-narrow-navigation-dropdown-menu-link-border-style;
+					border-bottom-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-border-color;
+					font-size: $bs3-sidebar-narrow-navigation-dropdown-menu-link-font-size;
+					@include line-height($bs3-sidebar-narrow-navigation-dropdown-menu-link-font-size);
+					color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-font-color;
+					background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-background-color;
+					padding: $bs3-sidebar-narrow-navigation-dropdown-menu-link-top-bottom-padding $bs3-sidebar-narrow-navigation-dropdown-menu-link-left-right-padding;
+					text-decoration: $bs3-sidebar-narrow-navigation-dropdown-menu-link-text-decoration;
+				}
+
+				&.sidebar-navigation-dropdown {
+
+					> a {
+						padding-right: floor( ($bs3-sidebar-narrow-navigation-dropdown-menu-link-left-right-padding * 2) );
+					}
+				}
+
+				&:hover {
+
+					> a {
+						background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-background-color;
+						background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-background-color-rgba;
+						color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-font-color;
+						text-decoration: $bs3-sidebar-narrow-navigation-dropdown-menu-link-hover-text-decoration;
+					}
+				}
+
+				&.active {
+
+					&,
+					&.active-trail {
+
+						> a {
+
+							&,
+							&:hover {
+								background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-background-color;
+								background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-background-color-rgba;
+								color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-font-color;
+								text-decoration: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-text-decoration;
+							}
+						}
+					}
+				}
+
+				&.active-trail {
+
+					> a {
+
+						&,
+						&:hover {
+							background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color;
+							background-color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color-rgba;
+							color: $bs3-sidebar-narrow-navigation-dropdown-menu-link-active-trail-font-color;
+						}
+					}
+				}
+
+				&:last-child {
+
+					> a {
+						border-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Navigation - narrow - no touch
+@mixin sidebar-mixin-navigation-narrow-no-touch($view-mode) {
+
+	.sidebar-navigation {
+
+		> li {
+
+			&:hover {
+
+				> .sidebar-navigation-dropdown-menu {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+// Navigation - narrow - touch
+@mixin sidebar-mixin-navigation-narrow-touch($view-mode) {
+
+	.sidebar-navigation {
+
+		> li {
+
+			&.open {
+
+				> .sidebar-navigation-dropdown-menu {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+// Navigation - wide
+@mixin sidebar-mixin-navigation-wide($view-mode) {
+
+	.sidebar {
+		overflow-y: scroll;
+		overflow-x: hidden;
+		overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.sidebar-navigation {
+
+		> li {
+
+			a {
+
+				#{$bs3-sidebar-navigation-link-icon-identifier} {
+					float: left;
+					margin-left: floor((0 - $bs3-sidebar-navigation-link-icon-max-width));
+				}
+			}
+
+			> a {
+				font-family: $bs3-sidebar-navigation-parent-level-link-font-family;
+				font-weight: $bs3-sidebar-navigation-parent-level-link-font-weight;
+				font-size: $bs3-sidebar-navigation-parent-level-link-font-size;
+				@include line-height($bs3-sidebar-navigation-parent-level-link-font-size);
+				padding-left: floor(($bs3-sidebar-navigation-link-icon-max-width + $bs3-sidebar-navigation-parent-level-link-indentation));
+				padding-top: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				padding-bottom: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+
+				#{$bs3-sidebar-navigation-link-icon-identifier} {
+					font-size: $bs3-sidebar-navigation-parent-level-link-icon-font-size;
+					line-height: inherit;
+				}
+			}
+
+			// Indentation
+			> ul > li {
+
+				> a {
+					@include sidebar-mixin-dropdown-link-indentation(1);
+				}
+
+				> ul > li {
+
+					> a {
+						@include sidebar-mixin-dropdown-link-indentation(2);
+					}
+
+					> ul > li {
+
+						> a {
+							@include sidebar-mixin-dropdown-link-indentation(3);
+						}
+					}
+				}
+			}
+		}
+
+		.sidebar-navigation-dropdown {
+
+			> a {
+				position: relative;
+				padding-right: $bs3-sidebar-navigation-dropdown-toggle-width;
+
+				&:hover {
+
+					.sidebar-navigation-dropdown-toggle {
+
+						&:before {
+							color: $bs3-sidebar-navigation-dropdown-toggle-hover-icon-color;
+						}
+					}
+				}
+
+				&.active {
+
+					&,
+					&:hover {
+
+						.sidebar-navigation-dropdown-toggle {
+
+							&:before {
+								color: $bs3-sidebar-navigation-dropdown-toggle-active-icon-color;
+							}
+						}
+					}
+				}
+			}
+
+			&.active,
+			&.active-trail {
+				background-color: $bs3-sidebar-navigation-dropdown-active-background-color;
+				background-color: $bs3-sidebar-navigation-dropdown-active-background-color-rgba;
+
+				> a {
+
+					&,
+					&.active {
+						background-color: transparent;
+					}
+
+					.sidebar-navigation-dropdown-toggle {
+
+						&:before {
+							@include rotate(90deg);
+						}
+					}
+				}
+			}
+		}
+
+		.sidebar-navigation-dropdown-menu {
+			display: none;
+
+			&.active,
+			&.active-trail {
+				display: block;
+			}
+
+			a {
+				font-family: $bs3-sidebar-navigation-child-level-link-font-family;
+				font-weight: $bs3-sidebar-navigation-child-level-link-font-weight;
+				font-size: $bs3-sidebar-navigation-child-level-link-font-size;
+				@include line-height($bs3-sidebar-navigation-child-level-link-font-size);
+				padding-top: $bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+				padding-bottom: $bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+
+				#{$bs3-sidebar-navigation-link-icon-identifier} {
+					font-size: $bs3-sidebar-navigation-child-level-link-icon-font-size;
+					line-height: inherit;
+				}
+
+				.sidebar-navigation-dropdown-toggle {
+
+					&:before {
+						padding-top: $bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+						padding-bottom: $bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+					}
+				}
+			}
+		}
+
+		.sidebar-navigation-dropdown-toggle {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-color: $bs3-sidebar-navigation-dropdown-toggle-background-color;
+			background-color: $bs3-sidebar-navigation-dropdown-toggle-background-color-rgba;
+			text-align: center;
+
+			&:before {
+				display: block;
+				font-family: $bs3-sidebar-navigation-dropdown-toggle-icon-font-family;
+				font-size: $bs3-sidebar-navigation-dropdown-toggle-icon-font-size;
+				@include line-height($bs3-sidebar-navigation-dropdown-toggle-icon-font-size);
+				color: $bs3-sidebar-navigation-dropdown-toggle-icon-color;
+				content: $bs3-sidebar-navigation-dropdown-toggle-icon-icon;
+				padding-top: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				padding-bottom: $bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				min-width: $bs3-sidebar-navigation-dropdown-toggle-width;
+				@include transition(all $bs3-sidebar-transition-time ease-in-out);
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Navigation
+.sidebar-navigation {
+
+	&,
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		@include transition(all $bs3-sidebar-transition-time ease-in-out);
+	}
+
+	a {
+		display: block;
+		color: $bs3-sidebar-navigation-link-font-color;
+		border-bottom-style: solid;
+		border-bottom-width: $bs3-sidebar-navigation-link-border-width;
+		border-bottom-color: $bs3-sidebar-navigation-link-border-color;
+		border-bottom-color: $bs3-sidebar-navigation-link-border-color-rgba;
+
+		#{$bs3-sidebar-navigation-link-icon-identifier} {
+			color: $bs3-sidebar-navigation-link-icon-font-color;
+		}
+
+		&:hover {
+			color: $bs3-sidebar-navigation-link-hover-font-color;
+			background-color: $bs3-sidebar-navigation-link-hover-background-color;
+			background-color: $bs3-sidebar-navigation-link-hover-background-color-rgba;
+
+			#{$bs3-sidebar-navigation-link-icon-identifier} {
+				color: $bs3-sidebar-navigation-link-hover-icon-font-color;
+			}
+		}
+
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+			outline: 0;
+		}
+
+		&.active {
+			color: $bs3-sidebar-navigation-link-active-font-color;
+			background-color: $bs3-sidebar-navigation-link-active-background-color;
+			background-color: $bs3-sidebar-navigation-link-active-background-color-rgba;
+
+			#{$bs3-sidebar-navigation-link-icon-identifier} {
+				color: $bs3-sidebar-navigation-link-active-icon-font-color;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@include media-breakpoint-up(xs) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Tablet
+@include media-breakpoint-up(sm) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Desktop
+@include media-breakpoint-up(md) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Large desktop
+@include media-breakpoint-up(lg) {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Print
+@media print {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// Touch
+.touchevents {
+
+	// Navigation
+	.sidebar-navigation {}
+}
+
+// No touch
+.no-touchevents {
+
+	// Navigation
+	.sidebar-navigation {
+
+		a {
+
+			&,
+			#{$bs3-sidebar-navigation-link-icon-identifier} {
+				@include transition(all $bs3-sidebar-transition-time ease-in-out);
+			}
+		}
+	}
+}

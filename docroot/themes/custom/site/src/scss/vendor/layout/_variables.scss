@@ -1,0 +1,76 @@
+
+$preferred_font: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
+$performance_font: 'Helvetica', 'Arial', sans-serif !default;
+$layout-screen-size-threshold: 1024px !default;
+
+$layout-drawer-narrow: 240px !default;
+$layout-drawer-wide: 456px !default;
+$layout-drawer-width: $layout-drawer-narrow !default;
+
+$layout-header-icon-size: 32px !default;
+$layout-screen-size-threshold: 1024px !default;
+$layout-header-icon-margin: 24px !default;
+$layout-drawer-button-mobile-size: 32px !default;
+$layout-drawer-button-desktop-size: 48px !default;
+
+$layout-header-mobile-row-height: 56px !default;
+$layout-mobile-header-height: $layout-header-mobile-row-height;
+$layout-header-desktop-row-height: 64px !default;
+$layout-desktop-header-height: $layout-header-desktop-row-height;
+
+$layout-header-desktop-baseline: 80px !default;
+$layout-header-mobile-baseline: 72px !default;
+$layout-header-mobile-indent: 16px !default;
+$layout-header-desktop-indent: 40px !default;
+
+$layout-tab-font-size: 14px !default;
+$layout-tab-bar-height: 48px !default;
+$layout-tab-mobile-padding: 12px !default;
+$layout-tab-desktop-padding: 24px !default;
+$layout-tab-highlight-thickness: 2px !default;
+
+// Animation
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1) !default;
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1) !default;
+
+$animation-curve-default: $animation-curve-fast-out-slow-in !default;
+
+// Header
+$layout-header-mobile-row-height: 56px !default;
+$layout-mobile-header-height: $layout-header-mobile-row-height;
+$layout-header-desktop-row-height: 64px !default;
+$layout-desktop-header-height: $layout-header-desktop-row-height;
+
+$layout-header-desktop-baseline: 80px !default;
+$layout-header-mobile-baseline: 72px !default;
+$layout-header-mobile-indent: 16px !default;
+$layout-header-desktop-indent: 40px !default;
+
+// Header
+$layout-header-bg-color: black;
+$layout-header-text-color: white;
+$layout-header-nav-hover-color: gray;
+$layout-header-tab-text-color: white;
+
+// Drawer
+$layout-nav-color: gray !default;
+
+$layout-drawer-bg-color: #000;
+$layout-drawer-border-color: blue;
+$layout-text-color: #fff;
+
+$layout-drawer-narrow: 240px !default;
+$layout-drawer-wide: 456px !default;
+$layout-drawer-width: $layout-drawer-narrow !default;
+
+$layout-drawer-navigation-color: #757575 !default;
+$layout-drawer-navigation-link-active-background: #fff !default;
+$layout-drawer-navigation-link-active-color: gray !default;
+
+// Drawer button
+$layout-drawer-button-mobile-size: 32px !default;
+$layout-drawer-button-desktop-size: 48px !default;
+
+// Obfuscator
+

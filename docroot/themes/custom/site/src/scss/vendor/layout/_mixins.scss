@@ -1,0 +1,42 @@
+@mixin layout-animation-default($duration:0.2s) {
+  transition-duration: $duration;
+  transition-timing-function: $animation-curve-default;
+}
+
+@mixin layout-typo-preferred-font($usePreferred: true) {
+  @if $usePreferred {
+    font-family: $preferred_font;
+  }
+}
+
+@mixin layout-typo-title($colorContrast: false, $usePreferred: true) {
+  @include layout-typo-preferred-font($usePreferred);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+
+  @if $colorContrast {
+    opacity: 0.87;
+  }
+}
+
+@mixin layout-header-row-height($desktop-height: 64px, $mobile-height: 32px) {
+  height: $desktop-height;
+
+  & .layout-navigation {
+    height: $desktop-height;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+      height: $desktop-height;
+    }
+  }
+
+  & .layout-navigation__link {
+    line-height: $desktop-height;
+
+    @media screen and (max-width: $layout-screen-size-threshold) {
+      line-height: $mobile-height;
+    }
+  }
+}

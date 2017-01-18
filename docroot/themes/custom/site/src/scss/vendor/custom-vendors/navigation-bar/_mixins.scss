@@ -1,0 +1,28 @@
+// |--------------------------------------------------------------------------
+// | Mixins
+// |--------------------------------------------------------------------------
+// |
+
+// --------------------------------------------------
+// Visibility
+// --------------------------------------------------
+
+@mixin navigation-bar-mixin($view-mode) {
+
+  .navigation-bar-enabled-#{$view-mode} {
+
+    .navigation-bar {
+      display: block;
+    }
+
+    &.navigation-bar-sticky {
+
+      .outer-wrapper {
+
+        .inner-wrapper {
+          padding-top: $navigation-bar-height;
+        }
+      }
+    }
+  }
+}

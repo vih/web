@@ -140,6 +140,15 @@
       }
     }
 
+    .layout-navigation__dropdown {
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
     a {
       display: block;
       background-color: #fff;

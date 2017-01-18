@@ -1,0 +1,104 @@
+// |--------------------------------------------------------------------------
+// | Spacer
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sidebar-spacer
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$bs3-sidebar-spacer-height: $sidebar-spacer-height;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Spacer mixin
+@mixin sidebar-mixin-spacer() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Spacer
+.sidebar-spacer {
+	display: block;
+	height: $bs3-sidebar-spacer-height;
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@include media-breakpoint-up(xs) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Tablet
+@include media-breakpoint-up(sm) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Desktop
+@include media-breakpoint-up(md) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Large desktop
+@include media-breakpoint-up(lg) {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Print
+@media print {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// Touch
+.touchevents {
+
+	// Spacer
+	.sidebar-spacer {}
+}
+
+// No touch
+.no-touchevents {
+
+	// Spacer
+	.sidebar-spacer {}
+}
