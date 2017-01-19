@@ -32,6 +32,8 @@ $card-background-color: #edeeee;
       text-transform: uppercase;
       margin: 0;
       margin-bottom: 15px;
+        font-family: 'Open Sans', sans-serif;
+
     }
   }
 
@@ -46,11 +48,13 @@ $card-background-color: #edeeee;
     &,
     p {
       color: $text-color;
+        font-weight: bold;
     }
   }
 
   .card-published-at {
     font-weight: $font-weight-bold;
+              font-family: 'Open Sans', sans-serif;
     font-size: $font-size-small;
     color: $brand-secondary;
   }

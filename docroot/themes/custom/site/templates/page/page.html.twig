@@ -32,19 +32,19 @@
 
             <!-- Begin - contact information -->
             <aside class="layout-header-contact-information">
-                <a href="tel:004575820811"><i class="icon"></i> +45 7582 0811</a> <span>Mandag - fredag <strong>08:00 - 15:00</strong></span>
+                <a href="tel:004575820811"><i class="material-icons">phone</i> +45 7582 0811</a> <span>Mandag - fredag <strong>08:00 - 15:00</strong></span>
             </aside>
             <!-- End - contact information -->
 
             <!-- Begin - tour -->
             <aside class="layout-header-tour">
-                <i class="icon"></i> Rundvisning <span><strong>Det er gratis</strong></span>
+                <a href="#"><i class="material-icons">bookmark_border</i> Rundvisning <span><strong>Det er gratis</strong></span></a>
             </aside>
             <!-- End - tour -->
 
             <!-- Begin - contact -->
             <aside class="layout-header-contact">
-                <a href="#"><i class="icon"></i> Kontakt</a>
+                <a href="#"><i class="material-icons">portrait</i> Kontakt</a>
             </aside>
             <!-- End - contact -->
 
@@ -95,7 +95,9 @@
             {% if page.banner %}
                 {% block banner %}
                     <div class="banner">
+                      
                         {{ page.banner }}
+                        <div class="cover-overlay"></div>
                     </div>
                 {% endblock %}
             {% endif %}
@@ -103,7 +105,7 @@
             {# Header #}
             {% if page.header %}
                 {% block header %}
-                    <div role="heading">
+                    <div role="heading" style="display:none;">
                         <div class="angled-background-color angled-background-color-white">
                             <div class="angled-background-inner">
                                 <div class="container">
@@ -158,13 +160,13 @@
                                     {% endif %}
 
                                     {% if page.footer_top_second %}
-                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                        <div class="col-xs-12 col-sm-6 col-md-3" style="margin-top:-100px;">
                                             {{ page.footer_top_second }}
                                         </div>
                                     {% endif %}
 
                                     {% if page.footer_top_third %}
-                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                        <div class="col-xs-12 col-sm-6 col-md-3" style="margin-top:-100px;">
                                             {{ page.footer_top_third }}
                                         </div>
                                     {% endif %}

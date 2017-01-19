@@ -23,6 +23,13 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
 // --------------------------------------------------
 
 // Button
+
+.field--name-field-link a {
+    
+    font-weight: $font-weight-bold;
+            font-family: 'Open Sans', sans-serif;
+}
+
 .btn {
   @extend .btn;
   @extend .btn-lg;
@@ -47,7 +54,13 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
     bottom: 0;
     left: 0;
     width: $button-container-width;
-    content: $fa-var-arrow-right;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0xMiA0bC0xLjQxIDEuNDFMMTYuMTcgMTFINHYyaDEyLjE3bC01LjU4IDUuNTlMMTIgMjBsOC04eiIvPgo8L3N2Zz4=');
+      background-position: 17px center;
+      background-size: 35px;
+      background-repeat: no-repeat;
+     background-color: deepskyblue!important;
+    content: 'arrow';
+      color: transparent;
     text-align: right;
     padding-right: 10px;
     padding-top: 10px;
@@ -92,18 +105,19 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
   @extend .btn-primary;
 
   &,
-  &:hover {
-    background-color: #00bcff;
-  }
+
 
   &:before {
     background-color: $button-primary-icon-background;
   }
 
   &:after {
-    border-left-color: $button-primary-icon-background;
+    border-left-color: deepskyblue;
   }
 }
+
+
+
 
 // Secondary
 .btn-secondary {

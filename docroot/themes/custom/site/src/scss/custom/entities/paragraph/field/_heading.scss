@@ -18,7 +18,8 @@
 .field--name-field-heading {
   @extend h2;
   text-transform: uppercase;
-  font-weight: $headings-font-weight-bold;
+  font-weight: bold;
+     font-family: 'Open Sans', sans-serif;
 }
 
 // --------------------------------------------------

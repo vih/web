@@ -14,6 +14,13 @@
 // Styling
 // --------------------------------------------------
 
+// iFrame 
+
+.frame-border {
+border:3px solid transparent;
+}
+
+
 // Video
 .paragraph--type--video {
 
@@ -28,11 +35,15 @@
     p {
       @extend h4;
       font-weight: $headings-font-weight-bold;
+                font-family: 'Open Sans', sans-serif;
+        line-height: 1.5em;
     }
   }
 
   .field--name-field-highlighted {
     margin-bottom: 80px;
+      font-weight: 700;
+                font-family: 'Open Sans', sans-serif;
   }
 }
 
