@@ -3,7 +3,7 @@
 /**
  * @file
  */
-namespace Drupal\foobarblk\Plugin\Block;
+namespace Drupal\logo_overlay\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
@@ -14,7 +14,7 @@ use Drupal\Core\Block\BlockBase;
  * admin_label = @Translation("Foo Bar block"),
  * )
  */
-class FoobarblkBlock extends BlockBase {
+class LogoOverlayBlock extends BlockBase {
 
 	/**
 	 * {@inheritdoc}
