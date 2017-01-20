@@ -15,7 +15,8 @@
     "core": [
       "src/vendor/sticky-kit/jquery.sticky-kit.js",
       "src/js/layout.js",
-      "src/js/init.js"
+      "src/js/blur-on-scroll.js",
+      "src/js/init.js"  
     ]
   }
 }

@@ -4,5 +4,8 @@
 
     // Enable layout
     layout.init();
+    
+    // Enable blur on scroll
+    blurOnScroll.init();
 
 })(jQuery);

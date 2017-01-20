@@ -1085,8 +1085,35 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 9;
   background-color: rgba(0, 0, 0, 0.5); }
+
+.imgcover {
+  background: url(../../../../../../../../sites/default/files/Thea%20Storm%20Henriksen_1.jpeg) center no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-background-size: cover;
+          background-size: cover;
+  z-index: 5;
+  top: -10%;
+  bottom: 10%;
+  left: -10%;
+  right: 10%;
+  width: 120%;
+  height: 120%; }
+
+.imgcover.blur {
+  opacity: 0;
+  -webkit-filter: blur(10px) brightness(0.7);
+  -ms-filter: blur(10px) brightness(0.7);
+  -o-filter: blur(10px) brightness(0.7);
+  filter: blur(10px) brightness(0.7);
+  -webkit-transition: all 0.05s ease-in-out;
+  -o-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out; }
 
 .angled-background-color-gray .angled-background-inner {
   margin-bottom: 50px; }
