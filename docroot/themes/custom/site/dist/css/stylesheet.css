@@ -1107,10 +1107,20 @@ p {
 
 .imgcover.blur {
   opacity: 0;
-  -webkit-filter: blur(10px) brightness(0.7);
-  -ms-filter: blur(10px) brightness(0.7);
-  -o-filter: blur(10px) brightness(0.7);
-  filter: blur(10px) brightness(0.7);
+  background: url(../../../../../../../../sites/default/files/Thea%20Storm%20Henriksen_1_blur.jpg) center no-repeat;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-background-size: cover;
+          background-size: cover;
+  z-index: 5;
+  top: -10%;
+  bottom: 10%;
+  left: -10%;
+  right: 10%;
+  width: 120%;
+  height: 120%;
   -webkit-transition: all 0.05s ease-in-out;
   -o-transition: all 0.05s ease-in-out;
   transition: all 0.05s ease-in-out; }

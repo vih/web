@@ -36,9 +36,7 @@ var blurOnScroll = (function ($) {
             var s = $('.layout__document').scrollTop(),
                 opacityVal = (s / 200);
             
-            console.log('Window was scrolled');
-            console.log(s);
-            console.log(opacityVal);
+        
 
             $('.blur').css('opacity', opacityVal);
         });
