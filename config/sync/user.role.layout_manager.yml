@@ -14,4 +14,3 @@ permissions:
   - 'administer panelizer node landing_page defaults'
   - 'administer panelizer node page defaults'
   - 'administer panelizer node news defaults'
-  - 'administer panelizer node slet defaults'

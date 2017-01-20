@@ -2,6 +2,8 @@ uuid: 7e539481-8266-450b-9da9-21cf5eace56d
 langcode: da
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - site
 _core:
@@ -19,4 +21,9 @@ settings:
   label_display: '0'
   primary: true
   secondary: true
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1
+    negate: true
+    context_mapping: {  }

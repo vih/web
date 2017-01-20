@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:38a6b38c-f577-48e2-967f-1b595aa70591'
 settings:
   id: 'block_content:38a6b38c-f577-48e2-967f-1b595aa70591'
-  label: 'Kom godt igang'
+  label: 'Udlev drømmen på VIH'
   provider: block_content
   label_display: visible
   status: true
