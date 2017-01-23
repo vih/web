@@ -267,6 +267,11 @@ $("#block-popup-cta").delay(10000).fadeIn(300);
       $(".close").click(function() {
         $.cookie('no_thanks', 'true', { expires: 36500, path: '/' });  
 });
+    
+    if ($.cookie("no_thanks") !== true)
+{
+    $("#block-popup-cta").hide();
+}
       
 
     return pub;
