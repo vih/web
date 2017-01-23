@@ -1,0 +1,20 @@
+uuid: 0773ac3a-43e1-43d9-88b8-dc1971bd481b
+langcode: da
+status: true
+dependencies:
+  module:
+    - popup_cta
+  theme:
+    - site
+id: popup_cta
+theme: site
+region: content
+weight: -9
+provider: null
+plugin: popup_cta
+settings:
+  id: popup_cta
+  label: 'PopUp CTA - Tilmeld dig'
+  provider: popup_cta
+  label_display: '0'
+visibility: {  }

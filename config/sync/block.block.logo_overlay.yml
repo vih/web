@@ -1,0 +1,26 @@
+uuid: 0bd5c174-1bba-4715-8d37-ace18988ff56
+langcode: da
+status: true
+dependencies:
+  module:
+    - logo_overlay
+    - system
+  theme:
+    - site
+id: logo_overlay
+theme: site
+region: banner
+weight: 0
+provider: null
+plugin: block_foobarblk
+settings:
+  id: block_foobarblk
+  label: 'Logo Overlay'
+  provider: logo_overlay
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/1
+    negate: false
+    context_mapping: {  }
