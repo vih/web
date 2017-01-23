@@ -314,6 +314,18 @@ clip-path: polygon(0 0, 41% 0, 25% 100%, 0 100%);
 
   // Header
   .layout__header {}
+    
+    // Banner
+    
+    .banner {
+        height: 100vh;
+    }
+    
+     
+    .block-title {
+        
+        z-index: 99999!important;
+    }
 }
 
 // Mobile - only
@@ -321,6 +333,17 @@ clip-path: polygon(0 0, 41% 0, 25% 100%, 0 100%);
 
   // Header
   .layout__header {}
+    
+     // Banner
+    
+    .banner {
+        height: 100vh;
+    }
+    
+    .block-title {
+        
+        z-index: 99999!important;
+    }
 }
 
 // Tablet - and up

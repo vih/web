@@ -9866,6 +9866,18 @@ body {
     font-family: 'Open Sans', sans-serif;
     text-decoration: underline; }
 
+.banner {
+  height: 100vh; }
+
+.block-title {
+  z-index: 99999 !important; }
+
+@media (max-width: 767px) {
+  .banner {
+    height: 100vh; }
+  .block-title {
+    z-index: 99999 !important; } }
+
 .layout__footer {
   background-color: #00a5e2;
   border-top: 0;
