@@ -1,5 +1,5 @@
 // |--------------------------------------------------------------------------
-// | Blur on scroll
+// | Modal PopUp
 // |--------------------------------------------------------------------------
 // |
 // | Blurs a background image upon scroll.
@@ -7,7 +7,7 @@
 // | This jQuery script is written by
 // | Simon Tofteby
 // |
-var blurOnScroll = (function ($) {
+var modalPopUp = (function ($) {
     'use strict';
 
     var pub = {};
@@ -31,22 +31,44 @@ var blurOnScroll = (function ($) {
     function registerEventHandlers() {
             console.log('Function was loaded');
         
-        // Detect scroll
-        $('.layout__document').on('scroll touchmove', function(event) {
-            var s = $('.layout__document').scrollTop(),
-                opacityVal = (s / 200);
-            
-       
-                         console.log(s);
-                         console.log(opacityVal);
-            
-            $('.blur').css('opacity', opacityVal);
-            
-            
-        });
+   
+        //Insert below
         
+       $(document).ready(function() {
+           
+         if ($.cookie("no_thanks") == null) {  
+
+// Hide the div
+$("#block-popup-cta").hide();
+
+
+
+// Show the div in 5s
+$("#block-popup-cta").delay(10000).fadeIn(300);
+
+//Close div        
+        $(".close").click(function(){
+    $("#block-popup-cta").hide();
+    
+});
+
+ 
+      
+
+}
+           
+     
+ 
+});
+
+
            
     }
+    
+      $(".close").click(function() {
+        $.cookie('no_thanks', 'true', { expires: 36500, path: '/' });  
+});
+      
 
     return pub;
 })(jQuery);

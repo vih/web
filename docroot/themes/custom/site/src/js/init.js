@@ -7,5 +7,9 @@
     
     // Enable blur on scroll
     blurOnScroll.init();
+    
+    //Modal PopUp
+    modalPopUp.init();
+    
 
 })(jQuery);

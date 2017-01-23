@@ -1,0 +1,9 @@
+name: Popup Cta
+type: module
+description: ''
+package: Custom
+version: 8.x
+core: 8.x
+dependencies:
+  - node
+  - block
