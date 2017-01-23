@@ -199,6 +199,16 @@
 // PopUp CTA 
 
 
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+
+    body {
+        
+        height: auto;
+    }
+
+}
+
+
 .hideit {
     
     display: none!important;

@@ -8435,7 +8435,7 @@ body,
   margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%; }
+  overflow-x: hidden; }
 
 .layout__wrapper,
 .layout__document {
@@ -9762,6 +9762,10 @@ body {
           background-size: 80%;
   width: 105px;
   height: 105px; }
+
+@supports (overflow: -webkit-marquee) and (justify-content: inherit) {
+  body {
+    height: auto; } }
 
 .hideit {
   display: none !important; }
