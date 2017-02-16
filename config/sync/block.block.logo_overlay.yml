@@ -1,6 +1,6 @@
-uuid: 0bd5c174-1bba-4715-8d37-ace18988ff56
+uuid: 41682dbf-c2c7-414b-913e-3edcffa0d4db
 langcode: da
-status: true
+status: false
 dependencies:
   module:
     - logo_overlay
@@ -9,8 +9,8 @@ dependencies:
     - site
 id: logo_overlay
 theme: site
-region: banner
-weight: 0
+region: '-1'
+weight: -2
 provider: null
 plugin: block_foobarblk
 settings:

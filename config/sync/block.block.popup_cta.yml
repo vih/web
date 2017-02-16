@@ -1,4 +1,4 @@
-uuid: 0773ac3a-43e1-43d9-88b8-dc1971bd481b
+uuid: d386a9bb-341a-4cb1-b51d-f2dbad82ad2f
 langcode: da
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: popup_cta
 theme: site
 region: content
-weight: -9
+weight: 0
 provider: null
 plugin: popup_cta
 settings:

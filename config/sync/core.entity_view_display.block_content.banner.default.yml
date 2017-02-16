@@ -5,8 +5,10 @@ dependencies:
   config:
     - block_content.type.banner
     - field.field.block_content.banner.field_image
+    - field.field.block_content.banner.field_link
   module:
     - image
+    - link
 id: block_content.banner.default
 targetEntityType: block_content
 bundle: banner
@@ -20,5 +22,16 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
 hidden:
   langcode: true
