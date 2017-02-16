@@ -65,22 +65,9 @@
 
         </div>
         <div class="layout__header-row layout__header-row--bottom">
-
             {% if page.header_navigation %}
                 {{ page.header_navigation }}
             {% endif %}
-
-            <!-- Begin - navigation -->
-            <!-- We hide it in small screens. -->
-            {#<ul class="layout-navigation layout-navigation--full-width layout--large-screen-only">#}
-                {#<li class="layout-navigation__link"><a href="#">Lange ophold</a></li>#}
-                {#<li class="layout-navigation__link"><a href="#">Fag</a></li>#}
-                {#<li class="layout-navigation__link"><a href="#">Sommerkursus</a></li>#}
-                {#<li class="layout-navigation__link"><a href="#">Rundvising</a></li>#}
-                {#<li class="layout-navigation__link"><a href="#">Om VIH</a></li>#}
-            {#</ul>#}
-            <!-- End - navigation -->
-
         </div>
     </header>
     <!-- End - header -->
@@ -95,11 +82,9 @@
             {% if page.banner %}
                 {% block banner %}
                     <div class="banner">
-                      
+                        <div class="banner-overlay"></div>
+
                         {{ page.banner }}
-                        <div class="cover-overlay"></div>
-                           <div class="imgcover"></div>
-                        <div class="imgcover blur"></div>
                     </div>
                 {% endblock %}
             {% endif %}
@@ -107,7 +92,7 @@
             {# Header #}
             {% if page.header %}
                 {% block header %}
-                    <div role="heading" style="display:none;">
+                    <div role="heading">
                         <div class="angled-background-color angled-background-color-white">
                             <div class="angled-background-inner">
                                 <div class="container">

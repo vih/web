@@ -13,12 +13,10 @@
   },
   "concat": {
     "core": [
-      "src/vendor/sticky-kit/jquery.sticky-kit.js",
       "src/js/layout.js",
       "src/js/jquery.cookie.js",
       "src/js/modal-popup.js",
-      "src/js/blur-on-scroll.js",
-      "src/js/init.js"  
+      "src/js/init.js"
     ]
   }
 }

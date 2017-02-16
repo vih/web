@@ -29,51 +29,33 @@ var modalPopUp = (function ($) {
      * Register event handlers
      */
     function registerEventHandlers() {
-            console.log('Function was loaded');
-        
-   
+
         //Insert below
-        
-       $(document).ready(function() {
-           
-         if ($.cookie("no_thanks") == null) {  
+        if ($.cookie("no_thanks") == null) {
 
-// Hide the div
-$("#block-popup-cta").hide();
+            // Hide the div
+            $("#block-popup-cta").hide();
 
+            // Show the div in 5s
+            $("#block-popup-cta").delay(10000).fadeIn(300);
 
+            //Close div
+            $(".close").click(function () {
+                $("#block-popup-cta").hide();
 
-// Show the div in 5s
-$("#block-popup-cta").delay(10000).fadeIn(300);
-
-//Close div        
-        $(".close").click(function(){
-    $("#block-popup-cta").hide();
-    
-});
-
- 
-      
-
-}
-           
-     
- 
-});
+            });
 
 
-           
+        }
     }
-    
-      $(".close").click(function() {
-        $.cookie('no_thanks', 'true', { expires: 36500, path: '/' });  
-});
-    
-    if ($.cookie("no_thanks") !== true)
-{
-    $("#block-popup-cta").hide();
-}
-      
+
+    $(".close").click(function () {
+        $.cookie('no_thanks', 'true', {expires: 36500, path: '/'});
+    });
+
+    if ($.cookie("no_thanks") !== true) {
+        $("#block-popup-cta").hide();
+    }
 
     return pub;
 })(jQuery);
