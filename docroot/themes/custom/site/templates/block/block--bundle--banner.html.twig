@@ -1,0 +1,33 @@
+<section{{ attributes.addClass('banner-inner') }}>
+
+    <!-- Begin - overlay -->
+    <div class="banner-overlay"></div>
+    <!-- End - overlay -->
+
+    <!-- Begin - logo -->
+    <div class="banner-logo-outer"></div>
+    <!-- End - logo -->
+
+    {% if content.field_image is not empty %}
+        {{ content.field_image }}
+    {% endif %}
+
+    <!-- Begin - content -->
+    <div class="banner-content">
+        <div class="container">
+
+            {{ title_prefix }}
+            {% if label %}
+                <h2{{ title_attributes.addClass('banner-title') }}>{{ label }}</h2>
+            {% endif %}
+            {{ title_suffix }}
+
+            {% if content.field_link is not empty %}
+                {{ content.field_link }}
+            {% endif %}
+
+        </div>
+    </div>
+    <!-- End - content -->
+
+</section>

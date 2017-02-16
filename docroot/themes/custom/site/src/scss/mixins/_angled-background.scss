@@ -33,7 +33,7 @@
         @include skew(0, $angle);
         transform-origin: bottom right;
         height: 130px;
-        z-index: 2;
+        z-index: 150;
           outline: 1px solid transparent;
       }
     }
