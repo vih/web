@@ -1,52 +1,53 @@
 {% import _self as menus %}
 
-{#
-  We call a macro which calls itself to render the full tree.
-  @see http://twig.sensiolabs.org/doc/tags/macro.html
-#}
-{{ menus.menu_links(items, attributes, 0) }}
+          {#
+            We call a macro which calls itself to render the full tree.
+            @see http://twig.sensiolabs.org/doc/tags/macro.html
+          #}
+          {{ menus.menu_links(items, attributes, 0) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
-  {% import _self as menus %}
+          {% macro menu_links(items, attributes, menu_level) %}
+          {% import _self as menus %}
 
-  {% if items %}
+          {% if items %}
 
-    {# List #}
-    {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('layout-navigation layout-navigation--full-width layout--large-screen-only') }}>
+          {# List #}
+          {% if menu_level == 0 %}
+<ul{{ attributes.addClass('layout-navigation layout--large-screen-only') }}>
     {% else %}
-      <ul{{ attributes.addClass('layout-navigation__dropdown-menu') }}>
-    {% endif %}
-
-    {% for item in items %}
-      {%
-        set item_classes = [
-          item.in_active_trail ? 'active',
-        ]
-      %}
-
-        {# List item #}
-        {% if item.below and item.is_expanded %}
-          <li{{ item.attributes.addClass('layout-navigation__dropdown', item_classes) }}>
-        {% else %}
-          <li{{ item.attributes.addClass('layout-navigation__link', item_classes) }}>
+    <ul{{ attributes.addClass('layout-navigation__dropdown-menu') }}>
         {% endif %}
 
-        {# Link #}
-        {{ link(item.title, item.url) }}
+        {% for item in items %}
+            {% set item_classes = [
+            item.in_active_trail ? 'active',
+            ] %}
 
-        {# Submenu #}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes.removeClass('navigation-list'), menu_level + 1) }}
-        {% endif %}
+            {# List item #}
+            {% if item.below and item.is_expanded %}
+            <li{{ item.attributes.addClass('layout-navigation__dropdown', item_classes) }}>
+            {% else %}
+                <li{{ item.attributes.addClass('layout-navigation__link', item_classes) }}>
+            {% endif %}
 
-      </li>
-    {% endfor %}
+            {# Link #}
+            {{ link(item.title, item.url) }}
 
-    {# Search icon #}
-    <li class="layout-navigation__link layout-navigation__link__icon"><a href="search/node"><span class="icon fa fa-search"></span></a></li>
+            {# Submenu #}
+            {% if item.below %}
+                {{ menus.menu_links(item.below, attributes.removeClass('layout-navigation layout--large-screen-only'), menu_level + 1) }}
+            {% endif %}
+
+            </li>
+        {% endfor %}
+
+        {# Search icon #}
+        <li class="layout-navigation__link layout-navigation__link__icon"><a
+                    href="search/node"><span
+                        class="icon fa fa-search"></span></a></li>
 
     </ul>
-  {% endif %}
+    {% endif %}
 
-{% endmacro %}
+    {% endmacro %}
+
