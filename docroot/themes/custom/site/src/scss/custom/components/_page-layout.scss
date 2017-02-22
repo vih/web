@@ -24,7 +24,9 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 // --------------------------------------------------
 
 // Page layout
-.layout__content {}
+.layout__content {
+  padding-top: 0;
+}
 
 // --------------------------------------------------
 // Variants

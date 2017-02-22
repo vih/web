@@ -1,0 +1,48 @@
+// |--------------------------------------------------------------------------
+// | Drawer button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .layout__drawer-button
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Drawer button
+.layout__drawer-button {
+  display: block;
+
+  height: $layout-drawer-button-desktop-size;
+  width: $layout-drawer-button-desktop-size;
+  border: 0;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: $layout-mobile-header-height;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: ($layout-mobile-header-height - $layout-drawer-button-desktop-size) 12px;
+  color: $layout-header-text-color;
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Drawer button
+.layout__drawer-button {
+
+  @include layout-media-breakpoint-only(desktop) {
+    line-height: 54px;
+
+    .layout__no-desktop-drawer-button &,
+    .layout--fixed-drawer & {
+      display: none;
+    }
+  }
+}

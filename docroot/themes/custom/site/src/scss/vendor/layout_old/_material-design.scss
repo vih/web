@@ -32,7 +32,7 @@
   @include typo-body-1(true);
 
   // Align icons inside link with text
-  & .layout-icon {
+  & .icon {
     vertical-align: middle;
   }
 }
@@ -129,7 +129,7 @@
 
   & > .mdl-layout__title,
   & > .mdl-layout-title {
-    line-height: $layout-desktop-header-default-height;
+    line-height: $layout-desktop-header-height;
     padding-left: $layout-header-desktop-indent;
 
     @media screen and (max-width: $layout-screen-size-threshold) {
@@ -236,7 +236,7 @@
   margin: 0;
   padding: 0;
   border: none;
-  min-height: $layout-desktop-header-default-height;
+  min-height: $layout-desktop-header-height;
   max-height: 1000px;
   z-index: 3;
 
@@ -267,7 +267,7 @@
   & > .mdl-layout-icon {
     position: absolute;
     left: $layout-header-desktop-indent;
-    top: ($layout-desktop-header-default-height - $layout-header-icon-size) / 2;
+    top: ($layout-desktop-header-height - $layout-header-icon-size) / 2;
     height: $layout-header-icon-size;
     width: $layout-header-icon-size;
     overflow: hidden;
@@ -285,7 +285,7 @@
   }
 
   &.is-compact {
-    max-height: $layout-desktop-header-default-height;
+    max-height: $layout-desktop-header-height;
 
     @media screen and (max-width: $layout-screen-size-threshold) {
       max-height: $layout-mobile-header-height;
@@ -293,7 +293,7 @@
   }
 
   &.is-compact.has-tabs {
-    height: $layout-desktop-header-default-height + $layout-tab-bar-height;
+    height: $layout-desktop-header-height + $layout-tab-bar-height;
 
     @media screen and (max-width: $layout-screen-size-threshold) {
       min-height: $layout-mobile-header-height + $layout-tab-bar-height;
@@ -552,7 +552,7 @@
   .mdl-layout--no-drawer-button & {
     width: $layout-header-desktop-indent - $layout-tab-desktop-padding;
 
-    & .layout-icon {
+    & .icon {
       position: relative;
       left: ($layout-header-desktop-indent - $layout-tab-desktop-padding - 24px) / 2;
     }
@@ -566,7 +566,7 @@
     display: none;
   }
 
-  & .layout-icon {
+  & .icon {
     line-height: $layout-tab-bar-height;
   }
 

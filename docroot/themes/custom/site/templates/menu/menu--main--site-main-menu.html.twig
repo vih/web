@@ -13,7 +13,7 @@
 
           {# List #}
           {% if menu_level == 0 %}
-<ul{{ attributes.addClass('layout-navigation layout--large-screen-only') }}>
+<ul{{ attributes.addClass('layout-navigation layout-navigation layout-navigation--full-width layout--large-screen-only') }}>
     {% else %}
     <ul{{ attributes.addClass('layout-navigation__dropdown-menu') }}>
         {% endif %}
@@ -42,9 +42,7 @@
         {% endfor %}
 
         {# Search icon #}
-        <li class="layout-navigation__link layout-navigation__link__icon"><a
-                    href="search/node"><span
-                        class="icon fa fa-search"></span></a></li>
+        <li class="layout-navigation__link layout-navigation__link__icon"><a href="search/node"><span class="icon fa fa-search"></span></a></li>
 
     </ul>
     {% endif %}

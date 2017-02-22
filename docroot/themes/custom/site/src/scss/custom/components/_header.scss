@@ -126,14 +126,77 @@
     }
   }
 
+  .layout-navigation__dropdown .layout-navigation__link__icon {
+    display: none;
+  }
+
   .layout__header-row--top {
-    @include layout-header-row-height(38px);
+    @include layout-header-row-height(38px, 38px, 38px);
   }
 
   .layout__header-row--bottom {
-    @include layout-header-row-height(67px);
-    background-color: #fff;
+    @include layout-header-row-height(67px, 67px, 67px);
     border-bottom: 1px solid $border-color;
+    background-color: #fff;
+
+    .layout-navigation {
+
+      > .layout-navigation__dropdown {
+
+        > a {
+
+          &:after {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-size: $font-size-large;
+            color: $text-color;
+            content: $fa-var-angle-down;
+            margin-left: 6px;
+          }
+        }
+      }
+
+      > .layout-navigation__dropdown,
+      > .layout-navigation__link {
+
+        > a {
+          border-right: 1px solid $border-color;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    a {
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      font-family: 'Open Sans', sans-serif;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    @include layout-header-navigation-styling(
+            $text-color,
+            $text-color,
+            $brand-primary,
+
+            $border-color,
+            #fff
+    );
+
+    @include layout-header-dropdown-menu-styling(
+            #fff,
+            $text-color,
+            $text-color,
+            $brand-primary,
+
+            $border-color,
+            $border-color
+    );
 
     .region {
 
@@ -141,38 +204,6 @@
       > nav {
         display: block;
         width: 100%;
-      }
-    }
-
-    .layout-navigation__link {
-      border-right: 1px solid $border-color;
-      border-bottom: 1px solid $border-color;
-
-      &:last-child {
-        border-right: 0;
-      }
-    }
-
-    .layout-navigation__dropdown {
-      border-right: 1px solid $border-color;
-      border-bottom: 1px solid $border-color;
-
-      &:last-child {
-        border-right: 0;
-      }
-    }
-
-    a {
-      display: block;
-      background-color: #fff;
-      font-weight: $font-weight-bold;
-      text-transform: uppercase;
-      font-family: 'Open Sans', sans-serif;
-      color: $text-color;
-
-      &:hover {
-        text-decoration: none;
-        background-color: $border-color;
       }
     }
   }

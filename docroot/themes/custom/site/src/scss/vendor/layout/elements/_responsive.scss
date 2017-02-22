@@ -1,0 +1,59 @@
+// |--------------------------------------------------------------------------
+// | Responsive
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .layout--hidden-*-only
+// | - .layout--hidden-*-and-up
+// | - .layout--hidden-*-and-down
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.layout--hidden-mobile-only {
+  @include layout-media-breakpoint-only(mobile) {
+    @include layout-invisibility();
+  }
+}
+
+.layout--hidden-tablet-only {
+  @include layout-media-breakpoint-only(tablet) {
+    @include layout-invisibility();
+  }
+}
+
+.layout--hidden-tablet-and-up {
+  @include layout-media-breakpoint-and-up(tablet) {
+    @include layout-invisibility();
+  }
+}
+
+.layout--hidden-tablet-and-down {
+  @include layout-media-breakpoint-and-down(tablet) {
+    @include layout-invisibility();
+  }
+}
+
+.layout--hidden-desktop-only {
+  @include layout-media-breakpoint-only(desktop) {
+    @include layout-invisibility();
+  }
+}
+
+.layout--hidden-desktop-and-up {
+  @include layout-media-breakpoint-and-up(desktop) {
+    @include layout-invisibility();
+  }
+}
+
+.layout--hidden-desktop-and-down {
+  @include layout-media-breakpoint-and-down(desktop) {
+    @include layout-invisibility();
+  }
+}
+
+.container {
+  max-width: 100%;
+}

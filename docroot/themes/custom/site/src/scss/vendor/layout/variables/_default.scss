@@ -1,0 +1,109 @@
+$layout-screen-size-threshold: 1024px !default;
+
+$layout-spacing-left-right-mobile-default: 16px !default;
+$layout-spacing-left-right-desktop-default: 24px !default;
+
+// Animation
+$layout-animation-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
+$layout-animation-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1) !default;
+$layout-animation-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1) !default;
+$layout-animation-duration: 0.2s !default;
+$layout-animation-transition: $layout-animation-fast-out-slow-in !default;
+
+// Grid breakpoints
+$layout-grid-breakpoints: (
+  mobile: 0,
+  tablet: 768px,
+  desktop: 992px
+) !default;
+
+// --------------------------------------------------
+// Content
+// --------------------------------------------------
+
+$layout-content-top-padding: 30px;
+$layout-content-bottom-padding: 50px;
+
+// --------------------------------------------------
+// Title
+// --------------------------------------------------
+
+$layout-title-font-family: 'Helvetica Neue', 'Sans Serif' !default;
+$layout-title-font-size: 22px !default;
+$layout-title-font-weight: 500 !default;
+
+// --------------------------------------------------
+// Drawer
+// --------------------------------------------------
+
+// Widths
+$layout-drawer-narrow: 240px !default;
+$layout-drawer-wide: 456px !default;
+$layout-drawer-width: $layout-drawer-narrow !default;
+
+// --------------------------------------------------
+// Header
+// --------------------------------------------------
+
+$layout-header-icon-size: 32px !default;
+$layout-screen-size-threshold: 1024px !default;
+$layout-header-icon-margin: 24px !default;
+$layout-drawer-button-mobile-size: 32px !default;
+$layout-drawer-button-desktop-size: 48px !default;
+
+$layout-header-desktop-baseline: 80px !default;
+$layout-header-mobile-baseline: 72px !default;
+$layout-header-mobile-indent: 16px !default;
+$layout-header-desktop-indent: 40px !default;
+
+// Header
+$layout-header-mobile-row-height: 56px !default;
+$layout-mobile-header-height: $layout-header-mobile-row-height !default;
+$layout-header-desktop-row-height: 64px !default;
+$layout-desktop-header-default-height: $layout-header-desktop-row-height !default;
+
+$layout-header-desktop-baseline: 80px !default;
+$layout-header-mobile-baseline: 72px !default;
+$layout-header-mobile-indent: 16px !default;
+$layout-header-desktop-indent: 40px !default;
+
+// Header
+$layout-header-bg-color: black !default;
+$layout-header-text-color: white !default;
+$layout-header-nav-hover-color: gray !default;
+$layout-header-tab-text-color: white !default;
+
+$layout-header-navigation-link-color: black !default;
+$layout-header-navigation-link-hover-color: white !default;
+$layout-header-navigation-link-hover-background: black !default;
+$layout-header-navigation-link-active-color: white !default;
+$layout-header-navigation-link-active-background: blue !default;
+
+$layout-header-navigation-dropdown-menu-background: pink !default;
+$layout-header-navigation-dropdown-menu-link-color: black !default;
+$layout-header-navigation-dropdown-menu-link-hover-color: white !default;
+$layout-header-navigation-dropdown-menu-link-hover-background: black !default;
+$layout-header-navigation-dropdown-menu-link-active-color: white !default;
+$layout-header-navigation-dropdown-menu-link-active-background: blue !default;
+
+// Drawer
+$layout-nav-color: gray !default;
+
+$layout-drawer-bg-color: #000 !default;
+$layout-drawer-border-color: blue !default;
+$layout-text-color: #fff !default;
+
+$layout-drawer-narrow: 240px !default;
+$layout-drawer-wide: 456px !default;
+$layout-drawer-width: $layout-drawer-narrow !default;
+
+$layout-drawer-navigation-color: #757575 !default;
+$layout-drawer-navigation-link-active-background: #fff !default;
+$layout-drawer-navigation-link-active-color: gray !default;
+
+// Drawer button
+$layout-drawer-button-mobile-size: 32px !default;
+$layout-drawer-button-desktop-size: 48px !default;
+
+// Obfuscator
+$layout-obfuscator-background: rgba(0, 0, 0, 0.5) !default;

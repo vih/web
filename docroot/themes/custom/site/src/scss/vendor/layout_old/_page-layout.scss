@@ -1,0 +1,146 @@
+// |--------------------------------------------------------------------------
+// | Page layout
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .page-layout
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+html,
+body,
+.layout__wrapper {
+  margin: 0;
+  padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+   
+}
+
+.layout__wrapper,
+.layout__document {
+  display:  flex;
+  box-sizing: border-box;
+}
+
+.layout__drawer,
+.layout__document,
+.layout__content {
+  flex: 1;
+}
+
+.layout__wrapper {
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+.layout__document {
+  // Fix IE10 bug.
+  -ms-flex: 0 1 auto;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+  flex-direction:  column;
+
+  .layout__fixed-drawer > & {
+    margin-left: $layout-drawer-width;
+  }
+
+  .layout__wrapper.has-scrolling-header & {
+    overflow: visible;
+  }
+
+  @media screen and (max-width: $layout-screen-size-threshold) {
+
+    .layout__fixed-drawer > & {
+      margin-left: 0;
+    }
+
+    .layout__wrapper.has-scrolling-header & {
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Print
+@media print {
+
+  // Page layout
+  .page-layout {}
+}
+
+// Touch
+.touchevents {
+
+  // Page layout
+  .page-layout {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Page layout
+  .page-layout {}
+}

@@ -15,14 +15,13 @@ body,
 .layout__wrapper {
   margin: 0;
   padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-   
+  height: 100%;
+  width: 100%;
 }
 
 .layout__wrapper,
 .layout__document {
-  display:  flex;
+  display: flex;
   box-sizing: border-box;
 }
 
@@ -43,6 +42,7 @@ body,
 .layout__document {
   // Fix IE10 bug.
   -ms-flex: 0 1 auto;
+
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
@@ -50,17 +50,17 @@ body,
   -webkit-overflow-scrolling: touch;
   flex-direction:  column;
 
-  .layout__fixed-drawer > & {
+  .layout--fixed-drawer > & {
     margin-left: $layout-drawer-width;
   }
 
-  .layout__wrapper.has-scrolling-header & {
+  .layout__wrapper.has-scrolling-header > & {
     overflow: visible;
   }
 
-  @media screen and (max-width: $layout-screen-size-threshold) {
+  @include layout-media-breakpoint-and-down(tablet) {
 
-    .layout__fixed-drawer > & {
+    .layout--fixed-drawer > & {
       margin-left: 0;
     }
 
@@ -71,76 +71,7 @@ body,
   }
 }
 
-// --------------------------------------------------
-// Responsive
-// --------------------------------------------------
-
-// Mobile - and up
-@include media-breakpoint-up(xs) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Mobile - only
-@include media-breakpoint-only(xs) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Tablet - and up
-@include media-breakpoint-up(sm) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Tablet - only
-@include media-breakpoint-only(sm) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Desktop - and up
-@include media-breakpoint-up(md) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Desktop - only
-@include media-breakpoint-only(md) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Large desktop - and up
-@include media-breakpoint-up(lg) {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Print
-@media print {
-
-  // Page layout
-  .page-layout {}
-}
-
-// Touch
-.touchevents {
-
-  // Page layout
-  .page-layout {}
-}
-
-// No touch
-.no-touchevents {
-
-  // Page layout
-  .page-layout {}
+.layout__content {
+  padding-top: $layout-content-top-padding;
+  padding-bottom: $layout-content-bottom-padding;
 }

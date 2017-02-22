@@ -1,42 +1,204 @@
-@mixin layout-animation-default($duration:0.2s) {
-  transition-duration: $duration;
-  transition-timing-function: $animation-curve-default;
-}
-
-@mixin layout-typo-preferred-font($usePreferred: true) {
-  @if $usePreferred {
-    font-family: $preferred_font;
-  }
-}
-
-@mixin layout-typo-title($colorContrast: false, $usePreferred: true) {
-  @include layout-typo-preferred-font($usePreferred);
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.02em;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
-}
-
-@mixin layout-header-row-height($desktop-height: 64px, $mobile-height: 32px) {
-  height: $desktop-height;
+// Header row height
+@mixin layout-header-row-height($mobile-height: 32px, $tablet-height: 46px, $desktop-height: 64px) {
+  height: $mobile-height;
 
   & .layout-navigation {
-    height: $desktop-height;
+    height: $mobile-height;
+  }
 
-    @media screen and (max-width: $layout-screen-size-threshold) {
-      height: $desktop-height;
+  & .layout-navigation > .layout-navigation__link,
+  & .layout-navigation > .layout-navigation__dropdown {
+
+    > a {
+      line-height: $mobile-height;
     }
   }
 
-  & .layout-navigation__link {
-    line-height: $desktop-height;
+  @include layout-media-breakpoint-only(tablet) {
+    height: $tablet-height;
 
-    @media screen and (max-width: $layout-screen-size-threshold) {
-      line-height: $mobile-height;
+    & .layout-navigation {
+      height: $tablet-height;
+    }
+
+    & .layout-navigation > .layout-navigation__link,
+    & .layout-navigation > .layout-navigation__dropdown {
+
+      > a {
+        line-height: $tablet-height;
+      }
+    }
+  }
+
+  @include layout-media-breakpoint-only(desktop) {
+    height: $desktop-height;
+
+    & .layout-navigation {
+      height: $desktop-height;
+    }
+
+    & .layout-navigation > .layout-navigation__link,
+    & .layout-navigation > .layout-navigation__dropdown {
+
+      > a {
+        line-height: $desktop-height;
+      }
+    }
+  }
+}
+
+// Header - navigation styling
+@mixin layout-header-navigation-styling(
+  $link-color: $layout-header-navigation-link-color,
+  $link-hover-color: $layout-header-navigation-link-hover-color,
+  $link-active-color: $layout-header-navigation-link-active-color,
+
+  $link-hover-background: $layout-header-navigation-link-hover-background,
+  $link-active-background: $layout-header-navigation-link-active-background,
+
+  $link-right-left-spacing: $layout-spacing-left-right-desktop-default
+) {
+
+  &.layout-navigation,
+  & .layout-navigation {
+
+    > .layout-navigation__link,
+    > .layout-navigation__dropdown {
+
+      > a {
+        padding-left: $link-right-left-spacing;
+        padding-right: $link-right-left-spacing;
+
+        &, &:hover {
+          color: $link-color;
+        }
+      }
+
+      &:hover > a {
+
+        &, &:hover {
+          color: $link-hover-color;
+          background-color: $link-hover-background;
+        }
+      }
+
+      &.active,
+      &.active-trail {
+
+        > a {
+
+          &, &:hover {
+            color: $link-active-color;
+            background-color: $link-active-background;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Header - dropdown menu styling
+@mixin layout-header-dropdown-menu-styling(
+  $dropdown-menu-background-color: $layout-header-navigation-dropdown-menu-background,
+  $link-color: $layout-header-navigation-dropdown-menu-link-color,
+  $link-hover-color: $layout-header-navigation-dropdown-menu-link-hover-color,
+  $link-active-color: $layout-header-navigation-dropdown-menu-link-active-color,
+
+  $link-hover-background: $layout-header-navigation-dropdown-menu-link-hover-background,
+  $link-active-background: $layout-header-navigation-dropdown-menu-link-active-background,
+
+  $link-right-left-spacing: $layout-spacing-left-right-desktop-default
+) {
+
+  &.layout-navigation,
+  & .layout-navigation {
+
+    & .layout-navigation__dropdown-menu {
+      background-color: $dropdown-menu-background-color;
+
+      & a {
+        color: $link-color;
+      }
+
+      & :hover > a {
+        color: $link-hover-color;
+        background-color: $link-hover-background;
+      }
+
+      & .active > a,
+      & .active-trail > a {
+
+        &, &:hover {
+          color: $link-active-color;
+          background-color: $link-active-background;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Grid
+// --------------------------------------------------
+
+@mixin layout-invisibility() {
+  display: none !important;
+}
+
+@function layout-breakpoint-next($name, $breakpoints: $layout-grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function layout-breakpoint-min($name, $breakpoints: $layout-grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
+
+@function layout-breakpoint-max($name, $breakpoints: $layout-grid-breakpoints) {
+  $next: layout-breakpoint-next($name, $breakpoints);
+
+  @return if($next, layout-breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+@mixin layout-media-breakpoint-and-up($name, $breakpoints: $layout-grid-breakpoints) {
+  $min: layout-breakpoint-min($name, $breakpoints);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin layout-media-breakpoint-and-down($name, $breakpoints: $layout-grid-breakpoints) {
+  $max: layout-breakpoint-max($name, $breakpoints);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin layout-media-breakpoint-only($name, $breakpoints: $layout-grid-breakpoints) {
+  @include layout-media-breakpoint-and-up($name, $breakpoints) {
+    @include layout-media-breakpoint-and-down($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+@mixin layout-media-breakpoint-between($lower, $upper, $breakpoints: $layout-grid-breakpoints) {
+  @include layout-media-breakpoint-and-up($lower, $breakpoints) {
+    @include layout-media-breakpoint-and-down($upper, $breakpoints) {
+      @content;
     }
   }
 }

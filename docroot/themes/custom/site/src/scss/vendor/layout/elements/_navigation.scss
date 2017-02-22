@@ -1,0 +1,129 @@
+// |--------------------------------------------------------------------------
+// | Navigation
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .layout-navigation
+// |
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.layout-navigation {
+  display: flex;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a {
+    display: block;
+    padding: auto $layout-spacing-left-right-desktop-default;
+    color: $layout-text-color;
+
+    &, &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.layout-navigation__dropdown,
+.layout-navigation__link {
+  margin: 0;
+  box-sizing: border-box;
+
+  // Align icons inside link with text
+  .layout-icon {
+    vertical-align: middle;
+  }
+
+  .layout-navigation--full-width & {
+    flex-grow: 1;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.layout-navigation__dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-navigation__dropdown-menu {
+  display: none;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a {
+    padding: 8px $layout-spacing-left-right-desktop-default;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.layout-navigation--full-width {
+  width: 100%;
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+.layout-navigation {
+
+  &.layout-navigation--hidden-mobile-only,
+  .layout-navigation--hidden-mobile-only & {
+    @include layout-media-breakpoint-only(mobile) {
+      @include layout-invisibility();
+    }
+  }
+
+  &.layout-navigation--hidden-tablet-only,
+  .layout-navigation--hidden-tablet-only & {
+    @include layout-media-breakpoint-only(tablet) {
+      @include layout-invisibility();
+    }
+  }
+
+  &.layout-navigation--hidden-tablet-and-up,
+  .layout-navigation--hidden-tablet-and-up & {
+    @include layout-media-breakpoint-and-up(tablet) {
+      @include layout-invisibility();
+    }
+  }
+
+  &.layout-navigation--hidden-tablet-and-down,
+  .layout-navigation--hidden-tablet-and-down & {
+    @include layout-media-breakpoint-and-down(tablet) {
+      @include layout-invisibility();
+    }
+  }
+
+  &.layout-navigation--hidden-desktop-only,
+  .layout-navigation--hidden-desktop-only & {
+    @include layout-media-breakpoint-only(desktop) {
+      @include layout-invisibility();
+    }
+  }
+
+  &.layout-navigation--hidden-desktop-and-up,
+  .layout-navigation--hidden-desktop-and-up & {
+    @include layout-media-breakpoint-and-up(desktop) {
+      @include layout-invisibility();
+    }
+  }
+
+  &.layout-navigation--hidden-desktop-and-down,
+  .layout-navigation--hidden-desktop-and-down & {
+    @include layout-media-breakpoint-and-down(desktop) {
+      @include layout-invisibility();
+    }
+  }
+}

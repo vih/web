@@ -24,8 +24,6 @@
   top: 0;
   left: 0;
 
-  //@include shadow-2dp();
-
   box-sizing: border-box;
   border-right: 1px solid $layout-drawer-border-color;
   background: $layout-drawer-bg-color;
@@ -35,7 +33,8 @@
   transform-style: preserve-3d;
   will-change: transform;
 
-  @include layout-animation-default();
+  transition-duration: $layout-animation-duration;
+  transition-timing-function: $layout-animation-transition;
   transition-property: transform;
 
   color: $layout-text-color;
@@ -47,6 +46,7 @@
 
   &.is-visible {
     transform: translateX(0);
+
     & ~ .layout__content.layout__content {
       overflow: hidden;
     }
@@ -57,13 +57,8 @@
   }
 
   & > .layout-title {
-    line-height: $layout-desktop-header-height;
-    padding-left: $layout-header-desktop-indent;
-
-    @media screen and (max-width: $layout-screen-size-threshold) {
-      line-height: $layout-mobile-header-height;
-      padding-left: $layout-header-mobile-indent;
-    }
+    line-height: $layout-desktop-header-default-height;
+    padding-left: $layout-spacing-left-right-desktop-default;
   }
 
   & .layout-navigation {
@@ -71,106 +66,36 @@
     align-items: stretch;
     padding-top: 16px;
 
-    & .layout-navigation__link {
-      display: block;
-      flex-shrink: 0;
-      padding: 16px $layout-header-desktop-indent;
-      margin: 0;
+    a {
+      padding: 16px $layout-spacing-left-right-desktop-default;
       color: $layout-drawer-navigation-color;
-
-      @media screen and (max-width: $layout-screen-size-threshold) {
-        padding: 16px $layout-header-mobile-indent;
-      }
 
       &:hover {
         background-color: $layout-nav-color;
       }
+    }
 
-      &--current {
-        background-color: $layout-drawer-navigation-link-active-background;
-        color: $layout-drawer-navigation-link-active-color;
+    & .layout-navigation__dropdown,
+    & .layout-navigation__link {
+      flex-shrink: 0;
+
+      &.active {
+
+        a {
+
+          &,
+          &:hover {
+            background-color: $layout-drawer-navigation-link-active-background;
+            color: $layout-drawer-navigation-link-active-color;
+          }
+        }
       }
     }
   }
 
-  @media screen and (min-width: $layout-screen-size-threshold + 1px) {
-
+  @include layout-media-breakpoint-and-up(desktop) {
     .layout--fixed-drawer > & {
       transform: translateX(0);
     }
   }
-}
-
-// --------------------------------------------------
-// Responsive
-// --------------------------------------------------
-
-// Mobile - and up
-@include media-breakpoint-up(xs) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Mobile - only
-@include media-breakpoint-only(xs) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Tablet - and up
-@include media-breakpoint-up(sm) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Tablet - only
-@include media-breakpoint-only(sm) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Desktop - and up
-@include media-breakpoint-up(md) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Desktop - only
-@include media-breakpoint-only(md) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Large desktop - and up
-@include media-breakpoint-up(lg) {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Print
-@media print {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// Touch
-.touchevents {
-
-  // Drawer
-  .layout__drawer {}
-}
-
-// No touch
-.no-touchevents {
-
-  // Drawer
-  .layout__drawer {}
 }

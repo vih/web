@@ -1,13 +1,21 @@
 // |--------------------------------------------------------------------------
-// | Spaced data
+// | Title
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .table-spaced-data
+// | - .layout-title
 // |
 
 // --------------------------------------------------
-// Variables
+// Styling
 // --------------------------------------------------
 
-
+// Title
+.layout-title {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  font-family: $layout-title-font-family;
+  font-size: $layout-title-font-size;
+  font-weight: $layout-title-font-weight;
+}
