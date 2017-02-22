@@ -88,19 +88,19 @@
             {% endif %}
 
             {# Header #}
-            {#{% if page.header %}#}
-                {#{% block header %}#}
-                    {#<div role="heading">#}
-                        {#<div class="angled-background-color angled-background-color-white">#}
-                            {#<div class="angled-background-inner">#}
-                                {#<div class="container">#}
-                                    {#{{ page.header }}#}
-                                {#</div>#}
-                            {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                {#{% endblock %}#}
-            {#{% endif %}#}
+            {% if page.header %}
+                {% block header %}
+                    <div role="heading">
+                        <div class="angled-background-color angled-background-color-white">
+                            <div class="angled-background-inner">
+                                <div class="container">
+                                    {{ page.header }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            {% endif %}
 
             <!-- Begin - content -->
             <section{{ content_attributes.addClass(content_classes) }}>
