@@ -1,0 +1,23 @@
+uuid: c628578e-b54c-427c-9026-abf3dce36fb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_cs_mandatory
+    - paragraphs.paragraphs_type.vih_course_slot
+id: paragraph.vih_course_slot.field_vih_cs_mandatory
+field_name: field_vih_cs_mandatory
+entity_type: paragraph
+bundle: vih_course_slot
+label: Mandatory
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

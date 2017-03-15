@@ -1,0 +1,26 @@
+uuid: d2e31be6-17c8-4a8e-9b96-a3c05133c045
+langcode: en
+status: true
+dependencies: {  }
+id: vih_long_cource_creator
+label: 'Long Cource Creator'
+weight: 11
+is_admin: null
+permissions:
+  - 'create vih_long_cource content'
+  - 'edit own vih_long_cource content'
+  - 'view vih_long_cource revisions'
+  - 'view own unpublished content'
+  - 'create url aliases'
+  - 'use text format rich_text'
+  - 'access media_browser entity browser pages'
+  - 'access panels in-place editing'
+  - 'change layouts in place editing'
+  - 'administer panelizer node vih_long_cource content'
+  - 'administer panelizer node vih_long_cource layout'
+  - 'access image_browser entity browser pages'
+  - 'view any unpublished content'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use needs_review_needs_review transition'
+  - 'view latest version'

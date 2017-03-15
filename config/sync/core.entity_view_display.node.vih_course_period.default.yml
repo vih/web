@@ -1,0 +1,54 @@
+uuid: 454a2e8b-e023-470b-a056-0c11bedc6796
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vih_course_period.body
+    - field.field.node.vih_course_period.field_vih_cp_course_slots
+    - field.field.node.vih_course_period.field_vih_cp_end_date
+    - field.field.node.vih_course_period.field_vih_cp_start_date
+    - node.type.vih_course_period
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.vih_course_period.default
+targetEntityType: node
+bundle: vih_course_period
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_vih_cp_course_slots:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_vih_cp_end_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_vih_cp_start_date:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  links:
+    weight: 100
+hidden:
+  langcode: true

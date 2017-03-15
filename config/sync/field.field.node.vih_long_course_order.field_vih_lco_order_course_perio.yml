@@ -1,0 +1,45 @@
+uuid: 3039d6f4-59cd-42d5-88e4-4894fcdebdac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_order_course_perio
+    - node.type.vih_long_course_order
+    - paragraphs.paragraphs_type.vih_ordered_course_period
+  module:
+    - entity_reference_revisions
+id: node.vih_long_course_order.field_vih_lco_order_course_perio
+field_name: field_vih_lco_order_course_perio
+entity_type: node
+bundle: vih_long_course_order
+label: 'Ordered Course Periords'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_ordered_course_period: vih_ordered_course_period
+    target_bundles_drag_drop:
+      vih_ordered_course_slot:
+        weight: 7
+        enabled: false
+      1_column_action_centered:
+        weight: 8
+        enabled: false
+      list_of_news_teasers:
+        weight: 9
+        enabled: false
+      video:
+        weight: 10
+        enabled: false
+      vih_course_slot:
+        weight: 11
+        enabled: false
+      vih_ordered_course_period:
+        enabled: true
+        weight: 12
+field_type: entity_reference_revisions

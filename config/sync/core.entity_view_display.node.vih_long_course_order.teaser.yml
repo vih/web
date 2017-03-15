@@ -1,0 +1,27 @@
+uuid: 4bfa64eb-768f-4935-96a0-de4a4e963929
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vih_long_course_order.body
+    - node.type.vih_long_course_order
+  module:
+    - text
+    - user
+id: node.vih_long_course_order.teaser
+targetEntityType: node
+bundle: vih_long_course_order
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

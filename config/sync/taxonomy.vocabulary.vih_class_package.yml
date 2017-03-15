@@ -1,0 +1,9 @@
+uuid: 8832dbe9-efac-4578-8de2-b29d5851d05f
+langcode: zxx
+status: true
+dependencies: {  }
+name: 'Class Package'
+vid: vih_class_package
+description: ''
+hierarchy: 0
+weight: 0

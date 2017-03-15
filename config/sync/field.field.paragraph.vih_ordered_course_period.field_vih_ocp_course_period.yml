@@ -1,0 +1,28 @@
+uuid: e7be69ba-732d-4b5e-85f4-9d61fc21c7b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocp_course_period
+    - node.type.vih_course_period
+    - paragraphs.paragraphs_type.vih_ordered_course_period
+id: paragraph.vih_ordered_course_period.field_vih_ocp_course_period
+field_name: field_vih_ocp_course_period
+entity_type: paragraph
+bundle: vih_ordered_course_period
+label: 'Course Period'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      vih_course_period: vih_course_period
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

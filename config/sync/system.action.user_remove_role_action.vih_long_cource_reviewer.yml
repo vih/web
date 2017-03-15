@@ -1,0 +1,14 @@
+uuid: 89156e40-5d7b-41f7-bf03-8865ddaf01c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_long_cource_reviewer
+  module:
+    - user
+id: user_remove_role_action.vih_long_cource_reviewer
+label: 'Remove the Long Cource Reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_long_cource_reviewer

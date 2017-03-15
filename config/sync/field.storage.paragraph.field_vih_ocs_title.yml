@@ -1,0 +1,21 @@
+uuid: 4906ed47-2e38-4001-b1f0-79692ceee9b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_vih_ocs_title
+field_name: field_vih_ocs_title
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

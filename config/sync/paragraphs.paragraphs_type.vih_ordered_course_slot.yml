@@ -1,0 +1,7 @@
+uuid: ae0ad721-ec14-4fbb-b1d9-4743ad6bcc76
+langcode: en
+status: true
+dependencies: {  }
+id: vih_ordered_course_slot
+label: 'Ordered Course Slot'
+behavior_plugins: {  }

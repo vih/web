@@ -1,0 +1,14 @@
+uuid: 3c552d8f-1f7f-443d-81ff-4e23644ea2be
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_long_course_order_reviewer
+  module:
+    - user
+id: user_remove_role_action.vih_long_course_order_reviewer
+label: 'Remove the Long Course Order Reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_long_course_order_reviewer

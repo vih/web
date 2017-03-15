@@ -1,0 +1,39 @@
+uuid: ec3587bd-ca20-44eb-9079-ad06897a08f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_ordered_course_period.field_vih_ocp_course_period
+    - field.field.paragraph.vih_ordered_course_period.field_vih_ocp_order_course_slots
+    - paragraphs.paragraphs_type.vih_ordered_course_period
+  module:
+    - paragraphs
+    - workbench_moderation
+id: paragraph.vih_ordered_course_period.default
+targetEntityType: paragraph
+bundle: vih_ordered_course_period
+mode: default
+content:
+  field_vih_ocp_course_period:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_vih_ocp_order_course_slots:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

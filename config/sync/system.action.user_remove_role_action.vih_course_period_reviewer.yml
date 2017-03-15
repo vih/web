@@ -1,0 +1,14 @@
+uuid: 870f7cdb-33fa-4f8c-b44f-989e0dab1cb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_course_period_reviewer
+  module:
+    - user
+id: user_remove_role_action.vih_course_period_reviewer
+label: 'Remove the Course Period Reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_course_period_reviewer

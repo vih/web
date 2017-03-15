@@ -1,0 +1,22 @@
+uuid: 0e293277-39e3-4437-8592-18e75be846cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.vih_course_period
+  module:
+    - text
+id: node.vih_course_period.body
+field_name: body
+entity_type: node
+bundle: vih_course_period
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

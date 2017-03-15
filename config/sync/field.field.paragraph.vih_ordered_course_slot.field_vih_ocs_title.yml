@@ -1,0 +1,19 @@
+uuid: bd64a2d1-07b8-443c-97e9-1c770dc0fdc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocs_title
+    - paragraphs.paragraphs_type.vih_ordered_course_slot
+id: paragraph.vih_ordered_course_slot.field_vih_ocs_title
+field_name: field_vih_ocs_title
+entity_type: paragraph
+bundle: vih_ordered_course_slot
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

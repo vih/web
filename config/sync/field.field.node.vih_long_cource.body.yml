@@ -1,0 +1,22 @@
+uuid: 8dbeca1d-2e98-4c7b-ab9f-9d4dbc1eb11c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.vih_long_cource
+  module:
+    - text
+id: node.vih_long_cource.body
+field_name: body
+entity_type: node
+bundle: vih_long_cource
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

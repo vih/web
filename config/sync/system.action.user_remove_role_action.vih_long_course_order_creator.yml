@@ -1,0 +1,14 @@
+uuid: de98c978-5086-411d-88bf-04b2cb6a8630
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_long_course_order_creator
+  module:
+    - user
+id: user_remove_role_action.vih_long_course_order_creator
+label: 'Remove the Long Course Order Creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_long_course_order_creator

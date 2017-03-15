@@ -1,0 +1,21 @@
+uuid: 9288a2ed-5c4f-484f-8ecc-471e021fa5da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_cp_end_date
+    - node.type.vih_course_period
+  module:
+    - datetime
+id: node.vih_course_period.field_vih_cp_end_date
+field_name: field_vih_cp_end_date
+entity_type: node
+bundle: vih_course_period
+label: 'End date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

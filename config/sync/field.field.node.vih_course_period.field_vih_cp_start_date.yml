@@ -1,0 +1,21 @@
+uuid: ddf72cbc-e0ee-4d0e-9586-d1c6564f3482
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_cp_start_date
+    - node.type.vih_course_period
+  module:
+    - datetime
+id: node.vih_course_period.field_vih_cp_start_date
+field_name: field_vih_cp_start_date
+entity_type: node
+bundle: vih_course_period
+label: 'Start date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

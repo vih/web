@@ -1,0 +1,27 @@
+uuid: 1c993d6a-960f-4712-8e19-1a6b35848bc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vih_course_period.body
+    - node.type.vih_course_period
+  module:
+    - text
+    - user
+id: node.vih_course_period.teaser
+targetEntityType: node
+bundle: vih_course_period
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

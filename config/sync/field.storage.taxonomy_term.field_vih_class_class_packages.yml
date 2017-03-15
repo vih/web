@@ -1,0 +1,19 @@
+uuid: 2306ee7c-7b0d-4c6a-9690-b196093178fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_vih_class_class_packages
+field_name: field_vih_class_class_packages
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

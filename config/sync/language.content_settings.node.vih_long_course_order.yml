@@ -1,0 +1,11 @@
+uuid: 6165c951-9bfd-43d1-9d91-e5e1d9b34ebb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order
+target_entity_type_id: node
+target_bundle: vih_long_course_order
+default_langcode: site_default
+language_alterable: false

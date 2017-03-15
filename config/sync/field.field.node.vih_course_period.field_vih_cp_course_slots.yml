@@ -1,0 +1,39 @@
+uuid: 8870e765-5f73-4884-8fd8-f63757c91c35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_cp_course_slots
+    - node.type.vih_course_period
+    - paragraphs.paragraphs_type.vih_course_slot
+  module:
+    - entity_reference_revisions
+id: node.vih_course_period.field_vih_cp_course_slots
+field_name: field_vih_cp_course_slots
+entity_type: node
+bundle: vih_course_period
+label: 'Course Slots'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_course_slot: vih_course_slot
+    target_bundles_drag_drop:
+      vih_course_slot:
+        enabled: true
+        weight: 5
+      1_column_action_centered:
+        weight: 6
+        enabled: false
+      list_of_news_teasers:
+        weight: 7
+        enabled: false
+      video:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

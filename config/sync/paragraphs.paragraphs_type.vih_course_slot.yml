@@ -1,0 +1,7 @@
+uuid: dab8632e-0578-4d18-a579-df1e084730a3
+langcode: en
+status: true
+dependencies: {  }
+id: vih_course_slot
+label: 'Course Slot'
+behavior_plugins: {  }

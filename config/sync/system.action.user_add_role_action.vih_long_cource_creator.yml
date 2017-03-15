@@ -1,0 +1,14 @@
+uuid: 2e571868-5428-47a3-b331-73cbf6a3ff4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_long_cource_creator
+  module:
+    - user
+id: user_add_role_action.vih_long_cource_creator
+label: 'Add the Long Cource Creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: vih_long_cource_creator

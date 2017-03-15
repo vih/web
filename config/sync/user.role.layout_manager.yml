@@ -5,7 +5,7 @@ dependencies: {  }
 _core:
   default_config_hash: CwPdh_0e98rfLKfCvZVzqc4L0hV_uhmi-UJ50XsTqyU
 id: layout_manager
-label: 'Layout Manager'
+label: 'Layout manager'
 weight: 2
 is_admin: false
 permissions:
@@ -14,3 +14,6 @@ permissions:
   - 'administer panelizer node landing_page defaults'
   - 'administer panelizer node page defaults'
   - 'administer panelizer node news defaults'
+  - 'administer panelizer node vih_long_cource defaults'
+  - 'administer panelizer node vih_course_period defaults'
+  - 'administer panelizer node vih_long_course_order defaults'

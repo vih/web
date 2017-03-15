@@ -1,0 +1,45 @@
+uuid: 93378ff1-df78-4fd6-88b7-9df7bfa13aa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocp_order_course_slots
+    - paragraphs.paragraphs_type.vih_ordered_course_period
+    - paragraphs.paragraphs_type.vih_ordered_course_slot
+  module:
+    - entity_reference_revisions
+id: paragraph.vih_ordered_course_period.field_vih_ocp_order_course_slots
+field_name: field_vih_ocp_order_course_slots
+entity_type: paragraph
+bundle: vih_ordered_course_period
+label: 'Ordered Course Slots'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_ordered_course_slot: vih_ordered_course_slot
+    target_bundles_drag_drop:
+      vih_ordered_course_slot:
+        enabled: true
+        weight: 7
+      1_column_action_centered:
+        weight: 8
+        enabled: false
+      list_of_news_teasers:
+        weight: 9
+        enabled: false
+      video:
+        weight: 10
+        enabled: false
+      vih_course_slot:
+        weight: 11
+        enabled: false
+      vih_ordered_course_period:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

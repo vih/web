@@ -1,0 +1,14 @@
+uuid: 158d2cbb-b559-4ec0-b275-8c90abe06aa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_course_period_creator
+  module:
+    - user
+id: user_add_role_action.vih_course_period_creator
+label: 'Add the Course Period Creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: vih_course_period_creator

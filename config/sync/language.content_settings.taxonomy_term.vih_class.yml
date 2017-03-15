@@ -1,0 +1,11 @@
+uuid: d4ead12a-a262-4427-bcaa-9a7810f904ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vih_class
+id: taxonomy_term.vih_class
+target_entity_type_id: taxonomy_term
+target_bundle: vih_class
+default_langcode: zxx
+language_alterable: false

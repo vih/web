@@ -1,0 +1,15 @@
+uuid: f9f12d40-2761-4516-bd03-b76a18d343c9
+langcode: en
+status: true
+dependencies: {  }
+id: vih_long_cource_reviewer
+label: 'Long Cource Reviewer'
+weight: 12
+is_admin: null
+permissions:
+  - 'edit any vih_long_cource content'
+  - 'delete any vih_long_cource content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_published transition'

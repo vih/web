@@ -1,0 +1,20 @@
+uuid: 973859d6-2570-46bb-8631-b4f0e404481f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_vih_ocs_class
+field_name: field_vih_ocs_class
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

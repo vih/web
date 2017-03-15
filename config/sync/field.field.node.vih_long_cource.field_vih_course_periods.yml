@@ -1,0 +1,28 @@
+uuid: 719b54af-a06d-41d2-86df-5fc939974adf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_course_periods
+    - node.type.vih_course_period
+    - node.type.vih_long_cource
+id: node.vih_long_cource.field_vih_course_periods
+field_name: field_vih_course_periods
+entity_type: node
+bundle: vih_long_cource
+label: 'Course Periods'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      vih_course_period: vih_course_period
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

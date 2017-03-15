@@ -1,0 +1,28 @@
+uuid: 9d43b3ab-2b30-4e46-9076-9006689a8199
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_class_class_packages
+    - taxonomy.vocabulary.vih_class
+    - taxonomy.vocabulary.vih_class_package
+id: taxonomy_term.vih_class.field_vih_class_class_packages
+field_name: field_vih_class_class_packages
+entity_type: taxonomy_term
+bundle: vih_class
+label: 'Class Packages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vih_class_package: vih_class_package
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

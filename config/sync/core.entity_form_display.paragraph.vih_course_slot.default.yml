@@ -1,0 +1,41 @@
+uuid: bace1531-b5b7-46b6-992a-c59e40d52372
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_course_slot.field_vih_cs_classes
+    - field.field.paragraph.vih_course_slot.field_vih_cs_mandatory
+    - field.field.paragraph.vih_course_slot.field_vih_cs_title
+    - paragraphs.paragraphs_type.vih_course_slot
+  module:
+    - workbench_moderation
+id: paragraph.vih_course_slot.default
+targetEntityType: paragraph
+bundle: vih_course_slot
+mode: default
+content:
+  field_vih_cs_classes:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_vih_cs_mandatory:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_vih_cs_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

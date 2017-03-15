@@ -1,0 +1,19 @@
+uuid: 6cd13d54-22fb-4eb6-8442-e9f13ab0895d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_cs_title
+    - paragraphs.paragraphs_type.vih_course_slot
+id: paragraph.vih_course_slot.field_vih_cs_title
+field_name: field_vih_cs_title
+entity_type: paragraph
+bundle: vih_course_slot
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
