@@ -1,0 +1,51 @@
+uuid: 55834aa9-743e-43a7-a438-562d35987ae5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_og_options
+    - paragraphs.paragraphs_type.vih_option
+    - paragraphs.paragraphs_type.vih_option_group
+  module:
+    - entity_reference_revisions
+id: paragraph.vih_option_group.field_vih_og_options
+field_name: field_vih_og_options
+entity_type: paragraph
+bundle: vih_option_group
+label: Options
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_option: vih_option
+    target_bundles_drag_drop:
+      vih_option:
+        enabled: true
+        weight: 9
+      1_column_action_centered:
+        weight: 10
+        enabled: false
+      list_of_news_teasers:
+        weight: 11
+        enabled: false
+      video:
+        weight: 12
+        enabled: false
+      vih_course_slot:
+        weight: 13
+        enabled: false
+      vih_option_group:
+        weight: 14
+        enabled: false
+      vih_ordered_course_period:
+        weight: 15
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,14 @@
+uuid: 9096a494-1b60-43c9-9646-7affc8bf9291
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.short_course_order_reviewer
+  module:
+    - user
+id: user_remove_role_action.short_course_order_reviewer
+label: 'Remove the Short Course Order Reviewer role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: short_course_order_reviewer

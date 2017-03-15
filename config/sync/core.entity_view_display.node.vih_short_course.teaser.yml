@@ -1,0 +1,27 @@
+uuid: b64b6af1-a483-42b7-bf7e-b26ef4394f56
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.vih_short_course.body
+    - node.type.vih_short_course
+  module:
+    - text
+    - user
+id: node.vih_short_course.teaser
+targetEntityType: node
+bundle: vih_short_course
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

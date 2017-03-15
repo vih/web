@@ -1,0 +1,43 @@
+uuid: 999e3f4d-be77-4c9c-a36e-e9450ba119e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.short_course_order.body
+    - field.field.node.short_course_order.field_vih_sco_course
+    - field.field.node.short_course_order.field_vih_sco_ordered_options
+    - node.type.short_course_order
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.short_course_order.default
+targetEntityType: node
+bundle: short_course_order
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_vih_sco_course:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_vih_sco_ordered_options:
+    type: entity_reference_revisions_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

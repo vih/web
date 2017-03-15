@@ -1,0 +1,14 @@
+uuid: a3224701-20a2-4d6f-8a45-51c6334cbf9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.short_course_order_creator
+  module:
+    - user
+id: user_add_role_action.short_course_order_creator
+label: 'Add the Short Course Order Creator role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: short_course_order_creator

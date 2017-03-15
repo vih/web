@@ -17,3 +17,5 @@ permissions:
   - 'administer panelizer node vih_long_cource defaults'
   - 'administer panelizer node vih_course_period defaults'
   - 'administer panelizer node vih_long_course_order defaults'
+  - 'administer panelizer node vih_short_course defaults'
+  - 'administer panelizer node short_course_order defaults'

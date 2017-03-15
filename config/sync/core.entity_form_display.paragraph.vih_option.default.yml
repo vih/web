@@ -1,0 +1,40 @@
+uuid: 8981ba93-15a7-40f4-a628-870af1cfea6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_option.field_vih_option_price_addition
+    - field.field.paragraph.vih_option.field_vih_option_suboptions
+    - field.field.paragraph.vih_option.field_vih_option_title
+    - paragraphs.paragraphs_type.vih_option
+  module:
+    - workbench_moderation
+id: paragraph.vih_option.default
+targetEntityType: paragraph
+bundle: vih_option
+mode: default
+content:
+  field_vih_option_price_addition:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_vih_option_suboptions:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_option_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

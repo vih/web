@@ -1,0 +1,19 @@
+uuid: 3d82e9a0-5e6e-4249-8aa9-2f4f9807b7fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_oo_option_name
+    - paragraphs.paragraphs_type.vih_ordered_option
+id: paragraph.vih_ordered_option.field_vih_oo_option_name
+field_name: field_vih_oo_option_name
+entity_type: paragraph
+bundle: vih_ordered_option
+label: 'Option name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

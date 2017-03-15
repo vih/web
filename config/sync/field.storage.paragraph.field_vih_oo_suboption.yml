@@ -1,0 +1,21 @@
+uuid: 97f42bbe-255e-4197-ab7a-4469647a0c7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_vih_oo_suboption
+field_name: field_vih_oo_suboption
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

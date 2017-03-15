@@ -1,0 +1,15 @@
+uuid: 804c577c-111a-4e7b-a797-9ac7ed8be4a6
+langcode: en
+status: true
+dependencies: {  }
+id: short_course_order_reviewer
+label: 'Short Course Order Reviewer'
+weight: 20
+is_admin: null
+permissions:
+  - 'edit any short_course_order content'
+  - 'delete any short_course_order content'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_published transition'
+  - 'use published_published transition'

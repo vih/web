@@ -1,0 +1,14 @@
+uuid: bc7bc09b-2a71-4f64-a727-f8784c1d632c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_short_course_creator
+  module:
+    - user
+id: user_remove_role_action.vih_short_course_creator
+label: 'Remove the Short Course Creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_short_course_creator

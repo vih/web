@@ -1,0 +1,22 @@
+uuid: bf9c6caa-a3cf-4ca8-b2cc-a5276a0fab67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.vih_short_course
+  module:
+    - text
+id: node.vih_short_course.body
+field_name: body
+entity_type: node
+bundle: vih_short_course
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

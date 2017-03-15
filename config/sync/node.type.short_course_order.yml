@@ -1,0 +1,18 @@
+uuid: d2cf03bb-97cf-4891-88a6-11e5081fba00
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Short Course Order'
+type: short_course_order
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

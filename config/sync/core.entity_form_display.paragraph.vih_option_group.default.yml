@@ -1,0 +1,38 @@
+uuid: 1f7602aa-3ce8-4e1e-b76b-bfa84159827e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_option_group.field_vih_og_options
+    - field.field.paragraph.vih_option_group.field_vih_og_title
+    - paragraphs.paragraphs_type.vih_option_group
+  module:
+    - paragraphs
+    - workbench_moderation
+id: paragraph.vih_option_group.default
+targetEntityType: paragraph
+bundle: vih_option_group
+mode: default
+content:
+  field_vih_og_options:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_vih_og_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

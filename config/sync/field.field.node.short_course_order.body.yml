@@ -1,0 +1,22 @@
+uuid: dc43e091-1a0e-4bd3-8b48-4f3d2b33e222
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.short_course_order
+  module:
+    - text
+id: node.short_course_order.body
+field_name: body
+entity_type: node
+bundle: short_course_order
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

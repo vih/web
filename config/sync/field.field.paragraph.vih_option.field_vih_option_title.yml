@@ -1,0 +1,19 @@
+uuid: 33a62255-fc43-49ef-844d-75ceafb0d89a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_option_title
+    - paragraphs.paragraphs_type.vih_option
+id: paragraph.vih_option.field_vih_option_title
+field_name: field_vih_option_title
+entity_type: paragraph
+bundle: vih_option
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

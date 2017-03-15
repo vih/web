@@ -1,0 +1,51 @@
+uuid: 88d1daa6-a4b8-4a73-8fe6-2a5a10836efa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sc_option_groups
+    - node.type.vih_short_course
+    - paragraphs.paragraphs_type.vih_option_group
+  module:
+    - entity_reference_revisions
+id: node.vih_short_course.field_vih_sc_option_groups
+field_name: field_vih_sc_option_groups
+entity_type: node
+bundle: vih_short_course
+label: 'Option Groups'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_option_group: vih_option_group
+    target_bundles_drag_drop:
+      vih_option:
+        weight: 9
+        enabled: false
+      1_column_action_centered:
+        weight: 10
+        enabled: false
+      list_of_news_teasers:
+        weight: 11
+        enabled: false
+      video:
+        weight: 12
+        enabled: false
+      vih_course_slot:
+        weight: 13
+        enabled: false
+      vih_option_group:
+        enabled: true
+        weight: 14
+      vih_ordered_course_period:
+        weight: 15
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

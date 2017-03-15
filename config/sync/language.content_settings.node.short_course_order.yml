@@ -1,0 +1,11 @@
+uuid: 97e05719-8c51-4b64-be3e-00f332106a78
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.short_course_order
+id: node.short_course_order
+target_entity_type_id: node
+target_bundle: short_course_order
+default_langcode: site_default
+language_alterable: false

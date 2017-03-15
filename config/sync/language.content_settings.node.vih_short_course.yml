@@ -1,0 +1,11 @@
+uuid: 3fc46ca0-2e28-4476-be16-2fcb8e76c0f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course
+id: node.vih_short_course
+target_entity_type_id: node
+target_bundle: vih_short_course
+default_langcode: site_default
+language_alterable: false

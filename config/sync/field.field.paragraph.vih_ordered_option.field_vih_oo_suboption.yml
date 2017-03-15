@@ -1,0 +1,19 @@
+uuid: 0356abf5-4d0c-4b09-9caf-2717fae16e69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_oo_suboption
+    - paragraphs.paragraphs_type.vih_ordered_option
+id: paragraph.vih_ordered_option.field_vih_oo_suboption
+field_name: field_vih_oo_suboption
+entity_type: paragraph
+bundle: vih_ordered_option
+label: Suboption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
