@@ -123,7 +123,7 @@ function site_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
 
   // Background image
-  if (!$paragraph->field_background_image->isEmpty()) {
+  if ($paragraph->field_background_image && !$paragraph->field_background_image->isEmpty()) {
     $image = $paragraph->field_background_image->entity->url();
 
     $variables['attributes']['class'][] = 'angled-background-image';
@@ -134,7 +134,7 @@ function site_preprocess_paragraph(&$variables) {
   else {
 
     // Background color
-    if (!$paragraph->field_background_color->isEmpty()) {
+    if ($paragraph->field_background_image && !$paragraph->field_background_color->isEmpty()) {
       $background_color = $paragraph->field_background_color->getValue();
       $variables['attributes']['class'][] = 'angled-background-color';
       $variables['attributes']['class'][] = 'angled-background-color-' . $background_color[0]['value'];
