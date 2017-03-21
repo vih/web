@@ -1,0 +1,20 @@
+uuid: a9a0c06d-a1f7-4b09-9978-e457184b109a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_vih_cs_contact_person
+field_name: field_vih_cs_contact_person
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
