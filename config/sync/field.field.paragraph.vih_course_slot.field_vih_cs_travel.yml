@@ -1,0 +1,23 @@
+uuid: 0ce80f33-d560-438c-98da-c29da72afbc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_cs_travel
+    - paragraphs.paragraphs_type.vih_course_slot
+id: paragraph.vih_course_slot.field_vih_cs_travel
+field_name: field_vih_cs_travel
+entity_type: paragraph
+bundle: vih_course_slot
+label: Travel
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

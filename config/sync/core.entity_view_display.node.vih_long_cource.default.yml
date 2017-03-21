@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_cource.body
+    - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
+    - field.field.node.vih_long_cource.field_vih_course_subsc_price
+    - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
   module:
     - text
@@ -21,6 +24,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_vih_cource_contact_person:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_vih_course_periods:
     weight: 102
     label: above
@@ -30,6 +40,26 @@ content:
     type: entity_reference_label
   field_vih_course_price:
     weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_vih_course_subsc_price:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_vih_course_week_price:
+    weight: 105
     label: above
     settings:
       thousand_separator: ''

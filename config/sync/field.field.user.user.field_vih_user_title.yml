@@ -1,0 +1,20 @@
+uuid: 2d613406-f9b3-4f22-84be-bdff4dcd254b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_vih_user_title
+  module:
+    - user
+id: user.user.field_vih_user_title
+field_name: field_vih_user_title
+entity_type: user
+bundle: user
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

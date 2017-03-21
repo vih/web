@@ -1,0 +1,30 @@
+uuid: 783b4f1d-8a5f-4331-b276-b116e97a5d00
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - user
+id: user.field_vih_user_photo
+field_name: field_vih_user_photo
+entity_type: user
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

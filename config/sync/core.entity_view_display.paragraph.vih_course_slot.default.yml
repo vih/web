@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.vih_course_slot.field_vih_cs_classes
     - field.field.paragraph.vih_course_slot.field_vih_cs_mandatory
     - field.field.paragraph.vih_course_slot.field_vih_cs_title
+    - field.field.paragraph.vih_course_slot.field_vih_cs_travel
     - paragraphs.paragraphs_type.vih_course_slot
 id: paragraph.vih_course_slot.default
 targetEntityType: paragraph
@@ -35,4 +36,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_vih_cs_travel:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
 hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 6b95a36e-e227-44d2-a204-6972cb619107
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_course_subsc_price
+    - node.type.vih_long_cource
+id: node.vih_long_cource.field_vih_course_subsc_price
+field_name: field_vih_course_subsc_price
+entity_type: node
+bundle: vih_long_cource
+label: 'Subscription price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal
