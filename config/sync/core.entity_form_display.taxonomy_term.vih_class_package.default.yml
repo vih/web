@@ -1,0 +1,70 @@
+uuid: aa24bfe8-83c5-49bc-a3f2-9789737e5ab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
+    - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
+    - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
+    - image.style.thumbnail
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - image
+    - path
+    - text
+id: taxonomy_term.vih_class_package.default
+targetEntityType: taxonomy_term
+bundle: vih_class_package
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_cp_description:
+    weight: 32
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_vih_cp_image:
+    type: entity_browser_file
+    weight: 33
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_vih_cp_subtitle:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
