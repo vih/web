@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
+    - field.field.taxonomy_term.vih_class.field_vih_class_color
+    - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - image.style.thumbnail
     - taxonomy.vocabulary.vih_class
   module:
+    - image
     - path
     - text
 id: taxonomy_term.vih_class.default
@@ -30,6 +34,25 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_vih_class_color:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_class_image:
+    type: entity_browser_file
+    weight: 35
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
   field_vih_class_material_price:
     weight: 33
     settings:

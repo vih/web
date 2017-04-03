@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
+    - field.field.taxonomy_term.vih_class.field_vih_class_color
+    - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
     - taxonomy.vocabulary.vih_class
   module:
+    - image
     - text
 id: taxonomy_term.vih_class.default
 targetEntityType: taxonomy_term
@@ -27,6 +30,21 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_vih_class_color:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_class_image:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_vih_class_material_price:
     weight: 3
     label: above
