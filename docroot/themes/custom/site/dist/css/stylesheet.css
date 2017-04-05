@@ -9283,6 +9283,17 @@ body {
     padding-top: 40px;
     padding-bottom: 60px; } }
 
+.layout-navigation .popover {
+  max-width: 100%; }
+  .layout-navigation .popover .btn-search {
+    position: absolute;
+    top: 10px;
+    width: 48px;
+    height: 48px;
+    background-color: #00bcff;
+    border-color: #00bcff;
+    right: 10px; }
+
 .banner {
   position: relative;
   background-color: #fff;

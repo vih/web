@@ -121,3 +121,17 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 
 // Page layout mixin
 @mixin content-mixin-inner() {}
+.layout-navigation {
+  .popover {
+    max-width: 100%;  
+      .btn-search {
+      position: absolute;
+      top: 10px;
+      width: 48px;
+      height: 48px;
+      background-color: #00bcff;
+      border-color: #00bcff;
+      right: 10px;
+    }
+  }
+}

@@ -7,5 +7,15 @@
     
     //Modal PopUp
     modalPopUp.init();
+    
+    $(".search-button").popover({     
+    html : true,
+    trigger: 'click',
+    placement : 'bottom',
+    content: function() {
+      return $("#search-form-popover").html();
+    }
+          
+});
 
 })(jQuery);
