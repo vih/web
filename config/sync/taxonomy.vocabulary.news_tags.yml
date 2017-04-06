@@ -1,0 +1,9 @@
+uuid: 45ee2932-0ded-4f79-af4a-a5f175158436
+langcode: da
+status: true
+dependencies: {  }
+name: 'News tags'
+vid: news_tags
+description: ''
+hierarchy: 0
+weight: 0

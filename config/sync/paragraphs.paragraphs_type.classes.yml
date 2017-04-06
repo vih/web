@@ -1,0 +1,7 @@
+uuid: 183ad0df-13d6-4a14-a111-4554bde985a9
+langcode: da
+status: true
+dependencies: {  }
+id: classes
+label: Classes
+behavior_plugins: {  }
