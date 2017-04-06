@@ -219,11 +219,11 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   margin-bottom:30px;
   background-position: top left;
 }
-.Fodbold{
+.Boldspil{
   background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg");
 }
 .Fitness{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fitness.jpg");
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fitness_0.jpg");
 }
 .Outdoor{
   background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-outdoor.jpg");
@@ -235,7 +235,7 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-endurance.jpg");
 }
 .Rejser{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-rejser.jpg");
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-rejser_0.jpg");
 }
 
 .Boldspil-color{
@@ -286,6 +286,7 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   z-index: 1;
   transition: 300ms;
   opacity: 0.9;
+  margin-bottom:-1px;
 }
 
 
