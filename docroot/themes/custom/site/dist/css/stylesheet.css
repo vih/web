@@ -9340,7 +9340,7 @@ body {
 .view-fagpakker-forside .view-content .views-row {
   border: 0px solid #00a5e2; }
 
-.view-fagpakker-forside .view-header {
+.view-class-packages-frontpage .view-header {
   text-transform: uppercase;
   color: #fff;
   padding-bottom: 30px;
@@ -9374,24 +9374,24 @@ body {
   background-position: top left; }
 
 .Fodbold {
-  background-image: url("http://vejleidraetshoejskole.dd:8083/sites/vejleidraetshoejskole.dd/files/styles/fagpakker_forside/public/2017-04/vih-fodbold.jpg"); }
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg"); }
 
 .Fitness {
-  background-image: url("http://vejleidraetshoejskole.dd:8083/sites/vejleidraetshoejskole.dd/files/styles/fagpakker_forside/public/2017-04/vih-fitness.jpg"); }
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fitness.jpg"); }
 
 .Outdoor {
-  background-image: url("http://vejleidraetshoejskole.dd:8083/sites/vejleidraetshoejskole.dd/files/styles/fagpakker_forside/public/2017-04/vih-outdoor.jpg"); }
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-outdoor.jpg"); }
 
 .Politi {
-  background-image: url("http://vejleidraetshoejskole.dd:8083/sites/vejleidraetshoejskole.dd/files/styles/fagpakker_forside/public/2017-04/vih-politi.jpg"); }
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-politi.jpg"); }
 
 .Endurance {
-  background-image: url("http://vejleidraetshoejskole.dd:8083/sites/vejleidraetshoejskole.dd/files/styles/fagpakker_forside/public/2017-04/vih-endurance.jpg"); }
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-endurance.jpg"); }
 
 .Rejser {
-  background-image: url("http://vejleidraetshoejskole.dd:8083/sites/vejleidraetshoejskole.dd/files/styles/fagpakker_forside/public/2017-04/vih-rejser.jpg"); }
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-rejser.jpg"); }
 
-.Fodbold-color {
+.Boldspil-color {
   background-color: #00a5e2; }
 
 .Fitness-color {
