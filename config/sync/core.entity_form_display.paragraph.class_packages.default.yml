@@ -1,0 +1,51 @@
+uuid: 431dec60-ce1e-4692-8e78-dd6f27857d4e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_packages.field_background_color
+    - field.field.paragraph.class_packages.field_background_image
+    - field.field.paragraph.class_packages.field_heading
+    - field.field.paragraph.class_packages.field_paragraph_view_reference
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.class_packages
+  module:
+    - image
+    - viewsreference
+    - workbench_moderation
+id: paragraph.class_packages.default
+targetEntityType: paragraph
+bundle: class_packages
+mode: default
+content:
+  field_background_color:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_background_image:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_heading:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_paragraph_view_reference:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+hidden:
+  created: true
+  status: true
+  uid: true

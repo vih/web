@@ -13,6 +13,12 @@ dependencies:
   module:
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vih_long_cource.default
 targetEntityType: node
 bundle: vih_long_cource

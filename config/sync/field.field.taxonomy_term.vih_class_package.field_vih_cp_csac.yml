@@ -1,0 +1,66 @@
+uuid: feaab16e-92b2-431f-b6fc-5a8eb44b57b5
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_cp_csac
+    - paragraphs.paragraphs_type.vih_cs_and_classes
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.vih_class_package.field_vih_cp_csac
+field_name: field_vih_cp_csac
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: 'Course slots & classes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_cs_and_classes: vih_cs_and_classes
+    target_bundles_drag_drop:
+      vih_cs_and_classes:
+        enabled: true
+        weight: 14
+      1_column_action_centered:
+        weight: 15
+        enabled: false
+      class_packages:
+        weight: 16
+        enabled: false
+      list_of_news_teasers:
+        weight: 17
+        enabled: false
+      video:
+        weight: 18
+        enabled: false
+      vih_course_slot:
+        weight: 19
+        enabled: false
+      vih_option:
+        weight: 20
+        enabled: false
+      vih_option_group:
+        weight: 21
+        enabled: false
+      vih_ordered_course_period:
+        weight: 22
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 23
+        enabled: false
+      vih_ordered_option:
+        weight: 24
+        enabled: false
+      vih_qualifications:
+        weight: 25
+        enabled: false
+      vih_teacher_class_description:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

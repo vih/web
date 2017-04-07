@@ -4,14 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_user_birthday
+    - field.field.user.user.field_user_description
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
+    - field.field.user.user.field_user_qualifications
+    - field.field.user.user.field_user_teacher_class_desc
     - field.field.user.user.field_vih_user_about
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
   module:
     - datetime
+    - entity_reference_revisions
     - image
     - text
     - user
@@ -28,6 +32,12 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+  field_user_description:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
   field_user_name_first:
     weight: 9
     label: above
@@ -42,6 +52,22 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_user_qualifications:
+    type: entity_reference_revisions_entity_view
+    weight: 15
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_user_teacher_class_desc:
+    type: entity_reference_revisions_entity_view
+    weight: 16
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_vih_user_about:
     weight: 13
     label: above

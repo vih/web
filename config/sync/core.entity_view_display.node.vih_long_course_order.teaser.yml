@@ -24,4 +24,6 @@ content:
   links:
     weight: 100
 hidden:
+  field_vih_lco_course: true
+  field_vih_lco_order_course_perio: true
   langcode: true

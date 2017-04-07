@@ -24,4 +24,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_vih_cs_contact_person: true
+  field_vih_sc_option_groups: true
+  field_vih_sc_price: true
   langcode: true

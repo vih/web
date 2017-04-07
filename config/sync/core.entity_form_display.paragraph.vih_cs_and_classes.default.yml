@@ -1,0 +1,34 @@
+uuid: aaf1a368-0d1e-482f-8a40-87b857967b97
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_cs_and_classes.field_csac_classes
+    - field.field.paragraph.vih_cs_and_classes.field_csac_course_slot_title
+    - paragraphs.paragraphs_type.vih_cs_and_classes
+  module:
+    - workbench_moderation
+id: paragraph.vih_cs_and_classes.default
+targetEntityType: paragraph
+bundle: vih_cs_and_classes
+mode: default
+content:
+  field_csac_classes:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_csac_course_slot_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

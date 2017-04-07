@@ -1,0 +1,63 @@
+uuid: c0ab70ef-5eca-45ad-bb31-45efe9a4e35f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_teacher_class_desc
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_user_teacher_class_desc
+field_name: field_user_teacher_class_desc
+entity_type: user
+bundle: user
+label: 'Teacher Class description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_teacher_class_description: vih_teacher_class_description
+    target_bundles_drag_drop:
+      vih_teacher_class_description:
+        enabled: true
+        weight: 13
+      1_column_action_centered:
+        weight: 14
+        enabled: false
+      class_packages:
+        weight: 15
+        enabled: false
+      list_of_news_teasers:
+        weight: 16
+        enabled: false
+      video:
+        weight: 17
+        enabled: false
+      vih_course_slot:
+        weight: 18
+        enabled: false
+      vih_option:
+        weight: 19
+        enabled: false
+      vih_option_group:
+        weight: 20
+        enabled: false
+      vih_ordered_course_period:
+        weight: 21
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 22
+        enabled: false
+      vih_ordered_option:
+        weight: 23
+        enabled: false
+      vih_qualifications:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

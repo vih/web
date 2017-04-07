@@ -3,12 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.vih_class_package.field_vih_cp_csac
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
     - taxonomy.vocabulary.vih_class_package
   module:
-    - image
+    - entity_reference_revisions
     - text
 id: taxonomy_term.vih_class_package.default
 targetEntityType: taxonomy_term
@@ -18,29 +19,25 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-  field_vih_cp_description:
+  field_vih_cp_csac:
+    type: entity_reference_revisions_entity_view
     weight: 2
     label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-  field_vih_cp_image:
-    weight: 3
-    label: above
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: image
   field_vih_cp_subtitle:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
 hidden:
+  field_vih_cp_description: true
+  field_vih_cp_image: true
   langcode: true

@@ -1,0 +1,28 @@
+uuid: 0b27bd21-b152-43da-b51c-e57340c390dc
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_csac_classes
+    - paragraphs.paragraphs_type.vih_cs_and_classes
+    - taxonomy.vocabulary.vih_class
+id: paragraph.vih_cs_and_classes.field_csac_classes
+field_name: field_csac_classes
+entity_type: paragraph
+bundle: vih_cs_and_classes
+label: Classes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vih_class: vih_class
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

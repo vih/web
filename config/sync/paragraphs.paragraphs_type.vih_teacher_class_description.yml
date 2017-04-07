@@ -1,0 +1,7 @@
+uuid: 4653ee23-e777-42ea-9bbf-e7e8f76532d4
+langcode: da
+status: true
+dependencies: {  }
+id: vih_teacher_class_description
+label: 'Teacher Class description'
+behavior_plugins: {  }

@@ -1,0 +1,14 @@
+uuid: 84790c73-d319-479d-9288-d0562ff92d00
+langcode: da
+status: true
+dependencies: {  }
+name: class_packages_frontpage
+label: 'Class Packages (Frontpage)'
+effects:
+  b27b9822-9e9d-4413-94b4-00d1b669e956:
+    uuid: b27b9822-9e9d-4413-94b4-00d1b669e956
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 290
+      height: 350

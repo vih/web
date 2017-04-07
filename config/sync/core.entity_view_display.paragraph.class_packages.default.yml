@@ -1,0 +1,43 @@
+uuid: c7a13aa3-4501-4eb4-afa4-7910d9ec668a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_packages.field_background_color
+    - field.field.paragraph.class_packages.field_background_image
+    - field.field.paragraph.class_packages.field_heading
+    - field.field.paragraph.class_packages.field_paragraph_view_reference
+    - paragraphs.paragraphs_type.class_packages
+  module:
+    - image
+    - viewsreference
+id: paragraph.class_packages.default
+targetEntityType: paragraph
+bundle: class_packages
+mode: default
+content:
+  field_background_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_heading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_paragraph_view_reference:
+    weight: 3
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+hidden:
+  field_background_color: true

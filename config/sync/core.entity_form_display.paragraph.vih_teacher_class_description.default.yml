@@ -1,0 +1,49 @@
+uuid: b2650dcf-48e5-47ef-95d0-3620a3502943
+langcode: da
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.vih_teacher_class_description.field_vih_tcd_description
+    - field.field.paragraph.vih_teacher_class_description.field_vih_tcd_image
+    - field.field.paragraph.vih_teacher_class_description.field_vih_tcd_title
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+  module:
+    - entity_browser
+    - text
+    - workbench_moderation
+id: paragraph.vih_teacher_class_description.default
+targetEntityType: paragraph
+bundle: vih_teacher_class_description
+mode: default
+content:
+  field_vih_tcd_description:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_vih_tcd_image:
+    type: entity_browser_file
+    weight: 7
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_vih_tcd_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
