@@ -9873,7 +9873,8 @@ body {
              -o-transform: translateX(0);
                 transform: translateX(0);
         padding: 0;
-        border: none; }
+        border: none;
+        top: 1px; }
       .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;

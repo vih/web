@@ -368,6 +368,7 @@
         transform: translateX(0);
         padding:0;
         border: none;
+        top: 1px;
       }
       .layout-navigation {
         flex-direction: column;
@@ -394,7 +395,7 @@
               background-color: #0080af;
               color: $brand-primary;
               padding-left: 55px;
-              border: none;
+              border: none;              
              }
              .form-control::-moz-placeholder {
                color: $brand-primary;
