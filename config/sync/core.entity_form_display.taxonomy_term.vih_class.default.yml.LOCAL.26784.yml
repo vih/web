@@ -1,0 +1,101 @@
+uuid: 28d57791-2da9-4dac-95f3-fc199449be6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
+    - field.field.taxonomy_term.vih_class.field_vih_class_color
+    - field.field.taxonomy_term.vih_class.field_vih_class_image
+    - field.field.taxonomy_term.vih_class.field_vih_class_material_price
+    - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+<<<<<<< HEAD
+    - image.style.thumbnail
+    - taxonomy.vocabulary.vih_class
+  module:
+    - image
+=======
+    - field.field.taxonomy_term.vih_class.field_vih_class_teacher
+    - taxonomy.vocabulary.vih_class
+  module:
+    - entity_browser
+>>>>>>> a2a7bb4126a9e055c317bb8050b46a420182f9f7
+    - path
+    - text
+id: taxonomy_term.vih_class.default
+targetEntityType: taxonomy_term
+bundle: vih_class
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_class_class_packages:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_vih_class_color:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_class_image:
+    type: entity_browser_file
+    weight: 35
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_vih_class_material_price:
+    weight: 33
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_vih_class_price_addition:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+  field_vih_class_teacher:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
