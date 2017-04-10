@@ -24,4 +24,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_vih_cp_course_slots: true
+  field_vih_cp_end_date: true
+  field_vih_cp_start_date: true
   langcode: true

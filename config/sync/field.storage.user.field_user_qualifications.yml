@@ -1,0 +1,21 @@
+uuid: c2d2d0e8-ce5a-45b3-a847-1c4abd725ace
+langcode: da
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - user
+id: user.field_user_qualifications
+field_name: field_user_qualifications
+entity_type: user
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

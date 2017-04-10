@@ -3,15 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - image.style.thumbnail
+    - field.field.taxonomy_term.vih_class.field_vih_class_teacher
     - taxonomy.vocabulary.vih_class
   module:
-    - image
+    - entity_browser
     - path
     - text
 id: taxonomy_term.vih_class.default
@@ -65,6 +66,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_vih_class_teacher:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   langcode:
     type: language_select
     weight: 2

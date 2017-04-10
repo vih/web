@@ -1,0 +1,25 @@
+uuid: 93be8ec3-afa9-46aa-a121-9fbe02cec8e3
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_qualifications.field_vih_qualifications_desc
+    - paragraphs.paragraphs_type.vih_qualifications
+  module:
+    - workbench_moderation
+id: paragraph.vih_qualifications.default
+targetEntityType: paragraph
+bundle: vih_qualifications
+mode: default
+content:
+  field_vih_qualifications_desc:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

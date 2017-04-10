@@ -28,7 +28,8 @@
         "drupal/admin_toolbar": "^1.18",
         "drupal/twig_tweak": "^1.4",
         "drupal/eva": "^1.0@RC",
-        "drupal/stage_file_proxy": "^1.0@alpha"
+        "drupal/stage_file_proxy": "^1.0@alpha",
+        "drupal/viewsreference": "^1.0@alpha"
     },
     "repositories": {
         "packages.drupal.org": {

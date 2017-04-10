@@ -24,4 +24,6 @@ content:
   links:
     weight: 100
 hidden:
+  field_vih_sco_course: true
+  field_vih_sco_ordered_options: true
   langcode: true

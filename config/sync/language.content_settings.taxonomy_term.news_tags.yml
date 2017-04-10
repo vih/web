@@ -1,0 +1,11 @@
+uuid: 1a94d448-922c-42c4-9b5a-b6170737edf4
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_tags
+id: taxonomy_term.news_tags
+target_entity_type_id: taxonomy_term
+target_bundle: news_tags
+default_langcode: site_default
+language_alterable: false

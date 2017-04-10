@@ -1,0 +1,7 @@
+uuid: 12f03086-fc70-458c-bafa-19c8233a45d0
+langcode: da
+status: true
+dependencies: {  }
+id: class_packages
+label: 'Class Packages'
+behavior_plugins: {  }

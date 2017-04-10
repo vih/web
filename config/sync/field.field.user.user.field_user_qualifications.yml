@@ -1,0 +1,60 @@
+uuid: ccc551bd-7124-4c09-a220-0bfd92367f28
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_qualifications
+    - paragraphs.paragraphs_type.vih_qualifications
+  module:
+    - entity_reference_revisions
+    - user
+id: user.user.field_user_qualifications
+field_name: field_user_qualifications
+entity_type: user
+bundle: user
+label: Qualifications
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_qualifications: vih_qualifications
+    target_bundles_drag_drop:
+      vih_qualifications:
+        enabled: true
+        weight: 12
+      1_column_action_centered:
+        weight: 13
+        enabled: false
+      class_packages:
+        weight: 14
+        enabled: false
+      list_of_news_teasers:
+        weight: 15
+        enabled: false
+      video:
+        weight: 16
+        enabled: false
+      vih_course_slot:
+        weight: 17
+        enabled: false
+      vih_option:
+        weight: 18
+        enabled: false
+      vih_option_group:
+        weight: 19
+        enabled: false
+      vih_ordered_course_period:
+        weight: 20
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 21
+        enabled: false
+      vih_ordered_option:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

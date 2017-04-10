@@ -3,12 +3,13 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.node.news.body
     - field.field.node.news.field_image
-    - image.style.thumbnail
+    - field.field.node.news.field_news_category
     - node.type.news
   module:
-    - image
+    - entity_browser
     - path
     - text
     - workbench_moderation
@@ -42,6 +43,14 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+  field_news_category:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   langcode:
     type: language_select
     weight: 2

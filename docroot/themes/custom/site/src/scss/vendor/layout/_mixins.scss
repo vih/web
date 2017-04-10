@@ -25,7 +25,8 @@
     & .layout-navigation > .layout-navigation__dropdown {
 
       > a {
-        line-height: $tablet-height;
+        line-height:66px;
+        // line-height: $tablet-height;
       }
     }
   }
@@ -41,7 +42,8 @@
     & .layout-navigation > .layout-navigation__dropdown {
 
       > a {
-        line-height: $desktop-height;
+        line-height: 66px;
+        // line-height: $desktop-height;
       }
     }
   }

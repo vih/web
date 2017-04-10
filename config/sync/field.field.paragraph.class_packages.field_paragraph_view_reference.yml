@@ -1,0 +1,30 @@
+uuid: 061d8878-879a-4dba-b041-6e6228519cdd
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_view_reference
+    - paragraphs.paragraphs_type.class_packages
+  module:
+    - viewsreference
+id: paragraph.class_packages.field_paragraph_view_reference
+field_name: field_paragraph_view_reference
+entity_type: paragraph
+bundle: class_packages
+label: 'View reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+    entity_browser: 0
+    embed: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewsreference
