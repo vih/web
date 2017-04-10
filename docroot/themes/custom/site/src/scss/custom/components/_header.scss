@@ -126,8 +126,10 @@
     }
   }
 
-  .layout-navigation__dropdown .layout-navigation__link__icon {
-    display: none;
+  .layout-navigation__dropdown .layout-navigation__link__icon,
+  .layout-navigation__dropdown .layout-navigation__link__phone,
+  .layout-navigation__dropdown .layout-navigation__link__search {
+    display: none !important;
   }
 
   .layout__header-row--top {
@@ -316,8 +318,7 @@
 @include media-breakpoint-up(xs) {
 
   // Header
-  .layout__header {
-  }
+  .layout__header {}
 
   .block-title {
     z-index: 99999 !important;
@@ -326,14 +327,144 @@
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
-
   // Header
   .layout__header {
+    &.mobile-menu-open {
+      transform: translateX(50%);
+    }
+     background-color: $brand-primary;
+    .layout__header-row {
+      padding-left: 0;
+    }
+    .layout__header-row--bottom {
+      height: 100%;
+      background-color: $brand-primary;
+      border-bottom: 0;
+      .nav-button {
+        @include layout-header-row-height(67px);
+        border-right: 1px solid $brand-primary;
+        .navbar-toggle {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+  .layout__header.layout__header-mobile{
+    height: 0;
+    min-height: 0;
+    .layout__header-row--bottom {
+      height: 0;
+      min-height: 0;
+      .region {
+        > nav{
+          width: auto;
+        }
+      }
+      .navbar-collapse {
+        position: fixed;
+        height: 100%;
+        width: 50%;
+        background-color: #0080af;
+        transform: translateX(0);
+        padding:0;
+        border: none;
+      }
+      .layout-navigation {
+        flex-direction: column;
+        height: auto;
+        align-items: stretch;
+        .layout-navigation__dropdown-menu {
+          position: relative;
+        }
+        .layout-navigation__dropdown {
+         > a::after {
+            color: #fff;
+          }
+          > ul {
+            max-width: 100%;
+          }           
+        }
+        .layout-navigation__link,
+        .layout-navigation__dropdown {
+          border-bottom: 1px solid #00a5e2;
+          text-align: left;
+          &.layout-navigation__link__search {
+            position: relative;
+            .form-control {
+              background-color: #0080af;
+              color: $brand-primary;
+              padding-left: 55px;
+              border: none;
+             }
+             .form-control::-moz-placeholder {
+               color: $brand-primary;
+             }
+              .form-control::-webkit-input-placeholder {
+               color: $brand-primary;
+             }
+
+             .form-control:-ms-input-placeholder {
+                 color: $brand-primary;
+             }
+            .form-group-btn {
+              position: absolute;
+              left: 24px;
+              top: 15px;
+              color:  $brand-primary;
+
+              .form-submit {
+                background-color: #0080af;
+                border: none;
+              }
+            }
+          }
+          &.layout-navigation__link__phone{
+            border-color: $brand-secondary;
+            > a {
+               background-color: $brand-secondary;
+               text-align: center;
+            }
+            &:hover {
+              background-color: $brand-secondary;
+               > a {
+                background-color: $brand-secondary;
+                &:hover {
+                  background-color: $brand-secondary;
+                }
+              }
+            }
+          }
+          &:hover {
+              background-color: $brand-primary;
+               > a {
+                &:hover {
+                  background-color: $brand-primary;
+                }
+              }
+          }
+          > a {
+            border-right:none;
+            color: #fff;
+            font-weight: 300;
+            background-color: #0080af;
+            &:hover {
+                  background-color: $brand-primary;
+                }
+          }
+        }
+      }
+
+    }
   }
 
   .block-title {
 
     z-index: 99999 !important;
+  }
+  .layout__document {
+    &.mobile-menu-open {
+      transform: translateX(50%);
+    }
   }
 }
 

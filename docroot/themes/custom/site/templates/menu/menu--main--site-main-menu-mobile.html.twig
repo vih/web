@@ -1,3 +1,4 @@
+
 {% import _self as menus %}
 
           {#
@@ -13,7 +14,7 @@
 
           {# List #}
           {% if menu_level == 0 %}
-    <ul {{ attributes.addClass('layout-navigation layout-navigation--full-width layout--large-screen-only') }} >
+<ul {{ attributes.addClass('layout-navigation layout-navigation--full-width layout--large-screen-only') }} >
     {% else %}
     <ul{{ attributes.addClass( 'layout-navigation__dropdown-menu') }}>
         {% endif %}
@@ -42,16 +43,10 @@
         {% endfor %}
 
         {# Search icon #}
-        <li class="layout-navigation__link layout-navigation__link__icon"><a class="search-button" href="#"><span class="icon fa fa-search"></span></a></li>
-      </ul>
-    {% endif %}
-
-    {% endmacro %}
-
-    <div class="hidden" id="search-form-popover">
-      <form id="search-form" action="/search-result" method="get" accept-charset="UTF-8">
+        <li class="layout-navigation__link layout-navigation__link__search">
+          <form id="search-form" action="/search-result" method="get" accept-charset="UTF-8">
         <div class="form-group add-on">
-          <input class="form-control" placeholder="Search"   type="text" size="60">
+          <input class="form-control" placeholder="Search"   type="text">
           <div class="form-group-btn">
             <button type="submit" name="" class="form-submit btn-search">
               <span class="glyphicon glyphicon-search"></span>
@@ -59,5 +54,10 @@
           </div>
         </div>
         </form>
-    </div>
+        </li>
+        <li class="layout-navigation__link layout-navigation__link__phone"><a href="tel:004575820811"><i class="material-icons">phone</i> +45 7582 0811</a></li>
 
+    </ul>
+    {% endif %}
+
+    {% endmacro %}
