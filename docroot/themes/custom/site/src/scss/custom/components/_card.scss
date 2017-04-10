@@ -17,14 +17,16 @@ $card-background-color: #edeeee;
 // --------------------------------------------------
 
 // Card
+
 .card {
+    
+    font-family: 'Open Sans', sans-serif;
 
   .card-title {
 
     &,
     h1, h2, h3, h4, h5, h6,
     .pane-title {
-      font-family: $font-family-sans-serif;
       font-size: $font-size-base;
       @include line-height($font-size-base);
       font-weight: $font-weight-bold;
@@ -32,10 +34,11 @@ $card-background-color: #edeeee;
       text-transform: uppercase;
       margin: 0;
       margin-bottom: 15px;
-        font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
 
     }
   }
+
 
   &.card-block,
   .card-block {
@@ -49,13 +52,14 @@ $card-background-color: #edeeee;
     p {
       color: $text-color;
         font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
     }
   }
 
   .card-published-at {
     font-weight: $font-weight-bold;
-              font-family: 'Open Sans', sans-serif;
-    font-size: $font-size-small;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.50em;
     color: $brand-secondary;
   }
 }

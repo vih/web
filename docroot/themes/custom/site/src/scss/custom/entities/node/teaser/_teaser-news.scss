@@ -17,15 +17,40 @@
 // Teaser
 .node-teaser-news {
 
+    
+        &,
+    
+    h4 {
+        
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        color: #000;
+        margin-bottom: 20px;
+    }
+    
+    
+    &, 
+    
+    .card-published-at {
+        
+        font-size: 0.9em;
+        color: $brand-attention;
+    }
   .field--name-body {
 
     &,
     p {
       color: #928f8f;
-        font-size: 0.95em;
+        font-size: 0.90em;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 20px;
     }
   }
 }
+
+
 
 // --------------------------------------------------
 // Variants
