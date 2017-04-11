@@ -261,12 +261,15 @@
   height: 75px;
   display: flex;
   padding-left: 20px;
-  background: $brand-secondary;
   justify-content: flex-start;
   align-items: center;
-  -webkit-clip-path: polygon(0 0, 41% 0, 25% 100%, 0 100%);
-  clip-path: polygon(0 0, 41% 0, 25% 100%, 0 100%);
   margin-right: -150px;
+    background-image: url('http://svgshare.com/i/1Dv.svg');
+    background-repeat: no-repeat;
+    background-size: 275%;
+    background-position: 75px 0px;
+   
+
 
   h5 {
     color: #fff;
@@ -274,6 +277,11 @@
     font-weight: $font-weight-bold;
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
+          background: $brand-attention;
+      padding: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-left: -20px;
 
   }
 }
