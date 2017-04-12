@@ -1,7 +1,0 @@
-uuid: bdbbebd9-02f8-4fdc-a544-29d4ea7b0ace
-langcode: da
-status: true
-dependencies: {  }
-id: vih_cs_and_classes
-label: 'Course slots & classes'
-behavior_plugins: {  }

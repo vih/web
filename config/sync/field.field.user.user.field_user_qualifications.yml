@@ -1,4 +1,4 @@
-uuid: ccc551bd-7124-4c09-a220-0bfd92367f28
+uuid: 4eddb4ee-9cea-434e-ac1f-4f69134d492f
 langcode: da
 status: true
 dependencies:
@@ -12,7 +12,7 @@ id: user.user.field_user_qualifications
 field_name: field_user_qualifications
 entity_type: user
 bundle: user
-label: Qualifications
+label: Kvalifikationer
 description: ''
 required: false
 translatable: false
@@ -24,37 +24,40 @@ settings:
     target_bundles:
       vih_qualifications: vih_qualifications
     target_bundles_drag_drop:
-      vih_qualifications:
-        enabled: true
-        weight: 12
-      1_column_action_centered:
+      vih_teacher_class_description:
         weight: 13
         enabled: false
-      class_packages:
+      1_column_action_centered:
         weight: 14
         enabled: false
-      list_of_news_teasers:
+      class_packages:
         weight: 15
         enabled: false
-      video:
+      list_of_news_teasers:
         weight: 16
         enabled: false
-      vih_course_slot:
+      video:
         weight: 17
         enabled: false
-      vih_option:
+      vih_course_slot:
         weight: 18
         enabled: false
-      vih_option_group:
+      vih_option:
         weight: 19
         enabled: false
-      vih_ordered_course_period:
+      vih_option_group:
         weight: 20
         enabled: false
-      vih_ordered_course_slot:
+      vih_ordered_course_period:
         weight: 21
         enabled: false
-      vih_ordered_option:
+      vih_ordered_course_slot:
         weight: 22
         enabled: false
+      vih_ordered_option:
+        weight: 23
+        enabled: false
+      vih_qualifications:
+        enabled: true
+        weight: 24
 field_type: entity_reference_revisions

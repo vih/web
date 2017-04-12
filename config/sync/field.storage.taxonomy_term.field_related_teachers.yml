@@ -1,12 +1,12 @@
-uuid: 002b2151-c0cb-4346-802e-44c2299ab6c4
+uuid: 7b67a2bb-96bf-4acb-baa2-d50d658e7e48
 langcode: da
 status: true
 dependencies:
   module:
     - taxonomy
     - user
-id: taxonomy_term.field_vih_class_teacher
-field_name: field_vih_class_teacher
+id: taxonomy_term.field_related_teachers
+field_name: field_related_teachers
 entity_type: taxonomy_term
 type: entity_reference
 settings:

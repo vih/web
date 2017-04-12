@@ -1,15 +1,15 @@
-uuid: e1a31e03-0f07-4ad1-a322-de8db1db8910
+uuid: 6791c8b6-48db-4a36-a707-9eecea9d7102
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_vih_class_teacher
+    - field.storage.taxonomy_term.field_related_teachers
     - taxonomy.vocabulary.vih_class
-id: taxonomy_term.vih_class.field_vih_class_teacher
-field_name: field_vih_class_teacher
+id: taxonomy_term.vih_class.field_related_teachers
+field_name: field_related_teachers
 entity_type: taxonomy_term
 bundle: vih_class
-label: Teacher
+label: Undervisere
 description: ''
 required: false
 translatable: false

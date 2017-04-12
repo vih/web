@@ -1,16 +1,16 @@
-uuid: 0b27bd21-b152-43da-b51c-e57340c390dc
+uuid: 4076a74b-1904-4460-94c0-1a2ef47a1a28
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_csac_classes
-    - paragraphs.paragraphs_type.vih_cs_and_classes
+    - field.storage.paragraph.field_related_class
+    - paragraphs.paragraphs_type.vih_related_classes
     - taxonomy.vocabulary.vih_class
-id: paragraph.vih_cs_and_classes.field_csac_classes
-field_name: field_csac_classes
+id: paragraph.vih_related_classes.field_related_class
+field_name: field_related_class
 entity_type: paragraph
-bundle: vih_cs_and_classes
-label: Classes
+bundle: vih_related_classes
+label: Klasser
 description: ''
 required: false
 translatable: false

@@ -1,18 +1,18 @@
-uuid: feaab16e-92b2-431f-b6fc-5a8eb44b57b5
+uuid: 1b2eeb63-d3d7-43ac-bbfb-4cd59a2218ff
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_vih_cp_csac
-    - paragraphs.paragraphs_type.vih_cs_and_classes
-    - taxonomy.vocabulary.vih_class_package
+    - field.storage.paragraph.field_slots_classes
+    - paragraphs.paragraphs_type.class_packages
+    - paragraphs.paragraphs_type.vih_related_classes
   module:
     - entity_reference_revisions
-id: taxonomy_term.vih_class_package.field_vih_cp_csac
-field_name: field_vih_cp_csac
-entity_type: taxonomy_term
-bundle: vih_class_package
-label: 'Course slots & classes'
+id: paragraph.class_packages.field_slots_classes
+field_name: field_slots_classes
+entity_type: paragraph
+bundle: class_packages
+label: 'Slots & classes'
 description: ''
 required: false
 translatable: false
@@ -22,9 +22,9 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      vih_cs_and_classes: vih_cs_and_classes
+      vih_related_classes: vih_related_classes
     target_bundles_drag_drop:
-      vih_cs_and_classes:
+      vih_related_classes:
         enabled: true
         weight: 14
       1_column_action_centered:

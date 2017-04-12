@@ -198,7 +198,7 @@ display:
           plugin_id: field
         created:
           id: created
-          table: node_field_data
+          table: node_field_revision
           field: created
           relationship: none
           group_type: group
@@ -336,6 +336,23 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 2
+    display_options:
+      display_extenders: {  }
+      path: nyheder
     cache_metadata:
       max-age: -1
       contexts:

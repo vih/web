@@ -55,8 +55,6 @@ settings:
       language_list: un
     stylescombo:
       styles: ''
-    linkit:
-      linkit_profile: ''
 image_upload:
   status: true
   scheme: public

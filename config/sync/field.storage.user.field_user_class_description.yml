@@ -1,14 +1,14 @@
-uuid: fdcddd2a-b200-4308-967a-116705599ae7
+uuid: 3d45c254-2751-48a4-8dde-ad1b6bdfe713
 langcode: da
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-    - taxonomy
-id: taxonomy_term.field_vih_cp_csac
-field_name: field_vih_cp_csac
-entity_type: taxonomy_term
+    - user
+id: user.field_user_class_description
+field_name: field_user_class_description
+entity_type: user
 type: entity_reference_revisions
 settings:
   target_type: paragraph

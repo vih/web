@@ -1,14 +1,13 @@
-uuid: df1ecd76-78dc-4e48-9f72-e32923128fd4
+uuid: a35d5be1-4ecc-4860-ac4e-e13b50003e1d
 langcode: da
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-    - user
-id: user.field_user_teacher_class_desc
-field_name: field_user_teacher_class_desc
-entity_type: user
+id: paragraph.field_slots_classes
+field_name: field_slots_classes
+entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph

@@ -1,12 +1,12 @@
-uuid: de17d05a-193f-401c-8b63-a238ed0657f7
+uuid: 7c6a4bca-ec23-4594-8112-5b373e399b07
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_vih_qualifications_desc
+    - field.storage.paragraph.field_qualifications_description
     - paragraphs.paragraphs_type.vih_qualifications
-id: paragraph.vih_qualifications.field_vih_qualifications_desc
-field_name: field_vih_qualifications_desc
+id: paragraph.vih_qualifications.field_qualifications_description
+field_name: field_qualifications_description
 entity_type: paragraph
 bundle: vih_qualifications
 label: Description
