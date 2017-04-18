@@ -160,6 +160,11 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 }
 .fpnews-title a{
   color:#000;
+     font-size: $font-size-small;
+  color: #ff6400;
+  font-weight: bold;
+    font-size: 0.9em;
+    font-family: 'Open Sans', sans-serif;
 }
 .view-news .view-content .views-row .views-field-body p{
   font-size: 12px;
@@ -181,6 +186,8 @@ $md-page-layout-content-inner-padding-bottom: 60px;
     font-size: 0.9em;
     font-family: 'Open Sans', sans-serif;
 }
+
+
 .view-news .view-header h2 a{
   font-size:$font-size-h2;
   text-transform: uppercase;

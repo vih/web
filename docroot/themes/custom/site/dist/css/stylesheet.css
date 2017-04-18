@@ -9317,14 +9317,26 @@ body {
 .fpnews-title {
   font-size: 16px;
   text-transform: uppercase;
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: #000; }
 
 .fpnews-title a {
-  color: #000; }
+  color: #000;
+  font-size: 14px;
+  color: #ff6400;
+  font-weight: bold;
+  font-size: 0.9em;
+  font-family: 'Open Sans', sans-serif; }
 
 .view-news .view-content .views-row .views-field-body p {
   font-size: 12px;
-  color: #a2a1a1; }
+  color: #928f8f;
+  font-size: 0.90em;
+  line-height: 20px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 20px; }
 
 .view-news .view-content .views-row .field-content {
   margin-top: 10px;
@@ -9333,7 +9345,9 @@ body {
 .fpnews-date {
   font-size: 14px;
   color: #ff6400;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 0.9em;
+  font-family: 'Open Sans', sans-serif; }
 
 .view-news .view-header h2 a, .view-news .view-header .heading-h2 a, .view-news .view-header .banner .banner-content .banner-title a, .banner .banner-content .view-news .view-header .banner-title a, .view-news .view-header .field--name-field-heading a {
   font-size: 24px;
@@ -9998,7 +10012,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-right: -150px;
-  background-image: url("http://svgshare.com/i/1Dv.svg");
+  background-image: url("http://svgshare.com/i/1GX.svg");
   background-repeat: no-repeat;
   -webkit-background-size: 275% 275%;
           background-size: 275%;
