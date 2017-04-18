@@ -10431,15 +10431,11 @@ h1, .heading-h1, .field--name-field-description,
 
 .angled-background-color .angled-background-inner:before {
   margin-top: -10px;
-  margin-bottom: -50px;
-  margin-left: -100%;
-  margin-right: -100%; }
+  margin-bottom: -50px; }
 
 .angled-background-image .angled-background-image-wrapper {
   margin-top: -10px;
-  margin-bottom: -50px;
-  margin-left: -100%;
-  margin-right: -100%; }
+  margin-bottom: -50px; }
 
 @media (min-width: 768px) {
   .angled-background-color,

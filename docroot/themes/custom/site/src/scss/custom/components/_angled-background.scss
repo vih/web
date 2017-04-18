@@ -178,8 +178,6 @@ $angled-background-color-secondary: $brand-secondary;
       &:before {
         margin-top: -$xs-angled-background-padding-top;
         margin-bottom: -$xs-angled-background-padding-bottom;
-        margin-left: -100%;
-        margin-right: -100%;
       }
     }
   }
@@ -190,8 +188,6 @@ $angled-background-color-secondary: $brand-secondary;
     .angled-background-image-wrapper {
       margin-top: -$xs-angled-background-padding-top;
       margin-bottom: -$xs-angled-background-padding-bottom;
-      margin-left: -100%;
-      margin-right: -100%;
     }
   }
 }

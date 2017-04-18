@@ -108,13 +108,19 @@
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-                    <div class="container">
-                        <div class="angled-background-color angled-background-color-white">
-                            <div class="angled-background-inner">
+
+                    {% if node and node.getType == 'page' %}
+                        {{ page.content }}
+                    {% else %}
+                    <div class="angled-background-color angled-background-color-white">
+                        <div class="angled-background-inner">
+                            <div class="container">
                                 {{ page.content }}
                             </div>
                         </div>
                     </div>
+                    {% endif %}
+
                     <!-- End - content -->
                 {% endblock %}
             </section>
