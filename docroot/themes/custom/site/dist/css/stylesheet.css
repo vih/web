@@ -9377,6 +9377,9 @@ h1, .heading-h1, .field--name-field-description,
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif; }
 
+#block-popup-cta {
+  overflow: hidden; }
+
 .banner-title {
   font-weight: bold !important;
   font-family: 'Open Sans', sans-serif; }
@@ -9999,6 +10002,7 @@ h1, .heading-h1, .field--name-field-description,
       -ms-flex-direction: row;
           flex-direction: row;
   z-index: 999999;
+  overflow: hidden;
   margin: 0;
   -webkit-box-shadow: 0px -4px 64px -19px rgba(0, 0, 0, 0.43);
   box-shadow: 0px -4px 64px -19px rgba(0, 0, 0, 0.43); }
