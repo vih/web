@@ -155,13 +155,20 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   font-size:$font-size-base;
   text-transform: uppercase;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  color: #000;
 }
 .fpnews-title a{
   color:#000;
 }
 .view-news .view-content .views-row .views-field-body p{
   font-size: 12px;
-  color:#a2a1a1;
+    color: #928f8f;
+    font-size: 0.90em;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
 }
 .view-news .view-content .views-row .field-content{
   margin-top:10px;
@@ -171,6 +178,8 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   font-size: $font-size-small;
   color: #ff6400;
   font-weight: bold;
+    font-size: 0.9em;
+    font-family: 'Open Sans', sans-serif;
 }
 .view-news .view-header h2 a{
   font-size:$font-size-h2;
