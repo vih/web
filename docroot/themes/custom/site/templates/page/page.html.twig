@@ -108,17 +108,13 @@
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-                    {% if node %}
-                        {{ page.content }}
-                    {% else %}
+                    <div class="container">
                         <div class="angled-background-color angled-background-color-white">
                             <div class="angled-background-inner">
-                                <div class="container">
-                                    {{ page.content }}
-                                </div>
+                                {{ page.content }}
                             </div>
                         </div>
-                    {% endif %}
+                    </div>
                     <!-- End - content -->
                 {% endblock %}
             </section>
