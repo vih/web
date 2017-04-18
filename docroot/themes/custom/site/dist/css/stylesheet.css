@@ -9476,6 +9476,12 @@ h1, .heading-h1, .field--name-field-description,
   font-size: 20px;
   font-weight: 600; }
 
+.fagpakker-hovering p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  font-size: 12px;
+  font-weight: 600; }
+
 .fagpakker-container:hover > .fagpakker-hovering {
   opacity: 1 !important;
   -webkit-transition: 400ms;
