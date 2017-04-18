@@ -1,16 +1,16 @@
-uuid: 22a78bd5-150c-40b0-a26e-94c4bdb43886
+uuid: c4c57309-7986-4f98-a468-f80ba4bcfee5
 langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.vih_qualifications.field_vih_qualifications_desc
+    - field.field.paragraph.vih_qualifications.field_qualifications_description
     - paragraphs.paragraphs_type.vih_qualifications
 id: paragraph.vih_qualifications.default
 targetEntityType: paragraph
 bundle: vih_qualifications
 mode: default
 content:
-  field_vih_qualifications_desc:
+  field_qualifications_description:
     weight: 0
     label: above
     settings:

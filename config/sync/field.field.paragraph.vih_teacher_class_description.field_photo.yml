@@ -1,17 +1,17 @@
-uuid: bfa627d4-5352-4eea-9763-be14b354c74b
+uuid: 258a1192-640b-4936-b8da-047a197bef30
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_vih_tcd_image
+    - field.storage.paragraph.field_photo
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
-id: paragraph.vih_teacher_class_description.field_vih_tcd_image
-field_name: field_vih_tcd_image
+id: paragraph.vih_teacher_class_description.field_photo
+field_name: field_photo
 entity_type: paragraph
 bundle: vih_teacher_class_description
-label: Image
+label: Billede
 description: ''
 required: false
 translatable: false
@@ -24,7 +24,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: true
-  alt_field_required: true
+  alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:

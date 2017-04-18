@@ -1,11 +1,11 @@
-uuid: 0ff86826-8984-4ffb-b4cd-b0636fff66d6
+uuid: 9cf05ecc-0aeb-4071-a75d-0aee1bcdeddd
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_csac_course_slot_title
-field_name: field_csac_course_slot_title
+id: paragraph.field_qualifications_description
+field_name: field_qualifications_description
 entity_type: paragraph
 type: string
 settings:
@@ -14,7 +14,7 @@ settings:
   case_sensitive: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

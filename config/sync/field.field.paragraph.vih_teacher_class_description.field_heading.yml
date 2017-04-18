@@ -1,18 +1,18 @@
-uuid: 783db6bd-6682-4322-b63e-44d1e36fcbcb
+uuid: b4b94e2a-ccc3-4292-9b69-458c1a7b95c1
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_vih_tcd_title
+    - field.storage.paragraph.field_heading
     - paragraphs.paragraphs_type.vih_teacher_class_description
-id: paragraph.vih_teacher_class_description.field_vih_tcd_title
-field_name: field_vih_tcd_title
+id: paragraph.vih_teacher_class_description.field_heading
+field_name: field_heading
 entity_type: paragraph
 bundle: vih_teacher_class_description
-label: Title
+label: Overskrift
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

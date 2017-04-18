@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c0c7be5d49a42dee5e32b8a9fc54126",
+    "content-hash": "7bedb14e10d97d948f936443e3416e9b",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -3342,7 +3342,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-8.x-1.0-alpha1.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha1",
                 "shasum": "ffc763b0b74f5a29c0d4a5a6c6930bda473a9e97"
             },
             "require": {
@@ -3607,6 +3607,53 @@
             "homepage": "https://www.drupal.org/project/views_infinite_scroll",
             "support": {
                 "source": "http://cgit.drupalcode.org/views_infinite_scroll"
+            }
+        },
+        {
+            "name": "drupal/viewsreference",
+            "version": "1.0.0-alpha8",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/viewsreference",
+                "reference": "8.x-1.0-alpha8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-1.0-alpha8.zip",
+                "reference": null,
+                "shasum": "fb042bce61e91095df608c7fedcfcf1e61690d67"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha8",
+                    "datestamp": "1482381184"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "New Zeal",
+                    "homepage": "https://www.drupal.org/user/93571"
+                },
+                {
+                    "name": "joekers",
+                    "homepage": "https://www.drupal.org/user/2229066"
+                }
+            ],
+            "description": "Enables Views to be embedded in an entity reference field",
+            "homepage": "https://www.drupal.org/project/viewsreference",
+            "support": {
+                "source": "http://cgit.drupalcode.org/viewsreference"
             }
         },
         {
@@ -4567,7 +4614,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Library used to find lowest common ancestor in graphs.",
-            "time": "2016-08-03T08:34:39+00:00"
+            "time": "2016-08-03 08:34:39"
         },
         {
             "name": "stack/builder",
@@ -8342,7 +8389,8 @@
         "drupal/devel": 10,
         "drupal/paragraphs": 20,
         "drupal/eva": 5,
-        "drupal/stage_file_proxy": 15
+        "drupal/stage_file_proxy": 15,
+        "drupal/viewsreference": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

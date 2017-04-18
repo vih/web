@@ -1,0 +1,28 @@
+uuid: 0b0b4357-45d8-4d94-9460-4bb2e17bae9b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_related_classes.field_heading
+    - field.field.paragraph.vih_related_classes.field_related_class
+    - paragraphs.paragraphs_type.vih_related_classes
+id: paragraph.vih_related_classes.default
+targetEntityType: paragraph
+bundle: vih_related_classes
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_related_class:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden: {  }

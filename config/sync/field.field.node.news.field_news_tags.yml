@@ -1,16 +1,16 @@
-uuid: c0dbdc9a-e48c-4f7d-aa7b-a55b319dfb66
+uuid: 5ebc5f0a-b901-44ef-87fc-22eec5547d22
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_news_category
+    - field.storage.node.field_news_tags
     - node.type.news
     - taxonomy.vocabulary.news_tags
-id: node.news.field_news_category
-field_name: field_news_category
+id: node.news.field_news_tags
+field_name: field_news_tags
 entity_type: node
 bundle: news
-label: Category
+label: 'News tags'
 description: ''
 required: false
 translatable: false

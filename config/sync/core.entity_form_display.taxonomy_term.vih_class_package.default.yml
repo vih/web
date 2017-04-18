@@ -3,15 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
-    - field.field.taxonomy_term.vih_class_package.field_vih_cp_csac
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
+    - image.style.thumbnail
     - taxonomy.vocabulary.vih_class_package
   module:
-    - entity_browser
-    - paragraphs
+    - image
     - path
     - text
 id: taxonomy_term.vih_class_package.default
@@ -25,17 +23,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_vih_cp_csac:
-    type: entity_reference_paragraphs
-    weight: 34
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
     third_party_settings: {  }
   field_vih_cp_description:
     weight: 32

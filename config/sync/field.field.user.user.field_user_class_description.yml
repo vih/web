@@ -1,18 +1,18 @@
-uuid: c0ab70ef-5eca-45ad-bb31-45efe9a4e35f
+uuid: 5f12c1be-a63f-42e7-9a6b-9255d0167cfe
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_user_teacher_class_desc
+    - field.storage.user.field_user_class_description
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - entity_reference_revisions
     - user
-id: user.user.field_user_teacher_class_desc
-field_name: field_user_teacher_class_desc
+id: user.user.field_user_class_description
+field_name: field_user_class_description
 entity_type: user
 bundle: user
-label: 'Teacher Class description'
+label: 'Klasse beskrivelser'
 description: ''
 required: false
 translatable: false
