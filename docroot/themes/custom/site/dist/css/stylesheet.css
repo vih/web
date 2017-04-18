@@ -9308,6 +9308,11 @@ body {
   -o-transform: translateX(0%);
   transform: translateX(0%); }
 
+.view-header h2, .view-header .heading-h2, .view-header .banner .banner-content .banner-title, .banner .banner-content .view-header .banner-title, .view-header .field--name-field-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif; }
+
 .view-news .view-content .views-row {
   background: #EDEEEE;
   border: 15px solid #ffffff;
@@ -9324,7 +9329,6 @@ body {
 .fpnews-title a {
   color: #000;
   font-size: 14px;
-  color: #ff6400;
   font-weight: bold;
   font-size: 0.9em;
   font-family: 'Open Sans', sans-serif; }
@@ -9368,7 +9372,15 @@ body {
   text-transform: uppercase;
   color: #fff;
   padding-bottom: 30px;
-  padding-top: 15px; }
+  padding-top: 15px;
+  color: #fff;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.6; }
 
 .fagpakker-container {
   width: 100%;
