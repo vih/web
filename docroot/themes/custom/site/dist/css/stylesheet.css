@@ -9326,6 +9326,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #000; }
 
+.fpnews-content p {
+  font-size: 0.8em; }
+
 .fpnews-title a {
   color: #000;
   font-size: 14px;
