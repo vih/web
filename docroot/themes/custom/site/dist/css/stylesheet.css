@@ -9327,7 +9327,7 @@ body {
   color: #000; }
 
 .fpnews-content p {
-  font-size: 0.8em; }
+  font-size: 0.7em !important; }
 
 .fpnews-title a {
   color: #000;
