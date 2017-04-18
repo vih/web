@@ -218,10 +218,15 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: $font-weight-bold;
       color: $headings-color;
       text-transform: uppercase;
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
 
     }
+
+.banner-title {
+    
+    font-weight: bold!important;
+      font-family: 'Open Sans', sans-serif;
+}
 
 // Fagpakker forside
 

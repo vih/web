@@ -9375,7 +9375,10 @@ h1, .heading-h1, .field--name-field-description,
   font-weight: 700;
   color: #212121;
   text-transform: uppercase;
-  margin: 0;
+  font-family: 'Open Sans', sans-serif; }
+
+.banner-title {
+  font-weight: bold !important;
   font-family: 'Open Sans', sans-serif; }
 
 .view-class-packages-frontpage .view-header {
