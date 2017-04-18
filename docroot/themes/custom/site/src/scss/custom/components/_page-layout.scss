@@ -212,7 +212,16 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   border: 0px solid #00a5e2;
 }
 
+h1, h2, h3, h4, h5, h6 {
 
+      @include line-height($font-size-base);
+      font-weight: $font-weight-bold;
+      color: $headings-color;
+      text-transform: uppercase;
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+
+    }
 
 // Fagpakker forside
 

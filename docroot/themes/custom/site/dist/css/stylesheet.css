@@ -9368,6 +9368,16 @@ body {
 .view-fagpakker-forside .view-content .views-row {
   border: 0px solid #00a5e2; }
 
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, h2, .heading-h2, .banner .banner-content .banner-title, .field--name-field-heading, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, h5, .heading-h5, .field--name-field-highlighted, h6, .heading-h6 {
+  line-height: 22px;
+  font-weight: 700;
+  color: #212121;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; }
+
 .view-class-packages-frontpage .view-header {
   text-transform: uppercase;
   color: #fff;
