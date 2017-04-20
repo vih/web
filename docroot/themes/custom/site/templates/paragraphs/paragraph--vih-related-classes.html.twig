@@ -1,0 +1,22 @@
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+
+    {% if background_image %}
+    <div class="angled-background-image-wrapper">
+        <div class="cover-overlay"></div>
+        <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+    </div>
+    {% endif %}
+
+
+        <div class="container">
+            {{ content }}
+        </div>
+
+</div>
