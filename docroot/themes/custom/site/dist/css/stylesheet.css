@@ -9480,7 +9480,7 @@ h1, .heading-h1, .field--name-field-description,
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5em;
   font-size: 12px;
-  font-weight: 600; }
+  font-weight: bold; }
 
 .fagpakker-container:hover > .fagpakker-hovering {
   opacity: 1 !important;
