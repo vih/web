@@ -9585,6 +9585,9 @@ h1, .heading-h1, .field--name-field-description,
   padding-top: 60px;
   padding-left: 18px; }
 
+.material-icons {
+  font-size: 17px; }
+
 .path-frontpage div[role=heading] {
   display: none; }
 
