@@ -268,6 +268,7 @@ var jQueryCookies = (function ($) {
 // | This jQuery script is written by
 // | Simon Tofteby
 // |
+
 var modalPopUp = (function ($) {
     'use strict';
 
