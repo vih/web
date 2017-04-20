@@ -5,13 +5,10 @@
 // | This file is created by Simon Tofteby
 // | 
 // |
-
-
 // Font-family
-$font-family-primary: 'Open Sans', sans-serif;
-
+$font-family-primary: 'Open Sans',
+sans-serif;
 // Styleguide Banner
-
 .styleguide-banner {
     background: rgba(0, 165, 226, 0.99)!important;
     background-image: url('https://vih.dk/sites/vih.local/files/styles/panopoly_image_full/public/shortcourses/kajak-3.jpg?itok=-9nCVQCw')!important;
@@ -25,50 +22,44 @@ $font-family-primary: 'Open Sans', sans-serif;
 }
 
 .breaker {
-    
     width: 100%;
     height: 150px;
-    
 }
 
 // Codebox
-
 .codebox {
-  /* Below are styles for the codebox (not the code itself) */
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  background-color: #f8f8f8;
-  width: 100%;
-  padding: 40px;
-      height: 300px;
+    /* Below are styles for the codebox (not the code itself) */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    width: 100%;
+    padding: 40px;
+    height: 300px;
     overflow-y: scroll;
-  code {
-    /* Styles in here affect the text of the codebox */
-    font-size: 0.9em;
-    color: #000;
-    text-decoration: none;
-    text-emphasis-color: none;
-    text-decoration: none;
-    text-emphasis-style: none;
-    font-size: 18px;
-    background: none;
-    /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
-  }
+    code {
+        /* Styles in here affect the text of the codebox */
+        font-size: 0.9em;
+        color: #000;
+        text-decoration: none;
+        text-emphasis-color: none;
+        text-decoration: none;
+        text-emphasis-style: none;
+        font-size: 18px;
+        background: none;
+        /* You could also put all sorts of styling here, like different font, color, underline, etc. for the code. */
+    }
 }
 
 // Tabs
-
 .panel {
     border-radius: 0px !important;
     display: flex;
     justify-content: center;
     flex-direction: column;
     p {
-        
         font-family: $font-family-primary;
-        font-weight: 700; 
+        font-weight: 700;
     }
-
 }
 
 .panel-heading {
@@ -82,7 +73,6 @@ $font-family-primary: 'Open Sans', sans-serif;
 }
 
 .panel-title {
-    
     margin-left: 10px;
     a {
         text-transform: uppercase;
@@ -169,7 +159,6 @@ $font-family-primary: 'Open Sans', sans-serif;
 }
 
 .tabs:first-child {
-    
     border-left: none;
 }
 
@@ -206,7 +195,6 @@ $font-family-primary: 'Open Sans', sans-serif;
         }
     }
     border-bottom: 1px solid #ddd;
-   
 }
 
 .btn-group,
@@ -223,194 +211,182 @@ input[type="radio"]:checked {
 }
 
 .panel-group {
-    
     border-bottom: 1px solid #ddd;
 }
 
-.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
-    
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
     border-top: none;
 }
 
 // Accordians
-
 .panel-title a {
-    
     font-size: 14px!important;
     padding-right: 15px!important;
 }
 
 // Colors
-
 .main-content {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  padding: 40px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 40px;
 }
 
 .color {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-      font-family: $font-family-primary;
-        font-weight: 600;
-  p {
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-primary;
+    font-weight: 600;
+    p {
+        margin-top: 10px;
         font-family: $font-family-primary;
         font-weight: 600;
-  }
+    }
 }
 
 .color-preview {
-  width: 70px;
-  height: 70px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  color: #fff;
-font-family: $font-family-primary;
-font-weight: 600;
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #fff;
+    font-family: $font-family-primary;
+    font-weight: 600;
 }
-
 
 // Alerts
 .alert {
     border-radius: 0!important;
     font-family: $font-family-primary;
-font-weight: 600;
+    font-weight: 600;
 }
 
-
 // Modal
-
 .modal-header {
-  border: none !important;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  background: #00bcff;
-  overflow: hidden;
+    border: none !important;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: #00bcff;
+    overflow: hidden;
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
 }
 
 .modal-backdrop {
-  z-index: 0;
+    z-index: 0;
 }
 
-
 #diagonal {
-  position: absolute;
-  width: 105%;
-  height: auto;
-  margin-left: -10px;
-  margin-top: 60px;
+    position: absolute;
+    width: 105%;
+    height: auto;
+    margin-left: -10px;
+    margin-top: 60px;
 }
 
 .modal-content {
-  padding: 0;
-  height: 100%;
-  border-radius: 0px !important;
+    padding: 0;
+    height: 100%;
+    border-radius: 0px !important;
     overflow: hidden;
     border: none;
-    -webkit-box-shadow: 0px 0px 93px -20px rgba(0,0,0,0.55);
--moz-box-shadow: 0px 0px 93px -20px rgba(0,0,0,0.55);
-box-shadow: 0px 0px 93px -20px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 0px 93px -20px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 0px 0px 93px -20px rgba(0, 0, 0, 0.55);
+    box-shadow: 0px 0px 93px -20px rgba(0, 0, 0, 0.55);
 }
 
-
 .modal-dialog {
-  width: 70% !important;
-  max-width: none !important;
-  height: 80% !important;
-  border-radius: 0px !important;
-  height: 100vh!important;
+    width: 70% !important;
+    max-width: 1200px!important;
+    height: 80% !important;
+    border-radius: 0px !important;
+    height: 100vh!important;
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
 .modal-header-title {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  h4 {
-    font-size: 38px;
-    color: #fff !important;
-    font-weight: 600;
-  }
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    h4 {
+        font-size: 38px;
+        color: #fff !important;
+        font-weight: 600;
+    }
 }
+
 .btn-more {
-    
     background: none!important;
     width: 40px;
     height: 40px;
     outline: none;
     box-shadow: none;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .btn-more i {
-    
     color: #bbb;
     font-size: 16px;
 }
 
 .btn-more .fa {
-    
     font-size: 18px!important;
     margin-top: 5px;
 }
 
 .modal-header {
-  height: 350px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .modal-header-close {
-  width: 100%;
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-  z-index: 999;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    z-index: 999;
     padding-right: 10px;
 }
 
 .modal-body {
-  padding: 80px !important;
-  padding-top: 0px !important;
+    padding: 80px !important;
+    padding-top: 0px !important;
 }
 
 .modal-header .close {
-  color: #000 !important;
-  padding-bottom: 2px !important;
-  background: #fff !important;
-  border-radius: 100px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 40px;
-  height: 40px;
-  opacity: 1;
-  font-weight: 200;
-  font-size: 24px;
+    color: #000 !important;
+    padding-bottom: 2px !important;
+    background: #fff !important;
+    border-radius: 100px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    font-weight: 200;
+    font-size: 24px;
 }
 
 .diagonal-end {
-    
     width: 100%;
     height: 150px;
-background-image: url('http://svgshare.com/i/1Kc.svg');
+    background-image: url('http://svgshare.com/i/1Kc.svg');
     background-size: 200%;
     background-position: -20px;
 }

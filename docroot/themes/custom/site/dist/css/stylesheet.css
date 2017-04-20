@@ -9507,7 +9507,8 @@ input[type="radio"]:checked {
 .panel-group {
   border-bottom: 1px solid #ddd; }
 
-.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
+.panel-group .panel-heading + .panel-collapse > .panel-body,
+.panel-group .panel-heading + .panel-collapse > .list-group {
   border-top: none; }
 
 .panel-title a {
@@ -9624,7 +9625,7 @@ input[type="radio"]:checked {
 
 .modal-dialog {
   width: 70% !important;
-  max-width: none !important;
+  max-width: 1200px !important;
   height: 80% !important;
   border-radius: 0px !important;
   height: 100vh !important;
