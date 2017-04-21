@@ -1,0 +1,25 @@
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+    .navbar-toggle {
+      border: none;
+
+      &:hover,
+      &:focus {
+         background-color: $brand-primary;
+      }
+      .icon-bar {
+        background-color: #fff;
+        &.long{
+          width: 32px;
+        }
+      }
+    }
+}

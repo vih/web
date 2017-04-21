@@ -1,0 +1,24 @@
+uuid: b1184335-609e-4ba9-87b5-d336ef273acc
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - site
+id: site_main_menu_mobile
+theme: site
+region: mobile_header_navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }
