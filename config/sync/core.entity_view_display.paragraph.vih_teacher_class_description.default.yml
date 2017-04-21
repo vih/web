@@ -23,14 +23,14 @@ content:
     type: text_default
   field_heading:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_photo:
     weight: 1
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''

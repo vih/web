@@ -1,0 +1,66 @@
+uuid: f3986547-c8f0-4134-9373-7681fd67705e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_p_related_classes
+    - paragraphs.paragraphs_type.vih_related_classes
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.vih_class_package.field_p_related_classes
+field_name: field_p_related_classes
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: 'Related classes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_related_classes: vih_related_classes
+    target_bundles_drag_drop:
+      1_column_action_centered:
+        weight: 14
+        enabled: false
+      class_packages:
+        weight: 15
+        enabled: false
+      list_of_news_teasers:
+        weight: 16
+        enabled: false
+      video:
+        weight: 17
+        enabled: false
+      vih_course_slot:
+        weight: 18
+        enabled: false
+      vih_option:
+        weight: 19
+        enabled: false
+      vih_option_group:
+        weight: 20
+        enabled: false
+      vih_ordered_course_period:
+        weight: 21
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 22
+        enabled: false
+      vih_ordered_option:
+        weight: 23
+        enabled: false
+      vih_qualifications:
+        weight: 24
+        enabled: false
+      vih_related_classes:
+        enabled: true
+        weight: 25
+      vih_teacher_class_description:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions
