@@ -426,3 +426,43 @@ h1, h2, h3, h4, h5, h6 {
 .material-icons{
   font-size: 17px;
 }
+
+.related-classes-span{
+  margin-top: auto;
+  background: #00a5e2;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  opacity: 0.8;
+}
+
+.related-classes-span a{
+  color:#fff;
+}
+
+.related-classes-col{
+background-image: url('http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg');
+height:125px;
+border:15px solid #fff;
+display: flex;
+flex-direction: column;
+}
+
+.teacher-teaches-row{
+  background-color: #00bcff;
+  color: #fff !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  border-top:25px solid #fff;
+}
+.teacher-teaches-row a{
+  color: #fff !important;
+}
+.teacher-teaches-row h2{
+  color: #fff !important;
+}

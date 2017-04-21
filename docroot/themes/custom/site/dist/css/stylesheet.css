@@ -10055,6 +10055,49 @@ h1, .heading-h1, .field--name-field-description,
 .material-icons {
   font-size: 17px; }
 
+.related-classes-span {
+  margin-top: auto;
+  background: #00a5e2;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  opacity: 0.8; }
+
+.related-classes-span a {
+  color: #fff; }
+
+.related-classes-col {
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg");
+  height: 125px;
+  border: 15px solid #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.teacher-teaches-row {
+  background-color: #00bcff;
+  color: #fff !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  border-top: 25px solid #fff; }
+
+.teacher-teaches-row a {
+  color: #fff !important; }
+
+.teacher-teaches-row h2, .teacher-teaches-row .heading-h2, .teacher-teaches-row .banner .banner-content .banner-title, .banner .banner-content .teacher-teaches-row .banner-title, .teacher-teaches-row .field--name-field-heading {
+  color: #fff !important; }
+
 .path-frontpage div[role=heading] {
   display: none; }
 
