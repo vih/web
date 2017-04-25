@@ -9794,7 +9794,7 @@ input[type="radio"]:checked {
   color: #000; }
 
 .fpnews-content p {
-  font-size: 0.7em !important; }
+  font-size: 0.85em !important; }
 
 .fpnews-title a {
   color: #000;
@@ -9804,11 +9804,10 @@ input[type="radio"]:checked {
   font-family: 'Open Sans', sans-serif; }
 
 .view-news .view-content .views-row .views-field-body p {
-  font-size: 12px;
+  font-size: 13px;
   color: #928f8f;
   font-size: 0.90em;
   line-height: 20px;
-  font-weight: bold;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 20px; }
 
