@@ -5,6 +5,56 @@
 // | This file is created by Simon Tofteby
 // | 
 // |
+
+
+// Eliminate bad font-size behavour 
+
+.field, .field--name-field-heading {
+    
+    font-size: inherit!important;
+}
+
+.field, .field--name-field-heading h3 {
+    
+    margin-bottom: 40px;
+}
+
+// Font colors
+
+$font-light: #aaaaaa;
+$font-pale: #fff;
+$font-dark: #000;
+
+// White color font
+.f-pale { color: $font-pale!important; }
+
+// Light color font
+.f-light { color: $font-light!important; }
+
+// Dark color font
+.f-dark { color: $font-dark!important; }
+
+
+// Font sizes
+
+
+h1, h2, h3, h4 {
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.157em;
+}
+
+h2 {font-size: 2.369em;}
+
+h3 {font-size: 1.777em!important;}
+
+h4 {font-size: 1.333em!important;}
+
+small, .font_small {font-size: 0.75em;}
+
 // Font-family
 $font-family-primary: 'Open Sans',
 sans-serif;
@@ -25,6 +75,31 @@ sans-serif;
     width: 100%;
     height: 150px;
 }
+
+// Buttons 
+
+.btn-simple {
+    
+    width: auto;
+    max-width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    background: #00bcff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: $font-family-primary;
+}
+
+.btn-simple:hover {
+    
+    color: #fff;
+}
+
 
 // Codebox
 .codebox {

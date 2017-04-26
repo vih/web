@@ -9276,6 +9276,44 @@ body {
   .layout__footer-top-outer .container {
     width: 80%; } }
 
+.field, .field--name-field-heading {
+  font-size: inherit !important; }
+
+.field, .field--name-field-heading h3, .field--name-field-heading .heading-h3, .field--name-field-heading .node-list-simple-title, .field--name-field-heading .node-list-advanced-title {
+  margin-bottom: 40px; }
+
+.f-pale {
+  color: #fff !important; }
+
+.f-light {
+  color: #aaaaaa !important; }
+
+.f-dark {
+  color: #000 !important; }
+
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, h2, .heading-h2, .banner .banner-content .banner-title, .field--name-field-heading, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p {
+  font-weight: inherit;
+  line-height: 1.2; }
+
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p {
+  font-size: 3.157em; }
+
+h2, .heading-h2, .banner .banner-content .banner-title, .field--name-field-heading {
+  font-size: 2.369em; }
+
+h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title {
+  font-size: 1.777em !important; }
+
+h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p {
+  font-size: 1.333em !important; }
+
+small, .font_small {
+  font-size: 0.75em; }
+
 .styleguide-banner {
   background: rgba(0, 165, 226, 0.99) !important;
   background-image: url("https://vih.dk/sites/vih.local/files/styles/panopoly_image_full/public/shortcourses/kajak-3.jpg?itok=-9nCVQCw") !important;
@@ -9292,6 +9330,33 @@ body {
 .breaker {
   width: 100%;
   height: 150px; }
+
+.btn-simple {
+  width: auto;
+  max-width: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  background: #00bcff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif; }
+
+.btn-simple:hover {
+  color: #fff; }
 
 .codebox {
   /* Below are styles for the codebox (not the code itself) */
@@ -10898,7 +10963,6 @@ h1, .heading-h1, .field--name-field-description,
     .layout__footer nav .block-title.heading-h3,
     .layout__footer nav .block-title.node-list-simple-title,
     .layout__footer nav .block-title.node-list-advanced-title {
-      font-weight: 500;
       font-size: 18px;
       color: #fff;
       text-transform: uppercase;
