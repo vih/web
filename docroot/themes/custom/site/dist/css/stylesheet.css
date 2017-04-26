@@ -9944,8 +9944,8 @@ h1, .heading-h1, .field--name-field-description,
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5em;
   font-size: 20px;
-  font-weight: 600;
-  opacity: 0.6; }
+  font-weight: normal;
+  opacity: 1; }
 
 .fagpakker-container {
   width: 100%;
@@ -10201,6 +10201,13 @@ h1, .heading-h1, .field--name-field-description,
 .navbar {
   border-radius: 0px;
   margin-bottom: 0px; }
+
+.field--name-field-heading {
+  font-family: "Open Sans", Sens-serif !important;
+  font-size: 1.777em !important; }
+
+ul li {
+  color: #888; }
 
 .path-frontpage div[role=heading] {
   display: none; }
@@ -11284,7 +11291,7 @@ h1, .heading-h1, .field--name-field-description,
 .field--type-text-long p {
   font-size: 0.8em;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600 !important; }
+  font-weight: normal; }
 
 .angled-background-image h1, .angled-background-image .heading-h1, .angled-background-image .field--name-field-description, .angled-background-image
 .field--name-field-description p,

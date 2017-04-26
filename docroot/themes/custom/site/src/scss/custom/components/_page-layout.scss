@@ -256,8 +256,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5em;
     font-size: 20px;
-    font-weight: 600;
-    opacity: 0.6;
+    font-weight: normal;
+    opacity: 1;
 
 }
 
@@ -501,4 +501,12 @@ flex-direction: column;
 .navbar{
   border-radius: 0px;
   margin-bottom: 0px;
+}
+
+.field--name-field-heading{
+  font-family: "Open Sans", Sens-serif !important;
+  font-size: 1.777em !important;
+}
+ul li{
+  color: #888;
 }
