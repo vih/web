@@ -94,7 +94,7 @@
             {# Banner #}
             {% if page.banner %}
                 {% block banner %}
-                    <div class="banner" style="background:none !important;">
+                    <div class="banner">
                         {{ page.banner }}
                     </div>
                 {% endblock %}
@@ -104,13 +104,13 @@
             {% if page.header %}
                 {% block header %}
                     <div role="heading">
-
-
+                        <div class="angled-background-color angled-background-color-white">
+                            <div class="angled-background-inner">
                                 <div class="container">
                                     {{ page.header }}
                                 </div>
-
-
+                            </div>
+                        </div>
                     </div>
                 {% endblock %}
             {% endif %}
@@ -126,7 +126,7 @@
                         {{ page.content }}
                     {% else %}
                     <div class="angled-background-color angled-background-color-white">
-                        <div class="angled-background-inner" style="position: unset !important;">
+                        <div class="angled-background-inner">
                             <div class="container">
                                 {{ page.content }}
                             </div>
