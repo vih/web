@@ -7,6 +7,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -9291,11 +9292,19 @@ body {
 .f-dark {
   color: #000 !important; }
 
+p {
+  font-weight: 400;
+  color: #888 !important; }
+
+footer p {
+  color: #fff !important; }
+
 h1, .heading-h1, .field--name-field-description,
 .field--name-field-description p, h2, .heading-h2, .banner .banner-content .banner-title, .field--name-field-heading, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
 .paragraph--type--video .field--name-field-description p {
   font-weight: inherit;
-  line-height: 1.2; }
+  line-height: 1.2;
+  font-family: 'Lato', sans-serif; }
 
 h1, .heading-h1, .field--name-field-description,
 .field--name-field-description p {
@@ -9353,7 +9362,7 @@ small, .font_small {
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Lato", sans-serif; }
 
 .btn-simple:hover {
   color: #fff; }
@@ -9395,7 +9404,7 @@ small, .font_small {
       -ms-flex-direction: column;
           flex-direction: column; }
   .panel p {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 700; }
 
 .panel-heading {
@@ -9429,7 +9438,7 @@ small, .font_small {
   .panel-title a {
     text-transform: uppercase;
     font-size: 16px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 700;
     letter-spacing: 0.050em;
     padding: 0 !important; }
@@ -9526,7 +9535,7 @@ small, .font_small {
   border-bottom: 1px solid #ddd; }
   .tabs a {
     color: #000;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 600;
     font-size: 14px;
     width: 100%;
@@ -9615,11 +9624,11 @@ input[type="radio"]:checked {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 600; }
   .color p {
     margin-top: 10px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 600; }
 
 .color-preview {
@@ -9640,12 +9649,12 @@ input[type="radio"]:checked {
           align-items: center;
   font-size: 15px;
   color: #fff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 600; }
 
 .alert {
   border-radius: 0 !important;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 600; }
 
 .modal-header {

@@ -25,6 +25,7 @@ $font-light: #aaaaaa;
 $font-pale: #fff;
 $font-dark: #000;
 
+
 // White color font
 .f-pale { color: $font-pale!important; }
 
@@ -35,12 +36,25 @@ $font-dark: #000;
 .f-dark { color: $font-dark!important; }
 
 
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
 // Font sizes
 
+p {
+    
+    font-weight: 400;
+    color: #888!important;
+}
+
+footer p {
+    
+    color: $font-pale!important;
+}
 
 h1, h2, h3, h4 {
   font-weight: inherit;
   line-height: 1.2;
+    font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -56,8 +70,7 @@ h4 {font-size: 1.333em!important;}
 small, .font_small {font-size: 0.75em;}
 
 // Font-family
-$font-family-primary: 'Open Sans',
-sans-serif;
+$font-family-primary: 'Lato', sans-serif;
 // Styleguide Banner
 .styleguide-banner {
     background: rgba(0, 165, 226, 0.99)!important;
