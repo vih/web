@@ -55,13 +55,23 @@
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field--items') }}>
-      <div class="row">
+
       {% for item in items %}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 related-classes-col">
-          <span class="related-classes-span">{{ item.content }}</span>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+          <div class="fp-container">
+            <div class="fp-overlay">
+              <h1 class="fp-headline">{{ item.content }}</h1>
+            </div>
+
+            <div class="fp-hovering">
+
+            </div>
+          </div>
+
         </div>
       {% endfor %}
-      </div>
+
     </div>
   {% else %}
     {% for item in items %}
