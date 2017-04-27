@@ -1,0 +1,90 @@
+.course-periods-accordion {
+  .panel-body {
+    padding: 0;
+    .class-selection {
+      border-color: $gray-lighter;
+      border-style: solid;
+      border-width: 1px 0;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      label.btn-radio-select {
+        border-radius: 0;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: $font-family-primary;
+        max-height: 40px;
+        padding: 0px 20px;
+        top: -3px;
+        position: relative;
+        background-color: none;
+        color: #bbb;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        &.active {
+          background-color: #00bcff;
+          color: #fff;
+        }
+        .form-type-radio label {
+          padding: 0;
+        }
+        input[type=radio] {
+          position: absolute;
+          clip: rect(0,0,0,0);
+          pointer-events: none;
+        }
+      }
+      .field--name-field-vih-class-image {
+        position: relative; 
+        .triangle {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          clip-path: polygon(0 90%, 100% 30%, 100% 100%, 0% 100%);
+          -webkit-clip-path: polygon(0 90%, 100% 30%, 100% 100%, 0% 100%);
+          background: rgba($vih-red, 0.75);
+          &.color-red {
+            background: rgba($vih-red, 0.75);
+          }
+          &.color-blue {
+            background: rgba($vih-blue, 0.75);
+          }
+          &.color-cyan {
+            background: rgba($vih-cyan, 0.75);
+          }
+          &.color-purple {
+            background: rgba($vih-purple, 0.75);
+          }
+          &.color-yellow {
+            background: rgba($vih-yellow, 0.75);
+          }
+          &.color-green {
+            background: rgba($vih-green, 0.75);
+          }
+          .field--name-name {
+            bottom: 0;
+            right: 5px;
+            text-align: right;
+            width: 100%;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn.btn-default {
+  border-radius: 0;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: $font-family-primary;
+  color: #bbb;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #00bcff;
+  color: #fff;
+}

@@ -1,4 +1,4 @@
-uuid: d2cf03bb-97cf-4891-88a6-11e5081fba00
+uuid: 72e7bfff-5a0f-4f6a-bd5e-c375b32a1e0f
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ third_party_settings:
       - main
     parent: 'main:'
 name: 'Short Course Order'
-type: short_course_order
+type: vih_short_course_order
 description: ''
 help: ''
 new_revision: true

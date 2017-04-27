@@ -1,0 +1,19 @@
+uuid: 5604d89a-e7cb-4941-a2f2-0886d93b0dd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_found_from
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.field_vih_lco_found_from
+field_name: field_vih_lco_found_from
+entity_type: node
+bundle: vih_long_course_order
+label: 'Found from'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

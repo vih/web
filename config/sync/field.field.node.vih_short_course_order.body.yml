@@ -1,16 +1,16 @@
-uuid: dc43e091-1a0e-4bd3-8b48-4f3d2b33e222
+uuid: 8cf0c854-c68c-40c1-a20f-1cf357567a6f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.short_course_order
+    - node.type.vih_short_course_order
   module:
     - text
-id: node.short_course_order.body
+id: node.vih_short_course_order.body
 field_name: body
 entity_type: node
-bundle: short_course_order
+bundle: vih_short_course_order
 label: Body
 description: ''
 required: false

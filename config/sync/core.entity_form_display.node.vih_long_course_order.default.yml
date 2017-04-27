@@ -4,8 +4,22 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_course_order.body
+    - field.field.node.vih_long_course_order.field_vih_lco_address
+    - field.field.node.vih_long_course_order.field_vih_lco_city
     - field.field.node.vih_long_course_order.field_vih_lco_course
+    - field.field.node.vih_long_course_order.field_vih_lco_cpr
+    - field.field.node.vih_long_course_order.field_vih_lco_education
+    - field.field.node.vih_long_course_order.field_vih_lco_email
+    - field.field.node.vih_long_course_order.field_vih_lco_first_name
+    - field.field.node.vih_long_course_order.field_vih_lco_found_from
+    - field.field.node.vih_long_course_order.field_vih_lco_last_name
+    - field.field.node.vih_long_course_order.field_vih_lco_message
+    - field.field.node.vih_long_course_order.field_vih_lco_nationality
+    - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
+    - field.field.node.vih_long_course_order.field_vih_lco_payment
+    - field.field.node.vih_long_course_order.field_vih_lco_telefon
+    - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
   module:
     - paragraphs
@@ -30,6 +44,20 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_vih_lco_address:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_city:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_vih_lco_course:
     weight: 32
     settings:
@@ -38,6 +66,68 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_vih_lco_cpr:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_education:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_email:
+    weight: 46
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_first_name:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_found_from:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_last_name:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_message:
+    weight: 45
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_vih_lco_nationality:
+    weight: 38
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_newsletter:
+    weight: 47
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   field_vih_lco_order_course_perio:
     type: entity_reference_paragraphs
     weight: 33
@@ -49,6 +139,27 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+  field_vih_lco_payment:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_telefon:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_lco_zip:
+    weight: 41
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   langcode:
     type: language_select
     weight: 2

@@ -14,7 +14,7 @@
     font-size: inherit!important;
 }
 
-.field, .field--name-field-heading h3 {
+.field--name-field-heading h3 {
     
     margin-bottom: 40px;
 }
@@ -290,9 +290,9 @@ $font-family-primary: 'Lato', sans-serif;
     display: flex !important;
 }
 
-input[type="radio"]:checked {
-    display: none !important;
-}
+//input[type="radio"]:checked {
+//    display: none !important;
+//}
 
 .tab-heading {
     background: #fff !important;

@@ -1,0 +1,14 @@
+uuid: f9f7896e-5de0-4a7e-b1ac-9a80984ce98e
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.radio_selection
+label: 'Radio selection'
+targetEntityType: taxonomy_term
+cache: true

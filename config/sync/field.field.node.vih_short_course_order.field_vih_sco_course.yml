@@ -1,15 +1,15 @@
-uuid: 8a010128-9085-4ad8-b619-c1c7d0ea9422
+uuid: 77cd2c15-c49c-4488-8784-5e9789d40111
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_vih_sco_course
-    - node.type.short_course_order
     - node.type.vih_short_course
-id: node.short_course_order.field_vih_sco_course
+    - node.type.vih_short_course_order
+id: node.vih_short_course_order.field_vih_sco_course
 field_name: field_vih_sco_course
 entity_type: node
-bundle: short_course_order
+bundle: vih_short_course_order
 label: Course
 description: ''
 required: false

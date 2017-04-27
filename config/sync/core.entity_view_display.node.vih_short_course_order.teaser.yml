@@ -1,17 +1,17 @@
-uuid: 6cd3f7eb-fe60-4e38-b776-450d022417d6
+uuid: 7a3e2b98-7a55-44ad-8715-36f2a506999f
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.short_course_order.body
-    - node.type.short_course_order
+    - field.field.node.vih_short_course_order.body
+    - node.type.vih_short_course_order
   module:
     - text
     - user
-id: node.short_course_order.teaser
+id: node.vih_short_course_order.teaser
 targetEntityType: node
-bundle: short_course_order
+bundle: vih_short_course_order
 mode: teaser
 content:
   body:
@@ -24,6 +24,4 @@ content:
   links:
     weight: 100
 hidden:
-  field_vih_sco_course: true
-  field_vih_sco_ordered_options: true
   langcode: true

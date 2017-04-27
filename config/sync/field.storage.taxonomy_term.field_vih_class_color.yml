@@ -1,20 +1,38 @@
-uuid: 5f3b50fa-a5ae-469d-b4f1-e55fcdd4d18e
+uuid: 0cd452fb-b43f-4d12-9fe5-32f5ab5c3ab2
 langcode: en
 status: true
 dependencies:
   module:
+    - options
     - taxonomy
 id: taxonomy_term.field_vih_class_color
 field_name: field_vih_class_color
 entity_type: taxonomy_term
-type: string
+type: list_string
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+  allowed_values:
+    -
+      value: color-red
+      label: Red
+    -
+      value: color-blue
+      label: Blue
+    -
+      value: color-cyan
+      label: Cyan
+    -
+      value: color-purple
+      label: Purple
+    -
+      value: color-yellow
+      label: Yellow
+    -
+      value: color-green
+      label: Green
+  allowed_values_function: ''
+module: options
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

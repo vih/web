@@ -1,0 +1,31 @@
+vih_subscription.long_course_order_create:
+  path: '/langekurser/{course}/tilmelding'
+  options:
+    parameters:
+      course:
+        type: entity:node
+  defaults:
+    _form: '\Drupal\vih_subscription\Form\LongCourseOrderForm'
+    _title_callback: '\Drupal\vih_subscription\Form\LongCourseOrderForm::getTitle'
+  requirements:
+    _permission: 'access content'
+    course: \d+
+vih_subscription.short_course_order_create:
+  path: '/kortkurser/{course}/tilmelding'
+  options:
+    parameters:
+      course:
+        type: entity:node
+  defaults:
+    _form: '\Drupal\vih_subscription\Form\ShortCourseOrderForm'
+    _title_callback: '\Drupal\vih_subscription\Form\ShortCourseOrderForm::getTitle'
+  requirements:
+    _permission: 'access content'
+    course: \d+
+vih_subscription.subscription_redirect:
+  path: '/tilmelding/tak'
+  defaults:
+      _controller: '\Drupal\vih_subscription\Controller\SubscriptionController::content'
+      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionController::getTitle'
+  requirements:
+    _permission: 'access content'

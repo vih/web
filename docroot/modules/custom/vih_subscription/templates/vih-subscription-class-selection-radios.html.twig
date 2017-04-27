@@ -1,0 +1,37 @@
+<div data-toggle="buttons">
+    {% for delta, radio in radios['#options'] %}
+        <div class="class-selection">
+            {{ radios['#classes']['radio_selection'][delta] }}
+            <label class="btn btn-radio-select ">
+                {{ radios[delta] }}
+            </label>
+                    {#popup start#}
+                    <button type="button" class="btn-more" data-toggle="modal" data-target="#class-modal-{{ radios[delta]['#id'] }}">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </button>
+                    <div class="modal fade" id="class-modal-{{ radios[delta]['#id'] }}" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="modal-header-close">
+                                        <button type="button" class="close" data-dismiss="modal">×</button>
+                                    </div>
+
+                                    <div class="modal-header-title"><h4 class="modal-title">{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getName }}</h4></div>
+                                    <div class="diagonal-end"></div>
+                                </div>
+
+                                {#TODO: fix with the correct class info#}
+                                <div class="modal-body">{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getDescription }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {#popup END#}
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+

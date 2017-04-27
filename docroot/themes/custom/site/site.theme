@@ -42,7 +42,6 @@ function site_preprocess_page(array &$variables) {
  * Implements hook_theme_suggestions_page_alter().
  */
 function site_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-
 }
 
 /**
@@ -54,6 +53,15 @@ function site_theme_suggestions_node_alter(array &$suggestions, array $variables
   if ($variables['elements']['#view_mode'] == "full") {
 
   }*/
+}
+
+function site_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables, $hook) {
+  $suggestions[] = 'taxonomy_term__' . $variables['elements']['#taxonomy_term']->getVocabularyId() . '__' . $variables['elements']['#view_mode'];
+  $suggestions[] = 'taxonomy_term__' . $variables['elements']['#view_mode'];
+}
+
+
+function site_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
 }
 
 /**

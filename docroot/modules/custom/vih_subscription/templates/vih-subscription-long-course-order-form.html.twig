@@ -1,0 +1,89 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+{#{{ dpm(form) }}#}
+
+{# Introduction information START #}
+<h2>
+    {{ "Skræddersy dit ophold"|t }}
+</h2>
+<div>
+    <p>{{ "Her kan du se og vælge dine fag. Kun et fag kan vælges pr. idrætsblok."|t }}</p>
+    <p>{{ "Når du har valgt, bedes du udfylde og indsende nedenståede og indsende nedestående oplysninger."|t }}</p>
+</div>
+{# Introduction information END #}
+
+{# Classes selection START #}
+<div class="panel-group course-periods-accordion" id="course-periods-accordion">
+    {% for periodDelta, coursePeriod in form['#coursePeriods'] %}
+        <div class="panel-heading blue">
+            <h4 class="panel-title">
+                <a>
+                    {{ coursePeriod['title'] }}
+                </a>
+            </h4>
+        </div>
+
+        {% for slotDelta, courseSlot in coursePeriod['courseSlots'] %}
+            <div class="panel panel-default white-border-bottom">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse"
+                           data-parent="#course-periods-accordion"
+                           href="#course-periods-accordian-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="false">
+                            {{ courseSlot['title'] }}
+                        </a>
+                    </h4>
+                </div>
+                <div id="course-periods-accordian-{{ periodDelta }}-{{ slotDelta }}" class="panel-collapse collapse"
+                     aria-expanded="false" style="height: 0px;">
+                    <div class="panel-body">
+                        {{ form[courseSlot['availableClasses']['cid']] }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{# Classes selection END #}
+
+{# Personal data START #}
+<h3>{{ "Personlige oplysninger"|t }}</h3>
+
+<div class="row form-group">
+    <div class="col-md-6">
+        {{ form['personalDataLeft'] }}
+    </div>
+    <div class="col-md-6">
+        {{ form['personalDataRight']['address'] }}
+        <div class="row form-group">
+            <div class="col-xs-4">
+                {{ form['personalDataRight']['house']['houseNumber'] }}
+            </div>
+            <div class="col-xs-4">
+                {{ form['personalDataRight']['house']['houseLetter'] }}
+            </div>
+            <div class="col-xs-4">
+                {{ form['personalDataRight']['house']['houseFloor'] }}
+            </div>
+        </div>
+        {{ form['personalDataRight']|without('address','house') }}
+    </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-xs-12">
+        {{ form['message'] }}
+     </div>
+</div>
+
+<div class="row form-group">
+    <div class="col-xs-12">
+        {{ form['actions'] }}
+    </div>
+</div>
+
+
+
+{# Personal data END #}

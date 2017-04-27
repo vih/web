@@ -79,6 +79,7 @@ module:
   views_infinite_scroll: 0
   views_ui: 0
   viewsreference: 0
+  vih_subscription: 0
   workbench_moderation: 0
   menu_link_content: 1
   views: 10

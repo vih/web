@@ -1,0 +1,14 @@
+uuid: 6d4091e0-446f-4ef9-b24f-bec5f5d9fd4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.teaser
+label: Teaser
+targetEntityType: taxonomy_term
+cache: true

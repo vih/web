@@ -4,8 +4,22 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_course_order.body
+    - field.field.node.vih_long_course_order.field_vih_lco_address
+    - field.field.node.vih_long_course_order.field_vih_lco_city
     - field.field.node.vih_long_course_order.field_vih_lco_course
+    - field.field.node.vih_long_course_order.field_vih_lco_cpr
+    - field.field.node.vih_long_course_order.field_vih_lco_education
+    - field.field.node.vih_long_course_order.field_vih_lco_email
+    - field.field.node.vih_long_course_order.field_vih_lco_first_name
+    - field.field.node.vih_long_course_order.field_vih_lco_found_from
+    - field.field.node.vih_long_course_order.field_vih_lco_last_name
+    - field.field.node.vih_long_course_order.field_vih_lco_message
+    - field.field.node.vih_long_course_order.field_vih_lco_nationality
+    - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
+    - field.field.node.vih_long_course_order.field_vih_lco_payment
+    - field.field.node.vih_long_course_order.field_vih_lco_telefon
+    - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
   module:
     - entity_reference_revisions
@@ -22,6 +36,20 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_vih_lco_address:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_city:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_vih_lco_course:
     weight: 102
     label: above
@@ -29,6 +57,70 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_vih_lco_cpr:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_education:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_email:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_first_name:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_found_from:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_last_name:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_message:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  field_vih_lco_nationality:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_newsletter:
+    weight: 117
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
   field_vih_lco_order_course_perio:
     type: entity_reference_revisions_entity_view
     weight: 103
@@ -37,6 +129,27 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_vih_lco_payment:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_telefon:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_vih_lco_zip:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   links:
     weight: 100
 hidden:

@@ -1,0 +1,21 @@
+uuid: 0ac5f150-aca6-4729-be6e-6afdae0ac967
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_vih_lco_city
+field_name: field_vih_lco_city
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

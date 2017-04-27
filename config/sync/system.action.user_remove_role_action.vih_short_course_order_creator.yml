@@ -1,0 +1,14 @@
+uuid: 9966800c-7c29-4378-ad11-9ec78be81f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.vih_short_course_order_creator
+  module:
+    - user
+id: user_remove_role_action.vih_short_course_order_creator
+label: 'Remove the Short Course Order Creator role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_short_course_order_creator

@@ -1,0 +1,6 @@
+type: module
+name: VIH Course Subscription
+description: 'provides functionality for subscribing to long and short courses'
+package: Vih
+
+core: '8.x'

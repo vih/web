@@ -1,17 +1,17 @@
-uuid: 5e3a0067-69a0-4757-acee-289ad7fe9b02
+uuid: 098d9cd8-49ae-4371-866c-60e713f2465b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_vih_sco_ordered_options
-    - node.type.short_course_order
+    - node.type.vih_short_course_order
     - paragraphs.paragraphs_type.vih_ordered_option
   module:
     - entity_reference_revisions
-id: node.short_course_order.field_vih_sco_ordered_options
+id: node.vih_short_course_order.field_vih_sco_ordered_options
 field_name: field_vih_sco_ordered_options
 entity_type: node
-bundle: short_course_order
+bundle: vih_short_course_order
 label: 'Ordered Options'
 description: ''
 required: false
@@ -25,30 +25,42 @@ settings:
       vih_ordered_option: vih_ordered_option
     target_bundles_drag_drop:
       1_column_action_centered:
-        weight: 10
-        enabled: false
-      list_of_news_teasers:
-        weight: 11
-        enabled: false
-      video:
-        weight: 12
-        enabled: false
-      vih_course_slot:
-        weight: 13
-        enabled: false
-      vih_option:
         weight: 14
         enabled: false
-      vih_option_group:
+      class_packages:
         weight: 15
         enabled: false
-      vih_ordered_course_period:
+      list_of_news_teasers:
         weight: 16
         enabled: false
-      vih_ordered_course_slot:
+      video:
         weight: 17
+        enabled: false
+      vih_course_slot:
+        weight: 18
+        enabled: false
+      vih_option:
+        weight: 19
+        enabled: false
+      vih_option_group:
+        weight: 20
+        enabled: false
+      vih_ordered_course_period:
+        weight: 21
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 22
         enabled: false
       vih_ordered_option:
         enabled: true
-        weight: 18
+        weight: 23
+      vih_qualifications:
+        weight: 24
+        enabled: false
+      vih_related_classes:
+        weight: 25
+        enabled: false
+      vih_teacher_class_description:
+        weight: 26
+        enabled: false
 field_type: entity_reference_revisions

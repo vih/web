@@ -1,20 +1,23 @@
-uuid: 6746092e-65f4-4cc8-bf05-a3f0da4c7007
+uuid: 0b384ace-6643-4a48-81d2-5d2548668897
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.short_course_order.body
-    - field.field.node.short_course_order.field_vih_sco_course
-    - field.field.node.short_course_order.field_vih_sco_ordered_options
-    - node.type.short_course_order
+    - field.field.node.vih_short_course_order.body
+    - field.field.node.vih_short_course_order.field_vih_sco_course
+    - field.field.node.vih_short_course_order.field_vih_sco_first_name
+    - field.field.node.vih_short_course_order.field_vih_sco_last_name
+    - field.field.node.vih_short_course_order.field_vih_sco_ordered_options
+    - field.field.node.vih_short_course_order.field_vih_sco_sambo
+    - node.type.vih_short_course_order
   module:
     - paragraphs
     - path
     - text
     - workbench_moderation
-id: node.short_course_order.default
+id: node.vih_short_course_order.default
 targetEntityType: node
-bundle: short_course_order
+bundle: vih_short_course_order
 mode: default
 content:
   body:
@@ -31,16 +34,30 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vih_sco_course:
-    weight: 32
+    weight: 33
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_vih_sco_first_name:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_vih_sco_last_name:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_vih_sco_ordered_options:
     type: entity_reference_paragraphs
-    weight: 33
+    weight: 32
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -49,6 +66,13 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+  field_vih_sco_sambo:
+    weight: 36
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   langcode:
     type: language_select
     weight: 2
