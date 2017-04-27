@@ -194,7 +194,7 @@ class LongCourseOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $orderedCoursePeriods = array(g);
+    $orderedCoursePeriods = array();
 
     //going through the selected classes
     foreach ($form_state->getValues() as $radioKey => $radioValue) {
