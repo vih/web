@@ -9842,6 +9842,47 @@ input[type="radio"]:checked {
   .layout__header-row .layout-navigation__dropdown-menu {
     max-width: none; } }
 
+h1, .heading-h1, .field--name-field-description,
+.field--name-field-description p, h2, .heading-h2, .banner .banner-content .banner-title, .field--name-field-heading, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
+.paragraph--type--video .field--name-field-description p, h5, .heading-h5, .field--name-field-highlighted, h6, .heading-h6 {
+  line-height: 22px;
+  font-weight: 700;
+  color: #212121;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif; }
+
+.view-header h2, .view-header .heading-h2, .view-header .banner .banner-content .banner-title, .banner .banner-content .view-header .banner-title, .view-header .field--name-field-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif; }
+
+#block-popup-cta {
+  overflow: hidden; }
+
+#js-view-dom-id-82069330c64efa0f51464bf2cd93f29f3260f65b3d616fc2e014ecdb526401d8 {
+  padding-top: 40px; }
+
+.paragraph--type--class-packages .angled-background-inner {
+  margin-bottom: 100px; }
+
+.banner-title {
+  font-weight: bold !important;
+  font-family: 'Open Sans', sans-serif; }
+
+.material-icons {
+  font-size: 17px; }
+
+.layout-navigation .popover {
+  max-width: 100%; }
+  .layout-navigation .popover .btn-search {
+    position: absolute;
+    top: 10px;
+    width: 48px;
+    height: 48px;
+    background-color: #00bcff;
+    border-color: #00bcff;
+    right: 10px; }
+
 .field--name-field-video {
   width: 100%;
   -webkit-transform: translateX(0%);
@@ -9849,11 +9890,42 @@ input[type="radio"]:checked {
   -o-transform: translateX(0%);
   transform: translateX(0%); }
 
-.view-header h2, .view-header .heading-h2, .view-header .banner .banner-content .banner-title, .banner .banner-content .view-header .banner-title, .view-header .field--name-field-heading {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family: 'Open Sans', sans-serif; }
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px; }
 
+.field--name-field-heading {
+  font-family: "Open Sans", Sens-serif !important;
+  font-size: 1.777em !important; }
+
+ul li {
+  color: #888; }
+
+/*
+.related-classes-span{
+  margin-top: auto;
+  background: #00a5e2;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  opacity: 0.8;
+}
+
+.related-classes-span a{
+  color:#fff;
+}
+
+.related-classes-col{
+background-image: url('http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg');
+height:125px;
+border:15px solid #fff;
+display: flex;
+flex-direction: column;
+}
+*/
 .view-news .view-content .views-row {
   background: #EDEEEE;
   border: 15px solid #ffffff;
@@ -9910,28 +9982,6 @@ input[type="radio"]:checked {
 
 .view-fagpakker-forside .view-content .views-row {
   border: 0px solid #00a5e2; }
-
-h1, .heading-h1, .field--name-field-description,
-.field--name-field-description p, h2, .heading-h2, .banner .banner-content .banner-title, .field--name-field-heading, h3, .heading-h3, .node-list-simple-title, .node-list-advanced-title, h4, .heading-h4, .paragraph--type--video .field--name-field-description,
-.paragraph--type--video .field--name-field-description p, h5, .heading-h5, .field--name-field-highlighted, h6, .heading-h6 {
-  line-height: 22px;
-  font-weight: 700;
-  color: #212121;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif; }
-
-#block-popup-cta {
-  overflow: hidden; }
-
-#js-view-dom-id-82069330c64efa0f51464bf2cd93f29f3260f65b3d616fc2e014ecdb526401d8 {
-  padding-top: 40px; }
-
-.paragraph--type--class-packages .angled-background-inner {
-  margin-bottom: 100px; }
-
-.banner-title {
-  font-weight: bold !important;
-  font-family: 'Open Sans', sans-serif; }
 
 .view-class-packages-frontpage .view-header {
   text-transform: uppercase;
@@ -10125,91 +10175,6 @@ h1, .heading-h1, .field--name-field-description,
   padding-top: 60px;
   padding-left: 18px; }
 
-.material-icons {
-  font-size: 17px; }
-
-.related-classes-span {
-  margin-top: auto;
-  background: #00a5e2;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: -15px;
-  margin-left: -15px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  opacity: 0.8; }
-
-.related-classes-span a {
-  color: #fff; }
-
-.related-classes-col {
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg");
-  height: 125px;
-  border: 15px solid #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.teacher-teaches-row {
-  background-color: #00bcff;
-  color: #fff !important;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 25px;
-  padding-bottom: 50px;
-  border-top: 25px solid #fff; }
-
-.teacher-teaches-row a {
-  color: #fff !important; }
-
-.teacher-teaches-row h2, .teacher-teaches-row .heading-h2, .teacher-teaches-row .banner .banner-content .banner-title, .banner .banner-content .teacher-teaches-row .banner-title, .teacher-teaches-row .field--name-field-heading {
-  color: #fff !important; }
-
-.layout-navigation .popover {
-  max-width: 100%; }
-  .layout-navigation .popover .btn-search {
-    position: absolute;
-    top: 10px;
-    width: 48px;
-    height: 48px;
-    background-color: #00bcff;
-    border-color: #00bcff;
-    right: 10px; }
-
-.teacher-c-desc {
-  background-color: #f1f1f1 !important;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 25px;
-  padding-bottom: 50px;
-  border-top: 25px solid #fff; }
-
-.view-vih-teacher-teaches-classes .views-field-name-1 {
-  background: #00a5e2;
-  min-height: 85px;
-  text-align: center;
-  padding-top: 25px;
-  padding-left: 5px;
-  padding-right: 5px; }
-
-.navbar {
-  border-radius: 0px;
-  margin-bottom: 0px; }
-
-.field--name-field-heading {
-  font-family: "Open Sans", Sens-serif !important;
-  font-size: 1.777em !important; }
-
-ul li {
-  color: #888; }
-
-/* Fagpakker oversigt */
 .fp-container {
   background: white;
   display: -webkit-box;
@@ -10338,6 +10303,37 @@ ul li {
   padding-top: 25px;
   padding-bottom: 50px;
   border-top: 25px solid #fff; }
+
+.teacher-teaches-row {
+  background-color: #00bcff;
+  color: #fff !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  border-top: 25px solid #fff; }
+
+.teacher-teaches-row a {
+  color: #fff !important; }
+
+.teacher-teaches-row h2, .teacher-teaches-row .heading-h2, .teacher-teaches-row .banner .banner-content .banner-title, .banner .banner-content .teacher-teaches-row .banner-title, .teacher-teaches-row .field--name-field-heading {
+  color: #fff !important; }
+
+.teacher-c-desc {
+  background-color: #f1f1f1 !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  border-top: 25px solid #fff; }
+
+.view-vih-teacher-teaches-classes .views-field-name-1 {
+  background: #00a5e2;
+  min-height: 85px;
+  text-align: center;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 .path-frontpage div[role=heading] {
   display: none; }
