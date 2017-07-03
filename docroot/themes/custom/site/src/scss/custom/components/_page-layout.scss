@@ -30,6 +30,10 @@ $md-page-layout-content-inner-padding-bottom: 60px;
   padding-top: 0;
 }
 
+.path-node .angled-background-color-white {
+    margin-top: 20px!important;
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -240,9 +244,186 @@ flex-direction: column;
 
 //  ***********************************
 
+// News conainer // 
+
+.layout__news .view-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout__news .news-container {
+    
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+.layout__news .view-header {
+    
+    display: none;
+}
+
+.layout__news .node-page-title {
+    
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.layout__news .content .field--name-field-bg-image {
+    
+    display: none;
+}
+
+.layout__news .angled-background-color .angled-background-inner:before {
+    
+        height: 160px!important;
+    z-index: 9999999;
+    top: -100px;
+    position: relative;
+}
+
+.layout__news .angled-background-color-white {
+    
+    height: 20px;
+    padding-bottom: 20px;
+}
+
+.news-banner {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://vih.dk/sites/vih.local/files/styles/panopoly_image_original/public/wysiwyg/20130420-2k2a8125-428-90.jpg?itok=yyKJitCo");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px -250px;
+}
 
 
+.news-banner-title {
+    color: #fff;
+    margin-top: -100px;
+}
 
+.news-info {
+    
+    justify-content: space-between;
+    height: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.news-panel {
+    
+    display: flex;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.layout__news .views-field-body {
+    
+    height: 150px;
+    
+}
+
+.layout__news .btn {
+    
+    border-radius: 0px;
+    background: #00bcff;
+    color: #fff;
+     height: 40px;
+    padding-top: 8px;
+}
+
+.layout__news .views-field-field-image .field-content {
+    
+    width: 310px;
+}
+
+.layout__news .fpnews-title {
+    
+    font-size: 20px;
+}
+
+.layout__news .views-field-view-node {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.news-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 40vw;
+}
+
+.news-info .fpnews-date {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.news-info .fpnews-date i {
+    
+    margin-right: 8px;
+}
+
+.news-info .fpnews-date span {
+    
+    color: #999;
+}
+
+@media screen and (max-width: 990px) {
+    
+    .news-info {
+        
+        padding-top: 15px!important;
+        padding-bottom: 15px!important;
+    }
+    
+    .fpnews-title {
+        font-size: 13px!important;
+    }
+    
+    .news-banner {
+        height: 0px!important;
+    }
+    .news-panel .views-row {
+        flex-direction: column!important;
+    }
+
+}
+
+.path-frontpage .field--name-field-bg-image {
+    display: none!important; 
+}
+
+.image-overlay {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+//    background: rgba(255, 100, 0, 0.85);
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJkaWFnb25hbCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIGZpbGw9InJnYmEoMjU1LCAxMDAsIDAsIDAuODUpIj4KICAgIDxwb2x5bGluZSBwb2ludHM9Ii0xMDAsMTQwIDEwMCwwIDEwMCwxMDAgMCwxMDAiLz4KICA8L3N2Zz4g');
+    background-size: 400px;
+    background-position: 0px -10px;
+    background-repeat: no-repeat;
+}
+.image-with-overlay {
+    position: relative;
+}
 
 //  -----------------------------------
 //  Frontpage news view | START
