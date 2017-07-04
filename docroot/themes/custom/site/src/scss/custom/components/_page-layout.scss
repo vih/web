@@ -179,20 +179,54 @@ h1, h2, h3, h4, h5, h6 {
 .material-icons{
   font-size: 17px;
 }
+.popover .arrow {
+    display: none;
+}
 
+.popover #search-form {
+    height: 100%;
+}
+
+.popover .form-group {
+    height: 100%;
+}
+
+.popover .form-control {
+    height: 100%;
+}
 .layout-navigation {
   .popover {
+      right: 0;
     max-width: 100%;
     .btn-search {
       position: absolute;
-      top: 10px;
-      width: 48px;
-      height: 48px;
+      top: 0px;
+      width: 70px;
+      height: 70px;
       background-color: #00bcff;
-      border-color: #00bcff;
-      right: 10px;
+      right: 2px;
+        box-shadow: none;
+        border: none;
     }
   }
+}
+.popover-content {
+    padding: 0;
+    height: 100%
+}
+
+.popover {
+    z-index: -1;
+    top: 57px!important;
+    margin-right: -5px;
+    overflow: hidden;
+    height: 65px;
+}
+
+.popover-content input {
+    border: none;
+    box-shadow: none;
+    
 }
 
 .field--name-field-video {
@@ -379,6 +413,20 @@ flex-direction: column;
     color: #999;
 }
 
+.field--name-field-image .field--label {
+    display: none;
+}
+
+.page-node-type-news .field--name-field-image img {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.btn {
+    border: none;
+    border-radius: 0px;
+}
+
 @media screen and (max-width: 990px) {
     
     .news-info {
@@ -396,6 +444,11 @@ flex-direction: column;
     }
     .news-panel .views-row {
         flex-direction: column!important;
+    }
+    
+    .news-banner {
+        
+        height: 0px!important;
     }
 
 }
@@ -520,9 +573,18 @@ flex-direction: column;
   padding-top: 15px;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5em;
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
   opacity: 1;
+}
+.popover {
+    border-radius: 0px;
+}
+.popover .glyphicon-search {
+    color: #fff;
+}
+.path-frontpage .field--name-field-heading p {
+    font-weight: bold!important;
 }
 
 .fagpakker-container {
@@ -800,11 +862,6 @@ flex-direction: column;
 }
 
 //  ***********************************
-
-
-
-
-
 //  -----------------------------------
 //  Teacher related CSS | START
 //  This CSS is used for the teachers

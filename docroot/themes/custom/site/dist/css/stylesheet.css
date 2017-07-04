@@ -9919,16 +9919,47 @@ h1, .heading-h1, .field--name-field-description,
 .material-icons {
   font-size: 17px; }
 
+.popover .arrow {
+  display: none; }
+
+.popover #search-form {
+  height: 100%; }
+
+.popover .form-group {
+  height: 100%; }
+
+.popover .form-control {
+  height: 100%; }
+
 .layout-navigation .popover {
+  right: 0;
   max-width: 100%; }
   .layout-navigation .popover .btn-search {
     position: absolute;
-    top: 10px;
-    width: 48px;
-    height: 48px;
+    top: 0px;
+    width: 70px;
+    height: 70px;
     background-color: #00bcff;
-    border-color: #00bcff;
-    right: 10px; }
+    right: 2px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: none; }
+
+.popover-content {
+  padding: 0;
+  height: 100%; }
+
+.popover {
+  z-index: -1;
+  top: 57px !important;
+  margin-right: -5px;
+  overflow: hidden;
+  height: 65px; }
+
+.popover-content input {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
 
 .field--name-field-video {
   width: 100%;
@@ -10124,6 +10155,17 @@ flex-direction: column;
 .news-info .fpnews-date span {
   color: #999; }
 
+.field--name-field-image .field--label {
+  display: none; }
+
+.page-node-type-news .field--name-field-image img {
+  width: 50%;
+  margin-top: 20px; }
+
+.btn, .banner .banner-content .field--name-field-link a, .btn-arrow, .field--name-field-link a {
+  border: none;
+  border-radius: 0px; }
+
 @media screen and (max-width: 990px) {
   .news-info {
     padding-top: 15px !important;
@@ -10137,7 +10179,9 @@ flex-direction: column;
     -webkit-box-direction: normal !important;
     -webkit-flex-direction: column !important;
         -ms-flex-direction: column !important;
-            flex-direction: column !important; } }
+            flex-direction: column !important; }
+  .news-banner {
+    height: 0px !important; } }
 
 .path-frontpage .field--name-field-bg-image {
   display: none !important; }
@@ -10238,9 +10282,18 @@ flex-direction: column;
   padding-top: 15px;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5em;
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
   opacity: 1; }
+
+.popover {
+  border-radius: 0px; }
+
+.popover .glyphicon-search {
+  color: #fff; }
+
+.path-frontpage .field--name-field-heading p {
+  font-weight: bold !important; }
 
 .fagpakker-container {
   width: 100%;
@@ -11008,7 +11061,7 @@ flex-direction: column;
   -webkit-background-size: 100% 100%;
           background-size: 100%;
   width: 105px;
-  height: 105px; }
+  height: 106px; }
 
 .layout__header .layout-navigation__link__icon {
   max-width: 68px; }
@@ -11124,6 +11177,46 @@ flex-direction: column;
   z-index: 99999 !important; }
 
 @media (max-width: 767px) {
+  .news-panel {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto; }
+  .news-panel .views-field-body {
+    width: 100%; }
+  .news-panel .views-field-field-image {
+    width: 100%; }
+  .news-panel .views-field-field-image img {
+    max-width: inherit !important;
+    width: 100%; }
+  .news-panel .news-info {
+    max-width: inherit;
+    width: 100%; }
+  .news-panel .views-field-view-node {
+    width: 100%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 20px;
+    padding-bottom: 20px; }
+  .view-eventside .news-info {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  .news-panel .image-overlay {
+    -webkit-background-size: 150% 150%;
+            background-size: 150%; }
+  .layout__news .views-field-field-image .field-content {
+    width: 100%; }
+  .news-banner {
+    display: none; }
   .layout__header {
     background-color: #00a5e2; }
     .layout__header.mobile-menu-open {
