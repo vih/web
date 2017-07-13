@@ -1,0 +1,39 @@
+{%
+  set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<div class="long-cource-wrapper">
+
+<div class="col-md-6">
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+
+  <div{{ content_attributes.addClass('content') }}>
+    {{ content }}
+  </div>
+
+</article>
+</div>
+<div class="col-md-6" style="padding-left: 40px!important;">
+<aside class="right-sidebar">
+    <h5>Kom ud at rejse</h5>
+    <p>Skræddersy dit ophold på tværs af fagpakker</p>
+    
+</aside>
+</div>
+</div>

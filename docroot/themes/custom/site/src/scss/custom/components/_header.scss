@@ -170,6 +170,21 @@
         }
       }
     }
+      
+      .layout-navigation__dropdown {
+
+        > a.is-active  {
+
+          &:after {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-size: $font-size-large;
+            color: #00bcff;
+            content: $fa-var-angle-down;
+            margin-left: 6px;
+          }
+        }
+      }
 
     a {
       font-weight: $font-weight-bold;

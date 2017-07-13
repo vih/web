@@ -31,6 +31,15 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
 }
 
 .btn-arrow {
+    overflow: hidden;
+    height: 50px!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: flex-end!important;
+    padding-left: 100px!important;
+}
+
+.btn-arrow {
   @extend .btn;
   @extend .btn-lg;
   position: relative;

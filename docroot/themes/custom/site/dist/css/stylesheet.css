@@ -9330,6 +9330,12 @@ body {
 .field--name-field-heading h3, .field--name-field-heading .heading-h3, .field--name-field-heading .node-list-simple-title, .field--name-field-heading .node-list-advanced-title {
   margin-bottom: 40px; }
 
+#accordians {
+  width: 100%; }
+
+#tabs {
+  width: 100%; }
+
 .f-pale {
   color: #fff !important; }
 
@@ -9909,7 +9915,136 @@ h1, .heading-h1, .field--name-field-description,
 #js-view-dom-id-82069330c64efa0f51464bf2cd93f29f3260f65b3d616fc2e014ecdb526401d8 {
   padding-top: 40px; }
 
-.paragraph--type--class-packages .angled-background-inner {
+.table tr {
+  border: 1px solid #ddd;
+  background: none; }
+
+.table-responsive .views-field-field-course-image {
+  width: 330px;
+  border: none;
+  padding: 0; }
+
+.table-responsive .views-field-title {
+  padding: 23px; }
+
+.table-responsive .img-responsive {
+  min-width: 100%;
+  max-width: inherit; }
+
+#view-field-vih-course-periods-table-column {
+  border-bottom: none;
+  padding: 10px; }
+
+#view-title-table-column {
+  border-bottom: none;
+  padding: 10px; }
+
+.course-title {
+  margin-bottom: 10px; }
+
+.course-title a {
+  font-weight: bold;
+  font-size: 18px; }
+
+.course-body {
+  margin-bottom: 10px; }
+
+.course-supervisor {
+  color: #888; }
+
+.course-supervisor a {
+  color: #212121;
+  font-size: 14px; }
+
+article .field--name-field-vih-course-periods {
+  margin-bottom: 40px; }
+
+article .field--name-body {
+  margin-bottom: 40px; }
+
+article .field--name-body p {
+  margin-bottom: 20px;
+  margin-top: 20px; }
+
+article .field--name-field-vih-course-periods .field--label {
+  margin-bottom: 30px; }
+
+tr {
+  background: transparent !important; }
+
+.table-responsive {
+  min-height: 100% !important; }
+
+.page-node-type-vih-long-cource article .field--name-field-vih-course-periods a {
+  color: #888;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid #eee;
+  text-decoration: none; }
+
+article .field--name-field-course-image {
+  display: none; }
+
+.page-node-type-vih-long-cource article a {
+  color: #ff6400;
+  text-decoration: underline; }
+
+article p {
+  line-height: 26px; }
+
+.course-supervisor span:first-letter {
+  text-transform: uppercase !important; }
+
+.table-responsive .views-field-field-vih-course-periods {
+  width: 150px;
+  padding: 25px;
+  padding-left: 10px; }
+
+.long-cource-wrapper .col-md-6 {
+  padding: 0 !important; }
+
+.path-node .angled-background-inner .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.path-frontpage .field--name-field-link field--type-link .btn-arrow {
+  font-weight: bold !important; }
+
+.path-node .angled-background-inner .container p {
+  margin-bottom: 25px;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold !important;
+  color: #fff !important;
+  font-family: "Open Sans", Sens-serif !important; }
+
+.field--name-field-heading {
+  width: 100%; }
+
+.path-node .paragraph--type--_-column-action-centered .field--name-field-heading {
+  margin-bottom: 35px !important; }
+
+.path-node .paragraph--type--class-packages .angled-background-inner {
   margin-bottom: 100px; }
 
 .banner-title {
@@ -10053,7 +10188,7 @@ flex-direction: column;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("https://vih.dk/sites/vih.local/files/styles/panopoly_image_original/public/wysiwyg/20130420-2k2a8125-428-90.jpg?itok=yyKJitCo");
+  background: lightblue;
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -10166,10 +10301,29 @@ flex-direction: column;
   border: none;
   border-radius: 0px; }
 
+.btn-simple {
+  padding-left: 40px !important;
+  padding-right: 40px !important; }
+
+.path-frontpage .btn-arrow {
+  max-width: 210px !important; }
+
+.path-frontpage .field--name-field-link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
 @media screen and (max-width: 990px) {
   .news-info {
     padding-top: 15px !important;
     padding-bottom: 15px !important; }
+  .modal-dialog {
+    width: inherit !important; }
   .fpnews-title {
     font-size: 13px !important; }
   .news-banner  {
@@ -10983,6 +11137,13 @@ flex-direction: column;
   .layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__dropdown:last-child,
   .layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__link:last-child {
     border-right: 0; }
+  .layout__header .layout__header-row--bottom .layout-navigation__dropdown > a.is-active:after {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 20px;
+    color: #00bcff;
+    content: "";
+    margin-left: 6px; }
   .layout__header .layout__header-row--bottom a {
     font-weight: 700;
     text-transform: uppercase;
@@ -11544,6 +11705,23 @@ flex-direction: column;
 .field--name-field-link a {
   font-weight: 700;
   font-family: 'Open Sans', sans-serif; }
+
+.btn-arrow {
+  overflow: hidden;
+  height: 50px !important;
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: end !important;
+  -webkit-justify-content: flex-end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+  padding-left: 100px !important; }
 
 .btn-arrow {
   position: relative;
