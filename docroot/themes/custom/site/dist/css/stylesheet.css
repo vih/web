@@ -8944,7 +8944,7 @@ table .checkbox.form-no-label, table .radio.form-no-label {
     .select-wrapper select::-ms-expand {
       opacity: 0; }
   .select-wrapper:after {
-    color: #00a5e2;
+    color: #aaa;
     content: '▼';
     font-style: normal;
     font-weight: 400;
@@ -9867,6 +9867,24 @@ small, .font_small {
           background-size: 200%;
   background-position: -20px; }
 
+html {
+  min-height: 100vh;
+  height: inherit; }
+
+.field--name-field-news-tags .field__items {
+  padding: 15px;
+  border: 1px solid #eee; }
+
+.field--name-field-news-tags .field--label {
+  margin-bottom: 10px; }
+
+.fagpakker-hovering {
+  position: absolute;
+  left: 0; }
+
+.fagpakker-container {
+  position: relative; }
+
 .layout__content {
   padding-top: 0; }
 
@@ -9974,6 +9992,127 @@ tr {
 
 .table-responsive {
   min-height: 100% !important; }
+
+#edit-preview {
+  text-transform: inherit !important; }
+
+.select-wrapper:after {
+  color: #aaa;
+  padding-right: 1.2em;
+  margin-top: -.4em; }
+
+.form-icon {
+  color: #999;
+  padding: 7px;
+  margin-right: 5px;
+  font-size: 18px;
+  border: 1px solid #ddd; }
+
+.modal-backdrop {
+  display: none !important; }
+
+table .field--type-text-long p {
+  font-size: 0.9em; }
+
+.panel-body tr td:nth-child(2) {
+  width: 30%; }
+
+table .btn-radio-select {
+  background: none !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  float: left;
+  top: 0 !important;
+  margin-right: 10px; }
+
+table .btn-radio-select.active {
+  background: #00bcff !important;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
+.path-langeophold .field--name-field-vih-class-image {
+  height: 150px;
+  overflow: hidden; }
+
+.form-select {
+  background: #f5f5f5;
+  border: 1px solid #e1e1e1;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 0.050em;
+  color: #999;
+  font-size: 14px; }
+
+.form-text {
+  text-transform: uppercase;
+  letter-spacing: 0.050em;
+  color: #999;
+  font-size: 14px; }
+
+button  {
+  font-weight: 700 !important; }
+
+.breaker {
+  width: 100%;
+  height: 30px; }
+
+.select-wrapper select {
+  line-height: 22px !important; }
+
+/* 404 */
+#main {
+  display: table;
+  width: 100%;
+  height: 50vh;
+  text-align: center; }
+
+.fof {
+  display: table-cell;
+  vertical-align: middle; }
+
+.fof h1, .fof .heading-h1, .fof .field--name-field-description, .fof
+.field--name-field-description p,
+.field--name-field-description .fof p {
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  -webkit-animation: type .5s alternate infinite;
+       -o-animation: type .5s alternate infinite;
+          animation: type .5s alternate infinite;
+  line-height: inherit !important; }
+
+@-webkit-keyframes type {
+  from {
+    -webkit-box-shadow: inset -3px 0px 0px #888;
+            box-shadow: inset -3px 0px 0px #888; }
+  to {
+    -webkit-box-shadow: inset -3px 0px 0px transparent;
+            box-shadow: inset -3px 0px 0px transparent; } }
+
+@-o-keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888; }
+  to {
+    box-shadow: inset -3px 0px 0px transparent; } }
+
+@keyframes type {
+  from {
+    -webkit-box-shadow: inset -3px 0px 0px #888;
+            box-shadow: inset -3px 0px 0px #888; }
+  to {
+    -webkit-box-shadow: inset -3px 0px 0px transparent;
+            box-shadow: inset -3px 0px 0px transparent; } }
 
 .page-node-type-vih-long-cource article .field--name-field-vih-course-periods a {
   color: #888;
@@ -12241,7 +12380,6 @@ flex-direction: column;
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center;
-      text-transform: uppercase;
       font-weight: 700;
       font-family: "Lato", sans-serif;
       max-height: 40px;
@@ -12288,6 +12426,9 @@ flex-direction: column;
           width: 100%;
           position: absolute; }
 
+#edit-submit {
+  font-weight: 700; }
+
 .banner .banner-content .field--name-field-link a.btn-default, .banner .banner-content .angled-background-color-primary .field--name-field-link a, .angled-background-color-primary .banner .banner-content .field--name-field-link a, .btn-arrow.btn-default, .btn.btn-default, .field--name-field-link a.btn-default, .angled-background-color-primary .field--name-field-link a {
   border-radius: 0;
   -webkit-box-pack: center;
@@ -12298,7 +12439,6 @@ flex-direction: column;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  text-transform: uppercase;
   font-weight: 700;
   font-family: "Lato", sans-serif;
   color: #bbb;
