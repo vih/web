@@ -1,5 +1,5 @@
 vih_subscription.long_course_order_create:
-  path: '/langekurser/{course}/tilmelding'
+  path: 'langeophold/{course}/tilmelding'
   options:
     parameters:
       course:

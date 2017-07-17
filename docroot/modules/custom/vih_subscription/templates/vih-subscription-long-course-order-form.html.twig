@@ -5,13 +5,11 @@
 {#{{ dpm(form) }}#}
 
 {# Introduction information START #}
-<h2>
-    {{ "Skræddersy dit ophold"|t }}
-</h2>
+
 <div>
-    <p>{{ "Her kan du se og vælge dine fag. Kun et fag kan vælges pr. idrætsblok."|t }}</p>
-    <p>{{ "Når du har valgt, bedes du udfylde og indsende nedenståede og indsende nedestående oplysninger."|t }}</p>
+    <p>{{ "Her kan du se og vælge dine fag. Kun et fag kan vælges pr. idrætsblok."|t }} {{ "Når du har valgt, bedes du udfylde og indsende nedenståede og indsende nedestående oplysninger."|t }}</p>
 </div>
+<div class="breaker"></div>
 {# Introduction information END #}
 
 {# Classes selection START #}
@@ -47,10 +45,10 @@
     {% endfor %}
 </div>
 {# Classes selection END #}
-
+<div class="breaker"></div>
 {# Personal data START #}
-<h3>{{ "Personlige oplysninger"|t }}</h3>
-
+<h5><i class="material-icons form-icon">account_circle</i> &nbsp;{{ "Personlige oplysninger"|t }}</h5>
+<div class="breaker"></div>
 <div class="row form-group">
     <div class="col-md-6">
         {{ form['personalDataLeft'] }}
