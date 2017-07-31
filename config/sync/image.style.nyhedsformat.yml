@@ -1,0 +1,23 @@
+uuid: e4aa71e9-f29f-4bba-8274-5546fabf7a34
+langcode: da
+status: true
+dependencies: {  }
+name: nyhedsformat
+label: nyhedsformat
+effects:
+  4d933bf6-fae0-46bf-b477-87aab858f283:
+    uuid: 4d933bf6-fae0-46bf-b477-87aab858f283
+    id: image_crop
+    weight: -9
+    data:
+      width: 310
+      height: 150
+      anchor: center-center
+  fc613a91-ee59-46ce-9c88-91ad57871bd5:
+    uuid: fc613a91-ee59-46ce-9c88-91ad57871bd5
+    id: image_scale
+    weight: -10
+    data:
+      width: 310
+      height: null
+      upscale: true

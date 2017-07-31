@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.list_of_news_teasers
+    - paragraphs.paragraphs_type.page_content
     - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
@@ -29,6 +30,7 @@ settings:
       list_of_news_teasers: list_of_news_teasers
       video: video
       class_packages: class_packages
+      page_content: page_content
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
@@ -45,6 +47,9 @@ settings:
       vih_course_slot:
         weight: 15
         enabled: false
+      page_content:
+        enabled: true
+        weight: 16
       vih_option:
         weight: 16
         enabled: false
@@ -54,10 +59,22 @@ settings:
       vih_ordered_course_period:
         weight: 18
         enabled: false
+      2_column_course_travel:
+        weight: 18
+        enabled: false
       vih_ordered_course_slot:
         weight: 19
         enabled: false
       vih_ordered_option:
         weight: 20
+        enabled: false
+      vih_qualifications:
+        weight: 28
+        enabled: false
+      vih_related_classes:
+        weight: 29
+        enabled: false
+      vih_teacher_class_description:
+        weight: 30
         enabled: false
 field_type: entity_reference_revisions

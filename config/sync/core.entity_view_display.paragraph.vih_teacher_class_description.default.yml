@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.vih_teacher_class_description.field_description
     - field.field.paragraph.vih_teacher_class_description.field_heading
+    - field.field.paragraph.vih_teacher_class_description.field_ield_vih_link_to_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
@@ -28,6 +29,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_ield_vih_link_to_user:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_photo:
     weight: 1
     label: hidden

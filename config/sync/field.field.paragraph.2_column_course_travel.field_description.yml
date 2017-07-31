@@ -1,0 +1,21 @@
+uuid: 88ca28fe-ea54-4bc5-8ddb-54c552cc95e6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.2_column_course_travel
+  module:
+    - text
+id: paragraph.2_column_course_travel.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: 2_column_course_travel
+label: Beskrivelse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

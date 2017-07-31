@@ -12,3 +12,4 @@ permissions:
   - 'access content'
   - 'view media'
   - 'access site-wide contact form'
+  - 'access user profiles'

@@ -1,0 +1,14 @@
+uuid: 6130df0e-9545-4fdb-be39-99c60cccbfe3
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.event_creator
+  module:
+    - user
+id: user_remove_role_action.event_creator
+label: 'Fjern rollen Event Creator fra de valgte brugere'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: event_creator

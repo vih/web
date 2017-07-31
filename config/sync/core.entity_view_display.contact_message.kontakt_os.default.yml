@@ -1,0 +1,39 @@
+uuid: f6c6ac88-8f42-4d45-a235-1fd487328c0a
+langcode: da
+status: true
+dependencies:
+  config:
+    - contact.form.kontakt_os
+id: contact_message.kontakt_os.default
+targetEntityType: contact_message
+bundle: kontakt_os
+mode: default
+content:
+  mail:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  message:
+    type: basic_string
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    weight: -3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  subject:
+    weight: -1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  langcode: true

@@ -10,9 +10,11 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
     - taxonomy.vocabulary.vih_class
   module:
     - entity_browser
+    - paragraphs
     - path
     - text
 id: taxonomy_term.vih_class.default
@@ -72,6 +74,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+  field_vih_teacher_class_descr:
+    type: entity_reference_paragraphs
+    weight: 38
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2

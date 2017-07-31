@@ -1,0 +1,66 @@
+uuid: 6955bce9-4d16-439e-ae5f-31e10fbbc2cb
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_teacher_class_descr
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+    - taxonomy.vocabulary.vih_class
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.vih_class.field_vih_teacher_class_descr
+field_name: field_vih_teacher_class_descr
+entity_type: taxonomy_term
+bundle: vih_class
+label: 'Teacher class description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      vih_teacher_class_description: vih_teacher_class_description
+    target_bundles_drag_drop:
+      1_column_action_centered:
+        weight: 14
+        enabled: false
+      class_packages:
+        weight: 15
+        enabled: false
+      list_of_news_teasers:
+        weight: 16
+        enabled: false
+      video:
+        weight: 17
+        enabled: false
+      vih_course_slot:
+        weight: 18
+        enabled: false
+      vih_option:
+        weight: 19
+        enabled: false
+      vih_option_group:
+        weight: 20
+        enabled: false
+      vih_ordered_course_period:
+        weight: 21
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 22
+        enabled: false
+      vih_ordered_option:
+        weight: 23
+        enabled: false
+      vih_qualifications:
+        weight: 24
+        enabled: false
+      vih_related_classes:
+        weight: 25
+        enabled: false
+      vih_teacher_class_description:
+        enabled: true
+        weight: 26
+field_type: entity_reference_revisions

@@ -57,9 +57,9 @@ display:
       style:
         type: default
         options:
-          row_class: 'col-xs-12 col-sm-4'
+          grouping: {  }
+          row_class: ''
           default_row_class: true
-          uses_fields: false
       row:
         type: fields
         options:
@@ -319,7 +319,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: row
+      css_class: rowsss
     cache_metadata:
       max-age: -1
       contexts:

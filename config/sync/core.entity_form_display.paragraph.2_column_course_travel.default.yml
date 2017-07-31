@@ -1,0 +1,57 @@
+uuid: 3460a875-caac-492c-b90e-ac77b94ca23d
+langcode: da
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.2_column_course_travel.field_description
+    - field.field.paragraph.2_column_course_travel.field_heading
+    - field.field.paragraph.2_column_course_travel.field_photo
+    - field.field.paragraph.2_column_course_travel.field_vih_cs_title
+    - paragraphs.paragraphs_type.2_column_course_travel
+  module:
+    - entity_browser
+    - text
+    - workbench_moderation
+id: paragraph.2_column_course_travel.default
+targetEntityType: paragraph
+bundle: 2_column_course_travel
+mode: default
+content:
+  field_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_photo:
+    type: entity_browser_file
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_vih_cs_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

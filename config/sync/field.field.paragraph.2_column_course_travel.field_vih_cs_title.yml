@@ -1,0 +1,19 @@
+uuid: abbc741f-7af6-4bdf-adb3-366baf634d9b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_cs_title
+    - paragraphs.paragraphs_type.2_column_course_travel
+id: paragraph.2_column_course_travel.field_vih_cs_title
+field_name: field_vih_cs_title
+entity_type: paragraph
+bundle: 2_column_course_travel
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

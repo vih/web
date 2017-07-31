@@ -1,0 +1,21 @@
+uuid: 11e6ba5f-e2f7-47ed-aed2-da08a1d669de
+langcode: da
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - taxonomy
+id: taxonomy_term.field_vih_teacher_class_descr
+field_name: field_vih_teacher_class_descr
+entity_type: taxonomy_term
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

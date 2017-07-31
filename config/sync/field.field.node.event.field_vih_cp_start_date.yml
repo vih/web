@@ -1,0 +1,21 @@
+uuid: 22a20e35-b9d6-4b96-8853-0a81642ef14f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_cp_start_date
+    - node.type.event
+  module:
+    - datetime
+id: node.event.field_vih_cp_start_date
+field_name: field_vih_cp_start_date
+entity_type: node
+bundle: event
+label: 'Start date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,6 +1,6 @@
 uuid: d386a9bb-341a-4cb1-b51d-f2dbad82ad2f
 langcode: da
-status: true
+status: false
 dependencies:
   module:
     - popup_cta
@@ -8,8 +8,8 @@ dependencies:
     - site
 id: popup_cta
 theme: site
-region: content
-weight: 0
+region: '-1'
+weight: -8
 provider: null
 plugin: popup_cta
 settings:

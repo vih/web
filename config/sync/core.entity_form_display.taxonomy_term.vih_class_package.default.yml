@@ -8,6 +8,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
+    - field.field.taxonomy_term.vih_class_package.field_vih_show_on_frontpage
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
@@ -63,6 +64,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_vih_show_on_frontpage:
+    weight: 35
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
   langcode:
     type: language_select
     weight: 2

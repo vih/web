@@ -1,0 +1,28 @@
+uuid: 4c392df8-f07b-4aed-838a-7275ea872e54
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ield_vih_link_to_user
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+id: paragraph.vih_teacher_class_description.field_ield_vih_link_to_user
+field_name: field_ield_vih_link_to_user
+entity_type: paragraph
+bundle: vih_teacher_class_description
+label: 'Link to user'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

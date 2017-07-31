@@ -7,6 +7,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
+    - field.field.taxonomy_term.vih_class_package.field_vih_show_on_frontpage
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_reference_revisions
@@ -40,4 +41,5 @@ content:
 hidden:
   field_vih_cp_description: true
   field_vih_cp_image: true
+  field_vih_show_on_frontpage: true
   langcode: true

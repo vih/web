@@ -12,7 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
     - entity_browser
-    - link
+    - link_class
     - text
     - workbench_moderation
 id: paragraph.1_column_action_centered.default
@@ -56,8 +56,11 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+      link_class_mode: manual
+      link_class_force: ''
+      link_class_select: ''
     third_party_settings: {  }
-    type: link_default
+    type: link_class_field_widget
 hidden:
   created: true
   status: true

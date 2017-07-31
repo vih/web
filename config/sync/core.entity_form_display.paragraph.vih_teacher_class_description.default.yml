@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.vih_teacher_class_description.field_description
     - field.field.paragraph.vih_teacher_class_description.field_heading
+    - field.field.paragraph.vih_teacher_class_description.field_ield_vih_link_to_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
@@ -31,6 +32,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_ield_vih_link_to_user:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   field_photo:
     type: entity_browser_file
     weight: 7

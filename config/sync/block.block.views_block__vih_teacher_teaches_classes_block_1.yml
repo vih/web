@@ -1,6 +1,6 @@
 uuid: ec12f2da-108b-4c35-b542-27adf2c5a4e7
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.vih_teacher_teaches_classes
@@ -11,8 +11,8 @@ dependencies:
     - site
 id: views_block__vih_teacher_teaches_classes_block_1
 theme: site
-region: content
-weight: 0
+region: '-1'
+weight: -4
 provider: null
 plugin: 'views_block:vih_teacher_teaches_classes-block_1'
 settings:

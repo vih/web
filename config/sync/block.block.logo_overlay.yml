@@ -10,7 +10,7 @@ dependencies:
 id: logo_overlay
 theme: site
 region: '-1'
-weight: -2
+weight: -10
 provider: null
 plugin: block_foobarblk
 settings:

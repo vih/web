@@ -1,0 +1,7 @@
+uuid: 36f0e611-fc34-4188-9b06-a54e43024101
+langcode: da
+status: true
+dependencies: {  }
+id: 2_column_course_travel
+label: '2 Column Course Travel'
+behavior_plugins: {  }

@@ -1,0 +1,20 @@
+uuid: 2602998e-4986-47f7-8fb8-4a916fe09f27
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - user
+id: paragraph.field_ield_vih_link_to_user
+field_name: field_ield_vih_link_to_user
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

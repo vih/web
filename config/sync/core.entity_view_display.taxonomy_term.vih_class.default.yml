@@ -9,10 +9,10 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
     - taxonomy.vocabulary.vih_class
   module:
-    - image
-    - options
+    - entity_reference_revisions
     - text
 id: taxonomy_term.vih_class.default
 targetEntityType: taxonomy_term
@@ -25,34 +25,6 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-  field_related_teachers:
-    weight: 6
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_vih_class_class_packages:
-    weight: 2
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-  field_vih_class_color:
-    weight: 7
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-  field_vih_class_image:
-    weight: 5
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
   field_vih_class_material_price:
     weight: 3
     label: above
@@ -73,5 +45,17 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+  field_vih_teacher_class_descr:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
 hidden:
+  field_related_teachers: true
+  field_vih_class_class_packages: true
+  field_vih_class_color: true
+  field_vih_class_image: true
   langcode: true

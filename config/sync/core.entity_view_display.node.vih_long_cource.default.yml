@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_cource.body
+    - field.field.node.vih_long_cource.field_course_image
+    - field.field.node.vih_long_cource.field_laengde
+    - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
@@ -11,6 +14,9 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
   module:
+    - entity_reference_revisions
+    - image
+    - panelizer
     - text
     - user
 third_party_settings:
@@ -27,18 +33,40 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 102
     settings: {  }
     third_party_settings: {  }
+  field_course_image:
+    weight: 107
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_laengde:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_paragraphs:
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
   field_vih_cource_contact_person:
     weight: 106
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_label
+    type: author
   field_vih_course_periods:
-    weight: 102
+    weight: 101
     label: above
     settings:
       link: true
@@ -76,5 +104,7 @@ content:
     type: number_decimal
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
