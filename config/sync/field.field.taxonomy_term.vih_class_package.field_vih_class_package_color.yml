@@ -1,0 +1,21 @@
+uuid: fda590b1-4d4c-4749-8862-d8a4d71e2f2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_class_package_color
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - options
+id: taxonomy_term.vih_class_package.field_vih_class_package_color
+field_name: field_vih_class_package_color
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: 'Class package color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,39 @@
+uuid: 15f3f508-bd2a-4c4b-920b-3f6156c6eda7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_vih_class_package_color
+field_name: field_vih_class_package_color
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: color-red
+      label: Red
+    -
+      value: color-blue
+      label: Blue
+    -
+      value: color-cyan
+      label: Cyan
+    -
+      value: color-purple
+      label: Purple
+    -
+      value: color-yellow
+      label: Yellow
+    -
+      value: color-green
+      label: Green
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.storage.taxonomy_term.field_vih_cp_subtitle
     - taxonomy.vocabulary.vih_class_package
   module:
@@ -60,7 +61,10 @@ display:
           row_class: 'col-xs-12 col-sm-4'
           default_row_class: true
       row:
-        type: fields
+        type: 'entity:taxonomy_term'
+        options:
+          relationship: none
+          view_mode: teaser
       fields:
         name:
           id: name

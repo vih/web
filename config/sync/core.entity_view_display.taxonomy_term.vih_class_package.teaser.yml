@@ -1,16 +1,20 @@
-uuid: 9889d1ea-35fa-4d2a-98b8-5a17e504fce9
+uuid: 79eb0e6f-9c78-447a-9569-a77acbd3b301
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.vih_class_package.field_p_related_classes
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
     - field.field.taxonomy_term.vih_class_package.field_vih_show_on_frontpage
+    - image.style.class_packages_frontpage
     - taxonomy.vocabulary.vih_class_package
   module:
+    - image
+    - options
     - panelizer
 third_party_settings:
   panelizer:
@@ -18,17 +22,38 @@ third_party_settings:
     custom: false
     allow: false
     default: default
-id: taxonomy_term.vih_class_package.default
+id: taxonomy_term.vih_class_package.teaser
 targetEntityType: taxonomy_term
 bundle: vih_class_package
-mode: default
-content: {  }
+mode: teaser
+content:
+  field_vih_class_package_color:
+    type: list_key
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_vih_cp_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: class_packages_frontpage
+      image_link: ''
+    third_party_settings: {  }
+  field_vih_cp_subtitle:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   description: true
   field_p_related_classes: true
-  field_vih_class_package_color: true
   field_vih_cp_description: true
-  field_vih_cp_image: true
-  field_vih_cp_subtitle: true
   field_vih_show_on_frontpage: true
   langcode: true
