@@ -126,7 +126,10 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
 }
 
 
-
+.btn-center {
+  margin: auto;
+  max-width: 210px !important;
+}
 
 // Secondary
 .btn-secondary {

@@ -1,0 +1,30 @@
+.user.compact {
+  td {
+    padding: 20px;
+    vertical-align: middle;
+    &.user-image {
+      padding: 0;
+      min-width: 242px;
+      min-height: 248px;
+      .field--name-field-vih-user-photo {
+        position: relative;
+        .triangle {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+          -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+          background: rgba($vih-red, 0.75);
+
+          .field--name-field-vih-user-title {
+            bottom: 0;
+            right: 5px;
+            text-align: right;
+            width: 100%;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}

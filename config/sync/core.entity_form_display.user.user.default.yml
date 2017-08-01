@@ -9,7 +9,7 @@ dependencies:
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_qualifications
-    - field.field.user.user.field_vih_user_about
+    - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
@@ -73,13 +73,13 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-  field_vih_user_about:
-    weight: 5
+  field_vih_user_descr:
+    weight: 11
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: text_textarea
   field_vih_user_phone:
     weight: 3
     settings:

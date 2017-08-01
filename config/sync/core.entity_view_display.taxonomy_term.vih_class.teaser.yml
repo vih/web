@@ -6,10 +6,12 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.vih_class.field_related_teachers
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
+    - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - image.style.vih_class_teaser
+    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
+    - image.style.vih_class_teaser_large
     - taxonomy.vocabulary.vih_class
   module:
     - image
@@ -31,7 +33,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: vih_class_teaser
+      image_style: vih_class_teaser_large
       image_link: ''
     third_party_settings: {  }
 hidden:
@@ -40,4 +42,5 @@ hidden:
   field_vih_class_color: true
   field_vih_class_material_price: true
   field_vih_class_price_addition: true
+  field_vih_teacher_class_descr: true
   langcode: true

@@ -1,0 +1,14 @@
+uuid: f346b09b-d460-4db0-8006-3a362bf450ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.vih_class_package_accordion
+label: 'VIH Class package accordion'
+targetEntityType: taxonomy_term
+cache: true

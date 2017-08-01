@@ -4,7 +4,7 @@
  * @file
  * Functions to support theming in the site theme.
  */
- 
+
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
@@ -96,9 +96,11 @@ function site_preprocess_block(array &$variables) {
  * Implements hook_theme_suggestions_field_alter().
  */
 function site_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
+  $element = $variables['element'];
+
   $suggestions[] = 'field__' . $element['#view_mode'];
-  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#view_mode'] . '__' . $element['#field_name'];
 }
 
 /**
@@ -143,6 +145,32 @@ function site_theme_suggestions_block_alter(array &$suggestions, array $variable
 function site_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
+
+  $node = $variables['node'];
+
+  if ($node->getType() == 'vih_long_cource') {
+    //preloading travel classes
+    foreach ($node->field_vih_course_periods->referencedEntities() as $period) {
+      foreach($period->field_vih_cp_course_slots->referencedEntities() as $slot) {
+        $travel = array_pop($slot->field_vih_cs_travel->getValue()[0]);
+        foreach ($slot->field_vih_cs_classes->referencedEntities() as $class) {
+          //kint($class->field_vih_class_class_packages);
+          foreach ($class->field_vih_class_class_packages->referencedEntities() as $class_package) {
+            if (!isset($variables['content']['classes_packages']) || empty($variables['content']['classes_packages'][$class_package->id()])) {
+              $variables['content']['classes_packages'][$class_package->id()] = array (
+                'name' => $class_package->getName(),
+                'term' => \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class_package, 'vih_class_package_accordion'),
+              );
+            }
+          }
+
+          if ($travel) {
+            $variables['content']['travel_classes'][] = \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'teaser');
+          }
+        }
+      }
+    }
+  }
 }
 
 /*
@@ -231,6 +259,19 @@ function site_preprocess_links__language_block(&$variables) {
   $variables['links']['da']['link']['#title'] = 'Da';
 }
 
+/**
+ * Implements template_preprocess_taxonomy_term().
+ */
+function site_preprocess_taxonomy_term(&$variables) {
+  $variables['attributes']['class'][] = $variables['view_mode'];
+  $variables['attributes']['class'][] = $variables['term']->getVocabularyId();
+}
 
-
-
+/**
+ * Implements template_preprocess_user().
+ */
+function site_preprocess_user(&$variables) {
+  //kint($variables['elements']['#view_mode']);
+  $variables['attributes']['class'][] = 'user';
+  $variables['attributes']['class'][] = $variables['elements']['#view_mode'];
+}

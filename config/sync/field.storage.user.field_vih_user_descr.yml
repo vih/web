@@ -1,16 +1,15 @@
-uuid: 4ca19c61-3e17-49d7-9839-3720240e893d
+uuid: b29224e6-a394-4116-bd9f-4f853135f29c
 langcode: en
 status: true
 dependencies:
   module:
     - text
     - user
-id: user.field_vih_user_about
-field_name: field_vih_user_about
+id: user.field_vih_user_descr
+field_name: field_vih_user_descr
 entity_type: user
-type: text
-settings:
-  max_length: 255
+type: text_long
+settings: {  }
 module: text
 locked: false
 cardinality: 1

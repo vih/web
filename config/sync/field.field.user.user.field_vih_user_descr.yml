@@ -1,14 +1,14 @@
-uuid: 51131235-7020-4959-84f9-ac85ebe86e41
+uuid: e3ae4f51-485f-442f-bb17-c4fd9758882a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_vih_user_about
+    - field.storage.user.field_vih_user_descr
   module:
     - text
     - user
-id: user.user.field_vih_user_about
-field_name: field_vih_user_about
+id: user.user.field_vih_user_descr
+field_name: field_vih_user_descr
 entity_type: user
 bundle: user
 label: About
@@ -18,4 +18,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: text_long
