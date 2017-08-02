@@ -1,0 +1,14 @@
+uuid: 235d7711-dbc7-4a3f-8c34-854411caceed
+langcode: en
+status: true
+dependencies: {  }
+name: vih_class_teaser_large
+label: 'VIH Class teaser large (225×270)'
+effects:
+  3a321785-cc00-4572-9744-7438c48fb764:
+    uuid: 3a321785-cc00-4572-9744-7438c48fb764
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 225
+      height: 270

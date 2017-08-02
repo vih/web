@@ -1,0 +1,38 @@
+.vih_class.teaser {
+  .field--name-field-vih-class-image {
+    position: relative;
+    .triangle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+      -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+      background: rgba($vih-red, 0.75);
+      &.color-red {
+        background: rgba($vih-red, 0.75);
+      }
+      &.color-blue {
+        background: rgba($vih-blue, 0.75);
+      }
+      &.color-cyan {
+        background: rgba($vih-cyan, 0.75);
+      }
+      &.color-purple {
+        background: rgba($vih-purple, 0.75);
+      }
+      &.color-yellow {
+        background: rgba($vih-yellow, 0.75);
+      }
+      &.color-green {
+        background: rgba($vih-green, 0.75);
+      }
+      .field--name-name {
+        bottom: 0;
+        right: 5px;
+        text-align: right;
+        width: 100%;
+        position: absolute;
+      }
+    }
+  }
+}

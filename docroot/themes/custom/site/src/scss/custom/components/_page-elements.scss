@@ -311,6 +311,9 @@ $font-family-primary: 'Lato', sans-serif;
 .panel-group .panel-heading + .panel-collapse > .panel-body,
 .panel-group .panel-heading + .panel-collapse > .list-group {
     border-top: none;
+    .panel-body__zero-padding {
+      margin: -15px;
+    }
 }
 
 // Accordians

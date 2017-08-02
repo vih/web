@@ -1,8 +1,9 @@
-uuid: a079be8d-977c-41e1-8970-168f69dfc4da
+uuid: 4f0a18ab-d657-447b-89bd-f21fc35daa56
 langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.user.compact
     - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_class_description
     - field.field.user.user.field_user_name_first
@@ -12,40 +13,62 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
+    - image.style.vih_person_teaser
   module:
+    - image
     - text
     - user
-id: user.user.default
+id: user.user.compact
 targetEntityType: user
 bundle: user
-mode: default
+mode: compact
 content:
   field_user_name_first:
-    weight: 0
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_user_name_last:
-    weight: 1
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
   field_vih_user_descr:
-    weight: 2
-    label: above
-    settings: {  }
+    type: text_trimmed
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 150
     third_party_settings: {  }
-    type: text_default
+  field_vih_user_phone:
+    type: string
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_user_photo:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: vih_person_teaser
+      image_link: ''
+    third_party_settings: {  }
+  field_vih_user_title:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   field_user_birthday: true
   field_user_class_description: true
   field_user_qualifications: true
-  field_vih_user_phone: true
-  field_vih_user_photo: true
-  field_vih_user_title: true
   langcode: true
   member_for: true

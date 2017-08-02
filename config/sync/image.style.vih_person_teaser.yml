@@ -1,0 +1,14 @@
+uuid: 71a43c30-41e6-44a7-a38e-0d4eb4d4ea23
+langcode: en
+status: true
+dependencies: {  }
+name: vih_person_teaser
+label: 'VIH Person Teaser (242x248)'
+effects:
+  3a8ab667-04be-4573-a45c-fa7ccddbde69:
+    uuid: 3a8ab667-04be-4573-a45c-fa7ccddbde69
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 242
+      height: 248

@@ -3,10 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
-    - field.field.node.vih_long_cource.field_course_image
-    - field.field.node.vih_long_cource.field_laengde
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_periods
@@ -15,7 +12,6 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
   module:
-    - entity_browser
     - entity_reference_revisions
     - path
     - text
@@ -38,25 +34,6 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-  field_course_image:
-    type: entity_browser_file
-    weight: 37
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    third_party_settings: {  }
-  field_laengde:
-    weight: 38
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
   field_paragraphs:
     weight: 39
     settings:
