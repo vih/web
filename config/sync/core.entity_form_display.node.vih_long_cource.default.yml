@@ -3,16 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
+    - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
   module:
-    - entity_reference_revisions
+    - entity_browser
+    - paragraphs
     - path
     - text
     - workbench_moderation
@@ -37,11 +40,14 @@ content:
   field_paragraphs:
     weight: 39
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: entity_reference_paragraphs
   field_vih_cource_contact_person:
     weight: 36
     settings:
@@ -50,6 +56,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_vih_course_image:
+    type: entity_browser_file
+    weight: 40
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+    third_party_settings: {  }
   field_vih_course_periods:
     weight: 32
     settings:
