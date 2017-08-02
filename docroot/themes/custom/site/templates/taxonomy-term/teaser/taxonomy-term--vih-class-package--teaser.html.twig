@@ -29,10 +29,7 @@
 <div class="views-field views-field-nothing">
   <span class="field-content">
     <div class="fagpakker-container">
-      {#{{ content['field_vih_cp_image'] }}#}
-      <div data-quickedit-field-id="taxonomy_term/1/field_vih_cp_image/zxx/teaser" class="field field--name-field-vih-cp-image field--type-image field--label-hidden field--item">  
-        <img src="http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-politi.jpg?itok=kS19__9A" width="290" height="350" alt="Politi" typeof="foaf:Image" class="img-responsive">
-      </div>
+      {{ content['field_vih_cp_image'] }}
       <div class="fagpakker-overlay {{ term.field_vih_class_package_color.value }}">
         <h1 class="fagpakker-headline"><a href="{{ url }}">{{ name }}</a></h1>
       </div>
