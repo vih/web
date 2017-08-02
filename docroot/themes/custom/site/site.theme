@@ -203,6 +203,10 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
   $variables['embedded_view'] = views_embed_view('news', 'embedded_teaser_list');
 }
 
+function site_preprocess_paragraph__class_packages(&$variables) {
+  $variables['content'] = views_embed_view('class_packages_frontpage', 'block_1');
+}
+
 /**
  * Implements hook_theme_suggestions_views_view_alter().
  */

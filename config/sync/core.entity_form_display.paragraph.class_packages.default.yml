@@ -6,14 +6,12 @@ dependencies:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
     - field.field.paragraph.class_packages.field_heading
-    - field.field.paragraph.class_packages.field_paragraph_view_reference
     - field.field.paragraph.class_packages.field_slots_classes
     - image.style.thumbnail
     - paragraphs.paragraphs_type.class_packages
   module:
     - image
     - paragraphs
-    - viewsreference
     - workbench_moderation
 id: paragraph.class_packages.default
 targetEntityType: paragraph
@@ -39,14 +37,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_paragraph_view_reference:
-    weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
-    third_party_settings: {  }
-    type: viewsreference_autocomplete
   field_slots_classes:
     type: entity_reference_paragraphs
     weight: 10

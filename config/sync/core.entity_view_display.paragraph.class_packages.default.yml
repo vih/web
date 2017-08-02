@@ -6,13 +6,11 @@ dependencies:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
     - field.field.paragraph.class_packages.field_heading
-    - field.field.paragraph.class_packages.field_paragraph_view_reference
     - field.field.paragraph.class_packages.field_slots_classes
     - paragraphs.paragraphs_type.class_packages
   module:
     - entity_reference_revisions
     - image
-    - viewsreference
 id: paragraph.class_packages.default
 targetEntityType: paragraph
 bundle: class_packages
@@ -33,14 +31,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_paragraph_view_reference:
-    weight: 3
-    label: hidden
-    settings:
-      plugin_types:
-        - block
-    third_party_settings: {  }
-    type: viewsreference_formatter
   field_slots_classes:
     type: entity_reference_revisions_entity_view
     weight: 4
