@@ -1,0 +1,14 @@
+uuid: fcf897be-2692-42f7-8c27-c45922f414c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.vih_class_table_teaser
+label: 'VIH class table teaser'
+targetEntityType: taxonomy_term
+cache: true

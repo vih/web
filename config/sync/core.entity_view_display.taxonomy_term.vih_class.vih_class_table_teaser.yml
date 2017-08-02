@@ -1,0 +1,46 @@
+uuid: 63e87ce4-4c5b-4088-bc32-5217a6e1e722
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.vih_class_table_teaser
+    - field.field.taxonomy_term.vih_class.field_related_teachers
+    - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
+    - field.field.taxonomy_term.vih_class.field_vih_class_color
+    - field.field.taxonomy_term.vih_class.field_vih_class_image
+    - field.field.taxonomy_term.vih_class.field_vih_class_material_price
+    - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
+    - image.style.vih_class_teaser
+    - taxonomy.vocabulary.vih_class
+  module:
+    - image
+    - text
+id: taxonomy_term.vih_class.vih_class_table_teaser
+targetEntityType: taxonomy_term
+bundle: vih_class
+mode: vih_class_table_teaser
+content:
+  description:
+    label: hidden
+    type: text_trimmed
+    weight: 1
+    settings:
+      trim_length: 150
+    third_party_settings: {  }
+  field_vih_class_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: vih_class_teaser
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_related_teachers: true
+  field_vih_class_class_packages: true
+  field_vih_class_color: true
+  field_vih_class_material_price: true
+  field_vih_class_price_addition: true
+  field_vih_teacher_class_descr: true
+  langcode: true
