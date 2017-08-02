@@ -26,26 +26,13 @@
  */
 #}
 
-{#<div class="views-field views-field-nothing">
-  <span class="field-content">
-    <div class="fagpakker-container Politi">
-      <div class="fagpakker-overlay Politi-color">
-        <h1 class="fagpakker-headline"><a href="/taxonomy/term/1" hreflang="zxx">Politi</a></h1>
-      </div>
-      <div class="fagpakker-hovering">
-        <p>Hos VIH tilbyder vi dig et uforglemmeligt ophold, hvor du kan komme ud at rejse og meget mere.</p>
-      </div>
-    </div>
-  </span>
-</div>#}
-
-{#{{ file_url(term.field_vih_cp_image.entity.fileuri) }}#}
-{#style="background-image: url('http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fitness_0.jpg')"#}
-
 <div class="views-field views-field-nothing">
   <span class="field-content">
     <div class="fagpakker-container">
-      {{ content['field_vih_cp_image'] }}
+      {#{{ content['field_vih_cp_image'] }}#}
+      <div data-quickedit-field-id="taxonomy_term/1/field_vih_cp_image/zxx/teaser" class="field field--name-field-vih-cp-image field--type-image field--label-hidden field--item">  
+        <img src="http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-politi.jpg?itok=kS19__9A" width="290" height="350" alt="Politi" typeof="foaf:Image" class="img-responsive">
+      </div>
       <div class="fagpakker-overlay {{ term.field_vih_class_package_color.value }}">
         <h1 class="fagpakker-headline"><a href="{{ url }}">{{ name }}</a></h1>
       </div>
@@ -55,16 +42,3 @@
     </div>
   </span>
 </div>
-
-{#<div style="border: 1px solid red">111
-{{ content['field_vih_cp_image'] }}
-</div>#}
-
-{#<div{{ attributes }}>
-  {{ title_prefix }}
-  {% if not page %}
-    <h2><a href="{{ url }}">{{ name }}</a></h2>
-  {% endif %}
-  {{ title_suffix }}
-  {{ content }}
-</div>#}

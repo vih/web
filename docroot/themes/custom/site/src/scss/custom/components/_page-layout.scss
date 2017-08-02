@@ -763,7 +763,6 @@ flex-direction: column;
 .fagpakker-container {
   width: 100%;
   height: auto;
-  min-height: 350px;
   max-width: 283px;
   background: white;
   display: flex;
@@ -777,31 +776,7 @@ flex-direction: column;
   background-position: top left;
 }
 
-.Boldspil{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg");
-}
-
-.Fitness{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fitness_0.jpg");
-}
-
-.Outdoor{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-outdoor.jpg");
-}
-
-.Politi{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-politi.jpg");
-}
-
-.Endurance{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-endurance.jpg");
-}
-
-.Rejser{
-  background-image: url("http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-rejser_0.jpg");
-}
-
-.color-cyan {
+.color-blue {
   background-color:#00a5e2;
 }
 
@@ -809,7 +784,7 @@ flex-direction: column;
   background-color:#FF5300;
 }
 
-.color-blue {
+.color-cyan {
   background-color:#9ED200;
 }
 
@@ -821,7 +796,7 @@ flex-direction: column;
   background-color:#00C885;
 }
 
-.Rejser-color{
+.color-yellow{
   background-color:#ffc400;
 }
 
@@ -918,7 +893,7 @@ flex-direction: column;
   width: 100%;
   max-width: 283px;
   height: auto;
-  min-height: 350px;
+  min-height: 345px;
   background-color: rgba(0,0,0,0.8);
   z-index: 0;
   display: inline-flex;
@@ -944,6 +919,12 @@ flex-direction: column;
   text-align: left;
   padding-top: 60px;
   padding-left: 18px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .fagpakker-hovering {
+    min-height: 270px;
+  }
 }
 
 //  ***********************************
