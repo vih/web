@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
+    - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
@@ -13,6 +14,7 @@ dependencies:
     - node.type.vih_long_cource
   module:
     - entity_reference_revisions
+    - image
     - panelizer
     - text
     - user
@@ -224,11 +226,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 102
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_paragraphs:
-    weight: 109
+    weight: 7
     label: above
     settings:
       view_mode: default
@@ -236,22 +238,30 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
   field_vih_cource_contact_person:
-    weight: 106
+    weight: 6
     label: hidden
     settings:
       view_mode: compact
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+  field_vih_course_image:
+    type: image
+    weight: 8
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   field_vih_course_periods:
-    weight: 101
+    weight: 1
     label: above
     settings:
       link: false
     third_party_settings: {  }
     type: entity_reference_label
   field_vih_course_price:
-    weight: 103
+    weight: 3
     label: hidden
     settings:
       thousand_separator: ''
@@ -261,7 +271,7 @@ content:
     third_party_settings: {  }
     type: number_decimal
   field_vih_course_subsc_price:
-    weight: 104
+    weight: 4
     label: hidden
     settings:
       thousand_separator: ''
@@ -271,7 +281,7 @@ content:
     third_party_settings: {  }
     type: number_decimal
   field_vih_course_week_price:
-    weight: 105
+    weight: 5
     label: hidden
     settings:
       thousand_separator: ''
@@ -281,7 +291,7 @@ content:
     third_party_settings: {  }
     type: number_decimal
   links:
-    weight: 100
+    weight: 0
     settings: {  }
     third_party_settings: {  }
 hidden:
