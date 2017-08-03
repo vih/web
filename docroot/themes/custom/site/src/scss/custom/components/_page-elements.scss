@@ -376,6 +376,7 @@ $font-family-primary: 'Lato', sans-serif;
     padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    background-size: cover;
 }
 
 .modal-backdrop {
@@ -463,6 +464,10 @@ $font-family-primary: 'Lato', sans-serif;
 .modal-body {
     padding: 80px !important;
     padding-top: 0px !important;
+    height:300px;
+    padding-right: 60px !important;
+    margin-right: 20px;
+    overflow-y : auto;
 }
 
 .modal-header .close {

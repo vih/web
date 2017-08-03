@@ -9731,7 +9731,9 @@ small, .font_small {
   overflow: hidden;
   padding-bottom: 0px;
   padding-left: 0px;
-  padding-right: 0px; }
+  padding-right: 0px;
+  -webkit-background-size: cover;
+          background-size: cover; }
 
 .modal-backdrop {
   z-index: 0; }
@@ -9839,7 +9841,11 @@ small, .font_small {
 
 .modal-body {
   padding: 80px !important;
-  padding-top: 0px !important; }
+  padding-top: 0px !important;
+  height: 300px;
+  padding-right: 60px !important;
+  margin-right: 20px;
+  overflow-y: auto; }
 
 .modal-header .close {
   color: #000 !important;
@@ -12416,7 +12422,8 @@ article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-t
         clip: rect(0, 0, 0, 0);
         pointer-events: none; }
     .course-periods-accordion .panel-body .class-selection .field--name-field-vih-class-image {
-      position: relative; }
+      position: relative;
+      height: 124px; }
       .course-periods-accordion .panel-body .class-selection .field--name-field-vih-class-image .triangle {
         position: absolute;
         width: 100%;
