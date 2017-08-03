@@ -10313,8 +10313,7 @@ flex-direction: column;
   background: lightblue;
   -webkit-background-size: cover;
           background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0px -250px; }
+  background-repeat: no-repeat; }
 
 .news-banner-title {
   color: #fff;
