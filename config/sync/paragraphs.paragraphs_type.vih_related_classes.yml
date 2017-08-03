@@ -1,7 +1,0 @@
-uuid: 9a9de1c4-cd2c-4f57-9a1d-2ce390d32f33
-langcode: da
-status: true
-dependencies: {  }
-id: vih_related_classes
-label: 'Related classes'
-behavior_plugins: {  }

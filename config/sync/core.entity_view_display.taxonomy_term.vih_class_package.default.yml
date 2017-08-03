@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.vih_class_package.field_p_related_classes
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
@@ -25,7 +24,6 @@ mode: default
 content: {  }
 hidden:
   description: true
-  field_p_related_classes: true
   field_vih_class_package_color: true
   field_vih_cp_description: true
   field_vih_cp_image: true

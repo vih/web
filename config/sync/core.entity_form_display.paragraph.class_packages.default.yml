@@ -6,12 +6,10 @@ dependencies:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
     - field.field.paragraph.class_packages.field_heading
-    - field.field.paragraph.class_packages.field_slots_classes
     - image.style.thumbnail
     - paragraphs.paragraphs_type.class_packages
   module:
     - image
-    - paragraphs
     - workbench_moderation
 id: paragraph.class_packages.default
 targetEntityType: paragraph
@@ -37,17 +35,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_slots_classes:
-    type: entity_reference_paragraphs
-    weight: 10
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
 hidden:
   created: true
   status: true

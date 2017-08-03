@@ -79,10 +79,8 @@ class CourseOrderOptionsList {
   public static function getFoundFromList($key = null) {
     $list = array(
       '1' => \Drupal::translation()->translate('One'),
-      '2' => array(
-        '2.1' => \Drupal::translation()->translate('Two point one'),
-        '2.2' => \Drupal::translation()->translate('Two point two'),
-      ),
+      '2.1' => \Drupal::translation()->translate('Two point one'),
+      '2.2' => \Drupal::translation()->translate('Two point two'),
       '3' => \Drupal::translation()->translate('Three'),
     );
     if ($key) {

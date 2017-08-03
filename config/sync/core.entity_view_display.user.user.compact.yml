@@ -5,10 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_user_birthday
-    - field.field.user.user.field_user_class_description
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
-    - field.field.user.user.field_user_qualifications
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -68,7 +66,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_user_birthday: true
-  field_user_class_description: true
-  field_user_qualifications: true
   langcode: true
   member_for: true

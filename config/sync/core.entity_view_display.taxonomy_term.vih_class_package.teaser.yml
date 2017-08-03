@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser
-    - field.field.taxonomy_term.vih_class_package.field_p_related_classes
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
@@ -53,7 +52,6 @@ content:
     third_party_settings: {  }
 hidden:
   description: true
-  field_p_related_classes: true
   field_vih_cp_description: true
   field_vih_show_on_frontpage: true
   langcode: true

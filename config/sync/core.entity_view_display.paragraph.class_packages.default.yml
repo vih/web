@@ -6,10 +6,8 @@ dependencies:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
     - field.field.paragraph.class_packages.field_heading
-    - field.field.paragraph.class_packages.field_slots_classes
     - paragraphs.paragraphs_type.class_packages
   module:
-    - entity_reference_revisions
     - image
 id: paragraph.class_packages.default
 targetEntityType: paragraph
@@ -31,13 +29,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-  field_slots_classes:
-    type: entity_reference_revisions_entity_view
-    weight: 4
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
 hidden:
   field_background_color: true

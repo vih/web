@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.taxonomy_term.vih_class_package.field_p_related_classes
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
@@ -13,7 +12,6 @@ dependencies:
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
-    - paragraphs
     - path
     - text
 id: taxonomy_term.vih_class_package.default
@@ -27,18 +25,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-    region: content
-  field_p_related_classes:
-    type: entity_reference_paragraphs
-    weight: 34
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
     third_party_settings: {  }
     region: content
   field_vih_class_package_color:

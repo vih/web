@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.radio_selection
-    - field.field.taxonomy_term.vih_class.field_related_teachers
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
+    - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
     - image.style.vih_class_teaser
     - taxonomy.vocabulary.vih_class
   module:
@@ -35,9 +36,9 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
-  field_related_teachers: true
   field_vih_class_class_packages: true
   field_vih_class_color: true
   field_vih_class_material_price: true
   field_vih_class_price_addition: true
+  field_vih_teacher_class_descr: true
   langcode: true

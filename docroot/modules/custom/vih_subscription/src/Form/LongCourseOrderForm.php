@@ -216,7 +216,7 @@ class LongCourseOrderForm extends FormBase {
         $orderedCourseSlot->save();
 
         $orderedCoursePeriod = null;
-        if ($orderedCoursePeriod = $orderedCoursePeriods[$coursePeriod->id()]) {
+        if (isset($orderedCoursePeriods[$coursePeriod->id()]) && $orderedCoursePeriod = $orderedCoursePeriods[$coursePeriod->id()]) {
           $existingOrderedCourseSlots = $orderedCoursePeriod->get('field_vih_ocp_order_course_slots')->getValue();
 
           $existingOrderedCourseSlots[] = array(
@@ -242,7 +242,6 @@ class LongCourseOrderForm extends FormBase {
         }
       }
     }
-
 
     $this->courseOrder = Node::create(array(
       'type' => 'vih_long_course_order',
