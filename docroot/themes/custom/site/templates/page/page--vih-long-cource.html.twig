@@ -114,13 +114,13 @@
                                      {{ page.breadcrumb }}
                                       <hr>
                                       {% if node.title.value %}
-  <h3 class="node-page-title">{{ node.title.value }}</h3>
+  <h2 class="node-page-title">{{ node.title.value }}</h2>
 {% elseif page['#title'] %}
-  <h3>{{ page['#title'] }}</h3>
+  <h2>{{ page['#title'] }}</h2>
 {% endif %}
                                       
                     
-                                     <br>
+                                     <br/><br/>
                           {% if node and node.getType == 'page' %}
                         {{ page.content }}
                     {% else %}
