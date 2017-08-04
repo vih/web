@@ -25,83 +25,93 @@
  * @ingroup themeable
  */
 #}
-<div class="panel-body__zero-padding">
+
+{#<div class="panel-body__zero-padding">
     {{ content.field_vih_cp_image }}
-</div>
+</div>#}
+
+{% set description %}
+  {{ content.description }}
+{% endset %}
 
 <div{{ attributes }}>
-    {{ title_prefix }}
-    {% if not page %}
-        <h4>{{ name }}</h4>
-    {% endif %}
-    {{ title_suffix }}
-
-    {% set description %}
-        {{ content.description }}
-    {% endset %}
-    <p>
-        {{ description|striptags }}
-    </p>
-
-    {{ content|without('field_vih_cp_image', 'description') }}
-
-    {#popup start#}
-    <button type="button" class="btn" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
-        {{ 'Se fag'|trans }}
-    </button>
-    <div class="modal fade" id="class-modal-cp-{{ term.id }}" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-image: url('{{ elements['#background_image'] }}'); background-size: cover">
-                    <div class="modal-header-close">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                    </div>
-
-                    <div class="modal-header-title"><h4 class="modal-title">{{ name }}</h4></div>
-                    <div class="diagonal-end"></div>
-                </div>
-
-
-                <div class="modal-body">
-                    <h4>{{ name }}</h4>
-                    <p>
-                        {{ description|striptags }}
-                    </p>
-
-                    <div class="panel-group" id="tabs-class-package-{{ term.id }}">
-                        <div class="panel-heading blue">
-                            <h4 class="panel-title"><a>{{ "Liste over fag i "|trans }}{{ term.name.value }}</a></h4>
-                        </div>
-
-                        <div class="panel panel-default white-border-bottom">
-                            <div class="panel-heading tab-heading">
-                                <div class="btn-group" data-toggle="buttons" style="height:50px;">
-                                    {% for key,slot in elements['#slots'] %}
-                                        <label class="tabs">
-                                            <a data-toggle="collapse" data-parent="#tabs-class-package-{{ term.id }}" href="#tabs-class-package-{{ term.id }}-slot-{{ key }}" class="tabs-toggle">
-                                                {{ slot.name }}
-                                            </a>
-                                        </label>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-                            {% for key,slot in elements['#slots'] %}
-                                <div id="tabs-class-package-{{ term.id }}-slot-{{ key }}" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                        <div class="panel-body__zero-padding">
-                                            {% for class in slot['classes'] %}
-                                                {{ class }}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-sm-8">
+      {{ title_prefix }}
+      {% if not page %}
+          <h4>{{ name }}</h4>
+      {% endif %}
+      {{ title_suffix }}
     </div>
-    {#popup END#}
+  </div>
+  <div class="row align-c">
+    <div class="col-sm-8">
+      <p>
+        {{ description|striptags }}
+      </p>
+    </div>
+    <div class="col-sm-4 align-r">
+  {#    {{ content|without('field_vih_cp_image', 'description') }}#}
+
+      {#popup start#}
+      <button type="button" class="btn" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
+          {{ 'Se fag'|trans }}
+      </button>
+      <div class="modal fade" id="class-modal-cp-{{ term.id }}" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header" style="background-image: url('{{ elements['#background_image'] }}'); background-size: cover">
+                      <div class="modal-header-close">
+                          <button type="button" class="close" data-dismiss="modal">×</button>
+                      </div>
+
+                      <div class="modal-header-title"><h4 class="modal-title">{{ name }}</h4></div>
+                      <div class="diagonal-end"></div>
+                  </div>
+
+
+                  <div class="modal-body">
+                      <h4>{{ name }}</h4>
+                      <p>
+                          {{ description|striptags }}
+                      </p>
+
+                      <div class="panel-group" id="tabs-class-package-{{ term.id }}">
+                          <div class="panel-heading blue">
+                              <h4 class="panel-title"><a>{{ "Liste over fag i "|trans }}{{ term.name.value }}</a></h4>
+                          </div>
+
+                          <div class="panel panel-default white-border-bottom">
+                              <div class="panel-heading tab-heading">
+                                  <div class="btn-group" data-toggle="buttons" style="height:50px;">
+                                      {% for key,slot in elements['#slots'] %}
+                                          <label class="tabs">
+                                              <a data-toggle="collapse" data-parent="#tabs-class-package-{{ term.id }}" href="#tabs-class-package-{{ term.id }}-slot-{{ key }}" class="tabs-toggle">
+                                                  {{ slot.name }}
+                                              </a>
+                                          </label>
+                                      {% endfor %}
+                                  </div>
+                              </div>
+
+                              {% for key,slot in elements['#slots'] %}
+                                  <div id="tabs-class-package-{{ term.id }}-slot-{{ key }}" class="panel-collapse collapse">
+                                      <div class="panel-body">
+                                          <div class="panel-body__zero-padding">
+                                              {% for class in slot['classes'] %}
+                                                  {{ class }}
+                                              {% endfor %}
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      {#popup END#}
+    </div> {#end modal dialog#}
+  </div>
 </div>

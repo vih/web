@@ -492,3 +492,47 @@ $font-family-primary: 'Lato', sans-serif;
     background-size: 200%;
     background-position: -20px;
 }
+
+.panel-banner {
+  height: 200px;
+  border: none !important;
+  background: #00bcff;
+  overflow: hidden;
+  padding-bottom: 0;
+  background-size: cover;
+  .diagonal-end {
+    height: 51px;
+  }
+}
+
+.panel-body {
+  padding: 0 50px 40px 50px !important;
+}
+
+.panel-body p {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size:12px !important;
+  font-weight: normal !important;
+}
+  
+.banner-spacer {
+  height: 149px;
+}
+
+.align-r {
+  text-align: right;
+}
+
+.align-c {
+  display: flex; 
+  align-items: center; 
+  min-height: 10vh;
+}
+
+.m40 {
+  margin-top:40px;
+}
+
+.color-gray {
+  color:#777;
+}

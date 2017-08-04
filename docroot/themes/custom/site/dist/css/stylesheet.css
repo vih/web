@@ -9878,6 +9878,48 @@ small, .font_small {
           background-size: 200%;
   background-position: -20px; }
 
+.panel-banner {
+  height: 200px;
+  border: none !important;
+  background: #00bcff;
+  overflow: hidden;
+  padding-bottom: 0;
+  -webkit-background-size: cover;
+          background-size: cover; }
+  .panel-banner .diagonal-end {
+    height: 51px; }
+
+.panel-body {
+  padding: 0 50px 40px 50px !important; }
+
+.panel-body p {
+  font-family: 'Open Sans', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: normal !important; }
+
+.banner-spacer {
+  height: 149px; }
+
+.align-r {
+  text-align: right; }
+
+.align-c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 10vh; }
+
+.m40 {
+  margin-top: 40px; }
+
+.color-gray {
+  color: #777; }
+
 html {
   min-height: 100vh;
   height: inherit; }
@@ -10551,20 +10593,38 @@ flex-direction: column;
 .color-blue {
   background-color: #00a5e2; }
 
+.accordion-color-blue {
+  border-left: 6px solid #00a5e2 !important; }
+
 .color-red {
   background-color: #FF5300; }
+
+.accordion-color-red {
+  border-left: 6px solid #FF5300 !important; }
 
 .color-cyan {
   background-color: #9ED200; }
 
+.accordion-color-cyan {
+  border-left: 6px solid #9ED200 !important; }
+
 .color-purple {
   background-color: #45535D; }
+
+.accordion-color-purple {
+  border-left: 6px solid #45535D !important; }
 
 .color-green {
   background-color: #00C885; }
 
+.accordion-color-green {
+  border-left: 6px solid #00C885 !important; }
+
 .color-yellow {
   background-color: #ffc400; }
+
+.accordion-color-yellow {
+  border-left: 6px solid #ffc400 !important; }
 
 .fagpakker-headline a {
   font-family: 'Open Sans', sans-serif;

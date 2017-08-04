@@ -776,25 +776,43 @@ flex-direction: column;
 .color-blue {
   background-color:#00a5e2;
 }
+.accordion-color-blue {
+  border-left: 6px solid #00a5e2 !important;
+}
 
 .color-red {
   background-color:#FF5300;
+}
+.accordion-color-red {
+  border-left: 6px solid #FF5300 !important;
 }
 
 .color-cyan {
   background-color:#9ED200;
 }
+.accordion-color-cyan {
+  border-left: 6px solid #9ED200 !important;
+}
 
 .color-purple {
   background-color:#45535D;
+}
+.accordion-color-purple {
+  border-left: 6px solid #45535D !important;
 }
 
 .color-green {
   background-color:#00C885;
 }
+.accordion-color-green {
+  border-left: 6px solid #00C885 !important;
+}
 
 .color-yellow{
   background-color:#ffc400;
+}
+.accordion-color-yellow {
+  border-left: 6px solid #ffc400 !important;
 }
 
 .fagpakker-headline a {
