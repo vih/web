@@ -1,0 +1,38 @@
+uuid: 1d6b7c61-30ef-46d0-b378-4da861687b7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sc_image
+    - node.type.vih_short_course
+  module:
+    - image
+id: node.vih_short_course.field_vih_sc_image
+field_name: field_vih_sc_image
+entity_type: node
+bundle: vih_short_course
+label: 'Course Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

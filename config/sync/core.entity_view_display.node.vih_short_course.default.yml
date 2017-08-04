@@ -5,13 +5,22 @@ dependencies:
   config:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
     - field.field.node.vih_short_course.field_vih_sc_price
     - node.type.vih_short_course
   module:
     - entity_reference_revisions
+    - image
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vih_short_course.default
 targetEntityType: node
 bundle: vih_short_course
@@ -30,6 +39,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_vih_sc_image:
+    weight: 105
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_vih_sc_option_groups:
     type: entity_reference_revisions_entity_view
     weight: 103
@@ -50,5 +67,7 @@ content:
     type: number_decimal
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

@@ -5,10 +5,13 @@ dependencies:
   config:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
     - field.field.node.vih_short_course.field_vih_sc_price
+    - image.style.thumbnail
     - node.type.vih_short_course
   module:
+    - image
     - paragraphs
     - path
     - text
@@ -39,6 +42,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_vih_sc_image:
+    type: entity_browser_file
+    weight: 35
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
   field_vih_sc_option_groups:
     type: entity_reference_paragraphs
     weight: 33
