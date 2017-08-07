@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_short_course.body
+    - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
@@ -32,6 +33,14 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_paragraphs:
+    weight: 106
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
   field_vih_cs_contact_person:
     weight: 104
     label: above

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_cource.body
+    - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
   module:
+    - entity_reference_revisions
     - image
     - panelizer
     - text
@@ -227,6 +229,14 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+  field_paragraphs:
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
   field_vih_cource_contact_person:
     weight: 6
     label: hidden

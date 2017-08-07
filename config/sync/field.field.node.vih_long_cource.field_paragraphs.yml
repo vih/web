@@ -1,0 +1,61 @@
+uuid: e513b619-53c8-490b-b8f9-26ed0456df2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.vih_long_cource
+  module:
+    - entity_reference_revisions
+id: node.vih_long_cource.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: vih_long_cource
+label: Sektioner
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    target_bundles_drag_drop:
+      1_column_action_centered:
+        weight: 13
+        enabled: false
+      class_packages:
+        weight: 14
+        enabled: false
+      list_of_news_teasers:
+        weight: 15
+        enabled: false
+      page_content:
+        weight: 16
+        enabled: false
+      video:
+        weight: 17
+        enabled: false
+      vih_course_slot:
+        weight: 18
+        enabled: false
+      vih_option:
+        weight: 19
+        enabled: false
+      vih_option_group:
+        weight: 20
+        enabled: false
+      vih_ordered_course_period:
+        weight: 21
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 22
+        enabled: false
+      vih_ordered_option:
+        weight: 23
+        enabled: false
+      vih_teacher_class_description:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

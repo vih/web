@@ -12231,6 +12231,9 @@ article.vih-long-cource .pricing-table tbody td {
 article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-table tr td {
   text-align: center; }
 
+article .row.paragraphs {
+  margin-top: 130px; }
+
 .node-teaser-news,
 .node-teaser-news h4,
 .node-teaser-news .heading-h4,

@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
+    - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
@@ -14,6 +15,7 @@ dependencies:
     - node.type.vih_long_cource
   module:
     - entity_browser
+    - paragraphs
     - path
     - text
     - workbench_moderation
@@ -35,6 +37,17 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_paragraphs:
+    weight: 41
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
   field_vih_cource_contact_person:
     weight: 36
     settings:

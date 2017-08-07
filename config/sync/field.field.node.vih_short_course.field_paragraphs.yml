@@ -1,0 +1,61 @@
+uuid: 8721a81d-3843-48ac-b243-39c449309c78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.vih_short_course
+  module:
+    - entity_reference_revisions
+id: node.vih_short_course.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: vih_short_course
+label: Sektioner
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    target_bundles_drag_drop:
+      1_column_action_centered:
+        weight: 13
+        enabled: false
+      class_packages:
+        weight: 14
+        enabled: false
+      list_of_news_teasers:
+        weight: 15
+        enabled: false
+      page_content:
+        weight: 16
+        enabled: false
+      video:
+        weight: 17
+        enabled: false
+      vih_course_slot:
+        weight: 18
+        enabled: false
+      vih_option:
+        weight: 19
+        enabled: false
+      vih_option_group:
+        weight: 20
+        enabled: false
+      vih_ordered_course_period:
+        weight: 21
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 22
+        enabled: false
+      vih_ordered_option:
+        weight: 23
+        enabled: false
+      vih_teacher_class_description:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

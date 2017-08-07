@@ -3,15 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.node.vih_short_course.body
+    - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
     - field.field.node.vih_short_course.field_vih_sc_price
-    - image.style.thumbnail
     - node.type.vih_short_course
   module:
-    - image
+    - entity_browser
     - paragraphs
     - path
     - text
@@ -34,6 +35,17 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_paragraphs:
+    weight: 36
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
   field_vih_cs_contact_person:
     weight: 34
     settings:
