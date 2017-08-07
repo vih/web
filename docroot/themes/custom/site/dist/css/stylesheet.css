@@ -9889,8 +9889,8 @@ small, .font_small {
   .panel-banner .diagonal-end {
     height: 51px; }
 
-.panel-body {
-  padding: 0 50px 40px 50px !important; }
+.term-body {
+  padding: 0 50px 40px 50px; }
 
 .panel-body p {
   font-family: 'Open Sans', sans-serif !important;
@@ -10495,8 +10495,6 @@ flex-direction: column;
     width: inherit !important; }
   .fpnews-title {
     font-size: 13px !important; }
-  .news-banner  {
-    height: 0px !important; }
   .news-panel .views-row {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
@@ -10594,37 +10592,43 @@ flex-direction: column;
   background-color: #00a5e2; }
 
 .accordion-color-blue {
-  border-left: 6px solid #00a5e2 !important; }
+  border-left: 6px solid #00a5e2 !important;
+  border-radius: 0; }
 
 .color-red {
   background-color: #FF5300; }
 
 .accordion-color-red {
-  border-left: 6px solid #FF5300 !important; }
+  border-left: 6px solid #FF5300 !important;
+  border-radius: 0; }
 
 .color-cyan {
   background-color: #9ED200; }
 
 .accordion-color-cyan {
-  border-left: 6px solid #9ED200 !important; }
+  border-left: 6px solid #9ED200 !important;
+  border-radius: 0; }
 
 .color-purple {
   background-color: #45535D; }
 
 .accordion-color-purple {
-  border-left: 6px solid #45535D !important; }
+  border-left: 6px solid #45535D !important;
+  border-radius: 0; }
 
 .color-green {
   background-color: #00C885; }
 
 .accordion-color-green {
-  border-left: 6px solid #00C885 !important; }
+  border-left: 6px solid #00C885 !important;
+  border-radius: 0; }
 
 .color-yellow {
   background-color: #ffc400; }
 
 .accordion-color-yellow {
-  border-left: 6px solid #ffc400 !important; }
+  border-left: 6px solid #ffc400 !important;
+  border-radius: 0; }
 
 .fagpakker-headline a {
   font-family: 'Open Sans', sans-serif;

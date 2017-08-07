@@ -683,9 +683,6 @@ flex-direction: column;
         font-size: 13px!important;
     }
     
-    .news-banner {
-        height: 0px!important;
-    }
     .news-panel .views-row {
         flex-direction: column!important;
     }
@@ -778,6 +775,7 @@ flex-direction: column;
 }
 .accordion-color-blue {
   border-left: 6px solid #00a5e2 !important;
+  border-radius: 0;
 }
 
 .color-red {
@@ -785,6 +783,7 @@ flex-direction: column;
 }
 .accordion-color-red {
   border-left: 6px solid #FF5300 !important;
+  border-radius: 0;
 }
 
 .color-cyan {
@@ -792,6 +791,7 @@ flex-direction: column;
 }
 .accordion-color-cyan {
   border-left: 6px solid #9ED200 !important;
+  border-radius: 0;
 }
 
 .color-purple {
@@ -799,6 +799,7 @@ flex-direction: column;
 }
 .accordion-color-purple {
   border-left: 6px solid #45535D !important;
+  border-radius: 0;
 }
 
 .color-green {
@@ -806,6 +807,7 @@ flex-direction: column;
 }
 .accordion-color-green {
   border-left: 6px solid #00C885 !important;
+  border-radius: 0;
 }
 
 .color-yellow{
@@ -813,6 +815,7 @@ flex-direction: column;
 }
 .accordion-color-yellow {
   border-left: 6px solid #ffc400 !important;
+  border-radius: 0;
 }
 
 .fagpakker-headline a {
