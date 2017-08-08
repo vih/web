@@ -494,19 +494,19 @@ $font-family-primary: 'Lato', sans-serif;
 }
 
 .panel-banner {
-  height: 200px;
+  height: 210px;
   border: none !important;
   background: #00bcff;
   overflow: hidden;
   padding-bottom: 0;
   background-size: cover;
   .diagonal-end {
-    height: 51px;
+    height: 52px;
   }
 }
 
 .term-body {
-  padding: 0 50px 40px 50px;
+  padding: 0 46px 25px 46px;
 }
 
 .panel-body p {
@@ -516,7 +516,7 @@ $font-family-primary: 'Lato', sans-serif;
 }
   
 .banner-spacer {
-  height: 149px;
+  height: 158px;
 }
 
 .align-r {
@@ -527,10 +527,6 @@ $font-family-primary: 'Lato', sans-serif;
   display: flex; 
   align-items: center; 
   min-height: 10vh;
-}
-
-.m40 {
-  margin-top:40px;
 }
 
 .color-gray {

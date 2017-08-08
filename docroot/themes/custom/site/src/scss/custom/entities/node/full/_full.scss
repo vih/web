@@ -27,18 +27,19 @@ article {
       text-transform: uppercase;
     }
   }
-
-  &.vih-long-cource {
+  
+  &.vih-long-cource, &.vih-short-course {
     .pricing-table {
       thead  {
         background: $gray-lighter;
         th {
           padding: 15px;
+          text-transform: uppercase;
         }
       }
       tbody  {
         td {
-          padding: 30px 10px;
+          padding: 32px 10px;
         }
       }
 
