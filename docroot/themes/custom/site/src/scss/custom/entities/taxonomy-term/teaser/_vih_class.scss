@@ -36,4 +36,9 @@
       }
     }
   }
+  .vih-col-center {
+    display: flex; 
+    align-items: center; 
+    min-height: 80px;
+  }
 }

@@ -62,10 +62,13 @@
         {% for item in items %}
             <div{{ attributes.addClass(classes, 'field--item') }}>
                 <div class="triangle {{ term.field_vih_class_color.value }}">
-                    <h5 class="field field--name-name field--type-string field--label-hidden field--item f-pale">
-                        {{ term.name.value }}
-                    </h5>
+                  <h5 class="field field--name-name field--type-string field--label-hidden field--item f-pale">
+                      {{ term.name.value }}
+                  </h5>
                 </div>
+{#                    <h5 class="field field--name-name field--type-string field--label-hidden field--item f-pale" style="position:absolute">
+                        {{ term.name.value }}
+                    </h5>#}
 
                 {{ item.content }}
             </div>

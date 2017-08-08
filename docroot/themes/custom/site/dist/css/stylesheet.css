@@ -10945,12 +10945,14 @@ flex-direction: column;
 .lc-btn-box {
   margin-top: 32px; }
 
-.modal-class {
-  border: 1px solid red;
-  padding: 50px !important; }
+.modal-class div.field--name-description {
+  padding: 10px 40px 10px 0; }
 
-.modal-class > h3, .modal-class > .heading-h3, .modal-class > .node-list-simple-title, .modal-class > .node-list-advanced-title {
-  font-size: 12px; }
+.modal-class div.field--name-description p {
+  text-transform: uppercase;
+  line-height: 15px !important;
+  font-size: 11px !important;
+  text-align: left; }
 
 .path-frontpage div[role=heading] {
   display: none; }
@@ -12474,6 +12476,18 @@ article .row.paragraphs {
       text-align: right;
       width: 100%;
       position: absolute; }
+
+.vih_class.teaser .vih-col-center,
+.vih_class.vih_class_table_teaser .vih-col-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 80px; }
 
 .course-periods-accordion .panel-body {
   padding: 0; }
