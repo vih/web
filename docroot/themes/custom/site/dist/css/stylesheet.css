@@ -12476,6 +12476,13 @@ article .row.paragraphs {
       text-align: right;
       width: 100%;
       position: absolute; }
+  .vih_class.teaser .field--name-field-vih-class-image h5, .vih_class.teaser .field--name-field-vih-class-image .heading-h5, .vih_class.teaser .field--name-field-vih-class-image .field--name-field-highlighted,
+  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image h5,
+  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .heading-h5,
+  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .field--name-field-highlighted {
+    position: absolute;
+    bottom: -1px;
+    right: 20px; }
 
 .vih_class.teaser .vih-col-center,
 .vih_class.vih_class_table_teaser .vih-col-center {
@@ -12487,7 +12494,7 @@ article .row.paragraphs {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 80px; }
+  min-height: 107px; }
 
 .course-periods-accordion .panel-body {
   padding: 0; }
