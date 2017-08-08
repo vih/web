@@ -34,11 +34,12 @@ content:
     third_party_settings: {  }
   field_vih_cs_contact_person:
     weight: 104
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: compact
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_vih_sc_image:
     weight: 105
     label: above
@@ -57,7 +58,7 @@ content:
     third_party_settings: {  }
   field_vih_sc_price:
     weight: 102
-    label: above
+    label: hidden
     settings:
       thousand_separator: ''
       decimal_separator: .

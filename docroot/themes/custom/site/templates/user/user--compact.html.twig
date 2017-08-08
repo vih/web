@@ -29,10 +29,10 @@
             </td>
             <td>
                 <h4>
-                    {{ user.field_user_name_first.value }}
-                    {{ user.field_user_name_last.value }}
+                  {{ user.field_user_name_first.value }}
+                  {{ user.field_user_name_last.value }}
                 </h4>
-                {{ content|without("field_vih_user_phone", "field_vih_user_photo", "field_user_name_first", "field_user_name_last")  }}
+                {{ content|without("field_vih_user_title", "field_vih_user_phone", "field_vih_user_photo", "field_user_name_first", "field_user_name_last")  }}
             </td>
             <td>
                 <h5>{{ "Kontaktoplysninger"|trans }}:</h5>

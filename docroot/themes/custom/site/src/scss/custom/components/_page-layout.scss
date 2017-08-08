@@ -593,8 +593,12 @@ flex-direction: column;
     border-radius: 0px;
     background: #00bcff;
     color: #fff;
-     height: 40px;
+    height: 40px;
     padding-top: 8px;
+}
+
+.btn-arrow {
+  padding-top: 16px !important;
 }
 
 .layout__news .views-field-field-image .field-content {
@@ -815,7 +819,7 @@ flex-direction: column;
 }
 .accordion-color-yellow {
   border-left: 6px solid #ffc400 !important;
-  border-radius: 0;
+  border-radius: 0; 
 }
 
 .fagpakker-headline a {
@@ -1097,6 +1101,27 @@ flex-direction: column;
   padding-top: 25px;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.lc-price-box {
+  margin-top: 7px;
+}
+
+.lc-contact-box {
+  margin-top: 55px;
+}
+
+.lc-btn-box {
+  margin-top: 32px;
+}
+
+.modal-class {
+  border:1px solid red;
+  padding:50px !important;
+  
+}
+.modal-class > h3 {
+  font-size:12px;
 }
 
 //  ***********************************

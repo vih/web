@@ -96,7 +96,7 @@
 
                               {% for key,slot in elements['#slots'] %}
                                   <div id="tabs-class-package-{{ term.id }}-slot-{{ key }}" class="panel-collapse collapse">
-                                      <div class="panel-body">
+                                      <div class="panel-body modal-class">
                                           <div class="panel-body__zero-padding">
                                               {% for class in slot['classes'] %}
                                                   {{ class }}
@@ -112,6 +112,6 @@
           </div>
       </div>
     </div> 
-    {#end modal dialog#}
+    {#popup end#}
   </div>
 </div>
