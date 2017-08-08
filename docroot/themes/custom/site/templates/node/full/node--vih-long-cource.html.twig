@@ -74,6 +74,7 @@ view_mode ? view_mode|clean_class,
 'clearfix',
 ] %}
 <article{{ attributes.addClass(classes) }}>
+  <div class="container">
     {{ title_prefix }}
     {% if not page %}
         <h2{{ title_attributes }}>
@@ -91,8 +92,9 @@ view_mode ? view_mode|clean_class,
             </div>
         </footer>
     {% endif %}
-
+</div>
     <div{{ content_attributes.addClass('content') }}>
+      <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 {{ content.field_vih_course_periods }}
@@ -187,9 +189,10 @@ view_mode ? view_mode|clean_class,
                 </table>
             </div>
         </div>
-
-
-
+                        </div>
+    <div class="row paragraphs">
+      {{ content.field_paragraphs }}
+    </div>
     </div>
 
 </article>
