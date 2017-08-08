@@ -12440,61 +12440,56 @@ article .row.paragraphs {
   padding-bottom: 0;
   border-bottom: 0; }
 
-.vih_class.teaser .field--name-field-vih-class-image,
-.vih_class.vih_class_table_teaser .field--name-field-vih-class-image {
-  position: relative; }
-  .vih_class.teaser .field--name-field-vih-class-image .triangle,
-  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-    -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-    background: rgba(255, 0, 95, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle.color-red,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-red {
-      background: rgba(255, 0, 95, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle.color-blue,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-blue {
-      background: rgba(0, 155, 236, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle.color-cyan,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-cyan {
-      background: rgba(224, 0, 202, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle.color-purple,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-purple {
-      background: rgba(110, 0, 233, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle.color-yellow,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-yellow {
-      background: rgba(211, 192, 0, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle.color-green,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-green {
-      background: rgba(0, 200, 8, 0.75); }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle .field--name-name,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle .field--name-name {
-      bottom: 0;
-      right: 5px;
-      text-align: right;
+.vih_class.teaser,
+.vih_class.vih_class_table_teaser {
+  /*  .vih-col-center {
+    display: flex; 
+    align-items: center; 
+    min-height: 107px;
+  }*/ }
+  .vih_class.teaser .field--name-field-vih-class-image,
+  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image {
+    position: relative; }
+    .vih_class.teaser .field--name-field-vih-class-image .triangle,
+    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle {
+      position: absolute;
       width: 100%;
-      position: absolute; }
-  .vih_class.teaser .field--name-field-vih-class-image h5, .vih_class.teaser .field--name-field-vih-class-image .heading-h5, .vih_class.teaser .field--name-field-vih-class-image .field--name-field-highlighted,
-  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image h5,
-  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .heading-h5,
-  .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .field--name-field-highlighted {
-    position: absolute;
-    bottom: -1px;
-    right: 20px; }
-
-.vih_class.teaser .vih-col-center,
-.vih_class.vih_class_table_teaser .vih-col-center {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-height: 107px; }
+      height: 100%;
+      clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+      -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+      background: rgba(255, 0, 95, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-red,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-red {
+        background: rgba(255, 0, 95, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-blue,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-blue {
+        background: rgba(0, 155, 236, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-cyan,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-cyan {
+        background: rgba(224, 0, 202, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-purple,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-purple {
+        background: rgba(110, 0, 233, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-yellow,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-yellow {
+        background: rgba(211, 192, 0, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-green,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-green {
+        background: rgba(0, 200, 8, 0.75); }
+      .vih_class.teaser .field--name-field-vih-class-image .triangle .field--name-name,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle .field--name-name {
+        bottom: 0;
+        right: 5px;
+        text-align: right;
+        width: 100%;
+        position: absolute; }
+    .vih_class.teaser .field--name-field-vih-class-image h5, .vih_class.teaser .field--name-field-vih-class-image .heading-h5, .vih_class.teaser .field--name-field-vih-class-image .field--name-field-highlighted,
+    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image h5,
+    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .heading-h5,
+    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .field--name-field-highlighted {
+      position: absolute;
+      bottom: -1px;
+      right: 20px; }
 
 .course-periods-accordion .panel-body {
   padding: 0; }

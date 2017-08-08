@@ -26,13 +26,25 @@
  */
 #}
 <div{{ attributes }}>
-    {#{{ title_prefix }}#}
+  <table class="row">
+    <tr>
+        <td class="col-xs-4">
+            {{ content.field_vih_class_image }}
+        </td>
+        <td class="col-xs-8">
+            {{ content.description }}
+        </td>
+{#        <td class="col-xs-2"></td>#}
+    </tr>
+  </table>
+</div>
+          {#{{ title_prefix }}#}
     {#{% if not page %}#}
         {#<h2><a href="{{ url }}">{{ name }}</a></h2>#}
     {#{% endif %}#}
     {#{{ title_suffix }}#}
 
-    <div class="row">
+{#    <div class="row">
         <div class="col-xs-6">
             {{ content.field_vih_class_image }}
         </div>
@@ -40,6 +52,4 @@
             {{ content.description }}
         </div>
     </div>
-
-    {#{{ content }}#}
-</div>
+</div>#}
