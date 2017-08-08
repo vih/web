@@ -49,6 +49,10 @@ module:
   linkit: 0
   locale: 0
   logo_overlay: 0
+  mailchimp: 0
+  mailchimp_campaign: 0
+  mailchimp_lists: 0
+  mailchimp_signup: 0
   media_entity: 0
   media_entity_document: 0
   media_entity_image: 0

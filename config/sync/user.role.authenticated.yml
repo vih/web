@@ -13,3 +13,4 @@ permissions:
   - 'access shortcuts'
   - 'view media'
   - 'access site-wide contact form'
+  - 'use text format mailchimp_campaign'
