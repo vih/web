@@ -77,14 +77,14 @@ class LongCourseOrderForm extends FormBase {
         }
 
         $form[$availableClassesCid] = array(
-            '#type' => 'radios',
-            //'#title' => $this->t('Poll status'),
-            //'#default_value' => 1,
-            '#options' => $radiosOptions,
-            '#theme' => 'vih_subscription_class_selection_radios',
-            '#classes' => array(
-                'radio_selection' => $classesRadioSelections
-            )
+          '#type' => 'radios',
+          //'#title' => $this->t('Poll status'),
+          //'#default_value' => 1,
+          '#options' => $radiosOptions,
+          '#theme' => 'vih_subscription_class_selection_radios',
+          '#classes' => array(
+            'radio_selection' => $classesRadioSelections
+          ),
         );
       }
     }
@@ -94,29 +94,35 @@ class LongCourseOrderForm extends FormBase {
         '#type' => 'container',
     );
     $form['personalDataLeft']['firstName'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Fornavn'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Fornavn'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['lastName'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Efternavn'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Efternavn'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['cpr'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('CPR'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('CPR'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['telefon'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Telefon'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Telefon'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['email'] = array(
-        '#type' => 'email',
-        '#placeholder' => $this->t('E-mail'),
+      '#type' => 'email',
+      '#placeholder' => $this->t('E-mail'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['nationality'] = array(
-        '#type' => 'select',
-        '#title' => $this->t('Nationalitet'),
-        '#options' => CourseOrderOptionsList::getNationalityList(),
+      '#type' => 'select',
+      '#title' => $this->t('Nationalitet'),
+      '#options' => CourseOrderOptionsList::getNationalityList(),
+      '#required' => TRUE,
     );
 
     $form['personalDataLeft']['newsletter'] = array(
@@ -129,48 +135,58 @@ class LongCourseOrderForm extends FormBase {
         '#type' => 'container',
     );
     $form['personalDataRight']['address'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Adresse'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Adresse'),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseNumber'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Hus nr'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Hus nr'),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseLetter'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Bogstav'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Bogstav'),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseFloor'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Etage'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Etage'),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['city'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('By'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('By'),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['zip'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Postnummer'),
+      '#type' => 'textfield',
+      '#placeholder' => $this->t('Postnummer'),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['education'] = array(
-        '#type' => 'select',
-        '#title' => $this->t('Uddanelse'),
-        '#options' => CourseOrderOptionsList::getEducationList()
+      '#type' => 'select',
+      '#title' => $this->t('Uddanelse'),
+      '#options' => CourseOrderOptionsList::getEducationList(),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['payment'] = array(
-        '#type' => 'select',
-        '#title' => $this->t('Betaling'),
-        '#options' => CourseOrderOptionsList::getPaymentList(),
+      '#type' => 'select',
+      '#title' => $this->t('Betaling'),
+      '#options' => CourseOrderOptionsList::getPaymentList(),
+      '#required' => TRUE,
     );
     $form['personalDataRight']['foundFrom'] = array(
-        '#type' => 'select',
-        '#title' => $this->t('Hvor kender du os fra?'),
-        '#options' => CourseOrderOptionsList::getFoundFromList(),
+      '#type' => 'select',
+      '#title' => $this->t('Hvor kender du os fra?'),
+      '#options' => CourseOrderOptionsList::getFoundFromList(),
+      '#required' => TRUE,
     );
 
     $form['message'] = array(
-        '#type' => 'textarea',
-        '#placeholder' => $this->t('Skriv os en besked...'),
+      '#type' => 'textarea',
+      '#placeholder' => $this->t('Skriv os en besked...'),
+      '#required' => TRUE,
     );
 
     $form['actions']['submit'] = array(
@@ -183,12 +199,26 @@ class LongCourseOrderForm extends FormBase {
     return $form;
   }
 
-  /*   * grunt
+  /**
    * {@inheritdoc}
    */
-
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    
+    //going through the selected options
+    foreach ($form_state->getValues() as $radioKey => $radioValue) {
+      if (preg_match('/^course-period-(\d)-courseSlot-(\d)-availableClasses$/', $radioKey, $matches)) {
+        $coursePeriodDelta = $matches[1];
+        $coursePeriods = $this->course->field_vih_course_periods->referencedEntities();
+        $coursePeriod = $coursePeriods[$coursePeriodDelta];
+
+        $courseSlotDelta = $matches[2];
+        $courseSlots = $coursePeriod->field_vih_cp_course_slots->referencedEntities();
+        $courseSlot = $courseSlots[$courseSlotDelta];
+
+        if (!is_numeric($radioValue)) {
+          $form_state->setErrorByName($radioKey, $this->t('Please make a selection in %slotName.', array('%slotName' => $courseSlot->field_vih_cs_title->value)));
+        }
+      }
+    }
   }
 
   /**

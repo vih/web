@@ -96,6 +96,7 @@ class ShortCourseOrderForm extends FormBase {
             'type' => 'none'
           )
         ],
+        '#required' => TRUE,
       );
 
       if ($suboptions) {
@@ -104,7 +105,8 @@ class ShortCourseOrderForm extends FormBase {
             '#type' => 'radios',
             '#title' => $suboptions_set['title'],
             '#options' => $suboptions_set['values'],
-            '#states' => $suboptions_set['condition']
+            '#states' => $suboptions_set['condition'],
+            //'#required' => TRUE,
           );
         }
       }
@@ -126,14 +128,17 @@ class ShortCourseOrderForm extends FormBase {
     $form['personalDataLeft']['firstName'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Fornavn'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['lastName'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Efternavn'),
+      '#required' => TRUE,
     );
     $form['personalDataLeft']['sambo'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Sambo'),
+      '#required' => TRUE,
     );
 
     $form['actions']['submit'] = array(
@@ -167,6 +172,27 @@ class ShortCourseOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    //going through the selected options
+    foreach ($form_state->getValues() as $radioKey => $radioValue) {
+      //option found
+      if (preg_match('/^option\-group\-(\d)\-options$/', $radioKey, $matches)) {
+        $optionGroupDelta = $matches[1];
+
+        //Does it support suboptions?
+        $values = $form_state->getValues();
+        $supportSuboptions = array_key_exists("option-group-$optionGroupDelta-option-$radioValue-suboptions",$values);
+
+        if ($supportSuboptions) {
+          //Do we have a suboption value?
+          $suboptionDelta = $form_state->getValue("option-group-$optionGroupDelta-option-$radioValue-suboptions");
+
+          if (!is_numeric($suboptionDelta)) {
+            $form_state->setErrorByName("option-group-$optionGroupDelta-option-$radioValue-suboptions", $this->t('Please make a selection.'));
+          }
+        }
+      }
+    }
+
   }
 
   /**
@@ -189,8 +215,8 @@ class ShortCourseOrderForm extends FormBase {
 
         //Do we have a suboption?
         $suboptionDelta = $form_state->getValue("option-group-$optionGroupDelta-option-$radioValue-suboptions");
+        $suboption = NULL;
         if (is_numeric($suboptionDelta)) {
-          $suboption = NULL;
           if (!empty($option->field_vih_option_suboptions[$suboptionDelta])) {
             $suboption = $option->field_vih_option_suboptions[$suboptionDelta]->value;
           }
