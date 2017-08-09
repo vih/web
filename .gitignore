@@ -7,6 +7,7 @@
 /docroot/profiles/contrib
 /docroot/themes/contrib
 /docroot/sites/default/files
+/docroot/sites/vejle_ih.dd
 
 # Ignore Composer-managed dependencies.
 vendor/
