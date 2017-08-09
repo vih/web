@@ -670,6 +670,11 @@ flex-direction: column;
     display: flex;
     justify-content: center;
 }
+@media screen and (max-width: 869px) {
+     .layout-navigation--full-width {
+        font-size: 12px!important;
+    }
+}
 
 @media screen and (max-width: 990px) {
     

@@ -8,8 +8,11 @@
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
+
     .navbar-toggle {
       border: none;
+        padding: 0px!important;
+        padding-left: 20px!important;
 
       &:hover,
       &:focus {
@@ -17,9 +20,37 @@
       }
       .icon-bar {
         background-color: #fff;
+        height: 2px!important;
+          border-radius: 100px!important;
+          margin-top: 6px!important;
         &.long{
-          width: 32px;
+          width: 27px;
+       
         }
       }
+    }
+   
+    .layout__header .layout__header-row--bottom {
+        height: 65px!important;
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    .layout__header .layout__header-row--bottom .nav-button {
+        height: auto;
+    }
+    #toggle_mobile_menu {
+        height: auto;
+        margin-top: 02px;
+    }
+    
+    .layout__header-row--bottom {
+        background: rebeccapurple;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    }
+    .layout__header.layout__header-mobile .layout__header-row--bottom .navbar-collapse {
+        left: 0;
     }
 }

@@ -396,7 +396,7 @@
     }
   .layout__header {
     &.mobile-menu-open {
-      transform: translateX(50%);
+      transform: translateX(0%);
     }
      background-color: $brand-primary;
     .layout__header-row {
@@ -530,7 +530,7 @@
   }
   .layout__document {
     &.mobile-menu-open {
-      transform: translateX(50%);
+      transform: translateX(0%);
     }
   }
 }
