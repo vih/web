@@ -523,7 +523,16 @@ flex-direction: column;
     
     display: none;
 }
+.field--name-field-event-list .field--label {
+    display: none;
+}
+.field--name-field-event-list .fpnews-content p {
+    margin-top: 0px;
+}
 .view-nyhedsside .view-content {
+    padding-bottom: 150px;
+}
+.view-eventside .view-content {
     padding-bottom: 150px;
 }
 .view-class-packages-frontpage .view-header {
