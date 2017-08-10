@@ -1,0 +1,36 @@
+uuid: 9a5d8813-0754-42e5-9888-8ee6aeaf64da
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_list
+    - paragraphs.paragraphs_type.news_list
+    - views.view.nyhedsside
+  module:
+    - viewsreference
+id: paragraph.news_list.field_news_list
+field_name: field_news_list
+entity_type: paragraph
+bundle: news_list
+label: 'news list'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    display_id: block_1
+    argument: ''
+    title: 0
+    target_uuid: 63f46c1c-49cc-4f36-bc77-67dcd10d0df7
+default_value_callback: ''
+settings:
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    embed: 0
+    feed: 0
+    entity_browser: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewsreference

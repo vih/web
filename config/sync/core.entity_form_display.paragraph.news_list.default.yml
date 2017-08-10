@@ -1,0 +1,27 @@
+uuid: 5990e2cc-f7ae-47ce-87cc-faf55262b386
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_list.field_news_list
+    - paragraphs.paragraphs_type.news_list
+  module:
+    - viewsreference
+    - workbench_moderation
+id: paragraph.news_list.default
+targetEntityType: paragraph
+bundle: news_list
+mode: default
+content:
+  field_news_list:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+hidden:
+  created: true
+  status: true
+  uid: true

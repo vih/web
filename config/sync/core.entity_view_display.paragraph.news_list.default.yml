@@ -1,0 +1,23 @@
+uuid: 5a2e5918-639c-4e44-98c7-52701187a62b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_list.field_news_list
+    - paragraphs.paragraphs_type.news_list
+  module:
+    - viewsreference
+id: paragraph.news_list.default
+targetEntityType: paragraph
+bundle: news_list
+mode: default
+content:
+  field_news_list:
+    weight: 0
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+hidden: {  }

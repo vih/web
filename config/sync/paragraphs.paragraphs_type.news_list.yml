@@ -1,0 +1,9 @@
+uuid: 68cd6801-d6e8-41e7-98c3-1f32b2b5ea7d
+langcode: da
+status: true
+dependencies: {  }
+id: news_list
+label: 'News List'
+icon_uuid: null
+description: 'Shows a list of news'
+behavior_plugins: {  }
