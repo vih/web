@@ -44,15 +44,15 @@
 
         {# Search icon #}
         <li class="layout-navigation__link layout-navigation__link__search">
-          <form id="search-form" action="/search-result" method="get" accept-charset="UTF-8">
-        <div class="form-group add-on">
-          <input class="form-control" placeholder="Search"   type="text">
-          <div class="form-group-btn">
-            <button type="submit" name="" class="form-submit btn-search">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </div>
-        </div>
+        <form id="search-form" action="{{ url('view.vih_search.page') }}" method="get" accept-charset="UTF-8">
+            <div class="form-group add-on">
+              <input class="form-control" name="s" placeholder="Search" type="text">
+              <div class="form-group-btn">
+                <button type="submit" name="" class="form-submit btn-search">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </div>
+            </div>
         </form>
         </li>
         <li class="layout-navigation__link layout-navigation__link__phone"><a href="tel:004575820811"><i class="material-icons">phone</i> +45 7582 0811</a></li>
