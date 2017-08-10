@@ -60,6 +60,12 @@ function site_theme_suggestions_page_alter(array &$suggestions, array $variables
         $suggestions[] = $term;
       }
     }
+
+    //alternative front page template suggestion, which has higher priority than page__node-type
+    $is_front = \Drupal::service('path.matcher')->isFrontPage();
+    if($is_front == TRUE)  {
+      $suggestions[] = 'page__' . $node->getType() . '__front';
+    }
   }
 
 }
