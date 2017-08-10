@@ -1,0 +1,9 @@
+uuid: 7ca57fe7-c65b-440f-8d8d-dcd34cd147b6
+langcode: da
+status: true
+dependencies: {  }
+id: event_list
+label: 'Event List'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

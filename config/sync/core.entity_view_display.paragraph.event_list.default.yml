@@ -1,0 +1,23 @@
+uuid: ed3bfdd6-9b28-4688-b1b0-887691396f29
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_list.field_event_list
+    - paragraphs.paragraphs_type.event_list
+  module:
+    - viewsreference
+id: paragraph.event_list.default
+targetEntityType: paragraph
+bundle: event_list
+mode: default
+content:
+  field_event_list:
+    weight: 0
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+hidden: {  }

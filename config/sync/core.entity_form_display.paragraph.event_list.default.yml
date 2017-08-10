@@ -1,0 +1,27 @@
+uuid: b127e64d-8d8f-433f-8d94-c1a03f19a867
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_list.field_event_list
+    - paragraphs.paragraphs_type.event_list
+  module:
+    - viewsreference
+    - workbench_moderation
+id: paragraph.event_list.default
+targetEntityType: paragraph
+bundle: event_list
+mode: default
+content:
+  field_event_list:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+hidden:
+  created: true
+  status: true
+  uid: true
