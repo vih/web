@@ -73,6 +73,8 @@ module:
   rdf: 0
   scheduled_updates: 0
   search: 0
+  search_api: 0
+  search_api_db: 0
   stage_file_proxy: 0
   system: 0
   taxonomy: 0
