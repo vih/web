@@ -26,16 +26,18 @@
  */
 #}
 
+<a href="{{ url }}" target="_blank">
 <div class="views-field views-field-nothing">
   <span class="field-content">
     <div class="fagpakker-container">
-      {{ content['field_vih_cp_image'] }}
-      <div class="fagpakker-overlay {{ term.field_vih_class_package_color.value }}">
-        <h1 class="fagpakker-headline"><a href="{{ url }}">{{ name }}</a></h1>
-      </div>
-      <div class="fagpakker-hovering">
-        <p>{{ term.field_vih_cp_subtitle.value }}</p>
-      </div>
+        {{ content['field_vih_cp_image'] }}
+        <div class="fagpakker-overlay {{ term.field_vih_class_package_color.value }}">
+          <h1 class="fagpakker-headline">{{ name }}</h1>
+        </div>
+        <div class="fagpakker-hovering">
+          <p>{{ term.field_vih_cp_subtitle.value }}</p>
+        </div>
     </div>
   </span>
 </div>
+</a>
