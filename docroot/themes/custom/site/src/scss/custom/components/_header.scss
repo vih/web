@@ -220,7 +220,7 @@
       &,
       > nav {
         display: block;
-        width: 100%;
+        border: 0;
       }
     }
   }
@@ -235,7 +235,7 @@
     background: #00bcff url('../images/layout-header-logo.png') center center no-repeat;
     background-size: 100%;
     width: 105px;
-    height: 106px;
+    height: 105px;
   }
 
   .layout-navigation__link__icon {
@@ -418,6 +418,7 @@
   .layout__header.layout__header-mobile{
     height: 0;
     min-height: 0;
+    z-index: 4;
     .layout__header-row--bottom {
       height: 0;
       min-height: 0;
@@ -530,7 +531,7 @@
   }
   .layout__document {
     &.mobile-menu-open {
-      transform: translateX(0%);
+      transform: translateX(50%);
     }
   }
 }
@@ -540,6 +541,15 @@
 
   // Header
   .layout__header {
+  }
+
+  .layout__header-row--bottom {
+    .region {
+      width: 100%;
+      > nav {
+        width: 100%;
+      }
+    }
   }
 }
 
