@@ -51,7 +51,7 @@
     <div class="hidden" id="search-form-popover">
       <form id="search-form" action="{{ url('view.vih_search.page') }}" method="get" accept-charset="UTF-8">
         <div class="form-group add-on">
-          <input class="form-control" name="s" placeholder="Search" type="text" size="60">
+          <input class="form-control" name="s" placeholder="{{ 'Enter text you wish to search for'|trans }}" type="text" size="60">
           <div class="form-group-btn">
             <button type="submit" name="" class="form-submit btn-search">
               <span class="glyphicon glyphicon-search"></span>
