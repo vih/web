@@ -10074,7 +10074,9 @@ html {
     padding-top: 40px;
     padding-bottom: 60px; }
   .layout-navigation__link {
-    height: 100%; } }
+    height: 100%; }
+  .layout-navigation__link a:hover {
+    color: #000 !important; } }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .layout__header-row .layout-navigation__dropdown-menu {
@@ -10581,7 +10583,7 @@ flex-direction: column;
   border-bottom: 10px solid white; }
 
 .path-langeophold .layout__content .heading {
-  padding-bottom: 150px; }
+  padding-bottom: 150px !important; }
 
 .layout__news .angled-background-color-white {
   height: 20px;

@@ -166,6 +166,9 @@ html {
     .layout-navigation__link {
         height: 100%;
     }
+    .layout-navigation__link a:hover {
+        color: #000!important;
+    }
 }
 
 // Desktop - only
@@ -719,7 +722,7 @@ flex-direction: column;
     border-bottom: 10px solid white;
 }
 .path-langeophold .layout__content .heading {
-    padding-bottom: 150px;
+    padding-bottom: 150px!important;
 }
 
 .layout__news .angled-background-color-white {
