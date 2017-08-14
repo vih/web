@@ -10052,6 +10052,15 @@ html {
   padding-top: 20px;
   padding-bottom: 25px; }
 
+@media (max-width: 767px) {
+  #block-komgodtigang {
+    min-height: 70vh; }
+  .banner {
+    height: 400px !important; }
+  .banner .img-responsive {
+    max-width: inherit;
+    width: 130%; } }
+
 @media (min-width: 768px) {
   .layout__content-inner {
     padding-top: 30px;

@@ -124,6 +124,18 @@ html {
 @include media-breakpoint-only(xs) {
     // Page layout
     .layout__content-inner {}
+    
+    #block-komgodtigang {
+            min-height: 70vh;
+    }
+    
+    .banner {
+        height: 400px!important;
+    }
+    .banner .img-responsive {
+        max-width: inherit;
+        width: 130%;
+    }
 }
 
 // Tablet - and up
