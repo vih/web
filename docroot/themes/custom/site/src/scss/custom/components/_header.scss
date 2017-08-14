@@ -430,13 +430,19 @@
       .navbar-collapse {
         position: fixed;
         height: 100%;
-        width: 50%;
+        width: 60%;
         background-color: #0080af;
         transform: translateX(0);
         padding:0;
         border: none;
-        top: 1px;
-      }
+        top: 0px;
+        -webkit-box-shadow: inset -5px 0px 29px -9px rgba(0,0,0,0.5);
+-moz-box-shadow: inset -5px 0px 29px -9px rgba(0,0,0,0.5);
+box-shadow: inset -5px 0px 29px -9px rgba(0,0,0,0.5);
+        }
+        #main-menu {
+            height: 70px!important;
+        }
       .layout-navigation {
         flex-direction: column;
         height: auto;
@@ -454,7 +460,7 @@
         }
         .layout-navigation__link,
         .layout-navigation__dropdown {
-          border-bottom: 1px solid #00a5e2;
+           border-bottom: 2px solid rgba(255,255,255,0.1);
           text-align: left;
           &.layout-navigation__link__search {
             position: relative;
@@ -465,14 +471,14 @@
               border: none;              
              }
              .form-control::-moz-placeholder {
-               color: $brand-primary;
+               color: #fff;
              }
               .form-control::-webkit-input-placeholder {
-               color: $brand-primary;
+               color: #fff;
              }
 
              .form-control:-ms-input-placeholder {
-                 color: $brand-primary;
+                 color: #fff;
              }
             .form-group-btn {
               position: absolute;
@@ -513,8 +519,7 @@
           > a {
             border-right:none;
             color: #fff;
-            font-weight: 300;
-            background-color: #0080af;
+            font-weight: bold;
             &:hover {
                   background-color: $brand-primary;
                 }

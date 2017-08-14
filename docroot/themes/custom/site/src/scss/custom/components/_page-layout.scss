@@ -51,6 +51,60 @@ html {
     margin-top: 20px!important;
 }
 
+.layout-navigation .logo {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+.layout-navigation__link {
+    height: 60px;
+}
+.layout-navigation__link a:hover {
+    color: #fff!important;
+}
+.layout-navigation__link .form-control {
+    height: 100%;
+}
+.layout-navigation__link .form-group {
+    height: 100%;
+}
+.layout-navigation__link form {
+    height: 100%;
+}
+.layout-navigation__link .glyphicon {
+    top: 7px;
+}
+.layout-navigation__link__phone a {
+    font-size: 18px;
+    letter-spacing: 0.030em;
+}
+.layout-navigation__link__phone .material-icons {
+    font-size: 25px;
+    margin-right: 10px;
+}
+.layout-navigation a {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.layout-navigation .logo span {
+    color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-repeat: no-repeat;
+    background-image: url('../images/vih_logo_white.svg');
+    background-size: 200px;
+    background-position: center;
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

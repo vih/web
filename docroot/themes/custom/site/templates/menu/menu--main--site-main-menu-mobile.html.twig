@@ -15,6 +15,7 @@
           {# List #}
           {% if menu_level == 0 %}
 <ul {{ attributes.addClass('layout-navigation layout-navigation--full-width layout--large-screen-only') }} >
+   <div class="logo"><a href="{{ url('<front>') }}"><span>Vejle Idrætshøjskole</span></a></div>
     {% else %}
     <ul{{ attributes.addClass( 'layout-navigation__dropdown-menu') }}>
         {% endif %}
