@@ -31,7 +31,7 @@
     }
    
     .layout__header .layout__header-row--bottom {
-        height: 65px!important;
+        height: $layout-desktop-header-default-height;
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
@@ -48,7 +48,6 @@
         background: rebeccapurple;
     position: absolute;
     right: 0;
-    width: 100%;
     }
     .layout__header.layout__header-mobile .layout__header-row--bottom .navbar-collapse {
         left: 0;

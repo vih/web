@@ -10,79 +10,9 @@
 
     </div>
     <!-- End - drawer -->
-    <header class="layout__header layout__header-mobile visible-xs">
-    <div class=" layout__header-row layout__header-row--bottom">
-            {% if page.mobile_header_navigation %}
-                {{ page.mobile_header_navigation}}
-            {% endif %}
-    </div>
-    </header>
+    
     <!-- Begin - header -->
-    <header id="main-menu" class="layout__header">
-
-        <!-- Begin - logo -->
-        <a class="layout__header-logo hidden-xs" href="{{ url('<front>') }}"></a>
-        <!-- End - logo -->
-        <div class="layout__header-row layout__header-row--top hidden-xs">
-
-            <!-- Begin - drawer button -->
-            {#<div aria-expanded="false" data-toggle-drawer role="button" tabindex="0" class="layout__drawer-button">#}
-                {#<span class="icon"></span>#}
-            {#</div>#}
-            <!-- End - drawer toggle -->
-
-            <!-- Begin - title -->
-            {#<span class="layout-title">Title</span>#}
-            <!-- End - title -->
-
-            <!-- Begin - contact information -->
-            <aside class="layout-header-contact-information">
-                <a href="tel:004575820811"><i class="material-icons">phone</i> +45 7582 0811</a> <span>Mandag - fredag <strong>08:00 - 15:00</strong></span>
-            </aside>
-            <!-- End - contact information -->
-
-            <!-- Begin - tour -->
-            <aside class="layout-header-tour">
-                <a href="#"><i class="material-icons">bookmark_border</i> Rundvisning</a> <span><strong>Det er gratis</strong></span>
-            </aside>
-            <!-- End - tour -->
-
-            <!-- Begin - contact -->
-            <aside class="layout-header-contact">
-                <a href="#"><i class="material-icons">portrait</i> Kontakt</a>
-            </aside>
-            <!-- End - contact -->
-
-            <!-- Begin - spacer -->
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="layout-spacer"></div>
-            <!-- End - spacer -->
-
-            <!-- Begin - black bar - right -->
-            {% if page.header_black_bar_right %}
-                {% block header_black_bar_right %}
-                    <aside class="layout-header-language-selection">
-                        {{ page.header_black_bar_right }}
-                    </aside>
-                {% endblock %}
-            {% endif %}
-            <!-- End - black bar - right -->
-
-        </div>
-        <div class="layout__header-row layout__header-row--bottom">
-        <div class="nav-button">
-          <button id="toggle_mobile_menu" type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#navbar-collapse-menu" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar long"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar long"></span>
-          </button>
-        </div>
-            {% if page.header_navigation %}
-                {{ page.header_navigation }}
-            {% endif %}
-        </div>
-    </header>
+        {% include '@site/custom/header.html.twig' %}
     <!-- End - header -->
 
     <!-- Begin - document -->

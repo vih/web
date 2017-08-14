@@ -11451,7 +11451,7 @@ flex-direction: column;
   .layout__header .layout__header-row--bottom .region,
   .layout__header .layout__header-row--bottom .region > nav {
     display: block;
-    width: 100%; }
+    border: 0; }
 
 .layout__header .layout__header-row {
   padding-left: 105px;
@@ -11463,7 +11463,7 @@ flex-direction: column;
   -webkit-background-size: 100% 100%;
           background-size: 100%;
   width: 105px;
-  height: 106px; }
+  height: 105px; }
 
 .layout__header .layout-navigation__link__icon {
   max-width: 68px; }
@@ -11663,7 +11663,8 @@ flex-direction: column;
           padding-top: 20px; }
   .layout__header.layout__header-mobile {
     height: 0;
-    min-height: 0; }
+    min-height: 0;
+    z-index: 4; }
     .layout__header.layout__header-mobile .layout__header-row--bottom {
       height: 0;
       min-height: 0; }
@@ -11764,10 +11765,16 @@ flex-direction: column;
   .block-title {
     z-index: 99999 !important; }
   .layout__document.mobile-menu-open {
-    -webkit-transform: translateX(0%);
-        -ms-transform: translateX(0%);
-         -o-transform: translateX(0%);
-            transform: translateX(0%); } }
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+         -o-transform: translateX(50%);
+            transform: translateX(50%); } }
+
+@media (min-width: 768px) {
+  .layout__header-row--bottom .region {
+    width: 100%; }
+    .layout__header-row--bottom .region > nav {
+      width: 100%; } }
 
 .layout__footer {
   background-color: #00a5e2;
@@ -12045,7 +12052,7 @@ flex-direction: column;
       .navbar-toggle .icon-bar.long {
         width: 27px; }
   .layout__header .layout__header-row--bottom {
-    height: 65px !important;
+    height: 64px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -12067,8 +12074,7 @@ flex-direction: column;
   .layout__header-row--bottom {
     background: rebeccapurple;
     position: absolute;
-    right: 0;
-    width: 100%; }
+    right: 0; }
   .layout__header.layout__header-mobile .layout__header-row--bottom .navbar-collapse {
     left: 0; } }
 
