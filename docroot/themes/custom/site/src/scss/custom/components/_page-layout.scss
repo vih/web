@@ -242,6 +242,54 @@ article .field--name-field-vih-course-periods .field--label {
 tr {
     background: transparent!important;
 }
+.search-content {
+    padding-top: 100px!important;
+    min-height: 100vh;
+}
+.path-soeg .form--inline {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.path-soeg .form-type-textfield {
+    width: 100%;
+}
+.path-soeg .control-label {
+    display: none;
+}
+.view-vih-search .view-header {
+    margin-bottom: 20px;
+}
+.view-vih-search .views-row {
+        width: 100%;
+    height: auto;
+    padding: 20px;
+    line-height: 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: .4s;
+    cursor: pointer;
+}
+.modal-dialog .modal-content {
+    min-height: 100vh!important;
+}
+.modal-dialog .modal-body {
+    height: 100%!important;
+}
+.view-vih-search .views-row:hover {
+    border-bottom: 1px solid #00a5e2;
+}
+.path-soeg input {
+    min-width: 100%;
+}
+.path-soeg .btn-info {
+    height: 48px;
+    margin-left: 20px;
+    background: #00a5e2;
+}
+.path-soeg .layout__document {
+        height: 100vh;
+}
 
 .table-responsive {
     min-height: 100%!important;

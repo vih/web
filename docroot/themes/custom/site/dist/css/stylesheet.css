@@ -9765,7 +9765,7 @@ small, .font_small {
 
 .modal-content {
   padding: 0;
-  height: 100%;
+  min-height: 100vh !important;
   border-radius: 0px !important;
   overflow: hidden;
   border: none;
@@ -9778,7 +9778,6 @@ small, .font_small {
   height: 80% !important;
   border-radius: 0px !important;
   height: 100vh !important;
-  padding-top: 100px;
   padding-bottom: 100px; }
 
 .modal-header-title {
@@ -9860,7 +9859,7 @@ small, .font_small {
 .modal-body {
   padding: 80px !important;
   padding-top: 0px !important;
-  height: 300px;
+  height: 100% !important;
   padding-right: 60px !important;
   margin-right: 20px;
   overflow-y: auto; }
@@ -10074,6 +10073,65 @@ article .field--name-field-vih-course-periods .field--label {
 
 tr {
   background: transparent !important; }
+
+.search-content {
+  padding-top: 100px !important;
+  min-height: 100vh; }
+
+.path-soeg .form--inline {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.path-soeg .form-type-textfield {
+  width: 100%; }
+
+.path-soeg .control-label {
+  display: none; }
+
+.view-vih-search .view-header {
+  margin-bottom: 20px; }
+
+.view-vih-search .views-row {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  line-height: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-transition: .4s;
+       -o-transition: .4s;
+          transition: .4s;
+  cursor: pointer; }
+
+.modal-dialog .modal-content {
+  min-height: 100vh !important; }
+
+.modal-dialog .modal-body {
+  height: 100% !important; }
+
+.view-vih-search .views-row:hover {
+  border-bottom: 1px solid #00a5e2; }
+
+.path-soeg input {
+  min-width: 100%; }
+
+.path-soeg .btn-info {
+  height: 48px;
+  margin-left: 20px;
+  background: #00a5e2; }
+
+.path-soeg .layout__document {
+  height: 100vh; }
 
 .table-responsive {
   min-height: 100% !important; }
