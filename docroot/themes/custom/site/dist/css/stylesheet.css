@@ -10048,6 +10048,9 @@ html {
           background-size: 200px;
   background-position: center; }
 
+.path-node .news-container {
+  padding-bottom: 100px; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
@@ -10573,8 +10576,9 @@ flex-direction: column;
 .layout__news .angled-background-color .angled-background-inner:before {
   height: 160px !important;
   z-index: 9999999;
-  top: -80px;
-  position: relative; }
+  top: -100px;
+  position: relative;
+  border-bottom: 10px solid white; }
 
 .layout__news .angled-background-color-white {
   height: 20px;
