@@ -160,6 +160,9 @@ html {
         padding-top: $md-page-layout-content-inner-padding-top;
         padding-bottom: $md-page-layout-content-inner-padding-bottom;
     }
+    .layout-navigation__link {
+        height: 100%;
+    }
 }
 
 // Desktop - only
