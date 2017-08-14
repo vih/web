@@ -1,0 +1,138 @@
+<!-- Begin - wrapper -->
+<div class="layout__wrapper layout--fixed-header layout__news layout-taxonomy">
+  {{ drupal_block('popup_cta') }}
+  <!-- Begin - drawer -->
+  <div class="layout__drawer" aria-hidden="true">
+
+    <!-- Begin - title -->
+    <span class="layout-title">Title</span>
+    <!-- End - title -->
+
+  </div>
+  <!-- End - drawer -->
+
+  <!-- Begin - header -->
+    {% include '@site/custom/header.html.twig' %}
+  <!-- End - header -->
+
+  <!-- Begin - document -->
+  <main class="layout__document" role="document">
+    <!-- Begin - content -->
+    <div class="layout__content">
+      <div class="news-banner" style="background-image: url('{{ file_url(term.field_vih_cp_image.entity.fileuri) }}');">
+        <h1 class="news-banner-title">{{ page['#title'] }}</h1>
+      </div>
+
+      {# Header #}
+      {% if page.header %}
+        {% block header %}
+          <div role="heading">
+            <div class="angled-background-color angled-background-color-white">
+              <div class="angled-background-inner" style="position: unset !important;">
+                <div class="container">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="container news-container">
+              {{ page.header }}
+              {{ page.breadcrumb }}
+              <hr>
+
+              <h2>{{ page['#title'] }}</h2>
+
+
+              <br/><br/>
+            </div>
+
+            {{ page.content }}
+
+
+          </div>
+        {% endblock %}
+      {% endif %}
+
+    </div>
+    <!-- End - content -->
+
+    <!-- Begin - footer -->
+    <footer class="layout__footer">
+      <div class="layout__footer-inner">
+
+        {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
+          <!-- Begin - footer top -->
+          <div class="layout__footer-top-outer">
+            <div class="container">
+              <div class="layout__footer-top-inner">
+                <div class="row">
+
+                  {% if page.footer_top_first %}
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      {{ page.footer_top_first }}
+                    </div>
+                  {% endif %}
+
+                  {% if page.footer_top_second %}
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      {{ page.footer_top_second }}
+                    </div>
+                  {% endif %}
+
+                  {% if page.footer_top_third %}
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      {{ page.footer_top_third }}
+                    </div>
+                  {% endif %}
+
+                  {% if page.footer_top_fourth %}
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      {{ page.footer_top_fourth }}
+                    </div>
+                  {% endif %}
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End - footer top -->
+        {% endif %}
+
+        <!-- Begin - footer bottom -->
+        <div class="layout__footer-bottom-outer">
+          <div class="layout__footer-bottom-inner">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="layout__footer-bottom-copyright">
+                    <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, Vejle Idrætshøjskole. All rights reserved.{% endtrans %}</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="layout__footer-bottom-social">
+                    <ul class="list-inline pull-right">
+                      <li><a href="#"><span class="icon fa fa-instagram"></span></a></li>
+                      <li><a href="#"><span class="icon fa fa-twitter"></span></a></li>
+                      <li><a href="#"><span class="icon fa fa-facebook"></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End - footer bottom -->
+
+      </div>
+    </footer>
+    <!-- End - footer -->
+
+  </main>
+  <!-- End - document -->
+
+  <!-- Begin - obfuscator -->
+  <div class="layout__obfuscator"></div>
+  <!-- End - obfuscator -->
+
+</div>
+<!-- End - wrapper -->
