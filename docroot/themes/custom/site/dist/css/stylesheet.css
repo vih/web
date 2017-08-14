@@ -9802,6 +9802,10 @@ small, .font_small {
     color: #fff !important;
     font-weight: 600; }
 
+.vih_class .col-xs-4 {
+  overflow: hidden;
+  padding-right: 25px; }
+
 .btn-more {
   background: none !important;
   width: 40px;
