@@ -10432,6 +10432,9 @@ flex-direction: column;
 .layout__news .view-header {
   display: none; }
 
+.layout__news.layout-taxonomy .view-header {
+  display: block; }
+
 .field--name-field-event-list .field--label {
   display: none; }
 

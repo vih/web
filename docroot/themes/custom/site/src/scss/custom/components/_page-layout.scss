@@ -585,12 +585,14 @@ flex-direction: column;
     flex-direction: column;
 }
 
-.layout__news .news-container {
-    padding-top: 50px;
+.layout__news .news-container { 
+  padding-top: 50px;
 }
-
-.layout__news .view-header {
-    display: none;
+.layout__news .view-header { 
+  display: none;
+}
+.layout__news.layout-taxonomy .view-header {  
+  display: block;
 }
 
 .field--name-field-event-list .field--label {
