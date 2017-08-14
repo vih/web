@@ -10580,6 +10580,9 @@ flex-direction: column;
   position: relative;
   border-bottom: 10px solid white; }
 
+.path-langeophold .layout__content .heading {
+  padding-bottom: 150px; }
+
 .layout__news .angled-background-color-white {
   height: 20px;
   padding-bottom: 20px; }
