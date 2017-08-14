@@ -41,8 +41,7 @@ function site_preprocess_page(array &$variables) {
   
   $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
   if ($tid) {
-    $term = \Drupal\taxonomy\Entity\Term::load($tid);
-    $variables['term'] = $term;
+    $variables['term'] = \Drupal\taxonomy\Entity\Term::load($tid);
   }
 }
 
