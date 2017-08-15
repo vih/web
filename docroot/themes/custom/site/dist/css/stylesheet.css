@@ -10855,6 +10855,9 @@ flex-direction: column;
 .path-taxonomy .angled-background-inner {
   width: 100%; }
 
+.page-node-type-vih-long-cource .paragraphs {
+  width: 100vw; }
+
 div[role=heading] {
   margin-top: 150px; }
 
