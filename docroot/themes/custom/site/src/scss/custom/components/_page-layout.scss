@@ -842,6 +842,31 @@ flex-direction: column;
     justify-content: center;
 }
 
+.path-node .news-container {
+    padding-bottom: 0px!important;
+}
+
+.path-node article .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+}
+
+.path-node article .field--name-body {
+    padding-bottom: 200px;
+    max-width: 1024px;
+    padding: 40px;
+    margin-bottom: 150px;
+    padding-top: 0px;
+}
+
+.path-node article .field--name-field-paragraphs {
+    width: 100%;
+}
+
 @media screen and (max-width: 869px) {
     .layout-navigation--full-width {
         font-size: 12px!important;
