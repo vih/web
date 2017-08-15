@@ -882,8 +882,11 @@ flex-direction: column;
 .fagpakker-overlay {
     left: 0;
 }
-.banner:after {
-    background: white;
+.path-kortkurser .banner:after {
+    background: white!important;
+}
+.path-kortkurser .angled-background-inner:before {
+        display: none!important;
 }
 div[role=heading] {
     margin-top: 60px;
