@@ -717,12 +717,24 @@ flex-direction: column;
 .layout__news .angled-background-color .angled-background-inner:before {
     height: 160px!important;
     z-index: 9999999;
-    top: -100px;
+    top: -190px;
     position: relative;
     border-bottom: 10px solid white;
 }
+.path-taxonomy .layout__news .angled-background-color .angled-background-inner:before {
+ top: -220px;   
+}
 .path-langeophold .news-container {
     padding-bottom: 150px!important;
+}
+
+#page-html .banner:after {
+    background: white;
+    border-bottom: 190px solid #fff;
+}
+
+#page-html .angled-background-color .angled-background-inner:before {
+    display: none;
 }
 
 .layout__news .angled-background-color-white {
