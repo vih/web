@@ -10798,13 +10798,14 @@ flex-direction: column;
   left: 0; }
 
 .path-kortkurser .banner:after {
-  background: white !important; }
+  background: white !important;
+  border-bottom: 170px solid white; }
 
 .path-kortkurser .angled-background-inner:before {
   display: none !important; }
 
 div[role=heading] {
-  margin-top: 60px; }
+  margin-top: 150px; }
 
 @media screen and (max-width: 869px) {
   .layout-navigation--full-width {
