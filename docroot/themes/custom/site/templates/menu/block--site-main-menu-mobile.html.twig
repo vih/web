@@ -35,10 +35,20 @@
 #}
 
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<nav  role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.removeClass('clearfix')|without('role', 'aria-labelledby').addClass('navbar navbar-default') }} >
- <div class="collapse navbar-collapse" id="navbar-collapse-menu">
-  {% block content %}
+{#<nav  role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.removeClass('clearfix')|without('role', 'aria-labelledby').addClass('navbar navbar-default') }} >#}
+ {#<div class="collapse navbar-collapse width" id="navbar-collapse-menu" aria-expanded="false" style="width: 0px;">#}
+  {#{% block content %}#}
+    {#{{ content }}#}
+  {#{% endblock %}#}
+ {#</div>#}
+{#</nav>#}
+
+<nav id="navbar-collapse-menu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+    {#<div class="navbar-collapse">#}
+    {% block content %}
     {{ content }}
-  {% endblock %}
- </div>
+    {% endblock %}
+    {#</div>#}
 </nav>
+
+
