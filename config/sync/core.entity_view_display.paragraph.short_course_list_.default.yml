@@ -1,18 +1,18 @@
-uuid: ed3bfdd6-9b28-4688-b1b0-887691396f29
+uuid: 1bbd9ff9-be43-4f65-b908-fe3e57dea576
 langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.event_list.field_event_list
-    - paragraphs.paragraphs_type.event_list
+    - field.field.paragraph.short_course_list_.field_short_course
+    - paragraphs.paragraphs_type.short_course_list_
   module:
     - viewsreference
-id: paragraph.event_list.default
+id: paragraph.short_course_list_.default
 targetEntityType: paragraph
-bundle: event_list
+bundle: short_course_list_
 mode: default
 content:
-  field_event_list:
+  field_short_course:
     weight: 0
     label: above
     settings:

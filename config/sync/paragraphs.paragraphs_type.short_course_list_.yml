@@ -1,0 +1,9 @@
+uuid: a93894eb-b27f-4430-82d5-4856be7bde98
+langcode: da
+status: true
+dependencies: {  }
+id: short_course_list_
+label: 'Short Course List '
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

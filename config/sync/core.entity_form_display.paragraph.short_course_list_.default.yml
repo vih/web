@@ -1,19 +1,19 @@
-uuid: 5990e2cc-f7ae-47ce-87cc-faf55262b386
+uuid: 4e680781-2c46-43b4-a3e8-5fc2f3ba71b9
 langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.news_list.field_news_list
-    - paragraphs.paragraphs_type.news_list
+    - field.field.paragraph.short_course_list_.field_short_course
+    - paragraphs.paragraphs_type.short_course_list_
   module:
     - viewsreference
     - workbench_moderation
-id: paragraph.news_list.default
+id: paragraph.short_course_list_.default
 targetEntityType: paragraph
-bundle: news_list
+bundle: short_course_list_
 mode: default
 content:
-  field_news_list:
+  field_short_course:
     weight: 6
     settings:
       match_operator: CONTAINS

@@ -139,6 +139,13 @@ html {
         max-width: inherit;
         width: 130%;
     }
+     .views-field-field-vih-course-image .img-responsive {
+        max-width: inherit!important;
+        min-width: 100%;
+    }
+    .image-with-overlay {
+        width: 100vw;
+    }
 }
 
 // Tablet - and up
@@ -936,10 +943,53 @@ flex-direction: column;
 div[role=heading] {
     margin-top: 150px;
 }
+.views-field-field-vih-course-image .image-with-overlay {
+    height: 100%;
+    overflow: hidden;
+}
+.views-field-field-vih-course-image .image-with-overlay {
+    min-height: 150px;
+}
+.views-field-field-vih-course-image .image-with-overlay a {
+    color: #fff;
+}
+
+.views-field-field-vih-sc-image .image-with-overlay {
+    height: 100%;
+    overflow: hidden;
+}
+.views-field-field-vih-sc-image .image-with-overlay {
+    min-height: 150px;
+}
+.views-field-field-vih-sc-image .img-responsive {
+     display: block;
+    max-width: 120%;
+    height: auto;
+}
+.view-long-course-list- .view-content {
+    padding-bottom: 200px;
+}
+.view-short-course-list- .view-content {
+    padding-bottom: 200px;
+}
+.field--name-field-short-course .field--label {
+    display: none;
+}
+
+.field--name-field-long-course .field--label {
+    display: none;
+}
+.views-field-field-vih-course-image .img-responsive {
+    display: block;
+    max-width: 120%;
+    height: auto;
+}
+
 @media screen and (max-width: 869px) {
     .layout-navigation--full-width {
         font-size: 12px!important;
     }
+   
     .banner {
         overflow: hidden!important;
     }

@@ -1,19 +1,19 @@
-uuid: 5990e2cc-f7ae-47ce-87cc-faf55262b386
+uuid: 75b5ce95-d9fe-48d7-b9ce-41ef19b493c1
 langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.news_list.field_news_list
-    - paragraphs.paragraphs_type.news_list
+    - field.field.paragraph.long_course_list_.field_long_course
+    - paragraphs.paragraphs_type.long_course_list_
   module:
     - viewsreference
     - workbench_moderation
-id: paragraph.news_list.default
+id: paragraph.long_course_list_.default
 targetEntityType: paragraph
-bundle: news_list
+bundle: long_course_list_
 mode: default
 content:
-  field_news_list:
+  field_long_course:
     weight: 6
     settings:
       match_operator: CONTAINS

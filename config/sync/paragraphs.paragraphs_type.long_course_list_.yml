@@ -1,0 +1,9 @@
+uuid: aab32d2c-3583-437e-8d6a-aabe5c570132
+langcode: da
+status: true
+dependencies: {  }
+id: long_course_list_
+label: 'Long Course List '
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

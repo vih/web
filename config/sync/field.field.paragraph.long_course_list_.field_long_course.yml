@@ -1,0 +1,36 @@
+uuid: 72b49ed1-7fce-40fd-a4b1-7e4366a1d880
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_long_course
+    - paragraphs.paragraphs_type.long_course_list_
+    - views.view.long_course_list_
+  module:
+    - viewsreference
+id: paragraph.long_course_list_.field_long_course
+field_name: field_long_course
+entity_type: paragraph
+bundle: long_course_list_
+label: 'long course'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    display_id: ''
+    argument: ''
+    title: 0
+    target_uuid: 8f3223a9-25a0-4a01-bc0c-bc024be33fbc
+default_value_callback: ''
+settings:
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    embed: 0
+    feed: 0
+    entity_browser: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewsreference
