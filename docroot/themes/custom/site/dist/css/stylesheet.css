@@ -10808,7 +10808,9 @@ div[role=heading] {
 
 @media screen and (max-width: 869px) {
   .layout-navigation--full-width {
-    font-size: 12px !important; } }
+    font-size: 12px !important; }
+  .banner {
+    overflow: hidden !important; } }
 
 @media screen and (max-width: 990px) {
   .news-info {

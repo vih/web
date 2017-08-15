@@ -895,6 +895,9 @@ div[role=heading] {
     .layout-navigation--full-width {
         font-size: 12px!important;
     }
+    .banner {
+        overflow: hidden!important;
+    }
 }
 
 @media screen and (max-width: 990px) {
