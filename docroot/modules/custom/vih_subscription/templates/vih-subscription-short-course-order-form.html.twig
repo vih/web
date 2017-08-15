@@ -3,9 +3,9 @@
 {{ form.form_id }}
 
 {# Introduction information START #}
-<h2>
+<h4>
     {{ "Tilmelding til @title"|t({ '@title': form['#course']['title'] }) }}
-</h2>
+</h4>
 <div>
     <p>
         {{ "Du kan tilmelde så mange mennesker, som du har lyst til. Du tilføjer en person ad gangen i nedenstående formular."|t }}
@@ -21,6 +21,7 @@
 <div>
     {{ "Total Pris:"|t }} {{ form['price'] }}
 </div>
+<br>
 
 {# Options START #}
 {% for optionGroupsDelta, optionGroup in form['#optionGroups'] %}
@@ -34,7 +35,9 @@
 {# Options END #}
 
 {# Personal data START #}
-<h3>{{ "Personlige oplysninger"|t }}</h3>
+<br>
+<h4>{{ "Personlige oplysninger"|t }}</h4>
+
 
 <div class="row">
     <div class="col-md-12">
