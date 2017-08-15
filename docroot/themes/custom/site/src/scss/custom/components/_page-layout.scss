@@ -48,7 +48,7 @@ html {
 }
 
 .path-node .angled-background-color-white {
-    margin-top: 20px!important;
+    margin-top: -40px!important;
 }
 
 .layout-navigation .logo {
@@ -863,10 +863,31 @@ flex-direction: column;
     padding-top: 0px;
 }
 
+.page-node-type-vih-long-cource article .field--name-body {
+    padding: 0px;
+}
+
 .path-node article .field--name-field-paragraphs {
     width: 100%;
 }
-
+#block-komgodtigang .banner-content .container {
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#block-komgodtigang .field--name-field-link {
+    max-width: 205px;
+}
+.fagpakker-overlay {
+    left: 0;
+}
+.banner:after {
+    background: white;
+}
+div[role=heading] {
+    margin-top: 60px;
+}
 @media screen and (max-width: 869px) {
     .layout-navigation--full-width {
         font-size: 12px!important;
