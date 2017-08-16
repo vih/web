@@ -522,12 +522,29 @@ $font-family-primary: 'Lato', sans-serif;
   padding: 0 46px 25px 46px;
 }
 
-.panel-body p {
-  font-family: 'Open Sans', sans-serif !important;
-  font-size:12px !important;
-  font-weight: normal !important;
+.col-xs-12 a {
+    color: #fff!important;
+}
+
+.col-xs-12 h4 {
+    margin-bottom: 30px;
+}
+
+label.control-label {
+    text-transform: uppercase;
+} 
+
+.col-xs-12 button {
+    text-transform: uppercase;
+}
+.modal-title {
+    font-size: 40px!important;
+    font-weight: bold!important;
 }
   
+.path-langeophold input {
+    text-transform: uppercase!important;
+}
 .banner-spacer {
   height: 158px;
 }
