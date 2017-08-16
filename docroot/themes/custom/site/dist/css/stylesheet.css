@@ -12017,6 +12017,7 @@ div[role=heading] {
         position: fixed;
         left: 0;
         height: 100%;
+        max-width: 230px;
         background-color: #0080af;
         -webkit-transform: translateX(0);
             -ms-transform: translateX(0);
