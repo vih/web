@@ -47,6 +47,11 @@ html {
     padding-top: 0;
 }
 
+.layout__wrapper {
+  overflow-y: visible;
+  overflow-x: visible;
+}
+
 .path-node .angled-background-color-white {
     margin-top: -40px!important;
 }
