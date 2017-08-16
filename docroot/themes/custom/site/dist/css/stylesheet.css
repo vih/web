@@ -10148,6 +10148,9 @@ h6,
   min-width: 100%;
   max-width: inherit; }
 
+.angled-background-color .container p {
+  color: #928f8f; }
+
 #view-field-vih-course-periods-table-column {
   border-bottom: none;
   padding: 10px; }
