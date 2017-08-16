@@ -984,6 +984,9 @@ div[role=heading] {
     max-width: 120%;
     height: auto;
 }
+.layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__link.active > a {
+    background-color: transparent!important;
+}
 
 @media screen and (max-width: 869px) {
     .layout-navigation--full-width {
