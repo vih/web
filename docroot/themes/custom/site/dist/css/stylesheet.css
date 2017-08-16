@@ -10908,6 +10908,12 @@ div[role=heading] {
 .layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__link.active > a {
   background-color: transparent !important; }
 
+.field--item:nth-child(5) .field--name-field-heading {
+  margin-top: -50px; }
+
+.field--type-string p {
+  color: #928f8f !important; }
+
 @media screen and (max-width: 869px) {
   .layout-navigation--full-width {
     font-size: 12px !important; }
