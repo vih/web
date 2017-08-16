@@ -282,9 +282,11 @@ h6 {
     padding: 10px;
 }
 .div.views-field.views-field-field-image {
-    overflow: hidden;
+    overflow: hidden!important;
 }
-
+.news-panel .views-field-field-image {
+    overflow: hidden!important;
+}
 #view-title-table-column {
     border-bottom: none;
     padding: 10px;
