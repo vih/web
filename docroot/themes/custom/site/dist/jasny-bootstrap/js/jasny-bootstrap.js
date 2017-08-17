@@ -18,7 +18,6 @@
  * ======================================================================== */
 
 +function ($) { "use strict";
-
   // OFFCANVAS PUBLIC CLASS DEFINITION
   // =================================
 
@@ -34,7 +33,7 @@
     }
     
     if (this.options.autohide)
-      $(document).on('click', $.proxy(this.autohide, this))
+      $(document).on('click touchstart', $.proxy(this.autohide, this))
 
     if (this.options.toggle) this.toggle()
     

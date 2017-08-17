@@ -397,7 +397,7 @@
     }
   .layout__header {
     &.mobile-menu-open {
-      transform: translateX(0%);
+      //transform: translateX(0%);
     }
      background-color: $brand-primary;
     .layout__header-row {

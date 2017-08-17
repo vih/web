@@ -12001,11 +12001,6 @@ div[role=heading] {
     display: none; }
   .layout__header {
     background-color: #00a5e2; }
-    .layout__header.mobile-menu-open {
-      -webkit-transform: translateX(0%);
-          -ms-transform: translateX(0%);
-           -o-transform: translateX(0%);
-              transform: translateX(0%); }
     .layout__header .layout__header-row {
       padding-left: 0; }
     .layout__header .layout__header-row--bottom {

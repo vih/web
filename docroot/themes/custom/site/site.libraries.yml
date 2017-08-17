@@ -13,7 +13,8 @@ styling:
 scripts:
   js:
     dist/js/core.js: {}
-    dist/jasny-bootstrap/js/jasny-bootstrap.min.js: {}
+    #dist/jasny-bootstrap/js/jasny-bootstrap.min.js: {}
+    dist/jasny-bootstrap/js/jasny-bootstrap.js: {}
     http://127.0.0.1:35729/livereload.js: { type: external }
   dependencies:
     - core/drupal
