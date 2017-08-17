@@ -464,9 +464,9 @@ table .field--type-text-long p {
     font-size: 0.9em;
 }
 
-.panel-body tr td:nth-child(2) {
-    width: 30%;
-}
+//.panel-body tr td:nth-child(2) {
+//    width: 30%;
+//}
 
 table .btn-radio-select {
     background: none!important;
@@ -589,7 +589,7 @@ article p {
 }
 
 .path-node .paragraph--type--_-column-action-centered .field--name-field-heading {
-    margin-bottom: 35px!important;
+    margin-bottom: 100px;
 }
 
 .path-node .paragraph--type--class-packages .angled-background-inner {
@@ -1522,9 +1522,10 @@ div[role=heading] {
 
 .modal-class div.field--name-description p {
     text-transform: uppercase;
-    line-height: 15px !important;
-    font-size: 11px !important;
+    line-height: 20px !important;
+    font-size: 14px !important;
     text-align: left;
+    font-weight: 600!important;
 }
 
 // Long Course
@@ -1614,4 +1615,135 @@ div[role=heading] {
     align-items: center;
 }
 
+// Tilmelding long course
+
+.path-langeophold .panel-default .panel-title a {
+    color: #000;
+}
+.paragraphs .field--type-string {
+    margin-top: -70px;
+    margin-bottom: 100px!important;   
+}
+.modal-content .field--type-string {
+    margin-bottom: 0!important;
+    margin-top: 0!important;
+}
+.lc-price-box {
+    margin-bottom: 100px;
+}
+
+
+// Page node
+
+.path-node .field--name-body {
+    width: 100%;
+}
+
+// Modal 
+
+.modal-course-description {
+    margin-bottom: 50px;
+}
+.field--name-field-vih-class-image img {
+    min-width: 100%!important;
+}
+.vih_class_table_teaser {
+    overflow: hidden;
+}
+.vih_class_table_teaser tr {
+    padding: 0;
+}
+.vih_class_table_teaser .col-xs-6 {
+    padding: 0;
+}
+.vih_class_table_teaser .field--type-text-long {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-class div.field--name-description {
+    padding: 0px;
+    padding: 30px!important;
+}
+.multiple-elements {
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: center!important;
+    align-items: center!important;
+    width: 90%!important;
+    margin-top: 15px;
+}
+.multiple-elements .btn-more {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.multiple-elements .btn-more i {
+    margin: 0;
+}
+
+@media only screen and (max-width: 1130px) {
+    .vih_class_table_teaser .field--name-field-vih-class-image img {
+        min-width: 150%!important;
+    }
+    .field--name-field-vih-class-image { overflow: hidden!important; }
+}
+@media only screen and (max-width: 870px) { 
+    .modal-course-content-teaser-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-course-content-teaser-wrapper .col-xs-6 {
+        width: 100%;
+    }
+    .modal-course-content-teaser-wrapper .field--type-string {
+    margin: 20px;
+    padding-bottom: 10px;    
+    }
+    .panel-title a {
+        text-align: left;
+    }
+    .modal-content p {
+        text-align: left;
+    }
+    .modal-body {
+        padding: 40px!important;
+        padding-right: 40px!important;
+    }
+    .page-node-type-vih-long-cource article .table-bordered tr {
+        display: flex;
+        flex-direction: column;
+    }
+    .field--name-field-vih-user-photo img {
+        min-width: 100%;
+    }
+    .breadcrumb li, .breadcrumb li a {
+        width: 100%;
+        font-size: 12px!important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .breadcrumb li + li:before {
+        height: 100%!important;
+    margin-top: -28px!important;
+            border-width: 30px!important;
+    }
+    .breadcrumb {
+        display: flex!important;
+        flex-direction: row;
+        max-width: 450px;
+    }
+    .breadcrumb li:first-child a:before {
+        padding-right: 10px;
+    }
+    header .layout__header-row {
+            width: 100%!important;
+    display: flex!important;
+    flex-direction: row!important;
+    }
+}
 //  ***********************************

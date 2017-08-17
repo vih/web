@@ -27,14 +27,17 @@
 #}
 <div{{ attributes }}>
   <table class="row">
-    <tr>
-        <td class="col-xs-4">
+    <tr class="modal-course-content-teaser-wrapper">
+        <td class="col-xs-6">
             {{ content.field_vih_class_image }}
         </td>
-        <td class="col-xs-8">
+        <td class="col-xs-6 multiple-elements">
             {{ content.description }}
+            <a href="#" class="btn-more">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </a>
         </td>
-{#        <td class="col-xs-2"></td>#}
+     {#   #}
     </tr>
   </table>
 </div>
