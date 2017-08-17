@@ -48,8 +48,8 @@ html {
 }
 
 .layout__wrapper {
-  overflow-y: visible;
-  overflow-x: visible;
+    overflow-y: visible;
+    overflow-x: visible;
 }
 
 .path-node .angled-background-color-white {
@@ -63,34 +63,43 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
+
 .layout-navigation__link {
     height: 60px;
 }
+
 .layout-navigation__link a:hover {
     color: #fff!important;
 }
+
 .layout-navigation__link .form-control {
     height: 100%;
 }
+
 .layout-navigation__link .form-group {
     height: 100%;
 }
+
 .layout-navigation__link form {
     height: 100%;
 }
+
 .layout-navigation__link .glyphicon {
     top: 7px;
 }
+
 .layout-navigation__link__phone a {
     font-size: 18px;
     letter-spacing: 0.030em;
 }
+
 .layout-navigation__link__phone .material-icons {
     font-size: 25px;
     margin-right: 10px;
 }
+
 .layout-navigation a {
     text-decoration: none;
     width: 100%;
@@ -99,6 +108,7 @@ html {
     justify-content: center;
     align-items: center;
 }
+
 .layout-navigation .logo span {
     color: transparent;
     width: 100%;
@@ -113,6 +123,7 @@ html {
 .path-node .news-container {
     padding-bottom: 100px;
 }
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -132,11 +143,9 @@ html {
 @include media-breakpoint-only(xs) {
     // Page layout
     .layout__content-inner {}
-    
     #block-komgodtigang {
-            min-height: 70vh;
+        min-height: 70vh;
     }
-    
     .banner {
         height: 400px!important;
     }
@@ -144,7 +153,7 @@ html {
         max-width: inherit;
         width: 130%;
     }
-     .views-field-field-vih-course-image .img-responsive {
+    .views-field-field-vih-course-image .img-responsive {
         max-width: inherit!important;
         min-width: 100%;
     }
@@ -276,6 +285,7 @@ h6 {
     min-width: 100%;
     max-width: inherit;
 }
+
 .angled-background-color .container p {
     color: #928f8f;
     text-transform: uppercase;
@@ -286,12 +296,15 @@ h6 {
     border-bottom: none;
     padding: 10px;
 }
+
 .div.views-field.views-field-field-image {
     overflow: hidden!important;
 }
+
 .news-panel .views-field-field-image {
     overflow: hidden!important;
 }
+
 #view-title-table-column {
     border-bottom: none;
     padding: 10px;
@@ -339,53 +352,65 @@ article .field--name-field-vih-course-periods .field--label {
 tr {
     background: transparent!important;
 }
+
 .search-content {
     padding-top: 100px!important;
     min-height: 100vh;
 }
+
 .path-soeg .form--inline {
     width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
+
 .path-soeg .form-type-textfield {
     width: 100%;
 }
+
 .path-soeg .control-label {
     display: none;
 }
+
 .view-vih-search .view-header {
     margin-bottom: 20px;
 }
+
 .view-vih-search .views-row {
-        width: 100%;
+    width: 100%;
     height: auto;
     padding: 20px;
     line-height: 30px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: .4s;
     cursor: pointer;
 }
+
 .modal-dialog .modal-content {
     min-height: 100vh!important;
 }
+
 .modal-dialog .modal-body {
     height: 100%!important;
 }
+
 .view-vih-search .views-row:hover {
     border-bottom: 1px solid #00a5e2;
 }
+
 .path-soeg input {
     min-width: 100%;
 }
+
 .path-soeg .btn-info {
     height: 48px;
     margin-left: 20px;
     background: #00a5e2;
 }
+
 .path-soeg .layout__document {
-        height: 100vh;
+    height: 100vh;
 }
 
 .table-responsive {
@@ -396,18 +421,23 @@ tr {
     font-size: 14px!important;
     color: #fff!important;
 }
+
 .angled-background-inner .field--name-field-heading p {
     color: #fff!important;
 }
+
 .page-node-type-page .view-class-packages-frontpage .view-content {
     padding-bottom: 150px;
 }
+
 .path-frontpage .view-class-packages-frontpage .view-content {
     padding-bottom: 0px;
 }
+
 .path-frontpage .paragraph--type--class-packages .container {
     padding-top: 80px!important;
 }
+
 #edit-preview {
     text-transform: inherit!important;
 }
@@ -682,14 +712,16 @@ flex-direction: column;
     flex-direction: column;
 }
 
-.layout__news .news-container { 
-  padding-top: 50px;
+.layout__news .news-container {
+    padding-top: 50px;
 }
-.layout__news .view-header { 
-  display: none;
+
+.layout__news .view-header {
+    display: none;
 }
-.layout__news.layout-taxonomy .view-header {  
-  display: block;
+
+.layout__news.layout-taxonomy .view-header {
+    display: block;
 }
 
 .field--name-field-event-list .field--label {
@@ -743,11 +775,13 @@ flex-direction: column;
     position: relative;
     border-bottom: 10px solid white;
 }
+
 .path-taxonomy .layout__news .angled-background-color .angled-background-inner:before {
- top: -130px;
+    top: -130px;
     border-bottom: 220px solid white;
-        min-width: 100vw;
+    min-width: 100vw;
 }
+
 .path-langeophold .news-container {
     padding-bottom: 150px!important;
 }
@@ -760,12 +794,15 @@ flex-direction: column;
 #page-html .angled-background-color .angled-background-inner:before {
     display: none;
 }
+
 .path-taxonomy .news-container {
     padding-bottom: 150px;
 }
+
 .path-taxonomy .layout__content .news-container {
     padding-bottom: 0px;
 }
+
 .layout__news .angled-background-color-white {
     height: 20px;
     padding-bottom: 20px;
@@ -911,24 +948,29 @@ flex-direction: column;
 .path-node article .field--name-field-paragraphs {
     width: 100%;
 }
+
 #block-komgodtigang .banner-content .container {
-        display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 #block-komgodtigang .field--name-field-link {
     max-width: 205px;
 }
+
 .fagpakker-overlay {
     left: 0;
 }
+
 .path-kortkurser .banner:after {
     background: white!important;
     border-bottom: 170px solid white;
 }
+
 .path-kortkurser .angled-background-inner:before {
-        display: none!important;
+    display: none!important;
 }
 
 .path-taxonomy div[role=heading] {
@@ -939,18 +981,22 @@ flex-direction: column;
     align-items: center;
     margin-top: 0px;
 }
+
 .path-taxonomy div[role=heading] .region-content {
     min-height: 100%;
     width: 1024px;
     padding: 40px;
     margin-bottom: 80px;
 }
+
 .path-taxonomy article .col-sm-6 {
     padding-left: 0px;
 }
+
 .path-taxonomy .angled-background-inner {
     width: 100%;
 }
+
 .page-node-type-vih-long-cource .paragraphs {
     width: 100vw;
 }
@@ -958,13 +1004,16 @@ flex-direction: column;
 div[role=heading] {
     margin-top: 150px;
 }
+
 .views-field-field-vih-course-image .image-with-overlay {
     height: 100%;
     overflow: hidden;
 }
+
 .views-field-field-vih-course-image .image-with-overlay {
     min-height: 150px;
 }
+
 .views-field-field-vih-course-image .image-with-overlay a {
     color: #fff;
 }
@@ -973,20 +1022,25 @@ div[role=heading] {
     height: 100%;
     overflow: hidden;
 }
+
 .views-field-field-vih-sc-image .image-with-overlay {
     min-height: 150px;
 }
+
 .views-field-field-vih-sc-image .img-responsive {
-     display: block;
+    display: block;
     max-width: 120%;
     height: auto;
 }
+
 .view-long-course-list- .view-content {
     padding-bottom: 200px;
 }
+
 .view-short-course-list- .view-content {
     padding-bottom: 200px;
 }
+
 .field--name-field-short-course .field--label {
     display: none;
 }
@@ -994,18 +1048,22 @@ div[role=heading] {
 .field--name-field-long-course .field--label {
     display: none;
 }
+
 .views-field-field-vih-course-image .img-responsive {
     display: block;
     max-width: 120%;
     height: auto;
 }
+
 .layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__link.active > a {
     background-color: transparent!important;
 }
-.field--item:nth-child(5) .field--name-field-heading  {
+
+.field--item:nth-child(5) .field--name-field-heading {
     margin-top: -50px;
 }
- .field--type-string p {
+
+.field--type-string p {
     color: #928f8f!important;
 }
 
@@ -1013,7 +1071,6 @@ div[role=heading] {
     .layout-navigation--full-width {
         font-size: 12px!important;
     }
-   
     .banner {
         overflow: hidden!important;
     }
@@ -1468,6 +1525,93 @@ div[role=heading] {
     line-height: 15px !important;
     font-size: 11px !important;
     text-align: left;
+}
+
+// Long Course
+
+.page-node-type-vih-long-cource .accordion-toggle {
+    color: #000!important;
+}
+.page-node-type-vih-long-cource .panel p {
+    font-weight: 500;
+}
+
+.page-node-type-vih-long-cource .blue h4 a {
+    font-size: 16px!important;
+}
+
+.page-node-type-vih-long-cource .panel {
+    border: none!important;
+    border-bottom: 1px solid #ddd!important;
+    border-right: 1px solid #ddd!important;
+}
+.page-node-type-vih-long-cource .panel:last-child() {
+    border: none!important;
+    border-right: 1px solid #ddd!important;
+}
+.page-node-type-vih-long-cource .panel-heading {
+    border-bottom: none!important;
+    border-top: none!important;
+}
+.page-node-type-vih-long-cource .col-sm-6 .long-course-heading-sidebar {
+    margin-top: 20px;
+}
+.page-node-type-vih-long-cource .color-gray {
+    margin-bottom: 20px;
+}
+
+.page-node-type-vih-long-cource article .field .field__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-node-type-vih-long-cource .panel-collapse .panel-body {
+    border-left: 1px solid #ddd;
+    border-right: none!important;
+}
+
+.page-node-type-vih-long-cource .panel-collapse .panel-banner {
+    border-left: 1px solid #ddd;
+
+}
+.page-node-type-vih-long-cource .panel-collapse .panel-banner .diagonal-end {
+       border-left: 1px solid #ddd;
+}
+
+.field--name-field-vih-course-periods .field--item {
+    font-weight: bold;
+    color: #555;
+}
+.clock-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.clock-icon i {
+    font-size: 32px;
+    color: #ff6400;
+}
+.course-period-wrapper {
+    text-align: left;
+}
+.course-period-wrapper span i {
+    margin-right: 10px;
+}
+.teacher-contact-info h5 {
+    margin-bottom: 20px;
+}
+.teacher-contact-info {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+.teacher-mail, .teacher-phone {
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 //  ***********************************

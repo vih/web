@@ -9522,7 +9522,7 @@ small, .font_small {
   content: "–";
   /* adjust as needed, taken from bootstrap.css */
   float: right;
-  font-weight: 200;
+  font-weight: 700;
   /* adjust as needed */
   color: grey;
   font-size: 20px;
@@ -11411,6 +11411,112 @@ div[role=heading] {
   font-size: 11px !important;
   text-align: left; }
 
+.page-node-type-vih-long-cource .accordion-toggle {
+  color: #000 !important; }
+
+.page-node-type-vih-long-cource .panel p {
+  font-weight: 500; }
+
+.page-node-type-vih-long-cource .blue h4 a, .page-node-type-vih-long-cource .blue .heading-h4 a, .page-node-type-vih-long-cource .blue .paragraph--type--video .field--name-field-description a, .paragraph--type--video .page-node-type-vih-long-cource .blue .field--name-field-description a,
+.paragraph--type--video .field--name-field-description .page-node-type-vih-long-cource .blue p a, .page-node-type-vih-long-cource .blue article .field .field--label a, article .field .page-node-type-vih-long-cource .blue .field--label a {
+  font-size: 16px !important; }
+
+.page-node-type-vih-long-cource .panel {
+  border: none !important;
+  border-bottom: 1px solid #ddd !important;
+  border-right: 1px solid #ddd !important; }
+
+.page-node-type-vih-long-cource .panel:last-child {
+  border: none !important;
+  border-right: 1px solid #ddd !important; }
+
+.page-node-type-vih-long-cource .panel-heading {
+  border-bottom: none !important;
+  border-top: none !important; }
+
+.page-node-type-vih-long-cource .col-sm-6 .long-course-heading-sidebar {
+  margin-top: 20px; }
+
+.page-node-type-vih-long-cource .color-gray {
+  margin-bottom: 20px; }
+
+.page-node-type-vih-long-cource article .field .field__items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.page-node-type-vih-long-cource .panel-collapse .panel-body {
+  border-left: 1px solid #ddd;
+  border-right: none !important; }
+
+.page-node-type-vih-long-cource .panel-collapse .panel-banner {
+  border-left: 1px solid #ddd; }
+
+.page-node-type-vih-long-cource .panel-collapse .panel-banner .diagonal-end {
+  border-left: 1px solid #ddd; }
+
+.field--name-field-vih-course-periods .field--item {
+  font-weight: bold;
+  color: #555; }
+
+.clock-icon {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15px; }
+
+.clock-icon i {
+  font-size: 32px;
+  color: #ff6400; }
+
+.course-period-wrapper {
+  text-align: left; }
+
+.course-period-wrapper span i {
+  margin-right: 10px; }
+
+.teacher-contact-info h5, .teacher-contact-info .heading-h5, .teacher-contact-info .field--name-field-highlighted {
+  margin-bottom: 20px; }
+
+.teacher-contact-info {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px; }
+
+.teacher-mail, .teacher-phone {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
 .path-frontpage div[role=heading] {
   display: none; }
 
@@ -12298,7 +12404,7 @@ ul.layout-navigation__link {
   text-transform: uppercase; }
 
 .panel-heading .panel-title a {
-  color: #FFF !important; }
+  color: #FFF; }
 
 .col-xs-12 a {
   color: #fff !important; }
@@ -12388,6 +12494,7 @@ ul.layout-navigation__link {
   position: relative;
   border-radius: 0;
   min-width: 100px;
+  background: #00a5e2 !important;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
@@ -12420,6 +12527,7 @@ ul.layout-navigation__link {
     content: " ";
     height: 0;
     width: 0;
+    border-left-color: deepskyblue !important;
     left: 60px;
     border: solid transparent;
     pointer-events: none;
@@ -12442,7 +12550,7 @@ ul.layout-navigation__link {
 
 .btn-center {
   margin: auto;
-  max-width: 210px !important; }
+  max-width: 225px !important; }
 
 .btn-secondary:before {
   background-color: #b84800; }

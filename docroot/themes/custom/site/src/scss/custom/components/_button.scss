@@ -45,6 +45,7 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
   position: relative;
   border-radius: 0;
   min-width: 100px;
+    background: #00a5e2!important;
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
@@ -82,6 +83,7 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
     content: " ";
     height: 0;
     width: 0;
+      border-left-color: deepskyblue!important;
     left: $button-container-width;
     border: solid transparent;
     pointer-events: none;
@@ -128,7 +130,7 @@ $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
 
 .btn-center {
   margin: auto;
-  max-width: 210px !important;
+  max-width: 225px !important;
 }
 
 // Secondary
