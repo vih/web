@@ -1766,6 +1766,11 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
 .course-periods-accordion .field--name-description p {
     font-weight: bold!important;
 }
+
+.file--mime-application-pdf {
+    background: none!important;
+    border: 1px solid #00a5e2!important;
+}
 @media only screen and (max-width: 1130px) {
     .vih_class_table_teaser .field--name-field-vih-class-image img {
         min-width: 150%!important;
