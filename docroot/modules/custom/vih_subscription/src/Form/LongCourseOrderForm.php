@@ -72,7 +72,10 @@ class LongCourseOrderForm extends FormBase {
         $radiosOptions = array();
         $classesRadioSelections = array();
         foreach ($courseSlot->field_vih_cs_classes->referencedEntities() as $class) {
-          $radiosOptions[$class->id()] = $this->t('Vælg');
+          //Title is being handled in css depending on button
+          //state and active language: see _radio-selection/_vih-class.scss
+          $radiosOptions[$class->id()] = ''; //$this->t('Vælg');
+          
           $classesRadioSelections[$class->id()] = taxonomy_term_view($class, 'radio_selection');
         }
 

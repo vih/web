@@ -13437,6 +13437,18 @@ article .row.paragraphs {
   .vih_class.vih_class_table_teaser .panel-heading label {
     border-left: 1px solid #ddd !important; }
 
+html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
+  content: 'Chose'; }
+
+html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
+  content: 'Chosen'; }
+
+html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
+  content: 'Vælg'; }
+
+html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
+  content: 'Valgt'; }
+
 .course-periods-accordion .panel-body {
   padding: 0; }
   .course-periods-accordion .panel-body .class-selection {
@@ -13502,6 +13514,10 @@ article .row.paragraphs {
           text-align: right;
           width: 100%;
           position: absolute; }
+      .course-periods-accordion .panel-body .class-selection .field--name-field-vih-class-image h5, .course-periods-accordion .panel-body .class-selection .field--name-field-vih-class-image .heading-h5, .course-periods-accordion .panel-body .class-selection .field--name-field-vih-class-image .field--name-field-highlighted {
+        position: absolute;
+        bottom: 8px;
+        right: 20px; }
 
 #edit-submit {
   font-weight: 700; }
