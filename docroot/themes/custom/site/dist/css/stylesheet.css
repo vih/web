@@ -11707,8 +11707,9 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
 .layout__header-row {
   overflow: hidden !important; }
 
-.layout--fixed-header {
-  overflow: hidden !important; }
+@media only screen and (min-width: 980px) {
+  .layout--fixed-header {
+    overflow: hidden !important; } }
 
 .path-taxonomy .lc-btn-box {
   display: none; }
