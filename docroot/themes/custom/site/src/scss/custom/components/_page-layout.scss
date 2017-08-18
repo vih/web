@@ -1727,6 +1727,36 @@ div[role=heading] {
 .course-subheading {
     color: #888!important;
 }
+.layout-navigation__link.active {
+    background: white;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
+    top: 0px!important;
+}
+.layout-navigation__dropdown-menu .layout-navigation__link {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.logo-wrapper-mobile {
+    display: flex!important;
+    width: 100%!important;
+    justify-content: center;
+    margin-left: -63px;
+}
+.logo-wrapper-mobile img {
+    width: 190px;
+}
+.layout__header-mobile .active a {
+    background: none!important;
+}
+.layout__header-mobile .active ul {
+    background: none!important;
+}
+.layout__header-mobile .active ul .layout-navigation__link {
+    border-left: none!important;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1)!important;
+}
 @media only screen and (max-width: 1130px) {
     .vih_class_table_teaser .field--name-field-vih-class-image img {
         min-width: 150%!important;
