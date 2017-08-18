@@ -13142,6 +13142,10 @@ ul.layout-navigation__link {
     background-color: white;
     margin: 10px !important; }
 
+.paragraph.paragraph--type--file.paragraph--view-mode--default .field.field--name-field-heading.field--type-string {
+  margin-top: 0px;
+  margin-bottom: 20px !important; }
+
 .layout__news .angled-background-color.paragraph.paragraph--type--file .angled-background-inner:before {
   border: none;
   position: absolute;
