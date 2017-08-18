@@ -1683,7 +1683,47 @@ div[role=heading] {
 .multiple-elements .btn-more i {
     margin: 0;
 }
+.course-periods-accordion .radio_selection table p {
+    text-transform: uppercase;
+    font-weight: 400!important;
+    color: #555!important;
+}
+.modal-content .modal-body p {
+    text-transform: none!important;
+    font-weight: inherit!important;
 
+}
+.radio_selection .col-xs-3 {
+    width: 20%!important;
+}
+.radio_selection .class-selection {
+    margin-bottom: -1px!important
+}
+.modal-dialog {
+    overflow-y: scroll!important;
+    margin-top: 100px!important;
+    padding-bottom: 0!important;
+}
+.modal-content {
+    overflow-y: scroll;
+    overflow: hidden!important;
+}
+.modal-body {
+       overflow-y: scroll!important; 
+}
+.path-langeophold .modal-body {
+    width: 70%;
+    margin-top: 50px!important;
+}
+.layout__news .angled-background-color .angled-background-inner:before {
+    z-index: 99!important;
+}
+.btn {
+    font-weight: bold!important;
+}
+.panel-body__zero-padding .field--name-description p {
+    text-transform: uppercase!important;
+}
 @media only screen and (max-width: 1130px) {
     .vih_class_table_teaser .field--name-field-vih-class-image img {
         min-width: 150%!important;
