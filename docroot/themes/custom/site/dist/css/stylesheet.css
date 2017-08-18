@@ -11692,7 +11692,8 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
 
 .file--mime-application-pdf {
   background: none !important;
-  border: 1px solid #00a5e2 !important; }
+  border: 1px solid #00a5e2 !important;
+  margin-bottom: 25px; }
 
 @media only screen and (max-width: 1130px) {
   .vih_class_table_teaser .field--name-field-vih-class-image img {
