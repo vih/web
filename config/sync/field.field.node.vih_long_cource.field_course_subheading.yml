@@ -1,0 +1,21 @@
+uuid: 33827b59-fd08-4625-9847-8016c1dc26fc
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_subheading
+    - node.type.vih_long_cource
+  module:
+    - text
+id: node.vih_long_cource.field_course_subheading
+field_name: field_course_subheading
+entity_type: node
+bundle: vih_long_cource
+label: 'course subheading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

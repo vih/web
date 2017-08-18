@@ -11642,6 +11642,9 @@ div[role=heading] {
 .panel-body__zero-padding .field--name-description p {
   text-transform: uppercase !important; }
 
+.course-subheading {
+  color: #888 !important; }
+
 @media only screen and (max-width: 1130px) {
   .vih_class_table_teaser .field--name-field-vih-class-image img {
     min-width: 150% !important; }

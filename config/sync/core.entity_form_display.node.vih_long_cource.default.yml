@@ -5,6 +5,8 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
+    - field.field.node.vih_long_cource.field_course_heading
+    - field.field.node.vih_long_cource.field_course_subheading
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -32,11 +34,29 @@ content:
       summary_rows: 3
       placeholder: ''
     third_party_settings: {  }
+    region: content
   created:
     type: datetime_timestamp
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_course_heading:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_course_subheading:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
   field_paragraphs:
     weight: 41
     settings:
@@ -48,6 +68,7 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs
+    region: content
   field_vih_cource_contact_person:
     weight: 36
     settings:
@@ -56,6 +77,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_vih_course_image:
     type: entity_browser_file
     weight: 40
@@ -68,6 +90,7 @@ content:
       field_widget_edit: true
       view_mode: default
     third_party_settings: {  }
+    region: content
   field_vih_course_periods:
     weight: 32
     settings:
@@ -76,46 +99,54 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_vih_course_price:
     weight: 33
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_vih_course_subsc_price:
     weight: 34
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_vih_course_week_price:
     weight: 35
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   langcode:
     type: language_select
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30
     settings: {  }
     third_party_settings: {  }
+    region: content
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 15
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 16
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: -5
@@ -123,6 +154,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5
@@ -131,4 +163,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

@@ -45,8 +45,10 @@
               <hr>
               {% if node.title.value %}
                 <h3 class="node-page-title">{{ node.field_course_heading.value }}</h3>
+                <h5 class="course-subheading">- {{ node.field_course_subheading.value }}</h5>
               {% elseif page['#title'] %}
                 <h3>{{ node.field_course_heading.value }}</h3>
+                <h5>{{ node.field_course_subheading.value }}</h5>
               {% endif %}
 
 
