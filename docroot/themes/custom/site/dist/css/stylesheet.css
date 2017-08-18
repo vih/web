@@ -13083,6 +13083,34 @@ ul.layout-navigation__link {
 .paragraph--type--video.angled-background-color-secondary .field--name-field-description p {
   color: #fff; }
 
+.field.field--name-field-paragraph-file.field--type-file .field__items {
+  border: none;
+  display: block; }
+  .field.field--name-field-paragraph-file.field--type-file .field__items a {
+    font-size: 1.5em; }
+  .field.field--name-field-paragraph-file.field--type-file .field__items .file.file--mime-application-pdf.file--application-pdf {
+    background-color: white;
+    color: #00a5e2;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 5px; }
+  .field.field--name-field-paragraph-file.field--type-file .field__items .field--item .paragraph-file-icon {
+    width: 40px;
+    height: 40px;
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    margin: 10px !important; }
+
+.layout__news .angled-background-color.paragraph.paragraph--type--file .angled-background-inner:before {
+  border: none;
+  position: absolute;
+  z-index: -1 !important;
+  top: 0;
+  min-height: 100%;
+  height: unset !important; }
+
 article .field .field__items {
   text-align: center;
   padding-top: 25px;

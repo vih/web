@@ -149,6 +149,12 @@ function site_theme_suggestions_block_alter(array &$suggestions, array $variable
   }
 }
 
+function site_theme_suggestions_file_link_alter(&$suggestions, $vars, $hook) {
+
+  $suggestions[] = 'file_link__' . 'type__' . 'page';
+
+}
+
 /**
  * Implements hook_preprocess_node().
  */
