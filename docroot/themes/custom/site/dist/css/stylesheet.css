@@ -11681,6 +11681,9 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; }
 
+.btn-radio-select .control-label {
+  font-weight: bold !important; }
+
 @media only screen and (max-width: 1130px) {
   .vih_class_table_teaser .field--name-field-vih-class-image img {
     min-width: 150% !important; }
