@@ -1685,13 +1685,16 @@ div[role=heading] {
 }
 .course-periods-accordion .radio_selection table p {
     text-transform: uppercase;
-    font-weight: 400!important;
+    font-weight: bold!important;
     color: #555!important;
 }
 .modal-content .modal-body p {
     text-transform: none!important;
     font-weight: inherit!important;
 
+}
+.vih-subscription-long-course-order-form input, .vih-subscription-long-course-order-form select {
+    font-weight: bold!important;
 }
 .radio_selection .col-xs-3 {
     width: 20%!important;
@@ -1758,6 +1761,9 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
     border-bottom: 1px solid rgba(255,255,255,0.1)!important;
 }
 .btn-radio-select .control-label {
+    font-weight: bold!important;
+}
+.course-periods-accordion .field--name-description p {
     font-weight: bold!important;
 }
 @media only screen and (max-width: 1130px) {
