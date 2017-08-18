@@ -253,45 +253,51 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+    region: content
   field_vih_course_periods:
-    weight: 1
+    weight: 2
     label: above
     settings:
       link: false
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_vih_course_price:
-    weight: 3
-    label: hidden
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
-  field_vih_course_subsc_price:
     weight: 4
     label: hidden
     settings:
-      thousand_separator: ''
+      thousand_separator: .
       decimal_separator: .
-      scale: 2
+      scale: 0
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-  field_vih_course_week_price:
+    region: content
+  field_vih_course_subsc_price:
     weight: 5
     label: hidden
     settings:
-      thousand_separator: ''
+      thousand_separator: .
       decimal_separator: .
-      scale: 2
+      scale: 0
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
+  field_vih_course_week_price:
+    weight: 6
+    label: hidden
+    settings:
+      thousand_separator: .
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
   links:
     weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
