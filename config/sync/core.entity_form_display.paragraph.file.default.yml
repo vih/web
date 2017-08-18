@@ -1,0 +1,46 @@
+uuid: 8b5b2743-ee9b-4c48-bafb-f7837f2e4d79
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.file.field_background_color
+    - field.field.paragraph.file.field_background_image
+    - field.field.paragraph.file.field_paragraph_file
+    - paragraphs.paragraphs_type.file
+  module:
+    - entity_browser
+    - file
+    - workbench_moderation
+id: paragraph.file.default
+targetEntityType: paragraph
+bundle: file
+mode: default
+content:
+  field_background_color:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_background_image:
+    type: entity_browser_file
+    weight: 0
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_paragraph_file:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+hidden:
+  created: true
+  status: true
+  uid: true

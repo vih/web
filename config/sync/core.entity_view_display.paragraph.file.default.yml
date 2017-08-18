@@ -1,0 +1,25 @@
+uuid: 7896a60b-1778-49a8-a120-cea984b84d6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.file.field_background_color
+    - field.field.paragraph.file.field_background_image
+    - field.field.paragraph.file.field_paragraph_file
+    - paragraphs.paragraphs_type.file
+  module:
+    - file
+id: paragraph.file.default
+targetEntityType: paragraph
+bundle: file
+mode: default
+content:
+  field_paragraph_file:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+hidden:
+  field_background_color: true
+  field_background_image: true
