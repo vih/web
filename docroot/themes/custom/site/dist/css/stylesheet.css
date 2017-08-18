@@ -11698,6 +11698,21 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
   border: 1px solid #00a5e2 !important;
   margin-bottom: 25px; }
 
+.path-taxonomy article .col-sm-6 {
+  width: 100% !important; }
+
+.path-taxonomy .feed-icons {
+  display: none; }
+
+.path-taxonomy .lc-btn-box {
+  display: none; }
+
+.path-taxonomy .lc-contact-box {
+  display: none; }
+
+.path-taxonomy .lc-price-box {
+  display: none; }
+
 @media only screen and (max-width: 1130px) {
   .vih_class_table_teaser .field--name-field-vih-class-image img {
     min-width: 150% !important; }

@@ -1,0 +1,90 @@
+uuid: a5089bcd-d273-4428-b79a-6b1ee50ced36
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_class_package_paragraph
+    - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.event_list
+    - paragraphs.paragraphs_type.list_of_news_teasers
+    - paragraphs.paragraphs_type.long_course_list_
+    - paragraphs.paragraphs_type.news_list
+    - paragraphs.paragraphs_type.short_course_list_
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.vih_class_package.field_class_package_paragraph
+field_name: field_class_package_paragraph
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: class_package_paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      1_column_action_centered: 1_column_action_centered
+      event_list: event_list
+      list_of_news_teasers: list_of_news_teasers
+      long_course_list_: long_course_list_
+      news_list: news_list
+      short_course_list_: short_course_list_
+      video: video
+      vih_teacher_class_description: vih_teacher_class_description
+    target_bundles_drag_drop:
+      1_column_action_centered:
+        enabled: true
+        weight: 17
+      class_packages:
+        weight: 18
+        enabled: false
+      event_list:
+        enabled: true
+        weight: 19
+      list_of_news_teasers:
+        enabled: true
+        weight: 20
+      long_course_list_:
+        enabled: true
+        weight: 21
+      news_list:
+        enabled: true
+        weight: 22
+      page_content:
+        weight: 23
+        enabled: false
+      short_course_list_:
+        enabled: true
+        weight: 24
+      video:
+        enabled: true
+        weight: 25
+      vih_course_slot:
+        weight: 26
+        enabled: false
+      vih_option:
+        weight: 27
+        enabled: false
+      vih_option_group:
+        weight: 28
+        enabled: false
+      vih_ordered_course_period:
+        weight: 29
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 30
+        enabled: false
+      vih_ordered_option:
+        weight: 31
+        enabled: false
+      vih_teacher_class_description:
+        enabled: true
+        weight: 32
+field_type: entity_reference_revisions
