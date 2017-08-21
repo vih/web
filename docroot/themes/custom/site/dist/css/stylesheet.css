@@ -11773,6 +11773,9 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   border: 1px solid;
   margin-bottom: 10px; }
 
+.teacher-contact-info {
+  width: 300px; }
+
 @media only screen and (min-width: 980px) {
   .logo-wrapper-mobile {
     width: 0px !important;

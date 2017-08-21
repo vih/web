@@ -59,4 +59,23 @@
       <h5> {% trans %}
  Fødselsdag:
   {% endtrans %} </h5>
-   </div></dd> <dt>{{ content.field_user_birthday }}</dt> </dl>--> {% endif %} </div> </article>
+   </div></dd> <dt>{{ content.field_user_birthday }}</dt> </dl>--> 
+   <div class="teacher-contact-info">
+      <div class="user-title">
+      <h5> {% trans %}
+   E-mail:
+  {% endtrans %} </h5>
+    <a href="mailto:{{ content.field_e_mail.0['#url'] }}"> 
+   {{ content.field_e_mail }}
+</a>
+  
+   </div>
+   
+      <div class="user-title">
+      <h5> {% trans %}
+   Telefon:
+  {% endtrans %} </h5>
+     {{ content.field_vih_user_phone }}
+   </div>
+   </div>
+   {% endif %} </div> </article>
