@@ -150,8 +150,11 @@ html {
         height: 400px!important;
     }
     .banner .img-responsive {
-        max-width: inherit;
-        width: 130%;
+        width: 200%!important;
+        max-width: inherit!important;
+    }
+    .banner .banner-content {
+        height: 40vh!important;
     }
     .views-field-field-vih-course-image .img-responsive {
         max-width: inherit!important;
@@ -1839,6 +1842,13 @@ ul.layout-navigation {
 .paragraph--type--file .angled-background-inner:before {
     background: none!important;
 }
+.teacher-contact-info i {
+    margin-right: 10px;
+}
+.banner, .banner-logo {
+    height: 90vh!important;
+}
+
 @media only screen and (min-width: 980px) {
 //.layout--fixed-header {
 //    overflow: hidden!important;

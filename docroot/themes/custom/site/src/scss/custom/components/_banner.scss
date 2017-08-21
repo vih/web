@@ -34,7 +34,71 @@
     justify-content: center;
     align-items: center;
 }
+#block-komgodtigang {
+    overflow: hidden!important;
+    position: relative;
+}
+@media only screen and (max-width: 1260px) {
+  
+    .banner-logo {
+        height: 65vh!important; 
+    }
+    .banner {
+        max-height: 70vh!important;
+    }
+    .banner .banner-content {
+        height: 40vh!important;
+    }
+}
 
+@media only screen and (max-width: 960px) {
+    .banner {
+        max-height: 60vh!important;
+    }
+    .banner-content {
+        top: 0!important;
+    }
+    .container h3 {
+        font-size: 18px!important;
+    }
+    .view-class-packages-frontpage .col-xs-12 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fpnews-title a {
+        font-size: 18px!important;
+    }
+    .view-news .views-row {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .view-news .view-content .views-row {
+        min-height: 180px!important;
+    }
+    #pc-description p {
+        display: none!important;
+    }
+    #pc-description {
+        padding-left: 70px!important;
+    }
+    #pc-title {
+        background-size: 350%!important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .banner-content {
+        height: 40vh!important;
+    }
+      .banner img-responsive {
+        max-width: 200%!important;
+        width: 200%;
+    }
+}
+
+.paragraph--type--list-of-news-teasers {
+    margin-top: -80px;
+}
 .banner {
   position: relative;
   background-color: #fff;
@@ -47,7 +111,10 @@
   .banner-content {
     position: absolute;
     z-index: 100;
-    top: 10%;
+         height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     left: 0;
     right: 0;
 
@@ -114,6 +181,12 @@
   }
 }
 
+.banner img {
+    width: 100%;
+}
+.banner .img-responsive {
+    max-width: 200%!important;
+}
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -148,7 +221,7 @@
   .banner {
 
     .banner-content {
-      top: 20%;
+      top: 0;
 
       .banner-title {
         font-size: 46px;
@@ -171,7 +244,10 @@
   .banner {
 
     .banner-content {
-      top: 40%;
+     height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
       .banner-title {
         font-size: 56px;

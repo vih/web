@@ -10078,8 +10078,10 @@ html {
   .banner {
     height: 400px !important; }
   .banner .img-responsive {
-    max-width: inherit;
-    width: 130%; }
+    width: 200% !important;
+    max-width: inherit !important; }
+  .banner .banner-content {
+    height: 40vh !important; }
   .views-field-field-vih-course-image .img-responsive {
     max-width: inherit !important;
     min-width: 100%; }
@@ -11779,6 +11781,12 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 .paragraph--type--file .angled-background-inner:before {
   background: none !important; }
 
+.teacher-contact-info i {
+  margin-right: 10px; }
+
+.banner, .banner-logo {
+  height: 90vh !important; }
+
 @media only screen and (min-width: 980px) {
   .logo-wrapper-mobile {
     width: 0px !important;
@@ -11901,6 +11909,62 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
       -ms-flex-align: center;
           align-items: center; }
 
+#block-komgodtigang {
+  overflow: hidden !important;
+  position: relative; }
+
+@media only screen and (max-width: 1260px) {
+  .banner-logo {
+    height: 65vh !important; }
+  .banner {
+    max-height: 70vh !important; }
+  .banner .banner-content {
+    height: 40vh !important; } }
+
+@media only screen and (max-width: 960px) {
+  .banner {
+    max-height: 60vh !important; }
+  .banner-content {
+    top: 0 !important; }
+  .container h3, .container .heading-h3, .container .node-list-simple-title, .container .node-list-advanced-title {
+    font-size: 18px !important; }
+  .view-class-packages-frontpage .col-xs-12 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .fpnews-title a {
+    font-size: 18px !important; }
+  .view-news .views-row {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .view-news .view-content .views-row {
+    min-height: 180px !important; }
+  #pc-description p {
+    display: none !important; }
+  #pc-description {
+    padding-left: 70px !important; }
+  #pc-title {
+    -webkit-background-size: 350% 350% !important;
+            background-size: 350% !important; } }
+
+@media only screen and (max-width: 767px) {
+  .banner-content {
+    height: 40vh !important; }
+  .banner img-responsive {
+    max-width: 200% !important;
+    width: 200%; } }
+
+.paragraph--type--list-of-news-teasers {
+  margin-top: -80px; }
+
 .banner {
   position: relative;
   background-color: #fff;
@@ -11935,7 +11999,19 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   .banner .banner-content {
     position: absolute;
     z-index: 100;
-    top: 10%;
+    height: 90vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     left: 0;
     right: 0; }
     .banner .banner-content .banner-title {
@@ -11989,18 +12065,36 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
       width: 250px;
       height: 250px; }
 
+.banner img {
+  width: 100%; }
+
+.banner .img-responsive {
+  max-width: 200% !important; }
+
 .banner .banner-logo {
   display: none; }
 
 @media (min-width: 768px) {
   .banner .banner-content {
-    top: 20%; }
+    top: 0; }
     .banner .banner-content .banner-title {
       font-size: 46px; } }
 
 @media (min-width: 992px) {
   .banner .banner-content {
-    top: 40%; }
+    height: 60vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
     .banner .banner-content .banner-title {
       font-size: 56px; }
   .banner .banner-logo {
