@@ -11652,8 +11652,15 @@ div[role=heading] {
   background: white;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
-ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
-  top: 0px !important; }
+ul.layout-navigation li {
+  height: 100%; }
+
+ul.layout-navigation .layout-navigation__dropdown-menu {
+  max-width: none;
+  left: -2px;
+  border-radius: 0; }
+  ul.layout-navigation .layout-navigation__dropdown-menu li a {
+    padding: 23px 15px; }
 
 .layout-navigation__dropdown-menu .layout-navigation__link {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
