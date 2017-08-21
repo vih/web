@@ -1,3 +1,19 @@
+html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
+  content: 'Chose';
+}
+
+html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
+  content: 'Chosen';
+}
+
+html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
+  content: 'Vælg';
+}
+
+html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
+  content: 'Valgt';
+}
+
 .course-periods-accordion {
   .panel-body {
     padding: 0;
@@ -70,6 +86,11 @@
             width: 100%;
             position: absolute;
           }
+        }
+        h5 {
+          position:absolute;
+          bottom: 8px;
+          right: 20px;
         }
       }
     }
