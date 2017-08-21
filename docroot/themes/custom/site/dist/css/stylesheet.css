@@ -13238,8 +13238,7 @@ ul.layout-navigation__link {
     font-size: 1.5em; }
   .field.field--name-field-paragraph-file.field--type-file .field__items .file.file--mime-application-pdf.file--application-pdf {
     background-color: none !important;
-    color: #00a5e2;
-    border: 1px solid #00a5e2 !important;
+    border: 1px solid #ddd !important;
     padding: 5px; }
   .field.field--name-field-paragraph-file.field--type-file .field__items .field--item .paragraph-file-icon {
     width: 40px;
