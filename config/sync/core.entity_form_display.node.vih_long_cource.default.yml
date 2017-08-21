@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_course_heading
     - field.field.node.vih_long_cource.field_course_subheading
+    - field.field.node.vih_long_cource.field_laere
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -56,6 +57,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textfield
+    region: content
+  field_laere:
+    weight: 44
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_paragraphs:
     weight: 41

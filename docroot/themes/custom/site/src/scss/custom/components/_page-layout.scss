@@ -1837,6 +1837,10 @@ ul.layout-navigation {
 //.layout--fixed-header {
 //    overflow: hidden!important;
 //}    
+    .logo-wrapper-mobile {
+            width: -0px!important;
+    margin-left: -100px!important;
+    }
 }
 
 .path-taxonomy .lc-btn-box {display: none;}

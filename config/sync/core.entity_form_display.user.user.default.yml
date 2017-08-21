@@ -34,12 +34,9 @@ content:
     third_party_settings: {  }
   field_relateret:
     weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: '60'
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: viewsreference_autocomplete
+    type: viewsreference_select
     region: content
   field_user_picture:
     type: entity_browser_file
