@@ -1734,9 +1734,22 @@ div[role=heading] {
     background: white;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
-ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
-    top: 0px!important;
+
+ul.layout-navigation {
+  li {
+    height: 100%;
+  }
+
+  .layout-navigation__dropdown-menu {
+    max-width: none;
+    left: -2px;
+    border-radius: 0;
+    li a {
+      padding: 23px 15px;
+    }
+  }
 }
+
 .layout-navigation__dropdown-menu .layout-navigation__link {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
@@ -1835,7 +1848,7 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
     }
     .field--name-field-vih-class-image { overflow: hidden!important; }
 }
-@media only screen and (max-width: 870px) { 
+@media only screen and (max-width: 870px) {
     .modal-course-content-teaser-wrapper {
         display: flex;
         flex-direction: column;
@@ -1845,7 +1858,7 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
     }
     .modal-course-content-teaser-wrapper .field--type-string {
     margin: 20px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
     }
     .panel-title a {
         text-align: left;
