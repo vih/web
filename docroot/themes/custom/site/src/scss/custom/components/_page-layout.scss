@@ -1781,9 +1781,17 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
 .path-taxonomy .feed-icons {
     display: none;
 }
-
+.path-user .image-with-overlay {
+    width: 300px;
+}
 .path-user .field--label {
     display: none;
+}
+.path-user .user-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .path-user .banner {
     display: none;
