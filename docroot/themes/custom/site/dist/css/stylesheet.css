@@ -11707,9 +11707,45 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
 .layout__header-row {
   overflow: hidden !important; }
 
-@media only screen and (min-width: 980px) {
-  .layout--fixed-header {
-    overflow: hidden !important; } }
+.path-user .field--label {
+  display: none; }
+
+.path-user .banner {
+  display: none; }
+
+.path-user .user-title {
+  margin-bottom: 30px; }
+
+.path-user .image-overlay {
+  height: 120px !important;
+  -webkit-background-size: 120% 120% !important;
+          background-size: 120% !important; }
+
+.path-user .image-overlay .field--item {
+  padding: 0;
+  padding-right: 5px;
+  color: #fff;
+  font-size: 24px; }
+
+.path-user .col-md-6:first-child {
+  padding-left: 0px !important; }
+
+.view-kurser-relateret-til-laere .views-field-title a {
+  padding: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid;
+  margin-bottom: 10px; }
 
 .path-taxonomy .lc-btn-box {
   display: none; }

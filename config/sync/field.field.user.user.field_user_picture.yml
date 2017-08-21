@@ -1,17 +1,17 @@
-uuid: 910986b6-5043-45fa-85f0-4e3c30d695a9
-langcode: en
+uuid: 6cf52b26-9eea-4918-b8fd-f8f6eaecc351
+langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_vih_user_photo
+    - field.storage.user.field_user_picture
   module:
     - image
     - user
-id: user.user.field_vih_user_photo
-field_name: field_vih_user_photo
+id: user.user.field_user_picture
+field_name: field_user_picture
 entity_type: user
 bundle: user
-label: Photo
+label: user_picture
 description: ''
 required: false
 translatable: false
@@ -28,11 +28,11 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 3f3f7ef2-4a5a-4a02-b3cc-6db2b855c873
-    alt: Placeholder
-    title: Placeholder
-    width: 250
-    height: 250
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
   handler: 'default:file'
   handler_settings: {  }
 field_type: image

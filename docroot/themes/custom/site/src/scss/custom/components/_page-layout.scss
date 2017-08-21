@@ -1784,10 +1784,40 @@ ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dro
 .layout__header-row {
     overflow: hidden!important;
 }
+.path-user .field--label {
+    display: none;
+}
+.path-user .banner {
+    display: none;
+}
+.path-user .user-title {
+    margin-bottom: 30px;
+}
+.path-user .image-overlay {
+    height: 120px!important;
+    background-size: 120%!important;
+}
+.path-user .image-overlay .field--item {
+ padding: 0;
+    padding-right: 5px;
+    color: #fff;
+    font-size: 24px;
+}
+.path-user .col-md-6:first-child() {
+    padding-left: 0px!important;
+}
+.view-kurser-relateret-til-laere .views-field-title a {
+        padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
 @media only screen and (min-width: 980px) {
-.layout--fixed-header {
-    overflow: hidden!important;
-}    
+//.layout--fixed-header {
+//    overflow: hidden!important;
+//}    
 }
 
 .path-taxonomy .lc-btn-box {display: none;}

@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}> {% if content %}
+    <div class="col-md-6">
+        <div class="user-title">
+            <h5> {% trans %}
+   Fornavn:
+  {% endtrans %}</h5> {{ content.field_user_name_first }} </div>
+        <div class="user-title">
+            <h5> {% trans %}
+   Efternavn:
+  {% endtrans %} </h5> {{ content.field_user_name_last }} </div>
+   
+   <div class="user-title">
+      <h5> {% trans %}
+   Beskrivelse:
+  {% endtrans %} </h5>
+       {{ content.field_vih_user_descr }}
+   </div>
+    <div class="user-title">
+      <h5> {% trans %}
+   Kurser relateret til mig:
+  {% endtrans %} </h5>
+     {{ content.field_relateret }}
+   </div>
+
+    </div>
+     <div class="col-md-6">
+     <div class="image-with-overlay">
+<div class="image-overlay"><p>{{ content.field_user_name_first }}{{ content.field_user_name_last }}</p></div>
+{{ content.field_user_picture }}
+</div>    
+    <dl>
+        <dd>  <div class="user-title">
+      <h5> {% trans %}
+ Telefon:
+  {% endtrans %} </h5>
+   </div></dd> <dt>{{ content.field_vih_user_phone }}</dt>
+        <dd><div class="user-title">
+      <h5> {% trans %}
+ Fødselsdag:
+  {% endtrans %} </h5>
+   </div></dd> <dt>{{ content.field_user_birthday }}</dt> </dl> {% endif %} </div> </article>
