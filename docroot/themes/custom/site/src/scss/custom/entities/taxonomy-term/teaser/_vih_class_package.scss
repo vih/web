@@ -1,3 +1,10 @@
 .vih_class_package.vih_class_package_accordion {
 
 }
+article.vih_class_package {
+  & .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions{
+    & .field__items{
+      border: none;
+    }
+  }
+}
