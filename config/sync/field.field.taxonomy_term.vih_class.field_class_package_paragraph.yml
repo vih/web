@@ -1,4 +1,4 @@
-uuid: a5089bcd-d273-4428-b79a-6b1ee50ced36
+uuid: f63cac7a-8555-457d-bad1-e5087b81bb4e
 langcode: da
 status: true
 dependencies:
@@ -13,17 +13,17 @@ dependencies:
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_teacher_class_description
-    - taxonomy.vocabulary.vih_class_package
+    - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
-id: taxonomy_term.vih_class_package.field_class_package_paragraph
+id: taxonomy_term.vih_class.field_class_package_paragraph
 field_name: field_class_package_paragraph
 entity_type: taxonomy_term
-bundle: vih_class_package
+bundle: vih_class
 label: class_package_paragraph
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -32,9 +32,9 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       event_list: event_list
+      file: file
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
-      file: file
       news_list: news_list
       short_course_list_: short_course_list_
       video: video
@@ -42,53 +42,53 @@ settings:
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
-        weight: 17
-      class_packages:
         weight: 18
+      class_packages:
+        weight: 19
         enabled: false
       event_list:
         enabled: true
-        weight: 19
-      list_of_news_teasers:
-        enabled: true
         weight: 20
-      long_course_list_:
-        enabled: true
-        weight: 21
       file:
         enabled: true
         weight: 21
-      news_list:
+      list_of_news_teasers:
         enabled: true
         weight: 22
-      page_content:
+      long_course_list_:
+        enabled: true
         weight: 23
+      news_list:
+        enabled: true
+        weight: 24
+      page_content:
+        weight: 25
         enabled: false
       short_course_list_:
         enabled: true
-        weight: 24
+        weight: 26
       video:
         enabled: true
-        weight: 25
-      vih_course_slot:
-        weight: 26
-        enabled: false
-      vih_option:
         weight: 27
-        enabled: false
-      vih_option_group:
+      vih_course_slot:
         weight: 28
         enabled: false
-      vih_ordered_course_period:
+      vih_option:
         weight: 29
         enabled: false
-      vih_ordered_course_slot:
+      vih_option_group:
         weight: 30
         enabled: false
-      vih_ordered_option:
+      vih_ordered_course_period:
         weight: 31
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 32
+        enabled: false
+      vih_ordered_option:
+        weight: 33
         enabled: false
       vih_teacher_class_description:
         enabled: true
-        weight: 32
+        weight: 34
 field_type: entity_reference_revisions

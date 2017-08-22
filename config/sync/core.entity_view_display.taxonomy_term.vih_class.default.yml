@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.vih_class.field_class_package_paragraph
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
@@ -24,6 +25,14 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+  field_class_package_paragraph:
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
   field_vih_class_material_price:
     weight: 3
     label: above

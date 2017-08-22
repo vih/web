@@ -50,3 +50,10 @@
     min-height: 107px;
   }*/
 }
+article.vih_class {
+  & .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions{
+    & .field__items{
+      border: none;
+    }
+  }
+}

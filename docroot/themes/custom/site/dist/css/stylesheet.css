@@ -13610,6 +13610,9 @@ article .row.paragraphs {
   .vih_class.vih_class_table_teaser .panel-heading label {
     border-left: 1px solid #ddd !important; }
 
+article.vih_class .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions .field__items {
+  border: none; }
+
 article.vih_class_package .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions .field__items {
   border: none; }
 
