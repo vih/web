@@ -23,6 +23,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_background_image:
     type: entity_browser_file
     weight: 1
@@ -35,6 +36,7 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
   field_heading:
     weight: 0
     settings:
@@ -42,12 +44,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_paragraph_file:
     weight: 3
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
+    region: content
 hidden:
   created: true
   status: true
