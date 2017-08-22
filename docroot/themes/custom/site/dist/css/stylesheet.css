@@ -13354,6 +13354,20 @@ ul.layout-navigation__link {
   min-height: 100%;
   height: unset !important; }
 
+.paragraph--type--vih-teacher-class-description .field--label {
+  color: #212121 !important;
+  margin-top: 40px !important; }
+
+.paragraph--type--vih-teacher-class-description .teacher-c-desc {
+  background: none !important;
+  border: none; }
+
+.paragraph--type--vih-teacher-class-description .field.field--name-field-paragraph-user.field--type-entity-reference .field__items {
+  display: block;
+  text-align: left;
+  border: none;
+  padding-top: 5px; }
+
 article .field .field__items {
   text-align: center;
   padding-top: 25px;

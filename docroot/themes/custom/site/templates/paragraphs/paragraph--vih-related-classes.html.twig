@@ -7,18 +7,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 <div{{ attributes.addClass(classes) }}>
 
-    {% if background_image %}
+  {% if background_image %}
     <div class="angled-background-image-wrapper">
-        <div class="cover-overlay"></div>
-        <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+      <div class="cover-overlay"></div>
+      <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
     </div>
-    {% endif %}
-
-
-        <div class="container">
-            <div class="row">
-            {{ content }}
-            </div>
-        </div>
-
+  {% endif %}
+  <div class="container">
+    <div class="row">
+      {{ content }}
+    </div>
+  </div>
 </div>

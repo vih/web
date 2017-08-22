@@ -1,0 +1,28 @@
+uuid: b1b4d8af-cc08-428d-b5a4-a469540d5ae9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_user
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+id: paragraph.vih_teacher_class_description.field_paragraph_user
+field_name: field_paragraph_user
+entity_type: paragraph
+bundle: vih_teacher_class_description
+label: 'Linked users'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

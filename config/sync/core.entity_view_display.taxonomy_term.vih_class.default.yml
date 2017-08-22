@@ -25,6 +25,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_class_package_paragraph:
     weight: 5
     label: above
@@ -33,6 +34,7 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
   field_vih_class_material_price:
     weight: 3
     label: above
@@ -43,6 +45,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
   field_vih_class_price_addition:
     weight: 1
     label: above
@@ -53,6 +56,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
   field_vih_teacher_class_descr:
     type: entity_reference_revisions_entity_view
     weight: 4
@@ -61,6 +65,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   field_vih_class_class_packages: true
   field_vih_class_color: true

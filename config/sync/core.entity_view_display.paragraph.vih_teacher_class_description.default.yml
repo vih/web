@@ -3,18 +3,36 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_teacher_class_description.field_background_color
+    - field.field.paragraph.vih_teacher_class_description.field_background_image
     - field.field.paragraph.vih_teacher_class_description.field_description
     - field.field.paragraph.vih_teacher_class_description.field_heading
+    - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
+    - options
     - text
 id: paragraph.vih_teacher_class_description.default
 targetEntityType: paragraph
 bundle: vih_teacher_class_description
 mode: default
 content:
+  field_background_color:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_background_image:
+    weight: 4
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
   field_description:
     weight: 2
     label: above
@@ -28,6 +46,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_paragraph_user:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_photo:
     weight: 1
     label: hidden
