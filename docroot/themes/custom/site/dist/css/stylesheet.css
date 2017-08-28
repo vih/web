@@ -10094,6 +10094,9 @@ html {
 .banner {
   overflow: hidden !important; }
 
+.path-taxonomy .news-container {
+  padding: 0 !important; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
@@ -13414,7 +13417,7 @@ article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-t
   text-align: center; }
 
 article .row.paragraphs {
-  margin-top: 130px; }
+  margin-top: 0px; }
 
 .node-teaser-news,
 .node-teaser-news h4,
