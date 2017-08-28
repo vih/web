@@ -157,7 +157,12 @@ html {
 .path-taxonomy .breadcrumb {
     margin-top: 70px;
 }
-
+.path-taxonomy article h4 {
+        letter-spacing: 0.005em;
+}
+.path-taxonomy ul li {
+    color: #000;
+}
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

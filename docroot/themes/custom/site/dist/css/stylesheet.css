@@ -10100,6 +10100,14 @@ html {
 .path-taxonomy .breadcrumb {
   margin-top: 70px; }
 
+.path-taxonomy article h4, .path-taxonomy article .heading-h4, .path-taxonomy article .paragraph--type--video .field--name-field-description, .paragraph--type--video .path-taxonomy article .field--name-field-description, .path-taxonomy article
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .path-taxonomy article p, .path-taxonomy article .field .field--label {
+  letter-spacing: 0.005em; }
+
+.path-taxonomy ul li {
+  color: #000; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
