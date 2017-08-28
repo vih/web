@@ -9,6 +9,7 @@ styling:
     theme:
       dist/css/stylesheet.css: {}
       dist/jasny-bootstrap/css/jasny-bootstrap.min.css: {}
+      'https://afeld.github.io/emoji-css/emoji.css': {}
 
 scripts:
   js:
