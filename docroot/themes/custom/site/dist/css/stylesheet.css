@@ -10108,6 +10108,9 @@ html {
 .path-taxonomy ul li {
   color: #000; }
 
+.path-taxonomy ul {
+  line-height: 35px; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
