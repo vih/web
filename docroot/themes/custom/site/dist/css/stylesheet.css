@@ -10097,6 +10097,9 @@ html {
 .path-taxonomy .news-container {
   padding: 0 !important; }
 
+.path-taxonomy .breadcrumb {
+  margin-top: 70px; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
