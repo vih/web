@@ -10068,6 +10068,9 @@ html {
 .path-node .news-container {
   padding-bottom: 100px; }
 
+.path-taxonomy .field--name-field-class-package-paragraph .field--name-field-heading {
+  display: none !important; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
@@ -11912,6 +11915,11 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 #block-komgodtigang {
   overflow: hidden !important;
   position: relative; }
+
+@media only screen and (min-width: 1024px) {
+  .banner .banner-logo .banner-logo-image {
+    width: 180px !important;
+    bottom: 14% !important; } }
 
 @media only screen and (max-width: 1260px) {
   .banner-logo {

@@ -38,10 +38,16 @@
     overflow: hidden!important;
     position: relative;
 }
+@media only screen and (min-width: 1024px) {
+     .banner .banner-logo .banner-logo-image {
+        width: 180px!important;
+        bottom: 14%!important;
+    }
+}
 @media only screen and (max-width: 1260px) {
   
     .banner-logo {
-        height: 65vh!important; 
+        height: 65vh!important;
     }
     .banner {
         max-height: 70vh!important;
@@ -49,6 +55,7 @@
     .banner .banner-content {
         height: 40vh!important;
     }
+
 }
 
 @media only screen and (max-width: 960px) {
@@ -85,6 +92,7 @@
         background-size: 350%!important;
     }
 }
+
 
 @media only screen and (max-width: 767px) {
     .banner-content {
