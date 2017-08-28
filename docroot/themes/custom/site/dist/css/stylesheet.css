@@ -10071,6 +10071,29 @@ html {
 .path-taxonomy .field--name-field-class-package-paragraph .field--name-field-heading {
   display: none !important; }
 
+.path-taxonomy .field--name-field-class-package-paragraph .container {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold !important;
+  color: #fff;
+  font-family: "Open Sans", Sens-serif !important; }
+
+.path-taxonomy .field--name-field-class-package-paragraph .field--name-field-link {
+  margin-top: 30px; }
+
+.path-taxonomy .angled-background-color, .path-taxonomy .angled-background-image {
+  padding-bottom: 110px; }
+
+.path-node .teacher-c-desc {
+  padding: 0 !important;
+  margin-bottom: 220px; }
+
+.path-node .field--name-body {
+  margin-bottom: 60px !important; }
+
+.banner {
+  overflow: hidden !important; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
@@ -11915,11 +11938,6 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 #block-komgodtigang {
   overflow: hidden !important;
   position: relative; }
-
-@media only screen and (min-width: 1024px) {
-  .banner .banner-logo .banner-logo-image {
-    width: 180px !important;
-    bottom: 14% !important; } }
 
 @media only screen and (max-width: 1260px) {
   .banner-logo {
