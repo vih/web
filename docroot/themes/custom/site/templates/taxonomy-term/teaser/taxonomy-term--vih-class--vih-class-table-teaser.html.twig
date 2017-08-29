@@ -32,8 +32,8 @@
             {{ content.field_vih_class_image }}
         </td>
         <td class="col-xs-6 multiple-elements">
-             {% if content.field_class_summary|render is not empty %}
-    <div class="field-image-wrapper">{{ content.field_class_summary }}</div>
+             {% if content.description|render is not empty %}
+    <div class="field-image-wrapper">{{ content.description }}</div>
   {% endif %}
             <a href="{{ url }}" class="btn-more">
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -54,8 +54,8 @@
             {{ content.field_vih_class_image }}
         </div>
         <div class="col-xs-6 vih-col-center">
-           {% if content.field_class_summary|render is not empty %}
-    <div class="field-image-wrapper">{{ content.field_class_summary }}</div>
+           {% if content.description|render is not empty %}
+    <div class="field-image-wrapper">{{ content.description }}</div>
   {% endif %}
         </div>
     </div>
