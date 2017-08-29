@@ -1844,10 +1844,10 @@ ul.layout-navigation {
     margin-bottom: 25px;
 }
 .path-taxonomy .field--name-field-class-package-paragraph .field--name-field-link {
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%!important;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
 }
 .path-taxonomy article .col-sm-6 {
     width: 100%!important;
