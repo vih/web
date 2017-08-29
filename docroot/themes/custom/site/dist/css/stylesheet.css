@@ -11758,6 +11758,9 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   border: 1px solid #00a5e2 !important;
   margin-bottom: 25px; }
 
+.modal-course-description {
+  text-align: left !important; }
+
 .path-taxonomy .field--name-field-class-package-paragraph .field--name-field-link {
   max-width: 100% !important;
   display: -webkit-box !important;
@@ -11772,6 +11775,11 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   -webkit-align-items: center !important;
       -ms-flex-align: center !important;
           align-items: center !important; }
+
+.news-banner {
+  -webkit-background-size: cover !important;
+          background-size: cover !important;
+  background-position: center !important; }
 
 .path-taxonomy article .col-sm-6 {
   width: 100% !important; }
