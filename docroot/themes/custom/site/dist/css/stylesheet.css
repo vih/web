@@ -10111,6 +10111,9 @@ html {
 .path-taxonomy ul {
   line-height: 35px; }
 
+.well {
+  background: none !important; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
