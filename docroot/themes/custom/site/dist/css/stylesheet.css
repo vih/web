@@ -11028,13 +11028,16 @@ div[role=heading] {
 .panel-banner {
   background-position: center !important; }
 
-label.control-label.option:before {
-  content: "/f00c";
-  font-family: fontawesome;
+.btn-radio-select.active label.control-label.option:before {
+  content: "\E876";
+  font-family: "Material Icons";
   color: #fff;
   display: inline-block;
   position: absolute;
-  right: -15px; }
+  right: -12px; }
+
+.btn-radio-select.active label.control-label.option {
+  margin-right: 10px; }
 
 .image-overlay {
   width: 100%;
