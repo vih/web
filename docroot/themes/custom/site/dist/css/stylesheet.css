@@ -11028,6 +11028,14 @@ div[role=heading] {
 .panel-banner {
   background-position: center !important; }
 
+label.control-label.option:before {
+  content: "/f00c";
+  font-family: fontawesome;
+  color: #fff;
+  display: inline-block;
+  position: absolute;
+  right: -15px; }
+
 .image-overlay {
   width: 100%;
   height: 80px;
