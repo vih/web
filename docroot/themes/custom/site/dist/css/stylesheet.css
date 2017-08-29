@@ -11781,6 +11781,9 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
           background-size: cover !important;
   background-position: center !important; }
 
+.field--name-field-news-tags {
+  display: none; }
+
 .path-taxonomy article .col-sm-6 {
   width: 100% !important; }
 
