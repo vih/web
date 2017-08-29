@@ -375,8 +375,11 @@ $font-family-primary: 'Lato', sans-serif;
     padding-left: 0px;
     padding-right: 0px;
     background-size: cover;
+    background-position: center;
 }
-
+.panel-banner {
+    background-position: center;
+}
 .modal-backdrop {
     z-index: 0;
 }

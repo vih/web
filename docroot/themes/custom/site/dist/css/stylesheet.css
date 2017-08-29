@@ -9748,7 +9748,11 @@ small, .font_small {
   padding-left: 0px;
   padding-right: 0px;
   -webkit-background-size: cover;
-          background-size: cover; }
+          background-size: cover;
+  background-position: center; }
+
+.panel-banner {
+  background-position: center; }
 
 .modal-backdrop {
   z-index: 0; }
