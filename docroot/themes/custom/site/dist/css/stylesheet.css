@@ -10114,6 +10114,11 @@ html {
 .well {
   background: none !important; }
 
+.path-taxonomy .teacher-c-desc .col-lg-9 {
+  text-align: left;
+  font-size: 16px;
+  color: #555; }
+
 .layout__content-inner {
   padding-top: 20px;
   padding-bottom: 25px; }
@@ -11423,9 +11428,9 @@ div[role=heading] {
   background-color: #f1f1f1 !important;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 25px;
+  padding-top: 50px;
   padding-bottom: 50px;
-  border-top: 25px solid #fff; }
+  border: 1px solid rgba(0, 0, 0, 0.05) !important; }
 
 .view-vih-teacher-teaches-classes .views-field-name-1 {
   background: #00a5e2;
