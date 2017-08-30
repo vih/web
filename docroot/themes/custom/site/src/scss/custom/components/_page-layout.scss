@@ -1173,6 +1173,23 @@ div[role=heading] {
 .teacher-c-desc {
     margin-bottom: 80px;
 }
+.teacher-c-desc .col-md-9 p {
+    box-shadow: 0px 15px 40px 5px rgba(0,0,0,0.05);
+    padding: 15px;
+    border-radius: 8px;
+}
+.teacher-c-desc .col-md-9 p:before {
+    content: "";
+    position: absolute;
+    /* bottom: 0; */
+    top: 60px;
+    left: 15px;
+    border-width: 0 0 30px 50px;
+    border-style: solid;
+    border-color: transparent #fff;
+    display: block;
+    width: 0;
+}
 .field--type-entity-reference-revisions .col-md-9 .field--label { 
 display: block!important; }
 .angled-background-image-element {
