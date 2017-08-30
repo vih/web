@@ -9,7 +9,7 @@ id: paragraph.vih_teacher_class_description.field_paragraph_user
 field_name: field_paragraph_user
 entity_type: paragraph
 bundle: vih_teacher_class_description
-label: 'Linked users'
+label: Undervisere
 description: ''
 required: false
 translatable: false

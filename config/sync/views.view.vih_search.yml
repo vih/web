@@ -328,7 +328,7 @@ display:
             rendered_item: rendered_item
           plugin_id: search_api_fulltext
       sorts: {  }
-      title: 'VIH Search'
+      title: Søg
       header:
         result:
           id: result
