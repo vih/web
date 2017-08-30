@@ -11039,6 +11039,9 @@ div[role=heading] {
 .field--type-entity-reference-revisions .field--label {
   display: none; }
 
+.teacher-c-desc {
+  margin-bottom: 80px; }
+
 .field--type-entity-reference-revisions .col-md-9 .field--label {
   display: block !important; }
 
