@@ -8,7 +8,7 @@ dependencies:
     - site
 id: popup_cta
 theme: site
-region: drawer_left
+region: '-1'
 weight: -8
 provider: null
 plugin: popup_cta

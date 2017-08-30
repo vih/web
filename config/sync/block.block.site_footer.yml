@@ -12,7 +12,7 @@ _core:
   default_config_hash: h06zhb3xV9_2_3Zy9NsyylL7YBaEDlMwMEqNwAn8kMo
 id: site_footer
 theme: site
-region: drawer_left
+region: '-1'
 weight: -12
 provider: null
 plugin: 'system_menu_block:footer'

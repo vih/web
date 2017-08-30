@@ -11,7 +11,7 @@ dependencies:
     - site
 id: contactblock
 theme: site
-region: drawer_left
+region: '-1'
 weight: -1
 provider: null
 plugin: contact_block

@@ -10,7 +10,7 @@ _core:
   default_config_hash: iggZSiUKz4mYP1YPJ8SsUfFu79HIgOTt6IDy3Up59aM
 id: site_powered
 theme: site
-region: drawer_left
+region: '-1'
 weight: -7
 provider: null
 plugin: system_powered_by_block

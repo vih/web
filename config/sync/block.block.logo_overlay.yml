@@ -9,7 +9,7 @@ dependencies:
     - site
 id: logo_overlay
 theme: site
-region: drawer_left
+region: '-1'
 weight: -10
 provider: null
 plugin: block_foobarblk
