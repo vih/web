@@ -1167,6 +1167,13 @@ div[role=heading] {
     position: absolute;
     right: -12px;
 }
+.field--type-entity-reference-revisions .field--label {
+    display: none;
+}
+.angled-background-image-element {
+    background-size: cover;
+    background-position: center;
+}
 .btn-radio-select.active label.control-label.option {
         margin-right: 10px;
 }
