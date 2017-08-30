@@ -9985,7 +9985,8 @@ html {
   position: relative; }
 
 .layout__content {
-  padding-top: 0; }
+  padding-top: 0;
+  padding-bottom: 30px; }
 
 .layout__wrapper {
   overflow-y: visible;
