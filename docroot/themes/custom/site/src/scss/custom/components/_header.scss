@@ -229,6 +229,7 @@
   .layout__header-row {
     padding-left: 105px;
     padding-right: 0;
+    flex-wrap: wrap;
   }
 
   .layout__header-logo {
@@ -568,6 +569,10 @@
 
   // Header
   .layout__header {
+  }
+    .layout__header-row.layout__header-row--top.hidden-xs{
+    height: unset !important;
+    padding-top: 10px;
   }
 }
 
