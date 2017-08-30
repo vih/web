@@ -1994,6 +1994,9 @@ ul.layout-navigation {
     .field--name-field-vih-class-image { overflow: hidden!important; }
 }
 @media only screen and (max-width: 870px) {
+    #main-menu {
+        overflow: hidden;
+    }
     .modal-course-content-teaser-wrapper {
         display: flex;
         flex-direction: column;

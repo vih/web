@@ -11949,6 +11949,8 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
     overflow: hidden !important; } }
 
 @media only screen and (max-width: 870px) {
+  .main-menu {
+    overflow: hidden; }
   .modal-course-content-teaser-wrapper {
     display: -webkit-box;
     display: -webkit-flex;
