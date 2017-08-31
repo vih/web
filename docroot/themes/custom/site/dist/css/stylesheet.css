@@ -9985,7 +9985,8 @@ html {
   position: relative; }
 
 .layout__content {
-  padding-top: 0; }
+  padding-top: 0;
+  padding-bottom: 30px; }
 
 .layout__wrapper {
   overflow-y: visible;
@@ -11721,10 +11722,13 @@ div[role=heading] {
 .multiple-elements .btn-more i {
   margin: 0; }
 
-.course-periods-accordion .radio_selection table p {
+.course-periods-accordion .radio_selection div p {
   text-transform: uppercase;
   font-weight: bold !important;
-  color: #555 !important; }
+  color: #555 !important;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  margin-top: 15px; }
 
 .modal-content .modal-body p {
   text-transform: none !important;
@@ -11987,39 +11991,27 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
             flex-direction: column; }
   .field--name-field-vih-user-photo img {
     min-width: 100%; }
-  .breadcrumb li, .breadcrumb li a {
-    width: 100%;
-    font-size: 12px !important;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-weight: bold; }
-  .breadcrumb li + li:before {
-    height: 100% !important;
-    margin-top: -28px !important;
-    border-width: 30px !important; }
-  .breadcrumb {
-    display: -webkit-box !important;
-    display: -webkit-flex !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    max-width: 450px; }
-  .breadcrumb li:first-child a:before {
-    padding-right: 10px; }
+  /*    .breadcrumb li, .breadcrumb li a {
+        width: 100%;
+        font-size: 12px!important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+    .breadcrumb li + li:before {
+        height: 100%!important;
+    margin-top: -28px!important;
+            border-width: 30px!important;
+    }
+    .breadcrumb {
+        display: flex!important;
+        flex-direction: row;
+        max-width: 450px;
+    }
+    .breadcrumb li:first-child a:before {
+        padding-right: 10px;
+    }*/
   header .layout__header-row {
     width: 100% !important;
     display: -webkit-box !important;
@@ -12542,7 +12534,10 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 
 .layout__header .layout__header-row {
   padding-left: 105px;
-  padding-right: 0; }
+  padding-right: 0;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 .layout__header .layout__header-logo {
   position: absolute;
@@ -12809,7 +12804,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
             .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__dropdown.layout-navigation__link__search .form-group-btn {
               position: absolute;
               left: 24px;
-              top: 15px;
+              top: 3px;
               color: #00a5e2; }
               .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__link.layout-navigation__link__search .form-group-btn .form-submit,
               .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__dropdown.layout-navigation__link__search .form-group-btn .form-submit {
@@ -12846,13 +12841,24 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
             .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__dropdown > a:hover {
               background-color: #00a5e2; }
   .block-title {
-    z-index: 99999 !important; } }
+    z-index: 99999 !important; }
+  .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a {
+    color: white;
+    background-color: #0080af !important; }
+    .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:hover, .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:active {
+      background-color: #00a5e2 !important;
+      color: white; } }
 
 @media (min-width: 768px) {
   .layout__header-row--bottom .region {
     width: 100%; }
     .layout__header-row--bottom .region > nav {
       width: 100%; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .layout__header-row.layout__header-row--top.hidden-xs {
+    height: unset !important;
+    padding-top: 10px; } }
 
 .layout__footer {
   background-color: #00a5e2;
@@ -13812,7 +13818,7 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
       padding: 0px 20px;
       top: -3px;
       position: relative;
-      background-color: none;
+      background: none;
       color: #bbb;
       border: 1px solid rgba(0, 0, 0, 0.2); }
       .course-periods-accordion .panel-body .class-selection label.btn-radio-select.active {
@@ -13856,6 +13862,30 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
         position: absolute;
         bottom: 8px;
         right: 20px; }
+
+.course-periods-accordion .accordion-flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .course-periods-accordion .accordion-flex-container .col-xs-12.col-sm-3 {
+    margin-bottom: 15px; }
 
 #edit-submit {
   font-weight: 700; }

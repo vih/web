@@ -229,6 +229,7 @@
   .layout__header-row {
     padding-left: 105px;
     padding-right: 0;
+    flex-wrap: wrap;
   }
 
   .layout__header-logo {
@@ -485,10 +486,11 @@
              .form-control:-ms-input-placeholder {
                  color: #fff;
              }
+             
             .form-group-btn {
               position: absolute;
               left: 24px;
-              top: 15px;
+              top: 3px;
               color:  $brand-primary;
 
               .form-submit {
@@ -544,6 +546,21 @@
       //transform: translateX(60%);
     }
   }
+  
+  .dropdown.layout-navigation__dropdown{
+    & ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu{
+      & li.layout-navigation__link{
+        & a{
+          color: white;
+          background-color: rgb(0, 128, 175) !important;
+          &:hover, &:active {
+            background-color: $brand-primary !important;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Tablet - and up
@@ -568,6 +585,10 @@
 
   // Header
   .layout__header {
+  }
+    .layout__header-row.layout__header-row--top.hidden-xs{
+    height: unset !important;
+    padding-top: 10px;
   }
 }
 

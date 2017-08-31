@@ -45,6 +45,7 @@ html {
 // Page layout
 .layout__content {
     padding-top: 0;
+    padding-bottom: 30px;
 }
 
 .layout__wrapper {
@@ -1798,10 +1799,13 @@ padding-right: 10px!important;
 .multiple-elements .btn-more i {
     margin: 0;
 }
-.course-periods-accordion .radio_selection table p {
+.course-periods-accordion .radio_selection div p {
     text-transform: uppercase;
     font-weight: bold!important;
     color: #555!important;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 .modal-content .modal-body p {
     text-transform: none!important;
@@ -2029,7 +2033,7 @@ ul.layout-navigation {
     .field--name-field-vih-user-photo img {
         min-width: 100%;
     }
-    .breadcrumb li, .breadcrumb li a {
+/*    .breadcrumb li, .breadcrumb li a {
         width: 100%;
         font-size: 12px!important;
         display: flex;
@@ -2049,7 +2053,7 @@ ul.layout-navigation {
     }
     .breadcrumb li:first-child a:before {
         padding-right: 10px;
-    }
+    }*/
     header .layout__header-row {
             width: 100%!important;
     display: flex!important;

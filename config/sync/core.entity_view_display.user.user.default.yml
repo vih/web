@@ -3,8 +3,10 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_e_mail
     - field.field.user.user.field_relateret
     - field.field.user.user.field_user_birthday
+    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_picture
@@ -31,6 +33,13 @@ content:
     third_party_settings: {  }
     type: viewsreference_formatter
     region: content
+  field_user_kvalifikationer:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_user_name_first:
     weight: 0
     label: above
@@ -64,6 +73,7 @@ content:
     type: text_default
     region: content
 hidden:
+  field_e_mail: true
   field_user_birthday: true
   field_vih_user_phone: true
   field_vih_user_photo: true
