@@ -12250,7 +12250,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
     .breadcrumb li:first-child {
       background-color: #fff; }
       .breadcrumb li:first-child a {
-        font-size: 0; }
+        font-size: 0 !important; }
         .breadcrumb li:first-child a:before {
           display: inline-block;
           color: #afafaf;
@@ -12302,6 +12302,33 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
     display: none; }
   .breadcrumb li + li:before {
     border-left-color: #f7f7f7; }
+
+@media (max-width: 767px) {
+  .breadcrumb {
+    display: inline-block;
+    border: 1px solid #e6e7e7;
+    border-radius: 0;
+    background-color: #fff;
+    padding: 0; }
+    .breadcrumb li {
+      background-color: #f7f7f7;
+      position: relative;
+      padding: 9px 10px;
+      font-size: 10px; }
+      .breadcrumb li:first-child {
+        background-color: #fff;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 14px !important; }
+      .breadcrumb li:before {
+        border-width: 17px !important;
+        margin-top: -17px !important;
+        border-left-color: #f7f7f7;
+        z-index: 2; }
+      .breadcrumb li a {
+        font-size: 10px !important; }
+      .breadcrumb li + li {
+        padding-left: 25px; } }
 
 .layout__header .layout-header-contact-information .icon:after {
   content: ""; }

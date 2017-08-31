@@ -37,7 +37,7 @@ $breadcrumb-active-background-color: $brand-primary;
       background-color: $breadcrumb-home-background-color;
 
       a {
-        font-size: 0;
+        font-size: 0 !important;
 
         &:before {
           @extend .icon;
@@ -59,8 +59,8 @@ $breadcrumb-active-background-color: $brand-primary;
       &,
       a {
         color: #fff;
-          font-weight: bold;
-          letter-spacing: 0.050em;
+        font-weight: bold;
+        letter-spacing: 0.050em;
       }
     }
 
@@ -83,7 +83,7 @@ $breadcrumb-active-background-color: $brand-primary;
     + li {
 
       &:before,
-      &:after {
+        &:after {
         position: absolute;
         left: 0;
         top: 50%;
@@ -121,7 +121,7 @@ $breadcrumb-active-background-color: $brand-primary;
     &:first-child {
 
       &:before,
-      &:after {
+        &:after {
         display: none;
       }
 
@@ -165,7 +165,48 @@ $breadcrumb-active-background-color: $brand-primary;
 @include media-breakpoint-only(xs) {
 
   // Breadcrumb
-  .breadcrumb {}
+
+  .breadcrumb {
+    display: inline-block;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    background-color: #fff;
+    padding: 0;
+
+      &:first-child{
+        //font-size: 14px !important;
+      }
+      & li {
+        background-color: $breadcrumb-background-color;
+        position: relative;
+        padding: 9px 10px;
+        font-size: 10px;
+        // Must be home button
+        &:first-child {
+          background-color: $breadcrumb-home-background-color;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          font-size: 14px !important;
+          & a {
+
+          }
+        }
+        &:before {
+          border-width: 17px !important;
+          margin-top: -17px !important;
+          border-left-color: $breadcrumb-background-color;
+          z-index: 2;
+        }
+
+        & a{
+          font-size: 10px !important;
+        }
+        + li {
+      padding-left: floor(($breadcrumb-arrow-width + 5px));
+    }
+      }
+    }
+
 }
 
 // Tablet - and up
