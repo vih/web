@@ -11000,7 +11000,9 @@ div[role=heading] {
   .layout-navigation--full-width {
     font-size: 12px !important; }
   .banner {
-    overflow: hidden !important; } }
+    overflow: hidden !important; }
+  .region-mobile-header-navigation .btn-search .glyphicon-search {
+    top: 11px; } }
 
 @media screen and (max-width: 990px) {
   .news-info {
@@ -11949,7 +11951,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
     overflow: hidden !important; } }
 
 @media only screen and (max-width: 870px) {
-  .main-menu {
+  #main-menu {
     overflow: hidden; }
   .modal-course-content-teaser-wrapper {
     display: -webkit-box;

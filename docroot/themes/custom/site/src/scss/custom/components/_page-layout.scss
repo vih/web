@@ -1129,6 +1129,9 @@ div[role=heading] {
     .banner {
         overflow: hidden!important;
     }
+     .region-mobile-header-navigation .btn-search .glyphicon-search {
+        top: 11px;
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -2018,6 +2021,7 @@ ul.layout-navigation {
         padding: 40px!important;
         padding-right: 40px!important;
     }
+   
     .page-node-type-vih-long-cource article .table-bordered tr {
         display: flex;
         flex-direction: column;
