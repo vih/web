@@ -1796,10 +1796,13 @@ padding-right: 10px!important;
 .multiple-elements .btn-more i {
     margin: 0;
 }
-.course-periods-accordion .radio_selection table p {
+.course-periods-accordion .radio_selection div p {
     text-transform: uppercase;
     font-weight: bold!important;
     color: #555!important;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 .modal-content .modal-body p {
     text-transform: none!important;

@@ -11720,10 +11720,13 @@ div[role=heading] {
 .multiple-elements .btn-more i {
   margin: 0; }
 
-.course-periods-accordion .radio_selection table p {
+.course-periods-accordion .radio_selection div p {
   text-transform: uppercase;
   font-weight: bold !important;
-  color: #555 !important; }
+  color: #555 !important;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  margin-top: 15px; }
 
 .modal-content .modal-body p {
   text-transform: none !important;
@@ -13813,7 +13816,7 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
       padding: 0px 20px;
       top: -3px;
       position: relative;
-      background-color: none;
+      background: none;
       color: #bbb;
       border: 1px solid rgba(0, 0, 0, 0.2); }
       .course-periods-accordion .panel-body .class-selection label.btn-radio-select.active {
@@ -13857,6 +13860,30 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
         position: absolute;
         bottom: 8px;
         right: 20px; }
+
+.course-periods-accordion .accordion-flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .course-periods-accordion .accordion-flex-container .col-xs-12.col-sm-3 {
+    margin-bottom: 15px; }
 
 #edit-submit {
   font-weight: 700; }

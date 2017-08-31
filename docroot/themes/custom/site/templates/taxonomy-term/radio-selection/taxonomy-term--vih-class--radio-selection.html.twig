@@ -30,16 +30,16 @@
  */
 #}
 <div{{ attributes }}>
-<table class="row">
-    <tr>
-        <td class="col-xs-6">
-            {{ content['field_vih_class_image'] }}
-        </td>
-        <td>
-            {{ content['description'] }}
-        </td>
-        <td class="col-xs-3">
-            {#{{ content['description'] }}#}
+  <div class="row">
+    <div class="accordion-flex-container">
+      <div class="col-xs-12 col-sm-6">
+        {{ content['field_vih_class_image'] }}
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        {{ content['description'] }}
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        {#{{ content['description'] }}#}
         {#</td>#}
-    {#</tr>#}
-{#</table>#}
+        {#</tr>#}
+        {#</table>#}
