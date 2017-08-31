@@ -1,0 +1,20 @@
+uuid: ca9278f8-f596-4a44-b77d-f66132051156
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - text
+id: taxonomy_term.vih_class_package.description
+field_name: description
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

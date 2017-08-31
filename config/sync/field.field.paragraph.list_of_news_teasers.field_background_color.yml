@@ -14,7 +14,7 @@ bundle: list_of_news_teasers
 label: Baggrundsfarve
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value:
   -
     value: white

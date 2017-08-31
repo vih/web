@@ -1,0 +1,18 @@
+uuid: 7ede12e1-34ca-4739-9055-3dbf5ce9d779
+langcode: en
+status: true
+dependencies:
+  config:
+    - media_entity.bundle.tweet
+id: media.tweet.created
+field_name: created
+entity_type: media
+bundle: tweet
+label: Created
+description: 'The time that the media was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,22 @@
+uuid: 319175e2-9e9e-4392-a6f5-74464381e454
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+id: paragraph.vih_teacher_class_description.status
+field_name: status
+entity_type: paragraph
+bundle: vih_teacher_class_description
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 6fa2bfb4-3e7e-47a1-a9dd-346d2f800146
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_cource
+id: node.vih_long_cource.title
+field_name: title
+entity_type: node
+bundle: vih_long_cource
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

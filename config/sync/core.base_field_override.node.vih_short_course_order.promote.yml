@@ -1,0 +1,22 @@
+uuid: e848c451-786f-4cc3-9b79-58fef87e735a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course_order
+id: node.vih_short_course_order.promote
+field_name: promote
+entity_type: node
+bundle: vih_short_course_order
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

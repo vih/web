@@ -1,0 +1,18 @@
+uuid: 42b2c580-cd07-4095-a9a8-221231e4b53c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course
+id: node.vih_short_course.title
+field_name: title
+entity_type: node
+bundle: vih_short_course
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

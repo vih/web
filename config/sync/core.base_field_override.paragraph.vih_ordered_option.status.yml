@@ -1,0 +1,22 @@
+uuid: d4ef195f-a1a2-4048-8166-912050bb2068
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_ordered_option
+id: paragraph.vih_ordered_option.status
+field_name: status
+entity_type: paragraph
+bundle: vih_ordered_option
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

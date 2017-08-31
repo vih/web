@@ -1,0 +1,20 @@
+uuid: c37997a0-5225-4dae-9b8e-c3f29346bae3
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.list_of_news_teasers
+id: paragraph.list_of_news_teasers.uid
+field_name: uid
+entity_type: paragraph
+bundle: list_of_news_teasers
+label: 'Authored by'
+description: 'The user ID of the paragraphs author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\paragraphs\Entity\Paragraph::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

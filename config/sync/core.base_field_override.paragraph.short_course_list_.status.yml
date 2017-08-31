@@ -1,0 +1,22 @@
+uuid: 26ced246-6782-4f69-801e-056328fcba96
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.short_course_list_
+id: paragraph.short_course_list_.status
+field_name: status
+entity_type: paragraph
+bundle: short_course_list_
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

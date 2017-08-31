@@ -1,0 +1,20 @@
+uuid: db26e9dc-4544-47a0-b8d0-26430c819d04
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - path
+id: taxonomy_term.vih_class_package.path
+field_name: path
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

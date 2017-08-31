@@ -1,0 +1,18 @@
+uuid: 95d26cfc-dbc3-4e7d-aad1-7291f6774d87
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+id: node.vih_course_period.title
+field_name: title
+entity_type: node
+bundle: vih_course_period
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

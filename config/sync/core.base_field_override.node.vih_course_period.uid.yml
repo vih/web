@@ -1,0 +1,20 @@
+uuid: 5e8ae232-c1ec-45ff-af0b-869a920de34e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+id: node.vih_course_period.uid
+field_name: uid
+entity_type: node
+bundle: vih_course_period
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

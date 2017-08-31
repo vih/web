@@ -1,0 +1,22 @@
+uuid: 02504e9f-752f-4785-b090-25ec907f903a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.1_column_action_centered
+id: paragraph.1_column_action_centered.status
+field_name: status
+entity_type: paragraph
+bundle: 1_column_action_centered
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

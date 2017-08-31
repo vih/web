@@ -1,0 +1,18 @@
+uuid: 943fa0af-b877-4407-a1d8-359a7d8654d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_ordered_course_period
+id: paragraph.vih_ordered_course_period.created
+field_name: created
+entity_type: paragraph
+bundle: vih_ordered_course_period
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

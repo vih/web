@@ -1,0 +1,20 @@
+uuid: 0631a8b2-904b-4b22-9294-7e3205efe0e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+  module:
+    - path
+id: node.vih_course_period.path
+field_name: path
+entity_type: node
+bundle: vih_course_period
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

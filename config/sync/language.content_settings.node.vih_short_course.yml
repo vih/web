@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - node.type.vih_short_course
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
 id: node.vih_short_course
 target_entity_type_id: node
 target_bundle: vih_short_course
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

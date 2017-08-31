@@ -1,0 +1,20 @@
+uuid: c083c2d0-89fb-4d65-b7fd-c64e0a3013ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_cource
+  module:
+    - path
+id: node.vih_long_cource.path
+field_name: path
+entity_type: node
+bundle: vih_long_cource
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

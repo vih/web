@@ -1,0 +1,18 @@
+uuid: a011958d-d64d-42d2-be98-63642ce924a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course
+id: node.vih_short_course.changed
+field_name: changed
+entity_type: node
+bundle: vih_short_course
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,22 @@
+uuid: 99b8ebb3-0dbf-49f9-b651-925945e01d5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+id: node.vih_course_period.status
+field_name: status
+entity_type: node
+bundle: vih_course_period
+label: 'Publishing status'
+description: 'A boolean indicating the published state.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

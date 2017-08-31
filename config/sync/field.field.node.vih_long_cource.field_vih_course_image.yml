@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_vih_course_image
     - node.type.vih_long_cource
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.vih_long_cource.field_vih_course_image
 field_name: field_vih_course_image
 entity_type: node
@@ -14,7 +21,7 @@ bundle: vih_long_cource
 label: 'Course Image'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,18 @@
+uuid: 9d8f3d6d-5922-44b9-9f05-ac63c302a985
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.title
+field_name: title
+entity_type: node
+bundle: vih_long_course_order
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -23,7 +23,7 @@ bundle: vih_class_package
 label: class_package_paragraph
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

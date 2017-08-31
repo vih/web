@@ -1,0 +1,18 @@
+uuid: ebbf25b4-a886-41cc-a8c1-bf5d89b67825
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.changed
+field_name: changed
+entity_type: node
+bundle: vih_long_course_order
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

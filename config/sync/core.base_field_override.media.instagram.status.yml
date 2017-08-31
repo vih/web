@@ -1,0 +1,22 @@
+uuid: 3e3e17a0-8989-41d8-b144-e65052bfa7a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - media_entity.bundle.instagram
+id: media.instagram.status
+field_name: status
+entity_type: media
+bundle: instagram
+label: 'Publishing status'
+description: 'A boolean indicating whether the media is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

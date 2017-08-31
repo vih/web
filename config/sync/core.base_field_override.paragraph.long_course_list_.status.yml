@@ -1,0 +1,22 @@
+uuid: 4c2832c6-24bc-413a-a0e7-50bdc1beee96
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.long_course_list_
+id: paragraph.long_course_list_.status
+field_name: status
+entity_type: paragraph
+bundle: long_course_list_
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

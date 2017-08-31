@@ -1,0 +1,22 @@
+uuid: 584cf4a5-eda6-4333-a68e-5f2abc2bcd89
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_ordered_course_period
+id: paragraph.vih_ordered_course_period.status
+field_name: status
+entity_type: paragraph
+bundle: vih_ordered_course_period
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 04f616b0-a2c8-4f6b-bae3-81bef531e176
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_option_group
+id: paragraph.vih_option_group.created
+field_name: created
+entity_type: paragraph
+bundle: vih_option_group
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

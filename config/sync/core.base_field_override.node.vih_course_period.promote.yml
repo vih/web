@@ -1,0 +1,22 @@
+uuid: cedbfd57-8ec6-4684-86c9-747849ddfcfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+id: node.vih_course_period.promote
+field_name: promote
+entity_type: node
+bundle: vih_course_period
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

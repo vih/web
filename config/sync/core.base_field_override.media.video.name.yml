@@ -1,0 +1,20 @@
+uuid: 2da2c060-7cbf-458c-99c5-681de56753ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - media_entity.bundle.video
+id: media.video.name
+field_name: name
+entity_type: media
+bundle: video
+label: 'Media name'
+description: 'The name of this media.'
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

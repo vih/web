@@ -1,0 +1,18 @@
+uuid: 5e4cec18-7072-48c8-ad54-aec97d152bd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.long_course_list_
+id: paragraph.long_course_list_.created
+field_name: created
+entity_type: paragraph
+bundle: long_course_list_
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

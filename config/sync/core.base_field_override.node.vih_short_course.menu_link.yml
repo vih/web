@@ -1,0 +1,20 @@
+uuid: 287e7912-b099-4cf9-b583-2197521b65fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course
+id: node.vih_short_course.menu_link
+field_name: menu_link
+entity_type: node
+bundle: vih_short_course
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

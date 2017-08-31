@@ -1,0 +1,18 @@
+uuid: 582c85dc-545b-4b96-ab82-d6e45a8c81bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vih_class_package
+id: taxonomy_term.vih_class_package.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

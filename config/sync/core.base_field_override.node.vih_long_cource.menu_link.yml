@@ -1,0 +1,20 @@
+uuid: 2a9faaf8-0db7-4e7c-8784-0994f9d18803
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_cource
+id: node.vih_long_cource.menu_link
+field_name: menu_link
+entity_type: node
+bundle: vih_long_cource
+label: 'Menu link'
+description: 'Computed menu link for the node (only available during node saving).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: c787ab21-8d08-416f-9b7a-f1ea07890a28
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_course_order
+  module:
+    - path
+id: node.vih_long_course_order.path
+field_name: path
+entity_type: node
+bundle: vih_long_course_order
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

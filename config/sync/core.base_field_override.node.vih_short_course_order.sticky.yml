@@ -1,0 +1,22 @@
+uuid: 40adafdf-a4b6-4bdc-ae35-276bc14a852d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course_order
+id: node.vih_short_course_order.sticky
+field_name: sticky
+entity_type: node
+bundle: vih_short_course_order
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

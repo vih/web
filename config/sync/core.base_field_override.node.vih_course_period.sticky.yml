@@ -1,0 +1,22 @@
+uuid: fc63e495-ad3c-4913-92c5-0b5cea24407f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+id: node.vih_course_period.sticky
+field_name: sticky
+entity_type: node
+bundle: vih_course_period
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

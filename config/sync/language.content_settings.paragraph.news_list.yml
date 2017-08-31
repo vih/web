@@ -1,0 +1,16 @@
+uuid: 39cdc8cc-ba2b-4d5c-9395-9934a6966cfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.news_list
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.news_list
+target_entity_type_id: paragraph
+target_bundle: news_list
+default_langcode: site_default
+language_alterable: false

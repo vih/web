@@ -1,0 +1,18 @@
+uuid: a91a52ef-9110-4670-a747-5e79e40d3bd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_course_period
+id: node.vih_course_period.changed
+field_name: changed
+entity_type: node
+bundle: vih_course_period
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

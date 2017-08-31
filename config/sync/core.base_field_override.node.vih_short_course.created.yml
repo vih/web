@@ -1,0 +1,18 @@
+uuid: d8d84a27-5045-43d0-b02d-e965c20d55fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course
+id: node.vih_short_course.created
+field_name: created
+entity_type: node
+bundle: vih_short_course
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

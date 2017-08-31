@@ -1,0 +1,18 @@
+uuid: 091f39be-a6ce-4f02-8b69-49171671d725
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.vih_class
+id: taxonomy_term.vih_class.name
+field_name: name
+entity_type: taxonomy_term
+bundle: vih_class
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

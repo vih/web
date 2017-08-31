@@ -1,0 +1,18 @@
+uuid: fe1e02dc-a5e1-4839-b0b8-39738b220f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_tags
+id: taxonomy_term.news_tags.name
+field_name: name
+entity_type: taxonomy_term
+bundle: news_tags
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

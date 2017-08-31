@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - node.type.vih_short_course_order
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
 id: node.vih_short_course_order
 target_entity_type_id: node
 target_bundle: vih_short_course_order

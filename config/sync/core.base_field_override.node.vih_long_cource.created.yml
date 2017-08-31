@@ -1,0 +1,18 @@
+uuid: 4dae9fd0-ab24-4564-943b-0b8f1e563012
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_cource
+id: node.vih_long_cource.created
+field_name: created
+entity_type: node
+bundle: vih_long_cource
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

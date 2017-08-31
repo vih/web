@@ -1,0 +1,22 @@
+uuid: c84831ec-6c22-44c1-b889-f9af0fb8ec56
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course_order
+id: node.vih_short_course_order.status
+field_name: status
+entity_type: node
+bundle: vih_short_course_order
+label: 'Publishing status'
+description: 'A boolean indicating the published state.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

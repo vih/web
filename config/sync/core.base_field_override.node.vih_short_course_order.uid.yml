@@ -1,0 +1,20 @@
+uuid: 65ebb8c6-3529-4b9d-a911-e4a17dd9a733
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_short_course_order
+id: node.vih_short_course_order.uid
+field_name: uid
+entity_type: node
+bundle: vih_short_course_order
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: badcb981-c4f9-40df-b744-64d7da9c8d4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.promote
+field_name: promote
+entity_type: node
+bundle: vih_long_course_order
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

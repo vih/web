@@ -1,0 +1,22 @@
+uuid: bac41da9-4475-432c-a07c-61438b6320f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_option_group
+id: paragraph.vih_option_group.status
+field_name: status
+entity_type: paragraph
+bundle: vih_option_group
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
