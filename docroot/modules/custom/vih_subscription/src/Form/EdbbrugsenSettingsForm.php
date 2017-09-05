@@ -17,7 +17,7 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      $this->$configName
+      EdbbrugsenSettingsForm::$configName
     ];
   }
 
@@ -35,7 +35,7 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function  buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config($this->configName);
+    $config = $this->config(EdbbrugsenSettingsForm::$configName);
 
     $form['vih_subscription_edbbrugsen'] = [
       '#type' => 'fieldset',
@@ -99,7 +99,7 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $confObject = $this->config($this->configName);
+    $confObject = $this->config(EdbbrugsenSettingsForm::$configName);
     foreach ($form_state->getValues() as $key => $value) {
       $confObject->set($key, $value);
     }
