@@ -1,0 +1,7 @@
+# Define default links for this module.
+vih_subscption.edbbrugsen.progressions:
+  title: 'VIH Subscription EDBBrugsen integration settings'
+  description: 'Varisous settings related with EDBBrugsen integration settings'
+  route_name: vih_subscription.admin.settings_form
+  parent: system.admin_config_system
+  weight: 99

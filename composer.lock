@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c1922cdba5c742a3a67777766d3afe7",
+    "content-hash": "2cf6e4c57bf517412e82ba53fcf862ef",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -3446,7 +3446,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.3.zip",
-                "reference": null,
+                "reference": "8.x-1.3",
                 "shasum": "e064dc8769a95ce3ebb3f30cdfe0fba8ea661dfb"
             },
             "require": {
@@ -4466,6 +4466,54 @@
                 "twitter"
             ],
             "time": "2015-08-03T21:35:18+00:00"
+        },
+        {
+            "name": "lsolesen/edbbrugs-php-sdk",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lsolesen/edbbrugs-php-sdk.git",
+                "reference": "2b9053d8d1d86a7f3c0043fb63e2b6486edb1e43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lsolesen/edbbrugs-php-sdk/zipball/2b9053d8d1d86a7f3c0043fb63e2b6486edb1e43",
+                "reference": "2b9053d8d1d86a7f3c0043fb63e2b6486edb1e43",
+                "shasum": ""
+            },
+            "require": {
+                "ext-soap": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*",
+                "satooshi/php-coveralls": "1.0.*",
+                "squizlabs/php_codesniffer": "2.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EDBBrugs\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lars Olesen",
+                    "email": "lars@intraface.dk",
+                    "homepage": "http://intraface.dk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP-SDK for integrating with EDB-BRUGS which is a platform used by the free schools in Denmark for managing students.",
+            "homepage": "http://github.com/vih/edbbrugs-php-sdk",
+            "keywords": [
+                "webservice"
+            ],
+            "time": "2017-03-24T09:08:58+00:00"
         },
         {
             "name": "masterminds/html5",

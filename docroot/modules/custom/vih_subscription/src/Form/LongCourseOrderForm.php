@@ -16,6 +16,7 @@ use Drupal\node\NodeInterface;
 use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 
 /**
  * Implements an example form.
@@ -277,13 +278,14 @@ class LongCourseOrderForm extends FormBase {
       }
     }
 
+    $studentCpr = $form_state->getValue('cpr');
     $this->courseOrder = Node::create(array(
                 'type' => 'vih_long_course_order',
                 'status' => 1,
                 'title' => $this->course->getTitle() . ' - kursus tilmelding ' . \Drupal::service('date.formatter')->format(time(), 'short'),
                 'field_vih_lco_first_name' => $form_state->getValue('firstName'),
                 'field_vih_lco_last_name' => $form_state->getValue('lastName'),
-                'field_vih_lco_cpr' => $form_state->getValue('cpr'),
+                'field_vih_lco_cpr' => '',//$form_state->getValue('cpr'), CPR is not means to be kept in database
                 'field_vih_lco_telefon' => $form_state->getValue('telefon'),
                 'field_vih_lco_email' => $form_state->getValue('email'),
                 'field_vih_lco_nationality' => CourseOrderOptionsList::getNationalityList($form_state->getValue('nationality')),
@@ -305,27 +307,49 @@ class LongCourseOrderForm extends FormBase {
     ));
     $this->courseOrder->save();
 
-// Mailchamb integration
-    if ( $this->courseOrder->field_vih_lco_newsletter->value ) {
-      // Get first mail chump list
-      $lists = mailchimp_get_lists(null, null);
-      $list = array_pop($lists);
-      $list_id = $list->id;
+    // Mailchimp integration
+    if ($this->courseOrder->field_vih_lco_newsletter->value) {
+      subscribeToMailchimp($this->courseOrder);
+    }
 
-      if ( $list_id ) {
-        $merge_vars = array(
-            'EMAIL' => $this->courseOrder->field_vih_lco_email->value,
-            'FNAME' => $this->courseOrder->field_vih_lco_first_name->value,
-            'LNAME' => $this->courseOrder->field_vih_lco_last_name->value,
-        );
-        mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, false, false);
-      } else {
-        drupal_set_message('List not configured in Drupal');
-      }
-    } else {
-      // User is not checked 'Subscribe to newsletters' checkbox
+    //EDBBrugsen Integration
+    $config = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
+    if ($config->get('active')) {
+      $username = $config->get('username');
+      $password = $config->get('password');
+      $school_code = $config->get('school_code');
+      $book_number = $config->get('book_number');
+
+      $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
+      $registration = $edbBrugsenIntegration->convertToRegistration($this->courseOrder);
+      $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
+      $edbBrugsenIntegration->addRegistration($registration);
     }
 
     $form_state->setRedirect('vih_subscription.subscription_redirect');
   }
+
+  /**
+   * Creates a subscription to mailchimp
+   *
+   * @param NodeInterface $course to take the params from
+   */
+  function subscribeToMailchimp(NodeInterface $course) {
+    // Get first mail chimp list
+    $lists = mailchimp_get_lists(null, null);
+    $list = array_pop($lists);
+    $list_id = $list->id;
+
+    if ($list_id) {
+      $merge_vars = array(
+        'EMAIL' => $this->courseOrder->field_vih_lco_email->value,
+        'FNAME' => $this->courseOrder->field_vih_lco_first_name->value,
+        'LNAME' => $this->courseOrder->field_vih_lco_last_name->value,
+      );
+      mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, false, false);
+    } else {
+      drupal_set_message('List not configured in Drupal');
+    }
+  }
 }
+
