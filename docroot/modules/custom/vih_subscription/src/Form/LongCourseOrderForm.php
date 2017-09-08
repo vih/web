@@ -151,12 +151,12 @@ class LongCourseOrderForm extends FormBase {
     $form['personalDataRight']['house']['houseLetter'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Bogstav'),
-      '#required' => TRUE,
+      //'#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseFloor'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Etage'),
-      '#required' => TRUE,
+      //'#required' => TRUE,
     );
     $form['personalDataRight']['city'] = array(
       '#type' => 'textfield',
@@ -238,12 +238,12 @@ class LongCourseOrderForm extends FormBase {
     $form['adultDataRight']['adultHouse']['adultHouseLetter'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Bogstav'),
-      '#required' => TRUE,
+      //'#required' => TRUE,
     );
     $form['adultDataRight']['adultHouse']['adultHouseFloor'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Etage'),
-      '#required' => TRUE,
+      //'#required' => TRUE,
     );
     $form['adultDataRight']['adultCity'] = array(
       '#type' => 'textfield',
