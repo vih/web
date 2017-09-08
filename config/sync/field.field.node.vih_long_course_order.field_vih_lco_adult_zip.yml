@@ -1,0 +1,19 @@
+uuid: c9834527-42ce-4ab6-a97c-96ad28c13245
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_adult_zip
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.field_vih_lco_adult_zip
+field_name: field_vih_lco_adult_zip
+entity_type: node
+bundle: vih_long_course_order
+label: 'Adult zip'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

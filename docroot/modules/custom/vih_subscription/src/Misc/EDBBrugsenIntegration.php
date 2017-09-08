@@ -46,6 +46,8 @@ class EDBBrugsenIntegration {
 
     if ($longCourse->getType() == 'vih_long_course_order') {
       $registration['Kursus'] = $longCourse->get('field_vih_lco_course')->entity->getTitle();
+
+      //student = elev information
       $registration['Elev.Fornavn'] = $longCourse->get('field_vih_lco_first_name')->value;
       $registration['Elev.Efternavn'] = $longCourse->get('field_vih_lco_last_name')->value;
       $registration['Elev.Adresse'] = $longCourse->get('field_vih_lco_address')->value;
@@ -57,6 +59,18 @@ class EDBBrugsenIntegration {
       $registration['Elev.Email'] = $longCourse->get('field_vih_lco_email')->value;
       $registration['Elev.Land'] = (string) $longCourse->get('field_vih_lco_nationality')->value;
       $registration['Elev.Notat'] = $longCourse->get('field_vih_lco_message')->value;
+
+      // adult = voksen information
+      $registration['Voksen.Fornavn'] = $longCourse->get('field_vih_lco_adult_first_name')->value;
+      $registration['Voksen.Efternavn'] = $longCourse->get('field_vih_lco_adult_last_name')->value;
+      $registration['Voksen.Adresse'] = $longCourse->get('field_vih_lco_adult_address')->value;
+      $registration['Voksen.Lokalby'] = $longCourse->get('field_vih_lco_adult_city')->value;
+      $registration['Voksen.Postnr'] = $longCourse->get('field_vih_lco_adult_zip')->value;
+      $registration['Voksen.Bynavn'] = $longCourse->get('field_vih_lco_adult_city')->value;
+      $registration['Voksen.Fastnet']  = $longCourse->get('field_vih_lco_adult_telefon')->value;
+      $registration['Voksen.Mobil'] = $longCourse->get('field_vih_lco_adult_telefon')->value;
+      $registration['Voksen.Email'] = $longCourse->get('field_vih_lco_adult_email')->value;
+      $registration['Voksen.Land'] = (string) $longCourse->get('field_vih_lco_adult_nationality')->value;
 
       $registration += $this->getDefaultRegistrationValues();
     } elseif ($longCourse->getType() == 'vih_short_course_order') {
@@ -114,7 +128,7 @@ class EDBBrugsenIntegration {
       'Elev.Land' => 'Danmark',
       'Elev.Notat' => 'Svend Aage Thomsen er skolens grundlægger',
       // Specific for student
-      'Elev.Linje' => 'Fodbold',
+      'Elev.Linje' => 'Fodbold',//there is not specific course track that student is subscribing, instead each subscription is a set several of course trackes
       'Voksen.Fornavn' => 'Svend Aage',
       'Voksen.Efternavn' => 'Thomsen',
       'Voksen.Adresse' => 'Ørnebjergvej 28',

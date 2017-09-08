@@ -1,0 +1,19 @@
+uuid: b4ae0011-14e3-4893-a699-214cdc362dfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_adult_email
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.field_vih_lco_adult_email
+field_name: field_vih_lco_adult_email
+entity_type: node
+bundle: vih_long_course_order
+label: 'Adult email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

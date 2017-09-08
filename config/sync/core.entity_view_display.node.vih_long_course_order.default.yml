@@ -5,6 +5,14 @@ dependencies:
   config:
     - field.field.node.vih_long_course_order.body
     - field.field.node.vih_long_course_order.field_vih_lco_address
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_address
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_city
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_email
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_first_name
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_last_name
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_nationality
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_telefon
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_zip
     - field.field.node.vih_long_course_order.field_vih_lco_city
     - field.field.node.vih_long_course_order.field_vih_lco_course
     - field.field.node.vih_long_course_order.field_vih_lco_cpr
@@ -36,6 +44,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_vih_lco_address:
     weight: 109
     label: above
@@ -43,6 +52,71 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_vih_lco_adult_address:
+    weight: 122
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_city:
+    weight: 123
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_email:
+    weight: 121
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_first_name:
+    weight: 118
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_last_name:
+    weight: 119
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_nationality:
+    weight: 125
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_telefon:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_lco_adult_zip:
+    weight: 124
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_vih_lco_city:
     weight: 110
     label: above
@@ -50,6 +124,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_course:
     weight: 102
     label: above
@@ -57,6 +132,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_vih_lco_cpr:
     weight: 106
     label: above
@@ -64,6 +140,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_education:
     weight: 112
     label: above
@@ -71,6 +148,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_email:
     weight: 116
     label: above
@@ -78,6 +156,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_first_name:
     weight: 104
     label: above
@@ -85,6 +164,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_found_from:
     weight: 114
     label: above
@@ -92,6 +172,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_last_name:
     weight: 105
     label: above
@@ -99,12 +180,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_message:
     weight: 115
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
   field_vih_lco_nationality:
     weight: 108
     label: above
@@ -112,6 +195,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_newsletter:
     weight: 117
     label: above
@@ -121,6 +205,7 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
   field_vih_lco_order_course_perio:
     type: entity_reference_revisions_entity_view
     weight: 103
@@ -129,6 +214,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   field_vih_lco_payment:
     weight: 113
     label: above
@@ -136,6 +222,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_telefon:
     weight: 107
     label: above
@@ -143,6 +230,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_lco_zip:
     weight: 111
     label: above
@@ -150,7 +238,9 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   langcode: true

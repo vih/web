@@ -1,0 +1,19 @@
+uuid: 2ba132ac-f945-4d52-b0bd-a12013f73467
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_adult_city
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.field_vih_lco_adult_city
+field_name: field_vih_lco_adult_city
+entity_type: node
+bundle: vih_long_course_order
+label: 'Adult city'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

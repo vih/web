@@ -71,6 +71,29 @@
     </div>
 </div>
 
+{# Adult data START #}
+<h5><i class="material-icons form-icon">account_circle</i> &nbsp;{{ "Voksen personlige oplysninger"|t }}</h5>
+<div class="row form-group">
+    <div class="col-md-6">
+        {{ form['adultDataLeft'] }}
+    </div>
+    <div class="col-md-6">
+        {{ form['adultDataRight']['adultAddress'] }}
+        <div class="row form-group">
+            <div class="col-xs-4">
+                {{ form['adultDataRight']['adultHouse']['adultHouseNumber'] }}
+            </div>
+            <div class="col-xs-4">
+                {{ form['adultDataRight']['adultHouse']['adultHouseLetter'] }}
+            </div>
+            <div class="col-xs-4">
+                {{ form['adultDataRight']['adultHouse']['adultHouseFloor'] }}
+            </div>
+        </div>
+        {{ form['adultDataRight']|without('adultAddress','adultHouse') }}
+    </div>
+</div>
+
 <div class="row form-group">
     <div class="col-xs-12">
         {{ form['message'] }}
