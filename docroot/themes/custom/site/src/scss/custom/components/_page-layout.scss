@@ -826,7 +826,7 @@ flex-direction: column;
 
 .layout__news .angled-background-color .angled-background-inner:before {
     height: 160px!important;
-    z-index: 9999999;
+    z-index: 2;
     top: -190px;
     position: relative;
     border-bottom: 10px solid white;
@@ -978,6 +978,9 @@ flex-direction: column;
 
 .path-node .news-container {
     padding-bottom: 0px!important;
+    position: relative;
+    z-index: 99;
+    margin-top: -170px;
 }
 
 .path-node article .content {
@@ -1989,6 +1992,13 @@ ul.layout-navigation {
             width: -0px!important;
     margin-left: -100px!important;
     }
+    
+    .path-node .news-container {
+    padding-bottom: 0px!important;
+    position: relative;
+    z-index: 99;
+    margin-top: -220px;
+}
 }
 
 .path-taxonomy .lc-btn-box {display: none;}
