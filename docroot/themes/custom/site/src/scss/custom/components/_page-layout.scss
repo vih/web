@@ -899,6 +899,14 @@ flex-direction: column;
     height: 150px;
 }
 
+.field-content{
+  & span.fpnews-content{
+    & p{
+      text-transform: none;
+      }
+    }
+ }
+
 .layout__news .btn {
     border-radius: 0px;
     background: #00bcff;

@@ -10747,6 +10747,9 @@ flex-direction: column;
 .layout__news .views-field-body {
   height: 150px; }
 
+.field-content span.fpnews-content p {
+  text-transform: none; }
+
 .layout__news .btn, .layout__news .banner .banner-content .field--name-field-link a, .banner .banner-content .field--name-field-link .layout__news a, .layout__news .btn-arrow, .layout__news .field--name-field-link a, .field--name-field-link .layout__news a {
   border-radius: 0px;
   background: #00bcff;
