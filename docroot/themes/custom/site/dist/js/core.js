@@ -311,7 +311,7 @@ var modalPopUp = (function ($) {
     }
 
     $(".close").click(function () {
-        $.cookie('no_thanks', 'true', {expires: 36500, path: '/'});
+        $.cookie('no_thanks', 'true', {expires: 10, path: '/'});
     });
 
     if ($.cookie("no_thanks") !== true) {
