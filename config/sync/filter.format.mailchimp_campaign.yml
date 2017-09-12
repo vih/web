@@ -8,7 +8,7 @@ _core:
   default_config_hash: IYq2WAa5StAsjTvoHs6_worbnWEHJ3IVHNVl4xxr3Sc
 name: 'MailChimp campaign'
 format: mailchimp_campaign
-weight: 0
+weight: -9
 filters:
   filter_mailchimp_campaign:
     id: filter_mailchimp_campaign
