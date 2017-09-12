@@ -28,10 +28,12 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   contact:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_relateret:
     weight: 4
     settings: {  }
@@ -45,6 +47,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_user_picture:
     type: entity_browser_file
     weight: 3
