@@ -2042,6 +2042,9 @@ ul.layout-navigation {
     }
    
     .page-node-type-vih-long-cource article .table-bordered tr {
+      & td{
+        width: 100%;
+      }
         display: flex;
         flex-direction: column;
     }

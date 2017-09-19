@@ -11996,6 +11996,8 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
+    .page-node-type-vih-long-cource article .table-bordered tr td {
+      width: 100%; }
   .field--name-field-vih-user-photo img {
     min-width: 100%; }
   /*    .breadcrumb li, .breadcrumb li a {
