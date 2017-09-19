@@ -825,11 +825,10 @@ flex-direction: column;
 }
 
 .layout__news .angled-background-color .angled-background-inner:before {
-    height: 160px!important;
+    height: 170px !important;
     z-index: 2;
-    top: -190px;
+    top: -195px;
     position: relative;
-    border-bottom: 10px solid white;
 }
 
 .path-taxonomy .layout__news .angled-background-color .angled-background-inner:before {

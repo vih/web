@@ -10664,11 +10664,10 @@ flex-direction: column;
   display: none; }
 
 .layout__news .angled-background-color .angled-background-inner:before {
-  height: 160px !important;
+  height: 170px !important;
   z-index: 2;
-  top: -190px;
-  position: relative;
-  border-bottom: 10px solid white; }
+  top: -195px;
+  position: relative; }
 
 .path-taxonomy .layout__news .angled-background-color .angled-background-inner:before {
   top: -130px;
@@ -13562,6 +13561,14 @@ ul.layout-navigation__link {
   text-align: left;
   border: none;
   padding-top: 5px; }
+
+.paragraph--type--user-quote .angled-background-inner .container {
+  -webkit-box-align: left;
+  -webkit-align-items: left;
+      -ms-flex-align: left;
+          align-items: left; }
+  .paragraph--type--user-quote .angled-background-inner .container .field.field--name-field-paragraph-quote {
+    color: #888; }
 
 article .field .field__items {
   text-align: center;
