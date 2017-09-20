@@ -37,8 +37,14 @@
         {{ content.body }}
       </div>
     </div>
+
+    <div class="row vih-btn-box">
+        <div class="col-xs-12">
+            <a href="{{ url('vih_subscription.short_course_order_create', {'course': node.id}) }} " class="btn-arrow btn-center">{{ "Begynd nu"|trans }}</a>
+        </div>
+    </div>
    
-    <div class="row lc-price-box">
+    <div class="row vih-price-box">
       <div class="col-xs-12">
           <h4>{{ "Prisoversigt"|trans }}:</h4>
 

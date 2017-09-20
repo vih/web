@@ -1007,9 +1007,11 @@ flex-direction: column;
     padding-top: 0px;
 }
 
-.page-node-type-vih-long-cource article .field--name-body {
+.page-node-type-vih-long-cource article .field--name-body,
+.page-node-type-vih-short-course article .field--name-body {
     padding: 0px;
 }
+
 
 .path-node article .field--name-field-paragraphs {
     width: 100%;
@@ -1628,15 +1630,15 @@ padding-right: 10px!important;
     padding-right: 5px;
 }
 
-.lc-price-box {
+.vih-price-box {
     margin-top: 7px;
 }
 
-.lc-contact-box {
+.vih-contact-box {
     margin-top: 55px;
 }
 
-.lc-btn-box {
+.vih-btn-box {
     margin-top: 32px;
 }
 
@@ -1752,7 +1754,7 @@ padding-right: 10px!important;
     margin-bottom: 0!important;
     margin-top: 0!important;
 }
-.lc-price-box {
+.vih-price-box {
     margin-bottom: 100px;
 }
 
@@ -2013,9 +2015,9 @@ ul.layout-navigation {
 }
 }
 
-.path-taxonomy .lc-btn-box {display: none;}
-.path-taxonomy .lc-contact-box { display: none; }
-.path-taxonomy .lc-price-box { display: none; }
+.path-taxonomy .vih-btn-box {display: none;}
+.path-taxonomy .vih-contact-box { display: none; }
+.path-taxonomy .vih-price-box { display: none; }
 @media only screen and (max-width: 1130px) {
     .vih_class_table_teaser .field--name-field-vih-class-image img {
         min-width: 150%!important;
