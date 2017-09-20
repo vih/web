@@ -11789,7 +11789,7 @@ ul.layout-navigation li {
 ul.layout-navigation .layout-navigation__dropdown-menu {
   max-width: none;
   border-radius: 0;
-  width: 100%; }
+  min-width: 100%; }
   ul.layout-navigation .layout-navigation__dropdown-menu li a {
     padding: 23px 15px; }
 
