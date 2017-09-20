@@ -1141,7 +1141,7 @@ div[role=heading] {
         overflow: hidden!important;
     }
      .region-mobile-header-navigation .btn-search .glyphicon-search {
-        top: 11px;
+        top: 18px;
     }
 }
 
@@ -1860,6 +1860,13 @@ padding-right: 10px!important;
 .layout-navigation__link.active {
     background: white;
     border-top: 1px solid rgba(0,0,0,0.1);
+    line-height: 67px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    & a{
+      color: #888;
+    }
 }
 
 ul.layout-navigation {

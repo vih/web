@@ -471,13 +471,13 @@
         .layout-navigation__link,
         .layout-navigation__dropdown {
           border-bottom: 2px solid rgba(255,255,255,0.1);
-          text-align: left;
+          text-align: center;
           &.layout-navigation__link__search {
             position: relative;
             .form-control {
               background-color: #0080af;
-              color: $brand-primary;
-              padding-left: 55px;
+              color: #fff;
+              padding-left: 60px;
               border: none;              
             }
             .form-control::-moz-placeholder {
@@ -536,6 +536,19 @@
               background-color: $brand-primary;
             }
           }
+        
+        }
+        .layout-navigation__link.active{
+          a{
+            color: #888;
+          }
+        }
+        .layout-navigation__link.layout-navigation__link__search{
+          height: 67px;
+          font-size: 18px;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-family: 'Open Sans', sans-serif;
         }
       }
 
