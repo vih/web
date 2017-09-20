@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_paragraphs
-    - field.field.node.vih_short_course.field_vih_course_periods
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
@@ -44,14 +43,6 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
-    region: content
-  field_vih_course_periods:
-    weight: 107
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   field_vih_cs_contact_person:
     weight: 104

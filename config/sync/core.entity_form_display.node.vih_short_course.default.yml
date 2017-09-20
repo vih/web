@@ -6,7 +6,6 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_paragraphs
-    - field.field.node.vih_short_course.field_vih_course_periods
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
@@ -51,15 +50,6 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs
-    region: content
-  field_vih_course_periods:
-    weight: 37
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   field_vih_cs_contact_person:
     weight: 34
@@ -148,6 +138,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  translation:
+    weight: 10
     region: content
   uid:
     type: entity_reference_autocomplete
