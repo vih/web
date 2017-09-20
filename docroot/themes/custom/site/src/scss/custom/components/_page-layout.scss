@@ -1876,8 +1876,8 @@ ul.layout-navigation {
 
   .layout-navigation__dropdown-menu {
     max-width: none;
-    left: -2px;
     border-radius: 0;
+    width: 100%;
     li a {
       padding: 23px 15px;
     }
