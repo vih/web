@@ -1,0 +1,130 @@
+// |--------------------------------------------------------------------------
+// | Long Course
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .long-course
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Long Course
+.path-node.page-node-type-vih-long-cource{
+  & .price-table{
+    border: 1px solid #ddd;
+    background: none;
+    text-align: center;
+    padding: 0; 
+    & .table-cell{
+      padding: 32px 10px;
+    }
+    & .table-heading{
+      padding: 15px;
+      text-transform: uppercase;
+      background-color: rgb(238, 238, 238);
+      font-weight: bold;
+    }
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Print
+@media print {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Touch
+.touchevents {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}
