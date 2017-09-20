@@ -13051,9 +13051,6 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   footer .container {
     width: 1160px !important; } }
 
-.layout-navigation__link:nth-child(2) {
-  border-left: 1px solid #e6e7e7 !important; }
-
 ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
   top: 35px; }
 
