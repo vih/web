@@ -1,20 +1,20 @@
-uuid: e36bdadd-4523-4f64-8f04-f026bdb66fb0
-langcode: da
+uuid: d56abf64-0a93-46cf-b351-5b064fdf1952
+langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_cp_end_date
+    - field.storage.node.field_event_start_date
     - node.type.event
   module:
     - datetime
-id: node.event.field_vih_cp_end_date
-field_name: field_vih_cp_end_date
+id: node.event.field_event_start_date
+field_name: field_event_start_date
 entity_type: node
 bundle: event
-label: 'End date'
+label: 'Start date'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

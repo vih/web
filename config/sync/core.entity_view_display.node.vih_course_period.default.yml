@@ -31,6 +31,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_vih_cp_course_slots:
     type: entity_reference_revisions_entity_view
     weight: 105
@@ -39,6 +40,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   field_vih_cp_end_date:
     weight: 104
     label: above
@@ -47,6 +49,7 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
   field_vih_cp_start_date:
     weight: 102
     label: above
@@ -55,9 +58,11 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   langcode: true

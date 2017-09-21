@@ -1,16 +1,16 @@
-uuid: 4871ea07-a0dc-4d0c-b272-6e5f55daa885
+uuid: 7b213ec8-1881-4b23-bcd6-adfe3e302a6d
 langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - node
-id: node.field_vih_cp_end_date
-field_name: field_vih_cp_end_date
+id: node.field_event_end_date
+field_name: field_event_end_date
 entity_type: node
 type: datetime
 settings:
-  datetime_type: date
+  datetime_type: datetime
 module: datetime
 locked: false
 cardinality: 1

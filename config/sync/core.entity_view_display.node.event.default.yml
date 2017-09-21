@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_event_end_date
     - field.field.node.event.field_event_paragraph
+    - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_page_main_image
-    - field.field.node.event.field_vih_cp_end_date
-    - field.field.node.event.field_vih_cp_start_date
     - node.type.event
   module:
     - datetime
@@ -35,6 +35,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_event_end_date:
+    weight: 8
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_event_paragraph:
     type: entity_reference_revisions_entity_view
     weight: 6
@@ -43,6 +52,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_event_start_date:
+    weight: 7
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   field_image:
     weight: 0
@@ -61,24 +79,6 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-    region: content
-  field_vih_cp_end_date:
-    weight: 2
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_vih_cp_start_date:
-    weight: 1
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   links:
     weight: 4
