@@ -13660,6 +13660,9 @@ article .row.paragraphs {
     background-color: #eeeeee;
     font-weight: bold; }
 
+form.vih-subscription-long-course-order-form article.user.compact {
+  margin-top: 120px; }
+
 .node-teaser-news,
 .node-teaser-news h4,
 .node-teaser-news .heading-h4,
