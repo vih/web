@@ -126,6 +126,7 @@ class LongCourseOrderForm extends FormBase {
       '#type' => 'select',
       '#title' => $this->t('Nationalitet'),
       '#options' => CourseOrderOptionsList::getNationalityList(),
+      '#default_value' => 'DK',
       '#required' => TRUE,
     );
 
@@ -218,6 +219,7 @@ class LongCourseOrderForm extends FormBase {
       '#type' => 'select',
       '#title' => $this->t('Nationalitet'),
       '#options' => CourseOrderOptionsList::getNationalityList(),
+      '#default_value' => 'DK',
       '#required' => TRUE,
     );
 
