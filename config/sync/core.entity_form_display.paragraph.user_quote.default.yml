@@ -1,0 +1,46 @@
+uuid: 6c4de216-13d8-42a1-a6d2-0b29a6af2761
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.user_quote.field_heading
+    - field.field.paragraph.user_quote.field_paragraph_text
+    - field.field.paragraph.user_quote.field_paragraph_user
+    - paragraphs.paragraphs_type.user_quote
+  module:
+    - text
+    - workbench_moderation
+id: paragraph.user_quote.default
+targetEntityType: paragraph
+bundle: user_quote
+mode: default
+content:
+  field_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_paragraph_text:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_paragraph_user:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

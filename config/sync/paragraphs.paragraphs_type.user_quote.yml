@@ -1,0 +1,9 @@
+uuid: 48f997f6-e34f-4718-a144-afdb19d573e6
+langcode: en
+status: true
+dependencies: {  }
+id: user_quote
+label: 'User quote'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

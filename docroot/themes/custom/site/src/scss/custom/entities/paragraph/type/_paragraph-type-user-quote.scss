@@ -15,14 +15,27 @@
 // --------------------------------------------------
 
 .paragraph--type--user-quote{
+  margin-top: 80px;
+  margin-bottom: 140px;
   & .angled-background-inner{
     & .container{
       align-items: left;
-      t
       & .field.field--name-field-paragraph-user{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 28px;
       }
-      & .field.field--name-field-paragraph-quote{
+      & .field.field--name-field-paragraph-text{
         color: #888;
+        & p{
+          color: #888;
+              font-weight: 400;
+              text-transform: none;
+              text-align: left;
+              font-weight: normal !important;
+              line-height: 26px;
+              font-size: 16px;
+        }
       }
     }
   }

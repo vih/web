@@ -1,0 +1,40 @@
+uuid: c5e6d4aa-197f-4a6b-98a0-b3dedd0c26e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.user_quote.field_heading
+    - field.field.paragraph.user_quote.field_paragraph_text
+    - field.field.paragraph.user_quote.field_paragraph_user
+    - paragraphs.paragraphs_type.user_quote
+  module:
+    - text
+id: paragraph.user_quote.default
+targetEntityType: paragraph
+bundle: user_quote
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraph_user:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }
