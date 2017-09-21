@@ -1,0 +1,19 @@
+uuid: 400fb0f7-21b5-44d1-beb2-0635dc5f2f3e
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.vih_event_order
+  module:
+    - user
+id: node.vih_event_order.teaser
+targetEntityType: node
+bundle: vih_event_order
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

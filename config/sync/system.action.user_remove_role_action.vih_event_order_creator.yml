@@ -1,0 +1,14 @@
+uuid: bb3f8215-7b2b-47f9-9020-085bd65a9c02
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.vih_event_order_creator
+  module:
+    - user
+id: user_remove_role_action.vih_event_order_creator
+label: 'Fjern rollen Event Order Creator fra de valgte brugere'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: vih_event_order_creator

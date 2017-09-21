@@ -1,0 +1,23 @@
+uuid: fc826692-f64e-45f8-bf05-f7fd17430f49
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_event_persons_limit
+    - node.type.event
+id: node.event.field_vih_event_persons_limit
+field_name: field_vih_event_persons_limit
+entity_type: node
+bundle: event
+label: 'Persons limit'
+description: '0 for unlimited'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,44 @@
+uuid: f29226b3-3241-436f-8163-a9187f0e4a63
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_ordered_event_person.field_vih_oe_email
+    - field.field.paragraph.vih_ordered_event_person.field_vih_oe_first_name
+    - field.field.paragraph.vih_ordered_event_person.field_vih_oe_last_name
+    - paragraphs.paragraphs_type.vih_ordered_event_person
+  module:
+    - workbench_moderation
+id: paragraph.vih_ordered_event_person.default
+targetEntityType: paragraph
+bundle: vih_ordered_event_person
+mode: default
+content:
+  field_vih_oe_email:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_oe_first_name:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_oe_last_name:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

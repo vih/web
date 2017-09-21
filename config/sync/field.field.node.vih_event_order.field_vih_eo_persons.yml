@@ -1,0 +1,82 @@
+uuid: 81b5d23a-a4d3-4536-9342-66878ecf111c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_eo_persons
+    - node.type.vih_event_order
+    - paragraphs.paragraphs_type.vih_ordered_event_person
+  module:
+    - entity_reference_revisions
+id: node.vih_event_order.field_vih_eo_persons
+field_name: field_vih_eo_persons
+entity_type: node
+bundle: vih_event_order
+label: Persons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      vih_ordered_event_person: vih_ordered_event_person
+    target_bundles_drag_drop:
+      vih_ordered_event_person:
+        enabled: true
+        weight: 19
+      1_column_action_centered:
+        weight: 20
+        enabled: false
+      class_packages:
+        weight: 21
+        enabled: false
+      event_list:
+        weight: 22
+        enabled: false
+      file:
+        weight: 23
+        enabled: false
+      list_of_news_teasers:
+        weight: 24
+        enabled: false
+      long_course_list_:
+        weight: 25
+        enabled: false
+      news_list:
+        weight: 26
+        enabled: false
+      page_content:
+        weight: 27
+        enabled: false
+      short_course_list_:
+        weight: 28
+        enabled: false
+      video:
+        weight: 29
+        enabled: false
+      vih_course_slot:
+        weight: 30
+        enabled: false
+      vih_option:
+        weight: 31
+        enabled: false
+      vih_option_group:
+        weight: 32
+        enabled: false
+      vih_ordered_course_period:
+        weight: 33
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 34
+        enabled: false
+      vih_ordered_option:
+        weight: 35
+        enabled: false
+      vih_teacher_class_description:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

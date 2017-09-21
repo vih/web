@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_page_main_image
+    - field.field.node.event.field_vih_event_persons_limit
     - node.type.event
   module:
     - datetime
@@ -71,14 +72,14 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  field_page_main_image:
-    weight: 5
+  field_vih_event_persons_limit:
+    weight: 6
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      thousand_separator: ''
+      prefix_suffix: true
     third_party_settings: {  }
-    type: image
+    type: number_integer
     region: content
   links:
     weight: 4

@@ -1,0 +1,123 @@
+// |--------------------------------------------------------------------------
+// | Event
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .event
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.path-node.page-node-type-event{
+  .field--name-body {
+    padding: 0;
+  }
+
+  .period-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 1px solid #eeeeee;
+    text-transform: uppercase;
+    .period-wrapper__dates {
+      text-align: left;
+      font-weight: bold;
+      color: #555;
+    }
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Print
+@media print {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// Touch
+.touchevents {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  .path-node.page-node-type-event{
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

@@ -1,0 +1,49 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+{# Introduction information START #}
+<h4>
+    {{ "Tilmelding til @title"|t({ '@title': form['#event']['title'] }) }}
+</h4>
+<div>
+    <p>
+        {{ "Du kan tilmelde så mange mennesker, som du har lyst til. Du tilføjer en person ad gangen i nedenstående formular."|t }}
+    </p>
+
+    <p>
+        {{ "Særligt for korte kurser - Tilkøb af linned: Du kan tilkøbe linnedpakke med sengetøj og to håndklæder, når du ankommer til skolen for 85 kroner per person eller selv medbringe eget sengetøj."|t }}
+
+    <p>
+</div>
+{# Introduction information END #}
+
+<br>
+
+{# Options START #}
+{#{% for optionGroupsDelta, optionGroup in form['#optionGroups'] %}#}
+    {#{{ form[optionGroup['options']['cid']] }}#}
+    {#{% if optionGroup['suboptions'] is not empty %}#}
+        {#{% for suboptions in optionGroup['suboptions'] %}#}
+            {#{{ form[suboptions['cid']] }}#}
+        {#{% endfor %}#}
+    {#{% endif %}#}
+{#{% endfor %}#}
+{# Options END #}
+
+{# Personal data START #}
+<br>
+<h4>{{ "Personlige oplysninger"|t }}</h4>
+
+<div class="row">
+    <div class="col-md-12">
+        {#{{ form['personalDataLeft'] }}#}
+
+        {{ form['participants_container'] }}
+        <br/>
+        {{ form['message'] }}
+        {{ form['actions'] }}
+    </div>
+</div>
+{# Personal data END #}
+

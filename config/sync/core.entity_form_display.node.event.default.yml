@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_page_main_image
+    - field.field.node.event.field_vih_event_persons_limit
     - node.type.event
   module:
     - datetime
@@ -87,6 +88,13 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
+  field_vih_event_persons_limit:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   langcode:
     type: language_select

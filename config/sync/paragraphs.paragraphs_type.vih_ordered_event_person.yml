@@ -1,0 +1,9 @@
+uuid: a881b364-524b-489a-b0f3-beee7210b589
+langcode: da
+status: true
+dependencies: {  }
+id: vih_ordered_event_person
+label: 'Ordered Event person'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

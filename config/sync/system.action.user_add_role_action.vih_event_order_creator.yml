@@ -1,0 +1,14 @@
+uuid: 555c62fd-8d43-4f2e-a565-5727c74a079f
+langcode: da
+status: true
+dependencies:
+  config:
+    - user.role.vih_event_order_creator
+  module:
+    - user
+id: user_add_role_action.vih_event_order_creator
+label: 'Tilføj rollen Event Order Creator til de valgte brugere'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: vih_event_order_creator

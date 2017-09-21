@@ -1,0 +1,38 @@
+uuid: 7e352bd8-d313-442a-9f5a-4de01e42284b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.vih_event_order.field_vih_eo_event
+    - field.field.node.vih_event_order.field_vih_eo_persons
+    - node.type.vih_event_order
+  module:
+    - entity_reference_revisions
+    - user
+id: node.vih_event_order.default
+targetEntityType: node
+bundle: vih_event_order
+mode: default
+content:
+  field_vih_eo_event:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_vih_eo_persons:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

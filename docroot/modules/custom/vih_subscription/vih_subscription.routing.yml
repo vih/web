@@ -22,6 +22,18 @@ vih_subscription.short_course_order_create:
   requirements:
     _permission: 'access content'
     course: \d+
+vih_subscription.event_order_create:
+  path: '/begivenhed/{event}/tilmelding'
+  options:
+    parameters:
+      event:
+        type: entity:node
+  defaults:
+    _form: '\Drupal\vih_subscription\Form\EventOrderForm'
+    _title_callback: '\Drupal\vih_subscription\Form\EventOrderForm::getTitle'
+  requirements:
+    _permission: 'access content'
+    event: \d+
 vih_subscription.subscription_redirect:
   path: '/tilmelding/tak'
   defaults:

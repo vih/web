@@ -22,6 +22,9 @@ function vih_subscription_theme() {
     'vih_subscription_short_course_order_form' => array(
       'render element' => 'form',
     ),
+    'vih_subscription_event_order_form' => array(
+      'render element' => 'form',
+    ),
     'vih_subscription_thank_you_page' => array(
       'render element' => 'page',
     )

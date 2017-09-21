@@ -1,0 +1,28 @@
+uuid: 1328b910-65c8-4924-b9e7-21569357d560
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_eo_event
+    - node.type.event
+    - node.type.vih_event_order
+id: node.vih_event_order.field_vih_eo_event
+field_name: field_vih_eo_event
+entity_type: node
+bundle: vih_event_order
+label: Event
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
