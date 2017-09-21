@@ -13,6 +13,7 @@ module:
   ctools: 0
   ctools_block: 0
   datetime: 0
+  datetime_tweaks: 0
   dblog: 0
   devel: 0
   editor: 0
