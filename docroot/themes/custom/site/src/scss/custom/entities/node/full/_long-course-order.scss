@@ -23,8 +23,12 @@
       & article.vih-long-course-order{
         margin-bottom: 150px;
         & .user.compact td.user-image{
-          width: 242px;
-          height: 248px;
+          min-width: 242px;
+          min-height: 248px;
+          width: unset;
+        }
+        td{
+          width: 100%;
         }
         & .content{
           margin-top: 80px;
