@@ -1,0 +1,19 @@
+uuid: 3939a065-85aa-41eb-b9ba-807ed4b9b562
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocp_first_name
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+id: paragraph.vih_ordered_course_person.field_vih_ocp_first_name
+field_name: field_vih_ocp_first_name
+entity_type: paragraph
+bundle: vih_ordered_course_person
+label: 'First name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

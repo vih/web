@@ -1,0 +1,23 @@
+uuid: c1b5aa32-ff8c-4769-a091-88c347caba62
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_oo_amount
+    - paragraphs.paragraphs_type.vih_ordered_option
+id: paragraph.vih_ordered_option.field_vih_oo_amount
+field_name: field_vih_oo_amount
+entity_type: paragraph
+bundle: vih_ordered_option
+label: Amount
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

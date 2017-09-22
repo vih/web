@@ -1,12 +1,12 @@
-uuid: b985fc9d-e4a3-4313-bc88-74a7614c5920
-langcode: en
+uuid: 85fdd045-c0a3-443f-908f-1d85b509d2f5
+langcode: da
 status: true
 dependencies:
   module:
-    - node
-id: node.field_vih_sco_last_name
-field_name: field_vih_sco_last_name
-entity_type: node
+    - paragraphs
+id: paragraph.field_vih_ocp_last_name
+field_name: field_vih_ocp_last_name
+entity_type: paragraph
 type: string
 settings:
   max_length: 255

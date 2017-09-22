@@ -1,0 +1,9 @@
+uuid: 4784848f-bce4-4c20-9f1d-38cce9a99687
+langcode: da
+status: true
+dependencies: {  }
+id: vih_ordered_course_person
+label: 'Ordered Course Person'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

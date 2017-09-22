@@ -5,10 +5,8 @@ dependencies:
   config:
     - field.field.node.vih_short_course_order.body
     - field.field.node.vih_short_course_order.field_vih_sco_course
-    - field.field.node.vih_short_course_order.field_vih_sco_first_name
-    - field.field.node.vih_short_course_order.field_vih_sco_last_name
     - field.field.node.vih_short_course_order.field_vih_sco_ordered_options
-    - field.field.node.vih_short_course_order.field_vih_sco_sambo
+    - field.field.node.vih_short_course_order.field_vih_sco_persons
     - node.type.vih_short_course_order
   module:
     - entity_reference_revisions
@@ -25,6 +23,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_vih_sco_course:
     weight: 103
     label: above
@@ -32,20 +31,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_vih_sco_first_name:
-    weight: 104
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-  field_vih_sco_last_name:
-    weight: 105
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
+    region: content
   field_vih_sco_ordered_options:
     type: entity_reference_revisions_entity_view
     weight: 102
@@ -54,14 +40,18 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-  field_vih_sco_sambo:
-    weight: 106
+    region: content
+  field_vih_sco_persons:
+    type: entity_reference_revisions_entity_view
+    weight: 104
     label: above
     settings:
-      link_to_entity: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: string
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   langcode: true

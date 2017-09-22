@@ -1,0 +1,44 @@
+uuid: 9def97ce-b755-4fc2-a344-78392bcfa82f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_last_name
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+  module:
+    - workbench_moderation
+id: paragraph.vih_ordered_course_person.default
+targetEntityType: paragraph
+bundle: vih_ordered_course_person
+mode: default
+content:
+  field_vih_ocp_email:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_vih_ocp_first_name:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_ocp_last_name:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

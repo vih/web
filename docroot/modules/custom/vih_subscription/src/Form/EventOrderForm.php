@@ -54,7 +54,8 @@ class EventOrderForm extends FormBase {
 
     $participantsCounter = $form_state->get('participantsCounter');
     if (empty($participantsCounter)) {
-      $participantsCounter = $form_state->set('participantsCounter', 1);
+      $participantsCounter = 1;
+      $form_state->set('participantsCounter', $participantsCounter);
     }
 
     $form['#tree'] = TRUE;

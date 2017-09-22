@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_ordered_option.field_vih_oo_amount
     - field.field.paragraph.vih_ordered_option.field_vih_oo_group_name
     - field.field.paragraph.vih_ordered_option.field_vih_oo_option_name
     - field.field.paragraph.vih_ordered_option.field_vih_oo_price_addition
@@ -15,6 +16,13 @@ targetEntityType: paragraph
 bundle: vih_ordered_option
 mode: default
 content:
+  field_vih_oo_amount:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   field_vih_oo_group_name:
     weight: 6
     settings:
@@ -22,6 +30,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_vih_oo_option_name:
     weight: 7
     settings:
@@ -29,12 +38,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_vih_oo_price_addition:
     weight: 8
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
   field_vih_oo_suboption:
     weight: 9
     settings:
@@ -42,6 +53,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

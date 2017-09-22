@@ -24,25 +24,19 @@
 <br>
 
 {# Options START #}
-{% for optionGroupsDelta, optionGroup in form['#optionGroups'] %}
-    {{ form[optionGroup['options']['cid']] }}
-    {% if optionGroup['suboptions'] is not empty %}
-        {% for suboptions in optionGroup['suboptions'] %}
-            {{ form[suboptions['cid']] }}
-        {% endfor %}
-    {% endif %}
-{% endfor %}
+    {{ form['addedOptionsContainer'] }}
+    {{ form['availableOptionsContainer'] }}
+    {{ form['addOption'] }}
 {# Options END #}
 
 {# Personal data START #}
 <br>
 <h4>{{ "Personlige oplysninger"|t }}</h4>
 
-
 <div class="row">
     <div class="col-md-12">
-        {{ form['personalDataLeft'] }}
-
+        {{ form['participantsContainer'] }}
+        <br/>
         {{ form['message'] }}
         {{ form['actions'] }}
     </div>

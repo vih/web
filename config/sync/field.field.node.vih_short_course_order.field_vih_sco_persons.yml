@@ -1,0 +1,88 @@
+uuid: 136c4bb6-153c-4d73-8339-d22f9def6475
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sco_persons
+    - node.type.vih_short_course_order
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+  module:
+    - entity_reference_revisions
+id: node.vih_short_course_order.field_vih_sco_persons
+field_name: field_vih_sco_persons
+entity_type: node
+bundle: vih_short_course_order
+label: Persons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      vih_ordered_course_person: vih_ordered_course_person
+    target_bundles_drag_drop:
+      vih_ordered_course_person:
+        enabled: true
+        weight: 21
+      1_column_action_centered:
+        weight: 22
+        enabled: false
+      class_packages:
+        weight: 23
+        enabled: false
+      event_list:
+        weight: 24
+        enabled: false
+      file:
+        weight: 25
+        enabled: false
+      list_of_news_teasers:
+        weight: 26
+        enabled: false
+      long_course_list_:
+        weight: 27
+        enabled: false
+      news_list:
+        weight: 28
+        enabled: false
+      page_content:
+        weight: 29
+        enabled: false
+      short_course_list_:
+        weight: 30
+        enabled: false
+      user_quote:
+        weight: 31
+        enabled: false
+      video:
+        weight: 32
+        enabled: false
+      vih_course_slot:
+        weight: 33
+        enabled: false
+      vih_option:
+        weight: 34
+        enabled: false
+      vih_option_group:
+        weight: 35
+        enabled: false
+      vih_ordered_course_period:
+        weight: 36
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 37
+        enabled: false
+      vih_ordered_event_person:
+        weight: 38
+        enabled: false
+      vih_ordered_option:
+        weight: 39
+        enabled: false
+      vih_teacher_class_description:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions
