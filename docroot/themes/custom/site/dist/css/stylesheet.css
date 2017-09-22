@@ -10545,21 +10545,48 @@ article p {
     width: 70px;
     height: 70px;
     background-color: #00bcff;
-    right: 2px;
+    right: 0px;
     -webkit-box-shadow: none;
             box-shadow: none;
     border: none; }
+
+.search-form-popover {
+  position: absolute;
+  right: 0;
+  height: 68px;
+  width: 100%;
+  top: 0; }
+  .search-form-popover form#search-form {
+    height: 100%; }
+    .search-form-popover form#search-form .form-group.add-on {
+      height: 100%; }
+      .search-form-popover form#search-form .form-group.add-on input.form-control {
+        height: 100%;
+        font-size: 16px; }
+      .search-form-popover form#search-form .form-group.add-on .form-submit.btn-search {
+        position: absolute;
+        top: 0px;
+        width: 70px;
+        height: 68px;
+        background-color: #00bcff;
+        right: 0px;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        border: none; }
 
 .popover-content {
   padding: 0;
   height: 100%; }
 
 .popover {
-  z-index: -1;
-  top: 57px !important;
+  position: absolute;
+  left: 0 !important;
+  top: 80px !important;
+  z-index: 2;
+  /*    top: 57px !important;*/
   margin-right: -5px;
   overflow: hidden;
-  height: 65px; }
+  height: 68px; }
 
 .popover-content input {
   border: none;
@@ -12008,26 +12035,26 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   .field--name-field-vih-user-photo img {
     min-width: 100%; }
   /*    .breadcrumb li, .breadcrumb li a {
-        width: 100%;
-        font-size: 12px!important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-    }
-    .breadcrumb li + li:before {
-        height: 100%!important;
-    margin-top: -28px!important;
-            border-width: 30px!important;
-    }
-    .breadcrumb {
-        display: flex!important;
-        flex-direction: row;
-        max-width: 450px;
-    }
-    .breadcrumb li:first-child a:before {
-        padding-right: 10px;
-    }*/
+          width: 100%;
+          font-size: 12px!important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+      }
+      .breadcrumb li + li:before {
+          height: 100%!important;
+      margin-top: -28px!important;
+              border-width: 30px!important;
+      }
+      .breadcrumb {
+          display: flex!important;
+          flex-direction: row;
+          max-width: 450px;
+      }
+      .breadcrumb li:first-child a:before {
+          padding-right: 10px;
+      }*/
   header .layout__header-row {
     width: 100% !important;
     display: -webkit-box !important;

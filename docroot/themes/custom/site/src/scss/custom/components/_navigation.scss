@@ -35,7 +35,9 @@ $navigation-bottom-border-color: #fff;
     margin: auto;
   }
 }
-
+.layout-navigation.layout-navigation--full-width.layout--large-screen-only{
+  position: relative;
+}
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

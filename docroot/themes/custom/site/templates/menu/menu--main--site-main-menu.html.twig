@@ -43,13 +43,13 @@
         {% endfor %}
 
         {# Search icon #}
-        <li class="layout-navigation__link layout-navigation__link__icon"><a class="search-button" href="#"><span class="icon fa fa-search"></span></a></li>
+        <li class="layout-navigation__link layout-navigation__link__icon"><a class="search-button" data-trigger="focus" href="#"><span class="icon fa fa-search"></span></a></li>
       </ul>
     {% endif %}
 
     {% endmacro %}
 
-    <div class="hidden" id="search-form-popover">
+    <div class="hidden search-form-popover" id="search-form-popover">
       <form id="search-form" action="{{ url('view.vih_search.page') }}" method="get" accept-charset="UTF-8">
         <div class="form-group add-on">
           <input class="form-control" name="s" placeholder="{{ 'Enter text you wish to search for'|trans }}" type="text" size="60">
