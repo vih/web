@@ -235,6 +235,16 @@ function site_preprocess_paragraph__class_packages(&$variables) {
   $variables['content'] = views_embed_view('class_packages_frontpage', 'block_1');
 }
 
+function site_preprocess_paragraph__class_package(&$variables) {
+
+  $class_packages = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
+  $class_packages_arr = array();
+  foreach ($class_packages as $class_package){
+    $class_packages_arr[] = $class_package->tid->value;
+  }  
+          $variables['content'] = views_embed_view('class_packages_frontpage', 'class_package_list', implode ( '+' , $class_packages_arr ) );
+}
+
 /**
  * Implements hook_theme_suggestions_views_view_alter().
  */
