@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.page
     - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.class_package
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.list_of_news_teasers
@@ -40,6 +41,7 @@ settings:
       page_content: page_content
       short_course_list_: short_course_list_
       long_course_list_: long_course_list_
+      class_package: class_package
     target_bundles_drag_drop:
       vih_teacher_class_description:
         weight: -27
@@ -89,4 +91,19 @@ settings:
       long_course_list_:
         enabled: true
         weight: 22
+      class_package:
+        enabled: true
+        weight: 22
+      file:
+        weight: 26
+        enabled: false
+      user_quote:
+        weight: 32
+        enabled: false
+      vih_ordered_course_person:
+        weight: 38
+        enabled: false
+      vih_ordered_event_person:
+        weight: 40
+        enabled: false
 field_type: entity_reference_revisions

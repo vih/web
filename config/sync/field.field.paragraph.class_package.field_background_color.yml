@@ -1,0 +1,23 @@
+uuid: f7406858-a342-44e4-bd06-e1223afc7e4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.class_package
+  module:
+    - options
+id: paragraph.class_package.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: class_package
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: light-gray
+default_value_callback: ''
+settings: {  }
+field_type: list_string
