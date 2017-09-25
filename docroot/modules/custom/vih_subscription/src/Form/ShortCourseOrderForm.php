@@ -7,6 +7,7 @@
 namespace Drupal\vih_subscription\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
@@ -68,8 +69,15 @@ class ShortCourseOrderForm extends FormBase {
 
     //START GENERAL DATA //
     $form['price'] = array(
-      '#markup' => '<span id="course-price">' . $this->price . '</span>',
+      '#markup' => number_format($this->price, 2)
     );
+
+    $form['status_messages'] = [
+      '#type' => 'status_messages',
+      '#weight' => -10,
+      '#prefix' => '<div id="messages">',
+      '#suffix' => '</div>'
+    ];
 
     $form['#course'] = array(
       'title' => $course->getTitle()
@@ -85,6 +93,12 @@ class ShortCourseOrderForm extends FormBase {
 
     $addedOptions = $form_state->get('addedOptions');
     if ($addedOptions) {
+      $form['addedOptionsContainer'][] = array(
+        '#markup' => $this->t('Added options'),
+        '#prefix' => '<h4>',
+        '#suffix' => '</h4>',
+      );
+
       foreach ($addedOptions as $addeOptionDelta => $addedOption) {
         $groupOptionName = $optionGroups[$addedOption['optionGroup']];
         $optionName = $optionGroupOptions[$addedOption['optionGroup']][$addedOption['option']];
@@ -92,12 +106,12 @@ class ShortCourseOrderForm extends FormBase {
         $amount = $addedOption['amount'];
 
         $form['addedOptionsContainer']['addedOption-' . $addeOptionDelta] = [
-          '#markup' => $groupOptionName . ' / ' . $optionName . ' / ' . $suboptionName . ' stk. :' . $amount . '<br/>'
+          '#markup' => $groupOptionName . ' / ' . $optionName . ' / ' . $suboptionName . ' stk. :' . $amount
         ];
 
         $form['addedOptionsContainer']['deleteAddedOption-' . $addeOptionDelta] = [
           '#type' => 'submit',
-          '#value' => $this->t('del'),
+          '#value' => $this->t('Slet'),
           '#submit' => array('::removeOption'),
           '#ajax' => [
             'callback' => '::ajaxAddRemoveOptionCallback',
@@ -107,9 +121,13 @@ class ShortCourseOrderForm extends FormBase {
             )
           ],
           '#addedOptionDelta' => $addeOptionDelta,
-          '#limit_validation_errors' => array()
+          '#limit_validation_errors' => array(),
+          '#button_type' => 'danger',
         ];
 
+        $form['addedOptionsContainer'][] = [
+          '#markup' => '<br/>'
+        ];
       }
     }
     //END ADDED OPTIONS CONTAINER //
@@ -125,7 +143,9 @@ class ShortCourseOrderForm extends FormBase {
       '#title' => $this->t('Option name'),
       '#type' => 'select',
       '#options' => $optionGroups,
+      //'#value' => -1,
       '#empty_value' => -1,
+      //'#required' => TRUE,
       '#ajax' => [
         'callback' => '::ajaxFillOptionsList',
         'wrapper' => 'options-container-wrapper',
@@ -147,6 +167,7 @@ class ShortCourseOrderForm extends FormBase {
       '#type' => 'select',
       '#value' => -1,
       '#empty_value' => -1,
+      //'#required' => TRUE,
       '#ajax' => [
         'callback' => '::ajaxFillSuboptionsList',
         'wrapper' => 'suboptions-container-wrapper',
@@ -156,6 +177,8 @@ class ShortCourseOrderForm extends FormBase {
         )
       ],
     );
+    //filling the list of options
+    $this->ajaxFillOptionsList($form, $form_state);
 
     $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer'] = array(
       '#type' => 'container',
@@ -177,6 +200,8 @@ class ShortCourseOrderForm extends FormBase {
     );
 
     $form['addOption'] = array(
+      '#id' => 'add-option',
+      '#name' => 'add-option',
       '#type' => 'submit',
       '#value' => $this->t('Add option'),
       '#submit' => array('::addOption'),
@@ -187,7 +212,10 @@ class ShortCourseOrderForm extends FormBase {
           'type' => 'none'
         )
       ],
-      '#limit_validation_errors' => array()
+      '#limit_validation_errors' => array(
+        array('optionGroups'),
+        array('options')
+      )
     );
     //END AVAILABLE OPTIONS CONTAINER //
 
@@ -277,7 +305,7 @@ class ShortCourseOrderForm extends FormBase {
     $optionGroupOptions = $form_state->get('optionGroupOptions');
 
     $form['availableOptionsContainer']['optionsContainer']['options']['#options'] = array(-1 => t('- None -'));
-    if ($selectedOptionGroup != -1) {
+    if (is_numeric($selectedOptionGroup) && $selectedOptionGroup != -1) {
       $form['availableOptionsContainer']['optionsContainer']['options']['#options'] += $optionGroupOptions[$selectedOptionGroup];
     }
 
@@ -311,6 +339,12 @@ class ShortCourseOrderForm extends FormBase {
    */
   public function addOption(array &$form, FormStateInterface $form_state) {
     $userInput = $form_state->getUserInput();
+
+    if ($form_state->hasAnyErrors()) {
+      $response = new AjaxResponse();
+      $response->addCommand(new ReplaceCommand('#status_messages', $form['status_messages']));
+      return $response;
+    }
 
     $addedOptions = $form_state->get('addedOptions');
     $option = [
@@ -351,15 +385,29 @@ class ShortCourseOrderForm extends FormBase {
    * @return AjaxResponse
    */
   public function ajaxAddRemoveOptionCallback(array &$form, FormStateInterface $form_state) {
+    //checking for any errors
+    if ($form_state->hasAnyErrors()) {
+      $response = new AjaxResponse();
+      $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
+      //redrawing elements
+      $response->addCommand(new ReplaceCommand('#added-options-container-wrapper', $form['addedOptionsContainer']));
+      $response->addCommand(new ReplaceCommand('#available-options-container-wrapper', $form['availableOptionsContainer']));
+      return $response;
+    }
+
     //diselecting option groups
     $form['availableOptionsContainer']['optionGroups']['#value'] = -1;
 
     $response = new AjaxResponse();
+    //resetting elements
     $response->addCommand(new ReplaceCommand('#added-options-container-wrapper', $form['addedOptionsContainer']));
     $response->addCommand(new ReplaceCommand('#available-options-container-wrapper', $form['availableOptionsContainer']));
 
     //updating the price
-    $response->addCommand(new ReplaceCommand('#course-price', '<span id="course-price">' . number_format($this->calculatePrice($form_state), 2) . '</span>'));
+    $response->addCommand(new HtmlCommand('#vih-course-price', number_format($this->calculatePrice($form_state), 2)));
+
+    //resetting the error, if any
+    $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
 
     return $response;
   }
@@ -409,6 +457,17 @@ class ShortCourseOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    $userInput = $form_state->getUserInput();
+    $triggeringElement = $form_state->getTriggeringElement();
+
+    if ($triggeringElement['#id'] == 'add-option') {
+      if ($userInput['optionGroups'] == -1) {
+        $form_state->setErrorByName('optionGroups', $this->t('This is not a .com email address.'));
+      }
+      if ($userInput['options'] == -1) {
+        $form_state->setErrorByName('options', $this->t('This is not a .com email address.'));
+      }
+    }
   }
 
   /**

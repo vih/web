@@ -19,12 +19,19 @@
 {# Introduction information END #}
 
 <div>
-    {{ "Total Pris:"|t }} {{ form['price'] }}
+    {{ "Total Pris:"|t }} <div id="vih-course-price">{{ form['price'] }}</div>
 </div>
 <br>
 
+<div id="status_messages">
+    {{ form['status_messages'] }}
+</div>
+
 {# Options START #}
+    {#<h4>{{ "Added options"|t }}</h4>#}
     {{ form['addedOptionsContainer'] }}
+
+    <h4>{{ "Available options"|t }}</h4>
     {{ form['availableOptionsContainer'] }}
     {{ form['addOption'] }}
 {# Options END #}
