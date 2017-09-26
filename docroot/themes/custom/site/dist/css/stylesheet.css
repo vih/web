@@ -12281,8 +12281,10 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 .banner .img-responsive {
   max-width: 200% !important; }
 
-.banner .banner-logo {
-  display: none; }
+.banner {
+  min-height: 450px; }
+  .banner .banner-logo {
+    display: none; }
 
 @media (min-width: 768px) {
   .banner .banner-content {
