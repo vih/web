@@ -18,13 +18,13 @@ bundle: class_package
 mode: default
 content:
   field_background_color:
-    weight: 7
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
-    weight: 6
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -32,7 +32,7 @@ content:
     type: image_image
     region: content
   field_heading:
-    weight: 9
+    weight: 0
     settings:
       size: 60
       placeholder: ''
@@ -40,7 +40,7 @@ content:
     type: string_textfield
     region: content
   field_paragraph_class_package:
-    weight: 8
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

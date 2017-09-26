@@ -16,4 +16,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_vih_eo_event: true
+  field_vih_eo_persons: true
   langcode: true
