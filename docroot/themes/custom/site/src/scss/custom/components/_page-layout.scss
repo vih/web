@@ -2094,11 +2094,22 @@ ul.layout-navigation {
     margin-left: -100px!important;
   }
 
-  .path-node .news-container {
-    padding-bottom: 0px!important;
-    position: relative;
-    z-index: 99;
-    margin-top: -220px;
+  .path-node{
+    & .news-container {
+      padding-bottom: 0px!important;
+      position: relative;
+      z-index: 99;
+      margin-top: -220px;
+    }
+  }
+
+  .path-taxonomy{
+    & .news-container {
+      padding-bottom: 0px!important;
+      position: relative;
+      z-index: 99;
+      margin-top: -120px;
+    }
   }
 }
 

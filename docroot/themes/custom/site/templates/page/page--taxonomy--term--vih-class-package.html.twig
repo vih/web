@@ -22,33 +22,24 @@
       <div class="news-banner" style="background-image: url('{{ file_url(term.field_vih_cp_image.entity.fileuri) }}');">
         <h1 class="news-banner-title">{{ page['#title'] }}</h1>
       </div>
-
       {# Header #}
       {% if page.header %}
         {% block header %}
           <div role="heading" class="page-heading">
             <div class="angled-background-color angled-background-color-white">
               <div class="angled-background-inner" style="position: unset !important;">
-                <div class="container">
+                <div class="container news-container">
 
                 </div>
               </div>
             </div>
-
             <div class="container news-container">
               {{ page.header }}
               {{ page.breadcrumb }}
               <hr>
-
               <h2>{{ page['#title'] }}</h2>
-
-
               <br/><br/>
             </div>
-
-
-
-
           </div>
         {% endblock %}
       {% endif %}

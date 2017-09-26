@@ -73,6 +73,7 @@ not node.isPublished() ? 'is-unpublished',
 view_mode ? view_mode|clean_class,
 'clearfix',
 ] %}
+
 <article{{ attributes.addClass(classes) }}>
   <div class="container">
     {{ title_prefix }}
@@ -116,8 +117,9 @@ view_mode ? view_mode|clean_class,
         <div class="col-xs-12">
         </div>
       </div>
+    {{ class_list }}
     </div>
-  </div>
+  </div>    
   <div class="row paragraphs">
     {{ content.field_class_package_paragraph }}
   </div>

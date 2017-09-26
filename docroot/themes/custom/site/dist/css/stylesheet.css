@@ -12003,7 +12003,12 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
     padding-bottom: 0px !important;
     position: relative;
     z-index: 99;
-    margin-top: -220px; } }
+    margin-top: -220px; }
+  .path-taxonomy .news-container {
+    padding-bottom: 0px !important;
+    position: relative;
+    z-index: 99;
+    margin-top: -120px; } }
 
 .path-taxonomy .vih-btn-box {
   display: none; }
