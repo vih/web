@@ -10653,19 +10653,33 @@ flex-direction: column;
 .layout__news .view-header {
   display: none; }
 
+.angled-background-color.paragraph.paragraph--type--class-package.paragraph--view-mode--default .container,
+.angled-background-color.paragraph.paragraph--type--class.paragraph--view-mode--default .container {
+  color: #212121 !important;
+  display: block;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  font-size: 24px;
+  font-weight: bold; }
+
 .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list {
   color: #212121; }
-  .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list .view-header {
-    color: #212121 !important;
-    display: block; }
   .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list .view-content {
     padding-bottom: 0px;
     padding-top: 40px; }
-    .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list .view-content .contextual-region.vih_class_table_teaser.vih_class {
-      margin-bottom: 10px; }
-      .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list .view-content .contextual-region.vih_class_table_teaser.vih_class .multiple-elements p {
-        color: #212121 !important;
-        font-size: 18px; }
+    .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list .view-content .contextual-region.vih_class_table_teaser.vih_class .multiple-elements p {
+      color: #212121 !important;
+      font-size: 18px; }
+
+.layout__news .view.view-class-packages-frontpage.view-display-id-class_list {
+  color: #212121; }
+  .layout__news .view.view-class-packages-frontpage.view-display-id-class_list .view-content {
+    padding-bottom: 0px;
+    padding-top: 40px; }
+    .layout__news .view.view-class-packages-frontpage.view-display-id-class_list .view-content .contextual-region.vih_class_table_teaser.vih_class .multiple-elements p {
+      color: #212121 !important;
+      font-size: 18px; }
 
 view view-class-packages-frontpage view-id-class_packages_frontpage view-display-id-class_package_list js-view-dom-id-8812cb4b57e78853b926a83bb35587f32fa25ccea0beb4a1c170f7a63b7bcecf .layout__news.layout-taxonomy .view-header {
   display: block; }

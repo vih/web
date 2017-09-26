@@ -1,30 +1,30 @@
-uuid: a1fb02d4-7bd7-4710-bb9d-c132fe8fe756
+uuid: 5d5b737f-065c-4079-8495-2c0c957c2352
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.class_package.field_background_color
-    - field.field.paragraph.class_package.field_background_image
-    - field.field.paragraph.class_package.field_heading
-    - field.field.paragraph.class_package.field_paragraph_class_package
+    - field.field.paragraph.class.field_background_color
+    - field.field.paragraph.class.field_background_image
+    - field.field.paragraph.class.field_heading
+    - field.field.paragraph.class.field_paragraph_class_package
     - image.style.thumbnail
-    - paragraphs.paragraphs_type.class_package
+    - paragraphs.paragraphs_type.class
   module:
     - image
     - workbench_moderation
-id: paragraph.class_package.default
+id: paragraph.class.default
 targetEntityType: paragraph
-bundle: class_package
+bundle: class
 mode: default
 content:
   field_background_color:
-    weight: 7
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
-    weight: 6
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -32,7 +32,7 @@ content:
     type: image_image
     region: content
   field_heading:
-    weight: 9
+    weight: 0
     settings:
       size: 60
       placeholder: ''
@@ -40,7 +40,7 @@ content:
     type: string_textfield
     region: content
   field_paragraph_class_package:
-    weight: 8
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60

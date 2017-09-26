@@ -238,11 +238,35 @@ function site_preprocess_paragraph__class_packages(&$variables) {
 function site_preprocess_paragraph__class_package(&$variables) {
 
   $class_packages = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
+  $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
   $class_packages_arr = array();
+  
   foreach ($class_packages as $class_package){
     $class_packages_arr[] = $class_package->tid->value;
   }  
-          $variables['content'] = views_embed_view('class_packages_frontpage', 'class_package_list', implode ( '+' , $class_packages_arr ) );
+  
+  $variables['content']['view_header'] = [
+    '#markup' => $paragraph_title,
+    '#allowed_tags' => ['h2'],
+  ];
+  $variables['content']['view_output'] = views_embed_view('class_packages_frontpage', 'class_package_list', implode ( '+' , $class_packages_arr ) );
+}
+
+function site_preprocess_paragraph__class(&$variables) {
+
+  $classes = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
+  $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
+  $classes_arr = array();
+  
+  foreach ($classes as $class){
+    $classes_arr[] = $class->tid->value;
+  }  
+            
+  $variables['content']['view_header'] = [
+    '#markup' => $paragraph_title,
+    '#allowed_tags' => ['h2'],
+  ];
+  $variables['content']['view_output'] = views_embed_view('class_packages_frontpage', 'class_list', implode ( '+' , $classes_arr ) );
 }
 
 /**
