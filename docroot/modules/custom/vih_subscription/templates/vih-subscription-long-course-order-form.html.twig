@@ -14,6 +14,8 @@
 
 {# Classes selection START #}
 <div class="panel-group course-periods-accordion" id="course-periods-accordion">
+    {% set open_collapsible = true %}
+
     {% for periodDelta, coursePeriod in form['#coursePeriods'] %}
         <div class="panel-heading blue">
             <h4 class="panel-title">
@@ -30,18 +32,19 @@
                         <a class="accordion-toggle collapsed" data-toggle="collapse" 
 {#                           data-target="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}"#}
                            {#data-parent="#course-periods-accordion"#}
-                           href="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}">
+                           href="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}">
                             {{ courseSlot['title'] }}
                         </a>
                     </h4>
                 </div>
-                <div id="course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" class="panel-collapse collapse {% if loop.first %}in{% endif %}"
-                     aria-expanded="{% if loop.first %}true{% else %}false{% endif %}">
+                <div id="course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" class="panel-collapse collapse {% if open_collapsible %}in{% endif %}"
+                     aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}">
                     <div class="panel-body">
                         {{ form[courseSlot['availableClasses']['cid']] }}
                     </div>
                 </div>
             </div>
+            {% set open_collapsible = false %}
         {% endfor %}
     {% endfor %}
 </div>

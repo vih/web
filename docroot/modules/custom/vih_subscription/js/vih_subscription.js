@@ -19,8 +19,11 @@
                 //moving the selected class outside the collapsible area
                 classSelectionContainer.insertAfter(parentPanelHeading);
 
-                //collapsing
+                //collapsing this panel
                 parentPanel.find('.panel-collapse').collapse("hide");
+
+                //expanding next panel
+                parentPanel.nextAll('.panel').first().find('.panel-collapse').collapse("show");
             });
         }
     };
