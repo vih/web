@@ -44,20 +44,9 @@ class LongCourseOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL) {
+    $form['#attached']['library'][] = 'vih_subscription/vih-subscription-accordion-class-selection';
+
     $this->course = $course;
-
-
-foreach ($course->field_vih_cource_contact_person->referencedEntities() as $contact_person){
-
-  //Adding contact person to form
-  $user_view_builder = \Drupal::entityTypeManager()->getViewBuilder('user');
-      $contact_person_build = $user_view_builder->view($contact_person, 'compact');
-      $contact_person_output = render($contact_person_build);
-
-      $form['#contact_person'] = array(
-          'person' => $contact_person_output,
-      );
-    }
 
     //$form['#attached']['library'][] = 'core/drupal.ajax';
     //$form['#attached']['library'][] = 'core/drupal.dialog';
@@ -282,6 +271,17 @@ foreach ($course->field_vih_cource_contact_person->referencedEntities() as $cont
         '#type' => 'submit',
         '#value' => $this->t('Indsend oplynsinger'),
     );
+
+    foreach ($course->field_vih_cource_contact_person->referencedEntities() as $contact_person){
+      //Adding contact person to form
+      $user_view_builder = \Drupal::entityTypeManager()->getViewBuilder('user');
+      $contact_person_build = $user_view_builder->view($contact_person, 'compact');
+      $contact_person_output = render($contact_person_build);
+
+      $form['#contact_person'] = array(
+        'person' => $contact_person_output,
+      );
+    }
 
     $form['#theme'] = 'vih_subscription_long_course_order_form';
 

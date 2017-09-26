@@ -24,19 +24,19 @@
         </div>
 
         {% for slotDelta, courseSlot in coursePeriod['courseSlots'] %}
-            <div class="panel panel-default white-border-bottom">
+            <div class="panel panel-default white-border-bottom" data-toggle="buttons">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a class="accordion-toggle collapsed" data-toggle="collapse" 
-{#                           data-target="#course-periods-accordian-{{ periodDelta }}-{{ slotDelta }}"#}
-{#                           data-parent="#course-periods-accordion"#}
-                           href="#course-periods-accordian-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="false">
+{#                           data-target="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}"#}
+                           {#data-parent="#course-periods-accordion"#}
+                           href="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}">
                             {{ courseSlot['title'] }}
                         </a>
                     </h4>
                 </div>
-                <div id="course-periods-accordian-{{ periodDelta }}-{{ slotDelta }}" class="panel-collapse collapse"
-                     aria-expanded="false" style="height: 0px;">
+                <div id="course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" class="panel-collapse collapse {% if loop.first %}in{% endif %}"
+                     aria-expanded="{% if loop.first %}true{% else %}false{% endif %}">
                     <div class="panel-body">
                         {{ form[courseSlot['availableClasses']['cid']] }}
                     </div>

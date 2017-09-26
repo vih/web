@@ -1,4 +1,4 @@
-<div data-toggle="buttons">
+<div class="all-classes-container">
   {% for delta, radio in radios['#options'] %}
     <div class="class-selection">
       {{ radios['#classes']['radio_selection'][delta] }}
@@ -21,7 +21,6 @@
               <div class="diagonal-end"></div>
             </div>
 
-            {#TODO: fix with the correct class info#}
             <div class="modal-body">{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getDescription|raw }}</div>
           </div>
         </div>

@@ -15,8 +15,10 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
 }
 
 .course-periods-accordion {
-  .panel-body {
-    padding: 0;
+  .panel {
+    .panel-body {
+      padding: 0;
+    }
     .class-selection {
       border-color: $gray-lighter;
       border-style: solid;
