@@ -354,6 +354,7 @@ var modalPopUp = (function ($) {
   $(".search-button").click(function (event) {
     if ($("#search-form-popover").hasClass("hidden")) {
       $("#search-form-popover").removeClass('hidden');
+      $(".form-control").focus();
     }
   });
 
