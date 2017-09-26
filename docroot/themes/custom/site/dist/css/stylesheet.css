@@ -10681,7 +10681,7 @@ flex-direction: column;
       color: #212121 !important;
       font-size: 18px; }
 
-view view-class-packages-frontpage view-id-class_packages_frontpage view-display-id-class_package_list js-view-dom-id-8812cb4b57e78853b926a83bb35587f32fa25ccea0beb4a1c170f7a63b7bcecf .layout__news.layout-taxonomy .view-header {
+.layout__news.layout-taxonomy .view-header {
   display: block; }
 
 .field--name-field-event-list .field--label {
