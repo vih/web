@@ -13741,6 +13741,69 @@ form.vih-subscription-long-course-order-form article.user.compact {
     font-weight: bold;
     color: #555; }
 
+.page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period {
+  margin-bottom: 150px; }
+  .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr td.user-image {
+      min-width: 242px;
+      min-height: 248px;
+      width: unset; }
+    .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr td {
+      width: 100%; }
+    .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr .content {
+      margin-top: 80px; }
+
+.page-node-type-vih-course-period .layout__document .layout__content .news-banner h1.news-banner-title, .page-node-type-vih-course-period .layout__document .layout__content .news-banner .news-banner-title.heading-h1, .page-node-type-vih-course-period .layout__document .layout__content .news-banner .news-banner-title.field--name-field-description, .page-node-type-vih-course-period .layout__document .layout__content .news-banner
+.field--name-field-description p.news-banner-title,
+.field--name-field-description .page-node-type-vih-course-period .layout__document .layout__content .news-banner p.news-banner-title {
+  line-height: 2;
+  text-align: center; }
+
+.page-node-type-vih-course-period .layout__document .layout__content .field {
+  width: 100%; }
+  .page-node-type-vih-course-period .layout__document .layout__content .field .field--label {
+    float: left;
+    width: 250px; }
+  .page-node-type-vih-course-period .layout__document .layout__content .field .field--item {
+    margin-top: 11px;
+    margin-bottom: 11px; }
+
+@media (min-width: 992px) {
+  .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period {
+    margin-bottom: 150px; }
+    .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr {
+      display: block; }
+      .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr td.user-image {
+        min-width: 242px;
+        min-height: 248px;
+        width: unset; }
+      .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr td {
+        width: 100%; }
+      .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period .user.compact tr .content {
+        margin-top: 80px; }
+  .page-node-type-vih-course-period .layout__document .layout__content .news-banner h1.news-banner-title, .page-node-type-vih-course-period .layout__document .layout__content .news-banner .news-banner-title.heading-h1, .page-node-type-vih-course-period .layout__document .layout__content .news-banner .news-banner-title.field--name-field-description, .page-node-type-vih-course-period .layout__document .layout__content .news-banner
+  .field--name-field-description p.news-banner-title,
+  .field--name-field-description .page-node-type-vih-course-period .layout__document .layout__content .news-banner p.news-banner-title {
+    line-height: 2;
+    text-align: center; }
+  .page-node-type-vih-course-period .layout__document .layout__content .field {
+    width: 100%; }
+    .page-node-type-vih-course-period .layout__document .layout__content .field .field--label {
+      float: left;
+      width: 250px; }
+    .page-node-type-vih-course-period .layout__document .layout__content .field .field--item {
+      margin-top: 11px;
+      margin-bottom: 11px; } }
+
 .node-teaser-news,
 .node-teaser-news h4,
 .node-teaser-news .heading-h4,
