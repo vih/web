@@ -523,6 +523,7 @@
             background-color: $brand-primary;
             > a {
               &:hover {
+                color: #fff;
                 background-color: $brand-primary;
               }
             }
@@ -536,10 +537,9 @@
               background-color: $brand-primary;
             }
           }
-        
         }
         .layout-navigation__link.active{
-          a{
+          a {
             color: #888;
           }
         }

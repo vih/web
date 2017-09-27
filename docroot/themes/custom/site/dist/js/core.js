@@ -367,6 +367,26 @@ var modalPopUp = (function ($) {
     }
   });
 
+  //Improving usability for menudropdowns for mobile devices
+  if (!!('ontouchstart' in window)) {//check for touch device
+      $('li.dropdown.layout-navigation__dropdown').find('> a').click(function(e) {
+          if ($(this).parent().hasClass("expanded")) {
+              //$(this).parent().removeClass("expanded");
+          } else {
+              e.preventDefault();
+              $(this).parent().addClass("expanded");
+          }
+      });
+  } else {//keeping it compatible with desktop devices
+      $('li.dropdown.layout-navigation__dropdown').hover(
+          function(e) {
+              $(this).addClass("expanded");
+          }, function(e) {
+              $(this).removeClass("expanded");
+          }
+      );
+  }
+
 })(jQuery);
 
 //# sourceMappingURL=core.js.map

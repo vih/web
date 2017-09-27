@@ -137,7 +137,7 @@
   & .layout-navigation__dropdown {
     position: relative;
 
-    &:hover > .layout-navigation__dropdown-menu {
+    &.expanded > .layout-navigation__dropdown-menu {
       display: block;
     }
   }
