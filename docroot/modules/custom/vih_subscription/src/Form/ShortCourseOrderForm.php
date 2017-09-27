@@ -160,6 +160,11 @@ class ShortCourseOrderForm extends FormBase {
       '#type' => 'container',
       '#prefix' => '<div id="options-container-wrapper">',
       '#suffix' => '</div>',
+      '#states' => [
+        'invisible' => [
+          [':input[name="optionGroups"]' => ['value' => '-1' ]],
+        ]
+      ]
     );
 
     $form['availableOptionsContainer']['optionsContainer']['options'] = array(
@@ -190,7 +195,8 @@ class ShortCourseOrderForm extends FormBase {
       '#title' => $this->t('Selected suboption'),
       '#type' => 'select',
       '#value' => NULL,
-      '#empty_value' => -1
+      '#empty_value' => -1,
+      '#access' => FALSE//hidden unless has some options
     );
 
     $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['amount'] = array(
@@ -327,6 +333,9 @@ class ShortCourseOrderForm extends FormBase {
 
     $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
     $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#options'] = $optionGroupSuboptions[$selectedOptionGroup][$selectedOption];
+    if (!empty($optionGroupSuboptions[$selectedOptionGroup][$selectedOption])) {
+      $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#access'] = TRUE;
+    }
 
     return $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer'];
   }
