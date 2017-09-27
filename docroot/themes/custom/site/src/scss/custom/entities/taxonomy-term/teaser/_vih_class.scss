@@ -1,6 +1,6 @@
 .vih_class.teaser,
 .vih_class.vih_class_table_teaser {
-  .field--name-field-vih-class-image {
+  .field--name-field-vih-class-image, .field-vih-class-image {
     position: relative;
     .triangle {
       position: absolute;
@@ -35,7 +35,7 @@
         position: absolute;
       }
     }
-    h5 {
+    h5, .field.field--name-name.field--item {
       position:absolute; 
       bottom: 8px;
       right: 20px;

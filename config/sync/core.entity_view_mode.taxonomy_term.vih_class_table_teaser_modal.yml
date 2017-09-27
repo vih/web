@@ -1,0 +1,14 @@
+uuid: 569a8fe1-24d6-4744-8224-b85c18cc7ee0
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.vih_class_table_teaser_modal
+label: 'VIH class table teaser modal'
+targetEntityType: taxonomy_term
+cache: true
