@@ -13338,7 +13338,6 @@ ul.layout-navigation__link {
   padding-bottom: 0px !important; }
   .angled-background-color .angled-background-inner {
     position: relative;
-    z-index: 1;
     background-color: transparent !important; }
     .angled-background-color .angled-background-inner:before {
       display: block;
@@ -13367,6 +13366,7 @@ ul.layout-navigation__link {
   z-index: 1;
   background-color: transparent; }
   .angled-background-image .angled-background-image-wrapper {
+    height: 100%;
     display: block;
     position: absolute;
     top: 0;

@@ -48,7 +48,7 @@ $angled-background-color-secondary: $brand-secondary;
 
   .angled-background-inner {
     position: relative;
-    z-index: 1;
+
     background-color: transparent !important;
 
     &:before {
@@ -78,7 +78,7 @@ $angled-background-color-secondary: $brand-secondary;
   background-color: transparent;
 
   .angled-background-image-wrapper {
-
+height: 100%;
     display: block;
     position: absolute;
     top: 0;
