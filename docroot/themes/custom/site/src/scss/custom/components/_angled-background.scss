@@ -41,6 +41,10 @@ $angled-background-color-secondary: $brand-secondary;
 
 // Color
 .angled-background-color {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 
   .angled-background-inner {
     position: relative;
@@ -61,8 +65,8 @@ $angled-background-color-secondary: $brand-secondary;
       @include backface-visibility(hidden);
       @include skew(0, $angled-background-angle);
       transform-origin: center center;
-     
-    
+
+
     }
   }
 }
@@ -71,9 +75,10 @@ $angled-background-color-secondary: $brand-secondary;
 .angled-background-image {
   position: relative;
   z-index: 1;
-  background-color: #fff;
+  background-color: transparent;
 
   .angled-background-image-wrapper {
+
     display: block;
     position: absolute;
     top: 0;
@@ -86,9 +91,7 @@ $angled-background-color-secondary: $brand-secondary;
     @include backface-visibility(hidden);
     @include skew(0, $angled-background-angle);
     transform-origin: center center;
-      outline: 1px solid transparent;
-      margin-top: -150px!important;
-
+    outline: 1px solid transparent;
     .angled-background-image-element {
       position: absolute;
       top: 0;
@@ -131,7 +134,7 @@ $angled-background-color-secondary: $brand-secondary;
 
     &:before {
       background-color: $angled-background-color-gray;
-       
+
     }
   }
 }

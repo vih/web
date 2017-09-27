@@ -12098,6 +12098,9 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
         -ms-flex-direction: row !important;
             flex-direction: row !important; } }
 
+.views-element-container.form-group {
+  width: 100%; }
+
 .path-frontpage div[role=heading] {
   display: none; }
 
@@ -13328,36 +13331,41 @@ ul.layout-navigation__link {
     position: absolute;
     right: 0; } }
 
-.angled-background-color .angled-background-inner {
-  position: relative;
-  z-index: 1;
-  background-color: transparent !important; }
-  .angled-background-color .angled-background-inner:before {
-    display: block;
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    min-height: 100%;
-    background-color: transparent;
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: skewX(0) skewY(5deg);
-    -ms-transform: skewX(0) skewY(5deg);
-    -o-transform: skewX(0) skewY(5deg);
-    transform: skewX(0) skewY(5deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center; }
+.angled-background-color {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important; }
+  .angled-background-color .angled-background-inner {
+    position: relative;
+    z-index: 1;
+    background-color: transparent !important; }
+    .angled-background-color .angled-background-inner:before {
+      display: block;
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      min-height: 100%;
+      background-color: transparent;
+      z-index: -1;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: skewX(0) skewY(5deg);
+      -ms-transform: skewX(0) skewY(5deg);
+      -o-transform: skewX(0) skewY(5deg);
+      transform: skewX(0) skewY(5deg);
+      -webkit-transform-origin: center center;
+          -ms-transform-origin: center center;
+           -o-transform-origin: center center;
+              transform-origin: center center; }
 
 .angled-background-image {
   position: relative;
   z-index: 1;
-  background-color: #fff; }
+  background-color: transparent; }
   .angled-background-image .angled-background-image-wrapper {
     display: block;
     position: absolute;
@@ -13378,8 +13386,7 @@ ul.layout-navigation__link {
         -ms-transform-origin: center center;
          -o-transform-origin: center center;
             transform-origin: center center;
-    outline: 1px solid transparent;
-    margin-top: -150px !important; }
+    outline: 1px solid transparent; }
     .angled-background-image .angled-background-image-wrapper .angled-background-image-element {
       position: absolute;
       top: 0;
