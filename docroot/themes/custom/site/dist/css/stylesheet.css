@@ -10661,7 +10661,8 @@ flex-direction: column;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5em;
   font-size: 24px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-bottom: 150px; }
 
 .layout__news .view.view-class-packages-frontpage.view-display-id-class_package_list {
   color: #212121; }
@@ -13378,7 +13379,7 @@ ul.layout-navigation__link {
          -o-transform-origin: center center;
             transform-origin: center center;
     outline: 1px solid transparent;
-    margin-top: -70px !important; }
+    margin-top: -150px !important; }
     .angled-background-image .angled-background-image-wrapper .angled-background-image-element {
       position: absolute;
       top: 0;
@@ -14079,7 +14080,8 @@ article.vih_class_package .field.field--name-field-class-package-paragraph.field
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    color: #fff !important; }
+    color: #fff !important;
+    font-size: 16px; }
 
 .vih_class_table_teaser_modal .flex-center-middle {
   display: -webkit-box;
@@ -14097,7 +14099,8 @@ article.vih_class_package .field.field--name-field-class-package-paragraph.field
   height: 128px; }
   .vih_class_table_teaser_modal .flex-center-middle .field-image-wrapper {
     text-transform: uppercase;
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 16px; }
 
 html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
   content: 'Chose'; }

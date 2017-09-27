@@ -87,7 +87,7 @@ $angled-background-color-secondary: $brand-secondary;
     @include skew(0, $angled-background-angle);
     transform-origin: center center;
       outline: 1px solid transparent;
-      margin-top: -70px!important;
+      margin-top: -150px!important;
 
     .angled-background-image-element {
       position: absolute;

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser
-    - core.entity_view_mode.taxonomy_term.vih_class_table_teaser
     - core.entity_view_mode.taxonomy_term.vih_class_table_teaser_modal
     - field.storage.taxonomy_term.field_vih_cp_description
     - field.storage.taxonomy_term.field_vih_cp_subtitle
@@ -515,7 +514,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: vih_class_table_teaser
+          view_mode: vih_class_table_teaser_modal
       arguments:
         tid:
           id: tid
