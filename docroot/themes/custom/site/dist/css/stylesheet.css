@@ -13246,6 +13246,12 @@ ul.layout-navigation__link {
 .btn-secondary:after {
   border-left-color: #b84800; }
 
+.navbar.navbar-default.hidden-xs {
+  border: none !important;
+  border-bottom: 1px solid #ccc; }
+  .navbar.navbar-default.hidden-xs .dropdown-menu.layout-navigation__dropdown-menu {
+    border-color: #ccc; }
+
 @media (max-width: 767px) {
   .navbar-toggle {
     border: none;

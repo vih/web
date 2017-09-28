@@ -1,6 +1,13 @@
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
+.navbar.navbar-default.hidden-xs{
+  border: none !important;
+  border-bottom: 1px solid #ccc;
+  & .dropdown-menu.layout-navigation__dropdown-menu{
+    border-color: #ccc;
+  }
+}
 
 // --------------------------------------------------
 // Responsive
