@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Long Course Order
+// | Short Course Order
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .long-course-order
+// | - .short-course-order
 // |
 
 // --------------------------------------------------
@@ -11,16 +11,34 @@
 // --------------------------------------------------
 
 
-
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Long Course Order
-.path-node .long-course-order .content {
+.path-node .short-course-order .content {
   display: block;
   .field {
     margin-bottom: 30px;
+  }
+  .field--type-entity-reference-revisions > .field__items {
+    .field--label {
+      margin: 0;
+    }
+
+    .field {
+      margin-bottom: 15px;
+    }
+    padding-left: 30px;
+    > .field--item {
+      padding-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      border-width: 0 0 1px 0;
+    }
+    > .field--item:last-child {
+      border-width: 0;
+    }
   }
 }
 
@@ -35,81 +53,50 @@
 // Mobile - and up
 @include media-breakpoint-up(xs) {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Mobile - only
 @include media-breakpoint-only(xs) {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Tablet - and up
 @include media-breakpoint-up(sm) {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Tablet - only
 @include media-breakpoint-only(sm) {
-
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Desktop - and up
 @include media-breakpoint-up(md) {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Desktop - only
 @include media-breakpoint-only(md) {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Large desktop - and up
 @include media-breakpoint-up(lg) {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Print
 @media print {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // Touch
 .touchevents {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // No touch
 .no-touchevents {
 
-  // Long Course Order
-  .long-course-order {
-  }
 }
 
 // --------------------------------------------------

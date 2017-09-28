@@ -10,8 +10,15 @@ dependencies:
     - node.type.vih_short_course_order
   module:
     - entity_reference_revisions
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vih_short_course_order.default
 targetEntityType: node
 bundle: vih_short_course_order
@@ -20,12 +27,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_vih_sco_course:
-    weight: 103
+    weight: 2
     label: above
     settings:
       link: true
@@ -34,7 +41,7 @@ content:
     region: content
   field_vih_sco_ordered_options:
     type: entity_reference_revisions_entity_view
-    weight: 102
+    weight: 3
     label: above
     settings:
       view_mode: default
@@ -43,7 +50,7 @@ content:
     region: content
   field_vih_sco_persons:
     type: entity_reference_revisions_entity_view
-    weight: 104
+    weight: 4
     label: above
     settings:
       view_mode: default
@@ -51,7 +58,9 @@ content:
     third_party_settings: {  }
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

@@ -5,11 +5,14 @@ dependencies: {  }
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
-label: 'Anonym bruger'
+label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'view media'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'create vih_event_order content'
+  - 'create vih_long_course_order content'
+  - 'create vih_short_course_order content'
+  - 'view media'

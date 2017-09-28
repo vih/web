@@ -18,6 +18,14 @@
 
 // Long Course
 .path-node.page-node-type-vih-long-cource {
+  .field--name-field-vih-course-periods .field__items {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 1px solid $gray-lighter;
+    text-transform: uppercase;
+  }
+
   .travel-class-container {
     margin-bottom: 30px;
   }

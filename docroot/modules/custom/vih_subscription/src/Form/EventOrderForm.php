@@ -165,7 +165,7 @@ class EventOrderForm extends FormBase {
 
     $this->eventOrder = Node::create(array(
       'type' => 'vih_event_order',
-      'status' => 1,
+      'status' => 0,
       'title' => $this->event->getTitle() . ' - begivenhed tilmelding ' . \Drupal::service('date.formatter')
           ->format(time(), 'short'),
       'field_vih_eo_persons' => $subscribedPersons,
@@ -225,7 +225,7 @@ class EventOrderForm extends FormBase {
   private function calculateSubscribedPeopleNumber(NodeInterface $event) {
     $eventOrderNids = \Drupal::entityQuery('node')
       ->condition('type', 'vih_event_order')
-      ->condition('status', '1')
+      //->condition('status', '1')new nodes are saved as unpublished
       ->condition('field_vih_eo_event', $event->id())
       ->execute();
 

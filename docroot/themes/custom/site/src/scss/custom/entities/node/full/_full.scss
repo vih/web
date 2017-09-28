@@ -19,13 +19,6 @@ article {
     .field--label {
       @extend h4;
     }
-    .field__items {
-      text-align: center;
-      padding-top: 25px;
-      padding-bottom: 25px;
-      border: 1px solid $gray-lighter;
-      text-transform: uppercase;
-    }
   }
   
   &.vih-long-cource, &.vih-short-course {

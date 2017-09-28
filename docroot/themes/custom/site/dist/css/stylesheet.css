@@ -11094,9 +11094,6 @@ div[role=heading] {
   position: absolute;
   right: -12px; }
 
-.field--type-entity-reference-revisions .field--label {
-  display: none; }
-
 .teacher-c-desc {
   margin-bottom: 80px; }
 
@@ -13643,13 +13640,6 @@ ul.layout-navigation__link {
         line-height: 26px;
         font-size: 16px; }
 
-article .field .field__items {
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border: 1px solid #eeeeee;
-  text-transform: uppercase; }
-
 article.vih-long-cource .pricing-table thead, article.vih-short-course .pricing-table thead {
   background: #eeeeee; }
   article.vih-long-cource .pricing-table thead th, article.vih-short-course .pricing-table thead th {
@@ -13665,31 +13655,35 @@ article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-t
 article .row.paragraphs {
   margin-top: 130px; }
 
-.long-course-order .layout__document .layout__content article.vih-long-course-order {
-  margin-bottom: 150px; }
-  .long-course-order .layout__document .layout__content article.vih-long-course-order .user.compact td.user-image {
-    min-width: 242px;
-    min-height: 248px;
-    width: unset; }
-  .long-course-order .layout__document .layout__content article.vih-long-course-order td {
-    width: 100%; }
-  .long-course-order .layout__document .layout__content article.vih-long-course-order .content {
-    margin-top: 80px; }
+.path-node .long-course-order .content {
+  display: block; }
+  .path-node .long-course-order .content .field {
+    margin-bottom: 30px; }
 
-.long-course-order .layout__document .layout__content .news-banner h1.news-banner-title, .long-course-order .layout__document .layout__content .news-banner .news-banner-title.heading-h1, .long-course-order .layout__document .layout__content .news-banner .news-banner-title.field--name-field-description, .long-course-order .layout__document .layout__content .news-banner
-.field--name-field-description p.news-banner-title,
-.field--name-field-description .long-course-order .layout__document .layout__content .news-banner p.news-banner-title {
-  line-height: 2;
-  text-align: center; }
+.path-node .short-course-order .content {
+  display: block; }
+  .path-node .short-course-order .content .field {
+    margin-bottom: 30px; }
+  .path-node .short-course-order .content .field--type-entity-reference-revisions > .field__items {
+    padding-left: 30px; }
+    .path-node .short-course-order .content .field--type-entity-reference-revisions > .field__items .field--label {
+      margin: 0; }
+    .path-node .short-course-order .content .field--type-entity-reference-revisions > .field__items .field {
+      margin-bottom: 15px; }
+    .path-node .short-course-order .content .field--type-entity-reference-revisions > .field__items > .field--item {
+      padding-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      border-width: 0 0 1px 0; }
+    .path-node .short-course-order .content .field--type-entity-reference-revisions > .field__items > .field--item:last-child {
+      border-width: 0; }
 
-.long-course-order .layout__document .layout__content .field {
-  width: 100%; }
-  .long-course-order .layout__document .layout__content .field .field--label {
-    float: left;
-    width: 250px; }
-  .long-course-order .layout__document .layout__content .field .field--item {
-    margin-top: 11px;
-    margin-bottom: 11px; }
+.path-node.page-node-type-vih-long-cource .field--name-field-vih-course-periods .field__items {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 1px solid #eeeeee;
+  text-transform: uppercase; }
 
 .path-node.page-node-type-vih-long-cource .travel-class-container {
   margin-bottom: 30px; }

@@ -366,7 +366,7 @@ class LongCourseOrderForm extends FormBase {
     $studentCpr = $form_state->getValue('cpr');
     $this->courseOrder = Node::create(array(
       'type' => 'vih_long_course_order',
-      'status' => 1,
+      'status' => 0,
       'title' => $this->course->getTitle() . ' - kursus tilmelding ' . \Drupal::service('date.formatter')
           ->format(time(), 'short'),
       //student information

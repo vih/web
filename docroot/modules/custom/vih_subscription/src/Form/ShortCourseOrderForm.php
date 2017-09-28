@@ -531,7 +531,7 @@ class ShortCourseOrderForm extends FormBase {
     //creating the Course Order
     $this->courseOrder = Node::create(array(
       'type' => 'vih_short_course_order',
-      'status' => 1,
+      'status' => 0,
       'title' => $this->course->getTitle() . ' - kursus tilmelding ' . \Drupal::service('date.formatter')
           ->format(time(), 'short'),
       'field_vih_sco_persons' => $subscribedPersons,
