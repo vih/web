@@ -1,10 +1,28 @@
+// |--------------------------------------------------------------------------
+// | User compact
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .user.compact
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// User profile
+
 .user.compact {
   td {
     padding: 20px;
     vertical-align: middle;
     &.user-image {
       padding: 0;
-      min-width: 242px;
+      width: 242px;
       min-height: 248px;
       .field--name-field-vih-user-photo {
         position: relative;
@@ -27,4 +45,74 @@
       }
     }
   }
+
+  .teacher-mail, .teacher-phone {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .teacher-contact-info {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    i {
+      margin-right: 10px;
+    }
+    h5 {
+      margin-bottom: 20px;
+    }
+  }
 }
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+}
+
+// Print
+@media print {
+}
+
+// Touch
+.touchevents {
+}
+
+// No touch
+.no-touchevents {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------

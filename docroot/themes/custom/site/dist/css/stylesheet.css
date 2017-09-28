@@ -11665,28 +11665,6 @@ div[role=heading] {
 .course-period-wrapper span i {
   margin-right: 10px; }
 
-.teacher-contact-info h5, .teacher-contact-info .heading-h5, .teacher-contact-info .field--name-field-highlighted {
-  margin-bottom: 20px; }
-
-.teacher-contact-info {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px; }
-
-.teacher-mail, .teacher-phone {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-  -webkit-justify-content: left;
-      -ms-flex-pack: left;
-          justify-content: left;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
 .path-langeophold .panel-default .panel-title a {
   color: #000; }
 
@@ -11980,14 +11958,8 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   border: 1px solid;
   margin-bottom: 10px; }
 
-.teacher-contact-info {
-  width: 300px; }
-
 .paragraph--type--file .angled-background-inner:before {
   background: none !important; }
-
-.teacher-contact-info i {
-  margin-right: 10px; }
 
 .banner, .banner-logo {
   height: 90vh !important; }
@@ -12047,20 +12019,6 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   .modal-body {
     padding: 40px !important;
     padding-right: 40px !important; }
-  .page-node-type-vih-long-cource article .table-bordered tr, .page-node-type-vih-long-course-order article .table-bordered tr {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-    .page-node-type-vih-long-cource article .table-bordered tr td, .page-node-type-vih-long-course-order article .table-bordered tr td {
-      width: 100%; }
-  .field--name-field-vih-user-photo img {
-    min-width: 100%; }
   /*    .breadcrumb li, .breadcrumb li a {
           width: 100%;
           font-size: 12px!important;
@@ -13937,7 +13895,7 @@ form.vih-subscription-long-course-order-form article.user.compact {
   vertical-align: middle; }
   .user.compact td.user-image {
     padding: 0;
-    min-width: 242px;
+    width: 242px;
     min-height: 248px; }
     .user.compact td.user-image .field--name-field-vih-user-photo {
       position: relative; }
@@ -13954,6 +13912,29 @@ form.vih-subscription-long-course-order-form article.user.compact {
           text-align: right;
           width: 100%;
           position: absolute; }
+
+.user.compact .teacher-mail, .user.compact .teacher-phone {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+  -webkit-justify-content: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.user.compact .teacher-contact-info {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px; }
+  .user.compact .teacher-contact-info i {
+    margin-right: 10px; }
+  .user.compact .teacher-contact-info h5, .user.compact .teacher-contact-info .heading-h5, .user.compact .teacher-contact-info .field--name-field-highlighted {
+    margin-bottom: 20px; }
 
 .user-profile-list-simple .user-profile-image {
   width: 45px; }
