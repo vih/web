@@ -1,3 +1,18 @@
+// |--------------------------------------------------------------------------
+// | Class taxonomy 'VIH class table radio selection' display
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .course-periods-accordion
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
 html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
   content: 'Chose';
 }
@@ -55,7 +70,6 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
       }
       .field--name-field-vih-class-image {
         position: relative;
-        height: 124px;
         .triangle {
           position: absolute;
           width: 100%;
@@ -97,14 +111,20 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
       }
     }
   }
-  & .accordion-flex-container{
+  .accordion-flex-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    & .col-xs-12.col-sm-3{
+    .col-xs-12.col-sm-3{
       margin-bottom: 15px;
+    }
+    .selection-buttons {
+      text-align: center;
+    }
+    .description .field--item{
+      padding: 0 10px;
     }
   }
 }
@@ -124,3 +144,68 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
   background-color: #00bcff;
   color: #fff;
 }
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+  .course-periods-accordion {
+    .accordion-flex-container{
+      .selection-buttons {
+        text-align: left;
+      }
+      .description .field--item{
+         padding: 0;
+      }
+    }
+  }
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+}
+
+// Print
+@media print {
+}
+
+// Touch
+.touchevents {
+}
+
+// No touch
+.no-touchevents {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}
