@@ -38,7 +38,26 @@ $angled-background-color-secondary: $brand-secondary;
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
+.path-node{
+  & .angled-background-color {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    & .angled-background-inner {
+      
+      z-index: unset;
+    }
+  }
+  & .angled-background-image {
 
+    background-color: transparent;
+    & .angled-background-image-wrapper {
+      height: 100%;
+      margin-top: -10px !important;
+    }
+  }
+}
 // Color
 .angled-background-color {
 

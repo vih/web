@@ -13327,6 +13327,20 @@ ul.layout-navigation__link {
     position: absolute;
     right: 0; } }
 
+.path-node .angled-background-color {
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important; }
+  .path-node .angled-background-color .angled-background-inner {
+    z-index: unset; }
+
+.path-node .angled-background-image {
+  background-color: transparent; }
+  .path-node .angled-background-image .angled-background-image-wrapper {
+    height: 100%;
+    margin-top: -10px !important; }
+
 .angled-background-color .angled-background-inner {
   position: relative;
   z-index: 1;
@@ -14100,6 +14114,13 @@ article.vih_class_package .field.field--name-field-class-package-paragraph.field
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px; }
+
+.vih_class_table_teaser_modal .modal-dialog .field.field--name-description h1, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .heading-h1, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .field--name-field-description, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description
+.field--name-field-description p,
+.field--name-field-description .vih_class_table_teaser_modal .modal-dialog .field.field--name-description p, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description h2, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .heading-h2, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .banner .banner-content .banner-title, .banner .banner-content .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .banner-title, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .field--name-field-heading, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description h3, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .heading-h3, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .node-list-simple-title, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .node-list-advanced-title, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description h4, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .heading-h4, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .paragraph--type--video .field--name-field-description, .paragraph--type--video .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .field--name-field-description, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description
+.paragraph--type--video .field--name-field-description p,
+.paragraph--type--video .field--name-field-description .vih_class_table_teaser_modal .modal-dialog .field.field--name-description p, .vih_class_table_teaser_modal .modal-dialog article .field.field--name-description .field--label, article .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .field--label, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description h5, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .heading-h5, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description .field--name-field-highlighted, .vih_class_table_teaser_modal .modal-dialog .field.field--name-description p {
+  color: #888; }
 
 html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
   content: 'Chose'; }
