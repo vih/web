@@ -1,0 +1,72 @@
+uuid: f5046532-62fd-40dc-93d1-b1519743f9f0
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.embedded_teaser_list
+    - field.field.node.event.body
+    - field.field.node.event.field_event_end_date
+    - field.field.node.event.field_event_paragraph
+    - field.field.node.event.field_event_start_date
+    - field.field.node.event.field_image
+    - field.field.node.event.field_page_main_image
+    - field.field.node.event.field_vih_event_persons_limit
+    - image.style.vih_event_teaser
+    - node.type.event
+  module:
+    - datetime
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.event.embedded_teaser_list
+targetEntityType: node
+bundle: event
+mode: embedded_teaser_list
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_end_date:
+    weight: 3
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_event_start_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: vih_event_teaser
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_event_paragraph: true
+  field_page_main_image: true
+  field_vih_event_persons_limit: true
+  langcode: true
+  links: true

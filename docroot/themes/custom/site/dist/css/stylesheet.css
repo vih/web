@@ -13704,6 +13704,58 @@ article .row.paragraphs {
 form.vih-subscription-long-course-order-form article.user.compact {
   margin-top: 120px; }
 
+.view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .field_image {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .field_image .triangle-red {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+      -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
+      background: rgba(255, 0, 95, 0.75); }
+  .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .field.field--name-body {
+    margin: 0 !important;
+    padding: 0 !important; }
+    .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .field.field--name-body p {
+      color: #888;
+      text-transform: unset;
+      font-family: "Open Sans", Sens-serif !important;
+      font-size: 0.85em !important;
+      line-height: 18px; }
+  .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle h2 a span, .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .heading-h2 a span, .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .banner .banner-content .banner-title a span, .banner .banner-content .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .banner-title a span, .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle .field--name-field-heading a span {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif; }
+
+.view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .views-field.views-field-view-node {
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+.view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .period-wrapper__dates {
+  margin-bottom: 15px; }
+
 .path-node.page-node-type-event .field--name-body {
   padding: 0; }
 

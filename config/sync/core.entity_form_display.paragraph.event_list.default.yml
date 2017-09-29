@@ -3,24 +3,22 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.event_list.field_event_list
+    - field.field.paragraph.event_list.field_heading
     - paragraphs.paragraphs_type.event_list
   module:
-    - viewsreference
     - workbench_moderation
 id: paragraph.event_list.default
 targetEntityType: paragraph
 bundle: event_list
 mode: default
 content:
-  field_event_list:
-    weight: 6
+  field_heading:
+    weight: 7
     settings:
-      match_operator: CONTAINS
-      size: '60'
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: viewsreference_autocomplete
+    type: string_textfield
     region: content
 hidden:
   created: true

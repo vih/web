@@ -1,0 +1,14 @@
+uuid: c21703b2-3458-4be1-b625-62faeab30418
+langcode: en
+status: true
+dependencies: {  }
+name: vih_event_teaser
+label: 'VIH Event teaser'
+effects:
+  2a52c630-fdab-40a2-9f58-6fc996599816:
+    uuid: 2a52c630-fdab-40a2-9f58-6fc996599816
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 762
+      height: 762

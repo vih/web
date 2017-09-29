@@ -1,0 +1,14 @@
+uuid: 0234437a-63d9-43ce-82a5-281abfcf68a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.embedded_teaser_list
+label: embedded_teaser_list
+targetEntityType: node
+cache: true

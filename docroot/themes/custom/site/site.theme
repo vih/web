@@ -228,6 +228,15 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
   $variables['embedded_view'] = views_embed_view('news', 'embedded_teaser_list');
 }
 
+function site_preprocess_paragraph__event_list(&$variables) {
+  $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
+  $variables['content']['view_header'] = [
+    '#markup' => '<h3>' . $paragraph_title . '</h3>',
+    '#allowed_tags' => ['h3'],
+  ];
+  $variables['content']['view_output'] = views_embed_view('eventside', 'embedded_teaser_list' );
+}
+
 function site_preprocess_paragraph__class_packages(&$variables) {
   $variables['content'] = views_embed_view('class_packages_frontpage', 'block_1');
 }
