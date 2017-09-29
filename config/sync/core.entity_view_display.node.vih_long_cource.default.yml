@@ -229,7 +229,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -248,7 +248,7 @@ content:
     type: text_default
     region: content
   field_laere:
-    weight: 11
+    weight: 10
     label: above
     settings:
       link: true
@@ -256,7 +256,7 @@ content:
     type: entity_reference_label
     region: content
   field_paragraphs:
-    weight: 10
+    weight: 9
     label: hidden
     settings:
       view_mode: default
@@ -265,7 +265,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_cource_contact_person:
-    weight: 8
+    weight: 7
     label: hidden
     settings:
       view_mode: compact
@@ -275,23 +275,15 @@ content:
     region: content
   field_vih_course_image:
     type: image
-    weight: 9
+    weight: 8
     label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     region: content
-  field_vih_course_periods:
-    weight: 3
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_vih_course_price:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       thousand_separator: ''
@@ -302,7 +294,7 @@ content:
     type: number_decimal
     region: content
   field_vih_course_subsc_price:
-    weight: 6
+    weight: 5
     label: hidden
     settings:
       thousand_separator: ''
@@ -313,7 +305,7 @@ content:
     type: number_decimal
     region: content
   field_vih_course_week_price:
-    weight: 7
+    weight: 6
     label: hidden
     settings:
       thousand_separator: ''
@@ -329,4 +321,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_vih_course_periods: true
   langcode: true

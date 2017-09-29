@@ -97,7 +97,18 @@ view_mode ? view_mode|clean_class,
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          {{ content.field_vih_course_periods }}
+          {% if content.course_period %}
+          <div class="field field--name-field-vih-course-periods">
+            <div class="field--label">{{ 'Period'|trans }}:</div>
+            <div class="field__items">
+              <div class="clock-icon"><i class="material-icons">access_time</i></div>
+              <div class="course-period-wrapper">
+                <div class="field--item">{{ content.course_period }}</div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+{#          {{ content.field_vih_course_periods }}#}
           {{ content.body }}
         </div>
         <div class="col-sm-6">
