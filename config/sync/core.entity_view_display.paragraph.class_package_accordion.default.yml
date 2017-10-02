@@ -1,0 +1,30 @@
+uuid: 1bda93e7-c0ca-43f2-9af4-d440b799fe71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.class_package_accordion.field_heading
+    - field.field.paragraph.class_package_accordion.field_paragraph_class_package
+    - paragraphs.paragraphs_type.class_package_accordion
+id: paragraph.class_package_accordion.default
+targetEntityType: paragraph
+bundle: class_package_accordion
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraph_class_package:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

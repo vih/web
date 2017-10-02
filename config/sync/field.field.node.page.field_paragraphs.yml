@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.class
     - paragraphs.paragraphs_type.class_package
+    - paragraphs.paragraphs_type.class_package_accordion
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.list_of_news_teasers
@@ -42,9 +43,10 @@ settings:
       event_list: event_list
       page_content: page_content
       short_course_list_: short_course_list_
-      long_course_list_: long_course_list_
       class_package: class_package
+      long_course_list_: long_course_list_
       class: class
+      class_package_accordion: class_package_accordion
       user_quote: user_quote
     target_bundles_drag_drop:
       vih_teacher_class_description:
@@ -71,12 +73,12 @@ settings:
       event_list:
         enabled: true
         weight: 15
-      page_content:
-        enabled: true
-        weight: 16
       vih_option:
         weight: 16
         enabled: false
+      page_content:
+        enabled: true
+        weight: 16
       vih_option_group:
         weight: 17
         enabled: false
@@ -92,15 +94,18 @@ settings:
       vih_ordered_option:
         weight: 20
         enabled: false
-      long_course_list_:
+      class_package:
         enabled: true
         weight: 22
-      class_package:
+      long_course_list_:
         enabled: true
         weight: 22
       class:
         enabled: true
         weight: 23
+      class_package_accordion:
+        enabled: true
+        weight: 24
       file:
         weight: 26
         enabled: false

@@ -303,6 +303,21 @@ function site_preprocess_paragraph__class(&$variables) {
   $variables['content']['view_output'] = views_embed_view('class_packages_frontpage', 'class_list', implode ( '+' , $classes_arr ) );
 }
 
+function site_preprocess_paragraph__class_package_accordion(&$variables) {
+
+$class_packages = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
+
+foreach ($class_packages as $key => $class_package){
+  
+  $variables['content']['view_output'][$key]['classes'] = views_embed_view('class_packages_frontpage', 'class_package_list', $class_package->tid->value );
+  $variables['content']['view_output'][$key]['package'] = $class_package->name->value;
+//    $class_packages_arr[] = taxonomy_term_view($class_package, 'vih_class_package_accordion');
+
+  }
+//$variables['content']['view_output'] = $class_packages_arr;
+
+}
+
 /**
  * Implements hook_theme_suggestions_views_view_alter().
  */
