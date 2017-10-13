@@ -1,17 +1,16 @@
-uuid: 4a8a0520-7357-435a-99a0-d18183972a60
+uuid: 521ca0a2-7e58-4656-8a7e-f60a9cca72f9
 langcode: da
 status: true
 dependencies:
   module:
     - node
-    - text
-id: node.field_course_subheading
-field_name: field_course_subheading
+id: node.field_vih_course_heading
+field_name: field_vih_course_heading
 entity_type: node
-type: text
+type: string_long
 settings:
-  max_length: 255
-module: text
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true
