@@ -1,0 +1,21 @@
+uuid: b08749db-9bb8-45ee-be8b-6330b21ddfbc
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sc_end_date
+    - node.type.vih_short_course
+  module:
+    - datetime
+id: node.vih_short_course.field_vih_sc_end_date
+field_name: field_vih_sc_end_date
+entity_type: node
+bundle: vih_short_course
+label: 'End date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

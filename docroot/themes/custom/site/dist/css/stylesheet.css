@@ -13727,6 +13727,27 @@ article .row.paragraphs {
 form.vih-subscription-long-course-order-form article.user.compact {
   margin-top: 120px; }
 
+.path-node.page-node-type-vih-short-course article .field--name-field-vih-course-periods .field__items {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 1px solid #eeeeee;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .path-node.page-node-type-vih-short-course article .field--name-field-vih-course-periods .field__items .field {
+    display: inline-block; }
+
 .view.view-eventside.view-id-eventside.view-display-id-embedded_teaser_list article.event.embedded-teaser-list .content .flexbox-middle {
   display: -webkit-box;
   display: -webkit-flex;

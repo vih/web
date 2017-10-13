@@ -7,12 +7,15 @@ dependencies:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
     - field.field.node.vih_short_course.field_vih_sc_price
+    - field.field.node.vih_short_course.field_vih_sc_start_date
     - field.field.node.vih_short_course.scheduled_update
     - node.type.vih_short_course
   module:
+    - datetime
     - entity_browser
     - inline_entity_form
     - paragraphs
@@ -60,6 +63,12 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_vih_sc_end_date:
+    weight: 40
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_vih_sc_image:
     type: entity_browser_file
     weight: 35
@@ -91,6 +100,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_vih_sc_start_date:
+    weight: 39
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
     region: content
   langcode:
     type: language_select

@@ -33,9 +33,22 @@
     {#{{ content }}#}
     <div class="container">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-xs-12">
         {{ content.body }}
       </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="field field--name-field-vih-course-periods">
+                <div class="field__items">
+                    <div class="clock-icon"><i class="material-icons">access_time</i></div>
+                    <div class="course-period-wrapper">
+                        <div class="field--item">{{ content.field_vih_sc_start_date }} - {{ content.field_vih_sc_end_date }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row vih-btn-box">

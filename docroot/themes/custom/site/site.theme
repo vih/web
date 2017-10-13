@@ -173,9 +173,12 @@ function site_preprocess_node(array &$variables) {
     $start_course_date = '';
     $end_course_date = '';
     foreach ($node->field_vih_course_periods->referencedEntities() as $period) {
-      
-      $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
-      $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
+      if (is_array($period->field_vih_cp_start_date->getValue()[0])) {
+        $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
+      }
+      if (is_array($period->field_vih_cp_end_date->getValue()[0])) {
+        $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
+      }
 
       if ($start_course_date) {
         if (strtotime($curr_start_date) < strtotime($start_course_date))

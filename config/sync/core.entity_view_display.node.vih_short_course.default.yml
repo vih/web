@@ -6,12 +6,15 @@ dependencies:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
     - field.field.node.vih_short_course.field_vih_sc_price
+    - field.field.node.vih_short_course.field_vih_sc_start_date
     - field.field.node.vih_short_course.scheduled_update
     - node.type.vih_short_course
   module:
+    - datetime
     - entity_reference_revisions
     - image
     - panelizer
@@ -53,6 +56,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
+  field_vih_sc_end_date:
+    weight: 110
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: default_medium_date_without_time
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_vih_sc_image:
     weight: 105
     label: above
@@ -82,11 +94,20 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
+  field_vih_sc_start_date:
+    weight: 109
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: default_medium_date_without_time
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   scheduled_update:
     weight: 108
     label: above

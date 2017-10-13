@@ -1,0 +1,21 @@
+uuid: 88afe66f-f4e8-4444-aac5-2345256820a7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sc_start_date
+    - node.type.vih_short_course
+  module:
+    - datetime
+id: node.vih_short_course.field_vih_sc_start_date
+field_name: field_vih_sc_start_date
+entity_type: node
+bundle: vih_short_course
+label: 'Start date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
