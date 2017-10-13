@@ -29,7 +29,7 @@
             <div class="panel panel-default white-border-bottom" data-toggle="buttons">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a class="accordion-toggle collapsed" data-toggle="collapse" 
+                        <a class="accordion-toggle {% if not open_collapsible %}collapsed{% endif %}" data-toggle="collapse"
 {#                           data-target="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}"#}
                            {#data-parent="#course-periods-accordion"#}
                            href="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}">
