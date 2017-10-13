@@ -218,13 +218,11 @@ function site_preprocess_node(array &$variables) {
         }
       }
     }
-    if ($start_course_date || $end_course_date) {
-      $tmp_array = array();
-      if ($start_course_date) 
-        $tmp_array[] = date("D, d-m-Y", strtotime($start_course_date));
-      if ($end_course_date) 
-        $tmp_array[] = date("D, d-m-Y", strtotime($end_course_date));
-      $variables['content']['course_period'] = implode(' - ', $tmp_array);
+    if ($start_course_date) {
+      $variables['content']['course_period_start'] = strtotime($start_course_date);
+    }
+    if ($end_course_date) {
+      $variables['content']['course_period_end'] = strtotime($end_course_date);
     }
   }
 }

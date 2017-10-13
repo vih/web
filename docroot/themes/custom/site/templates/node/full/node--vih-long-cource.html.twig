@@ -97,13 +97,14 @@ view_mode ? view_mode|clean_class,
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          {% if content.course_period %}
+          {% if content.course_period_start or content.course_period_end %}
           <div class="field field--name-field-vih-course-periods">
             <div class="field--label">{{ 'Period'|trans }}:</div>
             <div class="field__items">
               <div class="clock-icon"><i class="material-icons">access_time</i></div>
               <div class="course-period-wrapper">
                 <div class="field--item">{{ content.course_period }}</div>
+                  <div class="field--item">{{ content.course_period_start|format_date('default_medium_date_without_time') }} - {{ content.course_period_end|format_date('default_medium_date_without_time') }}</div>
               </div>
             </div>
           </div>
