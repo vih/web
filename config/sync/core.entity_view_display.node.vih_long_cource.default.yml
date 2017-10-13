@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_cource.body
-    - field.field.node.vih_long_cource.field_course_heading
     - field.field.node.vih_long_cource.field_course_subheading
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
+    - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
@@ -228,16 +228,9 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_course_heading:
-    weight: 1
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_course_subheading:
     weight: 2
@@ -247,7 +240,7 @@ content:
     type: text_default
     region: content
   field_paragraphs:
-    weight: 9
+    weight: 11
     label: hidden
     settings:
       view_mode: default
@@ -256,7 +249,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_cource_contact_person:
-    weight: 7
+    weight: 9
     label: hidden
     settings:
       view_mode: compact
@@ -266,7 +259,7 @@ content:
     region: content
   field_vih_course_image:
     type: image
-    weight: 8
+    weight: 10
     label: above
     settings:
       image_style: ''
@@ -274,7 +267,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_course_price:
-    weight: 4
+    weight: 6
     label: hidden
     settings:
       thousand_separator: ''
@@ -284,8 +277,15 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
+  field_vih_course_subheading:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_vih_course_subsc_price:
-    weight: 5
+    weight: 7
     label: hidden
     settings:
       thousand_separator: ''
@@ -296,7 +296,7 @@ content:
     type: number_decimal
     region: content
   field_vih_course_week_price:
-    weight: 6
+    weight: 8
     label: hidden
     settings:
       thousand_separator: ''

@@ -5,13 +5,13 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
-    - field.field.node.vih_long_cource.field_course_heading
     - field.field.node.vih_long_cource.field_course_subheading
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
+    - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
@@ -28,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 10
     settings:
       rows: 9
       summary_rows: 3
@@ -37,20 +37,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_course_heading:
-    weight: 42
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textfield
-    region: content
   field_course_subheading:
-    weight: 43
+    weight: 19
     settings:
       size: 60
       placeholder: ''
@@ -58,7 +50,7 @@ content:
     type: text_textfield
     region: content
   field_paragraphs:
-    weight: 41
+    weight: 17
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -70,7 +62,7 @@ content:
     type: entity_reference_paragraphs
     region: content
   field_vih_cource_contact_person:
-    weight: 36
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -80,7 +72,7 @@ content:
     region: content
   field_vih_course_image:
     type: entity_browser_file
-    weight: 40
+    weight: 16
     settings:
       entity_browser: image_browser
       field_widget_remove: true
@@ -92,7 +84,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_course_periods:
-    weight: 32
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
@@ -101,21 +93,29 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_course_price:
-    weight: 33
+    weight: 12
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
+  field_vih_course_subheading:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_vih_course_subsc_price:
-    weight: 34
+    weight: 13
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_week_price:
-    weight: 35
+    weight: 14
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -123,13 +123,13 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 30
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -137,30 +137,32 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 7
     third_party_settings: {  }
     region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 8
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
   translation:
-    weight: 10
+    weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
