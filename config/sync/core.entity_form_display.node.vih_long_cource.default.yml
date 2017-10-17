@@ -6,7 +6,6 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_paragraphs
-    - field.field.node.vih_long_cource.field_test
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
@@ -51,14 +50,6 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs
-    region: content
-  field_test:
-    weight: 26
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   field_vih_cource_contact_person:
     weight: 15

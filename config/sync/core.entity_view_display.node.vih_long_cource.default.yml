@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_paragraphs
-    - field.field.node.vih_long_cource.field_test
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
@@ -239,14 +238,6 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
-    region: content
-  field_test:
-    weight: 10
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_vih_cource_contact_person:
     weight: 7
