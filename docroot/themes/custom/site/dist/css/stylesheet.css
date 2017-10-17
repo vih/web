@@ -12926,7 +12926,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
       background-color: #0080af !important;
       white-space: normal;
       line-height: inherit;
-      padding: 25px 0; }
+      padding: 25px 10px; }
       .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:hover, .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:active {
         background-color: #00a5e2 !important;
         color: white; }
