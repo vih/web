@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
+    - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
+    - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
@@ -248,6 +250,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
+  field_vih_course_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_vih_course_image:
     type: image
     weight: 8
@@ -267,6 +277,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
+  field_vih_course_subheading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_vih_course_subsc_price:
     weight: 5
