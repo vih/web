@@ -13991,7 +13991,8 @@ form.vih-subscription-long-course-order-form article.user.compact {
         height: 100%;
         clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
         -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-        background: rgba(255, 0, 95, 0.75); }
+        background: rgba(255, 0, 95, 0.75);
+        max-width: 242px; }
         .user.compact td.user-image .field--name-field-vih-user-photo .triangle .field--name-field-vih-user-title {
           bottom: 0;
           right: 5px;

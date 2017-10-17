@@ -35,6 +35,16 @@
                     </h4>
                     {{ content|without("field_vih_user_title", "field_vih_user_phone", "field_vih_user_photo", "field_user_name_first", "field_user_name_last") }}
                 </td>
+                <td class="teacher-contact-info hidden-xs">
+                    <h5>{{ "Kontaktoplysninger"|trans }}:</h5>
+
+                    <span class="teacher-phone"><i
+                                class="material-icons">phone</i> {{ content.field_vih_user_phone }}</span>
+                    <br>
+                    <span class="teacher-mail"><i class="material-icons">mail_outline</i> {{ user.email }}</span>
+                </td>
+            </tr>
+            <tr class="visible-xs">
                 <td class="teacher-contact-info">
                     <h5>{{ "Kontaktoplysninger"|trans }}:</h5>
 
