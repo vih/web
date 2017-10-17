@@ -18,7 +18,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         <div class="container">
             {{ content.field_heading }}
             <div class="row">
-                {% if content.field_paragraph_person_photo %}
+                {% if content.field_paragraph_person_photo|render|trim %}
                     <div class="col-xs-6 col-sm-4 col-md-3">{{ content.field_paragraph_person_photo }}</div>
                     <div class="col-sm-6 col-sm-8 col-md-9">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
                 {% else %}
