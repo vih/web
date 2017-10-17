@@ -13991,6 +13991,8 @@ form.vih-subscription-long-course-order-form article.user.compact {
     min-height: 248px; }
     .user.compact td.user-image .field--name-field-vih-user-photo {
       position: relative; }
+      .user.compact td.user-image .field--name-field-vih-user-photo img {
+        width: 100%; }
       .user.compact td.user-image .field--name-field-vih-user-photo .triangle {
         position: absolute;
         width: 100%;
@@ -13998,7 +14000,7 @@ form.vih-subscription-long-course-order-form article.user.compact {
         clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
         -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
         background: rgba(255, 0, 95, 0.75);
-        max-width: 242px; }
+        min-width: 242px; }
         .user.compact td.user-image .field--name-field-vih-user-photo .triangle .field--name-field-vih-user-title {
           bottom: 0;
           right: 5px;

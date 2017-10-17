@@ -26,6 +26,9 @@
       min-height: 248px;
       .field--name-field-vih-user-photo {
         position: relative;
+        img {
+          width: 100%;
+        }
         .triangle {
           position: absolute;
           width: 100%;
@@ -33,7 +36,8 @@
           clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
           -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
           background: rgba($vih-red, 0.75);
-          max-width: 242px;
+          min-width: 242px;
+
           
           .field--name-field-vih-user-title {
             bottom: 0;
