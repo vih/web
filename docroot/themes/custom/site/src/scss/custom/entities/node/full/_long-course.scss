@@ -18,12 +18,14 @@
 
 // Long Course
 .path-node.page-node-type-vih-long-cource {
-  .field--name-field-vih-course-periods .field__items {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border: 1px solid $gray-lighter;
-    text-transform: uppercase;
+  .field--name-field-vih-course-periods {
+    .field__items {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 1px solid $gray-lighter;
+      text-transform: uppercase;
+    }
   }
 
   .travel-class-container {
@@ -80,6 +82,17 @@ form.vih-subscription-long-course-order-form{
 
   // Long Course Order
   .path-node.page-node-type-vih-long-cource{
+    .region-content {
+      margin-top: 20px;
+    }
+    .field--name-field-vih-course-periods {
+      margin-bottom: 40px;
+      .field__items {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+    }
   }
 }
 

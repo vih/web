@@ -10255,18 +10255,12 @@ h6,
   color: #212121;
   font-size: 14px; }
 
-article .field--name-field-vih-course-periods {
-  margin-bottom: 40px; }
-
 article .field--name-body {
   margin-bottom: 40px; }
 
 article .field--name-body p {
   margin-bottom: 20px;
   margin-top: 20px; }
-
-article .field--name-field-vih-course-periods .field--label {
-  margin-bottom: 30px; }
 
 tr {
   background: transparent !important; }
@@ -10707,10 +10701,6 @@ flex-direction: column;
 
 .fpnews-title {
   margin-bottom: 10px; }
-
-.layout__news .node-page-title {
-  margin-top: 40px;
-  margin-bottom: 20px; }
 
 .layout__news .content .field--name-field-bg-image {
   display: none; }
@@ -13671,6 +13661,19 @@ article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-t
 article .row.paragraphs {
   margin-top: 130px; }
 
+.layout__news .node-page-title {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+@media (max-width: 767px) {
+  .layout__news .breadcrumb {
+    margin-bottom: 10px; } }
+
+@media (min-width: 768px) {
+  .layout__news .node-page-title {
+    margin-top: 40px;
+    margin-bottom: 20px; } }
+
 .path-node .long-course-order .content {
   display: block; }
   .path-node .long-course-order .content .field {
@@ -13696,8 +13699,8 @@ article .row.paragraphs {
 
 .path-node.page-node-type-vih-long-cource .field--name-field-vih-course-periods .field__items {
   text-align: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px solid #eeeeee;
   text-transform: uppercase; }
 
@@ -13719,6 +13722,15 @@ article .row.paragraphs {
 
 form.vih-subscription-long-course-order-form article.user.compact {
   margin-top: 120px; }
+
+@media (min-width: 768px) {
+  .path-node.page-node-type-vih-long-cource .region-content {
+    margin-top: 20px; }
+  .path-node.page-node-type-vih-long-cource .field--name-field-vih-course-periods {
+    margin-bottom: 40px; }
+    .path-node.page-node-type-vih-long-cource .field--name-field-vih-course-periods .field__items {
+      padding-top: 25px;
+      padding-bottom: 25px; } }
 
 .path-node.page-node-type-vih-short-course article .field--name-field-vih-course-periods .field__items {
   text-align: center;

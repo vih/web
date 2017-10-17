@@ -42,7 +42,7 @@
             <div class="container news-container">
               {{ page.header }}
               {{ page.breadcrumb }}
-              <hr>
+              <hr class="hidden-xs">
               {% if node.title.value %}
                 <h3 class="node-page-title">{{ node.field_vih_course_heading.value }}</h3>
                 <h5 class="course-subheading">- {{ node.field_vih_course_subheading.value }}</h5>
@@ -50,9 +50,6 @@
                 <h3>{{ node.field_vih_course_heading.value }}</h3>
                 <h5>{{ node.field_vih_course_subheading.value }}</h5>
               {% endif %}
-
-
-              <br/><br/>
             </div>
             {% if node and node.getType == 'page' %}
               {{ page.content }}
