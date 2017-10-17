@@ -6,12 +6,11 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_paragraphs
+    - field.field.node.vih_long_cource.field_test
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
-    - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_price
-    - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - node.type.vih_long_cource
@@ -53,6 +52,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_paragraphs
     region: content
+  field_test:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_cource_contact_person:
     weight: 15
     settings:
@@ -61,14 +68,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_vih_course_heading:
-    weight: 1
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
     region: content
   field_vih_course_image:
     type: entity_browser_file
@@ -98,14 +97,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-    region: content
-  field_vih_course_subheading:
-    weight: 2
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
     region: content
   field_vih_course_subsc_price:
     weight: 13
