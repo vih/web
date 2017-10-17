@@ -1835,7 +1835,9 @@ div[role=heading] {
 }
 
 // Modal 
-
+.modal {
+  background-color:rgba(0, 0, 0, 0.5);;
+}
 .modal-course-description {
   margin-bottom: 50px;
 }

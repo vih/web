@@ -11679,6 +11679,9 @@ div[role=heading] {
 .path-node .field--name-body {
   width: 100%; }
 
+.modal {
+  background-color: rgba(0, 0, 0, 0.5); }
+
 .modal-course-description {
   margin-bottom: 50px; }
 
