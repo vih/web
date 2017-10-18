@@ -12586,7 +12586,8 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   -webkit-background-size: 100% 100%;
           background-size: 100%;
   width: 105px;
-  height: 105px; }
+  height: 105px;
+  z-index: 3; }
 
 .layout__header .layout-navigation__link__icon {
   max-width: 68px; }
