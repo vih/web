@@ -10013,9 +10013,6 @@ html {
           align-items: center;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
 
-.layout-navigation__link {
-  height: 60px; }
-
 .layout-navigation__link a:hover {
   color: #fff !important; }
 
@@ -11801,9 +11798,6 @@ div[role=heading] {
   .layout-navigation__link.active a {
     color: #888; }
 
-ul.layout-navigation li {
-  height: 100%; }
-
 ul.layout-navigation .layout-navigation__dropdown-menu {
   max-width: none;
   border-radius: 0;
@@ -12814,12 +12808,13 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
       .layout__header.layout__header-mobile .layout__header-row--bottom #main-menu {
         height: 70px !important; }
       .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation {
+        overflow: auto;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
-        height: auto;
+        height: 100%;
         -webkit-box-align: stretch;
         -webkit-align-items: stretch;
             -ms-flex-align: stretch;
@@ -12833,7 +12828,11 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
         .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__link,
         .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__dropdown {
           border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-          text-align: center; }
+          text-align: center;
+          -webkit-box-flex: initial;
+          -webkit-flex-grow: initial;
+              -ms-flex-positive: initial;
+                  flex-grow: initial; }
           .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__link.layout-navigation__link__search,
           .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation .layout-navigation__dropdown.layout-navigation__link__search {
             position: relative; }
@@ -12911,18 +12910,21 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
           font-family: 'Open Sans', sans-serif; }
   .block-title {
     z-index: 99999 !important; }
-  .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
-    top: 0px;
-    background-color: #1c98bf; }
-    .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a {
-      color: white;
-      background-color: #0080af !important;
-      white-space: normal;
-      line-height: inherit;
-      padding: 25px 10px; }
-      .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:hover, .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:active {
-        background-color: #00a5e2 !important;
-        color: white; }
+  .dropdown.layout-navigation__dropdown {
+    display: block; }
+    .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
+      top: 0px;
+      background-color: #1c98bf;
+      overflow: visible; }
+      .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a {
+        color: white;
+        background-color: #0080af !important;
+        white-space: normal;
+        line-height: inherit;
+        padding: 25px 10px; }
+        .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:hover, .dropdown.layout-navigation__dropdown ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu li.layout-navigation__link a:active {
+          background-color: #00a5e2 !important;
+          color: white; }
   .layout__header-row.layout__header-row--top.hidden-xs {
     display: none !important; } }
 

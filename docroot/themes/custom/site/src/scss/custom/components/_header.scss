@@ -454,8 +454,9 @@
         height: 70px!important;
       }
       .layout-navigation {
+        overflow: auto;
         flex-direction: column;
-        height: auto;
+        height: 100%;
         align-items: stretch;
         .layout-navigation__dropdown-menu {
           position: relative;
@@ -472,6 +473,7 @@
         .layout-navigation__dropdown {
           border-bottom: 2px solid rgba(255,255,255,0.1);
           text-align: center;
+          flex-grow: initial;
           &.layout-navigation__link__search {
             position: relative;
             .form-control {
@@ -571,9 +573,11 @@
   }
 
   .dropdown.layout-navigation__dropdown{
+    display: block;
     & ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu{
       top: 0px;
       background-color: rgb(28,152,191);
+      overflow: visible;
       & li.layout-navigation__link{
         & a{
           color: white;

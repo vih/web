@@ -67,10 +67,6 @@ html {
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.layout-navigation__link {
-  height: 60px;
-}
-
 .layout-navigation__link a:hover {
   color: #fff!important;
 }
@@ -1928,10 +1924,6 @@ div[role=heading] {
 }
 
 ul.layout-navigation {
-  li {
-    height: 100%;
-  }
-
   .layout-navigation__dropdown-menu {
     max-width: none;
     border-radius: 0;
