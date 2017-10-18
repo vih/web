@@ -39,17 +39,17 @@
  */
 #}
 {% set classes = [
-'field',
-'field--name-' ~ field_name|clean_class,
-'field--type-' ~ field_type|clean_class,
-'field--label-' ~ label_display,
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
 ] %}
 {% set title_classes = [
-'field--label',
-label_display == 'visually_hidden' ? 'sr-only',
+    'field--label',
+    label_display == 'visually_hidden' ? 'sr-only',
 ] %}
 
-{% set user = element['#object'] %}
+{% set term = element['#object'] %}
 
 {% if label_hidden %}
     {% if multiple %}
@@ -62,14 +62,14 @@ label_display == 'visually_hidden' ? 'sr-only',
         {% for item in items %}
             <div{{ attributes.addClass(classes, 'field--item') }}>
                 <div class="svg-container-polygon">
-                    <svg version="1.1" viewBox="0 0 582 700"
+                    <svg version="1.1" viewBox="0 0 454 123"
                          preserveAspectRatio="xMinYMin meet" class="svg-content-polygon">
-                        <polygon points="0,500 582,400 582,700 0,700" class="color-red"/>
+                        <polygon points="0,95 454,50 454,123 0,123" class="{{ term.field_vih_class_color.value }}" />
                     </svg>
                 </div>
 
-                <h5 class="field field--name-field-vih-user-title field--type-string field--label-hidden field--item f-pale">
-                    {{ user.field_vih_user_title.value }}
+                <h5 class="field field--name-name field--type-string field--label-hidden field--item f-pale">
+                  {{ term.name.value }}
                 </h5>
 
                 {{ item.content }}

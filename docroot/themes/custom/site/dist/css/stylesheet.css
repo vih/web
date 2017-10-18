@@ -14007,20 +14007,38 @@ form.vih-subscription-long-course-order-form article.user.compact {
       position: relative; }
       .user.compact td.user-image .field--name-field-vih-user-photo img {
         width: 100%; }
-      .user.compact td.user-image .field--name-field-vih-user-photo .triangle {
+      .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon {
+        display: inline-block;
         position: absolute;
         width: 100%;
         height: 100%;
-        clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-        -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-        background: rgba(255, 0, 95, 0.75);
-        min-width: 242px; }
-        .user.compact td.user-image .field--name-field-vih-user-photo .triangle .field--name-field-vih-user-title {
-          bottom: 0;
-          right: 5px;
-          text-align: right;
-          width: 100%;
-          position: absolute; }
+        vertical-align: middle;
+        overflow: hidden; }
+        .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon {
+            opacity: 0.75; }
+            .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-red {
+              fill: #ff005f; }
+            .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-blue {
+              fill: #009bec; }
+            .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-cyan {
+              fill: #e000ca; }
+            .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-purple {
+              fill: #6e00e9; }
+            .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-yellow {
+              fill: #d3c000; }
+            .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-green {
+              fill: #00c808; }
+      .user.compact td.user-image .field--name-field-vih-user-photo .field--name-field-vih-user-title {
+        bottom: 0;
+        right: 10px;
+        text-align: right;
+        width: 100%;
+        position: absolute; }
 
 .user.compact .teacher-mail, .user.compact .teacher-phone {
   display: -webkit-box;
@@ -14113,63 +14131,51 @@ form.vih-subscription-long-course-order-form article.user.compact {
   .vih_class.vih_class_table_teaser .field--name-field-vih-class-image,
   .vih_class.vih_class_table_teaser .field-vih-class-image {
     position: relative; }
-    .vih_class.teaser .field--name-field-vih-class-image .triangle, .vih_class.teaser .field-vih-class-image .triangle,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle,
-    .vih_class.vih_class_table_teaser .field-vih-class-image .triangle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-      -webkit-clip-path: polygon(0 90%, 100% 60%, 100% 100%, 0% 100%);
-      background: rgba(255, 0, 95, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-red, .vih_class.teaser .field-vih-class-image .triangle.color-red,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-red,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle.color-red {
-        background: rgba(255, 0, 95, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-blue, .vih_class.teaser .field-vih-class-image .triangle.color-blue,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-blue,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle.color-blue {
-        background: rgba(0, 155, 236, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-cyan, .vih_class.teaser .field-vih-class-image .triangle.color-cyan,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-cyan,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle.color-cyan {
-        background: rgba(224, 0, 202, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-purple, .vih_class.teaser .field-vih-class-image .triangle.color-purple,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-purple,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle.color-purple {
-        background: rgba(110, 0, 233, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-yellow, .vih_class.teaser .field-vih-class-image .triangle.color-yellow,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-yellow,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle.color-yellow {
-        background: rgba(211, 192, 0, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle.color-green, .vih_class.teaser .field-vih-class-image .triangle.color-green,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle.color-green,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle.color-green {
-        background: rgba(0, 200, 8, 0.75); }
-      .vih_class.teaser .field--name-field-vih-class-image .triangle .field--name-name, .vih_class.teaser .field-vih-class-image .triangle .field--name-name,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .triangle .field--name-name,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .triangle .field--name-name {
-        bottom: 0;
-        right: 5px;
-        text-align: right;
-        width: 100%;
-        position: absolute; }
-    .vih_class.teaser .field--name-field-vih-class-image .svg-container, .vih_class.teaser .field-vih-class-image .svg-container,
-    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container,
-    .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container {
+    .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon, .vih_class.teaser .field-vih-class-image .svg-container-polygon,
+    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon,
+    .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon {
       display: inline-block;
       position: absolute;
+      left: 0;
       width: 100%;
       height: 100%;
       vertical-align: middle;
       overflow: hidden; }
-      .vih_class.teaser .field--name-field-vih-class-image .svg-container .svg-content, .vih_class.teaser .field-vih-class-image .svg-container .svg-content,
-      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container .svg-content,
-      .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container .svg-content {
+      .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon,
+      .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon {
         display: inline-block;
         position: absolute;
         top: 0;
         left: 0; }
+        .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon,
+        .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon,
+        .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon {
+          opacity: 0.75; }
+          .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-red, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-red,
+          .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-red,
+          .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-red {
+            fill: #ff005f; }
+          .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue,
+          .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue,
+          .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue {
+            fill: #009bec; }
+          .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-cyan, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-cyan,
+          .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-cyan,
+          .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-cyan {
+            fill: #e000ca; }
+          .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-purple, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-purple,
+          .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-purple,
+          .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-purple {
+            fill: #6e00e9; }
+          .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-yellow, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-yellow,
+          .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-yellow,
+          .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-yellow {
+            fill: #d3c000; }
+          .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-green, .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-green,
+          .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-green,
+          .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-green {
+            fill: #00c808; }
     .vih_class.teaser .field--name-field-vih-class-image h5, .vih_class.teaser .field--name-field-vih-class-image .heading-h5, .vih_class.teaser .field--name-field-vih-class-image .field--name-field-highlighted, .vih_class.teaser .field--name-field-vih-class-image .field.field--name-name.field--item, .vih_class.teaser .field-vih-class-image h5, .vih_class.teaser .field-vih-class-image .heading-h5, .vih_class.teaser .field-vih-class-image .field--name-field-highlighted, .vih_class.teaser .field-vih-class-image .field.field--name-name.field--item,
     .vih_class.vih_class_table_teaser .field--name-field-vih-class-image h5,
     .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .heading-h5,
@@ -14280,31 +14286,32 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
       pointer-events: none; }
   .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image {
     position: relative; }
-    .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle {
+    .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon {
+      display: inline-block;
       position: absolute;
       width: 100%;
       height: 100%;
-      clip-path: polygon(0 90%, 100% 30%, 100% 100%, 0% 100%);
-      -webkit-clip-path: polygon(0 90%, 100% 30%, 100% 100%, 0% 100%);
-      background: rgba(255, 0, 95, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle.color-red {
-        background: rgba(255, 0, 95, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle.color-blue {
-        background: rgba(0, 155, 236, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle.color-cyan {
-        background: rgba(224, 0, 202, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle.color-purple {
-        background: rgba(110, 0, 233, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle.color-yellow {
-        background: rgba(211, 192, 0, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle.color-green {
-        background: rgba(0, 200, 8, 0.75); }
-      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .triangle .field--name-name {
-        bottom: 0;
-        right: 5px;
-        text-align: right;
-        width: 100%;
-        position: absolute; }
+      vertical-align: middle;
+      overflow: hidden; }
+      .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon {
+          opacity: 0.75; }
+          .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-red {
+            fill: #ff005f; }
+          .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue {
+            fill: #009bec; }
+          .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-cyan {
+            fill: #e000ca; }
+          .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-purple {
+            fill: #6e00e9; }
+          .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-yellow {
+            fill: #d3c000; }
+          .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-green {
+            fill: #00c808; }
     .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image h5, .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .heading-h5, .course-periods-accordion .panel .class-selection .field--name-field-vih-class-image .field--name-field-highlighted {
       position: absolute;
       bottom: 8px;
