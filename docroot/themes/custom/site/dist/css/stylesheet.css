@@ -14154,6 +14154,22 @@ form.vih-subscription-long-course-order-form article.user.compact {
         text-align: right;
         width: 100%;
         position: absolute; }
+    .vih_class.teaser .field--name-field-vih-class-image .svg-container, .vih_class.teaser .field-vih-class-image .svg-container,
+    .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container,
+    .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container {
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      overflow: hidden; }
+      .vih_class.teaser .field--name-field-vih-class-image .svg-container .svg-content, .vih_class.teaser .field-vih-class-image .svg-container .svg-content,
+      .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container .svg-content,
+      .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container .svg-content {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0; }
     .vih_class.teaser .field--name-field-vih-class-image h5, .vih_class.teaser .field--name-field-vih-class-image .heading-h5, .vih_class.teaser .field--name-field-vih-class-image .field--name-field-highlighted, .vih_class.teaser .field--name-field-vih-class-image .field.field--name-name.field--item, .vih_class.teaser .field-vih-class-image h5, .vih_class.teaser .field-vih-class-image .heading-h5, .vih_class.teaser .field-vih-class-image .field--name-field-highlighted, .vih_class.teaser .field-vih-class-image .field.field--name-name.field--item,
     .vih_class.vih_class_table_teaser .field--name-field-vih-class-image h5,
     .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .heading-h5,

@@ -61,7 +61,18 @@
     {% else %}
         {% for item in items %}
             <div{{ attributes.addClass(classes, 'field--item') }}>
-                <div class="triangle {{ term.field_vih_class_color.value }}"></div>
+                {#<div class="triangle {{ term.field_vih_class_color.value }}"></div>#}
+
+                <div class="svg-container">
+                    <svg version="1.1" viewBox="0 0 582 700"
+                         preserveAspectRatio="xMinYMin meet" class="svg-content">
+                        {#<circle fill="#F7941E" stroke="#231F20" stroke-width="10"#}
+                                {#stroke-miterlimit="10" cx="250" cy="250" r="200" opacity="0.6" />#}
+
+                        <polygon points="0,600 582,450 582,700 0,700" style="fill:lime;opacity: 0.4;"></polygon>
+                    </svg>
+                </div>
+
                 <h5 class="field field--name-name field--type-string field--label-hidden field--item f-pale">
                   {{ term.name.value }}
                 </h5>
