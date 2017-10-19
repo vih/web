@@ -97,12 +97,10 @@ view_mode ? view_mode|clean_class,
   <div{{ content_attributes.addClass('content') }}>
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
           <h8> {{ term.field_vih_cp_subtitle.value }}</h8>
           <p>{{ term.field_vih_cp_description.value }}</p>
           <p>{{ term.description.value|raw }}</p>
-        </div>
-        <div class="col-sm-6">
         </div>
       </div>
       <div class="row vih-btn-box">
@@ -119,7 +117,7 @@ view_mode ? view_mode|clean_class,
       </div>
     {#{{ class_list }}#}
     </div>
-  </div>    
+  </div>
   <div class="row paragraphs">
     {{ content.field_class_package_paragraph }}
   </div>
