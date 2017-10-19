@@ -10911,6 +10911,8 @@ flex-direction: column;
 
 .path-node article .field--name-field-paragraphs {
   width: 100%; }
+  .path-node article .field--name-field-paragraphs .field--item:not(:last-child) {
+    margin-bottom: 40px; }
 
 #block-komgodtigang .banner-content .container {
   display: -webkit-box;
