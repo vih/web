@@ -111,26 +111,28 @@ view_mode ? view_mode|clean_class,
                 </div>
             </div>
 
-            <div class="row vih-price-box">
-                <div class="col-xs-12">
-                    <h4>{{ "Prisoversigt"|trans }}:</h4>
+            {% if content.field_event_price|render|trim %}
+                <div class="row vih-price-box">
+                    <div class="col-xs-12">
+                        <h4>{{ "Prisoversigt"|trans }}:</h4>
 
-                    <table class="table table-bordered pricing-table">
-                        <thead>
-                        <tr>
-                            <th>
-                                {{ "Materialegebyr"|trans }}
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <td>
-                            {{ content.field_event_price }}
-                        </td>
-                        </tbody>
-                    </table>
+                        <table class="table table-bordered pricing-table">
+                            <thead>
+                            <tr>
+                                <th>
+                                    {{ "Materialegebyr"|trans }}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <td>
+                                {{ content.field_event_price }}
+                            </td>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
             <div class="row vih-btn-box">
                 <div class="col-xs-12">
