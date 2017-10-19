@@ -13649,16 +13649,16 @@ ul.layout-navigation__link {
   .paragraph--type--class-package-accordion .row.vih_class.teaser {
     margin-right: 10px; } }
 
-article.vih-long-cource .pricing-table thead, article.vih-short-course .pricing-table thead {
+article.vih-long-cource .pricing-table thead, article.vih-short-course .pricing-table thead, article.event .pricing-table thead {
   background: #eeeeee; }
-  article.vih-long-cource .pricing-table thead th, article.vih-short-course .pricing-table thead th {
+  article.vih-long-cource .pricing-table thead th, article.vih-short-course .pricing-table thead th, article.event .pricing-table thead th {
     padding: 15px;
     text-transform: uppercase; }
 
-article.vih-long-cource .pricing-table tbody td, article.vih-short-course .pricing-table tbody td {
+article.vih-long-cource .pricing-table tbody td, article.vih-short-course .pricing-table tbody td, article.event .pricing-table tbody td {
   padding: 32px 10px; }
 
-article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-table tr td, article.vih-short-course .pricing-table tr th, article.vih-short-course .pricing-table tr td {
+article.vih-long-cource .pricing-table tr th, article.vih-long-cource .pricing-table tr td, article.vih-short-course .pricing-table tr th, article.vih-short-course .pricing-table tr td, article.event .pricing-table tr th, article.event .pricing-table tr td {
   text-align: center; }
 
 article .row.paragraphs {

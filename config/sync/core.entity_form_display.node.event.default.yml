@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_event_end_date
     - field.field.node.event.field_event_paragraph
+    - field.field.node.event.field_event_price
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_page_main_image
@@ -56,6 +57,13 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_event_price:
+    weight: 26
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   field_event_start_date:
     weight: 9

@@ -74,53 +74,75 @@ view_mode ? view_mode|clean_class,
 'clearfix',
 ] %}
 <article{{ attributes.addClass(classes) }}>
-  <div class="container">
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
-
-    {% if display_submitted %}
-      <footer>
-        {{ author_picture }}
-        <div{{ author_attributes.addClass('author') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </footer>
-    {% endif %}
-  </div>
-  <div{{ content_attributes.addClass('content') }}>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-6">
-            {{ content.body }}
-        </div>
+        {{ title_prefix }}
+        {% if not page %}
+            <h2{{ title_attributes }}>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+            </h2>
+        {% endif %}
+        {{ title_suffix }}
 
-        <div class="col-xs-6">
-            <div class="period-wrapper">
-                <div class="clock-icon"><i class="material-icons">access_time</i></div>
-                <div class="period-wrapper__dates">
-                    {{ content.field_event_start_date }}
-                    {{ content.field_event_end_date }}
+        {% if display_submitted %}
+            <footer>
+                {{ author_picture }}
+                <div{{ author_attributes.addClass('author') }}>
+                    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                    {{ metadata }}
+                </div>
+            </footer>
+        {% endif %}
+    </div>
+    <div{{ content_attributes.addClass('content') }}>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    {{ content.body }}
+                </div>
+
+                <div class="col-xs-6">
+                    <div class="period-wrapper">
+                        <div class="clock-icon"><i class="material-icons">access_time</i></div>
+                        <div class="period-wrapper__dates">
+                            {{ content.field_event_start_date }}
+                            {{ content.field_event_end_date }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row vih-price-box">
+                <div class="col-xs-12">
+                    <h4>{{ "Prisoversigt"|trans }}:</h4>
+
+                    <table class="table table-bordered pricing-table">
+                        <thead>
+                        <tr>
+                            <th>
+                                {{ "Materialegebyr"|trans }}
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>
+                            {{ content.field_event_price }}
+                        </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row vih-btn-box">
+                <div class="col-xs-12">
+                    <a href="{{ url('vih_subscription.event_order_create', {'event': node.id}) }} "
+                       class="btn-arrow btn-center">{{ "Køb nu"|trans }}</a>
                 </div>
             </div>
         </div>
-      </div>
 
-      <div class="row vih-btn-box">
-        <div class="col-xs-12">
-          <a href="{{ url('vih_subscription.event_order_create', {'event': node.id}) }} " class="btn-arrow btn-center">{{ "Køb nu"|trans }}</a>
+        <div class="row paragraphs">
+            {{ content.field_paragraphs }}
         </div>
-      </div>
     </div>
-
-    <div class="row paragraphs">
-      {{ content.field_paragraphs }}
-    </div>
-  </div>
 
 </article>
