@@ -1,0 +1,77 @@
+// |--------------------------------------------------------------------------
+// | Short Course
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .vih-short-course.teaser
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+.vih-short-course.teaser {
+  .field--name-field-vih-sc-start-date,
+  .field--name-field-vih-sc-end-date {
+    display: inline-block;
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@include media-breakpoint-up(xs) {
+}
+
+// Mobile - only
+@include media-breakpoint-only(xs) {
+}
+
+// Tablet - and up
+@include media-breakpoint-up(sm) {
+}
+
+// Tablet - only
+@include media-breakpoint-only(sm) {
+}
+
+// Desktop - and up
+@include media-breakpoint-up(md) {
+}
+
+// Desktop - only
+@include media-breakpoint-only(md) {
+}
+
+// Large desktop - and up
+@include media-breakpoint-up(lg) {
+}
+
+// Print
+@media print {
+}
+
+// Touch
+.touchevents {
+}
+
+// No touch
+.no-touchevents {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

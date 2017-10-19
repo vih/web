@@ -1,0 +1,14 @@
+uuid: ea2d6b59-6f2e-4fac-9fea-79f774eaa806
+langcode: da
+status: true
+dependencies: {  }
+name: vih_general_teaser_image
+label: 'VIH General teaser image (400x200)'
+effects:
+  c54f2491-67ca-4de4-9428-f7a82f57de83:
+    uuid: c54f2491-67ca-4de4-9428-f7a82f57de83
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 200

@@ -13880,6 +13880,99 @@ form.vih-subscription-long-course-order-form article.user.compact {
       margin-top: 11px;
       margin-bottom: 11px; } }
 
+article.teaser .content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: auto; }
+  article.teaser .content .teaser-image {
+    position: relative; }
+    article.teaser .content .teaser-image img {
+      width: 100%; }
+    article.teaser .content .teaser-image .overlay-text {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #FFF;
+      text-transform: uppercase;
+      font-weight: bold; }
+    article.teaser .content .teaser-image .svg-container-polygon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      overflow: hidden; }
+      article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon {
+          opacity: 0.75; }
+          article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-red {
+            fill: #ff005f; }
+          article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-blue {
+            fill: #009bec; }
+          article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-cyan {
+            fill: #e000ca; }
+          article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-purple {
+            fill: #6e00e9; }
+          article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-yellow {
+            fill: #d3c000; }
+          article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-green {
+            fill: #00c808; }
+  article.teaser .content .teaser-text .field--name-body {
+    padding: 0;
+    margin: 0 !important;
+    font-size: 0.85em; }
+    article.teaser .content .teaser-text .field--name-body p {
+      color: #888;
+      font-weight: normal !important;
+      font-size: inherit;
+      text-transform: none; }
+
+@media (min-width: 768px) {
+  article.teaser .content {
+    width: 100%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row; }
+    article.teaser .content .field--name-body {
+      margin: 0; }
+      article.teaser .content .field--name-body p {
+        margin-bottom: 5px;
+        margin-top: 5px; }
+    article.teaser .content .teaser-image {
+      margin-right: 40px; }
+      article.teaser .content .teaser-image img {
+        min-width: 300px;
+        width: inherit; }
+    article.teaser .content .teaser-text {
+      marging-right: 40px; }
+    article.teaser .content .teaser-button {
+      padding-right: 20px; }
+      article.teaser .content .teaser-button .btn, article.teaser .content .teaser-button .btn-arrow, article.teaser .content .teaser-button .field--name-field-link a, .field--name-field-link article.teaser .content .teaser-button a {
+        text-transform: uppercase; } }
+
 .node-teaser-news,
 .node-teaser-news h4,
 .node-teaser-news .heading-h4,
@@ -13909,6 +14002,10 @@ form.vih-subscription-long-course-order-form article.user.compact {
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 20px; }
+
+.vih-short-course.teaser .field--name-field-vih-sc-start-date,
+.vih-short-course.teaser .field--name-field-vih-sc-end-date {
+  display: inline-block; }
 
 .node-list-simple .node-list-simple-profile-image {
   width: 45px; }

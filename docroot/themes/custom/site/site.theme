@@ -192,28 +192,30 @@ function site_preprocess_node(array &$variables) {
       } else {
         $end_course_date = $curr_end_date;
       }
-      
-      
-      foreach($period->field_vih_cp_course_slots->referencedEntities() as $slot) {
-        $travel = array_pop($slot->field_vih_cs_travel->getValue()[0]);
 
-        foreach ($slot->field_vih_cs_classes->referencedEntities() as $class) {
-          foreach ($class->field_vih_class_class_packages->referencedEntities() as $class_package) {
-            if (!isset($variables['content']['classes_packages']) || empty($variables['content']['classes_packages'][$class_package->id()])) {
-              $variables['content']['classes_packages'][$class_package->id()] = array (
-                'name' => $class_package->getName(),
-                'term' => \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class_package, 'vih_class_package_accordion'),
-              );
-              $variables['content']['classes_packages'][$class_package->id()]['term']['#background_image'] = $class_package->field_vih_cp_image->entity->url();
+      //only for full display
+      if ($variables['view_mode'] == 'full') {
+        foreach($period->field_vih_cp_course_slots->referencedEntities() as $slot) {
+          $travel = array_pop($slot->field_vih_cs_travel->getValue()[0]);
+
+          foreach ($slot->field_vih_cs_classes->referencedEntities() as $class) {
+            foreach ($class->field_vih_class_class_packages->referencedEntities() as $class_package) {
+              if (!isset($variables['content']['classes_packages']) || empty($variables['content']['classes_packages'][$class_package->id()])) {
+                $variables['content']['classes_packages'][$class_package->id()] = array (
+                  'name' => $class_package->getName(),
+                  'term' => \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class_package, 'vih_class_package_accordion'),
+                );
+                $variables['content']['classes_packages'][$class_package->id()]['term']['#background_image'] = $class_package->field_vih_cp_image->entity->url();
+              }
+
+              $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = array_pop($slot->field_vih_cs_title->getValue()[0]);
+              $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] =
+                \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'vih_class_table_teaser');
             }
 
-            $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = array_pop($slot->field_vih_cs_title->getValue()[0]);
-            $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] =
-              \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'vih_class_table_teaser');
-          }
-
-          if ($travel) {
-            $variables['content']['travel_classes'][] = \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'teaser');
+            if ($travel) {
+              $variables['content']['travel_classes'][] = \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'teaser');
+            }
           }
         }
       }

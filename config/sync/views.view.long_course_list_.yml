@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - field.storage.node.field_image
     - field.storage.node.field_vih_course_image
@@ -68,12 +69,10 @@ display:
           row_class: news-panel
           default_row_class: true
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          inline: {  }
-          separator: ''
-          hide_empty: false
-          default_field_elements: true
+          relationship: none
+          view_mode: teaser
       fields:
         field_vih_course_periods:
           id: field_vih_course_periods
@@ -583,7 +582,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: row
+      css_class: ''
       title: Langekurser
     cache_metadata:
       max-age: -1

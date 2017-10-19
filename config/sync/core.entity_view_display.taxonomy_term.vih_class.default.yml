@@ -28,7 +28,7 @@ content:
     region: content
   field_class_package_paragraph:
     weight: 5
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
