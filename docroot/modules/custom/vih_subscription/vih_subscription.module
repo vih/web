@@ -8,7 +8,20 @@
  * @param $form_id
  */
 function vih_subscription_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  //dpm($form);
+  if ($form_id == 'node_vih_course_period_form') {
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'vih_subscription_course_period_form_submit';
+      }
+    }
+  }
+}
+
+function vih_subscription_course_period_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
+  $pass_link = \Drupal::l(t('new course'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_long_cource')));
+  drupal_set_message(t('Would you like to create @link now?', array('@link' => $pass_link)));
+
+  $form_state->setRedirect('system.admin_content');
 }
 
 function vih_subscription_theme() {
@@ -30,5 +43,6 @@ function vih_subscription_theme() {
     )
   ];
 }
+
 
 ?>
