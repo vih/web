@@ -383,12 +383,12 @@ function site_preprocess_taxonomy_term(&$variables) {
   $variables['attributes']['class'][] = $variables['term']->getVocabularyId();
 
   //Get classes from class_package
-  if($variables['term']->getVocabularyId() == 'vih_class_package'){
-    $view = \Drupal\views\Views::getView('class_packages_frontpage');
-    $view->setDisplay('class_package_list');
-    $view->setArguments(array($variables['term']->id()));
-    $variables['class_list'] = $view->render();
-  }
+//  if($variables['term']->getVocabularyId() == 'vih_class_package'){
+//    $view = \Drupal\views\Views::getView('class_packages_frontpage');
+//    $view->setDisplay('class_package_list');
+//    $view->setArguments(array($variables['term']->id()));
+//    $variables['class_list'] = $view->render();
+//  }
 }
 
 /**
