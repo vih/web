@@ -1,0 +1,31 @@
+uuid: 8e790da8-0a5c-4b9d-9f08-828144527a01
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_single_class_group.field_vih_scg_classes
+    - field.field.paragraph.vih_single_class_group.field_vih_scg_group_title
+    - paragraphs.paragraphs_type.vih_single_class_group
+id: paragraph.vih_single_class_group.default
+targetEntityType: paragraph
+bundle: vih_single_class_group
+mode: default
+content:
+  field_vih_scg_classes:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: vih_class_table_teaser_modal
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_vih_scg_group_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

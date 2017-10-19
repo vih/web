@@ -27,44 +27,39 @@
 #}
 
 <div{{ attributes }}>
-  <div class="row vih_class teaser">
-    <div class="col-xs-12 col-lg-6">
-      <div class="field-vih-class-image" style="background-image: url('{{ content.field_vih_class_image.0['#markup'] }}'); background-size: cover;">
-        <div class="triangle {{ term.field_vih_class_color.value }}"></div>
-        {{ name }}
-      </div>
-    </div>
-    <div class="col-xs-9 col-lg-5 flex-center-middle">
-      {% if content.description|render is not empty %}
-        <div class="field-image-wrapper">
-          {{ content.description|render|striptags('<!-- -->')|length > 70 ? content.description|render|striptags('<!-- -->')|slice(0, 70) ~ '...' : content.description }}
+    <div class="row vih_class teaser">
+        <div class="col-xs-12 col-sm-6">
+            {{ content['field_vih_class_image'] }}
         </div>
-      {% endif %}
-    </div>
-    <div class="col-xs-3 col-lg-1 flex-center-middle">
-      <button type="button" class="btn" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="modal fade" id="class-modal-cp-{{ term.id }}" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header" style="background-image: url('{{ content.field_vih_class_image.0['#markup'] }}'); background-size: cover">
-          <div class="modal-header-close">
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <div class="modal-header-title"><h4 class="modal-title">{{ name }}</h4></div>
-          <div class="diagonal-end"></div>
+        <div class="col-xs-12 col-sm-6 flex-center-middle">
+            {% if content.description|render is not empty %}
+                <div class="field-description-wrapper">
+                    {{ content.description|render|striptags('<!-- -->')|length > 70 ? content.description|render|striptags('<!-- -->')|slice(0, 70) ~ '...' : content.description }}
+                </div>
+            {% endif %}
+            <button type="button" class="btn-more" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </button>
         </div>
-
-
-        <div class="modal-body">
-          {{ content.description }}
-        </div>
-      </div>
     </div>
-  </div>
+
+    <div class="modal fade" id="class-modal-cp-{{ term.id }}" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"
+                     style="background-image: url('{{ file_url(term.field_vih_class_image.entity.fileuri) }}'); background-size: cover">
+                    <div class="modal-header-close">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+
+                    <div class="modal-header-title"><h4 class="modal-title">{{ name }}</h4></div>
+                    <div class="diagonal-end"></div>
+                </div>
+
+                <div class="modal-body">
+                    {{ content.description }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,9 @@
+uuid: 377411d7-9227-4639-a926-7a00fd8e7673
+langcode: da
+status: true
+dependencies: {  }
+id: vih_class_groups_accordion
+label: 'VIH Class groups (accordion)'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

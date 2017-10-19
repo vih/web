@@ -1,0 +1,36 @@
+uuid: 54a9b58d-a81a-47e1-881c-b24268fb14e9
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_single_class_group.field_vih_scg_classes
+    - field.field.paragraph.vih_single_class_group.field_vih_scg_group_title
+    - paragraphs.paragraphs_type.vih_single_class_group
+  module:
+    - workbench_moderation
+id: paragraph.vih_single_class_group.default
+targetEntityType: paragraph
+bundle: vih_single_class_group
+mode: default
+content:
+  field_vih_scg_classes:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_vih_scg_group_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.page
     - paragraphs.paragraphs_type.1_column_action_centered
-    - paragraphs.paragraphs_type.class
     - paragraphs.paragraphs_type.class_package
     - paragraphs.paragraphs_type.class_package_accordion
     - paragraphs.paragraphs_type.class_packages
@@ -18,6 +17,7 @@ dependencies:
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -45,9 +45,9 @@ settings:
       short_course_list_: short_course_list_
       class_package: class_package
       long_course_list_: long_course_list_
-      class: class
       class_package_accordion: class_package_accordion
       user_quote: user_quote
+      vih_class_groups_accordion: vih_class_groups_accordion
     target_bundles_drag_drop:
       vih_teacher_class_description:
         weight: -27
@@ -101,12 +101,15 @@ settings:
         enabled: true
         weight: 22
       class:
-        enabled: true
         weight: 23
+        enabled: false
       class_package_accordion:
         enabled: true
         weight: 24
       file:
+        weight: 26
+        enabled: false
+      vih_single_class_group:
         weight: 26
         enabled: false
       user_quote:
@@ -118,4 +121,7 @@ settings:
       vih_ordered_event_person:
         weight: 40
         enabled: false
+      vih_class_groups_accordion:
+        enabled: true
+        weight: 41
 field_type: entity_reference_revisions

@@ -1,0 +1,103 @@
+uuid: 10167799-be28-4e63-8505-ad19e3fa2e0e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_cg_single_class_groups
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_single_class_group
+  module:
+    - entity_reference_revisions
+id: paragraph.vih_class_groups_accordion.field_vih_cg_single_class_groups
+field_name: field_vih_cg_single_class_groups
+entity_type: paragraph
+bundle: vih_class_groups_accordion
+label: 'Single Class Groups'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      vih_single_class_group: vih_single_class_group
+    target_bundles_drag_drop:
+      vih_single_class_group:
+        enabled: true
+        weight: 26
+      1_column_action_centered:
+        weight: 27
+        enabled: false
+      class:
+        weight: 28
+        enabled: false
+      class_package:
+        weight: 29
+        enabled: false
+      class_package_accordion:
+        weight: 30
+        enabled: false
+      class_packages:
+        weight: 31
+        enabled: false
+      event_list:
+        weight: 32
+        enabled: false
+      file:
+        weight: 33
+        enabled: false
+      list_of_news_teasers:
+        weight: 34
+        enabled: false
+      long_course_list_:
+        weight: 35
+        enabled: false
+      news_list:
+        weight: 36
+        enabled: false
+      page_content:
+        weight: 37
+        enabled: false
+      short_course_list_:
+        weight: 38
+        enabled: false
+      user_quote:
+        weight: 39
+        enabled: false
+      video:
+        weight: 40
+        enabled: false
+      vih_class_groups_accordion:
+        weight: 41
+        enabled: false
+      vih_course_slot:
+        weight: 42
+        enabled: false
+      vih_option:
+        weight: 43
+        enabled: false
+      vih_option_group:
+        weight: 44
+        enabled: false
+      vih_ordered_course_period:
+        weight: 45
+        enabled: false
+      vih_ordered_course_person:
+        weight: 46
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 47
+        enabled: false
+      vih_ordered_event_person:
+        weight: 48
+        enabled: false
+      vih_ordered_option:
+        weight: 49
+        enabled: false
+      vih_teacher_class_description:
+        weight: 50
+        enabled: false
+field_type: entity_reference_revisions

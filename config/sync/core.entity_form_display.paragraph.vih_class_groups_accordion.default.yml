@@ -1,0 +1,31 @@
+uuid: c56452c1-3f0c-47cd-882d-69836a62ddea
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_class_groups_accordion.field_vih_cg_single_class_groups
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+  module:
+    - paragraphs
+    - workbench_moderation
+id: paragraph.vih_class_groups_accordion.default
+targetEntityType: paragraph
+bundle: vih_class_groups_accordion
+mode: default
+content:
+  field_vih_cg_single_class_groups:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

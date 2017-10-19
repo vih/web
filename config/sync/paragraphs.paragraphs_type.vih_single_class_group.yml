@@ -1,0 +1,9 @@
+uuid: a544dbc5-e65e-43bb-85f8-49ae9c142c26
+langcode: da
+status: true
+dependencies: {  }
+id: vih_single_class_group
+label: 'VIH Single class group'
+icon_uuid: null
+description: 'a class groups that can be used in paragraph of type VIH Class Groups (accordion)'
+behavior_plugins: {  }

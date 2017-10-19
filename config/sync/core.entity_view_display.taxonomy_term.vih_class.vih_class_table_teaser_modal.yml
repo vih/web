@@ -11,6 +11,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
     - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
+    - image.style.vih_class_teaser
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
@@ -29,12 +30,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vih_class_image:
-    type: image_url
+    type: image
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: ''
+      image_style: vih_class_teaser
+      image_link: ''
     third_party_settings: {  }
   field_vih_teacher_class_descr:
     type: entity_reference_revisions_entity_view

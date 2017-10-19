@@ -1,0 +1,29 @@
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default white-border-bottom" data-toggle="buttons">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        {% set accordion_random_id = random() %}
+                        <a class="accordion-toggle " data-toggle="collapse" href="#vih-single-class-group-{{ accordion_random_id }}" aria-expanded="true">
+                            {{ content.field_vih_scg_group_title }}
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="vih-single-class-group-{{ accordion_random_id }}" class="panel-collapse collapse in" aria-expanded="true">
+                    <div class="panel-body">
+                        {{ content.field_vih_scg_classes }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
