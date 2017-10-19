@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: class_package
-label: 'Class package classes (multi)'
+label: '[OBSOLETE] Class package classes (multi)'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

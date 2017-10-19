@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: class_package_accordion
-label: 'Class package accordion'
+label: '[OBSOLETE] Class package accordion'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

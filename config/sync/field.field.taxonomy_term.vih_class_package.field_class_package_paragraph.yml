@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.news_list
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - taxonomy.vocabulary.vih_class_package
   module:
@@ -29,6 +30,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       event_list: event_list
@@ -39,6 +41,7 @@ settings:
       short_course_list_: short_course_list_
       video: video
       vih_teacher_class_description: vih_teacher_class_description
+      vih_class_groups_accordion: vih_class_groups_accordion
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
@@ -76,8 +79,17 @@ settings:
       vih_option:
         weight: 27
         enabled: false
+      class:
+        weight: 27
+        enabled: false
+      class_package:
+        weight: 28
+        enabled: false
       vih_option_group:
         weight: 28
+        enabled: false
+      class_package_accordion:
+        weight: 29
         enabled: false
       vih_ordered_course_period:
         weight: 29
@@ -91,4 +103,19 @@ settings:
       vih_teacher_class_description:
         enabled: true
         weight: 32
+      user_quote:
+        weight: 38
+        enabled: false
+      vih_class_groups_accordion:
+        enabled: true
+        weight: 40
+      vih_ordered_course_person:
+        weight: 45
+        enabled: false
+      vih_ordered_event_person:
+        weight: 47
+        enabled: false
+      vih_single_class_group:
+        weight: 49
+        enabled: false
 field_type: entity_reference_revisions
