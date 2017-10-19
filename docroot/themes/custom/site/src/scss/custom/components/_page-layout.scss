@@ -1073,7 +1073,7 @@ flex-direction: column;
 
 .path-node article .field--name-field-paragraphs {
   width: 100%;
-  .field--item:not(:last-child) {
+  > .field--item:not(:last-child) {
     margin-bottom: 40px;
   }
 }
