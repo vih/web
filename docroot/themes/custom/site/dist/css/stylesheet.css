@@ -14307,7 +14307,8 @@ article.vih_class_package .field.field--name-field-class-package-paragraph.field
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px;
-    width: 90%; }
+    width: 90%;
+    margin-left: 10px; }
   .vih_class_table_teaser_modal .flex-center-middle .btn-more {
     margin-left: 10px;
     margin-right: 10px; }
