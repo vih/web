@@ -513,10 +513,15 @@ class ShortCourseOrderForm extends FormBase {
     }
 
     //collection subscribed persons
+    $firstParticipantName = '';
     $subscribedPersons = array();
     foreach($form_state->getValue('participantsContainer') as $participant_fieldset) {
       $participant = $participant_fieldset['participant_fieldset'];
       if ($participant) {
+        if (empty($firstParticipantName)) {
+          $firstParticipantName = $participant['firstName'] . ' ' . $participant['lastName'];
+        }
+
         $subscribedPerson = Paragraph::create([
           'type' => 'vih_ordered_course_person',
           'field_vih_ocp_first_name' => $participant['firstName'],
@@ -532,8 +537,8 @@ class ShortCourseOrderForm extends FormBase {
     $this->courseOrder = Node::create(array(
       'type' => 'vih_short_course_order',
       'status' => 0,
-      'title' => $this->course->getTitle() . ' - kursus tilmelding ' . \Drupal::service('date.formatter')
-          ->format(time(), 'short'),
+      'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $firstParticipantName . ' - '
+        . \Drupal::service('date.formatter')->format(time(), 'short'),
       'field_vih_sco_persons' => $subscribedPersons,
       'field_vih_sco_ordered_options' => $orderedOptions,
       'field_vih_sco_course' => $this->course->id()

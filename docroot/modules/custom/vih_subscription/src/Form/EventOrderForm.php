@@ -147,10 +147,15 @@ class EventOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $firstParticipantName = '';
     $subscribedPersons = array();
     foreach($form_state->getValue('participants_container') as $participant_fieldset) {
       $participant = $participant_fieldset['participant_fieldset'];
       if ($participant) {
+        if (empty($firstParticipantName)) {
+          $firstParticipantName = $participant['firstName'] . ' ' . $participant['lastName'];
+        }
+        
         $subscribedPerson = Paragraph::create([
           'type' => 'vih_ordered_event_person',
           'field_vih_oe_first_name' => $participant['firstName'],
@@ -166,8 +171,8 @@ class EventOrderForm extends FormBase {
     $this->eventOrder = Node::create(array(
       'type' => 'vih_event_order',
       'status' => 0,
-      'title' => $this->event->getTitle() . ' - begivenhed tilmelding ' . \Drupal::service('date.formatter')
-          ->format(time(), 'short'),
+      'title' => $this->event->getTitle() . ' - begivenhed tilmelding - ' . $firstParticipantName . ' - '
+        . \Drupal::service('date.formatter')->format(time(), 'short'),
       'field_vih_eo_persons' => $subscribedPersons,
       'field_vih_eo_event' => $this->event->id()
     ));
