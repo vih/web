@@ -16,10 +16,11 @@
     <!-- Begin - content -->
     <div class="layout__content">
       <div class="news-banner" style="background-image: url('{{ file_url(node.field_vih_page_image.entity.fileuri) }}');"> {% if node.title.value %}
-        <h1 class="news-banner-title">{{ node.title.value }}</h3>
+        <h1 class="news-banner-title">{{ node.title.value }}</h1>
           {% elseif page['#title'] %}
-          <h1>{{ page['#title'] }}</h3>
-            {% endif %} </div>
+          <h1>{{ page['#title'] }}</h1>
+            {% endif %}
+      </div>
 
             {# Header #}
             {% if page.header %}

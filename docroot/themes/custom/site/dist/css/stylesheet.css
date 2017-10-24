@@ -10083,9 +10083,6 @@ html {
   padding: 0 !important;
   margin-bottom: 220px; }
 
-.path-node .field--name-body {
-  margin-bottom: 60px !important; }
-
 .banner {
   overflow: hidden !important; }
 
@@ -10241,13 +10238,6 @@ h6,
 .course-supervisor a {
   color: #212121;
   font-size: 14px; }
-
-article .field--name-body {
-  margin-bottom: 40px; }
-
-article .field--name-body p {
-  margin-bottom: 20px;
-  margin-top: 20px; }
 
 tr {
   background: transparent !important; }
@@ -10898,19 +10888,10 @@ flex-direction: column;
   width: 100%;
   margin-top: 0; }
 
-.path-node article .field--name-body {
-  padding-bottom: 200px;
-  max-width: 1024px;
-  padding: 40px;
-  margin-bottom: 150px;
-  padding-top: 0px; }
-
-.page-node-type-vih-long-cource article .field--name-body,
-.page-node-type-vih-short-course article .field--name-body {
-  padding: 0px; }
-
 .path-node article .field--name-field-paragraphs {
-  width: 100%; }
+  width: 100vw; }
+  .path-node article .field--name-field-paragraphs > .field--item:first-child {
+    margin-top: 60px; }
   .path-node article .field--name-field-paragraphs > .field--item:not(:last-child) {
     margin-bottom: 40px; }
 
