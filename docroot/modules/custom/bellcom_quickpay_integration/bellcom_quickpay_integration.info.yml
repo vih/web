@@ -1,0 +1,6 @@
+type: module
+name: Bellcom Quickpay integration
+description: 'provides integration with QuickPay provider (depends on quickpay/quickpay-php-client composer dependency)'
+package: Bellcom
+
+core: '8.x'

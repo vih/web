@@ -1,0 +1,23 @@
+uuid: 99261de2-5ba9-4c2f-b5a5-d0feddd0027a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_eo_status
+    - node.type.vih_event_order
+  module:
+    - options
+id: node.vih_event_order.field_vih_eo_status
+field_name: field_vih_eo_status
+entity_type: node
+bundle: vih_event_order
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

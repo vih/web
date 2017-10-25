@@ -7,9 +7,12 @@ dependencies:
     - field.field.node.vih_short_course_order.field_vih_sco_course
     - field.field.node.vih_short_course_order.field_vih_sco_ordered_options
     - field.field.node.vih_short_course_order.field_vih_sco_persons
+    - field.field.node.vih_short_course_order.field_vih_sco_price
+    - field.field.node.vih_short_course_order.field_vih_sco_status
     - node.type.vih_short_course_order
   module:
     - entity_reference_revisions
+    - options
     - panelizer
     - text
     - user
@@ -56,6 +59,24 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_vih_sco_price:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_vih_sco_status:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   links:
     weight: 0

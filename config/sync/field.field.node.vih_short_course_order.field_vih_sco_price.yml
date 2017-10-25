@@ -1,0 +1,23 @@
+uuid: e880eb83-224d-470a-a8dc-3a80405eb5d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sco_price
+    - node.type.vih_short_course_order
+id: node.vih_short_course_order.field_vih_sco_price
+field_name: field_vih_sco_price
+entity_type: node
+bundle: vih_short_course_order
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: DKK
+  suffix: ''
+field_type: decimal

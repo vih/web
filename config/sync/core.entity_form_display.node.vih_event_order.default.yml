@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.node.vih_event_order.field_vih_eo_event
     - field.field.node.vih_event_order.field_vih_eo_persons
+    - field.field.node.vih_event_order.field_vih_eo_price
+    - field.field.node.vih_event_order.field_vih_eo_status
     - node.type.vih_event_order
   module:
     - paragraphs
@@ -21,6 +23,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_payment_line_item:
+    weight: 35
+    settings: {  }
+    third_party_settings: {  }
+    type: 'plugin_selector:plugin_select_list'
+    region: content
+  field_payment_status:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: 'plugin_selector:plugin_select_list'
+    region: content
   field_vih_eo_event:
     weight: 31
     settings:
@@ -41,6 +55,19 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_vih_eo_price:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_vih_eo_status:
+    weight: 37
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select

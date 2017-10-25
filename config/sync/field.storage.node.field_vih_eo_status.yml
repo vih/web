@@ -1,0 +1,30 @@
+uuid: a38d7fde-e235-4346-b64a-904f80d873e7
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_vih_eo_status
+field_name: field_vih_eo_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pending
+      label: Pending
+    -
+      value: confirmed
+      label: Confirmed
+    -
+      value: cancelled
+      label: Cancelled
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

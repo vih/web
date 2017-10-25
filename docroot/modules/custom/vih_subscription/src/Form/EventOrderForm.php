@@ -6,13 +6,15 @@
 
 namespace Drupal\vih_subscription\Form;
 
+use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\TrustedRedirectResponse;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
-
 
 /**
  * Implements an example form.
@@ -48,7 +50,7 @@ class EventOrderForm extends FormBase {
 
     $personsLimit = $event->field_vih_event_persons_limit->value;
     $personsSubscribed = $this->calculateSubscribedPeopleNumber($event);
-    if ($personsLimit == 0) {//unlimited
+    if ($personsLimit == 0) { //unlimited
       $personsLimit = PHP_INT_MAX;
     }
 
@@ -67,9 +69,9 @@ class EventOrderForm extends FormBase {
     ];
 
     for ($i = 0; $i < $participantsCounter; $i++) {
-      $personHumanCounter = $i+1;//starting from 1, not 0
+      $personHumanCounter = $i + 1; //starting from 1, not 0
 
-      if ($personHumanCounter+$personsSubscribed <= $personsLimit) {//not allowing to have more fieldsets that the event have capacity for
+      if ($personHumanCounter + $personsSubscribed <= $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
         $form['participants_container'][$i]['participant_fieldset'] = [
           '#type' => 'fieldset',
           '#title' => $this->t('Person') . ' ' . $personHumanCounter
@@ -92,7 +94,7 @@ class EventOrderForm extends FormBase {
       }
     }
 
-    if ($personsSubscribed+$participantsCounter < $personsLimit) {//not allowing to have more fieldsets that the event have capacity for
+    if ($personsSubscribed + $participantsCounter < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
       $form['participants_container']['actions']['add_participant'] = [
         '#type' => 'submit',
         '#value' => t('Tilføj flere'),
@@ -149,13 +151,13 @@ class EventOrderForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $firstParticipantName = '';
     $subscribedPersons = array();
-    foreach($form_state->getValue('participants_container') as $participant_fieldset) {
+    foreach ($form_state->getValue('participants_container') as $participant_fieldset) {
       $participant = $participant_fieldset['participant_fieldset'];
       if ($participant) {
         if (empty($firstParticipantName)) {
           $firstParticipantName = $participant['firstName'] . ' ' . $participant['lastName'];
         }
-        
+
         $subscribedPerson = Paragraph::create([
           'type' => 'vih_ordered_event_person',
           'field_vih_oe_first_name' => $participant['firstName'],
@@ -168,18 +170,40 @@ class EventOrderForm extends FormBase {
       }
     }
 
+    $basePrice = $this->event->field_event_price->value;
+    $orderPrice = $basePrice*count($subscribedPersons);
+
     $this->eventOrder = Node::create(array(
       'type' => 'vih_event_order',
       'status' => 0,
       'title' => $this->event->getTitle() . ' - begivenhed tilmelding - ' . $firstParticipantName . ' - '
         . \Drupal::service('date.formatter')->format(time(), 'short'),
       'field_vih_eo_persons' => $subscribedPersons,
-      'field_vih_eo_event' => $this->event->id()
+      'field_vih_eo_event' => $this->event->id(),
+      'field_vih_eo_status' => 'pending',
+      'field_vih_eo_price' => $orderPrice,
     ));
-
     $this->eventOrder->save();
 
-    $form_state->setRedirect('vih_subscription.subscription_redirect');
+    //generating URL needed for quickpay
+    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect');
+    $successUrl->setAbsolute();
+
+    $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');
+    $cancelUrl->setAbsolute();
+
+    $client = new BellcomQuickpayClient();
+    $paymentLink = $client->getPaymentLink($this->eventOrder, $this->event, $orderPrice, $successUrl->toString(), $cancelUrl->toString());
+
+    //successful
+    if ($paymentLink) {
+      //following the link
+      $response = new TrustedRedirectResponse($paymentLink);
+      $form_state->setResponse($response);
+    } else {
+      //something was wrong
+      $form_state->setRedirect('vih_subscription.subscription_error_redirect');
+    }
   }
 
   /**
@@ -232,11 +256,12 @@ class EventOrderForm extends FormBase {
       ->condition('type', 'vih_event_order')
       //->condition('status', '1')new nodes are saved as unpublished
       ->condition('field_vih_eo_event', $event->id())
+      ->condition('field_vih_eo_status', 'confirmed')
       ->execute();
 
     $eventOrders = Node::loadMultiple($eventOrderNids);
     $subscribedPeopleNumber = 0;
-    foreach($eventOrders as $eventOrder) {
+    foreach ($eventOrders as $eventOrder) {
       $subscribedPeopleNumber += count($eventOrder->get('field_vih_eo_persons')->getValue());
     }
 

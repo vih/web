@@ -6,12 +6,15 @@
 
 namespace Drupal\vih_subscription\Form;
 
+use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\TrustedRedirectResponse;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -533,6 +536,8 @@ class ShortCourseOrderForm extends FormBase {
       }
     }
 
+    $orderPrice = $this->calculatePrice($form_state);
+
     //creating the Course Order
     $this->courseOrder = Node::create(array(
       'type' => 'vih_short_course_order',
@@ -541,11 +546,31 @@ class ShortCourseOrderForm extends FormBase {
         . \Drupal::service('date.formatter')->format(time(), 'short'),
       'field_vih_sco_persons' => $subscribedPersons,
       'field_vih_sco_ordered_options' => $orderedOptions,
-      'field_vih_sco_course' => $this->course->id()
+      'field_vih_sco_course' => $this->course->id(),
+      'field_vih_sco_status' => 'pending',
+      'field_vih_sco_price' => $orderPrice
     ));
     $this->courseOrder->save();
 
-    $form_state->setRedirect('vih_subscription.subscription_redirect');
+    //generating URL needed for quickpay
+    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect');
+    $successUrl->setAbsolute();
+
+    $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');
+    $cancelUrl->setAbsolute();
+
+    $client = new BellcomQuickpayClient();
+    $paymentLink = $client->getPaymentLink($this->courseOrder, $this->course, $orderPrice, $successUrl->toString(), $cancelUrl->toString());
+
+    //successful
+    if ($paymentLink) {
+      //following the link
+      $response = new TrustedRedirectResponse($paymentLink);
+      $form_state->setResponse($response);
+    } else {
+      //something was wrong
+      $form_state->setRedirect('vih_subscription.subscription_error_redirect');
+    }
   }
 
   /**

@@ -7,7 +7,7 @@ use Drupal\Core\Controller\ControllerBase;
 /**
  * An example controller.
  */
-class SubscriptionController extends ControllerBase {
+class SubscriptionSuccessfulController extends ControllerBase {
 
   /**
    * {@inheritdoc}

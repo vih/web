@@ -427,7 +427,7 @@ class LongCourseOrderForm extends FormBase {
       $edbBrugsenIntegration->addRegistration($registration);
     }
 
-    $form_state->setRedirect('vih_subscription.subscription_redirect');
+    $form_state->setRedirect('vih_subscription.subscription_successful_redirect');
   }
 
   /**

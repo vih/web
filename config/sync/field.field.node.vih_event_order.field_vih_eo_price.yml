@@ -1,0 +1,23 @@
+uuid: 3c861cae-190a-4bba-96b8-8d99679bbb3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_eo_price
+    - node.type.vih_event_order
+id: node.vih_event_order.field_vih_eo_price
+field_name: field_vih_eo_price
+entity_type: node
+bundle: vih_event_order
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: DKK
+  suffix: ''
+field_type: decimal

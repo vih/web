@@ -34,11 +34,25 @@ vih_subscription.event_order_create:
   requirements:
     _permission: 'access content'
     event: \d+
-vih_subscription.subscription_redirect:
+vih_subscription.subscription_successful_redirect:
   path: '/tilmelding/tak'
   defaults:
-      _controller: '\Drupal\vih_subscription\Controller\SubscriptionController::content'
-      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionController::getTitle'
+      _controller: '\Drupal\vih_subscription\Controller\SubscriptionSuccessfulController::content'
+      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionSuccessfulController::getTitle'
+  requirements:
+    _permission: 'access content'
+vih_subscription.subscription_cancelled_redirect:
+  path: '/tilmelding/aflyst'
+  defaults:
+      _controller: '\Drupal\vih_subscription\Controller\SubscriptionCancelledController::content'
+      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionCancelledController::getTitle'
+  requirements:
+    _permission: 'access content'
+vih_subscription.subscription_error_redirect:
+  path: '/tilmelding/fejl'
+  defaults:
+      _controller: '\Drupal\vih_subscription\Controller\SubscriptionErrorController::content'
+      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionErrorController::getTitle'
   requirements:
     _permission: 'access content'
 vih_subscription.admin.settings_form:
