@@ -168,10 +168,11 @@ $breadcrumb-active-background-color: $brand-primary;
 
   .breadcrumb {
     display: inline-block;
-    border: 1px solid $border-color;
-    border-radius: 0;
+    border: none;
+    //border-radius: 0;
     background-color: #fff;
     padding: 0;
+
 
       &:first-child{
         //font-size: 14px !important;
@@ -181,11 +182,12 @@ $breadcrumb-active-background-color: $brand-primary;
         position: relative;
         padding: 9px 10px;
         font-size: 10px;
+        width: 100%;
         // Must be home button
         &:first-child {
           background-color: $breadcrumb-home-background-color;
-          padding-top: 0px;
-          padding-bottom: 0px;
+         // padding-top: 0px;
+         // padding-bottom: 0px;
           font-size: 14px !important;
           & a {
 

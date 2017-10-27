@@ -12282,19 +12282,17 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 @media (max-width: 767px) {
   .breadcrumb {
     display: inline-block;
-    border: 1px solid #e6e7e7;
-    border-radius: 0;
+    border: none;
     background-color: #fff;
     padding: 0; }
     .breadcrumb li {
       background-color: #f7f7f7;
       position: relative;
       padding: 9px 10px;
-      font-size: 10px; }
+      font-size: 10px;
+      width: 100%; }
       .breadcrumb li:first-child {
         background-color: #fff;
-        padding-top: 0px;
-        padding-bottom: 0px;
         font-size: 14px !important; }
       .breadcrumb li:before {
         border-width: 17px !important;
