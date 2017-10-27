@@ -11998,6 +11998,10 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 .views-element-container.form-group {
   width: 100%; }
 
+@media (max-width: 767px) {
+  .search-content div[role=heading] {
+    margin-top: 40px; } }
+
 .path-frontpage div[role=heading] {
   display: none; }
 

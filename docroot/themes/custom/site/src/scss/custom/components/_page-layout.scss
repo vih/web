@@ -2090,3 +2090,9 @@ ul.layout-navigation {
 .views-element-container.form-group{
   width: 100%;
 }
+
+@include media-breakpoint-only(xs) {
+  .search-content div[role=heading] {
+    margin-top: 40px;
+  }
+}
