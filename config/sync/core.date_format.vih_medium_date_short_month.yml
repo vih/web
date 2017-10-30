@@ -1,0 +1,8 @@
+uuid: 36a6afb6-2920-419f-9b72-e9e076408e07
+langcode: da
+status: true
+dependencies: {  }
+id: vih_medium_date_short_month
+label: 'Medium date with short month (d. M Y)'
+locked: false
+pattern: 'd. M Y'

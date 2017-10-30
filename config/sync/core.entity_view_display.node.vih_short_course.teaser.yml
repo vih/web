@@ -47,7 +47,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: default_medium_date_without_time
+      format_type: vih_medium_date_short_month
     third_party_settings: {  }
   field_vih_sc_image:
     type: image
@@ -65,7 +65,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: default_medium_date_without_time
+      format_type: vih_medium_date_short_month
     third_party_settings: {  }
 hidden:
   field_paragraphs: true
