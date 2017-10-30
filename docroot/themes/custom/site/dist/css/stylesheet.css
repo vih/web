@@ -12770,7 +12770,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
       .layout__header.layout__header-mobile .layout__header-row--bottom #main-menu {
         height: 70px !important; }
       .layout__header.layout__header-mobile .layout__header-row--bottom .layout-navigation {
-        overflow: auto;
+        overflow: visible;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
