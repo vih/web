@@ -1,9 +1,0 @@
-uuid: 5764726c-3de5-49b9-888a-985234c499b9
-langcode: en
-status: true
-dependencies: {  }
-id: class_package
-label: '[OBSOLETE] Class package classes (multi)'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }

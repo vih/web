@@ -1,9 +1,0 @@
-uuid: 9bf6a00a-d939-4da1-85d0-d4de2f91e771
-langcode: en
-status: true
-dependencies: {  }
-id: class
-label: '[OBSOLETE] Class'
-icon_uuid: null
-description: ''
-behavior_plugins: {  }
