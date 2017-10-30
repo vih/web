@@ -3,12 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.user_quote.field_background_color
+    - field.field.paragraph.user_quote.field_background_image
     - field.field.paragraph.user_quote.field_heading
     - field.field.paragraph.user_quote.field_paragraph_person_photo
     - field.field.paragraph.user_quote.field_paragraph_text
     - image.style.thumbnail
     - paragraphs.paragraphs_type.user_quote
   module:
+    - entity_browser
     - image
     - text
     - workbench_moderation
@@ -17,6 +21,24 @@ targetEntityType: paragraph
 bundle: user_quote
 mode: default
 content:
+  field_background_color:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_image:
+    type: entity_browser_file
+    weight: 8
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
   field_heading:
     weight: 0
     settings:
@@ -37,6 +59,7 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
   field_paragraph_text:
     weight: 2
     settings:

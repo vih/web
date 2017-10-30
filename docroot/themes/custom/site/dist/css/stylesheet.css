@@ -9992,9 +9992,6 @@ html {
   overflow-y: visible;
   overflow-x: visible; }
 
-.path-node .angled-background-color-white {
-  margin-top: -40px !important; }
-
 .layout-navigation .logo {
   width: 100%;
   height: 80px;
@@ -13248,13 +13245,8 @@ footer .panel-heading .panel-title a {
     position: absolute;
     right: 0; } }
 
-.path-node .angled-background-color {
-  margin-bottom: 0px !important;
-  margin-top: 0px !important;
-  padding-bottom: 0px !important;
-  padding-top: 0px !important; }
-  .path-node .angled-background-color .angled-background-inner {
-    z-index: unset; }
+.path-node .angled-background-color .angled-background-inner {
+  z-index: unset; }
 
 .path-node .angled-background-image {
   background-color: transparent; }
@@ -13262,33 +13254,36 @@ footer .panel-heading .panel-title a {
     height: 100%;
     margin-top: -10px !important; }
 
-.angled-background-color .angled-background-inner {
-  position: relative;
-  z-index: 1;
-  background-color: transparent !important; }
-  .angled-background-color .angled-background-inner:before {
-    display: block;
-    position: absolute;
-    content: '';
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    min-height: 100%;
-    background-color: transparent;
-    z-index: -1;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: skewX(0) skewY(5deg);
-    -ms-transform: skewX(0) skewY(5deg);
-    -o-transform: skewX(0) skewY(5deg);
-    transform: skewX(0) skewY(5deg);
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-         -o-transform-origin: center center;
-            transform-origin: center center; }
+.angled-background-color {
+  width: 100vw; }
+  .angled-background-color .angled-background-inner {
+    position: relative;
+    z-index: 1;
+    background-color: transparent !important; }
+    .angled-background-color .angled-background-inner:before {
+      display: block;
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      min-height: 100%;
+      background-color: transparent;
+      z-index: -1;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: skewX(0) skewY(5deg);
+      -ms-transform: skewX(0) skewY(5deg);
+      -o-transform: skewX(0) skewY(5deg);
+      transform: skewX(0) skewY(5deg);
+      -webkit-transform-origin: center center;
+          -ms-transform-origin: center center;
+           -o-transform-origin: center center;
+              transform-origin: center center; }
 
 .angled-background-image {
+  width: 100vw;
   position: relative;
   z-index: 1;
   background-color: #fff; }
@@ -13342,51 +13337,51 @@ footer .panel-heading .panel-title a {
 .angled-background-color,
 .angled-background-image {
   padding-top: 10px;
-  padding-bottom: 50px; }
+  padding-bottom: 60px; }
 
 .angled-background-color .angled-background-inner:before {
   margin-top: -10px;
-  margin-bottom: -50px; }
+  margin-bottom: -60px; }
 
 .angled-background-image .angled-background-image-wrapper {
   margin-top: -10px;
-  margin-bottom: -50px; }
+  margin-bottom: -60px; }
 
 @media (min-width: 768px) {
   .angled-background-color,
   .angled-background-image {
     padding-top: 10px;
-    padding-bottom: 70px; }
+    padding-bottom: 60px; }
   .angled-background-color .angled-background-inner:before {
     margin-top: -10px;
-    margin-bottom: -70px; }
+    margin-bottom: -60px; }
   .angled-background-image .angled-background-image-wrapper {
     margin-top: -10px;
-    margin-bottom: -70px; } }
+    margin-bottom: -60px; } }
 
 @media (min-width: 992px) {
   .angled-background-color,
   .angled-background-image {
     padding-top: 10px;
-    padding-bottom: 140px; }
+    padding-bottom: 60px; }
   .angled-background-color .angled-background-inner:before {
     margin-top: -10px;
-    margin-bottom: -140px; }
+    margin-bottom: -60px; }
   .angled-background-image .angled-background-image-wrapper {
     margin-top: -10px;
-    margin-bottom: -140px; } }
+    margin-bottom: -60px; } }
 
 @media (min-width: 1200px) {
   .angled-background-color,
   .angled-background-image {
     padding-top: 10px;
-    padding-bottom: 140px; }
+    padding-bottom: 60px; }
   .angled-background-color .angled-background-inner:before {
     margin-top: -10px;
-    margin-bottom: -140px; }
+    margin-bottom: -60px; }
   .angled-background-image .angled-background-image-wrapper {
     margin-top: -10px;
-    margin-bottom: -140px; } }
+    margin-bottom: -60px; } }
 
 .field--name-field-heading {
   text-transform: uppercase;

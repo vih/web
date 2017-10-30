@@ -13,20 +13,21 @@
 // Angled background
 $angled-background-angle: 5deg;
 $angled-background-padding-top: 10px;
-$angled-background-padding-bottom: 140px;
+$angled-background-padding-bottom: 60px;
 
 // Responsive
 $xs-angled-background-padding-top: 10px;
-$xs-angled-background-padding-bottom: 50px;
+$xs-angled-background-padding-bottom: 60px;
 
 $sm-angled-background-padding-top: 10px;
-$sm-angled-background-padding-bottom: 70px;
+$sm-angled-background-padding-bottom: 60px;
 
 $md-angled-background-padding-top: 10px;
-$md-angled-background-padding-bottom: 140px;
+$md-angled-background-padding-bottom: 60px;
 
 $lg-angled-background-padding-top: 10px;
-$lg-angled-background-padding-bottom: 140px;
+$lg-angled-background-padding-bottom: 60px;
+
 
 // Variants
 $angled-background-color-white: #fff;
@@ -40,12 +41,11 @@ $angled-background-color-secondary: $brand-secondary;
 // --------------------------------------------------
 .path-node{
   & .angled-background-color {
-    margin-bottom: 0px !important;
-    margin-top: 0px !important;
-    padding-bottom: 0px !important;
-    padding-top: 0px !important;
+//    margin-bottom: 0px !important;
+//    margin-top: 0px !important;
+//    padding-bottom: 0px !important;
+//    padding-top: 0px !important;
     & .angled-background-inner {
-      
       z-index: unset;
     }
   }
@@ -60,6 +60,7 @@ $angled-background-color-secondary: $brand-secondary;
 }
 // Color
 .angled-background-color {
+  width: 100vw;
 
   .angled-background-inner {
     position: relative;
@@ -88,6 +89,8 @@ $angled-background-color-secondary: $brand-secondary;
 
 // Image
 .angled-background-image {
+  width: 100vw;
+
   position: relative;
   z-index: 1;
   background-color: #fff;

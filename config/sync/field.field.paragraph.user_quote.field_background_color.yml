@@ -1,0 +1,21 @@
+uuid: 58df1b1a-99f5-4b37-9501-5e3609a50249
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.user_quote
+  module:
+    - options
+id: paragraph.user_quote.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: user_quote
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
