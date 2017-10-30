@@ -1,0 +1,29 @@
+uuid: 09848f1d-8097-4813-ae8f-7158445440e5
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_webform
+    - paragraphs.paragraphs_type.vih_webform
+  module:
+    - webform
+id: paragraph.vih_webform.field_vih_webform
+field_name: field_vih_webform
+entity_type: paragraph
+bundle: vih_webform
+label: Webform
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  default_data: ''
+  status: open
+  open: ''
+  close: ''
+field_type: webform

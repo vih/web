@@ -91,8 +91,11 @@ module:
   views_ui: 0
   viewsreference: 0
   vih_subscription: 0
+  webform: 0
+  webform_ui: 0
   workbench_moderation: 0
   menu_link_content: 1
+  webform_bootstrap: 1
   content_translation: 10
   views: 10
   paragraphs: 11

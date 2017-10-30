@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
 id: node.page.field_paragraphs
@@ -44,6 +45,7 @@ settings:
       long_course_list_: long_course_list_
       user_quote: user_quote
       vih_class_groups_accordion: vih_class_groups_accordion
+      vih_webform: vih_webform
     target_bundles_drag_drop:
       vih_teacher_class_description:
         weight: -27
@@ -75,12 +77,12 @@ settings:
       page_content:
         enabled: true
         weight: 16
-      vih_option_group:
-        weight: 17
-        enabled: false
       short_course_list_:
         enabled: true
         weight: 17
+      vih_option_group:
+        weight: 17
+        enabled: false
       vih_ordered_course_period:
         weight: 18
         enabled: false
@@ -90,22 +92,13 @@ settings:
       vih_ordered_option:
         weight: 20
         enabled: false
-      class_package:
-        weight: 22
-        enabled: false
       long_course_list_:
         enabled: true
         weight: 22
-      class:
-        weight: 23
-        enabled: false
-      class_package_accordion:
-        weight: 24
-        enabled: false
-      file:
+      vih_single_class_group:
         weight: 26
         enabled: false
-      vih_single_class_group:
+      file:
         weight: 26
         enabled: false
       user_quote:
@@ -120,4 +113,7 @@ settings:
       vih_class_groups_accordion:
         enabled: true
         weight: 41
+      vih_webform:
+        enabled: true
+        weight: 46
 field_type: entity_reference_revisions

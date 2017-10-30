@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_event_paragraph
     - node.type.event
     - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
 id: node.event.field_event_paragraph
@@ -24,6 +25,7 @@ settings:
     negate: 0
     target_bundles:
       1_column_action_centered: 1_column_action_centered
+      vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
@@ -55,6 +57,9 @@ settings:
       vih_course_slot:
         weight: 26
         enabled: false
+      file:
+        weight: 27
+        enabled: false
       vih_option:
         weight: 27
         enabled: false
@@ -73,4 +78,22 @@ settings:
       vih_teacher_class_description:
         weight: 32
         enabled: false
+      user_quote:
+        weight: 33
+        enabled: false
+      vih_class_groups_accordion:
+        weight: 35
+        enabled: false
+      vih_ordered_course_person:
+        weight: 40
+        enabled: false
+      vih_ordered_event_person:
+        weight: 42
+        enabled: false
+      vih_single_class_group:
+        weight: 44
+        enabled: false
+      vih_webform:
+        enabled: true
+        weight: 46
 field_type: entity_reference_revisions

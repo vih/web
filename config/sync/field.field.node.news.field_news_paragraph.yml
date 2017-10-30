@@ -7,6 +7,7 @@ dependencies:
     - node.type.news
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.user_quote
+    - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
 id: node.news.field_news_paragraph
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       user_quote: user_quote
+      vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
@@ -48,10 +50,10 @@ settings:
       news_list:
         weight: 22
         enabled: false
-      page_content:
+      file:
         weight: 23
         enabled: false
-      file:
+      page_content:
         weight: 23
         enabled: false
       short_course_list_:
@@ -81,4 +83,19 @@ settings:
       vih_teacher_class_description:
         weight: 32
         enabled: false
+      vih_class_groups_accordion:
+        weight: 35
+        enabled: false
+      vih_ordered_course_person:
+        weight: 40
+        enabled: false
+      vih_ordered_event_person:
+        weight: 42
+        enabled: false
+      vih_single_class_group:
+        weight: 44
+        enabled: false
+      vih_webform:
+        enabled: true
+        weight: 46
 field_type: entity_reference_revisions

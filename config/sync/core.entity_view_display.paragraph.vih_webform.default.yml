@@ -1,0 +1,23 @@
+uuid: 01b6e459-ebb8-4c08-819e-2f5c8e95e0d6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_webform.field_vih_webform
+    - paragraphs.paragraphs_type.vih_webform
+  module:
+    - webform
+id: paragraph.vih_webform.default
+targetEntityType: paragraph
+bundle: vih_webform
+mode: default
+content:
+  field_vih_webform:
+    weight: 0
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden: {  }

@@ -9440,6 +9440,9 @@ small, .font_small {
 .btn-simple:hover {
   color: #fff; }
 
+.webform-button--submit {
+  margin-top: 15px; }
+
 .codebox {
   /* Below are styles for the codebox (not the code itself) */
   border: 1px solid rgba(0, 0, 0, 0.1);

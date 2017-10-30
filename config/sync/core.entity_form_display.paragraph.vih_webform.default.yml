@@ -1,0 +1,25 @@
+uuid: 278da312-58aa-409d-9e56-0aedf0b817f1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_webform.field_vih_webform
+    - paragraphs.paragraphs_type.vih_webform
+  module:
+    - webform
+    - workbench_moderation
+id: paragraph.vih_webform.default
+targetEntityType: paragraph
+bundle: vih_webform
+mode: default
+content:
+  field_vih_webform:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true
