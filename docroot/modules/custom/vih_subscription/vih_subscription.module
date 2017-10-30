@@ -17,12 +17,13 @@ function vih_subscription_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
   }
 }
 
-function vih_subscription_course_period_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state){
-  $pass_link = \Drupal::l(t('new course'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_long_cource')));
-  drupal_set_message(t('Would you like to create @link now?', array('@link' => $pass_link)));
-
-  $pass_link = \Drupal::l(t('new course period'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_course_period')));
-  drupal_set_message(t('Would you like to create @link now?', array('@link' => $pass_link)));
+function vih_subscription_course_period_form_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $new_course_link = \Drupal::l(t('new course'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_long_cource')));
+  $new_course_period_link = \Drupal::l(t('new course period'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_course_period')));
+  drupal_set_message(t('Would you like to create a @course_link or @course_period_link now?', array(
+    '@course_link' => $new_course_link,
+    '@course_period_link' => $new_course_period_link
+  )));
 
   $form_state->setRedirect('system.admin_content');
 }
