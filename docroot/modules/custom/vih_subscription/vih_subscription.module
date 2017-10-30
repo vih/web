@@ -21,6 +21,9 @@ function vih_subscription_course_period_form_submit(&$form, \Drupal\Core\Form\Fo
   $pass_link = \Drupal::l(t('new course'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_long_cource')));
   drupal_set_message(t('Would you like to create @link now?', array('@link' => $pass_link)));
 
+  $pass_link = \Drupal::l(t('new course period'), \Drupal\Core\Url::fromRoute('node.add', array('node_type' => 'vih_course_period')));
+  drupal_set_message(t('Would you like to create @link now?', array('@link' => $pass_link)));
+
   $form_state->setRedirect('system.admin_content');
 }
 
