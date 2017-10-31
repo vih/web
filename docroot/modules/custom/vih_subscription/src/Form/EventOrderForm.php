@@ -15,6 +15,7 @@ use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
 
 /**
  * Implements an example form.
@@ -171,7 +172,7 @@ class EventOrderForm extends FormBase {
     }
 
     $basePrice = $this->event->field_event_price->value;
-    $orderPrice = $basePrice*count($subscribedPersons);
+    $orderPrice = $basePrice * count($subscribedPersons);
 
     $this->eventOrder = Node::create(array(
       'type' => 'vih_event_order',
@@ -186,7 +187,12 @@ class EventOrderForm extends FormBase {
     $this->eventOrder->save();
 
     //generating URL needed for quickpay
-    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect');
+
+    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect', [
+      'subject' => $this->event->id(),
+      'order' => $this->eventOrder->id(),
+      'checksum' => VihSubscriptionUtils::generateChecksum($this->event, $this->eventOrder)
+    ]);
     $successUrl->setAbsolute();
 
     $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');

@@ -18,6 +18,7 @@ use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
 
 
 /**
@@ -553,7 +554,11 @@ class ShortCourseOrderForm extends FormBase {
     $this->courseOrder->save();
 
     //generating URL needed for quickpay
-    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect');
+    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect', [
+      'subject' => $this->course->id(),
+      'order' => $this->courseOrder->id(),
+      'checksum' => VihSubscriptionUtils::generateChecksum($this->course, $this->courseOrder)
+    ]);
     $successUrl->setAbsolute();
 
     $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');

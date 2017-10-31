@@ -1,7 +1,13 @@
 # Define default links for this module.
-vih_subscption.edbbrugsen.progressions:
+vih_subsciption.notifications.settings:
+  title: 'VIH Subscription Notification settings'
+  description: 'Provide custom email text for notifications about course/event subscription'
+  route_name: vih_subscription.admin.notifications.settings_form
+  parent: system.admin_config_system
+  weight: 97
+vih_subsciption.edbbrugsen.settings:
   title: 'VIH Subscription EDBBrugsen integration settings'
   description: 'Varisous settings related with EDBBrugsen integration settings'
-  route_name: vih_subscription.admin.settings_form
+  route_name: vih_subscription.admin.edbbrugsen.settings_form
   parent: system.admin_config_system
-  weight: 99
+  weight: 96

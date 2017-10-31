@@ -7,16 +7,17 @@
 
 namespace Drupal\vih_subscription\Form;
 
+use Drupal\Core\Datetime\DateFormatter;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
 use Drupal\node\NodeInterface;
-use Drupal\Core\Datetime\DateFormatter;
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\taxonomy\Entity\Term;
 use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
+use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
 
 /**
  * Implements an example form.
@@ -55,8 +56,8 @@ class LongCourseOrderForm extends FormBase {
     foreach ($course->field_vih_course_periods->referencedEntities() as $periodDelta => $coursePeriod) {
       //coursePeriods render helping array
       $form['#coursePeriods'][$periodDelta] = array(
-          'title' => $coursePeriod->getTitle(),
-          'courseSlots' => array(),
+        'title' => $coursePeriod->getTitle(),
+        'courseSlots' => array(),
       );
 
       foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $slotDelta => $courseSlot) {
@@ -65,10 +66,10 @@ class LongCourseOrderForm extends FormBase {
 
         //courseSlot render helping array
         $form['#coursePeriods'][$periodDelta]['courseSlots'][$slotDelta] = array(
-            'title' => $courseSlot->field_vih_cs_title->value,
-            'availableClasses' => array(
-                'cid' => $availableClassesCid
-            )
+          'title' => $courseSlot->field_vih_cs_title->value,
+          'availableClasses' => array(
+            'cid' => $availableClassesCid
+          )
         );
 
         //creating real input-ready fields
@@ -78,7 +79,7 @@ class LongCourseOrderForm extends FormBase {
           //Title is being handled in css depending on button
           //state and active language: see _radio-selection/_vih-class.scss
           $radiosOptions[$class->id()] = ''; //$this->t('Vælg');
-          
+
           $classesRadioSelections[$class->id()] = taxonomy_term_view($class, 'radio_selection');
         }
 
@@ -97,7 +98,7 @@ class LongCourseOrderForm extends FormBase {
 
     //Personal data - left side
     $form['personalDataLeft'] = array(
-        '#type' => 'container',
+      '#type' => 'container',
     );
     $form['personalDataLeft']['firstName'] = array(
       '#type' => 'textfield',
@@ -133,13 +134,13 @@ class LongCourseOrderForm extends FormBase {
     );
 
     $form['personalDataLeft']['newsletter'] = array(
-        '#type' => 'checkbox',
-        '#title' => $this->t('Tilmeld dig nyhedsbreve'),
+      '#type' => 'checkbox',
+      '#title' => $this->t('Tilmeld dig nyhedsbreve'),
     );
 
     //Personal data - right side
     $form['personalDataRight'] = array(
-        '#type' => 'container',
+      '#type' => 'container',
     );
     $form['personalDataRight']['address'] = array(
       '#type' => 'textfield',
@@ -268,11 +269,11 @@ class LongCourseOrderForm extends FormBase {
     );
 
     $form['actions']['submit'] = array(
-        '#type' => 'submit',
-        '#value' => $this->t('Indsend oplynsinger'),
+      '#type' => 'submit',
+      '#value' => $this->t('Indsend oplynsinger'),
     );
 
-    foreach ($course->field_vih_cource_contact_person->referencedEntities() as $contact_person){
+    foreach ($course->field_vih_cource_contact_person->referencedEntities() as $contact_person) {
       //Adding contact person to form
       $user_view_builder = \Drupal::entityTypeManager()->getViewBuilder('user');
       $contact_person_build = $user_view_builder->view($contact_person, 'compact');
@@ -318,7 +319,7 @@ class LongCourseOrderForm extends FormBase {
 
     //going through the selected classes
     foreach ($form_state->getValues() as $radioKey => $radioValue) {
-      if ( preg_match('/^course-period-(\d)-courseSlot-(\d)-availableClasses$/', $radioKey, $matches) ) {
+      if (preg_match('/^course-period-(\d)-courseSlot-(\d)-availableClasses$/', $radioKey, $matches)) {
         $coursePeriodDelta = $matches[1];
         $coursePeriods = $this->course->field_vih_course_periods->referencedEntities();
         $coursePeriod = $coursePeriods[$coursePeriodDelta];
@@ -328,20 +329,20 @@ class LongCourseOrderForm extends FormBase {
         $courseSlot = $courseSlots[$courseSlotDelta];
 
         $orderedCourseSlot = Paragraph::create([
-                    'type' => 'vih_ordered_course_slot',
-                    'field_vih_ocs_title' => $courseSlot->field_vih_cs_title->value,
-                    'field_vih_ocs_class' => $radioValue,
+          'type' => 'vih_ordered_course_slot',
+          'field_vih_ocs_title' => $courseSlot->field_vih_cs_title->value,
+          'field_vih_ocs_class' => $radioValue,
         ]);
         $orderedCourseSlot->isNew();
         $orderedCourseSlot->save();
 
-        $orderedCoursePeriod = null;
-        if ( isset($orderedCoursePeriods[$coursePeriod->id()]) && $orderedCoursePeriod = $orderedCoursePeriods[$coursePeriod->id()] ) {
+        $orderedCoursePeriod = NULL;
+        if (isset($orderedCoursePeriods[$coursePeriod->id()]) && $orderedCoursePeriod = $orderedCoursePeriods[$coursePeriod->id()]) {
           $existingOrderedCourseSlots = $orderedCoursePeriod->get('field_vih_ocp_order_course_slots')->getValue();
 
           $existingOrderedCourseSlots[] = array(
-              'target_id' => $orderedCourseSlot->id(),
-              'target_revision_id' => $orderedCourseSlot->getRevisionId()
+            'target_id' => $orderedCourseSlot->id(),
+            'target_revision_id' => $orderedCourseSlot->getRevisionId()
           );
 
           $orderedCoursePeriod->set('field_vih_ocp_order_course_slots', $existingOrderedCourseSlots);
@@ -349,12 +350,12 @@ class LongCourseOrderForm extends FormBase {
           $orderedCoursePeriods[$coursePeriod->id()] = $orderedCoursePeriod;
         } else {
           $orderedCoursePeriod = Paragraph::create([
-                      'type' => 'vih_ordered_course_period',
-                      'field_vih_ocp_course_period' => $coursePeriod->id(),
-                      'field_vih_ocp_order_course_slots' => array(
-                          'target_id' => $orderedCourseSlot->id(),
-                          'target_revision_id' => $orderedCourseSlot->getRevisionId()
-                      ),
+            'type' => 'vih_ordered_course_period',
+            'field_vih_ocp_course_period' => $coursePeriod->id(),
+            'field_vih_ocp_order_course_slots' => array(
+              'target_id' => $orderedCourseSlot->id(),
+              'target_revision_id' => $orderedCourseSlot->getRevisionId()
+            ),
           ]);
           $orderedCoursePeriod->isNew();
           $orderedCoursePeriod->save();
@@ -414,12 +415,12 @@ class LongCourseOrderForm extends FormBase {
     }
 
     //EDBBrugsen Integration
-    $config = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
-    if ($config->get('active')) {
-      $username = $config->get('username');
-      $password = $config->get('password');
-      $school_code = $config->get('school_code');
-      $book_number = $config->get('book_number');
+    $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
+    if ($edbBrugsenConfig->get('active')) {
+      $username = $edbBrugsenConfig->get('username');
+      $password = $edbBrugsenConfig->get('password');
+      $school_code = $edbBrugsenConfig->get('school_code');
+      $book_number = $edbBrugsenConfig->get('book_number');
 
       $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
       $registration = $edbBrugsenIntegration->convertToRegistration($this->courseOrder);
@@ -427,7 +428,11 @@ class LongCourseOrderForm extends FormBase {
       $edbBrugsenIntegration->addRegistration($registration);
     }
 
-    $form_state->setRedirect('vih_subscription.subscription_successful_redirect');
+    $form_state->setRedirect('vih_subscription.subscription_successful_redirect', [
+      'subject' => $this->course->id(),
+      'order' => $this->courseOrder->id(),
+      'checksum' => VihSubscriptionUtils::generateChecksum($this->course, $this->courseOrder)
+    ]);
   }
 
   /**
@@ -437,7 +442,7 @@ class LongCourseOrderForm extends FormBase {
    */
   function subscribeToMailchimp(NodeInterface $course) {
     // Get first mail chimp list
-    $lists = mailchimp_get_lists(null, null);
+    $lists = mailchimp_get_lists(NULL, NULL);
     $list = array_pop($lists);
     $list_id = $list->id;
 
@@ -447,7 +452,7 @@ class LongCourseOrderForm extends FormBase {
         'FNAME' => $this->courseOrder->field_vih_lco_first_name->value,
         'LNAME' => $this->courseOrder->field_vih_lco_last_name->value,
       );
-      mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, false, false);
+      mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, FALSE, FALSE);
     } else {
       drupal_set_message('List not configured in Drupal');
     }
