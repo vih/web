@@ -55,7 +55,10 @@ class NotificationsSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Body'),
       '#default_value' => $config->get('vih_subscription_long_course_notifications_body'),
       '#description' => $this->t("You can use the following replacement tokens: <br>
-      <b>@subject_name</b> => Name of the course <br> <b>@person_name</b> => Name of the person")
+      <b>@subject_name</b> => Name of the course <br>
+      <b>@person_name</b> => Name of the person <br>
+      <b>@date</b> => Date of the course <br>
+      <b>@url</b> => Link to the course")
     ];
 
     // Short course
@@ -76,7 +79,10 @@ class NotificationsSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Body'),
       '#default_value' => $config->get('vih_subscription_short_course_notifications_body'),
       '#description' => $this->t("You can use the following replacement tokens: <br>
-      <b>@subject_name</b> => Name of the course <br> <b>@person_name</b> => Name of the person")
+      <b>@subject_name</b> => Name of the course <br>
+      <b>@person_name</b> => Name of the person <br>
+      <b>@date</b> => Date of the course <br>
+      <b>@url</b> => Link to the course")
     ];
 
     // Events
@@ -97,7 +103,10 @@ class NotificationsSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Body'),
       '#default_value' => $config->get('vih_subscription_event_notifications_body'),
       '#description' => $this->t("You can use the following replacement tokens: <br>
-      <b>@subject_name</b> => Name of the event <br> <b>@person_name</b> => Name of the person")
+      <b>@subject_name</b> => Name of the event <br>
+      <b>@person_name</b> => Name of the person <br>
+      <b>@date</b> => Date of the event<br>
+      <b>@url</b> => Link to the event")
     ];
 
     return parent::buildForm($form, $form_state);

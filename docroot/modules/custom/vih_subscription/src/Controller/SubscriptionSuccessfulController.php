@@ -4,6 +4,7 @@ namespace Drupal\vih_subscription\Controller;
 
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\Core\Site\Settings;
 use Drupal\node\NodeInterface;
@@ -47,7 +48,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
     //Send email
     $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
     $message = array();
-    $token = ['@subject_name', '@person_name'];
+    $token = ['@subject_name', '@person_name', '@date', '@url'];
 
     if ($subject->getType() == 'vih_long_cource') {
       $message = [
@@ -56,11 +57,53 @@ class SubscriptionSuccessfulController extends ControllerBase {
         'body' => $notificationsConfig->get('vih_subscription_long_course_notifications_body')
       ];
 
+      //getting the start and end date for long course START
+      // FIXME: that is a copy paste from site.theme preprocess_node function, consider refactoring
+      $start_course_date = '';
+      $end_course_date = '';
+      foreach ($subject->field_vih_course_periods->referencedEntities() as $period) {
+        if (is_array($period->field_vih_cp_start_date->getValue()[0])) {
+          $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
+        }
+        if (is_array($period->field_vih_cp_end_date->getValue()[0])) {
+          $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
+        }
+
+        if ($start_course_date) {
+          if (strtotime($curr_start_date) < strtotime($start_course_date)) {
+            $start_course_date = $curr_start_date;
+          }
+        } else {
+          $start_course_date = $curr_start_date;
+        }
+        if ($end_course_date) {
+          if (strtotime($curr_end_date) > strtotime($end_course_date)) {
+            $end_course_date = $curr_end_date;
+          }
+        } else {
+          $end_course_date = $curr_end_date;
+        }
+      }
+      // getting start and end date for the long course END
+
+      // course date
+      $courseDate = NULL;
+      if ($start_course_date) {
+        $courseDate =  \Drupal::service('date.formatter')->format(strtotime($start_course_date), "default_medium_date_without_time");
+      }
+      if ($end_course_date) {
+        if (!(empty($courseDate))) {
+          $courseDate .= ' - ';
+        }
+        $courseDate .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "default_medium_date_without_time");
+      }
+
       $replacement = [
         $subject->getTitle(),
-        $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value
+        $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value,
+        !empty($courseDate) ? $courseDate : '',
+        $subject->toUrl()->setAbsolute()->toString(),
       ];
-
     } elseif ($subject->getType() == 'vih_short_course') {
       $allParticipants = $order->get('field_vih_sco_persons')->getValue();
       if (!empty($allParticipants)) {
@@ -73,15 +116,29 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $lastName = $firstParticipantParagraph->field_vih_ocp_last_name->value;
         $email = $firstParticipantParagraph->field_vih_ocp_email->value;
 
+        //course date
+        $courseDate = NULL;
+        if ($subject->field_vih_sc_start_date->value) {
+          $courseDate =  \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_start_date->value), "default_medium_date_without_time");
+        }
+        if ($subject->field_vih_sc_end_date->value) {
+          if (!(empty($courseDate))) {
+            $courseDate .= ' - ';
+          }
+          $courseDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_end_date->value), "default_medium_date_without_time");
+        }
+
         $message = [
           'to' => $email,
           'subject' => $notificationsConfig->get('vih_subscription_short_course_notifications_subject'),
-          'body' => $notificationsConfig->get('vih_subscription_short_course_notifications_body')
+          'body' => $notificationsConfig->get('vih_subscription_short_course_notifications_body'),
         ];
 
         $replacement = [
           $subject->getTitle(),
-          $firstName . ' ' . $lastName
+          $firstName . ' ' . $lastName,
+          !empty($orderDate) ? $orderDate : '',
+          $subject->toUrl()->setAbsolute()->toString(),
         ];
       }
 
@@ -100,6 +157,18 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $lastName = $firstParticipantParagraph->field_vih_oe_last_name->value;
         $email = $firstParticipantParagraph->field_vih_oe_email->value;
 
+        //event date
+        $eventDate = NULL;
+        if ($subject->field_event_start_date->value) {
+          $eventDate =  \Drupal::service('date.formatter')->format(strtotime($subject->field_event_start_date->value), "default_medium_date_without_time");
+        }
+        if ($subject->field_event_end_date->value) {
+          if (!(empty($eventDate))) {
+            $eventDate .= ' - ';
+          }
+          $eventDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_event_end_date->value), "default_medium_date_without_time");
+        }
+
         $message = [
           'to' => $email,
           'subject' => $notificationsConfig->get('vih_subscription_event_notifications_subject'),
@@ -108,7 +177,9 @@ class SubscriptionSuccessfulController extends ControllerBase {
 
         $replacement = [
           $subject->getTitle(),
-          $firstName . ' ' . $lastName
+          $firstName . ' ' . $lastName,
+          !empty($eventDate) ? $eventDate : '',
+          $subject->toUrl()->setAbsolute()->toString(),
         ];
       }
 
