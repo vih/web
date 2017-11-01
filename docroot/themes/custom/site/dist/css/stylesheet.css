@@ -10886,9 +10886,11 @@ flex-direction: column;
 
 .path-node article .field--name-field-paragraphs {
   width: 100vw; }
-  .path-node article .field--name-field-paragraphs > .field--item:first-child {
+  .path-node article .field--name-field-paragraphs > .field--item:first-child .angled-background-image,
+  .path-node article .field--name-field-paragraphs > .field--item:first-child .angled-background-color {
     margin-top: 60px; }
-  .path-node article .field--name-field-paragraphs > .field--item:not(:last-child) {
+  .path-node article .field--name-field-paragraphs > .field--item:not(:last-child) .angled-background-image,
+  .path-node article .field--name-field-paragraphs > .field--item:not(:last-child) .angled-background-color {
     margin-bottom: 40px; }
 
 #block-komgodtigang .banner-content .container {
@@ -10958,45 +10960,6 @@ flex-direction: column;
 
 div[role=heading] {
   margin-top: 120px; }
-
-.views-field-field-vih-course-image .image-with-overlay {
-  height: 100%;
-  overflow: hidden; }
-
-.views-field-field-vih-course-image .image-with-overlay {
-  min-height: 150px; }
-
-.views-field-field-vih-course-image .image-with-overlay a {
-  color: #fff; }
-
-.views-field-field-vih-sc-image .image-with-overlay {
-  height: 100%;
-  overflow: hidden; }
-
-.views-field-field-vih-sc-image .image-with-overlay {
-  min-height: 150px; }
-
-.views-field-field-vih-sc-image .img-responsive {
-  display: block;
-  max-width: 120%;
-  height: auto; }
-
-.view-long-course-list- .view-content {
-  padding-bottom: 200px; }
-
-.view-short-course-list- .view-content {
-  padding-bottom: 200px; }
-
-.field--name-field-short-course .field--label {
-  display: none; }
-
-.field--name-field-long-course .field--label {
-  display: none; }
-
-.views-field-field-vih-course-image .img-responsive {
-  display: block;
-  max-width: 120%;
-  height: auto; }
 
 .layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__link.active > a {
   background-color: transparent !important; }
@@ -13845,6 +13808,7 @@ article.teaser .content {
   flex-direction: column;
   height: auto; }
   article.teaser .content .teaser-image {
+    width: 100%;
     position: relative; }
     article.teaser .content .teaser-image img {
       width: 100%; }
@@ -13883,15 +13847,21 @@ article.teaser .content {
             fill: #d3c000; }
           article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-green {
             fill: #00c808; }
-  article.teaser .content .teaser-text .field--name-body {
-    padding: 0;
-    margin: 0 !important;
-    font-size: 0.85em; }
-    article.teaser .content .teaser-text .field--name-body p {
-      color: #888;
-      font-weight: normal !important;
-      font-size: inherit;
-      text-transform: none; }
+  article.teaser .content .teaser-text {
+    padding: 10px; }
+    article.teaser .content .teaser-text .field--name-body {
+      padding: 0;
+      margin: 0 !important;
+      font-size: 0.85em; }
+      article.teaser .content .teaser-text .field--name-body p {
+        color: #888;
+        font-weight: normal !important;
+        font-size: inherit;
+        text-transform: none; }
+  article.teaser .content .teaser-button {
+    padding: 10px; }
+    article.teaser .content .teaser-button .btn, article.teaser .content .teaser-button .btn-arrow, article.teaser .content .teaser-button .field--name-field-link a, .field--name-field-link article.teaser .content .teaser-button a {
+      text-transform: uppercase; }
 
 @media (min-width: 768px) {
   article.teaser .content {
@@ -13915,16 +13885,14 @@ article.teaser .content {
         margin-bottom: 5px;
         margin-top: 5px; }
     article.teaser .content .teaser-image {
-      margin-right: 40px; }
-      article.teaser .content .teaser-image img {
-        min-width: 300px;
-        width: inherit; }
+      margin-right: 40px;
+      min-width: 300px;
+      width: 300px; }
     article.teaser .content .teaser-text {
+      padding: 0;
       marging-right: 40px; }
     article.teaser .content .teaser-button {
-      padding-right: 20px; }
-      article.teaser .content .teaser-button .btn, article.teaser .content .teaser-button .btn-arrow, article.teaser .content .teaser-button .field--name-field-link a, .field--name-field-link article.teaser .content .teaser-button a {
-        text-transform: uppercase; } }
+      padding: 0 20px 0 0; } }
 
 .node-teaser-news,
 .node-teaser-news h4,

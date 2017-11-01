@@ -29,6 +29,7 @@ article.teaser .content {
   height: auto;
 
   .teaser-image {
+    width: 100%;
     img {
       width: 100%;
     }
@@ -82,6 +83,7 @@ article.teaser .content {
   }
 
   .teaser-text {
+    padding: 10px;
     .field--name-body {
       padding: 0;
       margin: 0 !important;
@@ -92,6 +94,13 @@ article.teaser .content {
         font-size: inherit;
         text-transform: none;
       }
+    }
+  }
+
+  .teaser-button {
+    padding: 10px;
+    .btn {
+      text-transform: uppercase;
     }
   }
 }
@@ -142,22 +151,22 @@ article.teaser .content {
 
     .teaser-image {
       margin-right: 40px;
+      min-width: 300px;
+      width: 300px;
       img {
-        min-width: 300px;
-        width: inherit;
+        //min-width: 300px;
+        //width: inherit;
       }
 
     }
 
     .teaser-text {
+      padding: 0;
       marging-right: 40px;
     }
 
     .teaser-button {
-      padding-right: 20px;
-      .btn {
-        text-transform: uppercase;
-      }
+      padding: 0 20px 0 0;
     }
   }
 }
