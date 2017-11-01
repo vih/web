@@ -10708,10 +10708,6 @@ flex-direction: column;
 .path-taxonomy .layout__content .news-container {
   padding-bottom: 0px; }
 
-.layout__news .angled-background-color-white {
-  height: 20px;
-  padding-bottom: 20px; }
-
 .news-banner {
   height: 600px;
   display: -webkit-box;
@@ -11522,7 +11518,8 @@ div[role=heading] {
   margin-top: 55px; }
 
 .vih-btn-box {
-  margin-top: 32px; }
+  margin-top: 32px;
+  margin-bottom: 32px; }
 
 .modal-class div.field--name-description {
   padding: 10px 40px 10px 0; }
@@ -11621,9 +11618,6 @@ div[role=heading] {
 .modal-content .field--type-string {
   margin-bottom: 0 !important;
   margin-top: 0 !important; }
-
-.vih-price-box {
-  margin-bottom: 100px; }
 
 .path-node .field--name-body {
   width: 100%; }
@@ -13753,6 +13747,14 @@ form.vih-subscription-long-course-order-form article.user.compact {
   padding: 0; }
 
 .path-node.page-node-type-event .period-wrapper {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border: 1px solid #eeeeee;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #555;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -13764,16 +13766,9 @@ form.vih-subscription-long-course-order-form article.user.compact {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border: 1px solid #eeeeee;
-  text-transform: uppercase; }
-  .path-node.page-node-type-event .period-wrapper .period-wrapper__dates {
-    text-align: left;
-    font-weight: bold;
-    color: #555; }
+          align-items: center; }
+  .path-node.page-node-type-event .period-wrapper .field {
+    display: inline-block; }
 
 .page-node-type-vih-course-period .layout__document .layout__content article.vih-course-period {
   margin-bottom: 150px; }

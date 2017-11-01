@@ -6,11 +6,11 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.event.body
     - field.field.node.event.field_event_end_date
-    - field.field.node.event.field_event_paragraph
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_page_main_image
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_vih_event_persons_limit
     - node.type.event
   module:
@@ -45,18 +45,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
-    region: content
-  field_event_paragraph:
-    type: entity_reference_paragraphs
-    weight: 12
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
     region: content
   field_event_price:
     weight: 26
@@ -96,6 +84,18 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
+  field_paragraphs:
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   field_vih_event_persons_limit:
     weight: 1

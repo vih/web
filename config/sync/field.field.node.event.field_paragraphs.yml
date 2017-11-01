@@ -1,22 +1,22 @@
-uuid: ed1e163f-ac40-4385-b999-27e6fcc1aa6d
+uuid: 6b8123fa-28d4-4c1c-a15c-0d707d18ade5
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_paragraph
+    - field.storage.node.field_paragraphs
     - node.type.event
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
-id: node.event.field_event_paragraph
-field_name: field_event_paragraph
+id: node.event.field_paragraphs
+field_name: field_paragraphs
 entity_type: node
 bundle: event
-label: event_paragraph
+label: Sektioner
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -29,69 +29,69 @@ settings:
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
-        weight: 17
-      class_packages:
-        weight: 18
-        enabled: false
-      event_list:
-        weight: 19
-        enabled: false
-      list_of_news_teasers:
-        weight: 20
-        enabled: false
-      long_course_list_:
-        weight: 21
-        enabled: false
-      news_list:
-        weight: 22
-        enabled: false
-      page_content:
-        weight: 23
-        enabled: false
-      short_course_list_:
         weight: 24
-        enabled: false
-      video:
+      class_packages:
         weight: 25
         enabled: false
-      vih_course_slot:
+      event_list:
         weight: 26
         enabled: false
       file:
         weight: 27
         enabled: false
-      vih_option:
-        weight: 27
-        enabled: false
-      vih_option_group:
+      list_of_news_teasers:
         weight: 28
         enabled: false
-      vih_ordered_course_period:
+      long_course_list_:
         weight: 29
         enabled: false
-      vih_ordered_course_slot:
+      news_list:
         weight: 30
         enabled: false
-      vih_ordered_option:
+      page_content:
         weight: 31
         enabled: false
-      vih_teacher_class_description:
+      short_course_list_:
         weight: 32
         enabled: false
       user_quote:
         weight: 33
         enabled: false
+      video:
+        weight: 34
+        enabled: false
       vih_class_groups_accordion:
         weight: 35
+        enabled: false
+      vih_course_slot:
+        weight: 36
+        enabled: false
+      vih_option:
+        weight: 37
+        enabled: false
+      vih_option_group:
+        weight: 38
+        enabled: false
+      vih_ordered_course_period:
+        weight: 39
         enabled: false
       vih_ordered_course_person:
         weight: 40
         enabled: false
+      vih_ordered_course_slot:
+        weight: 41
+        enabled: false
       vih_ordered_event_person:
         weight: 42
         enabled: false
+      vih_ordered_option:
+        weight: 43
+        enabled: false
       vih_single_class_group:
         weight: 44
+        enabled: false
+      vih_teacher_class_description:
+        weight: 45
         enabled: false
       vih_webform:
         enabled: true

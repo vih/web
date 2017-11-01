@@ -900,11 +900,6 @@ flex-direction: column;
   padding-bottom: 0px;
 }
 
-.layout__news .angled-background-color-white {
-  height: 20px;
-  padding-bottom: 20px;
-}
-
 .news-banner {
   height: 600px;
   display: flex;
@@ -1667,6 +1662,7 @@ div[role=heading] {
 
 .vih-btn-box {
   margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .modal-class div.field--name-description {
@@ -1761,10 +1757,6 @@ div[role=heading] {
   margin-bottom: 0!important;
   margin-top: 0!important;
 }
-.vih-price-box {
-  margin-bottom: 100px;
-}
-
 
 // Page node
 

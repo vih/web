@@ -38,31 +38,24 @@
                 </div>
               </div>
             </div>
-
-            <div class="container news-container">
-              {{ page.header }}
-              {{ page.breadcrumb }}
-              <hr>
-              {% if node.title.value %}
-                <h3 class="node-page-title">{{ node.title.value }}</h3>
-              {% endif %}
-
-
-              <br/><br/>
-            </div>
-            {% if node and node.getType == 'page' %}
-              {{ page.content }}
-            {% else %}
-              {{ page.content }}
-
-            {% endif %}
-
-
           </div>
         {% endblock %}
       {% endif %}
 
-
+      <div class="container news-container">
+        {{ page.header }}
+        {{ page.breadcrumb }}
+        <hr>
+        {% if node.title.value %}
+          <h3 class="node-page-title">{{ node.title.value }}</h3>
+        {% endif %}
+        <br/><br/>
+      </div>
+        {% if node and node.getType == 'page' %}
+          {{ page.content }}
+        {% else %}
+          {{ page.content }}
+        {% endif %}
     </div>
     <!-- End - content -->
 
