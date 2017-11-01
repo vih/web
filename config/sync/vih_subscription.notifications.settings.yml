@@ -1,11 +1,11 @@
 vih_subscription_long_course_notifications_subject: 'Order of @subject_name'
-vih_subscription_long_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name."
+vih_subscription_long_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\nThe course will take place on @date, more information available here: @url."
 vih_subscription_short_course_notifications_subject: 'Order of @subject_name'
-vih_subscription_short_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name."
+vih_subscription_short_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\nThe course will take place on @date, more information available here: @url."
 vih_subscription_event_notifications_subject: 'Order of @subject_name'
-vih_subscription_event_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name."
+vih_subscription_event_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name.\r\nThe event will take place on @date, more information available here: @url."
 submit: 'Gem indstillinger'
-form_build_id: form-7SRH1N2ursm1n8wcB2Iz4VMOAdNMkE8EoHHQFyzfvLg
-form_token: k5U5_cyIRfICw6s-UUMpyFDQXVx3sEJ8zqbjc2PfRdk
+form_build_id: form-hTnxm0Jv215ljXYLRCcr1fHXp4uyZsbMa90_0TuEaNU
+form_token: zlWGvZr15OIHkB2Vbh5uU5rnE7XJ64rVMaEWRDQ0lzA
 form_id: vih_subscription_notifications_settings_form
 op: 'Gem indstillinger'
