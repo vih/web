@@ -11861,9 +11861,6 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
 .paragraph--type--file .angled-background-inner:before {
   background: none !important; }
 
-.banner, .banner-logo {
-  height: 90vh !important; }
-
 @media only screen and (min-width: 980px) {
   .logo-wrapper-mobile {
     width: 0px !important;
@@ -11959,6 +11956,9 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   .search-content div[role=heading] {
     margin-top: 40px; } }
 
+.banner, .banner-logo {
+  max-height: 90vh !important; }
+
 .path-frontpage div[role=heading] {
   display: none; }
 
@@ -11986,9 +11986,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
   position: relative; }
 
 @media only screen and (max-width: 1260px) {
-  .banner-logo {
-    height: 65vh !important; }
-  .banner {
+  .banner, .banner-logo {
     max-height: 70vh !important; }
   .banner .banner-content {
     height: 40vh !important; } }
