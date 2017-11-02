@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_e_mail
-    - field.field.user.user.field_relateret
     - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
@@ -18,21 +17,11 @@ dependencies:
     - image
     - text
     - user
-    - viewsreference
 id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_relateret:
-    weight: 4
-    label: above
-    settings:
-      plugin_types:
-        - block
-    third_party_settings: {  }
-    type: viewsreference_formatter
-    region: content
   field_user_kvalifikationer:
     weight: 5
     label: above

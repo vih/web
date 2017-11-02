@@ -12,25 +12,52 @@ id: paragraph.long_course_list_.field_long_course
 field_name: field_long_course
 entity_type: paragraph
 bundle: long_course_list_
-label: 'long course'
+label: 'Long course'
 description: ''
 required: false
 translatable: false
 default_value:
   -
-    display_id: ''
-    argument: ''
+    options:
+      title: 0
+      argument: ''
+    display_id: default
+    argument: null
     title: 0
+    data: null
     target_uuid: 8f3223a9-25a0-4a01-bc0c-bc024be33fbc
 default_value_callback: ''
 settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
   plugin_types:
     block: block
     default: 0
-    page: 0
     embed: 0
+    page: 0
     feed: 0
     entity_browser: 0
-  handler: 'default:view'
-  handler_settings: {  }
+  preselect_views:
+    block_content: 0
+    class_packages_frontpage: 0
+    contact_messages: 0
+    content: 0
+    content_recent: 0
+    eventside: 0
+    files: 0
+    frontpage: 0
+    kurser_relateret_til_laere: 0
+    long_course_list_: 0
+    media: 0
+    moderation_history: 0
+    news: 0
+    nyhedsside: 0
+    short_course_list_: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    vih_search: 0
+    who_s_new: 0
+    who_s_online: 0
 field_type: viewsreference

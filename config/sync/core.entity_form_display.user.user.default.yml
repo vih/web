@@ -5,7 +5,6 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.user.user.field_e_mail
-    - field.field.user.user.field_relateret
     - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
@@ -18,7 +17,6 @@ dependencies:
   module:
     - entity_browser
     - user
-    - viewsreference
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -33,12 +31,6 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_relateret:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: viewsreference_select
     region: content
   field_user_kvalifikationer:
     weight: 2

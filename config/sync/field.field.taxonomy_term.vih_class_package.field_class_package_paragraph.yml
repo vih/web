@@ -35,8 +35,8 @@ settings:
       1_column_action_centered: 1_column_action_centered
       event_list: event_list
       list_of_news_teasers: list_of_news_teasers
-      long_course_list_: long_course_list_
       file: file
+      long_course_list_: long_course_list_
       news_list: news_list
       short_course_list_: short_course_list_
       video: video
@@ -55,10 +55,10 @@ settings:
       list_of_news_teasers:
         enabled: true
         weight: 20
-      long_course_list_:
+      file:
         enabled: true
         weight: 21
-      file:
+      long_course_list_:
         enabled: true
         weight: 21
       news_list:
@@ -79,17 +79,8 @@ settings:
       vih_option:
         weight: 27
         enabled: false
-      class:
-        weight: 27
-        enabled: false
-      class_package:
-        weight: 28
-        enabled: false
       vih_option_group:
         weight: 28
-        enabled: false
-      class_package_accordion:
-        weight: 29
         enabled: false
       vih_ordered_course_period:
         weight: 29
@@ -112,10 +103,13 @@ settings:
       vih_ordered_course_person:
         weight: 45
         enabled: false
+      vih_webform:
+        weight: 46
+        enabled: false
       vih_ordered_event_person:
         weight: 47
         enabled: false
       vih_single_class_group:
-        weight: 49
+        weight: -47
         enabled: false
 field_type: entity_reference_revisions

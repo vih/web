@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_e_mail
-    - field.field.user.user.field_relateret
     - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
@@ -76,7 +75,6 @@ content:
     region: content
 hidden:
   field_e_mail: true
-  field_relateret: true
   field_user_birthday: true
   field_user_kvalifikationer: true
   field_user_picture: true
