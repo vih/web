@@ -35,12 +35,14 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_meta_tags:
     type: metatag_empty_formatter
     weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 4
@@ -49,14 +51,17 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   links:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   workbench_moderation_control:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_page_main_image: true
   langcode: true

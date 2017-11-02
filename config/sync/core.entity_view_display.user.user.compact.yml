@@ -4,9 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_e_mail
+    - field.field.user.user.field_relateret
     - field.field.user.user.field_user_birthday
+    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
+    - field.field.user.user.field_user_picture
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -28,6 +32,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_user_name_last:
     weight: 3
     label: hidden
@@ -35,6 +40,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_vih_user_descr:
     type: text_trimmed
     weight: 5
@@ -42,6 +48,7 @@ content:
     settings:
       trim_length: 150
     third_party_settings: {  }
+    region: content
   field_vih_user_phone:
     type: string
     weight: 4
@@ -49,6 +56,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_vih_user_photo:
     type: image
     weight: 1
@@ -57,6 +65,7 @@ content:
       image_style: vih_person_teaser
       image_link: ''
     third_party_settings: {  }
+    region: content
   field_vih_user_title:
     type: string
     weight: 0
@@ -64,7 +73,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
+  field_e_mail: true
+  field_relateret: true
   field_user_birthday: true
+  field_user_kvalifikationer: true
+  field_user_picture: true
   langcode: true
   member_for: true

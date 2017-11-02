@@ -38,6 +38,7 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
   field_description:
     weight: 4
     settings:

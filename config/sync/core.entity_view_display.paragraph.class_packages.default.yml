@@ -22,6 +22,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_heading:
     weight: 2
     label: hidden
@@ -29,5 +30,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   field_background_color: true

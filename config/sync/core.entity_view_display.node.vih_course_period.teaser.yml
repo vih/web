@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.vih_course_period.body
+    - field.field.node.vih_course_period.field_vih_cp_course_slots
+    - field.field.node.vih_course_period.field_vih_cp_end_date
+    - field.field.node.vih_course_period.field_vih_cp_start_date
     - node.type.vih_course_period
   module:
     - text
@@ -21,8 +24,10 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   field_vih_cp_course_slots: true
   field_vih_cp_end_date: true

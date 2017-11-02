@@ -3,13 +3,13 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.paragraph.list_of_news_teasers.field_background_color
     - field.field.paragraph.list_of_news_teasers.field_background_image
     - field.field.paragraph.list_of_news_teasers.field_heading
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.list_of_news_teasers
   module:
-    - image
+    - entity_browser
     - workbench_moderation
 id: paragraph.list_of_news_teasers.default
 targetEntityType: paragraph
@@ -21,6 +21,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_background_image:
     type: entity_browser_file
     weight: 8
@@ -33,6 +34,7 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
   field_heading:
     weight: 6
     settings:
@@ -40,6 +42,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

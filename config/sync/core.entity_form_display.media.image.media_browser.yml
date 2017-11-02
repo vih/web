@@ -24,6 +24,7 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+    region: content
   image:
     type: image_image
     weight: 0
@@ -31,11 +32,13 @@ content:
       preview_image_style: medium
       progress_indicator: throbber
     third_party_settings: {  }
+    region: content
   langcode:
     type: language_select
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: 3
@@ -43,6 +46,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   uid: true

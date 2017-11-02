@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.vih_class_package_accordion
+    - field.field.taxonomy_term.vih_class_package.field_class_package_paragraph
+    - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
@@ -26,6 +28,7 @@ content:
     settings:
       trim_length: 200
     third_party_settings: {  }
+    region: content
   field_vih_cp_image:
     type: image
     weight: 0
@@ -34,7 +37,10 @@ content:
       image_style: vih_class_package_accordion
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
+  field_class_package_paragraph: true
+  field_link_taxo: true
   field_vih_class_package_color: true
   field_vih_cp_description: true
   field_vih_cp_subtitle: true

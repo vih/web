@@ -18,6 +18,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_vih_ocs_title:
     weight: 0
     label: above
@@ -25,4 +26,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden: {  }

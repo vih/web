@@ -25,6 +25,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
   field_background_image:
     type: entity_browser_file
     weight: 4
@@ -37,6 +38,7 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
   field_description:
     weight: 1
     settings:
@@ -44,6 +46,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_heading:
     weight: 0
     settings:
@@ -51,6 +54,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_link:
     weight: 2
     settings:
@@ -61,6 +65,7 @@ content:
       link_class_select: ''
     third_party_settings: {  }
     type: link_class_field_widget
+    region: content
 hidden:
   created: true
   status: true

@@ -9,11 +9,9 @@ dependencies:
     - field.field.paragraph.user_quote.field_heading
     - field.field.paragraph.user_quote.field_paragraph_person_photo
     - field.field.paragraph.user_quote.field_paragraph_text
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.user_quote
   module:
     - entity_browser
-    - image
     - text
     - workbench_moderation
 id: paragraph.user_quote.default
@@ -39,6 +37,7 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
   field_heading:
     weight: 0
     settings:
