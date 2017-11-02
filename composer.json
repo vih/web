@@ -41,7 +41,9 @@
         "lsolesen/edbbrugs-php-sdk": "^0.2.0",
         "quickpay/quickpay-php-client": "^1.0",
         "drupal/webform": "^5.0@beta",
-        "drupal/examples": "1.x-dev"
+        "drupal/examples": "1.x-dev",
+        "drupal/layout_plugin": "^1.0@alpha",
+        "drupal/page_manager": "^4.0@beta"
     },
     "repositories": [
         {
