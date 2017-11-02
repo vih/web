@@ -20,6 +20,7 @@ module:
   editor: 0
   embed: 0
   entity: 0
+  entity_block: 0
   entity_browser: 0
   entity_embed: 0
   entity_reference: 0
@@ -35,7 +36,6 @@ module:
   inline_entity_form: 0
   kint: 0
   language: 0
-  layout_plugin: 0
   lightning: 0
   lightning_core: 0
   lightning_layout: 0
@@ -55,6 +55,7 @@ module:
   mailchimp_campaign: 0
   mailchimp_lists: 0
   mailchimp_signup: 0
+  media: 0
   media_entity: 0
   media_entity_document: 0
   media_entity_image: 0
@@ -65,7 +66,6 @@ module:
   node: 0
   options: 0
   page_cache: 0
-  page_manager: 0
   panelizer: 0
   panels: 0
   panels_ipe: 0
