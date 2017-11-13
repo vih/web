@@ -15,7 +15,14 @@ dependencies:
     - taxonomy.vocabulary.vih_class
   module:
     - image
+    - panelizer
     - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: taxonomy_term.vih_class.radio_selection
 targetEntityType: taxonomy_term
 bundle: vih_class

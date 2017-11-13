@@ -1,0 +1,91 @@
+// |--------------------------------------------------------------------------
+// | Content
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sectioned--content
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin sectioned-content-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.sectioned--content {
+
+  .sectioned__inner {
+    padding-top: 0;
+    padding-bottom: floor( ( ( 1px * $xs-sectioned-skewed-angle-height ) + $xs-sectioned-inner-spacing ) );
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  .sectioned--content {
+
+    .sectioned__inner {
+      padding-bottom: floor( ( ( 1px * $sm-sectioned-skewed-angle-height ) + $sm-sectioned-inner-spacing ) );
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  .sectioned--content {
+
+    .sectioned__inner {
+      padding-bottom: floor( ( ( 1px * $md-sectioned-skewed-angle-height ) + $md-sectioned-inner-spacing ) );
+    }
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  .sectioned--content {
+
+    .sectioned__inner {
+      padding-bottom: floor( ( ( 1px * $lg-sectioned-skewed-angle-height ) + $lg-sectioned-inner-spacing ) );
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

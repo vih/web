@@ -20,7 +20,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
   field_vih_ocp_order_course_slots:
     type: entity_reference_revisions_entity_view
     weight: 1
@@ -29,5 +28,4 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
 hidden: {  }

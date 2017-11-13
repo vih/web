@@ -1,0 +1,159 @@
+// |--------------------------------------------------------------------------
+// | User compact
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .user.compact
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// User profile
+
+.user.compact {
+
+  td {
+    padding: 20px;
+    vertical-align: middle;
+
+    &.user-image {
+      padding: 0;
+      width: 242px;
+      min-height: 248px;
+
+      .field--name-field-vih-user-photo {
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+
+        .svg-container-polygon {
+          display: inline-block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          vertical-align: middle;
+          overflow: hidden;
+
+          .svg-content-polygon {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            polygon {
+              opacity: 0.75;
+
+              &.color-red {
+                fill: $brand-red;
+              }
+              &.color-blue {
+                fill: $brand-primary;
+              }
+              &.color-cyan {
+                fill: $brand-cyan;
+              }
+              &.color-purple {
+                fill: $brand-quaternary;
+              }
+              &.color-yellow {
+                fill: $brand-yellow;
+              }
+              &.color-green {
+                fill: $brand-tertiary;
+              }
+            }
+          }
+        }
+
+        .field--name-field-vih-user-title {
+          bottom: 0;
+          right: 10px;
+          text-align: right;
+          width: 100%;
+          position: absolute;
+        }
+
+      }
+    }
+  }
+
+  .teacher-mail, .teacher-phone {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .teacher-contact-info {
+    color: $headings-color;
+
+    text-transform: uppercase;
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    h5 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+}
+
+// Print
+@media print {
+}
+
+// Touch
+.touchevents {
+}
+
+// No touch
+.no-touchevents {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------

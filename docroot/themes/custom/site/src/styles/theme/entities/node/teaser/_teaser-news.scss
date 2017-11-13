@@ -1,0 +1,119 @@
+// |--------------------------------------------------------------------------
+// | Teaser
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .node-teaser-news
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.node-teaser-news {
+
+  &,
+  h4 {
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  &,
+  .card-published-at {
+    font-size: 0.9em;
+    color: $brand-attention;
+  }
+  .field--name-body {
+
+    &,
+    p {
+      color: #928f8f;
+      font-size: 0.90em;
+      line-height: 20px;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 20px;
+    }
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Print
+@media print {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// Touch
+.touchevents {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// No touch
+.no-touchevents {
+
+  // Teaser
+  .node-teaser-news { }
+}
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Teaser mixin
+@mixin node-mixin-teaser() { }

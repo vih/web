@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.vih_class_table_teaser
-    - field.field.taxonomy_term.vih_class.field_class_package_paragraph
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
@@ -28,7 +27,6 @@ content:
     settings:
       trim_length: 150
     third_party_settings: {  }
-    region: content
   field_vih_class_image:
     type: image
     weight: 0
@@ -37,9 +35,7 @@ content:
       image_style: vih_class_teaser
       image_link: ''
     third_party_settings: {  }
-    region: content
 hidden:
-  field_class_package_paragraph: true
   field_vih_class_class_packages: true
   field_vih_class_color: true
   field_vih_class_material_price: true

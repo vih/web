@@ -20,7 +20,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
   field_vih_cs_mandatory:
     weight: 1
     label: above
@@ -30,7 +29,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
   field_vih_cs_title:
     weight: 0
     label: above
@@ -38,7 +36,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
   field_vih_cs_travel:
     weight: 3
     label: above
@@ -48,5 +45,4 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
 hidden: {  }

@@ -1,0 +1,217 @@
+// |--------------------------------------------------------------------------
+// | Skewed
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sectioned--skewed
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$sectioned-skew-angle: 4deg;
+
+// Colors
+$sectioned-skewed-background-color-white: #fff;
+$sectioned-skewed-background-color-light-gray: #ecf2f4;
+$sectioned-skewed-background-color-gray: #f5f5f5;
+$sectioned-skewed-background-color-primary: $brand-primary;
+$sectioned-skewed-background-color-secondary: $brand-secondary;
+
+// Responsive
+$xs-sectioned-skewed-angle-height: 90;  // In pixels
+$sm-sectioned-skewed-angle-height: 120; // In pixels
+$md-sectioned-skewed-angle-height: 150; // In pixels
+$lg-sectioned-skewed-angle-height: 180; // In pixels
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin sectioned-skewed-mixin-background-color($background-color, $height: 100) {
+  //padding-top: ($height * 1px);
+  padding-bottom: ($height * 1px);
+
+  background-color: $background-color;
+
+  @include angled-edge('outside top', 'upper right', $background-color, $height);
+  @include angled-edge('inside bottom', 'lower left', $background-color, $height);
+
+  .sectioned__inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.sectioned--skewed--background-image {
+  position: relative;
+
+  background-color: transparent !important;
+
+  .angled-background-image-wrapper {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: block;
+    content: "";
+    min-height: 100%;
+    background-color: #fff;
+    z-index: -1;
+
+    @include backface-visibility(hidden);
+
+    .angled-background-image-element {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+}
+
+.sectioned--skewed--background-color {
+
+  &.sectioned--skewed--background-color-white {
+    @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-white, $xs-sectioned-skewed-angle-height);
+  }
+
+  &.sectioned--skewed--background-color-light-gray {
+    @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-light-gray, $xs-sectioned-skewed-angle-height);
+  }
+
+  &.sectioned--skewed--background-color-gray {
+    @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-gray, $xs-sectioned-skewed-angle-height);
+  }
+
+  &.sectioned--skewed--background-color-primary {
+    @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-primary, $xs-sectioned-skewed-angle-height);
+  }
+
+  &.sectioned--skewed--background-color-secondary {
+    @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-secondary, $xs-sectioned-skewed-angle-height);
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  .sectioned--skewed--background-color {
+
+    &.sectioned--skewed--background-color-white {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-white, $sm-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-light-gray {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-light-gray, $sm-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-gray {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-gray, $sm-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-primary {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-primary, $sm-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-secondary {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-secondary, $sm-sectioned-skewed-angle-height);
+    }
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  .sectioned--skewed--background-color {
+
+    &.sectioned--skewed--background-color-white {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-white, $md-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-light-gray {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-light-gray, $md-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-gray {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-gray, $md-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-primary {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-primary, $md-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-secondary {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-secondary, $md-sectioned-skewed-angle-height);
+    }
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  .sectioned--skewed--background-color {
+
+    &.sectioned--skewed--background-color-white {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-white, $lg-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-light-gray {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-light-gray, $lg-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-gray {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-gray, $lg-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-primary {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-primary, $lg-sectioned-skewed-angle-height);
+    }
+
+    &.sectioned--skewed--background-color-secondary {
+      @include sectioned-skewed-mixin-background-color($sectioned-skewed-background-color-secondary, $lg-sectioned-skewed-angle-height);
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

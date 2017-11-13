@@ -1,0 +1,200 @@
+// |--------------------------------------------------------------------------
+// | Angled background
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .angled-background-color
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Angled background
+$angled-background-angle: 5deg;
+$angled-background-padding-top: 10px;
+$angled-background-padding-bottom: 140px;
+
+// Responsive
+$xs-angled-background-padding-top: 10px;
+$xs-angled-background-padding-bottom: 50px;
+
+$sm-angled-background-padding-top: 10px;
+$sm-angled-background-padding-bottom: 70px;
+
+$md-angled-background-padding-top: 10px;
+$md-angled-background-padding-bottom: 140px;
+
+$lg-angled-background-padding-top: 10px;
+$lg-angled-background-padding-bottom: 140px;
+
+// Variants
+$angled-background-color-white: #fff;
+$angled-background-color-light-gray: #ecf2f4;
+$angled-background-color-gray: #f5f5f5;
+$angled-background-color-primary: $brand-primary;
+$angled-background-color-secondary: $brand-secondary;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Color
+.angled-background-color {}
+
+// Image
+.angled-background-image {}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Angled background
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: $xs-angled-background-padding-top;
+    padding-bottom: $xs-angled-background-padding-bottom;
+  }
+
+  // Color
+  .angled-background-color {
+
+    .angled-background-inner {
+
+      &:before {
+        margin-top: -$xs-angled-background-padding-top;
+        margin-bottom: -$xs-angled-background-padding-bottom;
+      }
+    }
+  }
+
+  // Image
+  .angled-background-image {
+
+    .angled-background-image-wrapper {
+      margin-top: -$xs-angled-background-padding-top;
+      margin-bottom: -$xs-angled-background-padding-bottom;
+    }
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Angled background
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: $sm-angled-background-padding-top;
+    padding-bottom: $sm-angled-background-padding-bottom;
+  }
+
+  // Color
+  .angled-background-color {
+
+    .angled-background-inner {
+
+      &:before {
+        margin-top: -$sm-angled-background-padding-top;
+        margin-bottom: -$sm-angled-background-padding-bottom;
+      }
+    }
+  }
+
+  // Image
+  .angled-background-image {
+
+    .angled-background-image-wrapper {
+      margin-top: -$sm-angled-background-padding-top;
+      margin-bottom: -$sm-angled-background-padding-bottom;
+    }
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Angled background
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: $md-angled-background-padding-top;
+    padding-bottom: $md-angled-background-padding-bottom;
+  }
+
+  // Color
+  .angled-background-color {
+
+    .angled-background-inner {
+
+      &:before {
+        margin-top: -$md-angled-background-padding-top;
+        margin-bottom: -$md-angled-background-padding-bottom;
+      }
+    }
+  }
+
+  // Image
+  .angled-background-image {
+
+    .angled-background-image-wrapper {
+      margin-top: -$md-angled-background-padding-top;
+      margin-bottom: -$md-angled-background-padding-bottom;
+    }
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Angled background
+  .angled-background-color,
+  .angled-background-image {
+    padding-top: $lg-angled-background-padding-top;
+    padding-bottom: $lg-angled-background-padding-bottom;
+  }
+
+  // Color
+  .angled-background-color {
+
+    .angled-background-inner {
+
+      &:before {
+        margin-top: -$lg-angled-background-padding-top;
+        margin-bottom: -$lg-angled-background-padding-bottom;
+      }
+    }
+  }
+
+  // Image
+  .angled-background-image {
+
+    .angled-background-image-wrapper {
+      margin-top: -$lg-angled-background-padding-top;
+      margin-bottom: -$lg-angled-background-padding-bottom;
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

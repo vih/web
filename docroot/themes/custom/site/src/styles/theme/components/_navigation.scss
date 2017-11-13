@@ -1,0 +1,124 @@
+// |--------------------------------------------------------------------------
+// | Navigation
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .navigation-wrapper
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$navigation-wrapper-bg-color: $body-bg;
+
+$navigation-top-padding-top-bottom: 20px;
+
+$navigation-bottom-border-width: 4px;
+$navigation-bottom-border-color: #fff;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Navigation
+.navigation-wrapper {
+  background-color: $navigation-wrapper-bg-color;
+
+  .navigation-top {
+    padding: $navigation-top-padding-top-bottom 0;
+  }
+
+  .navigation-bottom {
+    border-top: $navigation-bottom-border-width solid $navigation-bottom-border-color;
+    width: 96%;
+    margin: auto;
+  }
+}
+.layout-navigation.layout-navigation--full-width.layout--large-screen-only{
+  position: relative;
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Print
+@media print {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// Touch
+.touchevents {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Navigation
+  .navigation-wrapper {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Navigation mixin
+@mixin mixin-navigation-wrapper() {}

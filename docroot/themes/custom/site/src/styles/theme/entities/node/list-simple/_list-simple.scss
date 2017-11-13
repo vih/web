@@ -1,0 +1,169 @@
+// |--------------------------------------------------------------------------
+// | Simple list
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .node-list-simple
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// List
+.node-list-simple {
+
+  .node-list-simple-profile-image {
+    width: 45px;
+
+    img {
+      @extend .img-circle;
+      width: 36px;
+    }
+  }
+
+  .node-list-simple-full-name {
+
+    &,
+    a {
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        color: $text-color;
+      }
+    }
+  }
+
+  .node-list-simple-treatment-center {
+    color: $brand-tertiary;
+  }
+
+  .dived-table-cell {
+    vertical-align: middle;
+  }
+}
+
+.node-list-simple-updated-at {
+  font-weight: $font-weight-bold;
+  color: $brand-primary;
+}
+
+.node-list-simple-title {
+  @extend .heading-h3;
+}
+
+.views-row {
+
+  .node-list-simple {
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:first-child {
+
+    .node-list-simple {
+      padding-top: 0;
+    }
+  }
+
+  &:last-child {
+
+    .node-list-simple {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // List
+  .node-list-simple {}
+}
+
+// Print
+@media print {
+
+  // List
+  .node-list-simple {}
+}
+
+// Touch
+.touchevents {
+
+  // List
+  .node-list-simple {}
+}
+
+// No touch
+.no-touchevents {
+
+  // List
+  .node-list-simple {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// List mixin
+@mixin node-mixin-list() {}

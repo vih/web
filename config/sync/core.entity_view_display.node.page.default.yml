@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.page.field_meta_tags
     - field.field.node.page.field_page_main_image
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_vih_course_heading
+    - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
     - node.type.page
@@ -51,6 +53,22 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_vih_course_heading:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_course_subheading:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 2

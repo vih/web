@@ -1,0 +1,190 @@
+// |--------------------------------------------------------------------------
+// | Panel
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .panel
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin panel-type-mixin($background-color) {
+
+  .panel-title {
+
+    &:before {
+      background-color: $background-color;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.panel-group {
+  margin-bottom: 0;
+
+  border-bottom: 0;
+
+  .panel {
+    @include box-shadow(none);
+
+    border-width: 0;
+
+    + .panel {
+      margin-top: 0;
+
+      .panel-heading {
+        border-top: 1px solid $border-color;
+      }
+    }
+  }
+}
+
+.panel-heading {
+  padding: 0;
+}
+
+.panel-title {
+  padding: 0;
+  margin: 0;
+
+  > a,
+  > span {
+    display: block;
+
+    padding: $panel-heading-padding;
+  }
+
+  > a {
+    position: relative;
+
+    &:after {
+      position: absolute;
+
+      top: 50%;
+      right: floor( ( $grid-gutter-width / 2 ) );
+      margin-top: -13px;
+
+      content: "–";
+
+      font-size: 20px;
+      color: #000;
+    }
+
+    &.collapsed {
+
+      &:after {
+        content: "+";
+      }
+    }
+
+    &, &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.panel-image {
+  background-color: #fff;
+
+  @include angled-edge('inside bottom', 'upper right', #fff, 50);
+
+  + .panel-body {
+    padding-top: 0;
+  }
+}
+
+// Panel group heading
+.panel-group__heading {
+  background-color: $btn-primary-bg;
+}
+.panel-group__heading__title {
+  margin: 0;
+  padding: $panel-heading-padding;
+
+  color: $btn-primary-color;
+}
+
+.panel-group__body {
+  margin-bottom: $grid-gutter-width;
+}
+
+.panel-body {
+
+  .form-group {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.panel-type--color-blue {
+  @include panel-type-mixin($brand-primary);
+}
+
+.panel-type--color-red {
+  @include panel-type-mixin($brand-red);
+}
+
+.panel-type--color-green {
+  @include panel-type-mixin($brand-tertiary);
+}
+
+.panel-type--color-yellow {
+  @include panel-type-mixin($brand-yellow);
+}
+
+.panel-type--color-cyan {
+  @include panel-type-mixin($brand-cyan);
+}
+
+.panel-type--color-purple {
+  @include panel-type-mixin($brand-quaternary);
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

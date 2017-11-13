@@ -1,0 +1,52 @@
+{%
+set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+]
+%}
+
+<a href="{{ url }}" class="element-wrapper-link entity-list-advanced entity-list-advanced--short-course">
+
+    <!-- Begin - image -->
+    <div class="entity-list-advanced__image">
+
+        {# Begin - image #}
+        {{ content.field_vih_sc_image }}
+        {# End - image #}
+
+        {# Begin - period #}
+        {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
+            <div class="entity-list-advanced__image__overlay">
+                {{ content.field_vih_sc_start_date }} - {{ content.field_vih_sc_end_date }}
+            </div>
+        {% endif %}
+        {# End - period #}
+
+    </div>
+    <!-- End - image -->
+
+    <!-- Begin - body -->
+    <div class="entity-list-advanced__body">
+
+        <div class="entity-list-advanced__heading">
+            <h2 class="entity-list-advanced__heading__title heading-h4">{{ label }}</h2>
+        </div>
+
+        {# Begin - body #}
+        {{ content.body }}
+        {# End - body #}
+
+    </div>
+    <!-- End - body -->
+
+    <!-- Begin - action -->
+    <div class="entity-list-advanced__action">
+        <button class="btn btn-default">{{ 'Read more' | trans }}</button>
+    </div>
+    <!-- End - action -->
+
+</a>

@@ -1,28 +1,26 @@
-{%
-set classes = [
+{% set classes = [
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-]
-%}
+] %}
 <div{{ attributes.addClass(classes) }}>
 
-  {% if background_image %}
-    <div class="angled-background-image-wrapper">
-      <div class="cover-overlay"></div>
-      <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+    {% if background_image %}
+        <div class="angled-background-image-wrapper">
+            <div class="cover-overlay"></div>
+            <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="row teacher-c-desc">
+            <div class="col-lg-3 col-md-3">
+                {{ content.field_photo }}
+            </div>
+            <div class="col-lg-9 col-md-9">
+                {{ content.field_heading }}
+                {{ content.field_description }}
+                {{ content.field_paragraph_user }}
+            </div>
+        </div>
     </div>
-  {% endif %}
-  <div class="container">
-    <div class="row teacher-c-desc">
-      <div class="col-lg-3 col-md-3">
-        {{ content.field_photo }}
-      </div>
-      <div class="col-lg-9 col-md-9">
-        {{ content.field_heading }}
-        {{ content.field_description }}
-        {{ content.field_paragraph_user }}
-      </div>
-    </div>
-  </div>
 </div>

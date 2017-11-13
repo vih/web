@@ -1,0 +1,169 @@
+// |--------------------------------------------------------------------------
+// | Advanced list
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .node-list-advanced
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// List
+.node-list-advanced {
+
+  .node-list-advanced-profile-image {
+    width: 70px;
+
+    img {
+      @extend .img-circle;
+      width: 58px;
+    }
+  }
+
+  .node-list-advanced-full-name {
+
+    &,
+    a {
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        color: $headings-color;
+      }
+    }
+  }
+
+  .node-list-advanced-treatment-center {
+    color: $brand-tertiary;
+  }
+
+  .dived-table-cell {
+    vertical-align: middle;
+  }
+}
+
+.node-list-advanced-updated-at {
+  font-weight: $font-weight-bold;
+  color: $brand-primary;
+}
+
+.node-list-advanced-title {
+  @extend .heading-h3;
+}
+
+.views-row {
+
+  .node-list-advanced {
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:first-child {
+
+    .node-list-advanced {
+      padding-top: 0;
+    }
+  }
+
+  &:last-child {
+
+    .node-list-advanced {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Print
+@media print {
+
+  // List
+  .node-list-advanced {}
+}
+
+// Touch
+.touchevents {
+
+  // List
+  .node-list-advanced {}
+}
+
+// No touch
+.no-touchevents {
+
+  // List
+  .node-list-advanced {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// List mixin
+@mixin node-mixin-list() {}

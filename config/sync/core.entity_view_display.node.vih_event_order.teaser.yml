@@ -4,10 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.vih_event_order.field_vih_eo_event
-    - field.field.node.vih_event_order.field_vih_eo_persons
-    - field.field.node.vih_event_order.field_vih_eo_price
-    - field.field.node.vih_event_order.field_vih_eo_status
     - node.type.vih_event_order
   module:
     - user
@@ -22,6 +18,4 @@ content:
 hidden:
   field_vih_eo_event: true
   field_vih_eo_persons: true
-  field_vih_eo_price: true
-  field_vih_eo_status: true
   langcode: true

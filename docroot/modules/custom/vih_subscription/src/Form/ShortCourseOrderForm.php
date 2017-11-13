@@ -25,7 +25,6 @@ use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
  * Implements an example form.
  */
 class ShortCourseOrderForm extends FormBase {
-
   protected $course;
   protected $courseOrder;
   protected $price;

@@ -1,0 +1,125 @@
+// |--------------------------------------------------------------------------
+// | Partial
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .partial
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$partial-bottom-spacing: $grid-gutter-width;
+
+$partial-heading-title-color: $headings-color;
+$partial-subheading-title-color: $text-color-light;
+
+$partial-heading-body-spacing: 10px;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin partial-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.partial {
+  margin-bottom: $partial-bottom-spacing;
+}
+
+// Heading
+.partial__heading {
+
+  + .partial__subheading {
+    margin-top: 5px;
+  }
+}
+.partial__heading__title {
+  display: flex;
+
+  align-items: center;
+
+  margin: 0;
+
+  color: $partial-heading-title-color;
+
+  .icon {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+
+    height: 30px;
+    width: 30px;
+
+    font-size: $font-size-large;
+
+    color: $text-color-light;
+    border: 1px solid $border-color;
+  }
+}
+
+// Subheading
+.partial__subheading {
+
+  + .partial__body {
+    margin-top: 10px;
+  }
+}
+.partial__subheading__title {
+  margin: 0;
+
+  color: $partial-subheading-title-color;
+}
+
+// Body
+.partial__body {
+  margin-top: $partial-heading-body-spacing;
+}
+
+// Footer
+.partial__footer {}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

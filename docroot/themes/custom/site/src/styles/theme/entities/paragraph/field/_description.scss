@@ -1,0 +1,193 @@
+// |--------------------------------------------------------------------------
+// | Description
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .field--name-field-description
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Description
+.field--name-field-description {
+
+  &,
+  h1, h2, h3, h4, h5, h6,
+  p {
+    @extend h1;
+
+    margin: 0;
+
+    text-transform: uppercase;
+    font-weight: $headings-font-weight-bold;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Background image
+.sectioned--skewed--background-image {
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      color: #fff;
+    }
+  }
+}
+
+// White
+.sectioned--skewed--background-color-white {
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      color: $text-color;
+    }
+  }
+}
+
+// Light gray
+.sectioned--skewed--background-color-light-gray {
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      color: $text-color;
+    }
+  }
+}
+
+// Gray
+.sectioned--skewed--background-color-gray {
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      color: $headings-color;
+    }
+  }
+}
+
+// Primary
+.sectioned--skewed--background-color-primary {
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      color: $btn-primary-color;
+    }
+  }
+}
+
+// Secondary
+.sectioned--skewed--background-color-secondary {
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      color: $btn-secondary-color;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Print
+@media print {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// Touch
+.touchevents {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Description
+  .field--name-field-description {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Description mixin
+@mixin field--name-mixin-field-description() {}

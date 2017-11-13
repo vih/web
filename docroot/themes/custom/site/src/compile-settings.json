@@ -1,22 +1,20 @@
 {
-  "autoprefixer": {
-    "browsers": [
-      "Android 2.3",
-      "Android >= 4",
-      "Chrome >= 20",
-      "Firefox >= 24",
-      "Explorer >= 9",
-      "iOS >= 7",
-      "Opera >= 12",
-      "Safari >= 6"
-    ]
+  "options": {
+    "proxy": "http://vih.dev"
   },
-  "concat": {
-    "core": [
-      "src/js/layout.js",
-      "src/js/jquery.cookie.js",
-      "src/js/modal-popup.js",
-      "src/js/init.js"
-    ]
-  }
+  "javascripts": [
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
+    "node_modules/pace-progress/pace.js",
+    "src/javascripts/layout.js",
+    "src/javascripts/jquery.cookie.js",
+    "src/javascripts/modal-popup.js",
+    "src/javascripts/app.js"
+  ],
+  "styles": [
+    "src/styles/stylesheet.scss"
+  ],
+  "fonts": [
+    "src/styles/icomoon/fonts/icomoon.*",
+    "node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.*"
+  ]
 }

@@ -1,0 +1,63 @@
+.vih_class.teaser,
+.vih_class.vih_class_table_teaser {
+  .field--name-field-vih-class-image, .field-vih-class-image {
+    position: relative;
+    .svg-container-polygon {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      overflow: hidden;
+      .svg-content-polygon {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        polygon {
+          opacity: 0.75;
+          &.color-red {
+            fill: $brand-red;
+          }
+          &.color-blue {
+            fill: $brand-primary;
+          }
+          &.color-cyan {
+            fill: $brand-cyan;
+          }
+          &.color-purple {
+            fill: $brand-quaternary;
+          }
+          &.color-yellow {
+            fill: $brand-yellow;
+          }
+          &.color-green {
+            fill: $brand-tertiary;
+          }
+        }
+      }
+    }
+
+    h5, .field.field--name-name.field--item {
+      position:absolute; 
+      bottom: 8px;
+      right: 20px;
+    }
+  }
+    .panel-heading label {
+        border-left: 1px solid #ddd!important;
+    }
+/*  .vih-col-center {
+    display: flex; 
+    align-items: center; 
+    min-height: 107px;
+  }*/
+}
+article.vih_class {
+  & .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions{
+    & .field__items{
+      border: none;
+    }
+  }
+}

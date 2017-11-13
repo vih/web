@@ -30,12 +30,12 @@ display:
         operations:
           label: Operations
       filters:
-        type:
-          expose:
-            label: 'Content type'
         title:
           expose:
             label: Title
+        type:
+          expose:
+            label: 'Content type'
         langcode:
           expose:
             label: Language

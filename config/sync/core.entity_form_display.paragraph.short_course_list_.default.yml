@@ -3,24 +3,23 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.short_course_list_.field_short_course
+    - field.field.paragraph.short_course_list_.field_course_id
     - paragraphs.paragraphs_type.short_course_list_
   module:
-    - viewsreference
     - workbench_moderation
 id: paragraph.short_course_list_.default
 targetEntityType: paragraph
 bundle: short_course_list_
 mode: default
 content:
-  field_short_course:
-    weight: 6
+  field_course_id:
+    weight: 7
     settings:
       match_operator: CONTAINS
-      size: '60'
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: viewsreference_autocomplete
+    type: entity_reference_autocomplete
     region: content
 hidden:
   created: true

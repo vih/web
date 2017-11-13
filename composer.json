@@ -23,7 +23,6 @@
         "drupal/twig_xdebug": "^1.0"
     },
     "require": {
-        "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "^1.6",
         "drupal/bootstrap": "^3.6",
@@ -69,6 +68,8 @@
     "extra": {
         "installer-types": [
             "bower-asset",
+            "npm-asset",
+            "bower-asset",
             "npm-asset"
         ],
         "installer-paths": {
@@ -77,6 +78,8 @@
             ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset",
                 "type:bower-asset",
                 "type:npm-asset"
             ],

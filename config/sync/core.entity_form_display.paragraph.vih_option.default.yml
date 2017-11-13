@@ -20,7 +20,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-    region: content
   field_vih_option_suboptions:
     weight: 8
     settings:
@@ -28,7 +27,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
   field_vih_option_title:
     weight: 6
     settings:
@@ -36,7 +34,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

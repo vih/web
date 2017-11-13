@@ -1,0 +1,68 @@
+// |--------------------------------------------------------------------------
+// | Action button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .partial--action-button
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$partial-action-button-top-bottom-spacing: $grid-gutter-width;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin partial-action-button-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.partial--action-button {
+
+  .partial__body {
+    padding: $partial-action-button-top-bottom-spacing 0;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

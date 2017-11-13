@@ -1,0 +1,197 @@
+// |--------------------------------------------------------------------------
+// | Course period
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .page-node-type-vih-course-period
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Course period
+.page-node-type-vih-course-period{
+  & .layout__document{
+    & .layout__content{
+      & article.vih-course-period{
+        margin-bottom: 150px;
+        & .user.compact{
+          & tr{
+            display: flex;
+            flex-direction: column;
+            & td.user-image{
+              min-width: 242px;
+              min-height: 248px;
+              width: unset;
+            }
+            td{
+              width: 100%;
+            }
+            & .content{
+              margin-top: 80px;
+            }
+          }
+        }
+      }
+      & .news-banner{
+        & h1.news-banner-title{
+          line-height: 2;
+          text-align: center;
+        }
+      }
+      & .field{
+        width: 100%;
+        & .field--label{
+          float: left;
+          width: 250px;
+        }
+        & .field--item{
+          margin-top: 11px;
+          margin-bottom: 11px;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Course period
+.page-node-type-vih-course-period{
+  & .layout__document{
+    & .layout__content{
+      & article.vih-course-period{
+        margin-bottom: 150px;
+        & .user.compact{
+          & tr{
+            display: block;
+            & td.user-image{
+              min-width: 242px;
+              min-height: 248px;
+              width: unset;
+            }
+            td{
+              width: 100%;
+            }
+            & .content{
+              margin-top: 80px;
+            }
+          }
+        }
+      }
+      & .news-banner{
+        & h1.news-banner-title{
+          line-height: 2;
+          text-align: center;
+        }
+      }
+      & .field{
+        width: 100%;
+        & .field--label{
+          float: left;
+          width: 250px;
+        }
+        & .field--item{
+          margin-top: 11px;
+          margin-bottom: 11px;
+        }
+      }
+    }
+  }
+}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Print
+@media print {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// Touch
+.touchevents {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  // Course period
+  .page-node-type-vih-course-period{
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

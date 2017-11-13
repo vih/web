@@ -3,22 +3,19 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.long_course_list_.field_long_course
+    - field.field.paragraph.long_course_list_.field_course_id
     - paragraphs.paragraphs_type.long_course_list_
-  module:
-    - viewsreference
 id: paragraph.long_course_list_.default
 targetEntityType: paragraph
 bundle: long_course_list_
 mode: default
 content:
-  field_long_course:
-    weight: 0
+  field_course_id:
+    weight: 1
     label: above
     settings:
-      plugin_types:
-        - block
+      link: true
     third_party_settings: {  }
-    type: viewsreference_formatter
+    type: entity_reference_label
     region: content
 hidden: {  }

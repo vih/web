@@ -3,22 +3,19 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.short_course_list_.field_short_course
+    - field.field.paragraph.short_course_list_.field_course_id
     - paragraphs.paragraphs_type.short_course_list_
-  module:
-    - viewsreference
 id: paragraph.short_course_list_.default
 targetEntityType: paragraph
 bundle: short_course_list_
 mode: default
 content:
-  field_short_course:
-    weight: 0
-    label: hidden
+  field_course_id:
+    weight: 1
+    label: above
     settings:
-      plugin_types:
-        - block
+      link: true
     third_party_settings: {  }
-    type: viewsreference_formatter
+    type: entity_reference_label
     region: content
 hidden: {  }

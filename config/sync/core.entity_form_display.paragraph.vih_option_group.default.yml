@@ -25,7 +25,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
   field_vih_og_title:
     weight: 6
     settings:
@@ -33,7 +32,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

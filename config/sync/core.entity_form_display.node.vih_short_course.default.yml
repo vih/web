@@ -6,6 +6,8 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_paragraphs
+    - field.field.node.vih_short_course.field_vih_course_heading
+    - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
@@ -29,7 +31,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 10
     settings:
       rows: 9
       summary_rows: 3
@@ -38,12 +40,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_paragraphs:
-    weight: 36
+    weight: 15
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -54,8 +56,24 @@ content:
     third_party_settings: {  }
     type: entity_reference_paragraphs
     region: content
+  field_vih_course_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_course_subheading:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_cs_contact_person:
-    weight: 34
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60
@@ -64,14 +82,14 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_sc_end_date:
-    weight: 40
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_vih_sc_image:
     type: entity_browser_file
-    weight: 35
+    weight: 14
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -84,7 +102,7 @@ content:
     region: content
   field_vih_sc_option_groups:
     type: entity_reference_paragraphs
-    weight: 33
+    weight: 12
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -95,27 +113,28 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_sc_price:
-    weight: 32
+    weight: 11
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_sc_start_date:
-    weight: 39
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   langcode:
     type: language_select
-    weight: 2
-    settings: {  }
+    weight: 3
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 30
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -123,11 +142,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 7
     third_party_settings: {  }
     region: content
   scheduled_update:
-    weight: 38
+    weight: 16
     settings:
       form_mode: default
       override_labels: false
@@ -139,27 +158,36 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 19
+    region: content
+    third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 8
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
   translation:
-    weight: 10
+    weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60

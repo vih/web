@@ -1,0 +1,188 @@
+// |--------------------------------------------------------------------------
+// | Class taxonomy 'VIH class table radio selection' display
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .course-periods-accordion
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
+  content: 'Chose';
+}
+html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
+  content: 'Chosen';
+}
+
+html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
+  content: 'Vælg';
+}
+html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
+  content: 'Valgt';
+}
+
+.course-periods-accordion {
+
+  .panel {
+
+    .panel-body {
+      padding: 0;
+    }
+
+    .class-selection {
+      border-color: $gray-lighter;
+      border-style: solid;
+      border-width: 1px 0;
+      margin-bottom: -1px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      label.btn-radio-select {
+        border-radius: 0;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-family: $font-family-primary;
+        max-height: 40px;
+        padding: 0px 20px;
+        top: -3px;
+        position: relative;
+        background: none;
+        color: #bbb;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+
+        &.active {
+          background-color: #00bcff;
+          color: #fff;
+        }
+
+        .form-type-radio label {
+          padding: 0;
+        }
+
+        input[type=radio] {
+          position: absolute;
+          clip: rect(0, 0, 0, 0);
+          pointer-events: none;
+        }
+      }
+
+      .field--name-field-vih-class-image {
+        position: relative;
+
+        .svg-container-polygon {
+          display: inline-block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          vertical-align: middle;
+          overflow: hidden;
+
+          .svg-content-polygon {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            polygon {
+              opacity: 0.75;
+
+              &.color-red {
+                fill: $brand-red;
+              }
+
+              &.color-blue {
+                fill: $brand-primary;
+              }
+
+              &.color-cyan {
+                fill: $brand-cyan;
+              }
+
+              &.color-purple {
+                fill: $brand-quaternary;
+              }
+
+              &.color-yellow {
+                fill: $brand-yellow;
+              }
+
+              &.color-green {
+                fill: $brand-tertiary;
+              }
+            }
+          }
+        }
+
+        h5 {
+          position: absolute;
+          bottom: 8px;
+          right: 20px;
+        }
+      }
+    }
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+}
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+}
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+}
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+}
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+  .course-periods-accordion {
+    .accordion-flex-container {
+      .selection-buttons {
+        text-align: left;
+      }
+      .description .field--item {
+        padding: 0;
+      }
+    }
+  }
+}
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+}
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+}
+// Print
+@media print {
+}
+// Touch
+.touchevents {
+}
+// No touch
+.no-touchevents {
+}
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() { }

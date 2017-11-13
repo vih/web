@@ -1,11 +1,30 @@
-label: Media
 display:
   default:
-    display_title: Master
     display_options:
+      filters:
+        status:
+          group_info:
+            group_items:
+              1:
+                value: '1'
+                title: Published
+              2:
+                title: Unpublished
+            label: 'Published status'
+          expose:
+            label: 'True'
+        name:
+          expose:
+            label: 'Media name'
+        bundle:
+          expose:
+            label: Source
+        langcode:
+          expose:
+            label: Language
       exposed_form:
         options:
-          submit_button: Apply
+          submit_button: Filter
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           sort_asc_label: Asc
@@ -29,46 +48,30 @@ display:
           label: 'Media name'
           separator: ', '
         bundle:
-          label: Provider
+          label: Source
           separator: ', '
         uid:
           label: Author
           separator: ', '
         status:
           label: Status
+          settings:
+            format_custom_true: Published
+            format_custom_false: Unpublished
           separator: ', '
         changed:
           label: Updated
           separator: ', '
         operations:
           label: Operations
-      filters:
-        status:
-          expose:
-            label: 'True'
-          group_info:
-            label: 'Publishing status'
-            group_items:
-              1:
-                title: Published
-                value: '1'
-              2:
-                title: Unpublished
-        bundle:
-          expose:
-            label: Provider
-        name:
-          expose:
-            label: 'Media name'
-        langcode:
-          expose:
-            label: Language
       title: Media
       empty:
         area_text_custom:
           content: 'No content available.'
+    display_title: Master
   media_page_list:
     display_title: Media
     display_options:
       menu:
         title: Media
+label: Media

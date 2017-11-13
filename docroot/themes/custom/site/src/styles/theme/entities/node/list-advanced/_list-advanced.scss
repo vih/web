@@ -1,0 +1,149 @@
+// |--------------------------------------------------------------------------
+// | Teaser
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .entity-list-advanced
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$teaser-inner-top-bottom-spacing: floor( ( $grid-gutter-width / 2 ) );
+$teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin entity-list-advanced-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.entity-list-advanced {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: $grid-gutter-width;
+
+  border: 1px solid $border-color;
+}
+
+.entity-list-advanced__heading {
+
+  + .field {
+    margin-top: 10px;
+  }
+}
+.entity-list-advanced__heading__title {
+  margin: 0;
+}
+
+.entity-list-advanced__image {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+.entity-list-advanced__image__overlay {
+  @include angled-edge('outside top', 'upper right', $brand-primary, 50);
+  position: absolute;
+
+  opacity: .85;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 0 $teaser-inner-left-right-spacing 10px;
+
+  text-transform: uppercase;
+
+  font-weight: $font-weight-bold;
+  color: #fff;
+  background-color: $brand-primary;
+
+  .field {
+    display: inline-block;
+  }
+}
+
+.entity-list-advanced__body {
+  display: flex;
+
+  padding: $teaser-inner-top-bottom-spacing $teaser-inner-left-right-spacing;
+
+  flex-direction: column;
+  justify-content: center;
+}
+
+.entity-list-advanced__action {
+  display: flex;
+
+  padding: $teaser-inner-top-bottom-spacing $teaser-inner-left-right-spacing;
+
+  flex-direction: column;
+  justify-content: center;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.entity-list-advanced__image__overlay--primary {}
+.entity-list-advanced__image__overlay--secondary {}
+.entity-list-advanced__image__overlay--tertiary {}
+.entity-list-advanced__image__overlay--success {}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  .entity-list-advanced {
+    flex-direction: row;
+  }
+
+  .entity-list-advanced__body {
+    flex-grow: 1;
+  }
+
+  .entity-list-advanced__image {
+    flex-basis: 350px;
+    flex-shrink: 0;
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

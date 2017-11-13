@@ -1,11 +1,12 @@
 {%
 set classes = [
+'sectioned',
 'paragraph',
 'paragraph--type--' ~ paragraph.bundle|clean_class,
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
-<div{{ attributes.addClass(classes) }}>
+<section{{ attributes.addClass(classes) }}>
 
     {% if background_image %}
     <div class="angled-background-image-wrapper">
@@ -14,9 +15,9 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     </div>
     {% endif %}
 
-    <div class="angled-background-inner">
+    <div class="sectioned__inner">
         <div class="container">
             {{ content }}
         </div>
     </div>
-</div>
+</section>

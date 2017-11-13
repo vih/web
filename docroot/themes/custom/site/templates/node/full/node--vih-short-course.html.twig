@@ -8,85 +8,137 @@ view_mode ? view_mode|clean_class,
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div class="container">
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
 
-    {#  {% if display_submitted %}
-        <footer>
-          {{ author_picture }}
-          <div{{ author_attributes.addClass('author') }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </footer>
-      {% endif %}#}
-  </div>
-  <div{{ content_attributes.addClass('content') }}>
-    {#{{ content }}#}
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          {{ content.body }}
-        </div>
-      </div>
+    <!-- Begin - content -->
+    <section class="sectioned sectioned--content">
+        <div class="sectioned__inner">
+            <div class="container">
 
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="field field--name-field-vih-course-periods">
-            <div class="field__items">
-              <div class="clock-icon"><i class="material-icons">access_time</i></div>
-              <div class="course-period-wrapper">
-                <div class="field--item">{{ content.field_vih_sc_start_date }}
-                  - {{ content.field_vih_sc_end_date }}</div>
-              </div>
+                {{ title_prefix }}
+                {% if not page %}
+                    <h2{{ title_attributes }}>
+                        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+                    </h2>
+                {% endif %}
+                {{ title_suffix }}
+
+                <div class="partial">
+                    <div class="partial__body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+
+                                {# Begin - headings #}
+                                {% if content.field_vih_course_heading or content.field_vih_course_subheading %}
+
+                                    {% if content.field_vih_course_heading %}
+                                        <!-- Begin - heading -->
+                                        <div class="sectioned__heading">
+                                            <h2 class="sectioned__heading__title">{{ content.field_vih_course_heading.0 }}</h2>
+                                        </div>
+                                        <!-- End - heading -->
+                                    {% endif %}
+
+                                    {% if content.field_vih_course_subheading %}
+                                        <!-- Begin - subheading -->
+                                        <div class="sectioned__subheading">
+                                            <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
+                                        </div>
+                                        <!-- End - subheading -->
+                                    {% endif %}
+
+                                {% endif %}
+                                {# End - headings #}
+
+                                {# Begin - body #}
+                                {{ content.body }}
+                                {# End - body #}
+
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+
+                                {# Begin - period #}
+                                {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
+                                    <!-- Begin - time period -->
+                                    <div class="boxy boxy--time-period">
+                                        <div class="boxy__heading">
+                                            <h2 class="boxy__heading__title heading-h4">{{ 'Period' | trans }}</h2>
+                                        </div>
+
+                                        <div class="boxy__body">
+                                            <div class="time-period">
+                                                <div class="time-period__icon">
+                                                    <span class="icon icon-time"></span>
+                                                </div>
+
+                                                <div class="time-period__list">
+                                                    <div class="time-period__list__item">
+                                                        {{ content.field_vih_sc_start_date }}
+                                                    </div>
+                                                    <div class="time-period__list__item">
+                                                        {{ content.field_vih_sc_end_date }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End - time period -->
+                                {% endif %}
+                                {# End - period #}
+
+                                {# Begin - price #}
+                                {% if content.field_vih_sc_price %}
+                                    <!-- Begin - price -->
+                                    <div class="boxy boxy--price">
+                                        <div class="boxy__heading">
+                                            <h2 class="boxy__heading__title heading-h4">{{ "Price per participant" | trans }}</h2>
+                                        </div>
+
+                                        <div class="boxy__body">
+                                            {{ content.field_vih_sc_price }}
+                                        </div>
+                                    </div>
+                                    <!-- End - price -->
+                                {% endif %}
+                                {# End - price #}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Begin - action button -->
+                <div class="partial partial--action-button">
+                    <div class="partial__body">
+                        <div class="text-center">
+                            <a href="{{ url('vih_subscription.short_course_order_create', {'course': node.id}) }}"
+                               class="btn btn-primary">
+                                {{ "Participate" | trans }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End - action button -->
+
+                {# Begin - teacher #}
+                {% if content.field_vih_cs_contact_person %}
+                    <div class="partial partial--teacher">
+                        <div class="partial__heading">
+                            <h2 class="partial__heading__title heading-h4">{{ 'Do you have any questions about this class?' | trans }}</h2>
+                        </div>
+                        <div class="partial__body">
+                            {{ content.field_vih_cs_contact_person }}
+                        </div>
+                    </div>
+                {% endif %}
+                {# End - teacher #}
+
             </div>
-          </div>
         </div>
-      </div>
+    </section>
+    <!-- End - content -->
 
-      <div class="row vih-btn-box">
-        <div class="col-xs-12">
-          <a href="{{ url('vih_subscription.short_course_order_create', {'course': node.id}) }} "
-             class="btn-arrow btn-center">{{ "Tilmeld"|trans }}</a>
-        </div>
-      </div>
-
-      <div class="row vih-price-box">
-        <div class="col-xs-12">
-          <table class="table table-bordered pricing-table">
-            <thead>
-            <tr>
-              <th>
-                {{ "Pris pr deltager"|trans }}
-              </th>
-            </tr>
-            </thead>
-            <tbody>
-            <td>
-              {{ content.field_vih_sc_price }}
-            </td>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <h4>{{ 'Har du spørgsmal til kurset?'|trans }}</h4>
-          {{ content.field_vih_cs_contact_person }}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row paragraphs">
+    {# Begin - paragraphs #}
     {{ content.field_paragraphs }}
-  </div>
-
+    {# End - paragraphs #}
 
 </article>

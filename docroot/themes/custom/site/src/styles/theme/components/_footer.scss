@@ -1,0 +1,245 @@
+// |--------------------------------------------------------------------------
+// | Footer
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .layout__footer
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$footer-background-color: $brand-primary;
+
+// Bottom
+$footer-bottom-background-color: #fff;
+
+// Responsive
+$xs-footer-padding-top: 0;
+$sm-footer-padding-top: 0;
+$md-footer-padding-top: 0;
+
+$xs-footer-top-padding-top-bottom: 20px;
+$sm-footer-top-padding-top-bottom: 25px;
+$md-footer-top-padding-top-bottom: 30px;
+
+$xs-footer-bottom-padding-top-bottom: 15px;
+$sm-footer-bottom-padding-top-bottom: 45px;
+$md-footer-bottom-padding-top-bottom: 55px;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Footer
+.layout__footer {
+  border-top: 0;
+  margin: 0;
+
+  background-color: $footer-background-color;
+  @include angled-edge('outside top', 'upper right', $brand-primary, $xs-sectioned-skewed-angle-height);
+
+  .block,
+  nav {
+
+    h1,
+    h2,
+    h3 {
+
+      &,
+      &.block-title {
+        font-size: $font-size-h4;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: 'Open Sans', sans-serif;
+        padding: 18px 0;
+        margin: 0;
+      }
+    }
+  }
+
+  p {
+    color: #fff;
+  }
+
+  a {
+
+    &,
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .menu {
+
+    > li {
+
+      a {
+        padding: 6px 0;
+
+        text-transform: uppercase;
+
+        &,
+        &:hover {
+          background-color: transparent;
+        }
+
+        &,
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &:first-child a {
+        padding-top: 0;
+      }
+
+      &:last-child a {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.layout__footer-bottom-outer {
+  border-top: 1px solid #00ace4;
+
+  p {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  .layout__footer-bottom-copyright {
+    @include line-height(26px); // Same height as social icon
+  }
+
+  .layout__footer-bottom-social {
+
+    a {
+
+      &,
+      &:hover {
+        font-size: 26px;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    .list-inline {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Footer
+  .layout__footer {
+    padding-top: $xs-footer-padding-top;
+  }
+
+  .layout__footer-top-outer {
+    padding: $xs-footer-top-padding-top-bottom;
+  }
+
+  .layout__footer-bottom-outer {
+    padding: $xs-footer-bottom-padding-top-bottom 0;
+  }
+}
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Footer
+  .layout__footer { }
+}
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Footer
+  .layout__footer {
+    padding-top: $sm-footer-padding-top;
+
+    @include angled-edge('outside top', 'upper right', $brand-primary, $sm-sectioned-skewed-angle-height);
+  }
+
+  .layout__footer-top-outer {
+    padding: $sm-footer-top-padding-top-bottom;
+  }
+
+  .layout__footer-bottom-outer {
+    padding: $sm-footer-bottom-padding-top-bottom 0;
+  }
+}
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Footer
+  .layout__footer { }
+}
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Footer
+  .layout__footer {
+    padding-top: $md-footer-padding-top;
+
+    @include angled-edge('outside top', 'upper right', $brand-primary, $md-sectioned-skewed-angle-height);
+  }
+
+  .layout__footer-top-outer {
+    padding: $md-footer-top-padding-top-bottom;
+  }
+
+  .layout__footer-bottom-outer {
+    padding: $md-footer-bottom-padding-top-bottom 0;
+  }
+}
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Footer
+  .layout__footer { }
+}
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Footer
+  .layout__footer {
+    @include angled-edge('outside top', 'upper right', $brand-primary, $lg-sectioned-skewed-angle-height);
+  }
+}
+// Print
+@media print {
+
+  // Footer
+  .layout__footer { }
+}
+// Touch
+.touchevents {
+
+  // Footer
+  .layout__footer { }
+}
+// No touch
+.no-touchevents {
+
+  // Footer
+  .layout__footer { }
+}
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Footer mixin
+@mixin footer-mixin() { }

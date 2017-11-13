@@ -1,0 +1,109 @@
+// |--------------------------------------------------------------------------
+// | Card
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .card
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$card-background-color: #edeeee;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Card
+
+.card {
+  font-family: 'Open Sans', sans-serif;
+
+  .card-title {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    .pane-title {
+      font-size: $font-size-base;
+      @include line-height($font-size-base);
+      font-weight: $font-weight-bold;
+      color: $headings-color;
+      text-transform: uppercase;
+      margin: 0;
+      margin-bottom: 15px;
+      font-family: 'Open Sans', sans-serif;
+
+    }
+  }
+
+
+  &.card-block,
+  .card-block {
+    background-color: $card-background-color;
+    padding: ($card-spacer-x * 2);
+  }
+
+  .card-text {
+
+    &,
+    p {
+      color: $text-color;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+    }
+  }
+
+  .card-published-at {
+    font-weight: $font-weight-bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.50em;
+    color: $brand-secondary;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Card mixin
+@mixin card-mixin() {}

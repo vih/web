@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.banner
     - field.field.block_content.banner.field_image
     - field.field.block_content.banner.field_link
+    - image.style.banner
   module:
     - image
     - link
@@ -19,7 +20,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: banner
       image_link: ''
     third_party_settings: {  }
     region: content

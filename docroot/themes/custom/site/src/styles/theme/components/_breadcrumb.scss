@@ -1,0 +1,278 @@
+// |--------------------------------------------------------------------------
+// | Breadcrumb
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .breadcrumb
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$breadcrumb-arrow-width: 20px;
+$breadcrumb-home-background-color: #fff;
+$breadcrumb-background-color: #f7f7f7;
+$breadcrumb-active-background-color: $brand-primary;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Breadcrumb
+.breadcrumb {
+  display: inline-block;
+
+  padding: 0;
+  margin-bottom: 0;
+
+  border: 1px solid $border-color;
+  border-radius: 0;
+
+  background-color: $body-bg;
+
+  li {
+    position: relative;
+
+    background-color: $breadcrumb-background-color;
+    padding: 11px 20px;
+
+    // Must be home button
+    &:first-child {
+      background-color: $breadcrumb-home-background-color;
+
+      a {
+        font-size: 0 !important;
+
+        &:before {
+          @extend .icon;
+          display: inline-block;
+          color: #afafaf;
+          font-size: $font-size-base;
+          content: $icon-home;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: -7px;
+    }
+
+    &.active {
+      background-color: $breadcrumb-active-background-color;
+
+      &, a {
+        font-weight: $font-weight-bold;
+
+        color: #fff;
+      }
+    }
+
+    &,
+    a {
+      font-size: $font-size-small;
+      color: $text-color-light;
+
+      text-transform: uppercase;
+    }
+
+    + li {
+      padding-left: floor(($breadcrumb-arrow-width + 20px));
+    }
+  }
+
+  // Arrow
+  li {
+
+    // This applies to all
+    + li {
+
+      &:before,
+        &:after {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+      }
+
+      &:before {
+        border-width: $breadcrumb-arrow-width;
+        margin-top: -$breadcrumb-arrow-width;
+        border-left-color: $breadcrumb-background-color;
+        z-index: 2;
+      }
+
+      &:after {
+        border-width: ($breadcrumb-arrow-width + 1px);
+        margin-top: -($breadcrumb-arrow-width + 1px);
+        border-left-color: $border-color;
+        z-index: 1;
+      }
+    }
+
+    // Dont show bordered arrow (between regular elements) on home and active (last)
+    &.active {
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:first-child {
+
+      &:before,
+        &:after {
+        display: none;
+      }
+
+      + li {
+
+        &:before {
+          border-left-color: $breadcrumb-home-background-color;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    + li {
+
+      &:before {
+        border-left-color: $breadcrumb-background-color;
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Breadcrumb
+  .breadcrumb {
+    display: inline-block;
+    border: none;
+    //border-radius: 0;
+    background-color: #fff;
+    padding: 0;
+
+    &:first-child {
+      //font-size: 14px !important;
+    }
+
+    & li {
+      background-color: $breadcrumb-background-color;
+      position: relative;
+      padding: 9px 10px;
+      font-size: 10px;
+      width: 100%;
+
+      // Must be home button
+      &:first-child {
+        background-color: $breadcrumb-home-background-color;
+        // padding-top: 0px;
+        // padding-bottom: 0px;
+        font-size: 14px !important;
+      }
+
+      &:before {
+        border-width: 17px !important;
+        margin-top: -17px !important;
+        border-left-color: $breadcrumb-background-color;
+        z-index: 2;
+      }
+
+      & a {
+        font-size: 10px !important;
+      }
+
+      + li {
+        padding-left: floor(($breadcrumb-arrow-width + 5px));
+      }
+    }
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Print
+@media print {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// Touch
+.touchevents {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Breadcrumb
+  .breadcrumb {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

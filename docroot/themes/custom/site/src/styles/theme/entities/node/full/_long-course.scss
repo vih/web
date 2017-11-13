@@ -1,0 +1,160 @@
+// |--------------------------------------------------------------------------
+// | Long Course
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .long-course
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Long Course
+.path-node.page-node-type-vih-long-cource {
+  .field--name-field-vih-course-periods {
+    .field__items {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 1px solid $gray-lighter;
+      text-transform: uppercase;
+    }
+  }
+
+  .travel-class-container {
+    margin-bottom: 30px;
+  }
+  .price-table {
+    border: 1px solid #ddd;
+    background: none;
+    text-align: center;
+    padding: 0; 
+    .table-cell {
+      padding: 32px 10px;
+    }
+    .table-heading {
+      padding: 15px;
+      text-transform: uppercase;
+      background-color: rgb(238, 238, 238);
+      font-weight: bold;
+    }
+  }
+}
+
+form.vih-subscription-long-course-order-form{
+  & article.user.compact{
+    margin-top: 120px;
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+    .region-content {
+      margin-top: 20px;
+    }
+    .field--name-field-vih-course-periods {
+      margin-bottom: 40px;
+      .field__items {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Print
+@media print {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// Touch
+.touchevents {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  // Long Course Order
+  .path-node.page-node-type-vih-long-cource{
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

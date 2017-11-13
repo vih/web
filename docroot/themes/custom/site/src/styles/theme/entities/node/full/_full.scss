@@ -1,0 +1,137 @@
+// |--------------------------------------------------------------------------
+// | Node Full display
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - article.full, layout__news
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+article {
+  .field {
+    .field--label {
+      @extend h4;
+    }
+  }
+  
+  &.vih-long-cource, &.vih-short-course, &.event {
+    .pricing-table {
+      thead  {
+        background: $gray-lighter;
+        th {
+          padding: 15px;
+          text-transform: uppercase;
+        }
+      }
+      tbody  {
+        td {
+          padding: 32px 10px;
+        }
+      }
+
+      tr th, tr td {
+        text-align: center;
+      }
+    }
+
+  }
+  & .row.paragraphs{
+    margin-top: 130px;
+  }
+}
+
+.layout__news {
+  .node-page-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+  .layout__news {
+    .breadcrumb {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+  article {
+    .field {
+      .field--label {
+//        @extend h3;
+      }
+    }
+  }
+
+  .layout__news {
+    .node-page-title {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+}
+
+// Print
+@media print {
+
+}
+
+// Touch
+.touchevents {
+
+}
+
+// No touch
+.no-touchevents {
+
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

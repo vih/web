@@ -5,30 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.vih_long_course_order.body
-    - field.field.node.vih_long_course_order.field_vih_lco_address
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_address
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_city
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_email
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_first_name
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_last_name
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_nationality
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_telefon
-    - field.field.node.vih_long_course_order.field_vih_lco_adult_zip
-    - field.field.node.vih_long_course_order.field_vih_lco_city
-    - field.field.node.vih_long_course_order.field_vih_lco_course
-    - field.field.node.vih_long_course_order.field_vih_lco_cpr
-    - field.field.node.vih_long_course_order.field_vih_lco_education
-    - field.field.node.vih_long_course_order.field_vih_lco_email
-    - field.field.node.vih_long_course_order.field_vih_lco_first_name
-    - field.field.node.vih_long_course_order.field_vih_lco_found_from
-    - field.field.node.vih_long_course_order.field_vih_lco_last_name
-    - field.field.node.vih_long_course_order.field_vih_lco_message
-    - field.field.node.vih_long_course_order.field_vih_lco_nationality
-    - field.field.node.vih_long_course_order.field_vih_lco_newsletter
-    - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
-    - field.field.node.vih_long_course_order.field_vih_lco_payment
-    - field.field.node.vih_long_course_order.field_vih_lco_telefon
-    - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
   module:
     - text
@@ -45,33 +21,9 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    region: content
   links:
     weight: 100
-    region: content
 hidden:
-  field_vih_lco_address: true
-  field_vih_lco_adult_address: true
-  field_vih_lco_adult_city: true
-  field_vih_lco_adult_email: true
-  field_vih_lco_adult_first_name: true
-  field_vih_lco_adult_last_name: true
-  field_vih_lco_adult_nationality: true
-  field_vih_lco_adult_telefon: true
-  field_vih_lco_adult_zip: true
-  field_vih_lco_city: true
   field_vih_lco_course: true
-  field_vih_lco_cpr: true
-  field_vih_lco_education: true
-  field_vih_lco_email: true
-  field_vih_lco_first_name: true
-  field_vih_lco_found_from: true
-  field_vih_lco_last_name: true
-  field_vih_lco_message: true
-  field_vih_lco_nationality: true
-  field_vih_lco_newsletter: true
   field_vih_lco_order_course_perio: true
-  field_vih_lco_payment: true
-  field_vih_lco_telefon: true
-  field_vih_lco_zip: true
   langcode: true

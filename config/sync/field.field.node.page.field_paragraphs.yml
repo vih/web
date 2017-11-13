@@ -65,18 +65,18 @@ settings:
       news_list:
         enabled: true
         weight: 14
-      event_list:
-        enabled: true
-        weight: 15
       vih_course_slot:
         weight: 15
         enabled: false
-      vih_option:
-        weight: 16
-        enabled: false
+      event_list:
+        enabled: true
+        weight: 15
       page_content:
         enabled: true
         weight: 16
+      vih_option:
+        weight: 16
+        enabled: false
       short_course_list_:
         enabled: true
         weight: 17
@@ -95,10 +95,10 @@ settings:
       long_course_list_:
         enabled: true
         weight: 22
-      vih_single_class_group:
+      file:
         weight: 26
         enabled: false
-      file:
+      vih_single_class_group:
         weight: 26
         enabled: false
       user_quote:
