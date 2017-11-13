@@ -1,0 +1,14 @@
+uuid: 6bc97d70-e058-4555-b4af-fe79680ce24a
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.list_advanced
+label: 'List - advanced'
+targetEntityType: node
+cache: true

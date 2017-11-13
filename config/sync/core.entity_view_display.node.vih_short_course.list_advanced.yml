@@ -1,0 +1,84 @@
+uuid: 20bf0508-fcab-4658-957f-831481e47fd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list_advanced
+    - field.field.node.vih_short_course.body
+    - field.field.node.vih_short_course.field_paragraphs
+    - field.field.node.vih_short_course.field_vih_course_heading
+    - field.field.node.vih_short_course.field_vih_course_subheading
+    - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_sc_end_date
+    - field.field.node.vih_short_course.field_vih_sc_image
+    - field.field.node.vih_short_course.field_vih_sc_option_groups
+    - field.field.node.vih_short_course.field_vih_sc_price
+    - field.field.node.vih_short_course.field_vih_sc_start_date
+    - field.field.node.vih_short_course.scheduled_update
+    - image.style.vih_general_teaser_image
+    - node.type.vih_short_course
+  module:
+    - datetime
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.vih_short_course.list_advanced
+targetEntityType: node
+bundle: vih_short_course
+mode: list_advanced
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 1
+    settings:
+      trim_length: 150
+    third_party_settings: {  }
+    region: content
+  field_vih_sc_end_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: vih_medium_date_short_month
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_vih_sc_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: vih_general_teaser_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_sc_start_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: vih_medium_date_short_month
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  workbench_moderation_control:
+    weight: -20
+    region: content
+hidden:
+  field_paragraphs: true
+  field_vih_course_heading: true
+  field_vih_course_subheading: true
+  field_vih_cs_contact_person: true
+  field_vih_sc_option_groups: true
+  field_vih_sc_price: true
+  langcode: true
+  links: true
+  scheduled_update: true

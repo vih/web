@@ -1,0 +1,19 @@
+uuid: c98c57d0-3068-4558-933f-f09fc72f855d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_course_heading
+    - node.type.vih_short_course
+id: node.vih_short_course.field_vih_course_heading
+field_name: field_vih_course_heading
+entity_type: node
+bundle: vih_short_course
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
