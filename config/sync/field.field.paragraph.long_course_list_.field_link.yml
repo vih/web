@@ -1,0 +1,23 @@
+uuid: 006a4ce4-c316-43b2-8256-6e9b270aef9c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.long_course_list_
+  module:
+    - link
+id: paragraph.long_course_list_.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: long_course_list_
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

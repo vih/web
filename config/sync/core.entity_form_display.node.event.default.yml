@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.event.field_page_main_image
     - field.field.node.event.field_paragraphs
     - field.field.node.event.field_vih_cource_contact_person
+    - field.field.node.event.field_vih_course_heading
+    - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - node.type.event
   module:
@@ -28,7 +30,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 10
     settings:
       rows: 9
       summary_rows: 3
@@ -37,43 +39,30 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_event_end_date:
-    weight: 10
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_event_price:
-    weight: 26
+    weight: 15
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_event_start_date:
-    weight: 9
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_image:
-    type: entity_browser_file
-    weight: 8
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    third_party_settings: {  }
-    region: content
-  field_page_main_image:
     type: entity_browser_file
     weight: 11
     settings:
@@ -86,8 +75,21 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
     region: content
+  field_page_main_image:
+    type: entity_browser_file
+    weight: 14
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    third_party_settings: {  }
+    region: content
   field_paragraphs:
-    weight: 27
+    weight: 16
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -99,7 +101,7 @@ content:
     type: entity_reference_paragraphs
     region: content
   field_vih_cource_contact_person:
-    weight: 121
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: 60
@@ -107,8 +109,24 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_vih_event_persons_limit:
+  field_vih_course_heading:
     weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_course_subheading:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_event_persons_limit:
+    weight: 4
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -116,13 +134,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 1
-    settings: {  }
+    weight: 3
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 6
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -130,21 +149,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 7
     third_party_settings: {  }
     region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 17
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 8
     third_party_settings: {  }
     region: content
   title:
@@ -157,7 +176,7 @@ content:
     region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60

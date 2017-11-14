@@ -81,7 +81,13 @@
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-                    {{ page.content }}
+                    {% if node %}
+                        {{ page.content }}
+                    {% else %}
+                        <div class="container">
+                            {{ page.content }}
+                        </div>
+                    {% endif %}
                     <!-- End - content -->
                 {% endblock %}
             </div>

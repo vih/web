@@ -11,6 +11,8 @@ dependencies:
     - field.field.node.event.field_page_main_image
     - field.field.node.event.field_paragraphs
     - field.field.node.event.field_vih_cource_contact_person
+    - field.field.node.event.field_vih_course_heading
+    - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - node.type.event
   module:
@@ -63,7 +65,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: default_medium_date_without_time
+      format_type: vih_medium_date_short_month
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -93,6 +95,22 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_vih_course_heading:
+    weight: 12
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_course_subheading:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_vih_event_persons_limit:
     weight: 6

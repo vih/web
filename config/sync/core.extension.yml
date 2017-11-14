@@ -7,6 +7,7 @@ module:
   breakpoint: 0
   ckeditor: 0
   config: 0
+  consumers: 0
   contact: 0
   contact_block: 0
   contact_storage: 0

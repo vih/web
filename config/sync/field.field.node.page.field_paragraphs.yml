@@ -10,7 +10,6 @@ dependencies:
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
-    - paragraphs.paragraphs_type.news_list
     - paragraphs.paragraphs_type.page_content
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.user_quote
@@ -38,7 +37,6 @@ settings:
       list_of_news_teasers: list_of_news_teasers
       video: video
       class_packages: class_packages
-      news_list: news_list
       event_list: event_list
       page_content: page_content
       short_course_list_: short_course_list_
@@ -63,8 +61,8 @@ settings:
         enabled: true
         weight: 11
       news_list:
-        enabled: true
         weight: 14
+        enabled: false
       vih_course_slot:
         weight: 15
         enabled: false

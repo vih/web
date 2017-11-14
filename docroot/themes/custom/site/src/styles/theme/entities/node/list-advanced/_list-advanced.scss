@@ -10,8 +10,10 @@
 // Variables
 // --------------------------------------------------
 
-$teaser-inner-top-bottom-spacing: floor( ( $grid-gutter-width / 2 ) );
-$teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
+$list-advanced-background-color: $body-bg;
+
+$list-advanced-inner-top-bottom-spacing: floor( ( $grid-gutter-width / 2 ) );
+$list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
 // --------------------------------------------------
 // Mixins
@@ -30,6 +32,7 @@ $teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
   margin-bottom: $grid-gutter-width;
 
+  background-color: $list-advanced-background-color;
   border: 1px solid $border-color;
 }
 
@@ -60,7 +63,7 @@ $teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
   bottom: 0;
   left: 0;
 
-  padding: 0 $teaser-inner-left-right-spacing 10px;
+  padding: 0 $list-advanced-inner-left-right-spacing 10px;
 
   text-transform: uppercase;
 
@@ -76,7 +79,7 @@ $teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 .entity-list-advanced__body {
   display: flex;
 
-  padding: $teaser-inner-top-bottom-spacing $teaser-inner-left-right-spacing;
+  padding: $list-advanced-inner-top-bottom-spacing $list-advanced-inner-left-right-spacing;
 
   flex-direction: column;
   justify-content: center;
@@ -85,7 +88,7 @@ $teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 .entity-list-advanced__action {
   display: flex;
 
-  padding: $teaser-inner-top-bottom-spacing $teaser-inner-left-right-spacing;
+  padding: $list-advanced-inner-top-bottom-spacing $list-advanced-inner-left-right-spacing;
 
   flex-direction: column;
   justify-content: center;

@@ -37,7 +37,8 @@
                     {{ content.description|render|striptags('<!-- -->')|length > 70 ? content.description|render|striptags('<!-- -->')|slice(0, 70) ~ '...' : content.description }}
                 </div>
             {% endif %}
-            <button type="button" class="btn-more" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
+
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
                 <span class="icon icon-info-circle" aria-hidden="true"></span>
             </button>
         </div>

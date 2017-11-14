@@ -117,7 +117,7 @@
 
             display: inline-block;
             font-size: $font-size-large;
-            color: $text-color;
+            color: $headings-color;
             content: $icon-angle-down;
             margin-left: 6px;
           }
@@ -142,11 +142,12 @@
       > a.is-active  {
 
         &:after {
+          @extend .icon;
+
           display: inline-block;
-          font-family: FontAwesome;
           font-size: $font-size-large;
-          color: #00bcff;
-          content: $fa-var-angle-down;
+          color: $brand-primary;
+          content: $icon-angle-down;
           margin-left: 6px;
         }
       }
@@ -163,8 +164,8 @@
     }
 
     @include layout-header-navigation-styling(
-    $text-color,
-    $text-color,
+    $headings-color,
+    $headings-color,
     $brand-primary,
 
     $border-color,
@@ -173,8 +174,8 @@
 
     @include layout-header-dropdown-menu-styling(
     #fff,
-    $text-color,
-    $text-color,
+    $headings-color,
+    $headings-color,
     $brand-primary,
 
     $border-color,

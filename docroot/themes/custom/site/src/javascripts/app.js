@@ -11,7 +11,6 @@
   $("#toggle_mobile_menu").click(function (event) {
     $('#main-menu').toggleClass('mobile-menu-open');
     $('.layout__document').toggleClass('mobile-menu-open');
-
   })
 
 //Show search form block
@@ -33,22 +32,24 @@
 
   //Improving usability for menudropdowns for mobile devices
   if (!!('ontouchstart' in window)) {//check for touch device
-      $('li.dropdown.layout-navigation__dropdown').find('> a').click(function(e) {
-          if ($(this).parent().hasClass("expanded")) {
-              //$(this).parent().removeClass("expanded");
-          } else {
-              e.preventDefault();
-              $(this).parent().addClass("expanded");
-          }
-      });
-  } else {//keeping it compatible with desktop devices
-      $('li.dropdown.layout-navigation__dropdown').hover(
-          function(e) {
-              $(this).addClass("expanded");
-          }, function(e) {
-              $(this).removeClass("expanded");
-          }
-      );
+    $('li.dropdown.layout-navigation__dropdown').find('> a').click(function (e) {
+      if ($(this).parent().hasClass("expanded")) {
+        //$(this).parent().removeClass("expanded");
+      }
+      else {
+        e.preventDefault();
+        $(this).parent().addClass("expanded");
+      }
+    });
+  }
+  else {//keeping it compatible with desktop devices
+    $('li.dropdown.layout-navigation__dropdown').hover(
+        function (e) {
+          $(this).addClass("expanded");
+        }, function (e) {
+          $(this).removeClass("expanded");
+        }
+    );
   }
 
 })(jQuery);

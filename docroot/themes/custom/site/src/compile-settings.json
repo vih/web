@@ -1,6 +1,6 @@
 {
   "options": {
-    "proxy": "http://vih.dev"
+    "proxy": "http://vih.test"
   },
   "javascripts": [
     "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",

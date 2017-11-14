@@ -327,7 +327,7 @@ function site_preprocess_paragraph__short_course_list_(&$variables) {
   $paragraph = $variables['paragraph'];
   $course_ids = [];
 
-  if ($fields = $paragraph->get('field_tags')->getValue()) {
+  if ($fields = $paragraph->get('field_course_id')->getValue()) {
 
     foreach($fields as $field) {
       $course_ids[] = $field['target_id'];

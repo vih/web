@@ -1,0 +1,19 @@
+uuid: 946ecd3a-98aa-48ea-9381-39d97d46fa25
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.short_course_list_
+id: paragraph.short_course_list_.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: short_course_list_
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

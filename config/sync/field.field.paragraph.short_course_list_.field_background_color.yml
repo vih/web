@@ -1,0 +1,21 @@
+uuid: e40f8a19-facb-481c-9b67-e0d5137afcb1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.short_course_list_
+  module:
+    - options
+id: paragraph.short_course_list_.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: short_course_list_
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
