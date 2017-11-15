@@ -1,0 +1,124 @@
+// |--------------------------------------------------------------------------
+// | Teaser
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .entity-teaser
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$entity-teaser-element-spacing: 20px;
+
+$entity-teaser-background-color: $body-bg-secondary;
+
+$entity-teaser-inner-top-bottom-spacing: 25px;
+$entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin entity-teaser-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.entity-teaser {
+  margin-bottom: $grid-gutter-width;
+  padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing;
+
+  background-color: $entity-teaser-background-color;
+
+  transition: none; // Remove link transitions
+}
+
+.entity-teaser__heading {
+  flex-shrink: 1;
+
+  + .entity-teaser__body {
+    margin-top: $entity-teaser-element-spacing;
+  }
+}
+.entity-teaser__heading__title {
+  margin: 0;
+
+  font-weight: $headings-font-weight-bold;
+  color: $headings-color;
+}
+
+.entity-teaser__body {
+  flex-grow: 1;
+
+  .field--name-body {
+
+    + .entity-teaser__published-at {
+      margin-top: $entity-teaser-element-spacing;
+    }
+  }
+}
+
+.entity-teaser__published-at {
+  font-weight: $font-weight-bold;
+
+  color: $brand-secondary;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// Flex
+.flexbox {
+
+  .row--equal-height-columns {
+
+    .entity-teaser {
+      display: flex;
+
+      flex-grow: 1;
+      flex-direction: column;
+    }
+
+    .entity-teaser__body {
+      flex-grow: 1;
+    }
+  }
+}

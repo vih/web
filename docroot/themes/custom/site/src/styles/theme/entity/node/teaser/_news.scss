@@ -1,76 +1,35 @@
 // |--------------------------------------------------------------------------
-// | Teaser
+// | News
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .entity-teaser
+// | - .entity-teaser--news
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-$entity-teaser-element-spacing: 20px;
-
-$entity-teaser-background-color: $body-bg-secondary;
-
-$entity-teaser-inner-top-bottom-spacing: 25px;
-$entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
-
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-@mixin entity-teaser-mixin() {}
+@mixin entity-teaser-news-mixin() {}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.entity-teaser {
-  display: flex;
+.entity-teaser--news {
 
-  flex-direction: column;
-
-  margin-bottom: $grid-gutter-width;
-  padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing;
-
-  background-color: $entity-teaser-background-color;
-}
-
-.entity-teaser__heading {
-  min-height: 36px;
-
-  + .entity-teaser__body {
-    margin-top: $entity-teaser-element-spacing;
+  .entity-teaser__heading {
+    min-height: 36px; // 2 lines
   }
-}
-.entity-teaser__heading__title {
-  margin: 0;
-
-  font-weight: $headings-font-weight-bold;
-  color: $headings-color;
-}
-
-.entity-teaser__body {
-  flex-grow: 1;
 
   .field--name-body {
-
-    + .entity-teaser__published-at {
-      margin-top: $entity-teaser-element-spacing;
-    }
+    min-height: 69px; // 3 lines
   }
 }
-
-.entity-teaser__published-at {
-  font-weight: $font-weight-bold;
-
-  color: $brand-secondary;
-}
-
-
-
 
 // --------------------------------------------------
 // Variants

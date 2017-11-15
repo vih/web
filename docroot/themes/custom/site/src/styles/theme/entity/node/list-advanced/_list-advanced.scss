@@ -34,6 +34,8 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
   background-color: $list-advanced-background-color;
   border: 1px solid $border-color;
+
+  transition: none; // Remove link transitions
 }
 
 .entity-list-advanced__heading {

@@ -7,27 +7,32 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 <section{{ attributes.addClass(classes) }}>
+    <div class="sectioned--skewed-angle-top">
+        <div class="sectioned--skewed-angle-bottom">
 
-    {% if background_image %}
-        <div class="angled-background-image-wrapper">
-            <div class="cover-overlay"></div>
-            <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
-        </div>
-    {% endif %}
-
-    <div class="sectioned__inner">
-        <div class="container">
-            {{ content.field_heading }}
-            <div class="row">
-                {% if content.field_paragraph_person_photo|render|trim %}
-                    <div class="col-xs-6 col-sm-4 col-md-3">{{ content.field_paragraph_person_photo }}</div>
-                    <div class="col-sm-6 col-sm-8 col-md-9">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
-                {% else %}
-                    <div class="col-xs-12">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
-                {% endif %}
-
+            {% if background_image %}
+            <div class="angled-background-image-wrapper">
+                <div class="cover-overlay"></div>
+                <div class="angled-background-image-element"
+                     style="background-image: url({{ background_image }})"></div>
             </div>
+            {% endif %}
 
+            <div class="sectioned__inner">
+                <div class="container">
+                    {{ content.field_heading }}
+                    <div class="row">
+                        {% if content.field_paragraph_person_photo|render|trim %}
+                            <div class="col-xs-6 col-sm-4 col-md-3">{{ content.field_paragraph_person_photo }}</div>
+                            <div class="col-sm-6 col-sm-8 col-md-9">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
+                        {% else %}
+                            <div class="col-xs-12">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </section>
