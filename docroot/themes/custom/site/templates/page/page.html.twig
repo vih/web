@@ -81,12 +81,16 @@
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-                    {% if node %}
+                    {% if node or user %}
                         {{ page.content }}
                     {% else %}
-                        <div class="container">
-                            {{ page.content }}
-                        </div>
+                        <section class="sectioned sectioned--content">
+                            <div class="sectioned__inner">
+                                <div class="container">
+                                    {{ page.content }}
+                                </div>
+                            </div>
+                        </section>
                     {% endif %}
                     <!-- End - content -->
                 {% endblock %}
