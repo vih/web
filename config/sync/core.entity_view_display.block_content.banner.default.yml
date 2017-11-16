@@ -16,12 +16,11 @@ bundle: banner
 mode: default
 content:
   field_image:
-    type: image
+    type: image_url
     weight: 0
     label: hidden
     settings:
       image_style: banner
-      image_link: ''
     third_party_settings: {  }
     region: content
   field_link:

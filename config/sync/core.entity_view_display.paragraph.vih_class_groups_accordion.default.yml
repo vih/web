@@ -21,4 +21,8 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_background_color: true
+  field_background_image: true
+  field_heading: true
+  field_link: true
