@@ -1,4 +1,4 @@
-<div{{ attributes.addClass('banner__inner') }}>
+<div class="sectioned sectioned--banner sectioned--banner sectioned--background-image" style="background-image: url({{ content.field_image[0]['#markup'] }})">
 
     <!-- Begin - logo -->
     <div class="banner__logo">
@@ -10,32 +10,19 @@
     </div>
     <!-- End - logo -->
 
-    {% if content.field_image is not empty %}
-        {{ content.field_image }}
-    {% endif %}
+    <div class="sectioned__inner">
+        <div class="container">
 
-    <!-- Begin - body -->
-    <div class="banner__body">
-
-        {{ title_prefix }}
-        {% if label %}
-            <div class="banner__heading">
-                <h1{{ title_attributes.addClass('banner__heading__title') }}>
-                    {{ content.field_image['#items'].alt }}
-                </h1>
+            <!-- Begin - heading -->
+            <div class="sectioned__heading">
+                <h1 class="sectioned__heading__title">{{ content.field_image['#items'].alt }}</h1>
             </div>
-        {% endif %}
-        {{ title_suffix }}
+            <!-- End - heading -->
 
-        {% if content.field_link %}
-            <!-- Begin - link -->
-            <div class="banner__link">
-                {{ content.field_link }}
-            </div>
-            <!-- End - link -->
-        {% endif %}
+            {# Begin - link #}
+            {{ content.field_link }}
+            {# End - link #}
 
+        </div>
     </div>
-    <!-- End - body -->
-
 </div>

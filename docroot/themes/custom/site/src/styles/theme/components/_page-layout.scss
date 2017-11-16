@@ -770,10 +770,6 @@ flex-direction: column;
   padding-left: 40px !important;
   padding-right: 40px !important;
 }
-.path-frontpage .field--name-field-link {
-  display: flex;
-  justify-content: center;
-}
 .news-container {
   padding-bottom: 0px !important;
   position: relative;
@@ -788,26 +784,8 @@ flex-direction: column;
   width: 100%;
   margin-top: 0;
 }
-.path-node article .field--name-field-paragraphs {
-  width: 100vw;
-  > .field--item:first-child .angled-background-image,
-  > .field--item:first-child .angled-background-color {
-    margin-top: 60px;
-  }
-  > .field--item:not(:last-child) .angled-background-image,
-  > .field--item:not(:last-child) .angled-background-color {
-    margin-bottom: 40px;
-  }
-}
 .fagpakker-overlay {
   left: 0;
-}
-.path-kortkurser .banner:after {
-  background: white !important;
-  border-bottom: 170px solid white;
-}
-.path-kortkurser .angled-background-inner:before {
-  display: none !important;
 }
 .path-taxonomy div[role=heading] {
   display: flex;
