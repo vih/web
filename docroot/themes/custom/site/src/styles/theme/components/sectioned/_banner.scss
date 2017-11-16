@@ -1,0 +1,209 @@
+// |--------------------------------------------------------------------------
+// | Banner
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sectioned--banner
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// Responsive
+$xs-banner-height: 400px;
+$sm-banner-height: 500px;
+$md-banner-height: 650px;
+$lg-banner-height: 900px;
+
+$xs-banner-small-height: 300px;
+$sm-banner-small-height: 450px;
+$md-banner-small-height: 550px;
+$lg-banner-small-height: 600px;
+
+$xs-banner-title-font-size: 30px;
+$sm-banner-title-font-size: 34px;
+$md-banner-title-font-size: 40px;
+$lg-banner-title-font-size: 46px;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin sectioned-banner-angle-mixin($height, $background-color: $body-bg) {
+  @include angled-edge('inside bottom', 'upper right', $background-color, $height);
+
+  .sectioned__inner {
+    padding-bottom: ( 1px * $height );
+  }
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.sectioned--banner {
+  position: relative;
+
+  @include sectioned-banner-angle-mixin($xs-sectioned-skewed-angle-height);
+
+  .sectioned__inner {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 0;
+
+    min-height: $xs-banner-height;
+  }
+
+  .sectioned__heading {
+    text-align: center;
+  }
+
+  .sectioned__heading__title {
+    font-size: $xs-banner-title-font-size;
+
+    color: #fff;
+  }
+
+  .field--name-field-link {
+    margin-top: 50px;
+
+    text-align: center;
+
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
+}
+
+.banner__logo {
+  display: none;
+  position: absolute;
+
+  z-index: 0;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: transparent;
+}
+.banner__logo__image {
+  display: none;
+  position: absolute;
+
+  right: 50px;
+  bottom: 8%;
+
+  background: url('../images/banner-logo.png') center center no-repeat;
+  background-size: 100%;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.sectioned--banner--small {
+
+  .sectioned__inner {
+    min-height: $xs-banner-small-height;
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  .sectioned--banner {
+    @include sectioned-banner-angle-mixin($sm-sectioned-skewed-angle-height);
+
+    .sectioned__heading__title {
+      font-size: $sm-banner-title-font-size;
+    }
+
+    .sectioned__inner {
+      min-height: $sm-banner-height;
+    }
+  }
+
+  .sectioned--banner--small {
+
+    .sectioned__inner {
+      min-height: $sm-banner-small-height;
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  .sectioned--banner {
+    @include sectioned-banner-angle-mixin($md-sectioned-skewed-angle-height);
+
+    .sectioned__heading__title {
+      font-size: $md-banner-title-font-size;
+    }
+
+    .sectioned__inner {
+      min-height: $md-banner-height;
+    }
+  }
+
+  .sectioned--banner--small {
+
+    .sectioned__inner {
+      min-height: $md-banner-small-height;
+    }
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  .sectioned--banner {
+    @include sectioned-banner-angle-mixin($lg-sectioned-skewed-angle-height);
+
+    .sectioned__heading__title {
+      font-size: $lg-banner-title-font-size;
+    }
+
+    .sectioned__inner {
+      min-height: $lg-banner-height;
+    }
+  }
+
+  .sectioned--banner--small {
+
+    .sectioned__inner {
+      min-height: $lg-banner-small-height;
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

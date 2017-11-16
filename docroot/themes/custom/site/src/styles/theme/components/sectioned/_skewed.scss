@@ -66,6 +66,25 @@ $lg-sectioned-skewed-angle-height: 180; // In pixels
   }
 }
 
+// If the last paragraph is a skewed section with a background image (not background color)
+// we are altering the spacing towards the bottom.
+//
+// This is because of the footer.
+// We only want the minus margin when it's skewed + skewed.
+//
+.field--name-field-paragraphs {
+
+  .field--item {
+
+    &:last-child {
+
+      .sectioned--skewed--background-image {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
