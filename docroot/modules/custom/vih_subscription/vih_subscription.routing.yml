@@ -11,56 +11,83 @@ vih_subscription.long_course_order_create:
     _permission: 'access content'
     course: \d+
 vih_subscription.short_course_order_create:
-  path: '/kortkurser/{course}/tilmelding'
+  path: '/kortkurser/{course}/tilmelding/{order}/{checksum}'
   options:
     parameters:
       course:
         type: entity:node
+      order:
+        type: entity:node
+      checksum:
+        type: string
   defaults:
+    order: null
+    checksum: null
     _form: '\Drupal\vih_subscription\Form\ShortCourseOrderForm'
     _title_callback: '\Drupal\vih_subscription\Form\ShortCourseOrderForm::getTitle'
   requirements:
     _permission: 'access content'
     course: \d+
 vih_subscription.event_order_create:
-  path: '/begivenhed/{event}/tilmelding'
+  path: '/begivenhed/{event}/tilmelding/{order}/{checksum}'
   options:
     parameters:
       event:
         type: entity:node
+      order:
+        type: entity:node
+      checksum:
+        type: string
   defaults:
+    order: null
+    checksum: null
     _form: '\Drupal\vih_subscription\Form\EventOrderForm'
     _title_callback: '\Drupal\vih_subscription\Form\EventOrderForm::getTitle'
   requirements:
     _permission: 'access content'
     event: \d+
+vih_subscription.subscription_confirmation_redirect:
+  path: '/tilmelding/{subject}/{order}/bekraeftelse/{checksum}'
+  options:
+    parameters:
+      subject:
+        type: entity:node
+      order:
+        type: entity:node
+      checksum:
+        type: string
+  defaults:
+    _controller: '\Drupal\vih_subscription\Controller\SubscriptionConfirmationController::content'
+    _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionConfirmationController::getTitle'
+  requirements:
+    _permission: 'access content'
 vih_subscription.subscription_successful_redirect:
   path: '/tilmelding/{subject}/{order}/tak/{checksum}'
   options:
-      parameters:
-        subject:
-          type: entity:node
-        order:
-          type: entity:node
-        checksum:
-          type: string
+    parameters:
+      subject:
+        type: entity:node
+      order:
+        type: entity:node
+      checksum:
+        type: string
   defaults:
-      _controller: '\Drupal\vih_subscription\Controller\SubscriptionSuccessfulController::content'
-      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionSuccessfulController::getTitle'
+    _controller: '\Drupal\vih_subscription\Controller\SubscriptionSuccessfulController::content'
+    _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionSuccessfulController::getTitle'
   requirements:
     _permission: 'access content'
 vih_subscription.subscription_cancelled_redirect:
   path: '/tilmelding/aflyst'
   defaults:
-      _controller: '\Drupal\vih_subscription\Controller\SubscriptionCancelledController::content'
-      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionCancelledController::getTitle'
+    _controller: '\Drupal\vih_subscription\Controller\SubscriptionCancelledController::content'
+    _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionCancelledController::getTitle'
   requirements:
     _permission: 'access content'
 vih_subscription.subscription_error_redirect:
   path: '/tilmelding/fejl'
   defaults:
-      _controller: '\Drupal\vih_subscription\Controller\SubscriptionErrorController::content'
-      _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionErrorController::getTitle'
+    _controller: '\Drupal\vih_subscription\Controller\SubscriptionErrorController::content'
+    _title_callback: '\Drupal\vih_subscription\Controller\SubscriptionErrorController::getTitle'
   requirements:
     _permission: 'access content'
 vih_subscription.admin.notifications.settings_form:

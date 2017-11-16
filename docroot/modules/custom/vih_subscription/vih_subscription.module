@@ -42,7 +42,16 @@ function vih_subscription_theme() {
     'vih_subscription_event_order_form' => array(
       'render element' => 'form',
     ),
+    'vih_subscription_confirmation_page' => array(
+      'render element' => 'page',
+    ),
     'vih_subscription_thank_you_page' => array(
+      'render element' => 'page',
+    ),
+    'vih_subscription_cancelled_page' => array(
+      'render element' => 'page',
+    ),
+    'vih_subscription_error_page' => array(
       'render element' => 'page',
     )
   ];

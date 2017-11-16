@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
     - field.field.node.vih_long_course_order.field_vih_lco_payment
+    - field.field.node.vih_long_course_order.field_vih_lco_status
     - field.field.node.vih_long_course_order.field_vih_lco_telefon
     - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
@@ -234,6 +235,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_vih_lco_status:
+    weight: 121
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_vih_lco_telefon:
     weight: 37
     settings:
@@ -269,6 +276,13 @@ content:
     weight: 15
     third_party_settings: {  }
     region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:

@@ -7,6 +7,7 @@
 namespace Drupal\vih_subscription\Form;
 
 use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
+use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -42,22 +43,33 @@ class EventOrderForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $event = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $event = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     $this->event = $event;
+
+    if ($order != NULL) {
+      if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($event, $order))) {
+        $this->eventOrder = $order;
+      }
+    }
 
     $form['#event'] = array(
       'title' => $event->getTitle()
     );
 
     $personsLimit = $event->field_vih_event_persons_limit->value;
-    $personsSubscribed = $this->calculateSubscribedPeopleNumber($event);
+    $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($event);
     if ($personsLimit == 0) { //unlimited
       $personsLimit = PHP_INT_MAX;
     }
 
     $participantsCounter = $form_state->get('participantsCounter');
     if (empty($participantsCounter)) {
-      $participantsCounter = 1;
+      if ($this->eventOrder != NULL) {
+        $participantsCounter = count($this->eventOrder->get('field_vih_eo_persons')->getValue());
+      } else {
+        $participantsCounter = 1;
+      }
+
       $form_state->set('participantsCounter', $participantsCounter);
     }
 
@@ -134,6 +146,11 @@ class EventOrderForm extends FormBase {
       );
     }
 
+    //preloading data
+    if ($this->eventOrder != NULL) {
+      $this->populateData($this->eventOrder, $form);
+    }
+
     $form['#theme'] = 'vih_subscription_event_order_form';
     $form_state->setCached(FALSE);
 
@@ -171,45 +188,46 @@ class EventOrderForm extends FormBase {
       }
     }
 
+    //calculating the price
     $basePrice = $this->event->field_event_price->value;
     $orderPrice = $basePrice * count($subscribedPersons);
 
-    $this->eventOrder = Node::create(array(
-      'type' => 'vih_event_order',
-      'status' => 0,
-      'title' => $this->event->getTitle() . ' - begivenhed tilmelding - ' . $firstParticipantName . ' - '
-        . \Drupal::service('date.formatter')->format(time(), 'short'),
-      'field_vih_eo_persons' => $subscribedPersons,
-      'field_vih_eo_event' => $this->event->id(),
-      'field_vih_eo_status' => 'pending',
-      'field_vih_eo_price' => $orderPrice,
-    ));
+    //checking if we need to create a new order or edit the existing
+    if ($this->eventOrder == NULL) {
+      $this->eventOrder = Node::create(array(
+        'type' => 'vih_event_order',
+        'status' => 0,
+        'title' => $this->event->getTitle() . ' - begivenhed tilmelding - ' . $firstParticipantName . ' - '
+          . \Drupal::service('date.formatter')->format(time(), 'short'),
+        'field_vih_eo_persons' => $subscribedPersons,
+        'field_vih_eo_event' => $this->event->id(),
+        'field_vih_eo_status' => 'pending',
+        'field_vih_eo_price' => $orderPrice,
+      ));
+    } else {
+      //removing old participants paragraphs, and replacing with new ones
+      $subscribedPersonsIds = $this->eventOrder->get('field_vih_eo_persons')->getValue();
+      foreach ($subscribedPersonsIds as $subscribedPersonId) {
+        $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
+        if ($subscribedPerson) {
+         $subscribedPerson->delete();
+        }
+      }
+      //adding new participants
+      $this->eventOrder->set('field_vih_eo_persons', $subscribedPersons);
+
+      $this->eventOrder->set('field_vih_eo_price', $orderPrice);
+    }
+
+    //saving the order (works for both new/edited)
     $this->eventOrder->save();
 
-    //generating URL needed for quickpay
-
-    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect', [
+    //redirecting to confirmation page
+    $form_state->setRedirect('vih_subscription.subscription_confirmation_redirect', [
       'subject' => $this->event->id(),
       'order' => $this->eventOrder->id(),
       'checksum' => VihSubscriptionUtils::generateChecksum($this->event, $this->eventOrder)
     ]);
-    $successUrl->setAbsolute();
-
-    $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');
-    $cancelUrl->setAbsolute();
-
-    $client = new BellcomQuickpayClient();
-    $paymentLink = $client->getPaymentLink($this->eventOrder, $this->event, $orderPrice, $successUrl->toString(), $cancelUrl->toString());
-
-    //successful
-    if ($paymentLink) {
-      //following the link
-      $response = new TrustedRedirectResponse($paymentLink);
-      $form_state->setResponse($response);
-    } else {
-      //something was wrong
-      $form_state->setRedirect('vih_subscription.subscription_error_redirect');
-    }
   }
 
   /**
@@ -252,25 +270,19 @@ class EventOrderForm extends FormBase {
   }
 
   /**
-   * Calculates the number of people that have already subscribed to this events
+   * Populate the data into the form the existing eventOrder
    *
-   * @param NodeInterface $event
-   * @return int
+   * @param NodeInterface $eventOrder
+   * @param $form
    */
-  private function calculateSubscribedPeopleNumber(NodeInterface $event) {
-    $eventOrderNids = \Drupal::entityQuery('node')
-      ->condition('type', 'vih_event_order')
-      //->condition('status', '1')new nodes are saved as unpublished
-      ->condition('field_vih_eo_event', $event->id())
-      ->condition('field_vih_eo_status', 'confirmed')
-      ->execute();
+  private function populateData(NodeInterface $eventOrder, &$form) {
+    $subscribedPersonsIds = $eventOrder->get('field_vih_eo_persons')->getValue();
+    foreach ($subscribedPersonsIds as $index => $subscribedPersonId) {
+      $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
 
-    $eventOrders = Node::loadMultiple($eventOrderNids);
-    $subscribedPeopleNumber = 0;
-    foreach ($eventOrders as $eventOrder) {
-      $subscribedPeopleNumber += count($eventOrder->get('field_vih_eo_persons')->getValue());
+      $form['participants_container'][$index]['participant_fieldset']['firstName']['#default_value'] = $subscribedPerson->field_vih_oe_first_name->value;
+      $form['participants_container'][$index]['participant_fieldset']['lastName']['#default_value'] = $subscribedPerson->field_vih_oe_last_name->value;
+      $form['participants_container'][$index]['participant_fieldset']['email']['#default_value'] = $subscribedPerson->field_vih_oe_email->value;
     }
-
-    return $subscribedPeopleNumber;
   }
 }

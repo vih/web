@@ -14,11 +14,13 @@ dependencies:
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_status
     - node.type.event
   module:
     - datetime
     - entity_reference_revisions
     - image
+    - options
     - panelizer
     - text
     - user
@@ -36,12 +38,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_event_end_date:
-    weight: 8
+    weight: 5
     label: hidden
     settings:
       timezone_override: ''
@@ -50,7 +52,7 @@ content:
     type: datetime_default
     region: content
   field_event_price:
-    weight: 9
+    weight: 6
     label: hidden
     settings:
       thousand_separator: ''
@@ -61,7 +63,7 @@ content:
     type: number_decimal
     region: content
   field_event_start_date:
-    weight: 7
+    weight: 4
     label: hidden
     settings:
       timezone_override: ''
@@ -79,7 +81,7 @@ content:
     type: image
     region: content
   field_paragraphs:
-    weight: 10
+    weight: 7
     label: hidden
     settings:
       view_mode: default
@@ -88,7 +90,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_cource_contact_person:
-    weight: 11
+    weight: 8
     label: hidden
     settings:
       view_mode: compact
@@ -97,7 +99,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_vih_course_heading:
-    weight: 12
+    weight: 9
     label: hidden
     settings:
       link_to_entity: false
@@ -105,7 +107,7 @@ content:
     type: string
     region: content
   field_vih_course_subheading:
-    weight: 13
+    weight: 10
     label: hidden
     settings:
       link_to_entity: false
@@ -113,7 +115,7 @@ content:
     type: string
     region: content
   field_vih_event_persons_limit:
-    weight: 6
+    weight: 3
     label: hidden
     settings:
       thousand_separator: ''
@@ -121,8 +123,15 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_vih_event_status:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
   links:
-    weight: 4
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

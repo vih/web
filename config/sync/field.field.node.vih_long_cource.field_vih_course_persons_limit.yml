@@ -1,14 +1,14 @@
-uuid: fc826692-f64e-45f8-bf05-f7fd17430f49
+uuid: 422b3299-ccab-413e-926f-9b8aae13ae19
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_event_persons_limit
-    - node.type.event
-id: node.event.field_vih_event_persons_limit
-field_name: field_vih_event_persons_limit
+    - field.storage.node.field_vih_course_persons_limit
+    - node.type.vih_long_cource
+id: node.vih_long_cource.field_vih_course_persons_limit
+field_name: field_vih_course_persons_limit
 entity_type: node
-bundle: event
+bundle: vih_long_cource
 label: 'Persons limit'
 description: '0 for unlimited'
 required: false

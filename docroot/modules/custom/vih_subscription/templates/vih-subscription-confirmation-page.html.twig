@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>
+    {{ "Bekræft venligst din ordre"|t }}
+  </h3>
+  <br>
+
+  <div class="row">
+    <div class="col-xs-12 tilmeldings-knap">
+      <a href="{{ page['#backLink'] }}" class="btn-arrow">
+        {{ "Back to order"|t }}
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 tilmeldings-knap">
+      <a href="{{ page['#paymentLink'] }}" class="btn-arrow">
+        {{ "Proceed to payment"|t }}
+      </a>
+    </div>
+  </div>
+
+  {{ page['#order'] }}
+</div>

@@ -53,8 +53,16 @@ class BellcomQuickpayClient {
         'variables' => $variables
       );
 
-      //creating single payment
-      $payment = $this->client->request->post('/payments', $payment_form)->asArray();
+      //checking is payment for this order already exists
+      $payments = $this->client->request->get('/payments', $payment_form)->asArray();
+      $payment = NULL;
+      if (is_array($payments) && !empty($payments)) {
+        $payment = array_pop($payments);
+      }
+      else  {
+        //creating single payment
+        $payment = $this->client->request->post('/payments', $payment_form)->asArray();
+      }
       $payment_id = $payment['id'];
 
       $link = $this->client->request->put("/payments/$payment_id/link",

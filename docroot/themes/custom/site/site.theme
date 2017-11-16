@@ -199,7 +199,17 @@ function site_preprocess_node(array &$variables) {
 
   $node = $variables['node'];
 
-  if ($node->getType() == 'vih_long_cource') {
+  if ($node->getType() == 'event') {
+    $variables['content']['acceptsMoreSubscription'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
+    $variables['content']['isActive'] = ($node->field_vih_event_status->value == 'active');
+  }
+  elseif ($node->getType() == 'vih_short_course') {
+    $variables['content']['acceptsMoreSubscription'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
+    $variables['content']['isActive'] = ($node->field_vih_sc_status->value == 'active');
+  } elseif ($node->getType() == 'vih_long_cource') {
+    $variables['content']['acceptsMoreSubscription'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
+    $variables['content']['isActive'] = ($node->field_vih_course_status->value == 'active');
+
     //preloading travel classes
     $start_course_date = '';
     $end_course_date = '';
