@@ -80,74 +80,34 @@
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-mobile-and-up} {}
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-tablet-and-up} {}
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-desktop-and-up} {}
 
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-desktop-only} {}
 
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media #{$breakpoint-large-desktop-and-up} {}
 
 // Print
-@media print {
-
-  // Heading
-  .field--name-field-heading {}
-}
+@media print {}
 
 // Touch
-.touchevents {
-
-  // Heading
-  .field--name-field-heading {}
-}
+.touchevents {}
 
 // No touch
-.no-touchevents {
-
-  // Heading
-  .field--name-field-heading {}
-}
+.no-touchevents {}
 
 // --------------------------------------------------
 // Mixins

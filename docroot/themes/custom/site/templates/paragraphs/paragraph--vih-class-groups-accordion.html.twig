@@ -1,0 +1,48 @@
+{%
+set classes = [
+'sectioned',
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<section{{ attributes.addClass(classes) }}>
+    <div class="sectioned--skewed-angle-top">
+        <div class="sectioned--skewed-angle-bottom">
+
+            {% if background_image %}
+                <div class="angled-background-image-wrapper">
+                    <div class="cover-overlay"></div>
+                    <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+                </div>
+            {% endif %}
+
+            <div class="sectioned__inner">
+                <div class="container">
+
+                    {# Begin - heading #}
+                    {{ content.field_heading }}
+                    {# End - heading #}
+
+                    {# Begin - groups #}
+                    {% if paragraph.field_vih_cg_single_class_groups.value %}
+                        <div class="boxy boxy--single-class-groups">
+                            <div class="boxy__body">
+                                <div class="panel-group" id="accordion" role="tablist">
+                                    {{ content.field_vih_cg_single_class_groups }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - groups #}
+
+                    {# Begin - link #}
+                    {{ content.field_link }}
+                    {# End - link #}
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -21,17 +21,17 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
 
 // 1 column action - centered
 .paragraph--type--_-column-action-centered {
-  text-align: center;
-
-  .field--name-field-heading {
-    text-align: left;
-  }
 
   .field--name-field-description {
+    text-align: center;
 
     + .field--name-field-link {
       margin-top: 50px;
     }
+  }
+
+  .field--name-field-link {
+    text-align: center;
   }
 }
 

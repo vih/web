@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Link
+// | Single class groups
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .field--name-field-link
+// | - .field--name-field-vih-cg-single-class-groups
 // |
 
 // --------------------------------------------------
@@ -14,13 +14,8 @@
 // Styling
 // --------------------------------------------------
 
-// Link
-.field--name-field-link {
-
-  a {
-    @extend .btn;
-  }
-}
+// Single class groups
+.field--name-field-vih-cg-single-class-groups {}
 
 // --------------------------------------------------
 // Variants
@@ -29,73 +24,43 @@
 // Background image
 .sectioned--skewed--background-image {
 
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
+  // Single class groups
+  .field--name-field-vih-cg-single-class-groups {}
 }
 
 // White
 .sectioned--skewed--background-color-white {
 
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
+  // Single class groups
+  .field--name-field-vih-cg-single-class-groups {}
 }
 
 // Light gray
 .sectioned--skewed--background-color-light-gray {
 
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
+  // Single class groups
+  .field--name-field-vih-cg-single-class-groups {}
 }
 
 // Gray
 .sectioned--skewed--background-color-gray {
 
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
+  // Single class groups
+  .field--name-field-vih-cg-single-class-groups {}
 }
 
 // Primary
 .sectioned--skewed--background-color-primary {
 
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-default;
-    }
-  }
+  // Single class groups
+  .field--name-field-vih-cg-single-class-groups {}
 }
 
 // Secondary
 .sectioned--skewed--background-color-secondary {
 
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
+  // Single class groups
+  .field--name-field-vih-cg-single-class-groups {}
 }
 
 // --------------------------------------------------
@@ -136,5 +101,5 @@
 // Mixins
 // --------------------------------------------------
 
-// Link mixin
-@mixin field--name-mixin-field-link() {}
+// Single class groups mixin
+@mixin field--name-mixin-field-single-class-groups() {}

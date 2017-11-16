@@ -15,13 +15,13 @@
 // --------------------------------------------------
 
 .paragraph--type--vih-single-class-group {
+
   .panel-body {
     padding: 0;
-    .field--name-field-vih-scg-classes {
-      > .field--item:not(:last-child) {
-        border-bottom: 1px solid $gray-lighter;
-      }
-    }
+  }
+
+  .field--name-field-link {
+    text-align: center;
   }
 }
 
@@ -34,44 +34,34 @@
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
-}
+@media #{$breakpoint-mobile-and-up} {}
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
-}
+@media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {
-}
+@media #{$breakpoint-tablet-and-up} {}
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
-}
+@media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-}
+@media #{$breakpoint-desktop-and-up} {}
 
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-}
+@media #{$breakpoint-desktop-only} {}
 
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {
-}
+@media #{$breakpoint-large-desktop-and-up} {}
 
 // Print
-@media print {
-}
+@media print {}
 
 // Touch
-.touchevents {
-}
+.touchevents {}
 
 // No touch
-.no-touchevents {
-}
+.no-touchevents {}
 
 // --------------------------------------------------
 // Mixins

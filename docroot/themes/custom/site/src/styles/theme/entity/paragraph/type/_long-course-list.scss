@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Link
+// | Long course list
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .field--name-field-link
+// | - .paragraph--type--long-course-list-
 // |
 
 // --------------------------------------------------
@@ -11,92 +11,27 @@
 // --------------------------------------------------
 
 // --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin paragraph-type-long-course-list-mixin() {}
+
+// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-// Link
-.field--name-field-link {
+.paragraph--type--long-course-list- {
 
-  a {
-    @extend .btn;
+  .field--name-field-link {
+    margin-top: 50px;
+
+    text-align: center;
   }
 }
 
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
-
-// Background image
-.sectioned--skewed--background-image {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// White
-.sectioned--skewed--background-color-white {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// Light gray
-.sectioned--skewed--background-color-light-gray {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// Gray
-.sectioned--skewed--background-color-gray {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
-
-// Primary
-.sectioned--skewed--background-color-primary {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-default;
-    }
-  }
-}
-
-// Secondary
-.sectioned--skewed--background-color-secondary {
-
-  // Link
-  .field--name-field-link {
-
-    a {
-      @extend .btn-primary;
-    }
-  }
-}
 
 // --------------------------------------------------
 // Responsive
@@ -131,10 +66,3 @@
 
 // No touch
 .no-touchevents {}
-
-// --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-// Link mixin
-@mixin field--name-mixin-field-link() {}

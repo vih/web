@@ -84,74 +84,34 @@
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-mobile-and-up} {}
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-tablet-and-up} {}
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-desktop-and-up} {}
 
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-desktop-only} {}
 
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media #{$breakpoint-large-desktop-and-up} {}
 
 // Print
-@media print {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+@media print {}
 
 // Touch
-.touchevents {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+.touchevents {}
 
 // No touch
-.no-touchevents {
-
-  // Highlighted
-  .field--name-field-highlighted {}
-}
+.no-touchevents {}
 
 // --------------------------------------------------
 // Mixins
