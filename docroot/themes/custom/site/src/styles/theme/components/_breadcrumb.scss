@@ -21,7 +21,9 @@ $breadcrumb-active-background-color: $brand-primary;
 
 // Breadcrumb
 .breadcrumb {
-  display: inline-block;
+  display: flex;
+
+  flex-direction: column;
 
   padding: 0;
   margin-bottom: 0;
@@ -34,10 +36,13 @@ $breadcrumb-active-background-color: $brand-primary;
   li {
     position: relative;
 
-    background-color: $breadcrumb-background-color;
     padding: 11px 20px;
 
-    // Must be home button
+    text-align: center;
+
+    background-color: $breadcrumb-background-color;
+
+    // Home button
     &:first-child {
       background-color: $breadcrumb-home-background-color;
 
@@ -47,15 +52,13 @@ $breadcrumb-active-background-color: $brand-primary;
         &:before {
           @extend .icon;
           display: inline-block;
-          color: #afafaf;
-          font-size: $font-size-base;
+
           content: $icon-home;
+
+          font-size: $font-size-base;
+          color: inherit;
         }
       }
-    }
-
-    &:not(:first-child) {
-      margin-left: -7px;
     }
 
     &.active {
@@ -68,85 +71,15 @@ $breadcrumb-active-background-color: $brand-primary;
       }
     }
 
-    &,
     a {
+      display: block;
+    }
+
+    &, a {
       font-size: $font-size-small;
       color: $text-color-light;
 
       text-transform: uppercase;
-    }
-
-    + li {
-      padding-left: floor(($breadcrumb-arrow-width + 20px));
-    }
-  }
-
-  // Arrow
-  li {
-
-    // This applies to all
-    + li {
-
-      &:before,
-        &:after {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        pointer-events: none;
-        border-color: rgba(136, 183, 213, 0);
-      }
-
-      &:before {
-        border-width: $breadcrumb-arrow-width;
-        margin-top: -$breadcrumb-arrow-width;
-        border-left-color: $breadcrumb-background-color;
-        z-index: 2;
-      }
-
-      &:after {
-        border-width: ($breadcrumb-arrow-width + 1px);
-        margin-top: -($breadcrumb-arrow-width + 1px);
-        border-left-color: $border-color;
-        z-index: 1;
-      }
-    }
-
-    // Dont show bordered arrow (between regular elements) on home and active (last)
-    &.active {
-
-      &:after {
-        display: none;
-      }
-    }
-
-    &:first-child {
-
-      &:before,
-        &:after {
-        display: none;
-      }
-
-      + li {
-
-        &:before {
-          border-left-color: $breadcrumb-home-background-color;
-        }
-
-        &:after {
-          display: none;
-        }
-      }
-    }
-
-    + li {
-
-      &:before {
-        border-left-color: $breadcrumb-background-color;
-      }
     }
   }
 }
@@ -160,55 +93,18 @@ $breadcrumb-active-background-color: $brand-primary;
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+@media #{$breakpoint-mobile-and-up} {}
 
 // Mobile - only
 @media #{$breakpoint-mobile-only} {
 
-  // Breadcrumb
   .breadcrumb {
-    display: inline-block;
-    border: none;
-    //border-radius: 0;
-    background-color: #fff;
-    padding: 0;
 
-    &:first-child {
-      //font-size: 14px !important;
-    }
+    li {
 
-    & li {
-      background-color: $breadcrumb-background-color;
-      position: relative;
-      padding: 9px 10px;
-      font-size: 10px;
-      width: 100%;
-
-      // Must be home button
-      &:first-child {
-        background-color: $breadcrumb-home-background-color;
-        // padding-top: 0px;
-        // padding-bottom: 0px;
-        font-size: 14px !important;
-      }
-
+      &:after,
       &:before {
-        border-width: 17px !important;
-        margin-top: -17px !important;
-        border-left-color: $breadcrumb-background-color;
-        z-index: 2;
-      }
-
-      & a {
-        font-size: 10px !important;
-      }
-
-      + li {
-        padding-left: floor(($breadcrumb-arrow-width + 5px));
+        display: none;
       }
     }
   }
@@ -217,58 +113,102 @@ $breadcrumb-active-background-color: $brand-primary;
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {
 
-  // Breadcrumb
-  .breadcrumb {}
+  .breadcrumb {
+    display: inline-flex;
+
+    flex-direction: row;
+
+    > * {
+      flex-shrink: 1;
+    }
+
+    // Arrow
+    li {
+      margin-left: -7px;
+
+      // This applies to all
+      + li {
+        padding-left: floor(($breadcrumb-arrow-width + 20px));
+
+        &:before,
+        &:after {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          pointer-events: none;
+          border-color: rgba(136, 183, 213, 0);
+        }
+
+        &:before {
+          border-width: $breadcrumb-arrow-width;
+          margin-top: -$breadcrumb-arrow-width;
+          border-left-color: $breadcrumb-background-color;
+          z-index: 2;
+        }
+
+        &:after {
+          border-width: ($breadcrumb-arrow-width + 1px);
+          margin-top: -($breadcrumb-arrow-width + 1px);
+          border-left-color: $border-color;
+          z-index: 1;
+        }
+      }
+
+      // Dont show bordered arrow (between regular elements) on home and active (last)
+      &.active {
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+
+        &:before,
+        &:after {
+          display: none;
+        }
+
+        + li {
+
+          &:before {
+            border-left-color: $breadcrumb-home-background-color;
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+@media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+@media #{$breakpoint-desktop-and-up} {}
 
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+@media #{$breakpoint-desktop-only} {}
 
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+@media #{$breakpoint-large-desktop-and-up} {}
 
 // Print
-@media print {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+@media print {}
 
 // Touch
-.touchevents {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+.touchevents {}
 
 // No touch
-.no-touchevents {
-
-  // Breadcrumb
-  .breadcrumb {}
-}
+.no-touchevents {}
 
 // --------------------------------------------------
 // Mixins
