@@ -14,8 +14,29 @@ view_mode ? view_mode|clean_class,
         <div class="sectioned__inner">
             <div class="container">
 
+                {# Begin - course status #}
+                {% if content.is_active %}
+
+                    {% if not content.can_be_subscribed %}
+                        <div class="boxy boxy--course-status">
+                            <div class="boxy__body">
+                                {{ 'No more available slots on this course' | trans }}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% else %}
+                    <div class="boxy boxy--course-status">
+                        <div class="boxy__body">
+                            {{ 'This course has been cancelled' | trans }}
+                        </div>
+                    </div>
+                {% endif %}
+                {# End - course status #}
+
                 <div class="partial">
                     <div class="partial__body">
+
                         <div class="row">
                             <div class="col-sm-6">
 
@@ -43,7 +64,6 @@ view_mode ? view_mode|clean_class,
 
                                 {# Begin - period #}
                                 {% if content.course_period_start or content.course_period_end %}
-                                    <!-- Begin - time period -->
                                     <div class="boxy boxy--time-period">
                                         <div class="boxy__heading">
                                             <h2 class="boxy__heading__title heading-h4">{{ 'Course start' | trans }}</h2>
@@ -64,7 +84,6 @@ view_mode ? view_mode|clean_class,
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End - time period -->
                                 {% endif %}
                                 {# End - period #}
 
@@ -168,34 +187,18 @@ view_mode ? view_mode|clean_class,
                     </div>
                 </div>
 
-                {% if content.isActive%}
-                  {% if(content.acceptsMoreSubscription) %}
-                    <!-- Begin - action button -->
+                {# Begin - action button #}
+                {% if content.is_active and content.can_be_subscribed %}
                     <div class="partial partial--action-button">
                         <div class="partial__body">
-                            <div class="text-center">
-                                <a href="{{ url('vih_subscription.long_course_order_create', {'course': node.id}) }}"
-                                   class="btn btn-primary">
-                                    {{ "Start now" | trans }}
-                                </a>
-                            </div>
+                            <a href="{{ url('vih_subscription.long_course_order_create', {'course': node.id}) }}"
+                               class="btn btn-primary">
+                                {{ "Start now" | trans }}
+                            </a>
                         </div>
                     </div>
-                    <!-- End - action button -->
-                  {% else %}
-                    <div class="partial partial--action-button">
-                      <div class="partial__body">
-                        {{ "No more available places" | trans }}
-                      </div>
-                    </div>
-                  {% endif %}
-                {% else %}
-                  <div class="partial partial--action-button">
-                    <div class="partial__body">
-                      {{ "This course is cancelled" | trans }}
-                    </div>
-                  </div>
                 {% endif %}
+                {# End - action button #}
 
                 {# Begin - teacher #}
                 {% if content.field_vih_cource_contact_person %}

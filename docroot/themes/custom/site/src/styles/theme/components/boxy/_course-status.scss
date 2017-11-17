@@ -1,33 +1,37 @@
 // |--------------------------------------------------------------------------
-// | Action button
+// | Course status
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .partial--action-button
+// | - .boxy--course-status
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-$partial-action-button-top-bottom-spacing: $grid-gutter-width;
-
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-@mixin partial-action-button-mixin() {}
+@mixin boxy-course-status-mixin() {}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.partial--action-button {
+.boxy--course-status {
+  margin-bottom: ($grid-gutter-width * 2);
 
-  .partial__body {
-    padding: $partial-action-button-top-bottom-spacing 0;
+  .boxy__body {
+    text-transform: uppercase;
 
     text-align: center;
+
+    color: $brand-danger;
+
+    border-color: $brand-danger;
+    border-width: 2px;
   }
 }
 
