@@ -25,15 +25,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                     {# End - heading #}
 
                     {# Begin - groups #}
-                    {% if paragraph.field_vih_cg_single_class_groups.value %}
-                        <div class="boxy boxy--single-class-groups">
-                            <div class="boxy__body">
-                                <div class="panel-group" id="accordion" role="tablist">
-                                    {{ content.field_vih_cg_single_class_groups }}
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
+                    {{ content.field_vih_cg_single_class_groups }}
                     {# End - groups #}
 
                     {# Begin - link #}

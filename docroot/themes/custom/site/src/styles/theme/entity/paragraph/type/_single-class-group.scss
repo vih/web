@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Single class groups
+// | Single class group
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .boxy--single-class-groups
+// | - .paragraph paragraph--type--vih-single-class-group
 // |
 
 // --------------------------------------------------
@@ -11,37 +11,33 @@
 // --------------------------------------------------
 
 // --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
-@mixin boxy-single-class-groups-mixin() {}
-
-// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.boxy--single-class-groups {
+.paragraph--type--vih-single-class-group {
 
-  .boxy__body {
+  .panel-body {
     padding: 0;
   }
 
-  .panel-heading {
-    position: relative;
+  .field--name-field-link {
+    text-align: center;
   }
 
-  .panel-title {
+  .field--items {
 
-    &:before {
-      position: absolute;
+    .field--item {
 
-      top: 0;
-      left: 0;
-      bottom: 0;
+      .entity-list-advanced {
+        border-bottom: 1px solid $border-color;
+      }
 
-      width: 5px;
+      &:last-child {
 
-      content: "";
+        .entity-list-advanced {
+          border-bottom: none;
+        }
+      }
     }
   }
 }
@@ -83,3 +79,8 @@
 
 // No touch
 .no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+

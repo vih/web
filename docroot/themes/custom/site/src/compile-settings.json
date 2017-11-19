@@ -4,7 +4,6 @@
   },
   "javascripts": [
     "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js",
-    "node_modules/pace-progress/pace.js",
     "src/javascripts/layout.js",
     "src/javascripts/jquery.cookie.js",
     "src/javascripts/modal-popup.js",

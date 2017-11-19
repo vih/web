@@ -79,6 +79,29 @@ img {
   border:3px solid transparent;
 }
 
+.panel {
+  @include box-shadow(none);
+}
+
+.panel-heading {
+  position: relative;
+}
+
+.panel-title {
+
+  &:before {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 5px;
+
+    content: "";
+  }
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

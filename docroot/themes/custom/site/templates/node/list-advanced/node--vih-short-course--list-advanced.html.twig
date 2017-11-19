@@ -11,23 +11,21 @@ set classes = [
 
 <a href="{{ url }}" class="element-wrapper-link entity-list-advanced entity-list-advanced--short-course">
 
-    <!-- Begin - image -->
-    <div class="entity-list-advanced__image">
+    {# Begin - image #}
+    {% if node.field_vih_sc_image.value %}
+        <div class="entity-list-advanced__image" style="background-image: url({{ node.field_vih_sc_image.entity.fileuri | image_style(content.field_vih_sc_image[0]['#image_style']) }});">
 
-        {# Begin - image #}
-        {{ content.field_vih_sc_image }}
-        {# End - image #}
+            {# Begin - period #}
+            {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
+                <div class="entity-list-advanced__image__overlay">
+                    {{ content.field_vih_sc_start_date }} - {{ content.field_vih_sc_end_date }}
+                </div>
+            {% endif %}
+            {# End - period #}
 
-        {# Begin - period #}
-        {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
-            <div class="entity-list-advanced__image__overlay">
-                {{ content.field_vih_sc_start_date }} - {{ content.field_vih_sc_end_date }}
-            </div>
-        {% endif %}
-        {# End - period #}
-
-    </div>
-    <!-- End - image -->
+        </div>
+    {% endif %}
+    {# End - image #}
 
     <!-- Begin - body -->
     <div class="entity-list-advanced__body">

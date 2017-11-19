@@ -25,25 +25,6 @@
   .boxy__body {
     padding: 0;
   }
-
-  .panel-heading {
-    position: relative;
-  }
-
-  .panel-title {
-
-    &:before {
-      position: absolute;
-
-      top: 0;
-      left: 0;
-      bottom: 0;
-
-      width: 5px;
-
-      content: "";
-    }
-  }
 }
 
 // --------------------------------------------------

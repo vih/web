@@ -1,18 +1,14 @@
-<div {{ attributes.addClass('element-wrapper-link', 'entity-list-advanced', 'entity-list-advanced--long-course') }}>
-
-    {{ content['field_vih_class_image'] }}
+<div {{ attributes.addClass('entity-list-advanced', 'entity-list-advanced--class') }}>
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
         <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
 
-            {# Begin - period #}
-            {% if content.course_period_start and content.course_period_end %}
-                <div class="entity-list-advanced__image__overlay">
-                    {{ content.course_period_start | format_date('vih_medium_date_short_month') }} - {{ content.course_period_end | format_date('vih_medium_date_short_month') }}
-                </div>
-            {% endif %}
-            {# End - period #}
+            {# Begin - name #}
+            <div class="entity-list-advanced__image__overlay">
+                {{ name }}
+            </div>
+            {# End - name #}
 
         </div>
     {% endif %}
@@ -21,12 +17,12 @@
     <!-- Begin - body -->
     <div class="entity-list-advanced__body">
 
-        <div class="entity-list-advanced__heading">
-            <h2 class="entity-list-advanced__heading__title heading-h4">{{ label }}</h2>
-        </div>
-
         {# Begin - description #}
-        {{ content.field_description }}
+        <div class="entity-list-advanced__heading">
+            <h2 class="entity-list-advanced__heading__title heading-h4">
+                {{ content.description | render | striptags('<!-- -->') | length > 70 ? content.description | render | striptags('<!-- -->') | slice(0, 70) ~ '...' : content.description }}
+            </h2>
+        </div>
         {# End - description #}
 
     </div>
@@ -63,33 +59,3 @@
     <!-- End - modal -->
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {#<div class="col-xs-12 col-sm-6 flex-center-middle">#}
-            {#{% if content.description|render is not empty %}#}
-                {#<div class="field-description-wrapper">#}
-                    {#{{ content.description|render|striptags('<!-- -->')|length > 70 ? content.description|render|striptags('<!-- -->')|slice(0, 70) ~ '...' : content.description }}#}
-                {#</div>#}
-            {#{% endif %}#}
-
-            {#<button type="button" class="btn btn-default">#}
-                {#<span class="icon icon-info-circle" aria-hidden="true"></span>#}
-            {#</button>#}
-        {#</div>#}
-    {#</div>#}
-
-{#</div>#}

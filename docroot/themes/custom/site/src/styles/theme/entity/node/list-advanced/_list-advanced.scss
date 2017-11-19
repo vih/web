@@ -10,6 +10,8 @@
 // Variables
 // --------------------------------------------------
 
+$list-advanced-min-height: 175px;
+
 $list-advanced-background-color: $body-bg;
 
 $list-advanced-inner-top-bottom-spacing: floor( ( $grid-gutter-width / 2 ) );
@@ -32,10 +34,20 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
   margin-bottom: $grid-gutter-width;
 
+  min-height: $list-advanced-min-height;
+
   background-color: $list-advanced-background-color;
   border: 1px solid $border-color;
 
-  transition: none; // Remove link transitions
+  .element-wrapper-link {
+    transition: none; // Remove link transitions
+  }
+
+  .panel & {
+    margin-bottom: 0;
+
+    border: 0;
+  }
 }
 
 .entity-list-advanced__heading {
@@ -51,15 +63,13 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 .entity-list-advanced__image {
   position: relative;
 
-  img {
-    width: 100%;
-  }
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .entity-list-advanced__image__overlay {
-  @include angled-edge('outside top', 'upper right', $brand-primary, 50);
+  @include angled-edge('outside top', 'upper left', rgba($brand-primary, .85), 40);
   position: absolute;
-
-  opacity: .85;
 
   right: 0;
   bottom: 0;
@@ -68,10 +78,11 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
   padding: 0 $list-advanced-inner-left-right-spacing 10px;
 
   text-transform: uppercase;
+  text-align: right;
 
   font-weight: $font-weight-bold;
   color: #fff;
-  background-color: $brand-primary;
+  background-color: rgba($brand-primary, .85);
 
   .field {
     display: inline-block;

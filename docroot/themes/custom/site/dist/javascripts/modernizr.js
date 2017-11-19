@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.5.0
- * Build https://modernizr.com/download?-animation-arrow-contains-flexbox-history-json-svg-target-template-texttrackapi_track-touchevents-addtest-fnbind-printshiv-setclasses-testprop-dontmin
+ * Build https://modernizr.com/download?-animation-arrow-contains-flexbox-json-svg-target-template-touchevents-addtest-fnbind-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1833,52 +1833,6 @@ Check if browser implements ECMAScript 6 Arrow Functions per specification.
 
 /*!
 {
-  "name": "History API",
-  "property": "history",
-  "caniuse": "history",
-  "tags": ["history"],
-  "authors": ["Hay Kranen", "Alexander Farkas"],
-  "notes": [{
-    "name": "W3C Spec",
-    "href": "https://www.w3.org/TR/html51/browsers.html#the-history-interface"
-  }, {
-    "name": "MDN documentation",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/API/window.history"
-  }],
-  "polyfills": ["historyjs", "html5historyapi"]
-}
-!*/
-/* DOC
-Detects support for the History API for manipulating the browser session history.
-*/
-
-  Modernizr.addTest('history', function() {
-    // Issue #733
-    // The stock browser on Android 2.2 & 2.3, and 4.0.x returns positive on history support
-    // Unfortunately support is really buggy and there is no clean way to detect
-    // these bugs, so we fall back to a user agent sniff :(
-    var ua = navigator.userAgent;
-
-    // We only want Android 2 and 4.0, stock browser, and not Chrome which identifies
-    // itself as 'Mobile Safari' as well, nor Windows Phone (issue #1471).
-    if ((ua.indexOf('Android 2.') !== -1 ||
-        (ua.indexOf('Android 4.0') !== -1)) &&
-        ua.indexOf('Mobile Safari') !== -1 &&
-        ua.indexOf('Chrome') === -1 &&
-        ua.indexOf('Windows Phone') === -1 &&
-    // Since all documents on file:// share an origin, the History apis are
-    // blocked there as well
-        location.protocol !== 'file:'
-    ) {
-      return false;
-    }
-
-    // Return the regular check
-    return (window.history && 'pushState' in window.history);
-  });
-
-/*!
-{
   "name": "JSON",
   "property": "json",
   "caniuse": "json",
@@ -1965,29 +1919,6 @@ Detects support for the ':target' CSS pseudo-class.
 !*/
 
   Modernizr.addTest('template', 'content' in createElement('template'));
-
-/*!
-{
-  "name": "Track element and Timed Text Track",
-  "property": ["texttrackapi", "track"],
-  "tags": ["elem"],
-  "builderAliases": ["elem_track"],
-  "authors": ["Addy Osmani"],
-  "notes": [{
-    "name": "W3 track Element Spec",
-    "href": "http://www.w3.org/TR/html5/video.html#the-track-element"
-  },{
-    "name": "W3 track API Spec",
-    "href": "http://www.w3.org/TR/html5/media-elements.html#text-track-api"
-  }],
-  "warnings": ["While IE10 has implemented the track element, IE10 does not expose the underlying APIs to create timed text tracks by JS (really sad)"]
-}
-!*/
-
-  Modernizr.addTest('texttrackapi', typeof (createElement('video').addTextTrack) === 'function');
-
-  // a more strict test for track including UI support: document.createElement('track').kind === 'subtitles'
-  Modernizr.addTest('track', 'kind' in createElement('track'));
 
 /*!
 {

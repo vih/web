@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Paragraph class package accordion
+// | Single class groups
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .paragraph paragraph--type--vih-single-class-group
+// | - .partial--single-class-groups
 // |
 
 // --------------------------------------------------
@@ -11,17 +11,19 @@
 // --------------------------------------------------
 
 // --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin partial-single-class-groups-mixin() {}
+
+// --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.paragraph--type--vih-single-class-group {
+.partial--single-class-groups {
 
-  .panel-body {
+  .partial__body {
     padding: 0;
-  }
-
-  .field--name-field-link {
-    text-align: center;
   }
 }
 
@@ -62,8 +64,3 @@
 
 // No touch
 .no-touchevents {}
-
-// --------------------------------------------------
-// Mixins
-// --------------------------------------------------
-
