@@ -15,6 +15,7 @@ dependencies:
     - taxonomy.vocabulary.vih_class
   module:
     - image
+    - options
     - panelizer
     - text
 third_party_settings:
@@ -36,6 +37,13 @@ content:
       trim_length: 200
     third_party_settings: {  }
     region: content
+  field_vih_class_color:
+    type: list_key
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_vih_class_image:
     type: image
     weight: 0
@@ -48,7 +56,6 @@ content:
 hidden:
   field_class_package_paragraph: true
   field_vih_class_class_packages: true
-  field_vih_class_color: true
   field_vih_class_material_price: true
   field_vih_class_price_addition: true
   field_vih_teacher_class_descr: true
