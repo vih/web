@@ -32,10 +32,6 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
 
   .panel {
 
-    .panel-body {
-      padding: 0;
-    }
-
     .class-selection {
       border-color: $gray-lighter;
       border-style: solid;
@@ -46,92 +42,32 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
         margin-bottom: 0;
       }
 
-      label.btn-radio-select {
-        border-radius: 0;
-        justify-content: center;
-        align-items: center;
-        font-weight: 700;
-        font-family: $font-family-primary;
-        max-height: 40px;
-        padding: 0px 20px;
-        top: -3px;
-        position: relative;
-        background: none;
-        color: #bbb;
-        border: 1px solid rgba(0, 0, 0, 0.2);
+      .btn-radio-select {
+
+        input[type=radio] {
+          display: none; // This is not the proper way to fix this problem
+        }
 
         &.active {
-          background-color: #00bcff;
-          color: #fff;
+
+          &:after {
+            @extend .icon;
+
+            position: absolute;
+
+            right: 0;
+            content: $icon-account-circle;
+          }
         }
 
         .form-type-radio label {
           padding: 0;
         }
-
-        input[type=radio] {
-          position: absolute;
-          clip: rect(0, 0, 0, 0);
-          pointer-events: none;
-        }
-      }
-
-      .field--name-field-vih-class-image {
-        position: relative;
-
-        .svg-container-polygon {
-          display: inline-block;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          vertical-align: middle;
-          overflow: hidden;
-
-          .svg-content-polygon {
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            polygon {
-              opacity: 0.75;
-
-              &.color-red {
-                fill: $brand-red;
-              }
-
-              &.color-blue {
-                fill: $brand-primary;
-              }
-
-              &.color-cyan {
-                fill: $brand-cyan;
-              }
-
-              &.color-purple {
-                fill: $brand-quaternary;
-              }
-
-              &.color-yellow {
-                fill: $brand-yellow;
-              }
-
-              &.color-green {
-                fill: $brand-tertiary;
-              }
-            }
-          }
-        }
-
-        h5 {
-          position: absolute;
-          bottom: 8px;
-          right: 20px;
-        }
       }
     }
   }
 }
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -141,45 +77,34 @@ html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-selec
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
-}
+@media #{$breakpoint-mobile-and-up} {}
+
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
-}
+@media #{$breakpoint-mobile-only} {}
+
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {
-}
+@media #{$breakpoint-tablet-and-up} {}
+
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
-}
+@media #{$breakpoint-tablet-only} {}
+
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-  .course-periods-accordion {
-    .accordion-flex-container {
-      .selection-buttons {
-        text-align: left;
-      }
-      .description .field--item {
-        padding: 0;
-      }
-    }
-  }
-}
+@media #{$breakpoint-desktop-and-up} {}
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-}
+@media #{$breakpoint-desktop-only} {}
+
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {
-}
+@media #{$breakpoint-large-desktop-and-up} {}
+
 // Print
-@media print {
-}
+@media print {}
+
 // Touch
-.touchevents {
-}
+.touchevents {}
+
 // No touch
-.no-touchevents {
-}
+.no-touchevents {}
+
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------

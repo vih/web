@@ -10,9 +10,10 @@
 // Variables
 // --------------------------------------------------
 
-$list-advanced-min-height: 175px;
 
 $list-advanced-background-color: $body-bg;
+
+$list-advanced-image-min-height: 175px;
 
 $list-advanced-inner-top-bottom-spacing: floor( ( $grid-gutter-width / 2 ) );
 $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
@@ -40,8 +41,6 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
   margin-bottom: $grid-gutter-width;
 
-  min-height: $list-advanced-min-height;
-
   background-color: $list-advanced-background-color;
   border: 1px solid $border-color;
 
@@ -53,6 +52,10 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
     margin-bottom: 0;
 
     border: 0;
+  }
+
+  + .entity-list-advanced {
+    border-top: 1px solid $border-color;
   }
 }
 
@@ -68,6 +71,8 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
 .entity-list-advanced__image {
   position: relative;
+
+  min-height: $list-advanced-image-min-height;
 
   background-position: center center;
   background-repeat: no-repeat;
@@ -110,8 +115,12 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
   padding: $list-advanced-inner-top-bottom-spacing $list-advanced-inner-left-right-spacing;
 
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+
+  .btn + .btn {
+    margin-left: 10px;
+  }
 }
 
 // --------------------------------------------------
@@ -154,13 +163,13 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
     flex-direction: row;
   }
 
-  .entity-list-advanced__body {
-    flex-grow: 1;
-  }
-
   .entity-list-advanced__image {
     flex-basis: 350px;
     flex-shrink: 0;
+  }
+
+  .entity-list-advanced__body {
+    flex-grow: 1;
   }
 }
 
