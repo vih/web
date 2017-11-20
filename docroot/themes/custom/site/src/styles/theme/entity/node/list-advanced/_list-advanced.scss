@@ -21,7 +21,13 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 // Mixins
 // --------------------------------------------------
 
-@mixin entity-list-advanced-mixin() {}
+@mixin entity-list-advanced-image-variant-mixin($background-color) {
+  @include angled-edge('outside top', 'upper left', rgba($background-color, .85), 40);
+
+  position: absolute;
+
+  background-color: rgba($background-color, .85);
+}
 
 // --------------------------------------------------
 // Styling
@@ -68,7 +74,8 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
   background-size: cover;
 }
 .entity-list-advanced__image__overlay {
-  @include angled-edge('outside top', 'upper left', rgba($brand-primary, .85), 40);
+  @include entity-list-advanced-image-variant-mixin($brand-primary);
+
   position: absolute;
 
   right: 0;
@@ -111,10 +118,24 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 // Variants
 // --------------------------------------------------
 
-.entity-list-advanced__image__overlay--primary {}
-.entity-list-advanced__image__overlay--secondary {}
-.entity-list-advanced__image__overlay--tertiary {}
-.entity-list-advanced__image__overlay--success {}
+.entity-list-advanced__image__overlay--color-red {
+  @include entity-list-advanced-image-variant-mixin($brand-red);
+}
+.entity-list-advanced__image__overlay--color-blue {
+  @include entity-list-advanced-image-variant-mixin($brand-primary);
+}
+.entity-list-advanced__image__overlay--color-cyan {
+  @include entity-list-advanced-image-variant-mixin($brand-cyan);
+}
+.entity-list-advanced__image__overlay--color-purple {
+  @include entity-list-advanced-image-variant-mixin($brand-quaternary);
+}
+.entity-list-advanced__image__overlay--color-yellow {
+  @include entity-list-advanced-image-variant-mixin($brand-yellow);
+}
+.entity-list-advanced__image__overlay--color-green {
+  @include entity-list-advanced-image-variant-mixin($brand-tertiary);
+}
 
 // --------------------------------------------------
 // Responsive

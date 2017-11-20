@@ -3,6 +3,9 @@
     "proxy": "http://vih.test"
   },
   "javascripts": [
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
     "src/javascripts/layout.js",
     "src/javascripts/jquery.cookie.js",
     "src/javascripts/modal-popup.js",

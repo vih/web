@@ -5,7 +5,7 @@
         <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
 
             {# Begin - name #}
-            <div class="entity-list-advanced__image__overlay">
+            <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
                 {{ name }}
             </div>
             {# End - name #}
