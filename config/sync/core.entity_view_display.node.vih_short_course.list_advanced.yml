@@ -12,10 +12,12 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
+    - field.field.node.vih_short_course.field_vih_sc_persons_limit
     - field.field.node.vih_short_course.field_vih_sc_price
     - field.field.node.vih_short_course.field_vih_sc_start_date
+    - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.scheduled_update
-    - image.style.vih_general_teaser_image
+    - image.style.list_advanced
     - node.type.vih_short_course
   module:
     - datetime
@@ -55,7 +57,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: vih_general_teaser_image
+      image_style: list_advanced
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -78,7 +80,9 @@ hidden:
   field_vih_course_subheading: true
   field_vih_cs_contact_person: true
   field_vih_sc_option_groups: true
+  field_vih_sc_persons_limit: true
   field_vih_sc_price: true
+  field_vih_sc_status: true
   langcode: true
   links: true
   scheduled_update: true

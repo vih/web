@@ -28,7 +28,11 @@ view_mode ? view_mode|clean_class,
                 {% else %}
                     <div class="boxy boxy--course-status">
                         <div class="boxy__body">
-                            {{ 'This course has been cancelled' | trans }}
+                            {% if content.is_closed %}
+                                {{ 'This course is closed for signups.' | trans }}
+                            {% else %}
+                                {{ 'This course has been cancelled' | trans }}
+                            {% endif %}
                         </div>
                     </div>
                 {% endif %}

@@ -13,7 +13,14 @@ dependencies:
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
+    - panelizer
     - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: taxonomy_term.vih_class.default
 targetEntityType: taxonomy_term
 bundle: vih_class

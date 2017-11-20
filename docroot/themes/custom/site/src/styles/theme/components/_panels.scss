@@ -68,24 +68,23 @@
   > a {
     position: relative;
 
-    &:after {
+    &[aria-expanded=true]:after,
+    &[aria-expanded=false]:after {
       position: absolute;
 
       top: 50%;
       right: floor( ( $grid-gutter-width / 2 ) );
       margin-top: -13px;
 
-      content: "–";
-
       font-size: 20px;
       color: #000;
     }
 
-    &.collapsed {
-
-      &:after {
-        content: "+";
-      }
+    &[aria-expanded=false]:after {
+      content: "+";
+    }
+    &[aria-expanded=true]:after {
+      content: "–";
     }
 
     &, &:hover {

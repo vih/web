@@ -17,6 +17,9 @@ settings:
     -
       value: cancelled
       label: Cancelled
+    -
+      value: closed
+      label: Closed
   allowed_values_function: ''
 module: options
 locked: false

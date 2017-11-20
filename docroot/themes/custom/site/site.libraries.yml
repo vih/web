@@ -8,14 +8,11 @@ styles:
   css:
     theme:
       dist/stylesheets/stylesheet.css: { preprocess: false }
-      dist/jasny-bootstrap/css/jasny-bootstrap.min.css: {}
-      'https://afeld.github.io/emoji-css/emoji.css': {}
 
 javascripts:
   js:
     dist/javascripts/modernizr.js: { preprocess: false }
     dist/javascripts/app.js: { preprocess: false }
-    dist/jasny-bootstrap/js/jasny-bootstrap.js: {}
   dependencies:
     - core/drupal
     - core/jquery

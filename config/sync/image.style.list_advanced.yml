@@ -1,0 +1,14 @@
+uuid: b374a796-164b-4e9f-a769-17814c793f2c
+langcode: da
+status: true
+dependencies: {  }
+name: list_advanced
+label: 'List - advanced'
+effects:
+  92816ab2-d53d-42d6-b107-0c4f9680a98c:
+    uuid: 92816ab2-d53d-42d6-b107-0c4f9680a98c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 175
