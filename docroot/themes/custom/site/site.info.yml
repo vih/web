@@ -4,7 +4,7 @@ description: A beautiful client theme.
 package: Bellcom
 core: 8.x
 screenshot: dist/images/screenshot.png
-base theme: bellcom
+base theme: bootstrap
 
 regions:
   drawer_left: 'Drawer - left'

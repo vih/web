@@ -3,12 +3,14 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .sectioned--banner
+// | - .banner
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
+
+$banner-angle-background-color: $body-bg;
 
 // Responsive
 $xs-banner-height: 400px;
@@ -30,10 +32,10 @@ $lg-banner-title-font-size: 46px;
 // Mixins
 // --------------------------------------------------
 
-@mixin sectioned-banner-angle-mixin($height, $background-color: $body-bg) {
+@mixin banner-mixin-angle($height, $background-color: $body-bg) {
   @include angled-edge('inside bottom', 'upper right', $background-color, $height);
 
-  .sectioned__inner {
+  .banner__inner {
     padding-bottom: ( 1px * $height );
   }
 }
@@ -42,44 +44,50 @@ $lg-banner-title-font-size: 46px;
 // Styling
 // --------------------------------------------------
 
-.sectioned--banner {
+.banner {
+  @include banner-mixin-angle($xs-sectioned-skewed-angle-height);
+
   position: relative;
 
-  @include sectioned-banner-angle-mixin($xs-sectioned-skewed-angle-height);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner__inner {
+  display: flex;
 
-  .sectioned__inner {
-    display: flex;
+  justify-content: center;
+  align-items: center;
 
-    justify-content: center;
-    align-items: center;
+  padding-top: 0;
 
-    padding-top: 0;
+  min-height: $xs-banner-height;
+}
 
-    min-height: $xs-banner-height;
-  }
+// Heading
+.banner__heading {
+  text-align: center;
+}
+.banner__heading__title {
+  @extend h1;
+  font-size: $xs-banner-title-font-size;
 
-  .sectioned__heading {
-    text-align: center;
-  }
+  color: #fff;
+}
 
-  .sectioned__heading__title {
-    font-size: $xs-banner-title-font-size;
+// Actions
+.field--name-field-link {
+  margin-top: 50px;
 
-    color: #fff;
-  }
+  text-align: center;
 
-  .field--name-field-link {
-    margin-top: 50px;
-
-    text-align: center;
-
-    a {
-      @extend .btn;
-      @extend .btn-primary;
-    }
+  a {
+    @extend .btn;
+    @extend .btn-primary;
   }
 }
 
+// Logo
 .banner__logo {
   display: none;
   position: absolute;
@@ -93,7 +101,6 @@ $lg-banner-title-font-size: 46px;
   background-color: transparent;
 }
 .banner__logo__image {
-  display: none;
   position: absolute;
 
   right: 50px;
@@ -107,9 +114,9 @@ $lg-banner-title-font-size: 46px;
 // Variants
 // --------------------------------------------------
 
-.sectioned--banner--small {
+.banner--small {
 
-  .sectioned__inner {
+  .banner__inner {
     min-height: $xs-banner-small-height;
   }
 }
@@ -127,75 +134,108 @@ $lg-banner-title-font-size: 46px;
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {
 
-  .sectioned--banner {
-    @include sectioned-banner-angle-mixin($sm-sectioned-skewed-angle-height);
-
-    .sectioned__heading__title {
-      font-size: $sm-banner-title-font-size;
-    }
-
-    .sectioned__inner {
-      min-height: $sm-banner-height;
-    }
-  }
-
-  .sectioned--banner--small {
-
-    .sectioned__inner {
-      min-height: $sm-banner-small-height;
-    }
+  .banner__logo {
+    display: block;
   }
 }
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {}
+@media #{$breakpoint-tablet-only} {
 
-// Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
+  .banner {
+    @include banner-mixin-angle($sm-sectioned-skewed-angle-height);
+  }
+  .banner__inner {
+    min-height: $sm-banner-height;
+  }
 
-  .sectioned--banner {
-    @include sectioned-banner-angle-mixin($md-sectioned-skewed-angle-height);
+  .banner--small {
 
-    .sectioned__heading__title {
-      font-size: $md-banner-title-font-size;
-    }
-
-    .sectioned__inner {
-      min-height: $md-banner-height;
+    .banner__inner {
+      min-height: $sm-banner-small-height;
     }
   }
 
-  .sectioned--banner--small {
+  .banner__heading__title {
+    font-size: $sm-banner-title-font-size;
+  }
 
-    .sectioned__inner {
-      min-height: $md-banner-small-height;
-    }
+  .banner__logo {
+    width: 250px;
+  }
+  .banner__logo__image {
+    right: 25px;
+    bottom: 8%;
+
+    width: 140px;
+    height: 140px;
   }
 }
 
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
 // Desktop - only
-@media #{$breakpoint-desktop-only} {}
+@media #{$breakpoint-desktop-only} {
+
+  .banner {
+    @include banner-mixin-angle($md-sectioned-skewed-angle-height);
+  }
+  .banner__inner {
+    min-height: $md-banner-height;
+  }
+
+  .banner--small {
+
+    .banner__inner {
+      min-height: $md-banner-small-height;
+    }
+  }
+
+  .banner__heading__title {
+    font-size: $md-banner-title-font-size;
+  }
+
+  .banner__logo {
+    width: 300px;
+  }
+  .banner__logo__image {
+    width: 160px;
+    height: 160px;
+
+    right: 35px;
+  }
+}
 
 // Large desktop - and up
 @media #{$breakpoint-large-desktop-and-up} {
 
-  .sectioned--banner {
-    @include sectioned-banner-angle-mixin($lg-sectioned-skewed-angle-height);
+  .banner {
+    @include banner-mixin-angle($lg-sectioned-skewed-angle-height);
+  }
+  .banner__inner {
+    min-height: $lg-banner-height;
+  }
 
-    .sectioned__heading__title {
-      font-size: $lg-banner-title-font-size;
-    }
+  .banner--small {
 
-    .sectioned__inner {
-      min-height: $lg-banner-height;
+    .banner__inner {
+      min-height: $lg-banner-small-height;
     }
   }
 
-  .sectioned--banner--small {
+  .banner__heading__title {
+    font-size: $lg-banner-title-font-size;
+  }
 
-    .sectioned__inner {
-      min-height: $lg-banner-small-height;
-    }
+  .banner__logo {
+    width: 500px;
+  }
+  .banner__logo__image {
+    width: 250px;
+    height: 250px;
+
+    right: 50px;
   }
 }
 
