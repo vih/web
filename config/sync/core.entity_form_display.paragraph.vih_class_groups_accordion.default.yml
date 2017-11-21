@@ -3,15 +3,15 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
     - field.field.paragraph.vih_class_groups_accordion.field_background_color
     - field.field.paragraph.vih_class_groups_accordion.field_background_image
     - field.field.paragraph.vih_class_groups_accordion.field_heading
     - field.field.paragraph.vih_class_groups_accordion.field_link
     - field.field.paragraph.vih_class_groups_accordion.field_vih_cg_single_class_groups
-    - image.style.thumbnail
     - paragraphs.paragraphs_type.vih_class_groups_accordion
   module:
-    - image
+    - entity_browser
     - link
     - paragraphs
     - workbench_moderation

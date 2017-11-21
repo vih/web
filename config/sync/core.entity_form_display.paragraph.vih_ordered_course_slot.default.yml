@@ -21,6 +21,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
   field_vih_ocs_title:
     weight: 6
     settings:
@@ -28,6 +29,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

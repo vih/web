@@ -260,7 +260,8 @@ content:
   langcode:
     type: language_select
     weight: 2
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   path:
@@ -280,9 +281,9 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
-    region: content
+    weight: 122
     third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:

@@ -215,7 +215,7 @@ third_party_settings:
         label: Default
         uuid: 8cc64bf8-808c-48df-b6ed-dc141848f02e
         weight: 0
-        layout: twocol
+        layout: layout_twocol
         layout_settings: {  }
         page_title: null
         storage_type: panelizer_default

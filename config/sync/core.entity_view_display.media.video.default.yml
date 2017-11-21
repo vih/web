@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.media.video.field_media_in_library
     - field.field.media.video.field_media_video_embed_field
-    - media_entity.bundle.video
+    - media.type.video
   module:
     - user
     - video_embed_field
@@ -25,6 +25,7 @@ content:
       custom_date_format: ''
       timezone: ''
     third_party_settings: {  }
+    region: content
   field_media_video_embed_field:
     type: video_embed_field_video
     weight: 3
@@ -35,19 +36,14 @@ content:
       height: 480
       autoplay: true
     third_party_settings: {  }
-  name:
-    label: hidden
-    type: string
-    weight: 0
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
+    region: content
   uid:
     label: hidden
     type: author
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_media_in_library: true
   langcode: true

@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - block_content.type.banner
+    - entity_browser.browser.image_browser
     - field.field.block_content.banner.field_image
     - field.field.block_content.banner.field_link
-    - image.style.thumbnail
   module:
-    - image
+    - entity_browser
     - link
     - workbench_moderation
 id: block_content.banner.default

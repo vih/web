@@ -5,8 +5,9 @@ dependencies:
   config:
     - field.field.media.tweet.embed_code
     - field.field.media.tweet.field_media_in_library
-    - media_entity.bundle.tweet
+    - media.type.tweet
   module:
+    - path
     - workbench_moderation
 _core:
   default_config_hash: ptBSQ5lrg7HxikqhFDXWCd-f7Pvz5s9HCpj_h4udD_o
@@ -22,17 +23,21 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_media_in_library:
     type: boolean_checkbox
     weight: 1
     settings:
       display_label: true
     third_party_settings: {  }
+    region: content
   langcode:
     type: language_select
     weight: 2
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: 0
@@ -40,8 +45,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   preview:
     weight: 0
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
 hidden:
   created: true
   uid: true

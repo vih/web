@@ -37,7 +37,7 @@ module:
   inline_entity_form: 0
   kint: 0
   language: 0
-  layout_plugin: 0
+  layout_discovery: 0
   lightning: 0
   lightning_core: 0
   lightning_layout: 0
@@ -47,6 +47,7 @@ module:
   lightning_media_instagram: 0
   lightning_media_twitter: 0
   lightning_media_video: 0
+  lightning_scheduled_updates: 0
   lightning_workflow: 0
   link: 0
   link_class: 0
@@ -58,9 +59,6 @@ module:
   mailchimp_lists: 0
   mailchimp_signup: 0
   media: 0
-  media_entity: 0
-  media_entity_document: 0
-  media_entity_image: 0
   media_entity_instagram: 0
   media_entity_twitter: 0
   menu_ui: 0
@@ -70,6 +68,7 @@ module:
   page_cache: 0
   page_manager: 0
   panelizer: 0
+  panelizer_quickedit: 0
   panels: 0
   panels_ipe: 0
   path: 0
