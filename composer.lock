@@ -1127,17 +1127,17 @@
         },
         {
             "name": "drupal/admin_toolbar",
-            "version": "1.20.0",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/admin_toolbar",
-                "reference": "8.x-1.20"
+                "reference": "8.x-1.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.20.zip",
-                "reference": "8.x-1.20",
-                "shasum": "ebeb6b630c0c614b36263ac4a024b269113b6a99"
+                "url": "https://ftp.drupal.org/files/projects/admin_toolbar-8.x-1.21.zip",
+                "reference": "8.x-1.21",
+                "shasum": "af3213bd3f1c73a710e0c594ec2f97968d217dee"
             },
             "require": {
                 "drupal/core": "*"
@@ -1148,8 +1148,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.20",
-                    "datestamp": "1505199844",
+                    "version": "8.x-1.21",
+                    "datestamp": "1511191054",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8841,16 +8841,16 @@
         },
         {
             "name": "drupal/drupal-driver",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jhedstrom/DrupalDriver.git",
-                "reference": "a85eaad2a60503e9b1a64db912e890dec767a3f4"
+                "reference": "a3940d6ee9a05de00e2ada9acaff48ce5542e7c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jhedstrom/DrupalDriver/zipball/a85eaad2a60503e9b1a64db912e890dec767a3f4",
-                "reference": "a85eaad2a60503e9b1a64db912e890dec767a3f4",
+                "url": "https://api.github.com/repos/jhedstrom/DrupalDriver/zipball/a3940d6ee9a05de00e2ada9acaff48ce5542e7c5",
+                "reference": "a3940d6ee9a05de00e2ada9acaff48ce5542e7c5",
                 "shasum": ""
             },
             "require": {
@@ -8895,7 +8895,7 @@
                 "test",
                 "web"
             ],
-            "time": "2017-11-17T21:02:43+00:00"
+            "time": "2017-11-20T18:44:48+00:00"
         },
         {
             "name": "drupal/drupal-extension",
