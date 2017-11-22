@@ -99,6 +99,36 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
   }
 }
 
+.btn-radio-select {
+
+  .form-item {
+    display: none;
+  }
+
+  &:after {
+
+    html[lang="da"] & {
+      content: "Vælg";
+    }
+  }
+
+  &.active {
+
+    &, &:hover, &:focus {
+      color: $btn-primary-color;
+      background-color: $btn-primary-bg;
+      border-color: $btn-primary-border;
+    }
+
+    &:after {
+
+      html[lang="da"] & {
+        content: "Valgt";
+      }
+    }
+  }
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

@@ -74,7 +74,6 @@ view_mode ? view_mode|clean_class,
 
                                 {# Begin - period #}
                                 {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
-                                    <!-- Begin - time period -->
                                     <div class="boxy boxy--time-period">
                                         <div class="boxy__heading">
                                             <h2 class="boxy__heading__title heading-h4">{{ 'Course start' | trans }}</h2>
@@ -97,13 +96,11 @@ view_mode ? view_mode|clean_class,
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End - time period -->
                                 {% endif %}
                                 {# End - period #}
 
                                 {# Begin - price #}
                                 {% if content.field_vih_sc_price %}
-                                    <!-- Begin - price -->
                                     <div class="boxy boxy--price">
                                         <div class="boxy__heading">
                                             <h2 class="boxy__heading__title heading-h4">{{ "Price per participant" | trans }}</h2>
@@ -113,7 +110,6 @@ view_mode ? view_mode|clean_class,
                                             {{ content.field_vih_sc_price }}
                                         </div>
                                     </div>
-                                    <!-- End - price -->
                                 {% endif %}
                                 {# End - price #}
 

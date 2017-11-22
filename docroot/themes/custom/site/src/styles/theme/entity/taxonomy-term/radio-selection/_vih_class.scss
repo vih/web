@@ -14,20 +14,6 @@
 // Styling
 // --------------------------------------------------
 
-html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
-  content: 'Chose';
-}
-html[lang="en"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
-  content: 'Chosen';
-}
-
-html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select label:after {
-  content: 'Vælg';
-}
-html[lang="da"] .course-periods-accordion .class-selection label.btn-radio-select.active label:after {
-  content: 'Valgt';
-}
-
 .course-periods-accordion {
 
   .panel {
