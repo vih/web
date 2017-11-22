@@ -508,28 +508,41 @@ ul.layout-navigation__link {
 
 .search-form-popover {
   position: absolute;
-  right: 0;
-  height: 68px;
-  width: 100%;
+
   top: 0;
-  & form#search-form {
+  right: 0;
+
+  height: 67px;
+  width: 100%;
+
+  form#search-form {
     height: 100%;
-    & .form-group.add-on {
+
+    .form-group.add-on {
       height: 100%;
-      & input.form-control {
+
+      .form-control {
         height: 100%;
-        font-size: 16px;
+        font-size: $navigation-list-item-font-size;
+        border: 0;
       }
 
-      & .form-submit.btn-search {
+      .form-submit.btn-search {
         position: absolute;
-        top: 0px;
+
+        top: 0;
+        right: 0;
+
         width: 70px;
         height: 68px;
-        background-color: #00bcff;
-        right: 0px;
+
+        background-color: $brand-primary;
         box-shadow: none;
         border: none;
+
+        .icon {
+          font-size: 24px;
+        }
       }
     }
   }

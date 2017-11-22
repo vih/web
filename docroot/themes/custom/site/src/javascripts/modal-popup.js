@@ -42,13 +42,14 @@ var modalPopUp = (function ($) {
       //Close div
       $(".close").click(function () {
         $("#block-popup-cta").hide();
-
       });
     }
   }
 
   $(".close").click(function () {
-    $.cookie('no_thanks', 'true', {expires: 36500, path: '/'});
+    $.cookie('no_thanks', 'true', {
+      expires: 36500, path: '/'
+    });
   });
 
   if ($.cookie("no_thanks") !== true) {
