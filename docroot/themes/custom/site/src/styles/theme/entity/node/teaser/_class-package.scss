@@ -36,30 +36,11 @@ $entity-teaser-class-package-image-min-height: 350px;
 
     min-height: $entity-teaser-class-package-image-min-height;
 
-    padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing;
-
-    background-color: transparent;
-
-    transition: background-color $transition-time-short ease-in-out;
+    padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing 100px; // 100px is approx. height of angle, so it wont overlap the text
 
     p {
-      opacity: 0;
-
       color: #fff;
       text-transform: uppercase;
-
-      transition: opacity $transition-time-short ease-in-out;
-    }
-  }
-
-  &:hover {
-
-    .entity-teaser__inner {
-      background-color: rgba(0, 0, 0, .8);
-
-      p {
-        opacity: 1;
-      }
     }
   }
 }
@@ -97,7 +78,40 @@ $entity-teaser-class-package-image-min-height: 350px;
 @media print {}
 
 // Touch
-.touchevents {}
+.touchevents {
+
+  .entity-teaser--class-package {
+
+    .entity-teaser__inner {
+      background-color: rgba(0, 0, 0, .8);
+    }
+  }
+}
 
 // No touch
-.no-touchevents {}
+.no-touchevents {
+
+  .entity-teaser--class-package {
+
+    .entity-teaser__inner {
+      background-color: transparent;
+      transition: background-color $transition-time-short ease-in-out;
+
+      p {
+        opacity: 0;
+        transition: opacity $transition-time-short ease-in-out;
+      }
+    }
+
+    &:hover {
+
+      .entity-teaser__inner {
+        background-color: rgba(0, 0, 0, .8);
+
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
