@@ -23,6 +23,14 @@ $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
 @mixin entity-teaser-mixin() {}
 
+@mixin entity-teaser-overlay-variant-mixin($background-color) {
+  @include angled-edge('outside top', 'upper left', rgba($background-color, .85), 40);
+
+  position: absolute;
+
+  background-color: rgba($background-color, .85);
+}
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -67,9 +75,58 @@ $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
   color: $brand-secondary;
 }
 
+.entity-teaser__image__overlay {
+  @include entity-teaser-overlay-variant-mixin($brand-primary);
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: $entity-teaser-inner-left-right-spacing;
+
+  text-transform: uppercase;
+  text-align: right;
+
+  font-weight: $font-weight-bold;
+  color: #fff;
+  background-color: rgba($brand-primary, .85);
+
+  .field {
+    @extend .heading-h4;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+  }
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
+
+.entity-teaser__image__overlay--color-red {
+  @include entity-teaser-overlay-variant-mixin($brand-red);
+}
+.entity-teaser__image__overlay--color-blue {
+  @include entity-teaser-overlay-variant-mixin($brand-primary);
+}
+.entity-teaser__image__overlay--color-cyan {
+  @include entity-teaser-overlay-variant-mixin($brand-cyan);
+}
+.entity-teaser__image__overlay--color-purple {
+  @include entity-teaser-overlay-variant-mixin($brand-quaternary);
+}
+.entity-teaser__image__overlay--color-yellow {
+  @include entity-teaser-overlay-variant-mixin($brand-yellow);
+}
+.entity-teaser__image__overlay--color-green {
+  @include entity-teaser-overlay-variant-mixin($brand-tertiary);
+}
 
 // --------------------------------------------------
 // Responsive
