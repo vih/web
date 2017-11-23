@@ -3,8 +3,8 @@ langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.list_advanced
     - core.entity_view_mode.taxonomy_term.teaser
-    - core.entity_view_mode.taxonomy_term.vih_class_table_teaser_modal
     - field.storage.taxonomy_term.field_vih_cp_description
     - field.storage.taxonomy_term.field_vih_cp_subtitle
     - taxonomy.vocabulary.vih_class
@@ -506,7 +506,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: vih_class_table_teaser_modal
+          view_mode: list_advanced
       arguments:
         tid:
           id: tid
@@ -635,7 +635,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: vih_class_table_teaser_modal
+          view_mode: list_advanced
       arguments:
         field_vih_class_class_packages_target_id:
           id: field_vih_class_class_packages_target_id
