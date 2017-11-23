@@ -1,24 +1,3 @@
-{#
-/**
- * @file
- * Default theme implementation to present all user data.
- *
- * This template is used when viewing a registered user's page,
- * e.g., example.com/user/123. 123 being the user's ID.
- *
- * Available variables:
- * - content: A list of content items. Use 'content' to print all content, or
- *   print a subset such as 'content.field_example'. Fields attached to a user
- *   such as 'user_picture' are available as 'content.user_picture'.
- * - attributes: HTML attributes for the container element.
- * - user: A Drupal User entity.
- *
- * @see template_preprocess_user()
- *
- * @ingroup themeable
- */
-#}
-
 <article{{ attributes }}>
   {% if content %}
     {#{{- content -}}#}
@@ -29,27 +8,28 @@
           {{ content.field_vih_user_photo }}
         </td>
         <td class="hidden-xs">
-          <h4>
+          <h3>
             {{ user.field_user_name_first.value }}
             {{ user.field_user_name_last.value }}
-          </h4>
+          </h3>
           {{ content|without("field_vih_user_title", "field_vih_user_phone", "field_vih_user_photo", "field_user_name_first", "field_user_name_last") }}
         </td>
         <td class="teacher-contact-info hidden-xs">
           <h5>{{ "Kontaktoplysninger"|trans }}:</h5>
 
-          <span class="teacher-phone"><i
-              class="material-icons">phone</i> {{ content.field_vih_user_phone }}</span>
+          <span class="teacher-phone">
+            <span class="icon icon-phone"></span> {{ content.field_vih_user_phone }}
+          </span>
           <br>
-          <span class="teacher-mail"><i class="material-icons">mail_outline</i> {{ user.email }}</span>
+          <span class="teacher-mail"><span class="icon icon-mail"></span> {{ user.email }}</span>
         </td>
       </tr>
       <tr class="visible-xs">
         <td colspan="2">
-          <h4>
+          <h3>
             {{ user.field_user_name_first.value }}
             {{ user.field_user_name_last.value }}
-          </h4>
+          </h3>
           {{ content|without("field_vih_user_title", "field_vih_user_phone", "field_vih_user_photo", "field_user_name_first", "field_user_name_last") }}
         </td>
       </tr>
@@ -57,10 +37,13 @@
         <td class="teacher-contact-info">
           <h5>{{ "Kontaktoplysninger"|trans }}:</h5>
 
-          <span class="teacher-phone"><i
-              class="material-icons">phone</i> {{ content.field_vih_user_phone }}</span>
+          <span class="teacher-phone">
+            <span class="icon icon-phone"></span> {{ content.field_vih_user_phone }}
+          </span>
           <br>
-          <span class="teacher-mail"><i class="material-icons">mail_outline</i> {{ user.email }}</span>
+          <span class="teacher-mail">
+            <span class="icon icon-mail"></span> {{ user.email }}
+          </span>
         </td>
       </tr>
     </table>

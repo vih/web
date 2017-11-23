@@ -1,0 +1,29 @@
+uuid: cd34bd3a-4c66-4dd1-aeb3-34b9d6033051
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tags
+    - paragraphs.paragraphs_type.list_of_news_teasers
+    - taxonomy.vocabulary.news_tags
+id: paragraph.list_of_news_teasers.field_tags
+field_name: field_tags
+entity_type: paragraph
+bundle: list_of_news_teasers
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_tags: news_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

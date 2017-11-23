@@ -7,6 +7,7 @@ module:
   breakpoint: 0
   ckeditor: 0
   config: 0
+  consumers: 0
   contact: 0
   contact_block: 0
   contact_storage: 0
@@ -20,7 +21,9 @@ module:
   editor: 0
   embed: 0
   entity: 0
+  entity_block: 0
   entity_browser: 0
+  entity_clone: 0
   entity_embed: 0
   entity_reference: 0
   entity_reference_revisions: 0
@@ -35,7 +38,7 @@ module:
   inline_entity_form: 0
   kint: 0
   language: 0
-  layout_plugin: 0
+  layout_discovery: 0
   lightning: 0
   lightning_core: 0
   lightning_layout: 0
@@ -45,6 +48,7 @@ module:
   lightning_media_instagram: 0
   lightning_media_twitter: 0
   lightning_media_video: 0
+  lightning_scheduled_updates: 0
   lightning_workflow: 0
   link: 0
   link_class: 0
@@ -55,9 +59,7 @@ module:
   mailchimp_campaign: 0
   mailchimp_lists: 0
   mailchimp_signup: 0
-  media_entity: 0
-  media_entity_document: 0
-  media_entity_image: 0
+  media: 0
   media_entity_instagram: 0
   media_entity_twitter: 0
   menu_ui: 0
@@ -67,6 +69,7 @@ module:
   page_cache: 0
   page_manager: 0
   panelizer: 0
+  panelizer_quickedit: 0
   panels: 0
   panels_ipe: 0
   path: 0
@@ -80,10 +83,12 @@ module:
   stage_file_proxy: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   token: 0
   toolbar: 0
   twig_tweak: 0
+  twig_xdebug: 0
   user: 0
   video_embed_field: 0
   video_embed_media: 0

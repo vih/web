@@ -26,10 +26,12 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
     - field.field.node.vih_long_course_order.field_vih_lco_payment
+    - field.field.node.vih_long_course_order.field_vih_lco_status
     - field.field.node.vih_long_course_order.field_vih_lco_telefon
     - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
   module:
+    - options
     - panelizer
     - user
 third_party_settings:
@@ -211,6 +213,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_vih_lco_status:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_vih_lco_telefon:
     weight: 5

@@ -1,0 +1,160 @@
+// |--------------------------------------------------------------------------
+// | User profile
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .user-profile
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// User profile
+.user-profile-list-advanced {
+
+  .user-profile-image {
+    width: 70px;
+
+    img {
+      @extend .img-circle;
+      width: 58px;
+    }
+  }
+
+  .user-profile-full-name {
+
+    &,
+    a {
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        color: $headings-color;
+      }
+    }
+  }
+
+  .user-profile-relationship {
+    color: $brand-tertiary;
+  }
+
+  .dived-table-cell {
+    vertical-align: middle;
+  }
+}
+
+.views-row {
+
+  .user-profile-list-advanced {
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:first-child {
+
+    .user-profile-list-advanced {
+      padding-top: 0;
+    }
+  }
+
+  &:last-child {
+
+    .user-profile-list-advanced {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Print
+@media print {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// Touch
+.touchevents {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// No touch
+.no-touchevents {
+
+  // User profile
+  .user-profile-list-advanced {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// User profile mixin
+@mixin user-profile-mixin-list() {}

@@ -1,0 +1,121 @@
+// |--------------------------------------------------------------------------
+// | Highlighted
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .field--name-field-highlighted
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Highlighted
+.field--name-field-highlighted {
+  @extend h5;
+  text-transform: uppercase;
+  font-weight: $headings-font-weight-bold;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Background image
+.sectioned--skewed--background-image {
+
+  // Highlighted
+  .field--name-field-highlighted {
+    color: #fff;
+  }
+}
+
+// White
+.sectioned--skewed--background-color-white {
+
+  // Highlighted
+  .field--name-field-highlighted {
+    color: $brand-secondary;
+  }
+}
+
+// Light gray
+.sectioned--skewed--background-color-light-gray {
+
+  // Highlighted
+  .field--name-field-highlighted {
+    color: $brand-secondary;
+  }
+}
+
+// Gray
+.sectioned--skewed--background-color-gray {
+
+  // Highlighted
+  .field--name-field-highlighted {
+    color: $brand-secondary;
+  }
+}
+
+// Primary
+.sectioned--skewed--background-color-primary {
+
+  // Highlighted
+  .field--name-field-highlighted {
+    color: $brand-secondary;
+  }
+}
+
+// Secondary
+.sectioned--skewed--background-color-secondary {
+
+  // Highlighted
+  .field--name-field-highlighted {
+    color: $text-color;
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Highlighted mixin
+@mixin field--name-mixin-field-highlighted() {}

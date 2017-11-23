@@ -1,0 +1,32 @@
+uuid: d7628f42-ecd2-4520-9060-8d065ec9e91a
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnail
+    - field.field.media.instagram.embed_code
+    - field.field.media.instagram.field_media_in_library
+    - image.style.medium
+    - media.type.instagram
+  module:
+    - image
+id: media.instagram.thumbnail
+targetEntityType: media
+bundle: instagram
+mode: thumbnail
+content:
+  thumbnail:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  embed_code: true
+  field_media_in_library: true
+  langcode: true
+  uid: true

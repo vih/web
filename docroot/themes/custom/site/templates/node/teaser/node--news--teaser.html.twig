@@ -1,0 +1,20 @@
+<a href="{{ url }}" class="entity-teaser entity-teaser--news element-wrapper-link">
+    <div class="entity-teaser__heading">
+        <h3 class="entity-teaser__heading__title heading-h5">
+            {{ label }}
+        </h3>
+    </div>
+    <div class="entity-teaser__body">
+
+        {# Begin - body #}
+        {{ content.body }}
+        {# End - body #}
+
+        {# Begin - published at #}
+        <div class="entity-teaser__published-at">
+            {{ node.createdTime | date("d-m-Y") }}
+        </div>
+        {# End - published at #}
+
+    </div>
+</a>

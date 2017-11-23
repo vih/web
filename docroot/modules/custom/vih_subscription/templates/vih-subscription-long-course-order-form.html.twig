@@ -2,111 +2,157 @@
 {{ form.form_token }}
 {{ form.form_id }}
 
-{# Introduction information START #}
+<section class="sectioned sectioned--content" {{ content_attributes.addClass('content') }}>
+    <div class="sectioned__inner">
+        <div class="container">
 
-<div>
-    <p>{{ "Her kan du se og vælge dine fag. Kun et fag kan vælges pr. idrætsblok."|t }} {{ "Når du har valgt, bedes du udfylde og indsende nedenståede og indsende nedestående oplysninger."|t }}</p>
-</div>
-<div class="breaker"></div>
-{# Introduction information END #}
-
-{# Classes selection START #}
-<div class="panel-group course-periods-accordion" id="course-periods-accordion">
-    {% set open_collapsible = true %}
-
-    {% for periodDelta, coursePeriod in form['#coursePeriods'] %}
-        <div class="panel-heading blue">
-            <h4 class="panel-title">
-                <a>
-                    {{ coursePeriod['title'] }}
-                </a>
-            </h4>
-        </div>
-
-        {% for slotDelta, courseSlot in coursePeriod['courseSlots'] %}
-            <div class="panel panel-default white-border-bottom" data-toggle="buttons">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a class="accordion-toggle {% if not open_collapsible %}collapsed{% endif %}" data-toggle="collapse"
-{#                           data-target="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}"#}
-                           {#data-parent="#course-periods-accordion"#}
-                           href="#course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}">
-                            {{ courseSlot['title'] }}
-                        </a>
-                    </h4>
+            {# Introduction information START #}
+            <div class="partial">
+                <div class="partial__body">
+                    <p>{{ "Her kan du se og vælge dine fag. Kun et fag kan vælges pr. idrætsblok."|t }} {{ "Når du har valgt, bedes du udfylde og indsende nedenståede og indsende nedestående oplysninger."|t }}</p>
                 </div>
-                <div id="course-periods-accordion-{{ periodDelta }}-{{ slotDelta }}" class="panel-collapse collapse {% if open_collapsible %}in{% endif %}"
-                     aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}">
-                    <div class="panel-body">
-                        {{ form[courseSlot['availableClasses']['cid']] }}
+            </div>
+            {# Introduction information END #}
+
+            {# Begin - course periods #}
+            {% for periodDelta, coursePeriod in form['#coursePeriods'] %}
+                {% set open_collapsible = true %}
+
+                {% if coursePeriod['courseSlots'] | length %}
+
+                    <div class="boxy boxy--course-periods course-periods-accordion">
+                        <div class="boxy__body">
+                            <div class="panel-group" id="accordion" role="tablist">
+
+                                <!-- Begin - heading -->
+                                <div class="panel-group__heading">
+                                    <h4 class="panel-group__heading__title">
+                                        {{ coursePeriod['title'] }}
+                                    </h4>
+                                </div>
+                                <!-- End - heading -->
+
+                                {% for slotDelta, courseSlot in coursePeriod['courseSlots'] %}
+                                    <div class="panel panel-default">
+
+                                        <!-- Begin - heading -->
+                                        <div class="panel-heading" id="heading-{{ periodDelta }}-{{ slotDelta }}">
+                                            <h4 class="panel-title heading-h5">
+                                                <a role="button" data-toggle="collapse"
+                                                   data-parent="#accordion"
+                                                   href="#collapse-{{ periodDelta }}-{{ slotDelta }}"
+                                                   aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}"
+                                                   aria-controls="collapse-{{ periodDelta }}-{{ slotDelta }}">
+                                                    {{ courseSlot['title'] }}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <!-- End - heading -->
+
+                                        <!-- Begin - body -->
+                                        <div id="collapse-{{ periodDelta }}-{{ slotDelta }}"
+                                             class="panel-collapse collapse {% if open_collapsible %}in{% endif %}" role="tabpanel"
+                                             aria-labelledby="heading-{{ periodDelta }}-{{ slotDelta }}">
+
+                                            <div class="panel-body">
+                                                {{ form[courseSlot['availableClasses']['cid']] }}
+                                            </div>
+                                        </div>
+                                        <!-- End - body -->
+
+                                    </div>
+                                    {% set open_collapsible = false %}
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {# End - course periods #}
+
+            <!-- Begin - personal data -->
+            <div class="partial partial--form">
+                <div class="partial__heading">
+                    <h3 class="partial__heading__title heading-h4">
+                        <span class="icon icon-account-circle"></span>
+                        {{ 'Personlige oplysninger' | trans }}
+                    </h3>
+                </div>
+                <div class="partial__body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form['personalDataLeft'] }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form['personalDataRight']['address'] }}
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    {{ form['personalDataRight']['house']['houseNumber'] }}
+                                </div>
+                                <div class="col-xs-4">
+                                    {{ form['personalDataRight']['house']['houseLetter'] }}
+                                </div>
+                                <div class="col-xs-4">
+                                    {{ form['personalDataRight']['house']['houseFloor'] }}
+                                </div>
+                            </div>
+
+                            {{ form['personalDataRight']|without('address','house') }}
+                        </div>
                     </div>
                 </div>
             </div>
-            {% set open_collapsible = false %}
-        {% endfor %}
-    {% endfor %}
-</div>
-{# Classes selection END #}
-<div class="breaker"></div>
-{# Personal data START #}
-<h5><i class="material-icons form-icon">account_circle</i> &nbsp;{{ "Personlige oplysninger"|t }}</h5>
-<div class="breaker"></div>
-<div class="row form-group">
-    <div class="col-md-6">
-        {{ form['personalDataLeft'] }}
-    </div>
-    <div class="col-md-6">
-        {{ form['personalDataRight']['address'] }}
-        <div class="row form-group">
-            <div class="col-xs-4">
-                {{ form['personalDataRight']['house']['houseNumber'] }}
+            <!-- End - personal data -->
+
+            <!-- Begin - adult data -->
+            <div class="partial partial--form">
+                <div class="partial__heading">
+                    <h3 class="partial__heading__title heading-h4">
+                        <span class="icon icon-account-circle"></span>
+                        {{ 'Kontaktpolysninger for forælder eller værge' | trans }}
+                    </h3>
+                </div>
+                <div class="partial__body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form['adultDataLeft'] }}
+                        </div>
+
+                        <div class="col-md-6">
+                            {{ form['adultDataRight']['adultAddress'] }}
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    {{ form['adultDataRight']['adultHouse']['adultHouseNumber'] }}
+                                </div>
+                                <div class="col-xs-4">
+                                    {{ form['adultDataRight']['adultHouse']['adultHouseLetter'] }}
+                                </div>
+                                <div class="col-xs-4">
+                                    {{ form['adultDataRight']['adultHouse']['adultHouseFloor'] }}
+                                </div>
+                            </div>
+
+                            {{ form['adultDataRight']|without('adultAddress','adultHouse') }}
+                        </div>
+                    </div>
+
+                    {{ form['message'] }}
+                </div>
             </div>
-            <div class="col-xs-4">
-                {{ form['personalDataRight']['house']['houseLetter'] }}
+            <!-- End - adult data -->
+
+            <!-- Begin - form controls -->
+            <div class="partial partial--form-controls">
+                <div class="partial__body">
+                    {{ form['actions'] }}
+                </div>
             </div>
-            <div class="col-xs-4">
-                {{ form['personalDataRight']['house']['houseFloor'] }}
-            </div>
+            <!-- End - form controls -->
+
         </div>
-        {{ form['personalDataRight']|without('address','house') }}
     </div>
-</div>
-
-{# Adult data START #}
-<h5><i class="material-icons form-icon">account_circle</i> &nbsp;{{ "Kontaktpolysninger for forælder eller værge"|t }}</h5>
-<div class="row form-group">
-    <div class="col-md-6 form-group">
-        {{ form['adultDataLeft'] }}
-    </div>
-    <div class="col-md-6">
-        {{ form['adultDataRight']['adultAddress'] }}
-        <div class="row form-group">
-            <div class="col-xs-4">
-                {{ form['adultDataRight']['adultHouse']['adultHouseNumber'] }}
-            </div>
-            <div class="col-xs-4">
-                {{ form['adultDataRight']['adultHouse']['adultHouseLetter'] }}
-            </div>
-            <div class="col-xs-4">
-                {{ form['adultDataRight']['adultHouse']['adultHouseFloor'] }}
-            </div>
-        </div>
-        {{ form['adultDataRight']|without('adultAddress','adultHouse') }}
-    </div>
-</div>
-
-<div class="row form-group">
-    <div class="col-xs-12">
-        {{ form['message'] }}
-     </div>
-</div>
-
-<div class="row form-group">
-    <div class="col-xs-12">
-        {{ form['actions'] }}
-    </div>
-</div>
-
-{#{{ form['#contact_person']['person'] }}#}
-
-{# Personal data END #}
+</section>

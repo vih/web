@@ -1,0 +1,86 @@
+// |--------------------------------------------------------------------------
+// | Single class group
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph paragraph--type--vih-single-class-group
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.paragraph--type--vih-single-class-group {
+
+  .panel-body {
+    padding: 0;
+  }
+
+  .field--name-field-link {
+    text-align: center;
+  }
+
+  .field--items {
+
+    .field--item {
+
+      .entity-list-advanced {
+        border-bottom: 1px solid $border-color;
+      }
+
+      &:last-child {
+
+        .entity-list-advanced {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+

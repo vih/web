@@ -1,0 +1,154 @@
+// |--------------------------------------------------------------------------
+// | User profile
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .user-profile
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// User profile
+.user-profile-list-simple {
+
+  .user-profile-image {
+    width: 45px;
+
+    img {
+      @extend .img-circle;
+      width: 36px;
+    }
+  }
+
+  .user-profile-full-name {
+
+    &,
+    a {
+
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: $text-color;
+      }
+    }
+  }
+
+  .dived-table-cell {
+    vertical-align: middle;
+  }
+}
+
+.views-row {
+
+  .user-profile-list-simple {
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &:first-child {
+
+    .user-profile-list-simple {
+      padding-top: 0;
+    }
+  }
+
+  &:last-child {
+
+    .user-profile-list-simple {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Print
+@media print {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// Touch
+.touchevents {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// No touch
+.no-touchevents {
+
+  // User profile
+  .user-profile-list-simple {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// User profile mixin
+@mixin user-profile-mixin-list() {}

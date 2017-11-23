@@ -1,0 +1,23 @@
+uuid: 61b0c757-617b-44ab-84e3-18ea8a0fd7e1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_event_status
+    - node.type.event
+  module:
+    - options
+id: node.event.field_vih_event_status
+field_name: field_vih_event_status
+entity_type: node
+bundle: event
+label: Status
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: active
+default_value_callback: ''
+settings: {  }
+field_type: list_string

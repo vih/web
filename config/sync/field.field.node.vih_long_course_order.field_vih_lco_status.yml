@@ -1,0 +1,23 @@
+uuid: 89556b15-003e-46b7-87f7-a43e593d6936
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_status
+    - node.type.vih_long_course_order
+  module:
+    - options
+id: node.vih_long_course_order.field_vih_lco_status
+field_name: field_vih_lco_status
+entity_type: node
+bundle: vih_long_course_order
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

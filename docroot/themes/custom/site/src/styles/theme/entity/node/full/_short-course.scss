@@ -1,0 +1,87 @@
+// |--------------------------------------------------------------------------
+// | Short Course
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .short-course
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+.path-node.page-node-type-vih-short-course {
+  article .field--name-field-vih-course-periods .field__items {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 1px solid $gray-lighter;
+    text-transform: uppercase;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .field {
+      display: inline-block;
+    }
+  }
+}
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+}
+
+// Print
+@media print {
+}
+
+// Touch
+.touchevents {
+}
+
+// No touch
+.no-touchevents {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

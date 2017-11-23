@@ -1,24 +1,22 @@
 fonts:
   css:
     base:
-      'https://fonts.googleapis.com/css?family=Lato:300,500,800': { type: external }
-   
+      'https://fonts.googleapis.com/css?family=Open+Sans:500,700': { type: external }
+      'https://fonts.googleapis.com/css?family=Lato:300,400,700': { type: external }
 
-styling:
+styles:
   css:
     theme:
-      dist/css/stylesheet.css: {}
+      dist/stylesheets/stylesheet.css: { preprocess: false }
       dist/jasny-bootstrap/css/jasny-bootstrap.min.css: {}
       'https://afeld.github.io/emoji-css/emoji.css': {}
 
-scripts:
+javascripts:
   js:
-    dist/js/core.js: {}
-    #dist/jasny-bootstrap/js/jasny-bootstrap.min.js: {}
+    dist/javascripts/modernizr.js: { preprocess: false }
+    dist/javascripts/app.js: { preprocess: false }
     dist/jasny-bootstrap/js/jasny-bootstrap.js: {}
-    http://127.0.0.1:35729/livereload.js: { type: external }
   dependencies:
     - core/drupal
-    - core/modernizr
     - core/jquery
     - core/jquery.once

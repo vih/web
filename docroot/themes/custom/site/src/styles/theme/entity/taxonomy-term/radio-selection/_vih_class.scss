@@ -1,0 +1,99 @@
+// |--------------------------------------------------------------------------
+// | Class taxonomy 'VIH class table radio selection' display
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .course-periods-accordion
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.course-periods-accordion {
+
+  .panel {
+
+    .class-selection {
+      border-color: $gray-lighter;
+      border-style: solid;
+      border-width: 1px 0;
+      margin-bottom: -1px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .btn-radio-select {
+
+        input[type=radio] {
+          display: none; // This is not the proper way to fix this problem
+        }
+
+        &.active {
+
+          &:after {
+            @extend .icon;
+
+            position: absolute;
+
+            right: 0;
+            content: $icon-account-circle;
+          }
+        }
+
+        .form-type-radio label {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() { }

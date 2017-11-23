@@ -1,0 +1,131 @@
+// |--------------------------------------------------------------------------
+// | Modal
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .modal
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$modal-header-angle-height: 70; // Unit less
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin modal-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// This is not a proper way - but because of the way we
+// structure our page layout, we have to do it this way.
+.modal-backdrop {
+  display: none;
+}
+
+.modal {
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+}
+
+.modal-header {
+  @include angled-edge('inside bottom', 'upper right', $modal-content-bg, $modal-header-angle-height);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: (1px * $modal-header-angle-height);
+
+  min-height: 400px;
+
+  border: 0;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .close {
+    position: absolute;
+
+    float: none;
+
+    top: 15px;
+    right: 15px;
+
+    height: 40px;
+    width: 40px;
+
+    color: $headings-color;
+
+    background-color: #fff;
+
+    border-radius: 100%;
+
+    opacity: 1;
+  }
+}
+.modal-title {
+  color: #fff;
+
+  margin: 0;
+  padding: 0;
+}
+
+// Admin fix
+.toolbar-horizontal.toolbar-fixed {
+
+  .modal-dialog {
+    margin-top: (39px + $grid-gutter-width); // 39px is the height of the toolbar without the tray open
+  }
+
+  &.toolbar-tray-open {
+
+    .modal-dialog {
+      margin-top: (79px + $grid-gutter-width); // 39px is the height of the toolbar with the tray open
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

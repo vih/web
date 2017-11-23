@@ -1,0 +1,120 @@
+// |--------------------------------------------------------------------------
+// | List of news teasers
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph--type--list-of-news-teasers
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.paragraph--type--vih-teacher-class-description{
+  & .field--label{
+    color: #212121 !important;
+    margin-top: 40px !important;
+  }
+  & .teacher-c-desc{
+    background: none !important;
+    border: none;
+  }
+  & .field.field--name-field-paragraph-user.field--type-entity-reference{
+    & .field__items{
+      display: block;
+      text-align: left;
+      border: none;
+      padding-top: 5px;
+    }
+  }
+}
+
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Print
+@media print {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// Touch
+.touchevents {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// No touch
+.no-touchevents {
+
+  // List of news teasers
+  .paragraph--type--list-of-news-teasers {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// List of news teasers mixin
+@mixin paragraph-type-mixin-column-action-centered() {}

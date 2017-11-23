@@ -1,0 +1,120 @@
+// |--------------------------------------------------------------------------
+// | Long Course Order
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .long-course-order
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Long Course Order
+.path-node .long-course-order .content {
+  display: block;
+  .field {
+    margin-bottom: 30px;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Print
+@media print {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// Touch
+.touchevents {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  // Long Course Order
+  .long-course-order {
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

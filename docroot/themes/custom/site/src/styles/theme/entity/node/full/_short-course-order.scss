@@ -1,0 +1,107 @@
+// |--------------------------------------------------------------------------
+// | Short Course Order
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .short-course-order
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Long Course Order
+.path-node .short-course-order .content {
+  display: block;
+  .field {
+    margin-bottom: 30px;
+  }
+  .field--type-entity-reference-revisions > .field__items {
+    .field--label {
+      margin: 0;
+    }
+
+    .field {
+      margin-bottom: 15px;
+    }
+    padding-left: 30px;
+    > .field--item {
+      padding-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid black;
+      border-width: 0 0 1px 0;
+    }
+    > .field--item:last-child {
+      border-width: 0;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+}
+
+// Print
+@media print {
+
+}
+
+// Touch
+.touchevents {
+
+}
+
+// No touch
+.no-touchevents {
+
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

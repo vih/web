@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.list_of_news_teasers.field_background_color
     - field.field.paragraph.list_of_news_teasers.field_background_image
     - field.field.paragraph.list_of_news_teasers.field_heading
+    - field.field.paragraph.list_of_news_teasers.field_tags
     - paragraphs.paragraphs_type.list_of_news_teasers
 id: paragraph.list_of_news_teasers.default
 targetEntityType: paragraph
@@ -23,3 +24,4 @@ content:
 hidden:
   field_background_color: true
   field_background_image: true
+  field_tags: true

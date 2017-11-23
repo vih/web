@@ -10,7 +10,9 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
+    - field.field.node.vih_long_cource.field_vih_course_persons_limit
     - field.field.node.vih_long_cource.field_vih_course_price
+    - field.field.node.vih_long_cource.field_vih_course_status
     - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
@@ -54,7 +56,9 @@ hidden:
   field_vih_cource_contact_person: true
   field_vih_course_heading: true
   field_vih_course_periods: true
+  field_vih_course_persons_limit: true
   field_vih_course_price: true
+  field_vih_course_status: true
   field_vih_course_subheading: true
   field_vih_course_subsc_price: true
   field_vih_course_week_price: true

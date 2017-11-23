@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
     - field.field.node.vih_long_course_order.field_vih_lco_payment
+    - field.field.node.vih_long_course_order.field_vih_lco_status
     - field.field.node.vih_long_course_order.field_vih_lco_telefon
     - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
@@ -72,6 +73,7 @@ hidden:
   field_vih_lco_newsletter: true
   field_vih_lco_order_course_perio: true
   field_vih_lco_payment: true
+  field_vih_lco_status: true
   field_vih_lco_telefon: true
   field_vih_lco_zip: true
   langcode: true

@@ -1,0 +1,74 @@
+// |--------------------------------------------------------------------------
+// | Course status
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .boxy--course-status
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin boxy-course-status-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.boxy--course-status {
+  margin-bottom: ($grid-gutter-width * 2);
+
+  .boxy__body {
+    text-transform: uppercase;
+
+    text-align: center;
+
+    color: $brand-danger;
+
+    border-color: $brand-danger;
+    border-width: 2px;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

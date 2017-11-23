@@ -1,0 +1,14 @@
+uuid: 754397ac-5414-438c-a631-9efc26fffa6d
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.list_advanced
+label: 'List - advanced'
+targetEntityType: taxonomy_term
+cache: true

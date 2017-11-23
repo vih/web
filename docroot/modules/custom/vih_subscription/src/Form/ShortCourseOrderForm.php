@@ -7,6 +7,7 @@
 namespace Drupal\vih_subscription\Form;
 
 use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
+use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
@@ -25,7 +26,6 @@ use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
  * Implements an example form.
  */
 class ShortCourseOrderForm extends FormBase {
-
   protected $course;
   protected $courseOrder;
   protected $price;
@@ -47,7 +47,7 @@ class ShortCourseOrderForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     //START VARIABLES INIT //
     $this->course = $course;
     $this->price = $course->field_vih_sc_price->value;
@@ -67,8 +67,16 @@ class ShortCourseOrderForm extends FormBase {
 
       }
     }
+    $form_state->set('optionGroups', $optionGroups);
     $form_state->set('optionGroupOptions', $optionGroupOptions);
     $form_state->set('optionGroupSuboptions', $optionGroupSuboptions);
+
+    if ($order != NULL) {
+      if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($course, $order))) {
+        $this->courseOrder = $order;
+        $this->price = $this->courseOrder->field_vih_sco_price->value;
+      }
+    }
     //END VARIABLES INIT //
 
     //START GENERAL DATA //
@@ -95,44 +103,8 @@ class ShortCourseOrderForm extends FormBase {
       '#suffix' => '</div>',
     );
 
-    $addedOptions = $form_state->get('addedOptions');
-    if ($addedOptions) {
-      $form['addedOptionsContainer'][] = array(
-        '#markup' => $this->t('Added options'),
-        '#prefix' => '<h4>',
-        '#suffix' => '</h4>',
-      );
-
-      foreach ($addedOptions as $addeOptionDelta => $addedOption) {
-        $groupOptionName = $optionGroups[$addedOption['optionGroup']];
-        $optionName = $optionGroupOptions[$addedOption['optionGroup']][$addedOption['option']];
-        $suboptionName = $optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']];
-        $amount = $addedOption['amount'];
-
-        $form['addedOptionsContainer']['addedOption-' . $addeOptionDelta] = [
-          '#markup' => $groupOptionName . ' / ' . $optionName . ' / ' . $suboptionName . ' stk. :' . $amount
-        ];
-
-        $form['addedOptionsContainer']['deleteAddedOption-' . $addeOptionDelta] = [
-          '#type' => 'submit',
-          '#value' => $this->t('Slet'),
-          '#submit' => array('::removeOption'),
-          '#ajax' => [
-            'callback' => '::ajaxAddRemoveOptionCallback',
-            'wrapper' => 'added-options-container-wrapper',
-            'progress' => array(
-              'type' => 'none'
-            )
-          ],
-          '#addedOptionDelta' => $addeOptionDelta,
-          '#limit_validation_errors' => array(),
-          '#button_type' => 'danger',
-        ];
-
-        $form['addedOptionsContainer'][] = [
-          '#markup' => '<br/>'
-        ];
-      }
+    if ($form_state->get('addedOptions')) {
+      $this->populateAddedOptions($form, $form_state);
     }
     //END ADDED OPTIONS CONTAINER //
 
@@ -230,9 +202,20 @@ class ShortCourseOrderForm extends FormBase {
     //END AVAILABLE OPTIONS CONTAINER //
 
     //START PARTICIPANTS CONTAINER //
+    $personsLimit = $course->field_vih_sc_persons_limit->value;
+    $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($course);
+    if ($personsLimit == 0) { //unlimited
+      $personsLimit = PHP_INT_MAX;
+    }
+
     $participantsCounter = $form_state->get('participantsCounter');
     if (empty($participantsCounter)) {
-      $participantsCounter = 1;
+      if ($this->courseOrder != NULL) {
+        $participantsCounter = count($this->courseOrder->get('field_vih_sco_persons')->getValue());
+      } else {
+        $participantsCounter = 1;
+      }
+
       $form_state->set('participantsCounter', $participantsCounter);
     }
 
@@ -246,37 +229,41 @@ class ShortCourseOrderForm extends FormBase {
     for ($i = 0; $i < $participantsCounter; $i++) {
       $personHumanCounter = $i+1;//starting from 1, not 0
 
-      $form['participantsContainer'][$i]['participant_fieldset'] = [
-        '#type' => 'fieldset',
-        '#title' => $this->t('Person') . ' ' . $personHumanCounter
-      ];
-      $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Fornavn'),
-        '#required' => TRUE,
-      );
-      $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Efternavn'),
-        '#required' => TRUE,
-      );
-      $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
-        '#type' => 'textfield',
-        '#placeholder' => $this->t('Email'),
-        '#required' => TRUE,
-      );
+      if ($personHumanCounter + $personsSubscribed <= $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
+        $form['participantsContainer'][$i]['participant_fieldset'] = [
+          '#type' => 'fieldset',
+          '#title' => $this->t('Person') . ' ' . $personHumanCounter
+        ];
+        $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
+          '#type' => 'textfield',
+          '#placeholder' => $this->t('Fornavn'),
+          '#required' => TRUE,
+        );
+        $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
+          '#type' => 'textfield',
+          '#placeholder' => $this->t('Efternavn'),
+          '#required' => TRUE,
+        );
+        $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
+          '#type' => 'textfield',
+          '#placeholder' => $this->t('Email'),
+          '#required' => TRUE,
+        );
+      }
     }
 
-    $form['participantsContainer']['actions']['add_participant'] = [
-      '#type' => 'submit',
-      '#value' => t('Tilføj flere'),
-      '#submit' => array('::addParticipant'),
-      '#ajax' => [
-        'callback' => '::addRemoveParticipantsCallback',
-        'wrapper' => 'participants-container-wrapper',
-      ],
-      '#limit_validation_errors' => array()
-    ];
+    if ($personsSubscribed + $participantsCounter < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
+      $form['participantsContainer']['actions']['add_participant'] = [
+        '#type' => 'submit',
+        '#value' => t('Tilføj flere'),
+        '#submit' => array('::addParticipant'),
+        '#ajax' => [
+          'callback' => '::addRemoveParticipantsCallback',
+          'wrapper' => 'participants-container-wrapper',
+        ],
+        '#limit_validation_errors' => array()
+      ];
+    }
 
     if ($participantsCounter > 1) {
       $form['participantsContainer']['actions']['remove_participant'] = [
@@ -293,11 +280,26 @@ class ShortCourseOrderForm extends FormBase {
     //END PARTICIPANTS CONTAINER //
 
     //START FORM CONTROLS //
-    $form['actions']['submit'] = array(
-      '#type' => 'submit',
-      '#value' => $this->t('Indsend oplynsinger'),
-    );
+    if ($personsLimit > $personsSubscribed) {
+      $form['actions'] = [
+        '#type' => 'actions',
+      ];
+      $form['actions']['submit'] = array(
+        '#type' => 'submit',
+        '#value' => $this->t('Indsend oplynsinger'),
+      );
+    } else {
+      $form['message'] = array(
+        '#markup' => $this->t('Denne begivenhed kan ikke allokere flere deltagere')
+      );
+    }
     //END FORM CONTROLS //
+
+    //preloading data
+    if ($this->courseOrder != NULL) {
+      $this->populateData($this->courseOrder, $form, $form_state);
+      $this->populateAddedOptions($form, $form_state);
+    }
 
     $form['#theme'] = 'vih_subscription_short_course_order_form';
     $form_state->setCached(FALSE);
@@ -306,6 +308,7 @@ class ShortCourseOrderForm extends FormBase {
 
   /**
    * Ajax callback that fill the list of options.
+   *
    * @param array $form
    * @param FormStateInterface $form_state
    * @return mixed
@@ -336,8 +339,8 @@ class ShortCourseOrderForm extends FormBase {
     $selectedOption = $userInput['options'];
 
     $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
-    $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#options'] = $optionGroupSuboptions[$selectedOptionGroup][$selectedOption];
     if (!empty($optionGroupSuboptions[$selectedOptionGroup][$selectedOption])) {
+      $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#options'] = $optionGroupSuboptions[$selectedOptionGroup][$selectedOption];
       $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#access'] = TRUE;
     }
 
@@ -363,7 +366,7 @@ class ShortCourseOrderForm extends FormBase {
     $option = [
       'optionGroup' => $userInput['optionGroups'],
       'option' => $userInput['options'],
-      'suboption' => $userInput['suboptions'],
+      'suboption' => (!empty($userInput['suboptions'])) ? $userInput['suboptions'] : '',
       'amount' => $userInput['amount']
     ];
     $addedOptions[] = $option;
@@ -440,14 +443,23 @@ class ShortCourseOrderForm extends FormBase {
   }
 
   /**
-   * Ajax callback the returns the participants_container container
+   * Ajax callback function that fetches the refreshed version participants
+   * as well as updated the total course price
    *
    * @param array $form
    * @param FormStateInterface $form_state
-   * @return mixed
+   * @return AjaxResponse
    */
   public function addRemoveParticipantsCallback(array &$form, FormStateInterface $form_state) {
-    return $form['participantsContainer'];
+    $response = new AjaxResponse();
+
+    //updating the price
+    $response->addCommand(new HtmlCommand('#vih-course-price', number_format($this->calculatePrice($form_state), 2)));
+
+    //resetting elements
+    $response->addCommand(new ReplaceCommand('#participants-container-wrapper', $form['participantsContainer']));
+
+    return $response;
   }
 
   /**
@@ -499,7 +511,7 @@ class ShortCourseOrderForm extends FormBase {
         $option = $options[$addedOption['option']];
 
         $suboption = null;
-        if ($option && isset($addedOption['suboption'])) {
+        if ($option && !empty($addedOption['suboption'])) {
           $suboptions = $option->field_vih_option_suboptions;
           $suboption = $suboptions[$addedOption['suboption']]->value;
         }
@@ -537,45 +549,58 @@ class ShortCourseOrderForm extends FormBase {
       }
     }
 
+    //calculating the price
     $orderPrice = $this->calculatePrice($form_state);
 
-    //creating the Course Order
-    $this->courseOrder = Node::create(array(
-      'type' => 'vih_short_course_order',
-      'status' => 0,
-      'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $firstParticipantName . ' - '
-        . \Drupal::service('date.formatter')->format(time(), 'short'),
-      'field_vih_sco_persons' => $subscribedPersons,
-      'field_vih_sco_ordered_options' => $orderedOptions,
-      'field_vih_sco_course' => $this->course->id(),
-      'field_vih_sco_status' => 'pending',
-      'field_vih_sco_price' => $orderPrice
-    ));
+    //checking if we need to create a new order or edit the existing
+    if ($this->courseOrder == NULL) {
+      //creating the Course Order
+      $this->courseOrder = Node::create(array(
+        'type' => 'vih_short_course_order',
+        'status' => 0,
+        'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $firstParticipantName . ' - '
+          . \Drupal::service('date.formatter')->format(time(), 'short'),
+        'field_vih_sco_persons' => $subscribedPersons,
+        'field_vih_sco_ordered_options' => $orderedOptions,
+        'field_vih_sco_course' => $this->course->id(),
+        'field_vih_sco_status' => 'pending',
+        'field_vih_sco_price' => $orderPrice
+      ));
+    } else {
+      //removing old participants paragraphs, and replacing with new ones
+      $subscribedPersonsIds = $this->courseOrder->get('field_vih_sco_persons')->getValue();
+      foreach ($subscribedPersonsIds as $subscribedPersonId) {
+        $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
+        if ($subscribedPerson) {
+          $subscribedPerson->delete();
+        }
+      }
+      //adding new participants
+      $this->courseOrder->set('field_vih_sco_persons', $subscribedPersons);
+
+      //removing old ordered options
+      $orderedOptionsIds = $this->courseOrder->get('field_vih_sco_ordered_options')->getValue();
+      foreach ($orderedOptionsIds as $orderedOptionId) {
+        $orderedOption = Paragraph::load($orderedOptionId['target_id']);
+        if ($orderedOption) {
+          $orderedOption->delete();
+        }
+      }
+      //adding new ordered options
+      $this->courseOrder->set('field_vih_sco_ordered_options', $orderedOptions);
+
+      $this->courseOrder->set('field_vih_sco_price', $orderPrice);
+    }
+
+    //saving the order (works for both new/edited)
     $this->courseOrder->save();
 
-    //generating URL needed for quickpay
-    $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect', [
+    //redirecting to confirmation page
+    $form_state->setRedirect('vih_subscription.subscription_confirmation_redirect', [
       'subject' => $this->course->id(),
       'order' => $this->courseOrder->id(),
       'checksum' => VihSubscriptionUtils::generateChecksum($this->course, $this->courseOrder)
     ]);
-    $successUrl->setAbsolute();
-
-    $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');
-    $cancelUrl->setAbsolute();
-
-    $client = new BellcomQuickpayClient();
-    $paymentLink = $client->getPaymentLink($this->courseOrder, $this->course, $orderPrice, $successUrl->toString(), $cancelUrl->toString());
-
-    //successful
-    if ($paymentLink) {
-      //following the link
-      $response = new TrustedRedirectResponse($paymentLink);
-      $form_state->setResponse($response);
-    } else {
-      //something was wrong
-      $form_state->setRedirect('vih_subscription.subscription_error_redirect');
-    }
   }
 
   /**
@@ -587,19 +612,130 @@ class ShortCourseOrderForm extends FormBase {
   private function calculatePrice(FormStateInterface $form_state) {
     $base_price = $this->course->field_vih_sc_price->value;
 
+    //persons
+    $base_price *= $form_state->get('participantsCounter');
+
+    //options
     $addedOptions = $form_state->get('addedOptions');
-    $optionGroups = $this->course->field_vih_sc_option_groups->referencedEntities();
+    if ($addedOptions) {
+      $optionGroups = $this->course->field_vih_sc_option_groups->referencedEntities();
 
-    foreach ($addedOptions as $addedOption) {
-      $optionGroup = $optionGroups[$addedOption['optionGroup']];
+      foreach ($addedOptions as $addedOption) {
+        $optionGroup = $optionGroups[$addedOption['optionGroup']];
 
-      $options = $optionGroup->field_vih_og_options->referencedEntities();
-      $option = $options[$addedOption['option']];
+        $options = $optionGroup->field_vih_og_options->referencedEntities();
+        $option = $options[$addedOption['option']];
 
-      $base_price += ($option->field_vih_option_price_addition->value) * $addedOption['amount'];
+        $base_price += ($option->field_vih_option_price_addition->value) * $addedOption['amount'];
+      }
     }
 
     $this->price = $base_price;
     return $this->price;
+  }
+
+  /**
+   * Populating the ordered options from form_state
+   *
+   * @param $form
+   * @param $form_state
+   */
+  private function populateAddedOptions(&$form, $form_state) {
+    $optionGroups = $form_state->get('optionGroups');
+    $optionGroupOptions = $form_state->get('optionGroupOptions');
+    $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
+
+    $addedOptions = $form_state->get('addedOptions');
+
+    $form['addedOptionsContainer'][] = array(
+      '#markup' => $this->t('Added options'),
+      '#prefix' => '<h4>',
+      '#suffix' => '</h4>',
+    );
+
+    foreach ($addedOptions as $addedOptionDelta => $addedOption) {
+      $groupOptionName = $optionGroups[$addedOption['optionGroup']];
+      $optionName = $optionGroupOptions[$addedOption['optionGroup']][$addedOption['option']];
+      $suboptionName = null;
+      if (!empty($optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']])) {
+        $suboptionName = $optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']];
+      }
+      $amount = $addedOption['amount'];
+
+      $form['addedOptionsContainer']['addedOption-' . $addedOptionDelta] = [
+        '#markup' => $groupOptionName . ' / ' . $optionName . ' / ' . $suboptionName . ' stk. :' . $amount
+      ];
+
+      $form['addedOptionsContainer']['deleteAddedOption-' . $addedOptionDelta] = [
+        '#name' => 'deleteAddedOption-' . $addedOptionDelta,
+        '#type' => 'submit',
+        '#value' => $this->t('Slet'),
+        '#submit' => array('::removeOption'),
+        '#ajax' => [
+          'callback' => '::ajaxAddRemoveOptionCallback',
+          'wrapper' => 'added-options-container-wrapper',
+          'progress' => array(
+            'type' => 'none'
+          )
+        ],
+        '#addedOptionDelta' => $addedOptionDelta,
+        '#limit_validation_errors' => array(),
+        '#button_type' => 'danger',
+      ];
+
+      $form['addedOptionsContainer'][] = [
+        '#markup' => '<br/>'
+      ];
+    }
+  }
+
+  /**
+   * Populate the data into the form the existing courseOrder
+   *
+   * @param NodeInterface $courseOrder
+   * @param $form
+   */
+  private function populateData(NodeInterface $courseOrder, &$form, &$form_state) {
+    //subscribed persons
+    $subscribedPersonsIds = $courseOrder->get('field_vih_sco_persons')->getValue();
+    foreach ($subscribedPersonsIds as $index => $subscribedPersonId) {
+      $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
+
+      $form['participantsContainer'][$index]['participant_fieldset']['firstName']['#default_value'] = $subscribedPerson->field_vih_ocp_first_name->value;
+      $form['participantsContainer'][$index]['participant_fieldset']['lastName']['#default_value'] = $subscribedPerson->field_vih_ocp_last_name->value;
+      $form['participantsContainer'][$index]['participant_fieldset']['email']['#default_value'] = $subscribedPerson->field_vih_ocp_email->value;
+    }
+
+    //populating added options only if not changed
+    if (is_null($form_state->get('addedOptions'))) {
+      $addedOptions = array();
+
+      $optionGroups = $form_state->get('optionGroups');
+      $optionGroupOptions = $form_state->get('optionGroupOptions');
+      $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
+
+      $addedOptionsIds = $courseOrder->get('field_vih_sco_ordered_options')->getValue();
+      foreach ($addedOptionsIds as $index => $addedOptionId) {
+        $addedOption = Paragraph::load($addedOptionId['target_id']);
+
+        $optionGroupId = array_search($addedOption->field_vih_oo_group_name->value, $optionGroups);
+        $optionId = array_search($addedOption->field_vih_oo_option_name->value, $optionGroupOptions[$optionGroupId]);
+        $suboptionId = NULL;
+        if (!empty($optionGroupSuboptions[$optionGroupId][$optionId])) {
+          $suboptionId = array_search($addedOption->field_vih_oo_suboption->value, $optionGroupSuboptions[$optionGroupId][$optionId]);
+        }
+
+        $option = [
+          'optionGroup' => $optionGroupId,
+          'option' => $optionId,
+          'suboption' => $suboptionId,
+          'amount' => $addedOption->field_vih_oo_amount->value,
+        ];
+
+        $addedOptions[] = $option;
+      }
+
+      $form_state->set('addedOptions', $addedOptions);
+    }
   }
 }

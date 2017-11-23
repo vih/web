@@ -1,0 +1,170 @@
+// |--------------------------------------------------------------------------
+// | Overrides
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - img
+// | - .icon
+// | - .form-control
+// | - .row--equal-height-columns
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Remove body margin (taken from the overrides of Bootstrap theme)
+body {
+  margin-top: 0;
+}
+
+// Uppercase all headings
+h1, .h1, .heading-h1,
+h2, .h2, .heading-h2,
+h3, .h3, .heading-h3,
+h4, .h4, .heading-h4,
+h5, .h5, .heading-h5,
+h6, .h6, .heading-h6,
+.lead {
+  text-transform: uppercase;
+}
+
+#drupal-live-announce {
+  display: none;
+}
+
+.cover-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+}
+
+img {
+  max-width: 100%;
+}
+
+.icon {
+  //@extend .fa; // Extend Font Awesome, so .icon can be used instead (or switched out)
+}
+
+// This has been set to zero by Bootstraps subtheme
+.form-group {
+
+  &:last-child {
+    margin-bottom: $form-group-margin-bottom;
+  }
+}
+
+.form-control {
+  // Remove inline shadow on iOS (https://stackoverflow.com/questions/23211656/remove-ios-input-shadow)
+  appearance: none;
+
+  &,
+  &:focus {
+    @include box-shadow(none);
+  }
+}
+
+// iFrame
+.frame-border {
+  border:3px solid transparent;
+}
+
+.panel {
+  @include box-shadow(none);
+}
+
+.panel-heading {
+  position: relative;
+}
+
+.panel-title {
+
+  &:before {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 5px;
+
+    content: "";
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// Flexbox
+.flexbox {
+
+  .row--equal-height-columns {
+
+    &:not(.view),
+    > .view-content {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      > [class*='col-'] {
+        display: flex;
+
+        flex-direction: column;
+      }
+
+      // Fixes Safari issue (https://stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap)
+      &:after,
+      &:before {
+        content: normal; // IE doesn't support `initial`
+      }
+    }
+  }
+}
+
+// No flexbox
+.no-flexbox {}

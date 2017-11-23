@@ -5,11 +5,14 @@ dependencies:
   config:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
+    - field.field.paragraph.class_packages.field_class_id
     - field.field.paragraph.class_packages.field_heading
+    - field.field.paragraph.class_packages.field_link
     - image.style.thumbnail
     - paragraphs.paragraphs_type.class_packages
   module:
     - image
+    - link
     - workbench_moderation
 id: paragraph.class_packages.default
 targetEntityType: paragraph
@@ -17,26 +20,43 @@ bundle: class_packages
 mode: default
 content:
   field_background_color:
-    weight: 7
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
-    weight: 6
+    weight: 1
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
+  field_class_id:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_heading:
-    weight: 8
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   created: true

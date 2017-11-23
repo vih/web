@@ -1,0 +1,128 @@
+// |--------------------------------------------------------------------------
+// | Video
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph--type--video
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Video
+.paragraph--type--video {
+
+  .field--name-field-heading,
+  .field--name-field-description {
+    margin-bottom: 40px;
+  }
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      @extend h4;
+
+      margin: 0;
+
+      font-weight: $headings-font-weight-light;
+    }
+  }
+
+  .field--name-field-highlighted {
+    margin-bottom: 80px;
+
+    font-weight: $font-weight-bold;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Print
+@media print {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// Touch
+.touchevents {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// No touch
+.no-touchevents {
+
+  // Video
+  .paragraph--type--video {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Video mixin
+@mixin paragraph-type-mixin-column-action-centered() {}

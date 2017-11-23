@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
+    - field.field.node.vih_long_cource.field_vih_course_persons_limit
     - field.field.node.vih_long_cource.field_vih_course_price
+    - field.field.node.vih_long_cource.field_vih_course_status
     - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
@@ -17,6 +19,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - options
     - panelizer
     - text
     - user
@@ -212,7 +215,7 @@ third_party_settings:
         label: Default
         uuid: 8cc64bf8-808c-48df-b6ed-dc141848f02e
         weight: 0
-        layout: twocol
+        layout: layout_twocol
         layout_settings: {  }
         page_title: null
         storage_type: panelizer_default
@@ -278,6 +281,13 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
+  field_vih_course_status:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_vih_course_subheading:
     weight: 2
     label: hidden
@@ -315,4 +325,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_vih_course_periods: true
+  field_vih_course_persons_limit: true
   langcode: true

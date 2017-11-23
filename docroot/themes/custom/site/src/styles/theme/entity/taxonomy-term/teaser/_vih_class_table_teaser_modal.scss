@@ -1,0 +1,137 @@
+// |--------------------------------------------------------------------------
+// | Class taxonomy 'VIH class table teaser modal' display
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .vih_class_table_teaser_modal
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Class taxonomy 'VIH class table teaser modal' display
+.vih_class_table_teaser_modal{
+  & .field-vih-class-image{
+    width: 100%;
+    height: 122px;
+    & .field.field--name-name.field--item{
+      text-transform: uppercase;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      color: #fff !important;
+      font-size: 16px;
+    }
+  }
+  & .flex-center-middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 122px;
+    & .field-description-wrapper{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 16px;
+      width: 90%;
+      margin-left: 10px;
+    }
+    .btn-more {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Print
+@media print {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// Touch
+.touchevents {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  // Class taxonomy 'VIH class table teaser modal' display
+  .vih_class_table_teaser_modal{
+  }
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

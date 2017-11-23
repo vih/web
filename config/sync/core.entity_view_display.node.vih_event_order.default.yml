@@ -10,8 +10,14 @@ dependencies:
     - node.type.vih_event_order
   module:
     - entity_reference_revisions
-    - options
+    - panelizer
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vih_event_order.default
 targetEntityType: node
 bundle: vih_event_order
@@ -25,7 +31,7 @@ content:
     type: plugin_label
     region: content
   field_vih_eo_event:
-    weight: 101
+    weight: 1
     label: above
     settings:
       link: true
@@ -34,7 +40,7 @@ content:
     region: content
   field_vih_eo_persons:
     type: entity_reference_revisions_entity_view
-    weight: 102
+    weight: 2
     label: above
     settings:
       view_mode: default
@@ -42,7 +48,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_eo_price:
-    weight: 104
+    weight: 3
     label: above
     settings:
       thousand_separator: ''
@@ -52,16 +58,12 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
-  field_vih_eo_status:
-    weight: 105
-    label: above
+  links:
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
-  links:
-    weight: 100
-    region: content
 hidden:
   field_payment_line_item: true
+  field_vih_eo_status: true
   langcode: true

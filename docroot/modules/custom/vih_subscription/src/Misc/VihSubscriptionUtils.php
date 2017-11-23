@@ -9,6 +9,7 @@ namespace Drupal\vih_subscription\Misc;
 
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Site\Settings;
+use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 
 class VihSubscriptionUtils {
@@ -65,5 +66,86 @@ class VihSubscriptionUtils {
    */
   public static function generateChecksum(NodeInterface $subject, NodeInterface $order) {
     return Crypt::hashBase64($subject->id() . $order->id() . Settings::getHashSalt());
+  }
+
+  /**
+   * Returns a boolean if more people can suscribe to that subject
+   *
+   * @param NodeInterface $subject
+   * @return boolean
+   */
+  public static function acceptsMoreSubscriptions(NodeInterface $subject) {
+    if ($subject->getType() == 'vih_long_cource') {
+      //0 for unlimited
+      if ($subject->field_vih_course_persons_limit->value == 0 ) {
+        return TRUE;
+      } else {
+        return ($subject->field_vih_course_persons_limit->value > VihSubscriptionUtils::calculateSubscribedPeopleNumber($subject));
+      }
+    } elseif ($subject->getType() == 'vih_short_course') {
+      //0 for unlimited
+      if ($subject->field_vih_sc_persons_limit->value == 0) {
+        return TRUE;
+      } else {
+        return ($subject->field_vih_sc_persons_limit->value > VihSubscriptionUtils::calculateSubscribedPeopleNumber($subject));
+      }
+    } elseif ($subject->getType() == 'event') {
+      //0 for unlimited
+      if ($subject->field_vih_event_persons_limit->value == 0) {
+        return TRUE;
+      } else {
+        return ($subject->field_vih_event_persons_limit->value > VihSubscriptionUtils::calculateSubscribedPeopleNumber($subject));
+      }
+    }
+  }
+
+  /**
+   * Calculates the number of people that have already subscribed to this subject
+   *
+   * @param NodeInterface $event
+   * @return int
+   */
+  public static function calculateSubscribedPeopleNumber(NodeInterface $subject) {
+    if ($subject->getType() == 'vih_long_cource') {
+      $courseOrderNids = \Drupal::entityQuery('node')
+        ->condition('type', 'vih_long_course_order')
+        //->condition('status', '1')new nodes are saved as unpublished
+        ->condition('field_vih_lco_course', $subject->id())
+        ->condition('field_vih_lco_status', 'confirmed')
+        ->execute();
+
+      //TODO: how many people is each order?
+      return count($courseOrderNids);
+    } elseif ($subject->getType() == 'vih_short_course') {
+      $courseOrderNids = \Drupal::entityQuery('node')
+        ->condition('type', 'vih_short_course_order')
+        //->condition('status', '1')new nodes are saved as unpublished
+        ->condition('field_vih_sco_course', $subject->id())
+        ->condition('field_vih_sco_status', 'confirmed')
+        ->execute();
+
+      $courseOrders = Node::loadMultiple($courseOrderNids);
+      $subscribedPeopleNumber = 0;
+      foreach ($courseOrders as $courseOrder) {
+        $subscribedPeopleNumber += count($courseOrder->get('field_vih_sco_persons')->getValue());
+      }
+
+      return $subscribedPeopleNumber;
+    } elseif ($subject->getType() == 'event') {
+      $eventOrderNids = \Drupal::entityQuery('node')
+        ->condition('type', 'vih_event_order')
+        //->condition('status', '1')new nodes are saved as unpublished
+        ->condition('field_vih_eo_event', $subject->id())
+        ->condition('field_vih_eo_status', 'confirmed')
+        ->execute();
+
+      $eventOrders = Node::loadMultiple($eventOrderNids);
+      $subscribedPeopleNumber = 0;
+      foreach ($eventOrders as $eventOrder) {
+        $subscribedPeopleNumber += count($eventOrder->get('field_vih_eo_persons')->getValue());
+      }
+
+      return $subscribedPeopleNumber;
+    }
   }
 }

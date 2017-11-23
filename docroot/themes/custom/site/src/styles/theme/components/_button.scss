@@ -1,0 +1,255 @@
+// |--------------------------------------------------------------------------
+// | Button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .btn
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$button-icon-wrapper-width: 45px;
+$button-arrow-width: 26px;
+
+// Variants
+$button-primary-icon-background: $brand-cyan;
+$button-secondary-icon-background: darken($btn-secondary-bg, 14%);
+$button-info-icon-background: $brand-cyan;
+$button-success-icon-background: lighten($btn-success-bg, 14%);
+$button-danger-icon-background: lighten($btn-danger-bg, 14%);
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Button
+.btn {
+
+  &.btn-primary,
+  &.btn-secondary,
+  &.btn-info,
+  &.btn-success,
+  &.btn-danger {
+    position: relative;
+
+    overflow: hidden;
+    border: 0;
+
+    padding-left: floor(($button-icon-wrapper-width + $button-arrow-width + $padding-base-horizontal));
+
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+
+    .icon {
+      display: none;
+    }
+
+    &:before {
+      @extend .icon;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      display: flex;
+      justify-content: right;
+      align-items: center;
+
+      width: $button-icon-wrapper-width;
+
+      content: $icon-arrow-right;
+
+      color: #fff;
+
+      font-size: 30px;
+
+      &.btn-xs & {
+        font-size: 22px;
+      }
+
+      &.btn-lg & {
+        font-size: 30px;
+      }
+    }
+
+    // The arrow
+    &:after {
+      position: absolute;
+
+      top: 50%;
+      left: $button-icon-wrapper-width;
+
+      z-index: 1;
+
+      content: "";
+
+      margin-top: floor( ( 0 - $button-arrow-width ) );
+
+      height: 0;
+      width: 0;
+      pointer-events: none;
+
+      border-style: solid;
+      border-color: rgba(136, 183, 213, 0);
+      border-width: $button-arrow-width;
+    }
+  }
+}
+
+.btn-radio-select {
+
+  .form-item {
+    display: none;
+  }
+
+  &:after {
+
+    html[lang="da"] & {
+      content: "Vælg";
+    }
+  }
+
+  &.active {
+
+    &, &:hover, &:focus {
+      color: $btn-primary-color;
+      background-color: $btn-primary-bg;
+      border-color: $btn-primary-border;
+    }
+
+    &:after {
+
+      html[lang="da"] & {
+        content: "Valgt";
+      }
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.btn {
+
+  // Primary
+  &.btn-primary {
+
+    &:before {
+      color: $btn-primary-color;
+      background-color: $button-primary-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-primary-icon-background;
+    }
+  }
+
+  // Secondary
+  &.btn-secondary {
+
+    &:before {
+      color: $btn-secondary-color;
+      background-color: $button-secondary-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-secondary-icon-background;
+    }
+  }
+
+  // Info
+  &.btn-info {
+
+    &:before {
+      color: $btn-info-color;
+      background-color: $button-info-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-info-icon-background;
+    }
+  }
+
+  // Success
+  &.btn-success {
+
+    &:before {
+      color: $btn-success-color;
+      background-color: $button-success-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-success-icon-background;
+    }
+  }
+
+  // Danger
+  &.btn-danger {
+
+    &:before {
+      color: $btn-danger-color;
+      background-color: $button-danger-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-danger-icon-background;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Button
+  .btn { }
+}
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  // Button
+  .btn { }
+}
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Button
+  .btn { }
+}
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  // Button
+  .btn { }
+}
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Button mixin
+@mixin btn-mixin() { }

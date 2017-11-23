@@ -1,0 +1,195 @@
+// |--------------------------------------------------------------------------
+// | Teaser
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .entity-list-advanced
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$list-advanced-background-color: $body-bg;
+
+$list-advanced-image-min-height: 175px;
+
+$list-advanced-inner-top-bottom-spacing: floor( ( $grid-gutter-width / 2 ) );
+$list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin entity-list-advanced-image-variant-mixin($background-color) {
+  @include angled-edge('outside top', 'upper left', rgba($background-color, .85), 40);
+
+  position: absolute;
+
+  background-color: rgba($background-color, .85);
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.entity-list-advanced {
+  display: flex;
+
+  flex-direction: column;
+
+  margin-bottom: $grid-gutter-width;
+
+  background-color: $list-advanced-background-color;
+  border: 1px solid $border-color;
+
+  .element-wrapper-link {
+    transition: none; // Remove link transitions
+  }
+
+  .panel & {
+    margin-bottom: 0;
+
+    border: 0;
+  }
+
+  + .entity-list-advanced {
+    border-top: 1px solid $border-color;
+  }
+}
+
+.entity-list-advanced__heading {
+
+  + .field {
+    margin-top: 10px;
+  }
+}
+.entity-list-advanced__heading__title {
+  margin: 0;
+}
+
+.entity-list-advanced__image {
+  position: relative;
+
+  min-height: $list-advanced-image-min-height;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.entity-list-advanced__image__overlay {
+  @include entity-list-advanced-image-variant-mixin($brand-primary);
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 0 $list-advanced-inner-left-right-spacing 10px;
+
+  text-transform: uppercase;
+  text-align: right;
+
+  font-weight: $font-weight-bold;
+  color: #fff;
+  background-color: rgba($brand-primary, .85);
+
+  .field {
+    display: inline-block;
+  }
+}
+
+.entity-list-advanced__body {
+  display: flex;
+
+  padding: $list-advanced-inner-top-bottom-spacing $list-advanced-inner-left-right-spacing;
+
+  flex-direction: column;
+  justify-content: center;
+}
+
+.entity-list-advanced__action {
+  display: flex;
+
+  padding: $list-advanced-inner-top-bottom-spacing $list-advanced-inner-left-right-spacing;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .btn + .btn {
+    margin-left: 10px;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.entity-list-advanced__image__overlay--color-red {
+  @include entity-list-advanced-image-variant-mixin($brand-red);
+}
+.entity-list-advanced__image__overlay--color-blue {
+  @include entity-list-advanced-image-variant-mixin($brand-primary);
+}
+.entity-list-advanced__image__overlay--color-cyan {
+  @include entity-list-advanced-image-variant-mixin($brand-cyan);
+}
+.entity-list-advanced__image__overlay--color-purple {
+  @include entity-list-advanced-image-variant-mixin($brand-quaternary);
+}
+.entity-list-advanced__image__overlay--color-yellow {
+  @include entity-list-advanced-image-variant-mixin($brand-yellow);
+}
+.entity-list-advanced__image__overlay--color-green {
+  @include entity-list-advanced-image-variant-mixin($brand-tertiary);
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  .entity-list-advanced {
+    flex-direction: row;
+  }
+
+  .entity-list-advanced__image {
+    flex-basis: 350px;
+    flex-shrink: 0;
+  }
+
+  .entity-list-advanced__body {
+    flex-grow: 1;
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

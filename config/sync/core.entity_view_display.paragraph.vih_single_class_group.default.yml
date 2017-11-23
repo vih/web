@@ -15,7 +15,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      view_mode: vih_class_table_teaser_modal
+      view_mode: list_advanced
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view

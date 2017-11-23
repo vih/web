@@ -5,8 +5,8 @@ schemas:
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: profiles/contrib/lightning/favicon.ico
-  url: 'http://vih.dev/profiles/contrib/lightning/favicon.ico'
-  use_default: 0
+  url: 'http://vih.test/profiles/contrib/lightning/favicon.ico'
+  use_default: 1
 features:
   comment_user_picture: true
   comment_user_verification: true
@@ -15,14 +15,16 @@ features:
 logo:
   path: profiles/contrib/lightning/lightning.png
   url: ''
-  use_default: 0
+  use_default: 1
 breadcrumb_home: 1
 region_wells:
-  main_navigation: ''
-  sidebar_left: ''
+  drawer_left: ''
+  header_black_bar_left: ''
+  header_black_bar_right: ''
+  mobile_header_navigation: ''
+  header_navigation: ''
+  banner: ''
   header: ''
-  highlighted: ''
-  help: ''
   content: ''
   footer_top_first: ''
   footer_top_second: ''
@@ -31,3 +33,4 @@ region_wells:
 table_responsive: '-1'
 table: ''
 general_startup_year: '2011'
+cdn_provider: ''

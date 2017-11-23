@@ -5,31 +5,48 @@ dependencies:
   config:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
+    - field.field.paragraph.class_packages.field_class_id
     - field.field.paragraph.class_packages.field_heading
+    - field.field.paragraph.class_packages.field_link
+    - image.style.paragraph_background_image
     - paragraphs.paragraphs_type.class_packages
   module:
     - image
+    - link
 id: paragraph.class_packages.default
 targetEntityType: paragraph
 bundle: class_packages
 mode: default
 content:
   field_background_image:
-    weight: 0
+    weight: 1
     label: hidden
     settings:
-      image_style: ''
+      image_style: paragraph_background_image
       image_link: ''
     third_party_settings: {  }
     type: image
     region: content
   field_heading:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
 hidden:
   field_background_color: true
+  field_class_id: true

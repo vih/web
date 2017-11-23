@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.scheduled_update.multiple_node_embargo.field_moderation_state
     - field.field.scheduled_update.multiple_node_embargo.field_moderation_state_1
     - scheduled_updates.scheduled_update_type.multiple_node_embargo
 _core:
@@ -33,4 +34,5 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_moderation_state: true

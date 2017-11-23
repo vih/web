@@ -11,9 +11,9 @@
     </div>
     <!-- End - drawer -->
 
-    <!-- Begin - header -->
-        {% include '@site/custom/header.html.twig' %}
-    <!-- End - header -->
+    {# Begin - header #}
+    {% include '@site/_partials/header.html.twig' %}
+    {# End - header #}
 
     <!-- Begin - document -->
     <main class="layout__document" role="document">
@@ -21,127 +21,88 @@
         <!-- Begin - content -->
         <div class="layout__content">
 
-            {# Banner #}
-            {% if page.banner %}
-                {% block banner %}
-                    <div class="banner" style="background:none !important;">
+            {# Begin - banner #}
+            {% if is_front %}
+
+                {% if page.banner %}
+                    {% block banner %}
                         {{ page.banner }}
-                    </div>
-                {% endblock %}
-            {% endif %}
+                    {% endblock %}
+                {% endif %}
 
-            {# Header #}
-            {% if page.header %}
-                {% block header %}
-                    <div role="heading" class="page-heading">
+            {% else %}
 
+                {% if node.field_page_main_image.value or node.field_vih_course_image.value %}
 
-                                <div class="container">
-                                    {{ page.header }}
+                    {# Begin - image #}
+                    {% if node.field_page_main_image.value %}
+                        {% set banner_background_image = node.field_page_main_image.entity.fileuri | image_style('banner_small') %}
+                    {% elseif node.field_vih_course_image.value %}
+                        {% set banner_background_image = node.field_vih_course_image.entity.fileuri | image_style('banner_small') %}
+                    {% endif %}
+                    {# End - image #}
+
+                    <div class="banner banner--small" style="background-image: url({{ banner_background_image }})">
+                        <div class="banner__inner">
+                            <div class="container">
+                                <div class="banner__heading">
+
+                                    {% if node.title.value %}
+                                        <h1 class="banner__heading__title">{{ node.title.value }}</h1>
+                                    {% elseif page['#title'] %}
+                                        <h1 class="banner__heading__title">{{ page['#title'] }}</h1>
+                                    {% endif %}
+
                                 </div>
-
-
+                            </div>
+                        </div>
                     </div>
+                {% endif %}
+            {% endif %}
+            {# End - banner #}
+
+            {# Begin - header #}
+            {% if page.header is defined and page.header | render | striptags | trim %}
+                {% block header %}
+                    <section class="sectioned sectioned--header sectioned--small-inner-spacing">
+                        <div class="sectioned__inner">
+                            <div class="container">
+                                {{ page.header }}
+                            </div>
+                        </div>
+                    </section>
                 {% endblock %}
             {% endif %}
+            {# End - header #}
 
             <!-- Begin - content -->
-            <section{{ content_attributes.addClass(content_classes) }}>
+            <div{{ content_attributes.addClass(content_classes) }}>
                 {% block content %}
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-
-                    {% if node and node.getType == 'page' %}
+                    {% if node or user %}
                         {{ page.content }}
                     {% else %}
-                    <div class="angled-background-color-page angled-background-color-white">
-                        <div class="angled-background-inner" style="position: unset !important;">
-                            <div class="container">
-                                {{ page.content }}
+                        <section class="sectioned sectioned--content">
+                            <div class="sectioned__inner">
+                                <div class="container">
+                                    {{ page.content }}
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </section>
                     {% endif %}
-
                     <!-- End - content -->
                 {% endblock %}
-            </section>
+            </div>
             <!-- End - content -->
 
         </div>
         <!-- End - content -->
 
-        <!-- Begin - footer -->
-        <footer class="layout__footer">
-            <div class="layout__footer-inner">
-
-                {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
-                    <!-- Begin - footer top -->
-                    <div class="layout__footer-top-outer">
-                        <div class="container">
-                            <div class="layout__footer-top-inner">
-                                <div class="row">
-
-                                    {% if page.footer_top_first %}
-                                        <div class="col-xs-12 col-sm-6 col-md-3">
-                                            {{ page.footer_top_first }}
-                                        </div>
-                                    {% endif %}
-
-                                    {% if page.footer_top_second %}
-                                        <div class="col-xs-12 col-sm-6 col-md-3">
-                                            {{ page.footer_top_second }}
-                                        </div>
-                                    {% endif %}
-
-                                    {% if page.footer_top_third %}
-                                        <div class="col-xs-12 col-sm-6 col-md-3">
-                                            {{ page.footer_top_third }}
-                                        </div>
-                                    {% endif %}
-
-                                    {% if page.footer_top_fourth %}
-                                        <div class="col-xs-12 col-sm-6 col-md-3">
-                                            {{ page.footer_top_fourth }}
-                                        </div>
-                                    {% endif %}
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End - footer top -->
-                {% endif %}
-
-                <!-- Begin - footer bottom -->
-                <div class="layout__footer-bottom-outer">
-                    <div class="layout__footer-bottom-inner">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6">
-                                    <div class="layout__footer-bottom-copyright">
-                                        <p>{% trans %} © {{ theme_settings['copyright_interval'] }}, Vejle Idrætshøjskole. All rights reserved.{% endtrans %}</p>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6">
-                                    <div class="layout__footer-bottom-social">
-                                        <ul class="list-inline pull-right">
-                                            <li><a href="#"><span class="icon fa fa-instagram"></span></a></li>
-                                            <li><a href="#"><span class="icon fa fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="icon fa fa-facebook"></span></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End - footer bottom -->
-
-            </div>
-        </footer>
-        <!-- End - footer -->
+        {# Begin - footer #}
+        {% include '@site/_partials/footer.html.twig' %}
+        {# End - footer #}
 
     </main>
     <!-- End - document -->
@@ -149,6 +110,10 @@
     <!-- Begin - obfuscator -->
     <div class="layout__obfuscator"></div>
     <!-- End - obfuscator -->
+
+    {# Begin - cookie popup #}
+    {{ drupal_block('popup_cta') }}
+    {# End - cookie popup #}
 
 </div>
 <!-- End - wrapper -->

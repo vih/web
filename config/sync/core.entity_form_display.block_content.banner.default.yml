@@ -9,7 +9,7 @@ dependencies:
     - field.field.block_content.banner.field_link
   module:
     - entity_browser
-    - link_class
+    - link
     - workbench_moderation
 id: block_content.banner.default
 targetEntityType: block_content
@@ -18,7 +18,7 @@ mode: default
 content:
   field_image:
     type: entity_browser_file
-    weight: 7
+    weight: 1
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -27,31 +27,23 @@ content:
       preview_image_style: thumbnail
       open: true
       selection_mode: selection_append
-    third_party_settings: {  }
     region: content
+    third_party_settings: {  }
   field_link:
-    weight: 8
+    type: link_default
+    weight: 2
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      link_class_mode: manual
-      link_class_force: btn-arrow
-      link_class_select: ''
     third_party_settings: {  }
-    type: link_class_field_widget
-    region: content
   info:
     type: string_textfield
-    weight: -5
+    weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    region: content
-  langcode:
-    type: language_select
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  langcode: true

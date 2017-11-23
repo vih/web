@@ -5,12 +5,11 @@ dependencies:
   config:
     - image.style.medium
     - image.style.thumbnail
-    - media_entity.bundle.image
+    - media.type.image
   module:
     - entity_browser
-    - file
     - image
-    - media_entity
+    - media
     - user
     - views_infinite_scroll
 _core:
@@ -48,7 +47,7 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Filter
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -262,7 +261,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Udbyder
+          label: Kilde
           exclude: false
           alter:
             alter_text: false
@@ -630,7 +629,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Udbyder
+            label: Kilde
             description: ''
             use_operator: false
             operator: bundle_op
@@ -711,7 +710,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Sprog
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op

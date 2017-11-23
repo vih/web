@@ -8,6 +8,6 @@ dependencies:
 _core:
   default_config_hash: g7vVTKzdq3cfd93-p6DCwS-k-tA__u3BGFzZrl4ZPgQ
 id: days
-label: Days
-category: 'Date and time'
+label: Dage
+category: 'Dato og tid'
 options: "Sunday: Sunday\nMonday: Monday\nTuesday: Tuesday\nWednesday: Wednesday\nThursday: Thursday\nFriday: Friday\nSaturday: Saturday\n"

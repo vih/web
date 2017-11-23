@@ -1,36 +1,52 @@
 <div class="all-classes-container">
-  {% for delta, radio in radios['#options'] %}
-    <div class="class-selection">
-      {{ radios['#classes']['radio_selection'][delta] }}
-      <label class="btn btn-radio-select">
-        {{ radios[delta] }}
-      </label>
-      {#popup start#}
-      <button type="button" class="btn-more" data-toggle="modal" data-target="#class-modal-{{ radios[delta]['#id'] }}">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-      </button>
-      <div class="modal fade" id="class-modal-{{ radios[delta]['#id'] }}" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header" style="background-image: url('{{ file_url(radios['#classes']['radio_selection'][delta]['#taxonomy_term'].field_vih_class_image.entity.fileuri) }}');">
-              <div class="modal-header-close">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-              </div>
 
-              <div class="modal-header-title"><h4 class="modal-title">{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getName }}</h4></div>
-              <div class="diagonal-end"></div>
+    {% for delta, radio in radios['#options'] %}
+        <div {{ attributes.addClass('entity-list-advanced', 'entity-list-advanced--class') }}>
+            {{ radios['#classes']['radio_selection'][delta] }}
+
+            <!-- Begin - action -->
+            <div class="entity-list-advanced__action">
+
+                <label class="btn btn-default btn-radio-select">
+                    {{ radios[delta] }}
+                </label>
+
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#class-modal-{{ radios[delta]['#id'] }}">
+                    <i class="icon icon-info-circle" aria-hidden="true"></i>
+                </button>
+
             </div>
+            <!-- End - action -->
 
-            <div class="modal-body">{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getDescription|raw }}</div>
-          </div>
+            {# Begin - modal #}
+            <div class="modal fade" id="class-modal-cp-{{ term.id }}" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+
+                        {# Begin - header #}
+                        <div class="modal-header" style="background-image: url('{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].field_vih_class_image.entity.fileuri | image_style('modal') }}');">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                            <h3 class="modal-title heading-h1">
+                                {{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getName }}
+                            </h3>
+                        </div>
+                        {# End - header #}
+
+                        {# Begin - body #}
+                        <div class="modal-body">
+                            {{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].getDescription|raw }}
+                        </div>
+                        {# End - body #}
+
+                    </div>
+                </div>
+            </div>
+            {# End - modal #}
+
         </div>
-      </div>
-      {#popup END#}
-    </div>
-  </div>
-</div>
-</div>
-</div>
-{% endfor %}
-</div>
+    {% endfor %}
 
+</div>

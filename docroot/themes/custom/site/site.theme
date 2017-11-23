@@ -5,14 +5,16 @@
  * Functions to support theming in the site theme.
  */
 
+use Drupal\image\Entity\ImageStyle;
+
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function site_preprocess_html(array &$variables) {
-// $variables['attributes']['class'][] = 'navigation-bar-enabled-xs';
-// $variables['attributes']['class'][] = 'sidebar-left-enabled-xs';
-// $variables['attributes']['class'][] = 'sidebar-left-hidden-xs';
-// $variables['attributes']['class'][] = 'sidebar-left-content-push-xs';
+  // $variables['attributes']['class'][] = 'navigation-bar-enabled-xs';
+  // $variables['attributes']['class'][] = 'sidebar-left-enabled-xs';
+  // $variables['attributes']['class'][] = 'sidebar-left-hidden-xs';
+  // $variables['attributes']['class'][] = 'sidebar-left-content-push-xs';
 }
 
 /**
@@ -35,7 +37,7 @@ function site_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function site_preprocess_page(array &$variables) {
-  
+
   $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
   if ($tid) {
     $variables['term'] = \Drupal\taxonomy\Entity\Term::load($tid);
@@ -45,7 +47,10 @@ function site_preprocess_page(array &$variables) {
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
-function site_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_page_alter(
+  array &$suggestions,
+  array $variables
+) {
 
   $node = \Drupal::request()->attributes->get('node');
   if ($node) {
@@ -53,10 +58,11 @@ function site_theme_suggestions_page_alter(array &$suggestions, array $variables
       $suggestions[] = 'page__' . $node->getType();
     }
 
-    if($node->hasField('field_page_template')){
-    $custom_page_template = $node->get('field_page_template')->getValue();
-      if(isset($custom_page_template[0]['target_id'])){
-        $term = \Drupal\taxonomy\Entity\Term::load($custom_page_template[0]['target_id'])->getname();
+    if ($node->hasField('field_page_template')) {
+      $custom_page_template = $node->get('field_page_template')->getValue();
+      if (isset($custom_page_template[0]['target_id'])) {
+        $term = \Drupal\taxonomy\Entity\Term::load($custom_page_template[0]['target_id'])
+          ->getname();
         $term = 'page__' . preg_replace("/[^a-zA-Z0-9s]/", "_", strtolower($term));
         $suggestions[] = $term;
       }
@@ -64,7 +70,7 @@ function site_theme_suggestions_page_alter(array &$suggestions, array $variables
 
     //alternative front page template suggestion, which has higher priority than page__node-type
     $is_front = \Drupal::service('path.matcher')->isFrontPage();
-    if($is_front == TRUE)  {
+    if ($is_front == TRUE) {
       $suggestions[] = 'page__' . $node->getType() . '__front';
     }
   }
@@ -75,13 +81,15 @@ function site_theme_suggestions_page_alter(array &$suggestions, array $variables
       $suggestions[] = 'page__taxonomy__term__' . $term->getVocabularyId();
     }
   }
-
 }
 
 /**
  * Implements hook_theme_suggestions_node_alter().
  */
-function site_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_node_alter(
+  array &$suggestions,
+  array $variables
+) {
   /*$node = $variables['elements']['#node'];
 
   if ($variables['elements']['#view_mode'] == "full") {
@@ -89,13 +97,20 @@ function site_theme_suggestions_node_alter(array &$suggestions, array $variables
   }*/
 }
 
-function site_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables, $hook) {
+function site_theme_suggestions_taxonomy_term_alter(
+  &$suggestions,
+  $variables,
+  $hook
+) {
   $suggestions[] = 'taxonomy_term__' . $variables['elements']['#taxonomy_term']->getVocabularyId() . '__' . $variables['elements']['#view_mode'];
   $suggestions[] = 'taxonomy_term__' . $variables['elements']['#view_mode'];
 }
 
-
-function site_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+function site_theme_suggestions_alter(
+  array &$suggestions,
+  array $variables,
+  $hook
+) {
 
 }
 
@@ -109,7 +124,11 @@ function site_preprocess_block(array &$variables) {
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function site_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_field_alter(
+  array &$suggestions,
+  array $variables
+
+) {
   $element = $variables['element'];
 
   $suggestions[] = 'field__' . $element['#view_mode'];
@@ -120,7 +139,10 @@ function site_theme_suggestions_field_alter(array &$suggestions, array $variable
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function site_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_fieldset_alter(
+  array &$suggestions,
+  array $variables
+) {
   /*$element = $variables['element'];
   if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
     $suggestions[] = 'fieldset__form_composite';
@@ -130,11 +152,17 @@ function site_theme_suggestions_fieldset_alter(array &$suggestions, array $varia
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function site_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_menu_alter(
+  array &$suggestions,
+  array $variables
+) {
   // Remove the block and replace dashes with underscores in the block ID to
   // use for the hook name.
   if (isset($variables['attributes']['block'])) {
-    $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+    $hook = str_replace(['block-', '-'], [
+      '',
+      '_',
+    ], $variables['attributes']['block']);
 
     // menu__MENU_NAME__BLOCK_NAME
     $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
@@ -143,10 +171,14 @@ function site_theme_suggestions_menu_alter(array &$suggestions, array $variables
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ *
  * @param array $suggestions
  * @param array $variables
  */
-function site_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_block_alter(
+  array &$suggestions,
+  array $variables
+) {
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
@@ -156,7 +188,6 @@ function site_theme_suggestions_block_alter(array &$suggestions, array $variable
 function site_theme_suggestions_file_link_alter(&$suggestions, $vars, $hook) {
 
   $suggestions[] = 'file_link__' . 'type__' . 'page';
-
 }
 
 /**
@@ -165,56 +196,85 @@ function site_theme_suggestions_file_link_alter(&$suggestions, $vars, $hook) {
 function site_preprocess_node(array &$variables) {
   // Default to turning off byline/submitted.
   //$variables['display_submitted'] = FALSE;
-
   $node = $variables['node'];
 
-  if ($node->getType() == 'vih_long_cource') {
+  // Event
+  if ($node->getType() == 'event') {
+    $variables['content']['can_be_subscribed'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
+    $variables['content']['is_active'] = ($node->field_vih_event_status->value == 'active');
+    $variables['content']['is_closed'] = ($node->field_vih_event_status->value == 'closed');
+  }
+
+  // Short course
+  elseif ($node->getType() == 'vih_short_course') {
+    $variables['content']['can_be_subscribed'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
+    $variables['content']['is_active'] = ($node->field_vih_sc_status->value == 'active');
+    $variables['content']['is_closed'] = ($node->field_vih_sc_status->value == 'closed');
+  }
+
+  // Long course
+  elseif ($node->getType() == 'vih_long_cource') {
+    $variables['content']['can_be_subscribed'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
+    $variables['content']['is_active'] = ($node->field_vih_course_status->value == 'active');
+    $variables['content']['is_closed'] = ($node->field_vih_course_status->value == 'closed');
+
     //preloading travel classes
     $start_course_date = '';
     $end_course_date = '';
     foreach ($node->field_vih_course_periods->referencedEntities() as $period) {
+
       if (is_array($period->field_vih_cp_start_date->getValue()[0])) {
         $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
       }
+
       if (is_array($period->field_vih_cp_end_date->getValue()[0])) {
         $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
       }
 
       if ($start_course_date) {
-        if (strtotime($curr_start_date) < strtotime($start_course_date))
+        if (strtotime($curr_start_date) < strtotime($start_course_date)) {
           $start_course_date = $curr_start_date;
-      } else {
+        }
+      }
+      else {
         $start_course_date = $curr_start_date;
-      }     
+      }
       if ($end_course_date) {
-        if (strtotime($curr_end_date) > strtotime($end_course_date))
+        if (strtotime($curr_end_date) > strtotime($end_course_date)) {
           $end_course_date = $curr_end_date;
-      } else {
+        }
+      }
+      else {
         $end_course_date = $curr_end_date;
       }
 
       //only for full display
       if ($variables['view_mode'] == 'full') {
-        foreach($period->field_vih_cp_course_slots->referencedEntities() as $slot) {
+        foreach ($period->field_vih_cp_course_slots->referencedEntities() as $slot) {
           $travel = array_pop($slot->field_vih_cs_travel->getValue()[0]);
 
           foreach ($slot->field_vih_cs_classes->referencedEntities() as $class) {
             foreach ($class->field_vih_class_class_packages->referencedEntities() as $class_package) {
               if (!isset($variables['content']['classes_packages']) || empty($variables['content']['classes_packages'][$class_package->id()])) {
-                $variables['content']['classes_packages'][$class_package->id()] = array (
+                $variables['content']['classes_packages'][$class_package->id()] = [
                   'name' => $class_package->getName(),
-                  'term' => \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class_package, 'vih_class_package_accordion'),
-                );
+                  'term' => \Drupal::entityTypeManager()
+                    ->getViewBuilder('taxonomy_term')
+                    ->view($class_package, 'vih_class_package_accordion'),
+                ];
                 $variables['content']['classes_packages'][$class_package->id()]['term']['#background_image'] = $class_package->field_vih_cp_image->entity->url();
               }
 
               $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = array_pop($slot->field_vih_cs_title->getValue()[0]);
-              $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] =
-                \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'vih_class_table_teaser');
+              $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
+                ->getViewBuilder('taxonomy_term')
+                ->view($class, 'list_advanced');
             }
 
             if ($travel) {
-              $variables['content']['travel_classes'][] = \Drupal::entityTypeManager()->getViewBuilder('taxonomy_term')->view($class, 'teaser');
+              $variables['content']['travel_classes'][] = \Drupal::entityTypeManager()
+                ->getViewBuilder('taxonomy_term')
+                ->view($class, 'teaser');
             }
           }
         }
@@ -235,96 +295,152 @@ function site_preprocess_node(array &$variables) {
 function site_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
 
-  // Background image
-  if ($paragraph->field_background_image && !$paragraph->field_background_image->isEmpty()) {
-    $image = $paragraph->field_background_image->entity->url();
+  // Paragraphs which are embedded inside other paragraphs
+  $embedded_paragraphs = [
+    'vih_single_class_group',
+  ];
 
-    $variables['attributes']['class'][] = 'angled-background-image';
-    $variables['background_image'] = $image;
-  }
+  // Skewed background
+  if (! in_array($paragraph->getType(), $embedded_paragraphs)) {
+    $variables['attributes']['class'][] = 'sectioned--skewed';
 
-  // No background images has been set, so we can try to set a background color
-  else {
+    // Background image
+    if ($paragraph->field_background_image && !$paragraph->field_background_image->isEmpty()) {
+      $image_uri = $paragraph->field_background_image->entity->getFileUri();
+      $image_style = ImageStyle::load('paragraph_background_image');
+      $image_url = $image_style->buildUrl($image_uri);
+
+      $variables['attributes']['class'][] = 'sectioned--skewed--background-image';
+
+      $variables['background_image'] = $image_url;
+    }
 
     // Background color
-    if ($paragraph->field_background_image && !$paragraph->field_background_color->isEmpty()) {
+    elseif ($paragraph->field_background_image && !$paragraph->field_background_color->isEmpty()) {
       $background_color = $paragraph->field_background_color->getValue();
-      $variables['attributes']['class'][] = 'angled-background-color';
-      $variables['attributes']['class'][] = 'angled-background-color-' . $background_color[0]['value'];
+
+      $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
+      $variables['attributes']['class'][] = 'sectioned--skewed--background-color-' . $background_color[0]['value'];
+    }
+
+    // Provide a default background color
+    else {
+      $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
+      $variables['attributes']['class'][] = 'sectioned--skewed--background-color-white';
     }
   }
 }
 
 function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
-  $variables['embedded_view'] = views_embed_view('news', 'embedded_teaser_list');
+  $paragraph = $variables['paragraph'];
+  $tags = [];
+
+  if ($fields = $paragraph->get('field_tags')->getValue()) {
+
+    foreach($fields as $field) {
+      $tags[] = $field['target_id'];
+    }
+  }
+  $contextual_filter = implode('+', $tags);
+
+  $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list', $contextual_filter);
+}
+
+function site_preprocess_paragraph__short_course_list_(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $course_ids = [];
+
+  if ($fields = $paragraph->get('field_course_id')->getValue()) {
+
+    foreach($fields as $field) {
+      $course_ids[] = $field['target_id'];
+    }
+  }
+  $contextual_filter = implode('+', $course_ids);
+
+  $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced', $contextual_filter);
+}
+
+function site_preprocess_paragraph__long_course_list_(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $course_ids = [];
+
+  if ($fields = $paragraph->get('field_course_id')->getValue()) {
+
+    foreach($fields as $field) {
+      $course_ids[] = $field['target_id'];
+    }
+  }
+  $contextual_filter = implode('+', $course_ids);
+
+  $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced', $contextual_filter);
 }
 
 function site_preprocess_paragraph__event_list(&$variables) {
   $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
+
   $variables['content']['view_header'] = [
     '#markup' => '<h3>' . $paragraph_title . '</h3>',
     '#allowed_tags' => ['h3'],
   ];
-  $variables['content']['view_output'] = views_embed_view('eventside', 'embedded_teaser_list' );
+
+  $variables['content']['view_output'] = views_embed_view('eventside', 'embedded_teaser_list');
 }
 
 function site_preprocess_paragraph__class_packages(&$variables) {
-  $variables['content'] = views_embed_view('class_packages_frontpage', 'block_1');
-}
+  $paragraph = $variables['paragraph'];
+  $class_tids = [];
 
-function site_preprocess_paragraph__class_package(&$variables) {
+  if ($fields = $paragraph->get('field_class_id')->getValue()) {
 
-  $class_packages = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
-  $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
-  $class_packages_arr = array();
-  
-  foreach ($class_packages as $class_package){
-    $class_packages_arr[] = $class_package->tid->value;
-  }  
-  
-  $variables['content']['view_header'] = [
-    '#markup' => $paragraph_title,
-    '#allowed_tags' => ['h2'],
-  ];
-  $variables['content']['view_output'] = views_embed_view('class_packages_frontpage', 'class_package_list', implode ( '+' , $class_packages_arr ) );
+    foreach($fields as $field) {
+      $class_tids[] = $field['target_id'];
+    }
+  }
+  $contextual_filter = implode('+', $class_tids);
+
+  $variables['content']['embedded_view'] = views_embed_view('class_packages', 'embed_teaser', $contextual_filter);
 }
 
 function site_preprocess_paragraph__class(&$variables) {
-
   $classes = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
   $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
-  $classes_arr = array();
-  
-  foreach ($classes as $class){
+  $classes_arr = [];
+
+  foreach ($classes as $class) {
     $classes_arr[] = $class->tid->value;
-  }  
-            
+  }
+
   $variables['content']['view_header'] = [
     '#markup' => $paragraph_title,
     '#allowed_tags' => ['h2'],
   ];
-  $variables['content']['view_output'] = views_embed_view('class_packages_frontpage', 'class_list', implode ( '+' , $classes_arr ) );
+
+  $variables['content']['view_output'] = views_embed_view('class_packages_frontpage', 'class_list', implode('+', $classes_arr));
 }
 
 function site_preprocess_paragraph__class_package_accordion(&$variables) {
 
-$class_packages = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
+  $class_packages = $variables['elements']['#paragraph']->getFields()['field_paragraph_class_package']->referencedEntities();
 
-foreach ($class_packages as $key => $class_package){
-  
-  $variables['content']['view_output'][$key]['classes'] = views_embed_view('class_packages_frontpage', 'class_package_list', $class_package->tid->value );
-  $variables['content']['view_output'][$key]['package'] = $class_package->name->value;
-//    $class_packages_arr[] = taxonomy_term_view($class_package, 'vih_class_package_accordion');
+  foreach ($class_packages as $key => $class_package) {
+
+    $variables['content']['view_output'][$key]['classes'] = views_embed_view('class_packages_frontpage', 'class_package_list', $class_package->tid->value);
+    $variables['content']['view_output'][$key]['package'] = $class_package->name->value;
+    //    $class_packages_arr[] = taxonomy_term_view($class_package, 'vih_class_package_accordion');
 
   }
-//$variables['content']['view_output'] = $class_packages_arr;
+  //$variables['content']['view_output'] = $class_packages_arr;
 
 }
 
 /**
  * Implements hook_theme_suggestions_views_view_alter().
  */
-function site_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_views_view_alter(
+  array &$suggestions,
+  array $variables
+) {
 
 }
 
@@ -361,7 +477,10 @@ function site_preprocess_details(array &$variables) {
 /**
  * Implements hook_theme_suggestions_details_alter().
  */
-function site_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+function site_theme_suggestions_details_alter(
+  array &$suggestions,
+  array $variables
+) {
 
 }
 
@@ -385,19 +504,18 @@ function site_preprocess_taxonomy_term(&$variables) {
   $variables['attributes']['class'][] = $variables['term']->getVocabularyId();
 
   //Get classes from class_package
-//  if($variables['term']->getVocabularyId() == 'vih_class_package'){
-//    $view = \Drupal\views\Views::getView('class_packages_frontpage');
-//    $view->setDisplay('class_package_list');
-//    $view->setArguments(array($variables['term']->id()));
-//    $variables['class_list'] = $view->render();
-//  }
+  //  if($variables['term']->getVocabularyId() == 'vih_class_package'){
+  //    $view = \Drupal\views\Views::getView('class_packages_frontpage');
+  //    $view->setDisplay('class_package_list');
+  //    $view->setArguments(array($variables['term']->id()));
+  //    $variables['class_list'] = $view->render();
+  //  }
 }
 
 /**
  * Implements template_preprocess_user().
  */
 function site_preprocess_user(&$variables) {
-  //kint($variables['elements']['#view_mode']);
   $variables['attributes']['class'][] = 'user';
   $variables['attributes']['class'][] = $variables['elements']['#view_mode'];
 }

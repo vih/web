@@ -1,0 +1,29 @@
+uuid: cd91df44-ccc2-4d01-9276-ae40f99fb500
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnail
+    - field.field.media.image.field_media_image_1
+    - media.type.image
+id: media.image.thumbnail
+targetEntityType: media
+bundle: image
+mode: thumbnail
+content:
+  image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_image_1: true
+  field_media_in_library: true
+  langcode: true
+  thumbnail: true
+  uid: true

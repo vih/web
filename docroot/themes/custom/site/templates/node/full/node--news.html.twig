@@ -1,0 +1,28 @@
+{% set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class,
+'clearfix',
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+
+    <!-- Begin - content -->
+    <section class="sectioned sectioned--content" {{ content_attributes.addClass('content') }}>
+        <div class="sectioned__inner">
+            <div class="container">
+                {{ content.body }}
+            </div>
+        </div>
+    </section>
+    <!-- End - content -->
+
+    {% if content.news_paragraph %}
+        <!-- Begin - paragraphs -->
+        {{ content.news_paragraph }}
+        <!-- End - paragraphs -->
+    {% endif %}
+
+</article>

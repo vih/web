@@ -1,7 +1,8 @@
-hotlink: 0
+hotlink: false
 origin: 'http://test.vih.bellcom.dk'
 origin_dir: sites/default/files
-use_imagecache_root: 1
+use_imagecache_root: true
 _core:
   default_config_hash: E1Fj-HATa0rKb6BEPS-Xn5LAVl9DxSWz5o6-EiqwqXU
 langcode: da
+verify: true

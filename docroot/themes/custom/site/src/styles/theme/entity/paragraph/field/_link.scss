@@ -1,0 +1,140 @@
+// |--------------------------------------------------------------------------
+// | Link
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .field--name-field-link
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Link
+.field--name-field-link {
+
+  a {
+    @extend .btn;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// Background image
+.sectioned--skewed--background-image {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// White
+.sectioned--skewed--background-color-white {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// Light gray
+.sectioned--skewed--background-color-light-gray {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// Gray
+.sectioned--skewed--background-color-gray {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// Primary
+.sectioned--skewed--background-color-primary {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-default;
+    }
+  }
+}
+
+// Secondary
+.sectioned--skewed--background-color-secondary {
+
+  // Link
+  .field--name-field-link {
+
+    a {
+      @extend .btn-primary;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Link mixin
+@mixin field--name-mixin-field-link() {}

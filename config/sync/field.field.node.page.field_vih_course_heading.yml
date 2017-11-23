@@ -1,0 +1,19 @@
+uuid: 8e09fb9e-403c-4fc7-b2cf-8570f3fe886e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_course_heading
+    - node.type.page
+id: node.page.field_vih_course_heading
+field_name: field_vih_course_heading
+entity_type: node
+bundle: page
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

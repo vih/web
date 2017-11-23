@@ -13,7 +13,15 @@ dependencies:
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
+    - options
+    - panelizer
     - text
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: taxonomy_term.vih_class.default
 targetEntityType: taxonomy_term
 bundle: vih_class
@@ -27,7 +35,7 @@ content:
     third_party_settings: {  }
     region: content
   field_class_package_paragraph:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       view_mode: default
@@ -35,8 +43,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_vih_class_color:
+    type: list_key
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_vih_class_material_price:
-    weight: 3
+    weight: 2
     label: above
     settings:
       thousand_separator: ''
@@ -59,7 +74,7 @@ content:
     region: content
   field_vih_teacher_class_descr:
     type: entity_reference_revisions_entity_view
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       view_mode: default
@@ -68,6 +83,5 @@ content:
     region: content
 hidden:
   field_vih_class_class_packages: true
-  field_vih_class_color: true
   field_vih_class_image: true
   langcode: true

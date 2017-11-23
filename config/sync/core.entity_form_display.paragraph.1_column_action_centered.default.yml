@@ -3,16 +3,16 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.paragraph.1_column_action_centered.field_background_color
     - field.field.paragraph.1_column_action_centered.field_background_image
     - field.field.paragraph.1_column_action_centered.field_description
     - field.field.paragraph.1_column_action_centered.field_heading
     - field.field.paragraph.1_column_action_centered.field_link
+    - image.style.thumbnail
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
-    - entity_browser
-    - link_class
+    - image
+    - link
     - text
     - workbench_moderation
 id: paragraph.1_column_action_centered.default
@@ -20,23 +20,24 @@ targetEntityType: paragraph
 bundle: 1_column_action_centered
 mode: default
 content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_background_color:
-    weight: 3
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
-    type: entity_browser_file
-    weight: 4
+    type: image_image
+    weight: 7
     settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
       preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
+      progress_indicator: throbber
     third_party_settings: {  }
     region: content
   field_description:
@@ -48,7 +49,7 @@ content:
     type: text_textarea
     region: content
   field_heading:
-    weight: 0
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -56,17 +57,27 @@ content:
     type: string_textfield
     region: content
   field_link:
-    weight: 2
+    weight: 0
     settings:
       placeholder_url: ''
       placeholder_title: ''
-      link_class_mode: manual
-      link_class_force: ''
-      link_class_select: ''
     third_party_settings: {  }
-    type: link_class_field_widget
+    type: link_default
     region: content
-hidden:
-  created: true
-  status: true
-  uid: true
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

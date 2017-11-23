@@ -1,22 +1,24 @@
 {
-  "autoprefixer": {
-    "browsers": [
-      "Android 2.3",
-      "Android >= 4",
-      "Chrome >= 20",
-      "Firefox >= 24",
-      "Explorer >= 9",
-      "iOS >= 7",
-      "Opera >= 12",
-      "Safari >= 6"
-    ]
+  "options": {
+    "proxy": "http://vih.test"
   },
-  "concat": {
-    "core": [
-      "src/js/layout.js",
-      "src/js/jquery.cookie.js",
-      "src/js/modal-popup.js",
-      "src/js/init.js"
-    ]
-  }
+  "javascripts": [
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/collapse.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/transition.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/popover.js",
+    "node_modules/bootstrap-sass/assets/javascripts/bootstrap/modal.js",
+    "src/javascripts/layout.js",
+    "src/javascripts/jquery.cookie.js",
+    "src/javascripts/modal-popup.js",
+    "src/javascripts/app.js"
+  ],
+  "styles": [
+    "src/styles/stylesheet.scss"
+  ],
+  "fonts": [
+    "src/styles/icomoon/fonts/icomoon.*",
+    "node_modules/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.*"
+  ]
 }

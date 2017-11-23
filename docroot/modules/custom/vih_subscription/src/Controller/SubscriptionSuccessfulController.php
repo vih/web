@@ -104,6 +104,10 @@ class SubscriptionSuccessfulController extends ControllerBase {
         !empty($courseDate) ? $courseDate : '',
         $subject->toUrl()->setAbsolute()->toString(),
       ];
+
+      //updating course order status
+      $order->set('field_vih_lco_status', 'confirmed');
+      $order->save();
     } elseif ($subject->getType() == 'vih_short_course') {
       $allParticipants = $order->get('field_vih_sco_persons')->getValue();
       if (!empty($allParticipants)) {

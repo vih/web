@@ -1,0 +1,117 @@
+// |--------------------------------------------------------------------------
+// | Class package
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .entity-teaser--class-package
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$entity-teaser-class-package-image-min-height: 350px;
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin entity-teaser-class-package-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.entity-teaser--class-package {
+  position: relative;
+
+  padding: 0;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .entity-teaser__inner {
+    position: relative;
+
+    min-height: $entity-teaser-class-package-image-min-height;
+
+    padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing 100px; // 100px is approx. height of angle, so it wont overlap the text
+
+    p {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {
+
+  .entity-teaser--class-package {
+
+    .entity-teaser__inner {
+      background-color: rgba(0, 0, 0, .8);
+    }
+  }
+}
+
+// No touch
+.no-touchevents {
+
+  .entity-teaser--class-package {
+
+    .entity-teaser__inner {
+      background-color: transparent;
+      transition: background-color $transition-time-short ease-in-out;
+
+      p {
+        opacity: 0;
+        transition: opacity $transition-time-short ease-in-out;
+      }
+    }
+
+    &:hover {
+
+      .entity-teaser__inner {
+        background-color: rgba(0, 0, 0, .8);
+
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

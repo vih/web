@@ -1,0 +1,25 @@
+uuid: 50efce2d-ffe6-4e88-a9b8-807478e87eef
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_sc_persons_limit
+    - node.type.vih_short_course
+id: node.vih_short_course.field_vih_sc_persons_limit
+field_name: field_vih_sc_persons_limit
+entity_type: node
+bundle: vih_short_course
+label: 'Persons limit'
+description: '0 for unlimited'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

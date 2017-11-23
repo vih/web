@@ -1,0 +1,70 @@
+<!-- Begin - footer -->
+<footer class="layout__footer">
+    <div class="layout__footer-inner">
+
+        {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
+            <!-- Begin - footer top -->
+            <div class="layout__footer-top-outer">
+                <div class="container">
+                    <div class="layout__footer-top-inner">
+                        <div class="row">
+
+                            {% if page.footer_top_first %}
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    {{ page.footer_top_first }}
+                                </div>
+                            {% endif %}
+
+                            {% if page.footer_top_second %}
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    {{ page.footer_top_second }}
+                                </div>
+                            {% endif %}
+
+                            {% if page.footer_top_third %}
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    {{ page.footer_top_third }}
+                                </div>
+                            {% endif %}
+
+                            {% if page.footer_top_fourth %}
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    {{ page.footer_top_fourth }}
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End - footer top -->
+        {% endif %}
+
+        <!-- Begin - footer bottom -->
+        <div class="layout__footer-bottom-outer">
+            <div class="layout__footer-bottom-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <div class="layout__footer-bottom-copyright">
+                                <p>{{ '© 2011-2017, Vejle Idrætshøjskole. All rights reserved' | trans }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="layout__footer-bottom-social">
+                                <ul class="list-inline pull-right">
+                                    <li><a href="#"><span class="icon icon-instagram"></span></a></li>
+                                    <li><a href="#"><span class="icon icon-twitter"></span></a></li>
+                                    <li><a href="#"><span class="icon icon-facebook"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End - footer bottom -->
+
+    </div>
+</footer>
+<!-- End - footer -->

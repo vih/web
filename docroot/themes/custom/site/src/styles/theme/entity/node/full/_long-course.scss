@@ -1,0 +1,89 @@
+// |--------------------------------------------------------------------------
+// | Long Course
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .long-course
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Long Course
+.path-node.page-node-type-vih-long-cource {
+  .field--name-field-vih-course-periods {
+    .field__items {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 1px solid $gray-lighter;
+      text-transform: uppercase;
+    }
+  }
+
+  .price-table {
+    border: 1px solid #ddd;
+    background: none;
+    text-align: center;
+    padding: 0; 
+    .table-cell {
+      padding: 32px 10px;
+    }
+    .table-heading {
+      padding: 15px;
+      text-transform: uppercase;
+      background-color: rgb(238, 238, 238);
+      font-weight: bold;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Breadcrumb mixin
+@mixin breadcrumb-mixin() {}

@@ -11,7 +11,11 @@ dependencies:
     - field.field.node.event.field_image
     - field.field.node.event.field_page_main_image
     - field.field.node.event.field_paragraphs
+    - field.field.node.event.field_vih_cource_contact_person
+    - field.field.node.event.field_vih_course_heading
+    - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_status
     - node.type.event
   module:
     - text
@@ -39,5 +43,9 @@ hidden:
   field_image: true
   field_page_main_image: true
   field_paragraphs: true
+  field_vih_cource_contact_person: true
+  field_vih_course_heading: true
+  field_vih_course_subheading: true
   field_vih_event_persons_limit: true
+  field_vih_event_status: true
   langcode: true

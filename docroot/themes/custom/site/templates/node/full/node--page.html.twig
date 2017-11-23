@@ -1,0 +1,56 @@
+{% set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class,
+'clearfix',
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+
+    {# Begin - content #}
+    {% if node.field_vih_course_heading.value or node.content.field_vih_course_subheading.value or node.body.value %}
+        <!-- Begin - content -->
+        <section class="sectioned sectioned--content">
+            <div class="sectioned__inner">
+                <div class="container">
+
+                    {# Begin - headings #}
+                    {% if node.field_vih_course_heading.value or node.field_vih_course_subheading.value %}
+
+                        {% if node.field_vih_course_heading.value %}
+                            <!-- Begin - heading -->
+                            <div class="sectioned__heading">
+                                <h2 class="sectioned__heading__title">{{ content.field_vih_course_heading.0 }}</h2>
+                            </div>
+                            <!-- End - heading -->
+                        {% endif %}
+
+                        {% if node.field_vih_course_subheading.value %}
+                            <!-- Begin - subheading -->
+                            <div class="sectioned__subheading">
+                                <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
+                            </div>
+                            <!-- End - subheading -->
+                        {% endif %}
+
+                    {% endif %}
+                    {# End - headings #}
+
+                    {# Begin - body #}
+                    {{ content.body }}
+                    {# End - body #}
+
+                </div>
+            </div>
+        </section>
+        <!-- End - content -->
+    {% endif %}
+    {# End - content #}
+
+    {# Begin - paragraphs #}
+    {{ content.field_paragraphs }}
+    {# End - paragraphs #}
+
+</article>

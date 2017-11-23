@@ -96,7 +96,8 @@ content:
   langcode:
     type: language_select
     weight: 3
-    settings: {  }
+    settings:
+      include_locked: true
     third_party_settings: {  }
     region: content
   name:

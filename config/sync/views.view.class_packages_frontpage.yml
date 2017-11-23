@@ -3,8 +3,8 @@ langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.list_advanced
     - core.entity_view_mode.taxonomy_term.teaser
-    - core.entity_view_mode.taxonomy_term.vih_class_table_teaser_modal
     - field.storage.taxonomy_term.field_vih_cp_description
     - field.storage.taxonomy_term.field_vih_cp_subtitle
     - taxonomy.vocabulary.vih_class
@@ -61,9 +61,9 @@ display:
       style:
         type: default
         options:
-          grouping: {  }
-          row_class: 'col-xs-12 col-sm-4'
+          row_class: 'col-xs-6 col-sm-4'
           default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:taxonomy_term'
         options:
@@ -402,25 +402,13 @@ display:
           plugin_id: language
       sorts: {  }
       title: Fagpakker
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<div class="fagpakker-subtitle">Skræddersy dit ophold på tværs af fagpakker</div>'
-            format: rich_text
-          plugin_id: text
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: row
     cache_metadata:
       max-age: -1
       contexts:
@@ -436,6 +424,9 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      css_class: 'row row--equal-height-columns'
+      defaults:
+        css_class: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -500,6 +491,7 @@ display:
         row: false
         arguments: false
         query: false
+        css_class: false
       filter_groups:
         operator: AND
         groups:
@@ -514,7 +506,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: vih_class_table_teaser_modal
+          view_mode: list_advanced
       arguments:
         tid:
           id: tid
@@ -561,6 +553,7 @@ display:
           replica: false
           query_comment: ''
           query_tags: {  }
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
@@ -627,6 +620,7 @@ display:
         arguments: false
         query: false
         fields: false
+        css_class: false
       filter_groups:
         operator: AND
         groups:
@@ -641,7 +635,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: vih_class_table_teaser_modal
+          view_mode: list_advanced
       arguments:
         field_vih_class_class_packages_target_id:
           id: field_vih_class_class_packages_target_id
@@ -1056,6 +1050,7 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
