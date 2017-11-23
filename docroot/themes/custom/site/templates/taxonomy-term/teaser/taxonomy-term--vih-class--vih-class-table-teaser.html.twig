@@ -26,24 +26,24 @@
  */
 #}
 <div{{ attributes }}>
-  <table class="row">
-    <tr class="modal-course-content-teaser-wrapper">
-        <td class="col-xs-6">
-            {{ content.field_vih_class_image }}
-        </td>
-        <td class="col-xs-6 multiple-elements">
-             {% if content.description|render is not empty %}
-    <div class="field-image-wrapper">{{ content.description }}</div>
-  {% endif %}
-            <a href="{{ url }}" class="btn-more">
-                        <span class="icon icon-info-circle" aria-hidden="true"></span>
-                    </a>
-        </td>
-     {#   #}
-    </tr>
-  </table>
+    <table class="row">
+        <tr class="modal-course-content-teaser-wrapper">
+            <td class="col-xs-6">
+                {{ content.field_vih_class_image }}
+            </td>
+            <td class="col-xs-6 multiple-elements">
+                {% if content.description|render is not empty %}
+                    <div class="field-image-wrapper">{{ content.description }}</div>
+                {% endif %}
+                <a href="{{ url }}" class="btn-more">
+                    <span class="icon icon-info-circle" aria-hidden="true"></span>
+                </a>
+            </td>
+            {#   #}
+        </tr>
+    </table>
 </div>
-          {#{{ title_prefix }}#}
+{#{{ title_prefix }}#}
     {#{% if not page %}#}
         {#<h2><a href="{{ url }}">{{ name }}</a></h2>#}
     {#{% endif %}#}
