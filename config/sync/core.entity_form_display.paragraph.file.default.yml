@@ -6,12 +6,16 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.file.field_background_color
     - field.field.paragraph.file.field_background_image
+    - field.field.paragraph.file.field_description
     - field.field.paragraph.file.field_heading
-    - field.field.paragraph.file.field_paragraph_file
+    - field.field.paragraph.file.field_link
+    - field.field.paragraph.file.file
     - paragraphs.paragraphs_type.file
   module:
     - entity_browser
     - file
+    - link
+    - text
     - workbench_moderation
 id: paragraph.file.default
 targetEntityType: paragraph
@@ -19,14 +23,14 @@ bundle: file
 mode: default
 content:
   field_background_color:
-    weight: 2
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
     type: entity_browser_file
-    weight: 1
+    weight: 4
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -37,6 +41,14 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
     region: content
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_heading:
     weight: 0
     settings:
@@ -45,13 +57,21 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_paragraph_file:
+  field_link:
     weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  file:
+    type: file_generic
+    weight: 2
+    region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-    type: file_generic
-    region: content
 hidden:
   created: true
   status: true

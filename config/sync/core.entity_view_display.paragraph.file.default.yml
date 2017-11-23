@@ -5,16 +5,27 @@ dependencies:
   config:
     - field.field.paragraph.file.field_background_color
     - field.field.paragraph.file.field_background_image
+    - field.field.paragraph.file.field_description
     - field.field.paragraph.file.field_heading
-    - field.field.paragraph.file.field_paragraph_file
+    - field.field.paragraph.file.field_link
+    - field.field.paragraph.file.file
     - paragraphs.paragraphs_type.file
   module:
     - file
+    - link
+    - text
 id: paragraph.file.default
 targetEntityType: paragraph
 bundle: file
 mode: default
 content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_heading:
     weight: 0
     label: hidden
@@ -23,13 +34,25 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_paragraph_file:
-    weight: 1
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  file:
+    type: file_default
+    weight: 2
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: file_default
-    region: content
 hidden:
   field_background_color: true
   field_background_image: true

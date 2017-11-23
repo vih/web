@@ -1,17 +1,17 @@
-uuid: 422d19fe-9adf-477d-87d5-dd5eb944b4c2
+uuid: ee34b890-0f82-4b47-88c8-0a5a0cd8e6c5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraph_file
+    - field.storage.paragraph.file
     - paragraphs.paragraphs_type.file
   module:
     - file
-id: paragraph.file.field_paragraph_file
-field_name: field_paragraph_file
+id: paragraph.file.file
+field_name: file
 entity_type: paragraph
 bundle: file
-label: 'Attached file'
+label: Fil
 description: ''
 required: false
 translatable: false

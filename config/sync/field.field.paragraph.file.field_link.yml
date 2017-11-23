@@ -1,0 +1,23 @@
+uuid: bec35f53-8582-4008-91c7-15d2b8924735
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.file
+  module:
+    - link
+id: paragraph.file.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: file
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

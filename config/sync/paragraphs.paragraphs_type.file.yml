@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: file
-label: File
+label: Fil
 icon_uuid: null
-description: null
+description: ''
 behavior_plugins: {  }

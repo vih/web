@@ -1291,17 +1291,6 @@ ul.layout-navigation {
 .page-node-type-news article .field--name-field-image {
   display: none;
 }
-.file--mime-application-pdf {
-  background: none !important;
-  border: 1px solid #00a5e2 !important;
-  margin-bottom: 25px;
-}
-.path-taxonomy .field--name-field-class-package-paragraph .field--name-field-link {
-  max-width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
 .news-banner {
   background-size: cover !important;
   background-position: center !important;
@@ -1320,9 +1309,6 @@ ul.layout-navigation {
   align-items: center;
   border: 1px solid;
   margin-bottom: 10px;
-}
-.paragraph--type--file .angled-background-inner:before {
-  background: none !important;
 }
 @media only screen and (min-width: 980px) {
 
