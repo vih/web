@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31ca6cc743d44abad3fb68544232db0c",
+    "content-hash": "df2932fc4c8b291e17843823aca69342",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -2371,6 +2371,48 @@
             }
         },
         {
+            "name": "drupal/entity_clone",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/entity_clone",
+                "reference": "824e8fdacf6648e617a81b3512313447e71e8cac"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1+2-dev",
+                    "datestamp": "1507095245",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "vpeltot",
+                    "homepage": "https://www.drupal.org/user/1361586"
+                }
+            ],
+            "description": "Add a clone action for all entities",
+            "homepage": "https://www.drupal.org/project/entity_clone",
+            "support": {
+                "source": "http://cgit.drupalcode.org/entity_clone"
+            },
+            "time": "2017-10-04T11:47:45+00:00"
+        },
+        {
             "name": "drupal/entity_embed",
             "version": "1.0.0-beta2",
             "source": {
@@ -2569,7 +2611,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/examples",
-                "reference": "723ae6c6c330e9485eb3227c5e7d9b9288032cec"
+                "reference": "09b52c1722adb91a731ada06ca439e1a6a8c0155"
             },
             "require": {
                 "drupal/core": "*"
@@ -2585,7 +2627,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1510945985",
+                    "datestamp": "1510947785",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2669,7 +2711,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-11-17T19:42:05+00:00"
+            "time": "2017-11-21T19:17:06+00:00"
         },
         {
             "name": "drupal/features",
@@ -11828,7 +11870,8 @@
         "drupal/webform": 10,
         "drupal/examples": 20,
         "drupal/layout_plugin": 15,
-        "drupal/page_manager": 10
+        "drupal/page_manager": 10,
+        "drupal/entity_clone": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
