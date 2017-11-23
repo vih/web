@@ -1,57 +1,53 @@
-uuid: 278da312-58aa-409d-9e56-0aedf0b817f1
+uuid: b4a026b2-cf0f-4869-8cf4-74d92840818b
 langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.paragraph.vih_webform.field_background_color
     - field.field.paragraph.vih_webform.field_background_image
     - field.field.paragraph.vih_webform.field_heading
     - field.field.paragraph.vih_webform.field_vih_webform
+    - image.style.paragraph_background_image
     - paragraphs.paragraphs_type.vih_webform
   module:
-    - entity_browser
+    - image
+    - options
     - webform
-    - workbench_moderation
 id: paragraph.vih_webform.default
 targetEntityType: paragraph
 bundle: vih_webform
 mode: default
 content:
   field_background_color:
-    weight: 4
+    weight: 3
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: list_default
     region: content
   field_background_image:
-    type: entity_browser_file
-    weight: 3
+    weight: 2
+    label: hidden
     settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    region: content
+      image_style: paragraph_background_image
+      image_link: ''
     third_party_settings: {  }
+    type: image
+    region: content
   field_heading:
     weight: 0
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: string_textfield
+    type: string
     region: content
   field_vih_webform:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: webform_entity_reference_select
+    type: webform_entity_reference_entity_view
+    weight: 4
     region: content
-hidden:
-  created: true
-  status: true
-  uid: true
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+hidden: {  }
