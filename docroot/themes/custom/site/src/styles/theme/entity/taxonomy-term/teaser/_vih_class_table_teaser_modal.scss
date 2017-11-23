@@ -46,13 +46,6 @@
       margin-right: 10px;
     }
   }
-  & .modal-dialog{
-    & .field.field--name-description{
-      & h1, h2, h3, h4, h5, p{
-        color: #888;
-      }
-    }
-  }
 }
 
 // --------------------------------------------------
@@ -63,14 +56,6 @@
 // Responsive
 // --------------------------------------------------
 
-// Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
-
-  // Class taxonomy 'VIH class table teaser modal' display
-  .vih_class_table_teaser_modal{
-
-  }
-}
 
 // Mobile - only
 @media #{$breakpoint-mobile-only} {

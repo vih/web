@@ -312,12 +312,6 @@ tr {
   transition: .4s;
   cursor: pointer;
 }
-.modal-dialog .modal-content {
-  min-height: 100vh !important;
-}
-.modal-dialog .modal-body {
-  height: 100% !important;
-}
 .view-vih-search .views-row:hover {
   border-bottom: 1px solid #00a5e2;
 }
@@ -353,9 +347,6 @@ tr {
   margin-right: 5px;
   font-size: 18px;
   border: 1px solid #ddd;
-}
-.modal-backdrop {
-  display: none !important;
 }
 //.panel-body tr td:nth-child(2) {
 //    width: 30%;
@@ -1007,94 +998,6 @@ div[role=heading] {
   overflow: hidden;
   position: relative;
 }
-.fagpakker-container .fagpakker-overlay {
-  width: 100%;
-  height: 12vh;
-  bottom: 0;
-  /*  position: relative;*/
-  -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  z-index: 1;
-  transition: 300ms;
-  opacity: 0.9;
-  margin-bottom: -1px;
-}
-.fagpakker-overlay {
-  position: absolute;
-}
-/*.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}*/
-
-/*.fagpakker-container > div > img {
-   z-index: 0;
-}
-
-.fagpakker-container {
-  z-index: 1;
-}
-
-.fagpakker-overlay {
-  z-index: 3;
-}*/
-
-.fagpakker-container:hover .fagpakker-overlay:hover {
-  background: rgba(30, 125, 150, 0.898);
-}
-.fagpakker-overlay h1 {
-  font-family: lato;
-  color: #fff;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;;
-  font-size: 1.2em;
-  bottom: 0;
-  padding: 10px;
-  padding-right: 25px;
-  z-index: 2;
-  font-weight: bold;
-}
-.fagpakker-overlay h1 a {
-  color: #fff;
-}
-.fagpakker-hovering {
-  width: 100%;
-  max-width: 283px;
-  height: auto;
-  min-height: 345px;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 0;
-  display: inline-flex;
-  position: absolute;
-  opacity: 0;
-  transition: 400ms;
-  display: flex;
-  padding: 0;
-  justify-content: center;
-  align-items: flex-start;
-}
-.fagpakker-hovering p {
-  color: #fff;
-  font-family: Lato, sans-serif;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.1em;
-  line-height: 19px;
-  width: 100%;
-  padding: 0;
-  text-align: left;
-  padding-top: 60px;
-  padding-left: 18px;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .fagpakker-hovering {
-    min-height: 270px;
-  }
-}
 //  ***********************************
 //  -----------------------------------
 //  Class Package Class CSS | START
@@ -1237,16 +1140,6 @@ div[role=heading] {
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.modal-class div.field--name-description {
-  padding: 10px 40px 10px 0;
-}
-.modal-class div.field--name-description p {
-  text-transform: uppercase;
-  line-height: 20px !important;
-  font-size: 14px !important;
-  text-align: left;
-  font-weight: 600 !important;
-}
 // Long Course
 
 .page-node-type-vih-long-cource .blue h4 a {
@@ -1279,23 +1172,10 @@ div[role=heading] {
 .course-period-wrapper span i {
   margin-right: 10px;
 }
-// Tilmelding long course
-
-.modal-content .field--type-string {
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-}
 // Page node
 
 .path-node .field--name-body {
   width: 100%;
-}
-// Modal
-.modal {
-  background-color: rgba(0, 0, 0, 0.5);;
-}
-.modal-course-description {
-  margin-bottom: 50px;
 }
 .field--name-field-vih-class-image img {
   min-width: 100% !important;
@@ -1315,7 +1195,6 @@ div[role=heading] {
   align-items: center;
 }
 .modal-class div.field--name-description {
-  padding: 0px;
   padding: 30px !important;
 }
 .multiple-elements {
@@ -1344,10 +1223,6 @@ div[role=heading] {
   margin-bottom: 15px;
   margin-top: 15px;
 }
-.modal-content .modal-body p {
-  text-transform: none !important;
-  font-weight: inherit !important;
-}
 .vih-subscription-long-course-order-form input, .vih-subscription-long-course-order-form select {
   font-weight: bold !important;
 }
@@ -1356,22 +1231,6 @@ div[role=heading] {
 }
 .radio_selection .class-selection {
   margin-bottom: -1px !important
-}
-.modal-dialog {
-  overflow-y: scroll !important;
-  margin-top: 100px !important;
-  padding-bottom: 0 !important;
-}
-.modal-content {
-  overflow-y: scroll;
-  overflow: hidden !important;
-}
-.modal-body {
-  overflow-y: scroll !important;
-}
-.path-langeophold .modal-body {
-  width: 70%;
-  margin-top: 50px !important;
 }
 .panel-body__zero-padding .field--name-description p {
   text-transform: uppercase !important;
@@ -1436,9 +1295,6 @@ ul.layout-navigation {
   background: none !important;
   border: 1px solid #00a5e2 !important;
   margin-bottom: 25px;
-}
-.modal-course-description {
-  text-align: left !important;
 }
 .path-taxonomy .field--name-field-class-package-paragraph .field--name-field-link {
   max-width: 100% !important;
@@ -1506,26 +1362,9 @@ ul.layout-navigation {
   #main-menu {
     overflow: hidden;
   }
-  .modal-course-content-teaser-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-  .modal-course-content-teaser-wrapper .col-xs-6 {
-    width: 100%;
-  }
   .modal-course-content-teaser-wrapper .field--type-string {
     margin: 20px;
     padding-bottom: 10px;
-  }
-  .panel-title a {
-    text-align: left;
-  }
-  .modal-content p {
-    text-align: left;
-  }
-  .modal-body {
-    padding: 40px !important;
-    padding-right: 40px !important;
   }
 
   /*    .breadcrumb li, .breadcrumb li a {

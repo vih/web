@@ -1,35 +1,93 @@
 // |--------------------------------------------------------------------------
-// | Class packages
+// | Modal
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .boxy--class-packages
+// | - .modal
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
+$modal-header-angle-height: 70; // Unit less
+
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-@mixin boxy-class-packages-mixin() {}
+@mixin modal-mixin() {}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.boxy--class-packages {
+// This is not a proper way - but because of the way we
+// structure our page layout, we have to do it this way.
+.modal-backdrop {
+  display: none;
+}
 
-  .boxy__body {
-    padding: 0;
+.modal {
+  background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+}
+
+.modal-header {
+  @include angled-edge('inside bottom', 'upper right', $modal-content-bg, $modal-header-angle-height);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: (1px * $modal-header-angle-height);
+
+  min-height: 400px;
+
+  border: 0;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .close {
+    position: absolute;
+
+    float: none;
+
+    top: 15px;
+    right: 15px;
+
+    height: 40px;
+    width: 40px;
+
+    color: $headings-color;
+
+    background-color: #fff;
+
+    border-radius: 100%;
+
+    opacity: 1;
+  }
+}
+.modal-title {
+  color: #fff;
+
+  margin: 0;
+  padding: 0;
+}
+
+// Admin fix
+.toolbar-horizontal.toolbar-fixed {
+
+  .modal-dialog {
+    margin-top: (39px + $grid-gutter-width); // 39px is the height of the toolbar without the tray open
   }
 
-  &.boxy--class-packages--list-advanced {
+  &.toolbar-tray-open {
 
-    .panel-body {
-      padding: 0;
+    .modal-dialog {
+      margin-top: (79px + $grid-gutter-width); // 39px is the height of the toolbar with the tray open
     }
   }
 }
