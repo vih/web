@@ -81,7 +81,8 @@ class ShortCourseOrderForm extends FormBase {
 
     //START GENERAL DATA //
     $form['price'] = array(
-      '#markup' => number_format($this->price, 2)
+      '#markup' => number_format($this->price, 0, ',', '.'),
+      '#prefix' => 'DKK '
     );
 
     $form['status_messages'] = [

@@ -274,9 +274,9 @@ content:
     weight: 4
     label: hidden
     settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
@@ -300,9 +300,9 @@ content:
     weight: 5
     label: hidden
     settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
@@ -311,9 +311,9 @@ content:
     weight: 6
     label: hidden
     settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal

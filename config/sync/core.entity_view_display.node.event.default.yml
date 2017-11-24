@@ -55,9 +55,9 @@ content:
     weight: 6
     label: hidden
     settings:
-      thousand_separator: ''
+      thousand_separator: .
       decimal_separator: ','
-      scale: 2
+      scale: 0
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
