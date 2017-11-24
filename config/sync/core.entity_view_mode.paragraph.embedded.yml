@@ -1,0 +1,14 @@
+uuid: eb2fee06-d711-4b58-9a36-c0a322818fb0
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - paragraphs
+third_party_settings:
+  lightning_core:
+    description: ''
+id: paragraph.embedded
+label: Embedded
+targetEntityType: paragraph
+cache: true

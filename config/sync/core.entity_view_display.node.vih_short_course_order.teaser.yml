@@ -12,31 +12,74 @@ dependencies:
     - field.field.node.vih_short_course_order.field_vih_sco_status
     - node.type.vih_short_course_order
   module:
+    - entity_reference_revisions
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vih_short_course_order.teaser
 targetEntityType: node
 bundle: vih_short_course_order
 mode: teaser
 content:
   body:
-    label: hidden
+    label: above
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 5
     settings:
       trim_length: 600
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
+  field_vih_sco_course:
+    type: entity_reference_label
+    weight: 1
     region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_vih_sco_ordered_options:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: above
+    settings:
+      view_mode: embedded
+      link: ''
+    third_party_settings: {  }
+  field_vih_sco_persons:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: ''
+    third_party_settings: {  }
+  field_vih_sco_price:
+    type: number_decimal
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_vih_sco_course: true
   field_vih_sco_first_name: true
   field_vih_sco_last_name: true
-  field_vih_sco_ordered_options: true
-  field_vih_sco_persons: true
-  field_vih_sco_price: true
   field_vih_sco_sambo: true
   field_vih_sco_status: true
   langcode: true

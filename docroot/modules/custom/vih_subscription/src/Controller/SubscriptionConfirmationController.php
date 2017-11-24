@@ -58,7 +58,7 @@ class SubscriptionConfirmationController extends ControllerBase{
         '#theme' => 'vih_subscription_confirmation_page',
         '#paymentLink' => $paymentLink,
         '#backLink' => $backLink->setAbsolute()->toString(),
-        '#order' => node_view($order),
+        '#order' => node_view($order, 'teaser'),
       );
 
       return $build;

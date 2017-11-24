@@ -1,24 +1,35 @@
-<div class="container">
-  <h3>
-    {{ "Bekræft venligst din ordre"|t }}
-  </h3>
-  <br>
+<section class="sectioned sectioned--content">
+    <div class="sectioned__inner">
+        <div class="container">
 
-  <div class="row">
-    <div class="col-xs-12 tilmeldings-knap">
-      <a href="{{ page['#backLink'] }}" class="btn-arrow">
-        {{ "Back to order"|t }}
-      </a>
+            <!-- Begin - heading -->
+            <div class="sectioned__heading">
+                <h2 class="sectioned__heading__title">
+                    {{ 'Please confirm your order' | trans }}
+                </h2>
+            </div>
+            <!-- End - heading -->
+
+            {# Begin - order #}
+            {{ page['#order'] }}
+            {# End - order #}
+
+            <!-- Begin - buttons -->
+            <div class="partial partial--actions">
+                <div class="partial__body">
+
+                    <a href="{{ page['#backLink'] }}" class="btn btn-default">
+                        {{ 'Back to order' | trans }}
+                    </a>
+
+                    <a href="{{ page['#paymentLink'] }}" class="btn btn-success">
+                        {{ 'Proceed to payment' | trans }}
+                    </a>
+
+                </div>
+            </div>
+            <!-- End - buttons -->
+
+        </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 tilmeldings-knap">
-      <a href="{{ page['#paymentLink'] }}" class="btn-arrow">
-        {{ "Proceed to payment"|t }}
-      </a>
-    </div>
-  </div>
-
-  {{ page['#order'] }}
-</div>
+</section>

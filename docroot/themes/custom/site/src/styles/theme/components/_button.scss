@@ -26,6 +26,8 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
 // Button
 .btn {
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
 
   &.btn-primary,
   &.btn-secondary,
@@ -38,9 +40,6 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
     border: 0;
 
     padding-left: floor(($button-icon-wrapper-width + $button-arrow-width + $padding-base-horizontal));
-
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
 
     .icon {
       display: none;

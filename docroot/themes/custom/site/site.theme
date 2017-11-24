@@ -295,38 +295,41 @@ function site_preprocess_node(array &$variables) {
 function site_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
 
-  // Paragraphs which are embedded inside other paragraphs
-  $embedded_paragraphs = [
-    'vih_single_class_group',
-  ];
+  // Default
+  if ($variables['view_mode'] === 'default') {
+    // Paragraphs which are embedded inside other paragraphs
+    $embedded_paragraphs = [
+      'vih_single_class_group',
+    ];
 
-  // Skewed background
-  if (! in_array($paragraph->getType(), $embedded_paragraphs)) {
-    $variables['attributes']['class'][] = 'sectioned--skewed';
+    // Skewed background
+    if (! in_array($paragraph->getType(), $embedded_paragraphs)) {
+      $variables['attributes']['class'][] = 'sectioned--skewed';
 
-    // Background image
-    if ($paragraph->field_background_image && !$paragraph->field_background_image->isEmpty()) {
-      $image_uri = $paragraph->field_background_image->entity->getFileUri();
-      $image_style = ImageStyle::load('paragraph_background_image');
-      $image_url = $image_style->buildUrl($image_uri);
+      // Background image
+      if ($paragraph->field_background_image && !$paragraph->field_background_image->isEmpty()) {
+        $image_uri = $paragraph->field_background_image->entity->getFileUri();
+        $image_style = ImageStyle::load('paragraph_background_image');
+        $image_url = $image_style->buildUrl($image_uri);
 
-      $variables['attributes']['class'][] = 'sectioned--skewed--background-image';
+        $variables['attributes']['class'][] = 'sectioned--skewed--background-image';
 
-      $variables['background_image'] = $image_url;
-    }
+        $variables['background_image'] = $image_url;
+      }
 
-    // Background color
-    elseif ($paragraph->field_background_image && !$paragraph->field_background_color->isEmpty()) {
-      $background_color = $paragraph->field_background_color->getValue();
+      // Background color
+      elseif ($paragraph->field_background_image && !$paragraph->field_background_color->isEmpty()) {
+        $background_color = $paragraph->field_background_color->getValue();
 
-      $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
-      $variables['attributes']['class'][] = 'sectioned--skewed--background-color-' . $background_color[0]['value'];
-    }
+        $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
+        $variables['attributes']['class'][] = 'sectioned--skewed--background-color-' . $background_color[0]['value'];
+      }
 
-    // Provide a default background color
-    else {
-      $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
-      $variables['attributes']['class'][] = 'sectioned--skewed--background-color-white';
+      // Provide a default background color
+      else {
+        $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
+        $variables['attributes']['class'][] = 'sectioned--skewed--background-color-white';
+      }
     }
   }
 }

@@ -32,8 +32,16 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_zip
     - node.type.vih_long_course_order
   module:
+    - entity_reference_revisions
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vih_long_course_order.teaser
 targetEntityType: node
 bundle: vih_long_course_order
@@ -41,39 +49,190 @@ mode: teaser
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
+    type: text_default
+    weight: 1
+    settings: {  }
     third_party_settings: {  }
     region: content
-  links:
-    weight: 100
+  field_vih_lco_address:
+    type: string
+    weight: 4
     region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_address:
+    type: string
+    weight: 21
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_city:
+    type: string
+    weight: 20
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_email:
+    type: string
+    weight: 13
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_first_name:
+    type: string
+    weight: 9
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_last_name:
+    type: string
+    weight: 10
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_nationality:
+    type: string
+    weight: 18
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_telefon:
+    type: string
+    weight: 19
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_zip:
+    type: string
+    weight: 15
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_city:
+    type: string
+    weight: 8
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_course:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_vih_lco_education:
+    type: string
+    weight: 11
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_email:
+    type: string
+    weight: 5
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_first_name:
+    type: string
+    weight: 2
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_last_name:
+    type: string
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_nationality:
+    type: string
+    weight: 14
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_newsletter:
+    type: boolean
+    weight: 17
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_vih_lco_order_course_perio:
+    type: entity_reference_revisions_entity_view
+    weight: 16
+    region: content
+    label: above
+    settings:
+      view_mode: embedded
+      link: ''
+    third_party_settings: {  }
+  field_vih_lco_payment:
+    type: string
+    weight: 22
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_telefon:
+    type: string
+    weight: 12
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_zip:
+    type: string
+    weight: 7
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_vih_lco_address: true
-  field_vih_lco_adult_address: true
-  field_vih_lco_adult_city: true
-  field_vih_lco_adult_email: true
-  field_vih_lco_adult_first_name: true
-  field_vih_lco_adult_last_name: true
-  field_vih_lco_adult_nationality: true
-  field_vih_lco_adult_telefon: true
-  field_vih_lco_adult_zip: true
-  field_vih_lco_city: true
-  field_vih_lco_course: true
   field_vih_lco_cpr: true
-  field_vih_lco_education: true
-  field_vih_lco_email: true
-  field_vih_lco_first_name: true
   field_vih_lco_found_from: true
-  field_vih_lco_last_name: true
   field_vih_lco_message: true
-  field_vih_lco_nationality: true
-  field_vih_lco_newsletter: true
-  field_vih_lco_order_course_perio: true
-  field_vih_lco_payment: true
   field_vih_lco_status: true
-  field_vih_lco_telefon: true
-  field_vih_lco_zip: true
   langcode: true

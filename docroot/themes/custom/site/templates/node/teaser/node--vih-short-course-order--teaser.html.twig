@@ -1,0 +1,73 @@
+{% set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class,
+'clearfix',
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+    <div class="partial">
+        <div class="partial__body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Begin - course #}
+                    {{ content.field_vih_sco_course }}
+                    {# End - course #}
+
+                    {# Begin - ordered options #}
+                    {% if node.field_vih_sco_ordered_options.value %}
+                        <div class="partial partial--ordered-options">
+                            <div class="partial__heading">
+                                <h2 class="partial__heading__title">
+                                    {{ 'Ordered options' | trans }}
+                                </h2>
+                            </div>
+                            <div class="partial__body">
+                                {{ content.field_vih_sco_ordered_options }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - ordered options #}
+
+                    {# Begin - persons #}
+                    {% if node.field_vih_sco_persons.value %}
+                        <div class="partial partial--persons">
+                            <div class="partial__heading">
+                                <h2 class="partial__heading__title">
+                                    {{ 'Participants' | trans }}
+                                </h2>
+                            </div>
+                            <div class="partial__body">
+                                {{ content.field_vih_sco_persons }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - persons #}
+
+                </div>
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Begin - price #}
+                    {% if content.field_vih_sco_price %}
+                        <!-- Begin - price -->
+                        <div class="boxy boxy--price">
+                            <div class="boxy__heading">
+                                <h2 class="boxy__heading__title heading-h4">{{ "Total price" | trans }}</h2>
+                            </div>
+
+                            <div class="boxy__body">
+                                {{ content.field_vih_sco_price }}
+                            </div>
+                        </div>
+                        <!-- End - price -->
+                    {% endif %}
+                    {# End - price #}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
