@@ -421,7 +421,7 @@ class ShortCourseOrderForm extends FormBase {
     $response->addCommand(new ReplaceCommand('#available-options-container-wrapper', $form['availableOptionsContainer']));
 
     //updating the price
-    $response->addCommand(new HtmlCommand('#vih-course-price', number_format($this->calculatePrice($form_state), 2)));
+    $response->addCommand(new HtmlCommand('#vih-course-price', number_format($this->calculatePrice($form_state), 0, ',', '.')));
 
     //resetting the error, if any
     $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
@@ -455,7 +455,7 @@ class ShortCourseOrderForm extends FormBase {
     $response = new AjaxResponse();
 
     //updating the price
-    $response->addCommand(new HtmlCommand('#vih-course-price', number_format($this->calculatePrice($form_state), 2)));
+    $response->addCommand(new HtmlCommand('#vih-course-price', number_format($this->calculatePrice($form_state), 0, ',', '.')));
 
     //resetting elements
     $response->addCommand(new ReplaceCommand('#participants-container-wrapper', $form['participantsContainer']));
