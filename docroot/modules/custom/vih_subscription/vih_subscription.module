@@ -127,12 +127,15 @@ function vih_subscription_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadc
       }
     }
 
-    //creating new links object
-    $links = array();
-    $links[] = $homeLink;
-    $links = array_merge($links, $customLinks);
+    //if customLinks is empty, means we didn't have any match
+    if (!empty($customLinks)) {
+      //creating new links object
+      $links = array();
+      $links[] = $homeLink;
+      $links = array_merge($links, $customLinks);
 
-    $breadcrumb = new \Drupal\Core\Breadcrumb\Breadcrumb();
-    $breadcrumb->setLinks($links);
+      $breadcrumb = new \Drupal\Core\Breadcrumb\Breadcrumb();
+      $breadcrumb->setLinks($links);
+    }
   }
 }
