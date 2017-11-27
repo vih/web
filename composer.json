@@ -31,7 +31,7 @@
         "drupal/linkit": "^4.0",
         "acquia/lightning": "^2.2.2",
         "drupal/admin_toolbar": "^1.20",
-        "drupal/twig_tweak": "^1.4",
+        "drupal/twig_tweak": "2.x-dev",
         "drupal/eva": "^1.0@RC",
         "drupal/stage_file_proxy": "^1.0@alpha",
         "drupal/viewsreference": "^1.0@alpha",
