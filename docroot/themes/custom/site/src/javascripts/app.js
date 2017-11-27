@@ -34,7 +34,9 @@
 
       // Closed
       $close.on('click', function(event) {
-        $element.fadeOut();
+        $element.fadeOut(function() {
+          $document.css('padding-bottom', 0);
+        });
 
         // Set a cookie, to stop this notification from being displayed again
         Cookies.set(cookie_id, true);
