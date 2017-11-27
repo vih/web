@@ -64,7 +64,6 @@
     align-items: center;
 
     a {
-
       display: flex;
       letter-spacing: 0.045em;
       font-weight: 600;
@@ -146,7 +145,7 @@
 
           display: inline-block;
           font-size: $font-size-large;
-          color: $brand-primary;
+          color: $headings-color;
           content: $icon-angle-down;
           margin-left: 6px;
         }
