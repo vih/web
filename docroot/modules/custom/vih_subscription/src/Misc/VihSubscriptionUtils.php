@@ -148,4 +148,45 @@ class VihSubscriptionUtils {
       return $subscribedPeopleNumber;
     }
   }
+
+  /**
+   * Creates a subscription to mailchimp
+   *
+   * @param $firstName
+   * @param $lastName
+   * @param $email
+   *
+   * @throws \Exception
+   */
+  public static function subscribeToMailchimp($firstName, $lastName, $email) {
+    // Get first mail chimp list
+    $lists = mailchimp_get_lists(NULL, NULL);
+    try {
+      if (!$firstName || !$lastName || !$email) {
+        throw new \Exception("Some of the mandatory parameters are not provided. Received first name: $firstName, last name: $lastName, email: $email");
+      }
+      if (empty($lists)) {
+        throw new \Exception('No available mailchimp list can be be found');
+      }
+
+      $list = array_pop($lists);
+      if (!$list) {
+        throw new \Exception('No available mailchimp list can be be found');
+      }
+
+      $list_id = $list->id;
+
+      if ($list_id) {
+        $merge_vars = array(
+          'EMAIL' => $email,
+          'FNAME' => $firstName,
+          'LNAME' => $lastName
+        );
+        mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, FALSE, FALSE);
+      }
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('vih_subscription')->error($e->getMessage());
+    }
+  }
 }

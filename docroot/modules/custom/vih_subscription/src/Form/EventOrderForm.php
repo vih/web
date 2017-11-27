@@ -8,6 +8,9 @@ namespace Drupal\vih_subscription\Form;
 
 use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
 use Drupal\Component\Utility\Crypt;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -25,6 +28,7 @@ class EventOrderForm extends FormBase {
 
   protected $event;
   protected $eventOrder;
+  protected $price;
 
   /**
    * Returns page title
@@ -45,15 +49,22 @@ class EventOrderForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $event = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     $this->event = $event;
+    $this->price = $event->field_event_price->value;
 
     if ($order != NULL) {
       if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($event, $order))) {
         $this->eventOrder = $order;
+        $this->price = $event->field_vih_eo_price->value;
       }
     }
 
+    $form['price'] = array(
+      '#markup' => 'DKK ' . number_format($this->price, 0, ',', '.'),
+    );
+
     $form['#event'] = array(
-      'title' => $event->getTitle()
+      'title' => $event->getTitle(),
+      'url' => $event->toUrl()
     );
 
     $personsLimit = $event->field_vih_event_persons_limit->value;
@@ -75,7 +86,7 @@ class EventOrderForm extends FormBase {
 
     $form['#tree'] = TRUE;
 
-    $form['participants_container'] = [
+    $form['participantsContainer'] = [
       '#type' => 'container',
       '#prefix' => '<div id="participants-container-wrapper">',
       '#suffix' => '</div>',
@@ -85,21 +96,21 @@ class EventOrderForm extends FormBase {
       $personHumanCounter = $i + 1; //starting from 1, not 0
 
       if ($personHumanCounter + $personsSubscribed <= $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
-        $form['participants_container'][$i]['participant_fieldset'] = [
+        $form['participantsContainer'][$i]['participant_fieldset'] = [
           '#type' => 'fieldset',
           '#title' => $this->t('Person') . ' ' . $personHumanCounter
         ];
-        $form['participants_container'][$i]['participant_fieldset']['firstName'] = array(
+        $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
           '#type' => 'textfield',
           '#placeholder' => $this->t('Fornavn'),
           '#required' => TRUE,
         );
-        $form['participants_container'][$i]['participant_fieldset']['lastName'] = array(
+        $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
           '#type' => 'textfield',
           '#placeholder' => $this->t('Efternavn'),
           '#required' => TRUE,
         );
-        $form['participants_container'][$i]['participant_fieldset']['email'] = array(
+        $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
           '#type' => 'textfield',
           '#placeholder' => $this->t('Email'),
           '#required' => TRUE,
@@ -108,7 +119,7 @@ class EventOrderForm extends FormBase {
     }
 
     if ($personsSubscribed + $participantsCounter < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
-      $form['participants_container']['actions']['add_participant'] = [
+      $form['participantsContainer']['actions']['add_participant'] = [
         '#type' => 'submit',
         '#value' => t('Tilføj flere'),
         '#submit' => array('::addOne'),
@@ -120,7 +131,7 @@ class EventOrderForm extends FormBase {
       ];
     }
     if ($participantsCounter > 1) {
-      $form['participants_container']['actions']['remove_participant'] = [
+      $form['participantsContainer']['actions']['remove_participant'] = [
         '#type' => 'submit',
         '#value' => t('Fjern den sidste'),
         '#submit' => array('::removeCallback'),
@@ -169,7 +180,7 @@ class EventOrderForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $firstParticipantName = '';
     $subscribedPersons = array();
-    foreach ($form_state->getValue('participants_container') as $participant_fieldset) {
+    foreach ($form_state->getValue('participantsContainer') as $participant_fieldset) {
       $participant = $participant_fieldset['participant_fieldset'];
       if ($participant) {
         if (empty($firstParticipantName)) {
@@ -189,8 +200,7 @@ class EventOrderForm extends FormBase {
     }
 
     //calculating the price
-    $basePrice = $this->event->field_event_price->value;
-    $orderPrice = $basePrice * count($subscribedPersons);
+    $orderPrice = $this->calculatePrice($form_state);
 
     //checking if we need to create a new order or edit the existing
     if ($this->eventOrder == NULL) {
@@ -244,14 +254,22 @@ class EventOrderForm extends FormBase {
   }
 
   /**
-   * Ajax callback the returns the participants_container container
+   * Ajax callback the returns the participantsContainer container
    *
    * @param array $form
    * @param FormStateInterface $form_state
-   * @return mixed
+   * @return AjaxResponse
    */
   public function addmoreCallback(array &$form, FormStateInterface $form_state) {
-    return $form['participants_container'];
+    $response = new AjaxResponse();
+
+    //updating the price
+    $response->addCommand(new HtmlCommand('#vih-event-price', 'DKK ' . number_format($this->calculatePrice($form_state), 0, ',', '.')));
+
+    //resetting elements
+    $response->addCommand(new ReplaceCommand('#participants-container-wrapper', $form['participantsContainer']));
+
+    return $response;
   }
 
   /**
@@ -280,9 +298,25 @@ class EventOrderForm extends FormBase {
     foreach ($subscribedPersonsIds as $index => $subscribedPersonId) {
       $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
 
-      $form['participants_container'][$index]['participant_fieldset']['firstName']['#default_value'] = $subscribedPerson->field_vih_oe_first_name->value;
-      $form['participants_container'][$index]['participant_fieldset']['lastName']['#default_value'] = $subscribedPerson->field_vih_oe_last_name->value;
-      $form['participants_container'][$index]['participant_fieldset']['email']['#default_value'] = $subscribedPerson->field_vih_oe_email->value;
+      $form['participantsContainer'][$index]['participant_fieldset']['firstName']['#default_value'] = $subscribedPerson->field_vih_oe_first_name->value;
+      $form['participantsContainer'][$index]['participant_fieldset']['lastName']['#default_value'] = $subscribedPerson->field_vih_oe_last_name->value;
+      $form['participantsContainer'][$index]['participant_fieldset']['email']['#default_value'] = $subscribedPerson->field_vih_oe_email->value;
     }
+  }
+
+  /**
+   * Traverses through the selected options and calculates the total price for the event.
+   *
+   * @param FormStateInterface $form_state
+   * @return mixed
+   */
+  private function calculatePrice(FormStateInterface $form_state) {
+    $base_price = $this->event->field_event_price->value;
+
+    //persons
+    $base_price *= $form_state->get('participantsCounter');
+
+    $this->price = $base_price;
+    return $this->price;
   }
 }

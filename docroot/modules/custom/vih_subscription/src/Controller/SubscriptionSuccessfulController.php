@@ -9,7 +9,9 @@ use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\Core\Site\Settings;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\vih_subscription\Form\EdbbrugsenSettingsForm;
 use Drupal\vih_subscription\Form\NotificationsSettingsForm;
+use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
 
 /**
@@ -107,7 +109,33 @@ class SubscriptionSuccessfulController extends ControllerBase {
 
       //updating course order status
       $order->set('field_vih_lco_status', 'confirmed');
+      //deleting CPR from order
+      $studentCpr = $order->field_vih_lco_cpr->value;
+      $order->set('field_vih_lco_cpr', '');
       $order->save();
+
+      // Mailchimp integration
+      if ($order->field_vih_lco_newsletter->value) {
+        $email = $order->field_vih_lco_email->value;
+        $firstName = $order->field_vih_lco_first_name->value;
+        $lastName = $order->field_vih_lco_last_name->value;
+
+        VihSubscriptionUtils::subscribeToMailchimp($firstName, $lastName, $email);
+      }
+
+      //EDBBrugsen Integration
+      $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
+      if ($edbBrugsenConfig->get('active')) {
+        $username = $edbBrugsenConfig->get('username');
+        $password = $edbBrugsenConfig->get('password');
+        $school_code = $edbBrugsenConfig->get('school_code');
+        $book_number = $edbBrugsenConfig->get('book_number');
+
+        $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
+        $registration = $edbBrugsenIntegration->convertToRegistration($order);
+        $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
+        $edbBrugsenIntegration->addRegistration($registration);
+      }
     } elseif ($subject->getType() == 'vih_short_course') {
       $allParticipants = $order->get('field_vih_sco_persons')->getValue();
       if (!empty($allParticipants)) {

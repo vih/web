@@ -7,6 +7,7 @@
 
 namespace Drupal\vih_subscription\Form;
 
+use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
@@ -44,14 +45,17 @@ class LongCourseOrderForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     $form['#attached']['library'][] = 'vih_subscription/vih-subscription-accordion-class-selection';
 
     $this->course = $course;
+    if ($order != NULL) {
+      if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($course, $order))) {
+        dpm('bingo');
+        $this->courseOrder = $order;
+      }
+    }
 
-    //$form['#attached']['library'][] = 'core/drupal.ajax';
-    //$form['#attached']['library'][] = 'core/drupal.dialog';
-    //$form['#attached']['library'][] = 'core/drupal.dialog.ajax';
     //composing available classes selection per CourseSlot for each CoursePeriod
     foreach ($course->field_vih_course_periods->referencedEntities() as $periodDelta => $coursePeriod) {
       //coursePeriods render helping array
@@ -195,9 +199,6 @@ class LongCourseOrderForm extends FormBase {
     $form['adultDataLeft'] = array(
       '#type' => 'container',
     );
-    $form['adultDataLeft'] = array(
-      '#type' => 'container',
-    );
     $form['adultDataLeft']['adultFirstName'] = array(
       '#type' => 'textfield',
       '#placeholder' => $this->t('Fornavn'),
@@ -284,6 +285,11 @@ class LongCourseOrderForm extends FormBase {
       );
     }
 
+    //preloading data
+    if ($this->courseOrder != NULL) {
+      $this->populateData($this->courseOrder, $form, $form_state);
+    }
+
     $form['#theme'] = 'vih_subscription_long_course_order_form';
 
     return $form;
@@ -364,71 +370,104 @@ class LongCourseOrderForm extends FormBase {
       }
     }
 
-    $studentCpr = $form_state->getValue('cpr');
-    $this->courseOrder = Node::create(array(
-      'type' => 'vih_long_course_order',
-      'status' => 0,
-      'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $form_state->getValue('firstName')
-        . ' ' . $form_state->getValue('lastName') . ' - ' . \Drupal::service('date.formatter')->format(time(), 'short'),
+    //checking if we need to create a new order or edit the existing
+    if ($this->courseOrder == NULL) {
+      $this->courseOrder = Node::create(array(
+        'type' => 'vih_long_course_order',
+        'status' => 0,
+        'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $form_state->getValue('firstName')
+          . ' ' . $form_state->getValue('lastName') . ' - ' . \Drupal::service('date.formatter')->format(time(), 'short'),
+        //student information
+        'field_vih_lco_first_name' => $form_state->getValue('firstName'),
+        'field_vih_lco_last_name' => $form_state->getValue('lastName'),
+        'field_vih_lco_cpr' => $form_state->getValue('cpr'), //CPR will be deleted from database immediately, after order is confirmed
+        'field_vih_lco_telefon' => $form_state->getValue('telefon'),
+        'field_vih_lco_email' => $form_state->getValue('email'),
+        'field_vih_lco_nationality' => CourseOrderOptionsList::getNationalityList($form_state->getValue('nationality')),
+        'field_vih_lco_newsletter' => $form_state->getValue('newsletter'),
+        'field_vih_lco_address' => implode('; ', array(
+          $form_state->getValue('address'),
+          $form_state->getValue('houseNumber'),
+          $form_state->getValue('houseLetter'),
+          $form_state->getValue('houseFloor')
+        )),
+        'field_vih_lco_city' => $form_state->getValue('city'),
+        'field_vih_lco_zip' => $form_state->getValue('zip'),
+        'field_vih_lco_education' => CourseOrderOptionsList::getEducationList($form_state->getValue('education')),
+        'field_vih_lco_payment' => CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')),
+        'field_vih_lco_found_from' => CourseOrderOptionsList::getFoundFromList($form_state->getValue('foundFrom')),
+        'field_vih_lco_message' => $form_state->getValue('message'),
+        'field_vih_lco_course' => $this->course->id(),
+        'field_vih_lco_order_course_perio' => array_values($orderedCoursePeriods), //resetting the keys
+        //adult information
+        'field_vih_lco_adult_first_name' => $form_state->getValue('adultFirstName'),
+        'field_vih_lco_adult_last_name' => $form_state->getValue('adultLastName'),
+        'field_vih_lco_adult_telefon' => $form_state->getValue('adultTelefon'),
+        'field_vih_lco_adult_email' => $form_state->getValue('adultEmail'),
+        'field_vih_lco_adult_nationality' => CourseOrderOptionsList::getNationalityList($form_state->getValue('adultNationality')),
+        'field_vih_lco_adult_address' => implode('; ', array(
+          $form_state->getValue('adultAddress'),
+          $form_state->getValue('adultHouseNumber'),
+          $form_state->getValue('adultHouseLetter'),
+          $form_state->getValue('adultHouseFloor')
+        )),
+        'field_vih_lco_adult_city' => $form_state->getValue('adultCity'),
+        'field_vih_lco_adult_zip' => $form_state->getValue('adultZip'),
+      ));
+    } else {
+      //removing old ordered course periods
+      $orderedCoursePeriodsIds = $this->courseOrder->get('field_vih_lco_order_course_perio')->getValue();
+      foreach ($orderedCoursePeriodsIds as $orderedCoursePeriodId) {
+        $orderedCoursePeriodToDelete = Paragraph::load($orderedCoursePeriodId['target_id']);
+        if ($orderedCoursePeriodToDelete) {
+          $orderedCoursePeriodToDelete->delete();
+        }
+      }
+      //adding new ordered course periods
+      $this->courseOrder->set('field_vih_lco_order_course_perio', array_values($orderedCoursePeriods));//resetting the keys
+
       //student information
-      'field_vih_lco_first_name' => $form_state->getValue('firstName'),
-      'field_vih_lco_last_name' => $form_state->getValue('lastName'),
-      'field_vih_lco_cpr' => '', //$form_state->getValue('cpr'), CPR is not means to be kept in database
-      'field_vih_lco_telefon' => $form_state->getValue('telefon'),
-      'field_vih_lco_email' => $form_state->getValue('email'),
-      'field_vih_lco_nationality' => CourseOrderOptionsList::getNationalityList($form_state->getValue('nationality')),
-      'field_vih_lco_newsletter' => $form_state->getValue('newsletter'),
-      'field_vih_lco_address' => implode(' ', array(
+      $this->courseOrder->set('field_vih_lco_first_name', $form_state->getValue('firstName'));
+      $this->courseOrder->set('field_vih_lco_last_name', $form_state->getValue('lastName'));
+      $this->courseOrder->set('field_vih_lco_cpr', $form_state->getValue('cpr'));//CPR will be deleted from database immediately, after order is confirmed
+      $this->courseOrder->set('field_vih_lco_telefon', $form_state->getValue('telefon'));
+      $this->courseOrder->set('field_vih_lco_email', $form_state->getValue('email'));
+      $this->courseOrder->set('field_vih_lco_nationality', CourseOrderOptionsList::getNationalityList($form_state->getValue('nationality')));
+      $this->courseOrder->set('field_vih_lco_newsletter', $form_state->getValue('newsletter'));
+      $this->courseOrder->set('field_vih_lco_address', implode('; ', array(
         $form_state->getValue('address'),
         $form_state->getValue('houseNumber'),
         $form_state->getValue('houseLetter'),
         $form_state->getValue('houseFloor')
-      )),
-      'field_vih_lco_city' => $form_state->getValue('city'),
-      'field_vih_lco_zip' => $form_state->getValue('zip'),
-      'field_vih_lco_education' => CourseOrderOptionsList::getEducationList($form_state->getValue('education')),
-      'field_vih_lco_payment' => CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')),
-      'field_vih_lco_found_from' => CourseOrderOptionsList::getFoundFromList($form_state->getValue('foundFrom')),
-      'field_vih_lco_message' => $form_state->getValue('message'),
-      'field_vih_lco_course' => $this->course->id(),
-      'field_vih_lco_order_course_perio' => array_values($orderedCoursePeriods), //resetting the keys
+      )));
+      $this->courseOrder->set('field_vih_lco_city', $form_state->getValue('city'));
+      $this->courseOrder->set('field_vih_lco_zip', $form_state->getValue('zip'));
+      $this->courseOrder->set('field_vih_lco_education', CourseOrderOptionsList::getEducationList($form_state->getValue('education')));
+      $this->courseOrder->set('field_vih_lco_payment', CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')));
+      $this->courseOrder->set('field_vih_lco_found_from', CourseOrderOptionsList::getFoundFromList($form_state->getValue('foundFrom')));
+      $this->courseOrder->set('field_vih_lco_message', $form_state->getValue('message'));
+
       //adult information
-      'field_vih_lco_adult_first_name' => $form_state->getValue('adultFirstName'),
-      'field_vih_lco_adult_last_name' => $form_state->getValue('adultLastName'),
-      'field_vih_lco_adult_telefon' => $form_state->getValue('adultTelefon'),
-      'field_vih_lco_adult_email' => $form_state->getValue('adultEmail'),
-      'field_vih_lco_adult_nationality' => CourseOrderOptionsList::getNationalityList($form_state->getValue('adultNationality')),
-      'field_vih_lco_adult_address' => implode(' ', array(
+      $this->courseOrder->set('field_vih_lco_adult_first_name', $form_state->getValue('adultFirstName'));
+      $this->courseOrder->set('field_vih_lco_adult_last_name', $form_state->getValue('adultLastName'));
+      $this->courseOrder->set('field_vih_lco_adult_telefon', $form_state->getValue('adultTelefon'));
+      $this->courseOrder->set('field_vih_lco_adult_email', $form_state->getValue('adultEmail'));
+      $this->courseOrder->set('field_vih_lco_adult_nationality', CourseOrderOptionsList::getNationalityList($form_state->getValue('adultNationality')));
+      $this->courseOrder->set('field_vih_lco_adult_address', implode('; ', array(
         $form_state->getValue('adultAddress'),
         $form_state->getValue('adultHouseNumber'),
         $form_state->getValue('adultHouseLetter'),
         $form_state->getValue('adultHouseFloor')
-      )),
-      'field_vih_lco_adult_city' => $form_state->getValue('adultCity'),
-      'field_vih_lco_adult_zip' => $form_state->getValue('adultZip'),
-    ));
+      )));
+      $this->courseOrder->set('field_vih_lco_adult_city', $form_state->getValue('adultCity'));
+      $this->courseOrder->set('field_vih_lco_adult_zip', $form_state->getValue('adultZip'));
+    }
+
+    //saving the order (works for both new/edited)
     $this->courseOrder->save();
 
-    // Mailchimp integration
-    if ($this->courseOrder->field_vih_lco_newsletter->value) {
-      subscribeToMailchimp($this->courseOrder);
-    }
-
-    //EDBBrugsen Integration
-    $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
-    if ($edbBrugsenConfig->get('active')) {
-      $username = $edbBrugsenConfig->get('username');
-      $password = $edbBrugsenConfig->get('password');
-      $school_code = $edbBrugsenConfig->get('school_code');
-      $book_number = $edbBrugsenConfig->get('book_number');
-
-      $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
-      $registration = $edbBrugsenIntegration->convertToRegistration($this->courseOrder);
-      $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
-      $edbBrugsenIntegration->addRegistration($registration);
-    }
-
-    $form_state->setRedirect('vih_subscription.subscription_successful_redirect', [
+    //redirecting to confirmation page
+    $form_state->setRedirect('vih_subscription.subscription_confirmation_redirect', [
       'subject' => $this->course->id(),
       'order' => $this->courseOrder->id(),
       'checksum' => VihSubscriptionUtils::generateChecksum($this->course, $this->courseOrder)
@@ -436,26 +475,72 @@ class LongCourseOrderForm extends FormBase {
   }
 
   /**
-   * Creates a subscription to mailchimp
+   * Populate the data into the form the existing courseOrder
    *
-   * @param NodeInterface $course to take the params from
+   * @param NodeInterface $courseOrder
+   * @param $form
    */
-  function subscribeToMailchimp(NodeInterface $course) {
-    // Get first mail chimp list
-    $lists = mailchimp_get_lists(NULL, NULL);
-    $list = array_pop($lists);
-    $list_id = $list->id;
+  private function populateData(NodeInterface $courseOrder, &$form, &$form_state) {
+    //selected options
+    $coursePeriods = $courseOrder->get('field_vih_lco_order_course_perio')->getValue();
+    foreach ($coursePeriods as $periodDelta => $coursePeriodId) {
+      $coursePeriod = Paragraph::load($coursePeriodId['target_id']);
+      $coursePeriodSlots = $coursePeriod->get('field_vih_ocp_order_course_slots')->getValue();
+      foreach ($coursePeriodSlots as $courseSlotDelta => $courseSlotId) {
+        $courseSlot = Paragraph::load($courseSlotId['target_id']);
+        $availableClassesCid = "course-period-$periodDelta-courseSlot-$courseSlotDelta-availableClasses";
 
-    if ($list_id) {
-      $merge_vars = array(
-        'EMAIL' => $this->courseOrder->field_vih_lco_email->value,
-        'FNAME' => $this->courseOrder->field_vih_lco_first_name->value,
-        'LNAME' => $this->courseOrder->field_vih_lco_last_name->value,
-      );
-      mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, FALSE, FALSE);
-    } else {
-      drupal_set_message('List not configured in Drupal');
+        $classId = $courseSlot->get('field_vih_ocs_class')->getValue();
+        if (is_array($classId)) {
+          $classId = array_pop($classId);
+          $form[$availableClassesCid]['#default_value'] = $classId['target_id'];
+        }
+      }
     }
+
+    //Personal data - left side
+    $form['personalDataLeft']['firstName']['#default_value'] = $courseOrder->field_vih_lco_first_name->value;
+    $form['personalDataLeft']['lastName']['#default_value'] = $courseOrder->field_vih_lco_last_name->value;
+    $form['personalDataLeft']['cpr']['#default_value'] = $courseOrder->field_vih_lco_cpr->value;
+    $form['personalDataLeft']['telefon']['#default_value'] = $courseOrder->field_vih_lco_telefon->value;
+    $form['personalDataLeft']['email']['#default_value'] = $courseOrder->field_vih_lco_email->value;
+    $form['personalDataLeft']['nationality']['#default_value'] = array_search($courseOrder->field_vih_lco_nationality->value, CourseOrderOptionsList::getNationalityList());
+    $form['personalDataLeft']['newsletter']['#default_value'] = $courseOrder->field_vih_lco_newsletter->value ;
+
+    //Personal data - right side
+    $address = $courseOrder->field_vih_lco_address->value;
+    $address_parts = explode('; ', $address);
+
+    $form['personalDataRight']['address']['#default_value'] = $address_parts[0];
+    $form['personalDataRight']['house']['houseNumber']['#default_value'] = $address_parts[1];
+    $form['personalDataRight']['house']['houseLetter']['#default_value'] = $address_parts[2];
+    $form['personalDataRight']['house']['houseFloor']['#default_value'] = $address_parts[3];
+
+    $form['personalDataRight']['city']['#default_value'] = $courseOrder->field_vih_lco_city->value;
+    $form['personalDataRight']['zip']['#default_value'] = $courseOrder->field_vih_lco_zip->value;
+    $form['personalDataRight']['education']['#default_value'] = array_search($courseOrder->field_vih_lco_education->value, CourseOrderOptionsList::getEducationList());
+    $form['personalDataRight']['payment']['#default_value'] = array_search($courseOrder->field_vih_lco_payment->value, CourseOrderOptionsList::getPaymentList());
+    $form['personalDataRight']['foundFrom']['#default_value'] = array_search($courseOrder->field_vih_lco_found_from->value, CourseOrderOptionsList::getFoundFromList());
+
+    //adult information left
+    $form['adultDataLeft']['adultFirstName']['#default_value'] = $courseOrder->field_vih_lco_adult_first_name->value;
+    $form['adultDataLeft']['adultLastName']['#default_value'] = $courseOrder->field_vih_lco_adult_last_name->value;
+    $form['adultDataLeft']['adultTelefon']['#default_value'] = $courseOrder->field_vih_lco_adult_telefon->value;
+    $form['adultDataLeft']['adultEmail']['#default_value'] = $courseOrder->field_vih_lco_adult_email->value;
+    $form['adultDataLeft']['adultNationality']['#default_value'] = array_search($courseOrder->field_vih_lco_adult_nationality->value, CourseOrderOptionsList::getNationalityList());
+
+    $adult_address = $courseOrder->field_vih_lco_adult_address->value;
+    $adult_address_parts = explode('; ', $adult_address);
+
+    //Adult data - right side
+    $form['adultDataRight']['adultAddress']['#default_value'] = $adult_address_parts[0];
+    $form['adultDataRight']['adultHouse']['adultHouseNumber']['#default_value'] = $adult_address_parts[1];
+    $form['adultDataRight']['adultHouse']['adultHouseLetter']['#default_value'] = $adult_address_parts[2];
+    $form['adultDataRight']['adultHouse']['adultHouseFloor']['#default_value'] = $adult_address_parts[3];
+    $form['adultDataRight']['adultCity']['#default_value'] = $courseOrder->field_vih_lco_adult_city->value;
+    $form['adultDataRight']['adultZip']['#default_value'] = $courseOrder->field_vih_lco_adult_zip->value;
+
+    $form['message']['#default_value'] = $courseOrder->field_vih_lco_message->value;
   }
 }
 

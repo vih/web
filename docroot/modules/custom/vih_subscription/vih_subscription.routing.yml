@@ -1,10 +1,16 @@
 vih_subscription.long_course_order_create:
-  path: 'langeophold/{course}/tilmelding'
+  path: 'langeophold/{course}/tilmelding/{order}/{checksum}'
   options:
     parameters:
       course:
         type: entity:node
+      order:
+        type: entity:node
+      checksum:
+        type: string
   defaults:
+    order: null
+    checksum: null
     _form: '\Drupal\vih_subscription\Form\LongCourseOrderForm'
     _title_callback: '\Drupal\vih_subscription\Form\LongCourseOrderForm::getTitle'
   requirements:

@@ -21,25 +21,6 @@ class SubscriptionConfirmationController extends ControllerBase{
       $orderPrice = null;
       $backLink = null;
 
-      if ($subject->getType() == 'vih_long_cource') {
-
-      } elseif ($subject->getType() == 'vih_short_course') {
-        $orderPrice = $order->field_vih_sco_price->value;
-        $backLink = Url::fromRoute('vih_subscription.short_course_order_create', [
-          'course' => $subject->id(),
-          'order' => $order->id(),
-          'checksum' => $checksum
-        ]);
-      } elseif ($subject->getType() == 'event') {
-        $orderPrice = $order->field_vih_eo_price->value;
-        $backLink = Url::fromRoute('vih_subscription.event_order_create', [
-          'event' => $subject->id(),
-          'order' => $order->id(),
-          'checksum' => $checksum
-        ]);
-      }
-
-      //generating URL needed for quickpay
       $successUrl = Url::fromRoute('vih_subscription.subscription_successful_redirect', [
         'subject' => $subject->id(),
         'order' => $order->id(),
@@ -47,11 +28,40 @@ class SubscriptionConfirmationController extends ControllerBase{
       ]);
       $successUrl->setAbsolute();
 
-      $cancelUrl = Url::fromRoute('vih_subscription.subscription_cancelled_redirect');
+      // when cancelling, redirect to the subject
+      $cancelUrl = $subject->toUrl();
       $cancelUrl->setAbsolute();
 
-      $client = new BellcomQuickpayClient();
-      $paymentLink = $client->getPaymentLink($order, $subject, $orderPrice, $successUrl->toString(), $cancelUrl->toString());
+      if ($subject->getType() == 'vih_long_cource') {
+        //there is not payment integrated for long course, therefore paymentlink = successUrl
+        $paymentLink = $successUrl;
+
+        $backLink = Url::fromRoute('vih_subscription.long_course_order_create', [
+          'course' => $subject->id(),
+          'order' => $order->id(),
+          'checksum' => $checksum
+        ]);
+      } elseif ($subject->getType() == 'vih_short_course' || $subject->getType() == 'event') {
+        if ($subject->getType() == 'vih_short_course') {
+          $orderPrice = $order->field_vih_sco_price->value;
+          $backLink = Url::fromRoute('vih_subscription.short_course_order_create', [
+            'course' => $subject->id(),
+            'order' => $order->id(),
+            'checksum' => $checksum
+          ]);
+        } elseif ($subject->getType() == 'event') {
+          $orderPrice = $order->field_vih_eo_price->value;
+          $backLink = Url::fromRoute('vih_subscription.event_order_create', [
+            'event' => $subject->id(),
+            'order' => $order->id(),
+            'checksum' => $checksum
+          ]);
+        }
+
+        //generating quickpay payment URL
+        $client = new BellcomQuickpayClient();
+        $paymentLink = $client->getPaymentLink($order, $subject, $orderPrice, $successUrl->toString(), $cancelUrl->toString());
+      }
 
       //the actual content comes from template file: templates/vih_subscription_confirmation_page.html.twig
       $build = array(

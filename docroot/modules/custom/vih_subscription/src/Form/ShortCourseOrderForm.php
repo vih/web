@@ -59,7 +59,7 @@ class ShortCourseOrderForm extends FormBase {
       $optionGroups[$optionGroupDelta] = $optionGroup->field_vih_og_title->value;
 
       foreach ($optionGroup->field_vih_og_options->referencedEntities() as $optionDelta => $option) {
-        $optionGroupOptions[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value;
+        $optionGroupOptions[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value . ' (DKK ' . $option->field_vih_option_price_addition->value . ')';
 
         foreach ($option->field_vih_option_suboptions as $suboptionDelta => $suboption) {
           $optionGroupSuboptions[$optionGroupDelta][$optionDelta][$suboptionDelta] = $suboption->value;
@@ -81,8 +81,7 @@ class ShortCourseOrderForm extends FormBase {
 
     //START GENERAL DATA //
     $form['price'] = array(
-      '#markup' => number_format($this->price, 0, ',', '.'),
-      '#prefix' => 'DKK '
+      '#markup' => 'DKK ' . number_format($this->price, 0, ',', '.'),
     );
 
     $form['status_messages'] = [
@@ -93,7 +92,8 @@ class ShortCourseOrderForm extends FormBase {
     ];
 
     $form['#course'] = array(
-      'title' => $course->getTitle()
+      'title' => $course->getTitle(),
+      'url' => $course->toUrl()
     );
     //END GENERAL DATA //
 
@@ -177,9 +177,10 @@ class ShortCourseOrderForm extends FormBase {
     );
 
     $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['amount'] = array(
-      '#type' => 'textfield',
+      '#type' => 'number',
       '#title' => $this->t('Amount'),
-      '#value' => 0,
+      '#value' => 1,
+      '#min' => 1
     );
 
     $form['addOption'] = array(
@@ -648,7 +649,7 @@ class ShortCourseOrderForm extends FormBase {
 
     $addedOptions = $form_state->get('addedOptions');
 
-    $form['addedOptionsContainer'][] = array(
+    $form['addedOptionsContainer']['added_options_title'] = array(
       '#markup' => $this->t('Added options'),
       '#prefix' => '<h4>',
       '#suffix' => '</h4>',
