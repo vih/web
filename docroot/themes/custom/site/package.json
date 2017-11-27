@@ -26,6 +26,7 @@
     "jquery": "^3.2.1",
     "jquery-hoverintent": "^1.9.0",
     "jquery-slinky": "^3.0.0",
+    "js-cookie": "^2.2.0",
     "pace-bootstrap-theme": "^1.0.1",
     "pace-progress": "^1.0.2",
     "readable-bootstrap-breakpoints": "^1.0.2",

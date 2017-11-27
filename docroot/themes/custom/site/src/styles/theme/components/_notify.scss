@@ -1,0 +1,156 @@
+// |--------------------------------------------------------------------------
+// | Notify
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .notify
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin notify-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.region-notify {
+  position: fixed;
+
+  z-index: 20000;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  box-shadow: 0 -5px 60px -20px rgba(0, 0, 0, .5);
+}
+
+.notify {
+  display: none;
+
+  flex-direction: column;
+
+  font-size: $font-size-large;
+
+  background-color: $body-bg;
+
+  color: $headings-color;
+  text-transform: uppercase;
+}
+
+.notify__highlighted {
+  padding: 20px floor( ( $grid-gutter-width / 2 ) );
+
+  background-color: $brand-secondary;
+  color: #fff;
+}
+
+.notify__body {
+  display: flex;
+
+  align-items: center;
+
+  padding: 20px floor( ( $grid-gutter-width / 2 ) );
+
+  .field--name-field-heading {}
+
+  .field--name-field-link {
+
+    a {
+
+      &, &:hover {
+        font-weight: $font-weight-bold;
+        text-decoration: underline;
+
+        color: inherit;
+      }
+    }
+  }
+
+  .field {
+    display: inline-block;
+
+    margin-right: 20px;
+  }
+}
+
+.notify__content {
+  flex-grow: 1;
+}
+
+.notify__close {
+  flex-shrink: 1;
+
+  margin-right: 0 - floor( ( $grid-gutter-width / 2 ) );
+
+  .close {
+    padding: 0 floor( ( $grid-gutter-width / 2 ) ); // Make room for a fat thumb
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {
+
+  .notify__body {
+
+    .field + .field {
+      margin-top: floor( ( $grid-gutter-width / 2 ) );
+    }
+  }
+}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  .notify {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .notify__highlighted {
+    flex-shrink: 1;
+  }
+
+  .notify__body {
+    flex-grow: 1;
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

@@ -21,6 +21,7 @@ regions:
   footer_top_fourth: 'Footer top - fourth'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
+  notify: 'Notify'
 
 libraries:
   - 'site/fonts'

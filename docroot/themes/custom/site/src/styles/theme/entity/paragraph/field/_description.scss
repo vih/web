@@ -14,18 +14,20 @@
 // Styling
 // --------------------------------------------------
 
-// Description
-.field--name-field-description {
+.paragraph {
 
-  &,
-  h1, h2, h3, h4, h5, h6,
-  p {
-    @extend h1;
+  .field--name-field-description {
 
-    margin: 0;
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      @extend h1;
 
-    text-transform: uppercase;
-    font-weight: $headings-font-weight-bold;
+      margin: 0;
+
+      text-transform: uppercase;
+      font-weight: $headings-font-weight-bold;
+    }
   }
 }
 
@@ -33,80 +35,83 @@
 // Variants
 // --------------------------------------------------
 
-// Background image
-.sectioned--skewed--background-image {
+.paragraph {
 
-  .field--name-field-description {
+  // Background image
+  &.sectioned--skewed--background-image {
 
-    &,
-    h1, h2, h3, h4, h5, h6,
-    p {
-      color: #fff;
+    .field--name-field-description {
+
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: #fff;
+      }
     }
   }
-}
 
-// White
-.sectioned--skewed--background-color-white {
+  // White
+  &.sectioned--skewed--background-color-white {
 
-  .field--name-field-description {
+    .field--name-field-description {
 
-    &,
-    h1, h2, h3, h4, h5, h6,
-    p {
-      color: $text-color;
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: $text-color;
+      }
     }
   }
-}
 
-// Light gray
-.sectioned--skewed--background-color-light-gray {
+  // Light gray
+  &.sectioned--skewed--background-color-light-gray {
 
-  .field--name-field-description {
+    .field--name-field-description {
 
-    &,
-    h1, h2, h3, h4, h5, h6,
-    p {
-      color: $text-color;
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: $text-color;
+      }
     }
   }
-}
 
-// Gray
-.sectioned--skewed--background-color-gray {
+  // Gray
+  &.sectioned--skewed--background-color-gray {
 
-  .field--name-field-description {
+    .field--name-field-description {
 
-    &,
-    h1, h2, h3, h4, h5, h6,
-    p {
-      color: $headings-color;
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: $headings-color;
+      }
     }
   }
-}
 
-// Primary
-.sectioned--skewed--background-color-primary {
+  // Primary
+  &.sectioned--skewed--background-color-primary {
 
-  .field--name-field-description {
+    .field--name-field-description {
 
-    &,
-    h1, h2, h3, h4, h5, h6,
-    p {
-      color: $btn-primary-color;
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: $btn-primary-color;
+      }
     }
   }
-}
 
-// Secondary
-.sectioned--skewed--background-color-secondary {
+  // Secondary
+  &.sectioned--skewed--background-color-secondary {
 
-  .field--name-field-description {
+    .field--name-field-description {
 
-    &,
-    h1, h2, h3, h4, h5, h6,
-    p {
-      color: $btn-secondary-color;
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: $btn-secondary-color;
+      }
     }
   }
 }

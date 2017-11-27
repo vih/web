@@ -1,0 +1,19 @@
+uuid: e01be8ae-f5b8-4d32-9981-3f316b4b4384
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.notify
+    - field.storage.block_content.field_heading
+id: block_content.notify.field_heading
+field_name: field_heading
+entity_type: block_content
+bundle: notify
+label: Overskrift
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

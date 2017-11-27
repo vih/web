@@ -14,37 +14,39 @@
 // Styling
 // --------------------------------------------------
 
-// File
-.field--name-file {
-  text-align: center;
+.paragraph {
 
-  // Resets
-  .file {
-    display: inline-block;
+  .field--name-file {
+    text-align: center;
 
-    width: auto;
+    // Resets
+    .file {
+      display: inline-block;
 
-    font-size: inherit;
-  }
+      width: auto;
 
-  .file-link {
-    @extend h4;
-  }
-
-  .file-icon {
-
-    .icon {
-      font-family: 'Glyphicons Halflings' !important; // Bit of a hack to ignore Icomoons settings
+      font-size: inherit;
     }
-  }
 
-  .file-size {
-    @extend h5;
-  }
+    .file-link {
+      @extend h4;
+    }
 
-  // Stacked
-  .field--item + .field--item {
-    margin-top: floor( ( $grid-gutter-width / 2 ) );
+    .file-icon {
+
+      .icon {
+        font-family: 'Glyphicons Halflings' !important; // Bit of a hack to ignore Icomoons settings
+      }
+    }
+
+    .file-size {
+      @extend h5;
+    }
+
+    // Stacked
+    .field--item + .field--item {
+      margin-top: floor( ( $grid-gutter-width / 2 ) );
+    }
   }
 }
 
@@ -52,227 +54,224 @@
 // Variants
 // --------------------------------------------------
 
-// Background image
-.sectioned--skewed--background-image {
+.paragraph {
 
-  // File
-  .field--name-file {
+  // Background image
+  &.sectioned--skewed--background-image {
 
-    .file {
+    .field--name-file {
 
-      > span {
-        border-top-color: rgba(255, 255, 255, .3);
-        border-bottom-color: rgba(255, 255, 255, .3);
+      .file {
 
-        background-color: rgba($body-bg, .4);
+        > span {
+          border-top-color: rgba(255, 255, 255, .3);
+          border-bottom-color: rgba(255, 255, 255, .3);
 
-        &:first-child {
-          border-left-color: rgba(255, 255, 255, .3);
-        }
+          background-color: rgba($body-bg, .4);
 
-        &:last-child {
-          border-right-color: rgba(255, 255, 255, .3);
+          &:first-child {
+            border-left-color: rgba(255, 255, 255, .3);
+          }
+
+          &:last-child {
+            border-right-color: rgba(255, 255, 255, .3);
+          }
         }
       }
-    }
 
-    .file-icon {
+      .file-icon {
 
-      .icon {
+        .icon {
+          color: #fff;
+        }
+      }
+
+      .file-link {
+        color: #fff;
+      }
+
+      .file-size {
         color: #fff;
       }
     }
-
-    .file-link {
-      color: #fff;
-    }
-
-    .file-size {
-      color: #fff;
-    }
   }
-}
 
-// White
-.sectioned--skewed--background-color-white {
+  // White
+  &.sectioned--skewed--background-color-white {
 
-  // File
-  .field--name-file {
+    .field--name-file {
 
-    .file {
+      .file {
 
-      > span {
-        border-top-color: $border-color;
-        border-bottom-color: $border-color;
+        > span {
+          border-top-color: $border-color;
+          border-bottom-color: $border-color;
 
-        background-color: $body-bg;
+          background-color: $body-bg;
 
-        &:first-child {
-          border-left-color: $border-color;
-        }
+          &:first-child {
+            border-left-color: $border-color;
+          }
 
-        &:last-child {
-          border-right-color: $border-color;
+          &:last-child {
+            border-right-color: $border-color;
+          }
         }
       }
-    }
 
-    .file-link {
-      color: $headings-color;
-    }
+      .file-link {
+        color: $headings-color;
+      }
 
-    .file-size {
-      color: $text-color-light;
-    }
-  }
-}
-
-// Light gray
-.sectioned--skewed--background-color-light-gray {
-
-  // File
-  .field--name-file {
-
-    .file {
-
-      > span {
-        border-top-color: $border-color;
-        border-bottom-color: $border-color;
-
-        background-color: $body-bg;
-
-        &:first-child {
-          border-left-color: $border-color;
-        }
-
-        &:last-child {
-          border-right-color: $border-color;
-        }
+      .file-size {
+        color: $text-color-light;
       }
     }
-
-    .file-link {
-      color: $headings-color;
-    }
-
-    .file-size {
-      color: $text-color-light;
-    }
   }
-}
 
-// Gray
-.sectioned--skewed--background-color-gray {
+  // Light gray
+  &.sectioned--skewed--background-color-light-gray {
 
-  // File
-  .field--name-file {
+    .field--name-file {
 
-    .file {
+      .file {
 
-      > span {
-        border-top-color: $border-color;
-        border-bottom-color: $border-color;
+        > span {
+          border-top-color: $border-color;
+          border-bottom-color: $border-color;
 
-        background-color: $body-bg;
+          background-color: $body-bg;
 
-        &:first-child {
-          border-left-color: $border-color;
-        }
+          &:first-child {
+            border-left-color: $border-color;
+          }
 
-        &:last-child {
-          border-right-color: $border-color;
+          &:last-child {
+            border-right-color: $border-color;
+          }
         }
       }
-    }
 
-    .file-link {
-      color: $headings-color;
-    }
+      .file-link {
+        color: $headings-color;
+      }
 
-    .file-size {
-      color: $text-color-light;
-    }
-  }
-}
-
-// Primary
-.sectioned--skewed--background-color-primary {
-
-  // File
-  .field--name-file {
-
-    .file {
-
-      > span {
-        border-top-color: rgba(255, 255, 255, .3);
-        border-bottom-color: rgba(255, 255, 255, .3);
-
-        background-color: rgba($body-bg, .2);
-
-        &:first-child {
-          border-left-color: rgba(255, 255, 255, .3);
-        }
-
-        &:last-child {
-          border-right-color: rgba(255, 255, 255, .3);
-        }
+      .file-size {
+        color: $text-color-light;
       }
     }
+  }
 
-    .file-icon {
+  // Gray
+  &.sectioned--skewed--background-color-gray {
 
-      .icon {
+    .field--name-file {
+
+      .file {
+
+        > span {
+          border-top-color: $border-color;
+          border-bottom-color: $border-color;
+
+          background-color: $body-bg;
+
+          &:first-child {
+            border-left-color: $border-color;
+          }
+
+          &:last-child {
+            border-right-color: $border-color;
+          }
+        }
+      }
+
+      .file-link {
+        color: $headings-color;
+      }
+
+      .file-size {
+        color: $text-color-light;
+      }
+    }
+  }
+
+  // Primary
+  &.sectioned--skewed--background-color-primary {
+
+    .field--name-file {
+
+      .file {
+
+        > span {
+          border-top-color: rgba(255, 255, 255, .3);
+          border-bottom-color: rgba(255, 255, 255, .3);
+
+          background-color: rgba($body-bg, .2);
+
+          &:first-child {
+            border-left-color: rgba(255, 255, 255, .3);
+          }
+
+          &:last-child {
+            border-right-color: rgba(255, 255, 255, .3);
+          }
+        }
+      }
+
+      .file-icon {
+
+        .icon {
+          color: #fff;
+        }
+      }
+
+      .file-link {
+        color: #fff;
+      }
+
+      .file-size {
         color: #fff;
       }
     }
-
-    .file-link {
-      color: #fff;
-    }
-
-    .file-size {
-      color: #fff;
-    }
   }
-}
 
-// Secondary
-.sectioned--skewed--background-color-secondary {
+  // Secondary
+  &.sectioned--skewed--background-color-secondary {
 
-  // File
-  .field--name-file {
+    .field--name-file {
 
-    .file {
+      .file {
 
-      > span {
-        border-top-color: rgba(255, 255, 255, .2);
-        border-bottom-color: rgba(255, 255, 255, .2);
+        > span {
+          border-top-color: rgba(255, 255, 255, .2);
+          border-bottom-color: rgba(255, 255, 255, .2);
 
-        background-color: rgba($body-bg, .15);
+          background-color: rgba($body-bg, .15);
 
-        &:first-child {
-          border-left-color: rgba(255, 255, 255, .2);
-        }
+          &:first-child {
+            border-left-color: rgba(255, 255, 255, .2);
+          }
 
-        &:last-child {
-          border-right-color: rgba(255, 255, 255, .2);
+          &:last-child {
+            border-right-color: rgba(255, 255, 255, .2);
+          }
         }
       }
-    }
 
-    .file-icon {
+      .file-icon {
 
-      .icon {
+        .icon {
+          color: #fff;
+        }
+      }
+
+      .file-link {
         color: #fff;
       }
-    }
 
-    .file-link {
-      color: #fff;
-    }
-
-    .file-size {
-      color: #fff;
+      .file-size {
+        color: #fff;
+      }
     }
   }
 }

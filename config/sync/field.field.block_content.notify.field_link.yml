@@ -1,0 +1,23 @@
+uuid: 1532f781-c11f-4cec-9438-6fdbd0e85681
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.notify
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.notify.field_link
+field_name: field_link
+entity_type: block_content
+bundle: notify
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

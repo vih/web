@@ -1,6 +1,5 @@
 <!-- Begin - wrapper -->
 <div class="layout__wrapper layout--fixed-header" id="page-html">
-    {{ drupal_block('popup_cta') }}
 
     <!-- Begin - drawer -->
     <div class="layout__drawer" aria-hidden="true">
@@ -21,6 +20,14 @@
 
         <!-- Begin - content -->
         <div class="layout__content">
+
+            {# Begin - notify #}
+            {% if page.notify is defined and page.notify | render | striptags | trim %}
+                {% block notify %}
+                    {{ page.notify }}
+                {% endblock %}
+            {% endif %}
+            {# End - notify #}
 
             {# Begin - banner #}
             {% if is_front %}
@@ -111,10 +118,6 @@
     <!-- Begin - obfuscator -->
     <div class="layout__obfuscator"></div>
     <!-- End - obfuscator -->
-
-    {# Begin - cookie popup #}
-    {{ drupal_block('popup_cta') }}
-    {# End - cookie popup #}
 
 </div>
 <!-- End - wrapper -->

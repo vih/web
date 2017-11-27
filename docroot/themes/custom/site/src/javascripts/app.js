@@ -5,15 +5,49 @@
   // Enable layout
   layout.init();
 
-  //Modal PopUp
-  modalPopUp.init();
+  // Notify
+  var $notifications = $('.notify');
+  if ($notifications.length) {
+
+    $notifications.each(function(index, val) {
+      var $document = $('.layout__document'),
+          $region = $('.region-notify'),
+          $element = $(this),
+          cookie_id = 'notify_id_' + $element.attr('id'),
+          $close = $element.find('.notify__close');
+
+      // Flex magic - fixing display: block on fadeIn (see: https://stackoverflow.com/questions/28904698/how-fade-in-a-flex-box)
+      $element.css('display', 'flex').hide();
+
+      // No cookie has been set yet
+      if (! Cookies.get(cookie_id)) {
+
+        // Fade the element in
+        $element
+            .delay(2000)
+            .fadeIn(function() {
+              var height = $region.outerHeight(true);
+
+              $document.css('padding-bottom', height);
+            });
+      }
+
+      // Closed
+      $close.on('click', function(event) {
+        $element.fadeOut();
+
+        // Set a cookie, to stop this notification from being displayed again
+        Cookies.set(cookie_id, true);
+      });
+    });
+  }
 
   $("#toggle_mobile_menu").click(function (event) {
     $('#main-menu').toggleClass('mobile-menu-open');
     $('.layout__document').toggleClass('mobile-menu-open');
   })
 
-//Show search form block
+  //Show search form block
   $(".search-button").click(function (event) {
     if ($("#search-form-popover").hasClass("hidden")) {
       $("#search-form-popover").removeClass('hidden');
@@ -21,7 +55,7 @@
     }
   });
 
-//Hide search form block
+  //Hide search form block
   $(document).click(function (event) {
     if (!$(event.target).closest('#search-form-popover').length && !$(event.target).closest('.search-button').length) {
       if (!$("#search-form-popover").hasClass("hidden")) {

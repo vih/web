@@ -1,0 +1,46 @@
+uuid: 10e77822-38ab-4959-bfe3-95cae906e846
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.notify
+    - field.field.block_content.notify.field_heading
+    - field.field.block_content.notify.field_highlighted_text
+    - field.field.block_content.notify.field_link
+  module:
+    - link
+id: block_content.notify.default
+targetEntityType: block_content
+bundle: notify
+mode: default
+content:
+  field_heading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_highlighted_text:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true

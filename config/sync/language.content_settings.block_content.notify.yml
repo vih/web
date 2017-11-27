@@ -1,0 +1,11 @@
+uuid: 792ba683-73f8-49c0-9b69-ca130e7fd380
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.notify
+id: block_content.notify
+target_entity_type_id: block_content
+target_bundle: notify
+default_langcode: site_default
+language_alterable: false

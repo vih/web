@@ -14,11 +14,13 @@
 // Styling
 // --------------------------------------------------
 
-// Link
-.field--name-field-link {
+.paragraph {
 
-  a {
-    @extend .btn;
+  .field--name-field-link {
+
+    a {
+      @extend .btn;
+    }
   }
 }
 
@@ -26,74 +28,71 @@
 // Variants
 // --------------------------------------------------
 
-// Background image
-.sectioned--skewed--background-image {
+.paragraph {
 
-  // Link
-  .field--name-field-link {
+  // Background image
+  &.sectioned--skewed--background-image {
 
-    a {
-      @extend .btn-primary;
+    .field--name-field-link {
+
+      a {
+        @extend .btn-primary;
+      }
     }
   }
-}
 
-// White
-.sectioned--skewed--background-color-white {
+  // White
+  &.sectioned--skewed--background-color-white {
 
-  // Link
-  .field--name-field-link {
+    .field--name-field-link {
 
-    a {
-      @extend .btn-primary;
+      a {
+        @extend .btn-primary;
+      }
     }
   }
-}
 
-// Light gray
-.sectioned--skewed--background-color-light-gray {
+  // Light gray
+  &.sectioned--skewed--background-color-light-gray {
 
-  // Link
-  .field--name-field-link {
+    .field--name-field-link {
 
-    a {
-      @extend .btn-primary;
+      a {
+        @extend .btn-primary;
+      }
     }
   }
-}
 
-// Gray
-.sectioned--skewed--background-color-gray {
+  // Gray
+  &.sectioned--skewed--background-color-gray {
 
-  // Link
-  .field--name-field-link {
+    .field--name-field-link {
 
-    a {
-      @extend .btn-primary;
+      a {
+        @extend .btn-primary;
+      }
     }
   }
-}
 
-// Primary
-.sectioned--skewed--background-color-primary {
+  // Primary
+  &.sectioned--skewed--background-color-primary {
 
-  // Link
-  .field--name-field-link {
+    .field--name-field-link {
 
-    a {
-      @extend .btn-default;
+      a {
+        @extend .btn-default;
+      }
     }
   }
-}
 
-// Secondary
-.sectioned--skewed--background-color-secondary {
+  // Secondary
+  &.sectioned--skewed--background-color-secondary {
 
-  // Link
-  .field--name-field-link {
+    .field--name-field-link {
 
-    a {
-      @extend .btn-primary;
+      a {
+        @extend .btn-primary;
+      }
     }
   }
 }

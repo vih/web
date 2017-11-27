@@ -1,0 +1,41 @@
+{% block content %}
+    <aside{{ attributes.addClass('notify') }}>
+
+        {# Begin - highlighted text #}
+        {% if content.field_highlighted_text %}
+            <div class="notify__highlighted">
+                {{ content.field_highlighted_text }}
+            </div>
+        {% endif %}
+        {# End - highlighted text #}
+
+        <!-- Begin - body -->
+        <div class="notify__body">
+
+            <!-- Begin - content -->
+            <div class="notify__content">
+
+                {# Begin - heading #}
+                {{ content.field_heading }}
+                {# End - heading #}
+
+                {# Begin - link #}
+                {{ content.field_link }}
+                {# End - link #}
+
+            </div>
+            <!-- End - content -->
+
+            <!-- Begin - close -->
+            <div class="notify__close">
+                <button type="button" class="close" aria-label="Luk">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!-- End - close -->
+
+        </div>
+        <!-- End - body -->
+
+    </aside>
+{% endblock %}

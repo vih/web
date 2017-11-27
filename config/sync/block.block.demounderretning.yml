@@ -1,0 +1,25 @@
+uuid: 78fa3621-107a-4fc1-bec1-9d5b9bd35e4c
+langcode: da
+status: true
+dependencies:
+  content:
+    - 'block_content:notify:2ce2c5ab-63ad-4808-ac53-3fb114a9c8e9'
+  module:
+    - block_content
+  theme:
+    - site
+id: demounderretning
+theme: site
+region: notify
+weight: 0
+provider: null
+plugin: 'block_content:2ce2c5ab-63ad-4808-ac53-3fb114a9c8e9'
+settings:
+  id: 'block_content:2ce2c5ab-63ad-4808-ac53-3fb114a9c8e9'
+  label: 'Demo underretning'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

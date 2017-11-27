@@ -1,6 +1,6 @@
 <!-- Begin - wrapper -->
 <div class="layout__wrapper layout--fixed-header">
-    {{ drupal_block('popup_cta') }}
+
     <!-- Begin - drawer -->
     <div class="layout__drawer" aria-hidden="true">
 
@@ -20,6 +20,14 @@
 
         <!-- Begin - content -->
         <div class="layout__content">
+
+            {# Begin - notify #}
+            {% if page.notify is defined and page.notify | render | striptags | trim %}
+                {% block notify %}
+                    {{ page.notify }}
+                {% endblock %}
+            {% endif %}
+            {# End - notify #}
 
             <!-- Begin - content -->
             <section{{ content_attributes.addClass(content_classes) }}>

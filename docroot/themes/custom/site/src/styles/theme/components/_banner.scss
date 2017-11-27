@@ -52,6 +52,18 @@ $lg-banner-title-font-size: 46px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  // Actions
+  .field--name-field-link {
+    margin-top: 50px;
+
+    text-align: center;
+
+    a {
+      @extend .btn;
+      @extend .btn-primary;
+    }
+  }
 }
 .banner__inner {
   display: flex;
@@ -73,18 +85,6 @@ $lg-banner-title-font-size: 46px;
   font-size: $xs-banner-title-font-size;
 
   color: #fff;
-}
-
-// Actions
-.field--name-field-link {
-  margin-top: 50px;
-
-  text-align: center;
-
-  a {
-    @extend .btn;
-    @extend .btn-primary;
-  }
 }
 
 // Logo
