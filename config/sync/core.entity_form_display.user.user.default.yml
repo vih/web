@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.user.user.field_e_mail
     - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_kvalifikationer
@@ -13,9 +12,10 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
+    - image.style.thumbnail
   module:
     - datetime
-    - entity_browser
+    - image
     - text
     - user
 id: user.user.default
@@ -88,16 +88,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_vih_user_photo:
-    type: entity_browser_file
+    type: image_image
     weight: 0
     settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
       preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
+      progress_indicator: throbber
     region: content
     third_party_settings: {  }
   field_vih_user_title:
