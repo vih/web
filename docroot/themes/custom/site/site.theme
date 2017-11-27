@@ -8,16 +8,6 @@
 use Drupal\image\Entity\ImageStyle;
 
 /**
- * Implements hook_preprocess_HOOK() for html.html.twig.
- */
-function site_preprocess_html(array &$variables) {
-  // $variables['attributes']['class'][] = 'navigation-bar-enabled-xs';
-  // $variables['attributes']['class'][] = 'sidebar-left-enabled-xs';
-  // $variables['attributes']['class'][] = 'sidebar-left-hidden-xs';
-  // $variables['attributes']['class'][] = 'sidebar-left-content-push-xs';
-}
-
-/**
  * Implements hook_page_attachments_alter().
  */
 function site_page_attachments_alter(array &$page) {
@@ -451,7 +441,7 @@ function site_theme_suggestions_views_view_alter(
  * Implements hook_preprocess_form().
  */
 function site_preprocess_form(array &$variables) {
-  //$variables['attributes']['novalidate'] = 'novalidate';
+  $form_id = $variables['attributes']['id'];
 }
 
 /**
@@ -521,4 +511,15 @@ function site_preprocess_taxonomy_term(&$variables) {
 function site_preprocess_user(&$variables) {
   $variables['attributes']['class'][] = 'user';
   $variables['attributes']['class'][] = $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function site_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  // Remove form glitter in Firefox (see: https://www.drupal.org/node/2900908)
+  if (isset($form['name']['#attributes']['autofocus'])) {
+    unset($form['name']['#attributes']['autofocus']);
+  }
 }

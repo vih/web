@@ -11,3 +11,15 @@ function bellcom_preprocess_page(&$variables) {
   $general_startup_year = ((int) theme_get_setting('general_startup_year')) ? (int) theme_get_setting('general_startup_year') : date('Y');
   $variables['theme_settings']['copyright_interval'] = ((int) $general_startup_year < date('Y') AND !empty((int) $general_startup_year)) ? (int) $general_startup_year . '-' . date('Y') : date('Y');
 }
+
+function bellcom_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['name']['#attributes']['autofocus'])) {
+    unset($form['name']['#attributes']['autofocus']);
+  }
+}
+
+function site_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['name']['#attributes']['autofocus'])) {
+    unset($form['name']['#attributes']['autofocus']);
+  }
+}

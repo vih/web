@@ -1,59 +1,55 @@
 {% if content %}
-<section{{ attributes.addClass('sectioned', 'sectioned--content') }}>
-    <div class="sectioned__inner">
-        <div class="container">
+<article{{ attributes }}>
 
-            {# Begin - title #}
-            {% if content.field_vih_user_title %}
-                <h2>{{ content.field_vih_user_title }}</h2>
-            {% endif %}
-            {# End - title #}
-            
-            <div class="row">
+    {# Begin - title #}
+    {% if content.field_vih_user_title %}
+        <h2>{{ content.field_vih_user_title }}</h2>
+    {% endif %}
+    {# End - title #}
 
-                <div class="col-xs-12 col-md-6">
+    <div class="row">
 
-                    {# Begin - firstname #}
-                    {{ content.field_user_name_first }}
-                    {# End - firstname #}
+        <div class="col-xs-12 col-md-6">
 
-                    {# Begin - lastname #}
-                    {{ content.field_user_name_last }}
-                    {# End - lastname #}
+            {# Begin - firstname #}
+            {{ content.field_user_name_first }}
+            {# End - firstname #}
 
-                    {# Begin - birthday #}
-                    {{ content.field_user_birthday }}
-                    {# End - birthday #}
+            {# Begin - lastname #}
+            {{ content.field_user_name_last }}
+            {# End - lastname #}
 
-                    {# Begin - qualifications #}
-                    {{ content.field_user_kvalifikationer }}
-                    {# End - qualifications #}
+            {# Begin - birthday #}
+            {{ content.field_user_birthday }}
+            {# End - birthday #}
 
-                    {# Begin - description #}
-                    {{ content.field_vih_user_descr }}
-                    {# End - description #}
+            {# Begin - qualifications #}
+            {{ content.field_user_kvalifikationer }}
+            {# End - qualifications #}
 
-                </div>
+            {# Begin - description #}
+            {{ content.field_vih_user_descr }}
+            {# End - description #}
 
-                <div class="col-xs-12 col-md-6">
-
-                    {# Begin - user picture #}
-                    {{ content.field_vih_user_photo }}
-                    {# End - user picture #}
-
-                    {# Begin - e-mail address #}
-                    {{ content.field_e_mail }}
-                    {# End - e-mail address #}
-
-                    {# Begin - phone #}
-                    {{ content.field_vih_user_phone }}
-                    {# End - phone #}
-
-                </div>
-
-            </div>
         </div>
+
+        <div class="col-xs-12 col-md-6">
+
+            {# Begin - user picture #}
+            {{ content.field_vih_user_photo }}
+            {# End - user picture #}
+
+            {# Begin - e-mail address #}
+            {{ content.field_e_mail }}
+            {# End - e-mail address #}
+
+            {# Begin - phone #}
+            {{ content.field_vih_user_phone }}
+            {# End - phone #}
+
+        </div>
+
     </div>
 
-</section>
+</article>
 {% endif %}
