@@ -51,7 +51,6 @@ class LongCourseOrderForm extends FormBase {
     $this->course = $course;
     if ($order != NULL) {
       if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($course, $order))) {
-        dpm('bingo');
         $this->courseOrder = $order;
       }
     }

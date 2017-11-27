@@ -57,5 +57,82 @@ function vih_subscription_theme() {
   ];
 }
 
+function vih_subscription_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrumb &$breadcrumb, \Drupal\Core\Routing\RouteMatchInterface $route_match, array $context) {
+  if (!empty($breadcrumb)) {
+    $links = $breadcrumb->getLinks();
 
-?>
+    //reusing home link
+    $homeLink = $links[0];
+
+    $customLinks = array();
+
+    //node/xx page
+    if ($node = $route_match->getParameter('node')) {
+      if ($node->getType() == 'vih_long_cource') {
+        $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Long courses'), \Drupal\Core\Url::fromUri('internal:/lange-hoejskolekurser'));
+      } elseif ($node->getType() == 'vih_short_course') {
+        $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Short courses'), \Drupal\Core\Url::fromUri('internal:/kortekurser'));
+      } elseif ($node->getType() == 'event') {
+        $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Events'), \Drupal\Core\Url::fromUri('internal:/kalender'));
+      }
+    }
+
+    //course/event creation page
+    if ($route_match->getRouteName() == 'vih_subscription.long_course_order_create') {
+      $course = $route_match->getParameter('course');
+      $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Long courses'), \Drupal\Core\Url::fromUri('internal:/lange-hoejskolekurser'));
+      $customLinks[] = $course->toLink();
+    } elseif ($route_match->getRouteName() == 'vih_subscription.short_course_order_create') {
+      $course = $route_match->getParameter('course');
+      $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Short courses'), \Drupal\Core\Url::fromUri('internal:/kortekurser'));
+      $customLinks[] = $course->toLink();
+    } elseif ($route_match->getRouteName() == 'vih_subscription.event_order_create') {
+      $course = $route_match->getParameter('event');
+      $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Events'), \Drupal\Core\Url::fromUri('internal:/kalender'));
+      $customLinks[] = $course->toLink();
+    }
+
+    //course/event confirmation page
+    if ($route_match->getRouteName() == 'vih_subscription.subscription_confirmation_redirect') {
+      $subject = $route_match->getParameter('subject');
+      $order = $route_match->getParameter('order');
+      $checksum = $route_match->getParameter('checksum');
+
+      if ($subject->getType() == 'vih_long_cource') {
+        $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Long courses'), \Drupal\Core\Url::fromUri('internal:/lange-hoejskolekurser'));
+        $customLinks[] = $subject->toLink();
+
+        $customLinks[] = \Drupal\Core\Link::createFromRoute(t('Tilmeld'), 'vih_subscription.long_course_order_create', [
+          'course' => $subject->id(),
+          'order' => $order->id(),
+          'checksum' => $checksum
+        ]);
+
+      } elseif ($subject->getType() == 'vih_short_course') {
+        $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Short courses'), \Drupal\Core\Url::fromUri('internal:/kortekurser'));
+        $customLinks[] = $subject->toLink();
+        $customLinks[] = \Drupal\Core\Link::createFromRoute(t('Tilmeld'), 'vih_subscription.short_course_order_create', [
+          'course' => $subject->id(),
+          'order' => $order->id(),
+          'checksum' => $checksum
+        ]);
+      } elseif ($subject->getType() == 'event') {
+        $customLinks[] = \Drupal\Core\Link::fromTextAndUrl(t('Events'), \Drupal\Core\Url::fromUri('internal:/kalender'));
+        $customLinks[] = $subject->toLink();
+        $customLinks[] = \Drupal\Core\Link::createFromRoute(t('Tilmeld'), 'vih_subscription.event_order_create', [
+          'event' => $subject->id(),
+          'order' => $order->id(),
+          'checksum' => $checksum
+        ]);
+      }
+    }
+
+    //creating new links object
+    $links = array();
+    $links[] = $homeLink;
+    $links = array_merge($links, $customLinks);
+
+    $breadcrumb = new \Drupal\Core\Breadcrumb\Breadcrumb();
+    $breadcrumb->setLinks($links);
+  }
+}
