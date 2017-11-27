@@ -59,11 +59,6 @@ function vih_subscription_theme() {
 
 function vih_subscription_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrumb &$breadcrumb, \Drupal\Core\Routing\RouteMatchInterface $route_match, array $context) {
   if (!empty($breadcrumb)) {
-    $links = $breadcrumb->getLinks();
-
-    //reusing home link
-    $homeLink = $links[0];
-
     $customLinks = array();
 
     //node/xx page
@@ -129,6 +124,11 @@ function vih_subscription_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadc
 
     //if customLinks is empty, means we didn't have any match
     if (!empty($customLinks)) {
+      //old links
+      $links = $breadcrumb->getLinks();
+      //reusing home link
+      $homeLink = $links[0];
+
       //creating new links object
       $links = array();
       $links[] = $homeLink;
