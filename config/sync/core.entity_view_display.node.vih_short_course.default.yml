@@ -16,11 +16,13 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_start_date
     - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.scheduled_update
+    - image.style.banner_small
     - node.type.vih_short_course
   module:
     - datetime
     - entity_reference_revisions
     - image
+    - options
     - panelizer
     - text
     - user
@@ -53,7 +55,7 @@ content:
     region: content
   field_vih_course_heading:
     weight: 10
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -61,7 +63,7 @@ content:
     region: content
   field_vih_course_subheading:
     weight: 11
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -87,9 +89,9 @@ content:
     region: content
   field_vih_sc_image:
     weight: 5
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: banner_small
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -105,7 +107,7 @@ content:
     region: content
   field_vih_sc_persons_limit:
     weight: 12
-    label: above
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -132,6 +134,13 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_vih_sc_status:
+    type: list_default
+    weight: 13
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 0
     region: content
@@ -149,5 +158,4 @@ content:
     weight: -20
     region: content
 hidden:
-  field_vih_sc_status: true
   langcode: true

@@ -5,6 +5,17 @@ dependencies:
   config:
     - field.storage.node.field_paragraphs
     - node.type.vih_short_course
+    - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.class_packages
+    - paragraphs.paragraphs_type.event_list
+    - paragraphs.paragraphs_type.file
+    - paragraphs.paragraphs_type.list_of_news_teasers
+    - paragraphs.paragraphs_type.long_course_list_
+    - paragraphs.paragraphs_type.short_course_list_
+    - paragraphs.paragraphs_type.user_quote
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
@@ -23,23 +34,34 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      1_column_action_centered: 1_column_action_centered
+      class_packages: class_packages
+      list_of_news_teasers: list_of_news_teasers
+      video: video
+      event_list: event_list
+      file: file
+      long_course_list_: long_course_list_
+      short_course_list_: short_course_list_
+      user_quote: user_quote
+      vih_class_groups_accordion: vih_class_groups_accordion
+      vih_single_class_group: vih_single_class_group
       vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
+        enabled: true
         weight: 13
-        enabled: false
       class_packages:
+        enabled: true
         weight: 14
-        enabled: false
       list_of_news_teasers:
+        enabled: true
         weight: 15
-        enabled: false
       page_content:
         weight: 16
         enabled: false
       video:
+        enabled: true
         weight: 17
-        enabled: false
       vih_course_slot:
         weight: 18
         enabled: false
@@ -62,26 +84,26 @@ settings:
         weight: 24
         enabled: false
       event_list:
+        enabled: true
         weight: 26
-        enabled: false
       file:
+        enabled: true
         weight: 27
-        enabled: false
       long_course_list_:
+        enabled: true
         weight: 29
-        enabled: false
       news_list:
         weight: 30
         enabled: false
       short_course_list_:
+        enabled: true
         weight: 32
-        enabled: false
       user_quote:
+        enabled: true
         weight: 33
-        enabled: false
       vih_class_groups_accordion:
+        enabled: true
         weight: 35
-        enabled: false
       vih_ordered_course_person:
         weight: 40
         enabled: false
@@ -89,8 +111,8 @@ settings:
         weight: 42
         enabled: false
       vih_single_class_group:
+        enabled: true
         weight: 44
-        enabled: false
       vih_webform:
         enabled: true
         weight: 46

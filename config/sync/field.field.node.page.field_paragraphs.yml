@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
+    - paragraphs.paragraphs_type.file
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
     - paragraphs.paragraphs_type.page_content
@@ -15,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
@@ -41,6 +43,8 @@ settings:
       page_content: page_content
       short_course_list_: short_course_list_
       long_course_list_: long_course_list_
+      file: file
+      vih_single_class_group: vih_single_class_group
       user_quote: user_quote
       vih_class_groups_accordion: vih_class_groups_accordion
       vih_webform: vih_webform
@@ -94,11 +98,11 @@ settings:
         enabled: true
         weight: 22
       file:
+        enabled: true
         weight: 26
-        enabled: false
       vih_single_class_group:
+        enabled: true
         weight: 26
-        enabled: false
       user_quote:
         enabled: true
         weight: 32

@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - field.field.node.vih_long_cource.scheduled_update
+    - image.style.banner_small
     - node.type.vih_long_cource
   module:
     - entity_reference_revisions
@@ -265,12 +266,21 @@ content:
   field_vih_course_image:
     type: image
     weight: 8
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: banner_small
       image_link: ''
     third_party_settings: {  }
     region: content
+  field_vih_course_persons_limit:
+    type: number_integer
+    weight: 12
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
   field_vih_course_price:
     weight: 4
     label: hidden
@@ -334,5 +344,4 @@ content:
     region: content
 hidden:
   field_vih_course_periods: true
-  field_vih_course_persons_limit: true
   langcode: true
