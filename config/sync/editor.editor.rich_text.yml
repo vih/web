@@ -19,6 +19,7 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
             - Strike
             - Superscript
             - Subscript
@@ -29,6 +30,7 @@ settings:
           items:
             - DrupalLink
             - DrupalUnlink
+            - Linkit
         -
           name: Lists
           items:
@@ -41,6 +43,8 @@ settings:
             - Table
             - HorizontalRule
             - media_browser
+            - video_embed
+            - DrupalImage
         -
           name: 'Block Formatting'
           items:
@@ -55,6 +59,15 @@ settings:
       language_list: un
     stylescombo:
       styles: ''
+    linkit:
+      linkit_profile: internal
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
 image_upload:
   status: true
   scheme: public

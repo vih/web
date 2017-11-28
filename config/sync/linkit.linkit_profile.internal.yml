@@ -1,0 +1,26 @@
+uuid: 79a7e66b-3d0a-4537-83be-8de332ff33da
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: internal
+label: Intern
+description: ''
+attributes: {  }
+matchers:
+  138d2504-44f8-4746-8510-cca952981003:
+    uuid: 138d2504-44f8-4746-8510-cca952981003
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles:
+        event: event
+        news: news
+        page: page
+        vih_course_period: vih_course_period
+        vih_long_cource: vih_long_cource
+        vih_short_course: vih_short_course
+      group_by_bundle: false
+      include_unpublished: false

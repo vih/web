@@ -23,9 +23,9 @@ third_party_settings:
   field_group:
     group_banner:
       children:
+        - title
         - field_page_main_image
         - field_image
-        - title
       parent_name: ''
       weight: 0
       format_type: tab
@@ -97,7 +97,7 @@ content:
     region: content
   field_image:
     type: entity_browser_file
-    weight: 14
+    weight: 17
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -119,7 +119,7 @@ content:
     region: content
   field_page_main_image:
     type: entity_browser_file
-    weight: 13
+    weight: 16
     settings:
       entity_browser: image_browser
       field_widget_edit: true

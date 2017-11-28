@@ -75,9 +75,9 @@ content:
     region: content
   field_image:
     weight: 0
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: banner_small
       image_link: ''
     third_party_settings: {  }
     type: image

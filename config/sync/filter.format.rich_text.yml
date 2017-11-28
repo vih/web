@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - video_embed_wysiwyg
 _core:
   default_config_hash: xNqrUFmyyyy8JFxTT_Zd1CLPZ3fyIR8wqQkEfPrYj9o
 name: 'Rich Text'
@@ -75,3 +76,9 @@ filters:
     weight: -42
     settings:
       filter_url_length: 72
+  video_embed_wysiwyg:
+    id: video_embed_wysiwyg
+    provider: video_embed_wysiwyg
+    status: true
+    weight: 0
+    settings: {  }
