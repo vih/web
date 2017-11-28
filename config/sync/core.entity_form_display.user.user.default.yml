@@ -103,7 +103,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 11
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  language:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  langcode: true
-  language: true
   timezone: true

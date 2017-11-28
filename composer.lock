@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "069b2c022a48ff74ae32d40997a8abc0",
+    "content-hash": "3f70350fff3084217d4eb173a9359bea",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -1315,7 +1315,7 @@
                 "issues": "https://drupal.org/project/issues/coffee",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             },
-            "time": "2017-05-09 08:49:39"
+            "time": "2017-05-09T08:49:39+00:00"
         },
         {
             "name": "drupal/config_update",
@@ -2472,7 +2472,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_clone"
             },
-            "time": "2017-10-04 11:47:45"
+            "time": "2017-10-04T11:47:45+00:00"
         },
         {
             "name": "drupal/entity_embed",
@@ -2773,7 +2773,7 @@
                 "issues": "https://www.drupal.org/project/issues/examples",
                 "documentation": "https://api.drupal.org/api/examples"
             },
-            "time": "2017-11-21 19:17:06"
+            "time": "2017-11-21T19:17:06+00:00"
         },
         {
             "name": "drupal/features",
@@ -2846,6 +2846,64 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/features"
             }
+        },
+        {
+            "name": "drupal/field_group",
+            "version": "dev-3.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/field_group",
+                "reference": "a684a1970f937de55ea8aba31b1e5155ae16028a"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.x-dev",
+                    "datestamp": "1510350784",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Hydra",
+                    "homepage": "https://www.drupal.org/user/647364"
+                },
+                {
+                    "name": "Stalski",
+                    "homepage": "https://www.drupal.org/user/322618"
+                },
+                {
+                    "name": "jyve",
+                    "homepage": "https://www.drupal.org/user/591438"
+                },
+                {
+                    "name": "swentel",
+                    "homepage": "https://www.drupal.org/user/107403"
+                },
+                {
+                    "name": "zuuperman",
+                    "homepage": "https://www.drupal.org/user/361625"
+                }
+            ],
+            "description": "Provides the field_group module.",
+            "homepage": "https://www.drupal.org/project/field_group",
+            "support": {
+                "source": "http://cgit.drupalcode.org/field_group"
+            },
+            "time": "2017-11-10T21:52:00+00:00"
         },
         {
             "name": "drupal/image_widget_crop",
@@ -4107,7 +4165,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/paragraphs"
             },
-            "time": "2017-11-23 10:27:44"
+            "time": "2017-11-23T10:27:44+00:00"
         },
         {
             "name": "drupal/pathauto",
@@ -4655,7 +4713,7 @@
                 "source": "http://cgit.drupalcode.org/twig_tweak",
                 "issues": "https://www.drupal.org/project/issues/twig_tweak"
             },
-            "time": "2017-11-25 10:35:39"
+            "time": "2017-11-25T10:35:39+00:00"
         },
         {
             "name": "drupal/video_embed_field",
@@ -11930,7 +11988,8 @@
         "drupal/layout_plugin": 15,
         "drupal/page_manager": 10,
         "drupal/entity_clone": 20,
-        "drupal/coffee": 20
+        "drupal/coffee": 20,
+        "drupal/field_group": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

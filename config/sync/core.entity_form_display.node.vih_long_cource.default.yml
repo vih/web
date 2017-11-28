@@ -20,10 +20,88 @@ dependencies:
     - node.type.vih_long_cource
   module:
     - entity_browser
+    - field_group
+    - inline_entity_form
     - paragraphs
     - path
     - text
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_banner:
+      children:
+        - title
+        - field_vih_course_image
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Banner
+      region: content
+    group_content:
+      children:
+        - field_vih_course_heading
+        - field_vih_course_subheading
+        - body
+        - field_paragraphs
+      parent_name: ''
+      weight: 1
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Indhold
+      region: content
+    group_course_details:
+      children:
+        - field_vih_course_status
+        - field_vih_course_periods
+        - field_vih_course_persons_limit
+        - field_vih_course_week_price
+        - field_vih_course_subsc_price
+        - field_vih_course_price
+        - field_vih_cource_contact_person
+      parent_name: ''
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Kursus detaljer'
+      region: content
+    group_other:
+      children:
+        - langcode
+        - uid
+        - created
+        - translation
+        - promote
+        - sticky
+        - path
+        - scheduled_update
+        - status
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Andet
+      region: content
 id: node.vih_long_cource.default
 targetEntityType: node
 bundle: vih_long_cource
@@ -31,7 +109,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 12
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3
@@ -40,24 +118,26 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_paragraphs:
-    weight: 19
+    weight: 5
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
       form_display_mode: default
-      default_paragraph_type: _none
+      default_paragraph_type: 1_column_action_centered
     third_party_settings: {  }
-    type: entity_reference_paragraphs
+    type: paragraphs
     region: content
   field_vih_cource_contact_person:
-    weight: 17
+    weight: 24
     settings:
       match_operator: CONTAINS
       size: 60
@@ -66,7 +146,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_course_heading:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -75,7 +155,7 @@ content:
     region: content
   field_vih_course_image:
     type: entity_browser_file
-    weight: 18
+    weight: 2
     settings:
       entity_browser: image_browser
       field_widget_remove: true
@@ -87,7 +167,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_course_periods:
-    weight: 13
+    weight: 19
     settings:
       match_operator: CONTAINS
       size: 60
@@ -96,27 +176,27 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_course_persons_limit:
-    weight: 3
+    weight: 20
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_price:
-    weight: 14
+    weight: 23
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_status:
-    weight: 4
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_course_subheading:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -124,14 +204,14 @@ content:
     type: string_textfield
     region: content
   field_vih_course_subsc_price:
-    weight: 15
+    weight: 22
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_week_price:
-    weight: 16
+    weight: 21
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -139,14 +219,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 5
+    weight: 4
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 11
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -154,35 +234,39 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 8
     third_party_settings: {  }
     region: content
   scheduled_update:
-    weight: 27
+    weight: 11
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 26
+    weight: 12
     third_party_settings: {  }
     region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 9
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -195,7 +279,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
