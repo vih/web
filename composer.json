@@ -43,7 +43,8 @@
         "drupal/examples": "1.x-dev",
         "drupal/layout_plugin": "^1.0@alpha",
         "drupal/page_manager": "^4.0@beta",
-        "drupal/entity_clone": "1.x-dev"
+        "drupal/entity_clone": "1.x-dev",
+        "drupal/coffee": "1.x-dev"
     },
     "repositories": [
         {
