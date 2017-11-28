@@ -46,7 +46,7 @@
 }
 
 .notify__highlighted {
-  padding: 20px floor( ( $grid-gutter-width / 2 ) );
+  padding: 5px floor( ( $grid-gutter-width / 2 ) );
 
   background-color: $brand-secondary;
   color: #fff;
@@ -57,7 +57,7 @@
 
   align-items: center;
 
-  padding: 20px floor( ( $grid-gutter-width / 2 ) );
+  padding: 5px floor( ( $grid-gutter-width / 2 ) );
 
   .field--name-field-heading {}
 
@@ -127,6 +127,8 @@
 
   .notify__highlighted {
     flex-shrink: 1;
+
+    min-height: 70px;
   }
 
   .notify__body {
