@@ -126,7 +126,10 @@
   }
 
   .notify__highlighted {
+    display: flex;
+
     flex-shrink: 1;
+    align-items: center;
 
     min-height: 70px;
   }
