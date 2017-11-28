@@ -2,7 +2,7 @@ uuid: 689feb31-0f8a-4665-a625-ac2dd49f763a
 langcode: da
 status: true
 dependencies: {  }
-name: 'News tags'
+name: 'Nyheds tags'
 vid: news_tags
 description: ''
 hierarchy: 0

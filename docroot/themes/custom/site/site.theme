@@ -270,9 +270,11 @@ function site_preprocess_node(array &$variables) {
         }
       }
     }
+
     if ($start_course_date) {
       $variables['content']['course_period_start'] = strtotime($start_course_date);
     }
+
     if ($end_course_date) {
       $variables['content']['course_period_end'] = strtotime($end_course_date);
     }
@@ -324,60 +326,94 @@ function site_preprocess_paragraph(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_hook().
+ */
 function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
   $paragraph = $variables['paragraph'];
-  $tags = [];
+  $ids = [];
 
   if ($fields = $paragraph->get('field_tags')->getValue()) {
 
     foreach($fields as $field) {
-      $tags[] = $field['target_id'];
+      $ids[] = $field['target_id'];
     }
   }
-  $contextual_filter = implode('+', $tags);
+  $contextual_filter = implode('+', $ids);
 
   $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list', $contextual_filter);
 }
 
+/**
+ * Implements hook_preprocess_hook().
+ */
 function site_preprocess_paragraph__short_course_list_(&$variables) {
   $paragraph = $variables['paragraph'];
-  $course_ids = [];
+  $ids = [];
 
   if ($fields = $paragraph->get('field_course_id')->getValue()) {
 
     foreach($fields as $field) {
-      $course_ids[] = $field['target_id'];
+      $ids[] = $field['target_id'];
     }
-  }
-  $contextual_filter = implode('+', $course_ids);
 
-  $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced', $contextual_filter);
+    $contextual_filter = implode('+', $ids);
+
+    $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced', $contextual_filter);
+  }
+
+  // Display another display on the view
+  else {
+    $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced_future');
+  }
 }
 
+/**
+ * Implements hook_preprocess_hook().
+ */
 function site_preprocess_paragraph__long_course_list_(&$variables) {
   $paragraph = $variables['paragraph'];
-  $course_ids = [];
+  $ids = [];
 
   if ($fields = $paragraph->get('field_course_id')->getValue()) {
 
     foreach($fields as $field) {
-      $course_ids[] = $field['target_id'];
+      $ids[] = $field['target_id'];
     }
-  }
-  $contextual_filter = implode('+', $course_ids);
 
-  $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced', $contextual_filter);
+    $contextual_filter = implode('+', $ids);
+
+    $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced', $contextual_filter);
+  }
+
+  // Display another display on the view
+  else {
+    $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_future');
+  }
 }
 
+/**
+ * Implements hook_preprocess_hook().
+ */
 function site_preprocess_paragraph__event_list(&$variables) {
-  $paragraph_title = $variables['elements']['#paragraph']->getFields()['field_heading']->value;
+  $paragraph = $variables['paragraph'];
+  $ids = [];
 
-  $variables['content']['view_header'] = [
-    '#markup' => '<h3>' . $paragraph_title . '</h3>',
-    '#allowed_tags' => ['h3'],
-  ];
+  if ($fields = $paragraph->get('field_event_id')->getValue()) {
 
-  $variables['content']['view_output'] = views_embed_view('eventside', 'embedded_teaser_list');
+    foreach($fields as $field) {
+      $ids[] = $field['target_id'];
+    }
+
+    $contextual_filter = implode('+', $ids);
+
+    $variables['content']['embedded_view'] = views_embed_view('events', 'embed_list_advanced', $contextual_filter);
+  }
+
+  // Display another display on the view
+  else {
+    $variables['content']['embedded_view'] = views_embed_view('events', 'embed_list_advanced_future');
+  }
 }
 
 function site_preprocess_paragraph__class_packages(&$variables) {

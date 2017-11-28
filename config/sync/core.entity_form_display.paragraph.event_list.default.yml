@@ -3,22 +3,65 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.event_list.field_background_color
+    - field.field.paragraph.event_list.field_background_image
+    - field.field.paragraph.event_list.field_event_id
     - field.field.paragraph.event_list.field_heading
+    - field.field.paragraph.event_list.field_link
     - paragraphs.paragraphs_type.event_list
   module:
+    - entity_browser
+    - link
     - workbench_moderation
 id: paragraph.event_list.default
 targetEntityType: paragraph
 bundle: event_list
 mode: default
 content:
+  field_background_color:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_image:
+    type: entity_browser_file
+    weight: 3
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_event_id:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_heading:
-    weight: 7
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   created: true

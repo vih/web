@@ -166,6 +166,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_vih_lco_found_from:
+    type: string
+    weight: 24
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_vih_lco_last_name:
     type: string
     weight: 3
@@ -173,6 +181,13 @@ content:
     label: above
     settings:
       link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_message:
+    type: basic_string
+    weight: 23
+    region: content
+    label: above
+    settings: {  }
     third_party_settings: {  }
   field_vih_lco_nationality:
     type: string
@@ -196,7 +211,7 @@ content:
     type: entity_reference_revisions_entity_view
     weight: 16
     region: content
-    label: above
+    label: hidden
     settings:
       view_mode: embedded
       link: ''
@@ -232,7 +247,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_vih_lco_cpr: true
-  field_vih_lco_found_from: true
-  field_vih_lco_message: true
   field_vih_lco_status: true
   langcode: true

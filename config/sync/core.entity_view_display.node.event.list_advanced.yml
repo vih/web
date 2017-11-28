@@ -1,0 +1,90 @@
+uuid: 3b76b4b7-e7ca-4526-a1d6-cecef0b3eab1
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list_advanced
+    - field.field.node.event.body
+    - field.field.node.event.field_event_end_date
+    - field.field.node.event.field_event_price
+    - field.field.node.event.field_event_start_date
+    - field.field.node.event.field_image
+    - field.field.node.event.field_page_main_image
+    - field.field.node.event.field_paragraphs
+    - field.field.node.event.field_vih_cource_contact_person
+    - field.field.node.event.field_vih_course_heading
+    - field.field.node.event.field_vih_course_subheading
+    - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_status
+    - image.style.list_advanced
+    - node.type.event
+  module:
+    - datetime
+    - image
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.event.list_advanced
+targetEntityType: node
+bundle: event
+mode: list_advanced
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 2
+    settings:
+      trim_length: 150
+    third_party_settings: {  }
+    region: content
+  field_event_end_date:
+    weight: 4
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: vih_medium_date_short_month
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_event_start_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: vih_medium_date_short_month
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: list_advanced
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_course_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_event_price: true
+  field_page_main_image: true
+  field_paragraphs: true
+  field_vih_cource_contact_person: true
+  field_vih_course_subheading: true
+  field_vih_event_persons_limit: true
+  field_vih_event_status: true
+  langcode: true
+  links: true

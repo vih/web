@@ -1,0 +1,29 @@
+uuid: d9264516-a6bf-4897-affa-20d5e018431b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_id
+    - node.type.event
+    - paragraphs.paragraphs_type.event_list
+id: paragraph.event_list.field_event_id
+field_name: field_event_id
+entity_type: paragraph
+bundle: event_list
+label: Events
+description: 'Vælg de events som du ønsker vist. Vælges ingen, vises de 3 seneste fremtidige events.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

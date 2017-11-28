@@ -18,7 +18,7 @@ third_party_settings:
       - draft
       - needs_review
     default_moderation_state: published
-name: 'Short Course'
+name: 'Kort kursus'
 type: vih_short_course
 description: ''
 help: ''

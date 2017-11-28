@@ -3,12 +3,40 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.event_list.field_background_color
+    - field.field.paragraph.event_list.field_background_image
+    - field.field.paragraph.event_list.field_event_id
     - field.field.paragraph.event_list.field_heading
+    - field.field.paragraph.event_list.field_link
     - paragraphs.paragraphs_type.event_list
+  module:
+    - link
 id: paragraph.event_list.default
 targetEntityType: paragraph
 bundle: event_list
 mode: default
-content: {  }
+content:
+  field_heading:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
 hidden:
-  field_heading: true
+  field_background_color: true
+  field_background_image: true
+  field_event_id: true
