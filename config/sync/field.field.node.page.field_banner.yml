@@ -1,27 +1,20 @@
-uuid: dad5463e-d262-48bd-8659-456ae7c26e1b
+uuid: 678ef42f-be53-4b57-bb96-2afbdbf30d8b
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_main_image
-    - node.type.news
+    - field.storage.node.field_banner
+    - node.type.page
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
-id: node.news.field_page_main_image
-field_name: field_page_main_image
+id: node.page.field_banner
+field_name: field_banner
 entity_type: node
-bundle: news
-label: 'Page main image'
+bundle: page
+label: Banner
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -30,7 +23,7 @@ settings:
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: true
   title_field: false
   title_field_required: false

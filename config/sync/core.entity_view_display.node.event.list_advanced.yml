@@ -5,17 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.node.list_advanced
     - field.field.node.event.body
+    - field.field.node.event.field_banner
     - field.field.node.event.field_event_end_date
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
-    - field.field.node.event.field_page_main_image
     - field.field.node.event.field_paragraphs
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.scheduled_update
     - image.style.list_advanced
     - node.type.event
   module:
@@ -79,8 +80,8 @@ content:
     type: string
     region: content
 hidden:
+  field_banner: true
   field_event_price: true
-  field_page_main_image: true
   field_paragraphs: true
   field_vih_cource_contact_person: true
   field_vih_course_subheading: true
@@ -88,3 +89,4 @@ hidden:
   field_vih_event_status: true
   langcode: true
   links: true
+  scheduled_update: true

@@ -8,7 +8,7 @@ id: node.vih_long_cource.title
 field_name: title
 entity_type: node
 bundle: vih_long_cource
-label: Title
+label: 'Tekst på banner'
 description: ''
 required: true
 translatable: true

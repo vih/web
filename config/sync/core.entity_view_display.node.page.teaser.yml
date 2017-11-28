@@ -5,8 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_banner
     - field.field.node.page.field_meta_tags
-    - field.field.node.page.field_page_main_image
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
@@ -38,8 +38,8 @@ content:
     weight: -20
     region: content
 hidden:
+  field_banner: true
   field_meta_tags: true
-  field_page_main_image: true
   field_paragraphs: true
   field_vih_course_heading: true
   field_vih_course_subheading: true

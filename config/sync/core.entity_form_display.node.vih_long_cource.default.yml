@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
+    - field.field.node.vih_long_cource.field_banner
     - field.field.node.vih_long_cource.field_paragraphs
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
@@ -31,7 +32,7 @@ third_party_settings:
     group_banner:
       children:
         - title
-        - field_vih_course_image
+        - field_banner
       parent_name: ''
       weight: 0
       format_type: tab
@@ -62,6 +63,7 @@ third_party_settings:
       region: content
     group_course_details:
       children:
+        - field_vih_course_image
         - field_vih_course_status
         - field_vih_course_periods
         - field_vih_course_persons_limit
@@ -109,7 +111,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 6
     settings:
       rows: 9
       summary_rows: 3
@@ -122,8 +124,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  field_banner:
+    type: entity_browser_file
+    weight: 2
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
   field_paragraphs:
-    weight: 5
+    weight: 7
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -137,7 +152,7 @@ content:
     type: paragraphs
     region: content
   field_vih_cource_contact_person:
-    weight: 24
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -146,7 +161,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_course_heading:
-    weight: 2
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -155,7 +170,7 @@ content:
     region: content
   field_vih_course_image:
     type: entity_browser_file
-    weight: 2
+    weight: 3
     settings:
       entity_browser: image_browser
       field_widget_remove: true
@@ -167,7 +182,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_course_periods:
-    weight: 19
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -176,27 +191,27 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_course_persons_limit:
-    weight: 20
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_price:
-    weight: 23
+    weight: 9
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_status:
-    weight: 18
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_course_subheading:
-    weight: 3
+    weight: 5
     settings:
       size: 60
       placeholder: ''
@@ -204,14 +219,14 @@ content:
     type: string_textfield
     region: content
   field_vih_course_subsc_price:
-    weight: 22
+    weight: 8
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_course_week_price:
-    weight: 21
+    weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }

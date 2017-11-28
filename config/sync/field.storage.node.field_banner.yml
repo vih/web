@@ -1,13 +1,13 @@
-uuid: 1f471229-aab0-444d-bc1c-1f1d19d46fc8
-langcode: en
+uuid: 7fe64e99-c58b-4527-85ff-55f4c3911709
+langcode: da
 status: true
 dependencies:
   module:
     - file
     - image
     - node
-id: node.field_page_main_image
-field_name: field_page_main_image
+id: node.field_banner
+field_name: field_banner
 entity_type: node
 type: image
 settings:

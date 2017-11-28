@@ -1,24 +1,24 @@
-uuid: aae53278-cb30-4bbc-be67-d4f281384895
-langcode: en
+uuid: 87dea6b4-bd55-45b9-8af6-f956abb84b6f
+langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_page_main_image
-    - node.type.page
+    - field.storage.node.field_banner
+    - node.type.vih_long_cource
   module:
     - content_translation
     - image
 third_party_settings:
   content_translation:
     translation_sync:
-      alt: alt
-      title: title
       file: '0'
-id: node.page.field_page_main_image
-field_name: field_page_main_image
+      alt: '0'
+      title: '0'
+id: node.vih_long_cource.field_banner
+field_name: field_banner
 entity_type: node
-bundle: page
-label: 'Page main image'
+bundle: vih_long_cource
+label: Banner
 description: ''
 required: false
 translatable: true
@@ -30,7 +30,7 @@ settings:
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: true
   title_field: false
   title_field_required: false

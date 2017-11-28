@@ -40,13 +40,11 @@
 
             {% else %}
 
-                {% if node.field_page_main_image.value or node.field_vih_course_image.value %}
+                {% if node.field_banner.value %}
 
                     {# Begin - image #}
-                    {% if node.field_page_main_image.value %}
-                        {% set banner_background_image = node.field_page_main_image.entity.fileuri | image_style('banner_small') %}
-                    {% elseif node.field_vih_course_image.value %}
-                        {% set banner_background_image = node.field_vih_course_image.entity.fileuri | image_style('banner_small') %}
+                    {% if node.field_banner.value %}
+                        {% set banner_background_image = node.field_banner.entity.fileuri | image_style('banner_small') %}
                     {% endif %}
                     {# End - image #}
 

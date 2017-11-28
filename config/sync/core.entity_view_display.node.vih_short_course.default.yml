@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_short_course.body
+    - field.field.node.vih_short_course.field_banner
     - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
@@ -43,6 +44,15 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_banner:
+    weight: 14
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_paragraphs:
     weight: 6
