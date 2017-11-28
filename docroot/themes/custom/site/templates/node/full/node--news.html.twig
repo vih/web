@@ -10,7 +10,7 @@ view_mode ? view_mode|clean_class,
 <article{{ attributes.addClass(classes) }}>
 
     <!-- Begin - content -->
-    <section class="sectioned sectioned--content" {{ content_attributes.addClass('content') }}>
+    <section{{ content_attributes.addClass('sectioned', 'sectioned--content') }}>
         <div class="sectioned__inner">
             <div class="container">
                 {{ content.body }}
@@ -19,10 +19,8 @@ view_mode ? view_mode|clean_class,
     </section>
     <!-- End - content -->
 
-    {% if content.news_paragraph %}
-        <!-- Begin - paragraphs -->
-        {{ content.news_paragraph }}
-        <!-- End - paragraphs -->
-    {% endif %}
+    {# Begin - paragraphs #}
+    {{ content.field_paragraphs }}
+    {# End - paragraphs #}
 
 </article>

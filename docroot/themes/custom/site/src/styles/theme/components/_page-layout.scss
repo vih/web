@@ -229,6 +229,9 @@ html {
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
 }
+#block-popup-cta {
+  overflow: hidden;
+}
 .table tr {
   border: 1px solid #ddd;
   background: none;
@@ -432,6 +435,9 @@ table .btn-radio-select.active {
   font-weight: bold !important;
   color: #fff;
   font-family: "Open Sans", Sens-serif !important;
+}
+.field--name-field-heading {
+  width: 100%;
 }
 .path-node .paragraph--type--class-packages .angled-background-inner {
   margin-bottom: 100px;
@@ -907,6 +913,9 @@ div[role=heading] {
 }
 .popover .glyphicon-search {
   color: #fff;
+}
+.path-frontpage .field--name-field-heading p {
+  font-weight: bold !important;
 }
 .fagpakker-container {
   width: 100%;

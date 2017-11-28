@@ -22,15 +22,18 @@
 
 .path-user {
 
-  .field {
-    margin-bottom: $grid-gutter-width;
-  }
+  .region-content {
 
-  .field--label {
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
+    .field {
+      margin-bottom: $grid-gutter-width;
+    }
 
-    color: $headings-color;
+    .field--label {
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+
+      color: $headings-color;
+    }
   }
 }
 

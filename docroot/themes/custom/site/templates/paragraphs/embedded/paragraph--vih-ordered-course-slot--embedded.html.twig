@@ -1,0 +1,17 @@
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+    <div class="partial">
+        <div class="partial__heading">
+            <h4 class="partial__heading__title">{{ label }}</h4>
+        </div>
+        <div class="partial__body">
+            {{ content }}
+        </div>
+    </div>
+</div>

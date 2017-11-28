@@ -1,0 +1,168 @@
+{% set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class,
+'clearfix',
+] %}
+
+<article{{ attributes.addClass(classes) }}>
+    <div class="partial">
+        <div class="partial__body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Begin - course #}
+                    {% if node.field_vih_lco_course.value %}
+                        <div class="partial">
+                            <div class="partial__body">
+                                {{ content.field_vih_lco_course }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - course #}
+
+                    {# Begin - ordered options #}
+                    {% if node.field_vih_lco_order_course_perio.value %}
+                        <div class="partial partial--ordered-options">
+                            <div class="partial__heading">
+                                <h3 class="partial__heading__title">
+                                    {{ 'Ordered options' | trans }}
+                                </h3>
+                            </div>
+                            <div class="partial__body">
+                                {{ content.field_vih_lco_order_course_perio }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - ordered options #}
+
+                </div>
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Begin - education #}
+                    {{ content.field_vih_lco_education }}
+                    {# End - education #}
+
+                    {# Begin - newsletter #}
+                    {{ content.field_vih_lco_newsletter }}
+                    {# End - newsletter #}
+
+                    {# Begin - found from #}
+                    {{ content.field_vih_lco_found_from }}
+                    {# End - found from #}
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Begin - personal information #}
+                    <div class="partial partial--personal-information">
+                        <div class="partial__heading">
+                            <h3 class="partial__heading__title">
+                                {{ 'Participants' | trans }}
+                            </h3>
+                        </div>
+                        <div class="partial__body">
+
+                            {# Begin - nationality #}
+                            {{ content.field_vih_lco_nationality }}
+                            {# End - nationality #}
+
+                            {# Begin - firstname #}
+                            {{ content.field_vih_lco_first_name }}
+                            {# End - firstname #}
+
+                            {# Begin - lastname #}
+                            {{ content.field_vih_lco_last_name }}
+                            {# End - lastname #}
+
+                            {# Begin - phone #}
+                            {{ content.field_vih_lco_telefon }}
+                            {# End - phone #}
+
+                            {# Begin - email #}
+                            {{ content.field_vih_lco_email }}
+                            {# End - email #}
+
+                            {# Begin - address #}
+                            {{ content.field_vih_lco_address }}
+                            {# End - address #}
+
+                            {# Begin - zipcode #}
+                            {{ content.field_vih_lco_zip }}
+                            {# End - zipcode #}
+
+                            {# Begin - city #}
+                            {{ content.field_vih_lco_city }}
+                            {# End - city #}
+
+                        </div>
+                    </div>
+                    {# End - personal information #}
+
+                </div>
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Begin - adult information #}
+                    <div class="partial partial--adult-information">
+                        <div class="partial__heading">
+                            <h3 class="partial__heading__title">{{ 'Adult' | trans }}</h3>
+                        </div>
+                        <div class="partial__body">
+
+                            {# Begin - nationality #}
+                            {{ content.field_vih_lco_adult_nationality }}
+                            {# End - nationality #}
+
+                            {# Begin - firstname #}
+                            {{ content.field_vih_lco_adult_first_name }}
+                            {# End - firstname #}
+
+                            {# Begin - lastname #}
+                            {{ content.field_vih_lco_adult_last_name }}
+                            {# End - lastname #}
+
+                            {# Begin - phone #}
+                            {{ content.field_vih_lco_adult_telefon }}
+                            {# End - phone #}
+
+                            {# Begin - email #}
+                            {{ content.field_vih_lco_adult_email }}
+                            {# End - email #}
+
+                            {# Begin - address #}
+                            {{ content.field_vih_lco_adult_address }}
+                            {# End - address #}
+
+                            {# Begin - zipcode #}
+                            {{ content.field_vih_lco_adult_zip }}
+                            {# End - zipcode #}
+
+                            {# Begin - city #}
+                            {{ content.field_vih_lco_adult_city }}
+                            {# End - city #}
+
+                        </div>
+                    </div>
+                    {# End - adult information #}
+
+                </div>
+            </div>
+
+            {# Begin - message #}
+            {% if node.field_vih_lco_message.value %}
+                <hr>
+
+                {{ content.field_vih_lco_message }}
+            {% endif %}
+            {# End - message #}
+
+        </div>
+    </div>
+</article>
