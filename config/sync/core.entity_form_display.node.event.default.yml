@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.scheduled_update
     - node.type.event
   module:
     - datetime
@@ -158,6 +159,15 @@ content:
       display_label: true
     weight: 8
     third_party_settings: {  }
+    region: content
+  scheduled_update:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   status:
     type: boolean_checkbox

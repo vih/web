@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.scheduled_update
     - node.type.page
+    - scheduled_updates.scheduled_update_type.content_publish_unpublish
     - scheduled_updates.scheduled_update_type.node_embargo
 _core:
   default_config_hash: JVObLS74p_lKYPuPphxcbdapEcoeU8IP_sBCOtcs9VA
@@ -12,15 +13,20 @@ id: node.page.scheduled_update
 field_name: scheduled_update
 entity_type: node
 bundle: page
-label: 'Scheduled Update'
+label: 'Skemalagt opdatering'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
+  handler: 'default:scheduled_update'
   handler_settings:
     target_bundles:
-      - node_embargo
-  handler: 'default:scheduled_update'
+      content_publish_unpublish: content_publish_unpublish
+      node_embargo: node_embargo
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: content_publish_unpublish
 field_type: entity_reference

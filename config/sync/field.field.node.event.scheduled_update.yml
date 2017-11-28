@@ -1,16 +1,16 @@
-uuid: 40b8cb14-a9c9-4e4f-a86d-921c9f132b20
-langcode: en
+uuid: e9fc7807-cb79-498f-931c-2f4d0dc3650b
+langcode: da
 status: true
 dependencies:
   config:
     - field.storage.node.scheduled_update
-    - node.type.vih_short_course
+    - node.type.event
     - scheduled_updates.scheduled_update_type.content_publish_unpublish
     - scheduled_updates.scheduled_update_type.node_embargo
-id: node.vih_short_course.scheduled_update
+id: node.event.scheduled_update
 field_name: scheduled_update
 entity_type: node
-bundle: vih_short_course
+bundle: event
 label: 'Skemalagt opdatering'
 description: ''
 required: false

@@ -13,6 +13,6 @@ name: 'Langt kursus'
 type: vih_long_cource
 description: ''
 help: ''
-new_revision: true
-preview_mode: 1
+new_revision: false
+preview_mode: 0
 display_submitted: false

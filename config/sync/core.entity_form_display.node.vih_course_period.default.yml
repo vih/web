@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.vih_course_period.field_vih_cp_course_slots
     - field.field.node.vih_course_period.field_vih_cp_end_date
     - field.field.node.vih_course_period.field_vih_cp_start_date
+    - field.field.node.vih_course_period.scheduled_update
     - node.type.vih_course_period
   module:
     - datetime
@@ -77,6 +78,15 @@ content:
       display_label: true
     weight: 15
     third_party_settings: {  }
+    region: content
+  scheduled_update:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   status:
     type: boolean_checkbox

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_news_paragraph
     - field.field.node.news.field_news_tags
     - field.field.node.news.field_page_main_image
+    - field.field.node.news.scheduled_update
     - node.type.news
   module:
     - entity_browser
@@ -102,6 +103,15 @@ content:
       display_label: true
     weight: 15
     third_party_settings: {  }
+    region: content
+  scheduled_update:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   status:
     type: boolean_checkbox

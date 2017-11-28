@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_meta_tags
     - field.field.node.landing_page.panelizer
+    - field.field.node.landing_page.scheduled_update
     - node.type.landing_page
   module:
     - metatag
@@ -48,6 +49,15 @@ content:
     weight: 3
     settings: {  }
     third_party_settings: {  }
+    region: content
+  scheduled_update:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   status:
     type: boolean_checkbox

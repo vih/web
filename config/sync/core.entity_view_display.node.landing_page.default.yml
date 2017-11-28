@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_meta_tags
     - field.field.node.landing_page.panelizer
+    - field.field.node.landing_page.scheduled_update
     - node.type.landing_page
   module:
     - metatag
@@ -77,6 +78,14 @@ content:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
+  scheduled_update:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   workbench_moderation_control:
     weight: -20

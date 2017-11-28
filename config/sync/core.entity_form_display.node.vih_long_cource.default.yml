@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
+    - field.field.node.vih_long_cource.scheduled_update
     - node.type.vih_long_cource
   module:
     - entity_browser
@@ -155,6 +156,15 @@ content:
       display_label: true
     weight: 9
     third_party_settings: {  }
+    region: content
+  scheduled_update:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   status:
     type: boolean_checkbox
