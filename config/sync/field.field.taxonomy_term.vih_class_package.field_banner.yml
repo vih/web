@@ -1,0 +1,45 @@
+uuid: 304968b4-b960-48b7-aaa8-49498c8e8880
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_banner
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: taxonomy_term.vih_class_package.field_banner
+field_name: field_banner
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: Banner
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

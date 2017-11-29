@@ -1,11 +1,12 @@
 <a href="{{ url }}" {{ attributes.addClass('element-wrapper-link', 'entity-teaser', 'entity-teaser--class-package') }} style="background-image: url({{ term.field_vih_cp_image.entity.fileuri | image_style(content.field_vih_cp_image[0]['#image_style']) }});">
     <div class="entity-teaser__inner">
-        <p>{{ term.field_vih_cp_subtitle.value }}</p>
+        <p>{{ term.field_subheading.value }}</p>
 
         {# Begin - overlay #}
         <div class="entity-teaser__image__overlay entity-teaser__image__overlay--{{ term.field_vih_class_package_color.value }}">
             {{ name }}
         </div>
         {# End - overlay #}
+
     </div>
 </a>

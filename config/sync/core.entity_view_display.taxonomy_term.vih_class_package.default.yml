@@ -3,15 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.vih_class_package.field_banner
+    - field.field.taxonomy_term.vih_class_package.field_heading
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_paragraphs
+    - field.field.taxonomy_term.vih_class_package.field_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
-    - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
-    - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
+    - image.style.banner_small
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_reference_revisions
+    - image
     - link
     - panelizer
 third_party_settings:
@@ -25,31 +28,54 @@ targetEntityType: taxonomy_term
 bundle: vih_class_package
 mode: default
 content:
+  field_banner:
+    weight: -1
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_link_taxo:
     weight: -3
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     type: link
     region: content
   field_paragraphs:
     weight: -2
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
+  field_subheading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
 hidden:
   description: true
   field_vih_class_package_color: true
-  field_vih_cp_description: true
   field_vih_cp_image: true
-  field_vih_cp_subtitle: true
   langcode: true
