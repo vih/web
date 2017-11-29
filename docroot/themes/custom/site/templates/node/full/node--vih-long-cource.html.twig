@@ -98,29 +98,33 @@ view_mode ? view_mode|clean_class,
                             </div>
                             <div class="col-sm-6">
 
-                                <!-- Begin - travel -->
-                                <div class="partial partial--travel">
-                                    <div class="partial__heading">
-                                        <h3 class="partial__heading__title heading-h4">
-                                            {{ 'Kom ud at rejse' | trans }}
-                                        </h3>
-                                    </div>
-                                    <div class="partial__subheading">
-                                        <h3 class="partial__subheading__title heading-h5">
-                                            {{ 'Skæddersy dit ophold paå tværs af fagpakker' | trans }}
-                                        </h3>
-                                    </div>
-                                    <div class="partial__body">
-                                        <div class="row">
-                                            {% for travel_class in content.travel_classes %}
-                                                <div class="col-sm-6 travel-class-container">
-                                                    {{ travel_class }}
-                                                </div>
-                                            {% endfor %}
+                                {# Begin - travel #}
+                                {% if content.travel_classes %}
+                                    <div class="partial partial--travel">
+                                        <div class="partial__heading">
+                                            <h3 class="partial__heading__title heading-h4">
+                                                {{ 'Kom ud at rejse' | trans }}
+                                            </h3>
+                                        </div>
+                                        <div class="partial__subheading">
+                                            <h3 class="partial__subheading__title heading-h5">
+                                                {{ 'Skæddersy dit ophold paå tværs af fagpakker' | trans }}
+                                            </h3>
+                                        </div>
+                                        <div class="partial__body">
+                                            <div class="row">
+
+                                                {% for travel_class in content.travel_classes %}
+                                                    <div class="col-sm-6">
+                                                        {{ travel_class }}
+                                                    </div>
+                                                {% endfor %}
+
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- End - travel -->
+                                {% endif %}
+                                {# End - travel #}
 
                                 <!-- Begin - class packages -->
                                 <div class="boxy boxy--class-packages">
