@@ -17,7 +17,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
-    - options
     - panelizer
     - text
 third_party_settings:
@@ -34,12 +33,12 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
   field_banner:
-    weight: 6
+    weight: 0
     label: hidden
     settings:
       image_style: banner_small
@@ -48,7 +47,7 @@ content:
     type: image
     region: content
   field_heading:
-    weight: 7
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
@@ -57,7 +56,7 @@ content:
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 7
     label: hidden
     settings:
       view_mode: default
@@ -65,7 +64,7 @@ content:
     third_party_settings: {  }
     region: content
   field_subheading:
-    weight: 8
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
@@ -74,22 +73,15 @@ content:
     region: content
   field_vih_class_class_packages:
     type: entity_reference_entity_view
-    weight: 9
+    weight: 6
     region: content
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-  field_vih_class_color:
-    type: list_key
-    weight: 4
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
   field_vih_class_material_price:
-    weight: 2
+    weight: 5
     label: above
     settings:
       thousand_separator: ''
@@ -100,7 +92,7 @@ content:
     type: number_decimal
     region: content
   field_vih_class_price_addition:
-    weight: 1
+    weight: 4
     label: above
     settings:
       thousand_separator: ''
@@ -111,5 +103,6 @@ content:
     type: number_decimal
     region: content
 hidden:
+  field_vih_class_color: true
   field_vih_class_image: true
   langcode: true

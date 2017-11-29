@@ -14,49 +14,33 @@ view_mode ? view_mode|clean_class,
             <div class="container">
                 <div class="partial">
                     <div class="partial__body">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
 
-                                {# Begin - headings #}
-                                {% if term.field_heading.value or term.field_subheading.value %}
+                        {# Begin - headings #}
+                        {% if term.field_heading.value or term.field_subheading.value %}
 
-                                    {% if term.field_heading.value %}
-                                        <!-- Begin - heading -->
-                                        <div class="sectioned__heading">
-                                            <h2 class="sectioned__heading__title">{{ content.field_heading.0 }}</h2>
-                                        </div>
-                                        <!-- End - heading -->
-                                    {% endif %}
+                            {% if term.field_heading.value %}
+                                <!-- Begin - heading -->
+                                <div class="sectioned__heading">
+                                    <h2 class="sectioned__heading__title">{{ content.field_heading.0 }}</h2>
+                                </div>
+                                <!-- End - heading -->
+                            {% endif %}
 
-                                    {% if term.field_subheading.value %}
-                                        <!-- Begin - subheading -->
-                                        <div class="sectioned__subheading">
-                                            <h3 class="sectioned__subheading__title heading-h4">{{ content.field_subheading.0 }}</h3>
-                                        </div>
-                                        <!-- End - subheading -->
-                                    {% endif %}
+                            {% if term.field_subheading.value %}
+                                <!-- Begin - subheading -->
+                                <div class="sectioned__subheading">
+                                    <h3 class="sectioned__subheading__title heading-h4">{{ content.field_subheading.0 }}</h3>
+                                </div>
+                                <!-- End - subheading -->
+                            {% endif %}
 
-                                {% endif %}
-                                {# End - headings #}
+                        {% endif %}
+                        {# End - headings #}
 
-                                {{ content.description }}
+                        {{ content.description }}
 
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-
-                                {# Begin - class packages #}
-                                {% if term.field_vih_class_class_packages.value %}
-                                    <div class="partial partial--class-packages">
-                                        {{ content.field_vih_class_class_packages }}
-                                    </div>
-                                {% endif %}
-                                {# End - class packages #}
-
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

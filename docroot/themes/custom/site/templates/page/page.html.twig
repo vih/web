@@ -40,13 +40,15 @@
 
             {% else %}
 
-                {% if node.field_banner.value or user.field_banner.value %}
+                {% if node.field_banner.value or user.field_banner.value or term.field_banner.value %}
 
                     {# Begin - image #}
                     {% if node.field_banner.value %}
                         {% set banner_background_image = node.field_banner.entity.fileuri | image_style('banner_small') %}
                     {% elseif user.field_banner.value %}
                         {% set banner_background_image = user.field_banner.entity.fileuri | image_style('banner_small') %}
+                    {% elseif term.field_banner.value %}
+                        {% set banner_background_image = term.field_banner.entity.fileuri | image_style('banner_small') %}
                     {% endif %}
                     {# End - image #}
 
@@ -59,6 +61,8 @@
                                         <h1 class="banner__heading__title">{{ node.title.value }}</h1>
                                     {% elseif user.title.value %}
                                         <h1 class="banner__heading__title">{{ user.title.value }}</h1>
+                                    {% elseif term.name.value %}
+                                        <h1 class="banner__heading__title">{{ term.name.value }}</h1>
                                     {% elseif page['#title'] %}
                                         <h1 class="banner__heading__title">{{ page['#title'] }}</h1>
                                     {% endif %}
