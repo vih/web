@@ -126,7 +126,7 @@ content:
     type: entity_browser_file
     weight: 2
     settings:
-      entity_browser: image_browser
+      entity_browser: media_browser
       field_widget_remove: true
       open: true
       selection_mode: selection_append

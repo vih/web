@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
+    - entity_browser.browser.image_browser
     - field.field.node.page.body
     - field.field.node.page.field_banner
     - field.field.node.page.field_meta_tags
@@ -106,7 +106,7 @@ content:
     type: entity_browser_file
     weight: 29
     settings:
-      entity_browser: media_browser
+      entity_browser: image_browser
       field_widget_remove: true
       open: true
       selection_mode: selection_append
