@@ -74,6 +74,19 @@ img {
   }
 }
 
+// The form-group class has been added to all views by the Bootstrap base theme.
+// This hack removes the extra margin at the bottom.
+.views-element-container.form-group {
+  margin-bottom: 0;
+}
+
+.view {
+
+  .feed-icons {
+    display: none;
+  }
+}
+
 // iFrame
 .frame-border {
   border:3px solid transparent;

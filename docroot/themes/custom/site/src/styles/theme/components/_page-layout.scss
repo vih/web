@@ -103,26 +103,9 @@ html {
 .path-node .news-container {
   padding-bottom: 100px;
 }
-.path-taxonomy .field--name-field-class-package-paragraph .field--name-field-heading {
-  display: none !important;
-}
-.path-taxonomy .field--name-field-class-package-paragraph .field--name-field-link {
-  margin-top: 30px;
-}
-.path-taxonomy .angled-background-color, .path-taxonomy .angled-background-image {
-  padding-bottom: 110px;
-}
 .path-node .teacher-c-desc {
   padding: 0 !important;
   margin-bottom: 220px;
-}
-.well {
-  background: none !important;
-}
-.path-taxonomy .teacher-c-desc .col-lg-9 {
-  text-align: left;
-  font-size: 16px;
-  color: #555;
 }
 // --------------------------------------------------
 // Variants
@@ -652,9 +635,6 @@ flex-direction: column;
     }
   }
 }
-.layout__news.layout-taxonomy .view-header {
-  display: block;
-}
 .field--name-field-event-list .field--label {
   display: none;
 }
@@ -697,22 +677,11 @@ flex-direction: column;
     }
   }
 }
-.path-taxonomy .layout__news .angled-background-color .angled-background-inner:before {
-  top: -130px;
-  border-bottom: 220px solid white;
-  min-width: 100vw;
-}
 .path-langeophold .news-container {
   padding-bottom: 150px !important;
 }
 #page-html .angled-background-color .angled-background-inner:before {
   display: none;
-}
-.path-taxonomy .news-container {
-  padding-bottom: 150px;
-}
-.path-taxonomy .layout__content .news-container {
-  padding-bottom: 0px;
 }
 .news-info {
   justify-content: space-between;
@@ -787,23 +756,6 @@ flex-direction: column;
 }
 .fagpakker-overlay {
   left: 0;
-}
-.path-taxonomy div[role=heading] {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0px;
-}
-.path-taxonomy div[role=heading] .region-content {
-  min-height: 100%;
-  width: 1024px;
-  padding: 40px;
-  margin-bottom: 80px;
-}
-.path-taxonomy .angled-background-inner {
-  width: 100%;
 }
 .page-node-type-vih-long-cource .paragraphs {
   width: 100vw;
@@ -1295,9 +1247,6 @@ ul.layout-navigation {
 .field--name-field-news-tags {
   display: none;
 }
-.path-taxonomy .feed-icons {
-  display: none;
-}
 
 .view-kurser-relateret-til-laere .views-field-title a {
   padding: 20px;
@@ -1332,9 +1281,6 @@ ul.layout-navigation {
     }
   }
 }
-.path-taxonomy .vih-btn-box { display: none; }
-.path-taxonomy .vih-contact-box { display: none; }
-.path-taxonomy .vih-price-box { display: none; }
 @media only screen and (max-width: 1130px) {
   .vih_class_table_teaser .field--name-field-vih-class-image img {
     min-width: 150% !important;
