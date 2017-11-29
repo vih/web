@@ -200,7 +200,7 @@
 
   .layout__header-logo {
     position: absolute;
-    background: #00bcff url('../images/layout-header-logo.png') center center no-repeat;
+    background: $brand-primary url('../images/layout-header-logo.png') center center no-repeat;
     background-size: 100%;
     width: 105px;
     height: 105px;
