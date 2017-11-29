@@ -45,9 +45,9 @@ view_mode ? view_mode|clean_class,
                             <div class="col-xs-12 col-sm-6">
 
                                 {# Begin - headings #}
-                                {% if content.field_vih_course_heading or content.field_vih_course_subheading %}
+                                {% if node.field_vih_course_heading.value or node.field_vih_course_subheading.value %}
 
-                                    {% if content.field_vih_course_heading %}
+                                    {% if node.field_vih_course_heading.value %}
                                         <!-- Begin - heading -->
                                         <div class="sectioned__heading">
                                             <h2 class="sectioned__heading__title">{{ content.field_vih_course_heading.0 }}</h2>
@@ -55,7 +55,7 @@ view_mode ? view_mode|clean_class,
                                         <!-- End - heading -->
                                     {% endif %}
 
-                                    {% if content.field_vih_course_subheading %}
+                                    {% if node.field_vih_course_subheading.value %}
                                         <!-- Begin - subheading -->
                                         <div class="sectioned__subheading">
                                             <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
