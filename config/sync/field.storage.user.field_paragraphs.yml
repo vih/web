@@ -1,14 +1,14 @@
-uuid: 78c441af-678c-482c-861b-8701c6329429
+uuid: 301cff85-67ef-4c21-a07d-84fe1b076b0e
 langcode: da
 status: true
 dependencies:
   module:
     - entity_reference_revisions
     - paragraphs
-    - taxonomy
-id: taxonomy_term.field_class_package_paragraph
-field_name: field_class_package_paragraph
-entity_type: taxonomy_term
+    - user
+id: user.field_paragraphs
+field_name: field_paragraphs
+entity_type: user
 type: entity_reference_revisions
 settings:
   target_type: paragraph

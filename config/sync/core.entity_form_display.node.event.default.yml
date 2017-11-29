@@ -22,6 +22,7 @@ dependencies:
     - datetime
     - entity_browser
     - field_group
+    - inline_entity_form
     - paragraphs
     - path
     - text
@@ -32,7 +33,6 @@ third_party_settings:
       children:
         - title
         - field_banner
-        - field_page_main_image
       parent_name: ''
       weight: 0
       format_type: tab
@@ -243,10 +243,14 @@ content:
     weight: 12
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   status:
     type: boolean_checkbox

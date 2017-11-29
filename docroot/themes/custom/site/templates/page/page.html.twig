@@ -40,11 +40,13 @@
 
             {% else %}
 
-                {% if node.field_banner.value %}
+                {% if node.field_banner.value or user.field_banner.value %}
 
                     {# Begin - image #}
                     {% if node.field_banner.value %}
                         {% set banner_background_image = node.field_banner.entity.fileuri | image_style('banner_small') %}
+                    {% elseif user.field_banner.value %}
+                        {% set banner_background_image = user.field_banner.entity.fileuri | image_style('banner_small') %}
                     {% endif %}
                     {# End - image #}
 
@@ -55,6 +57,8 @@
 
                                     {% if node.title.value %}
                                         <h1 class="banner__heading__title">{{ node.title.value }}</h1>
+                                    {% elseif user.title.value %}
+                                        <h1 class="banner__heading__title">{{ user.title.value }}</h1>
                                     {% elseif page['#title'] %}
                                         <h1 class="banner__heading__title">{{ page['#title'] }}</h1>
                                     {% endif %}
@@ -87,7 +91,7 @@
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-                    {% if node %}
+                    {% if node or user %}
                         {{ page.content }}
                     {% else %}
                         <section class="sectioned sectioned--content">

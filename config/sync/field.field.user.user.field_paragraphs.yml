@@ -1,94 +1,119 @@
-uuid: f63cac7a-8555-457d-bad1-e5087b81bb4e
+uuid: dafbed44-1b52-4f61-868a-72da30d812f2
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_class_package_paragraph
+    - field.storage.user.field_paragraphs
     - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
-    - paragraphs.paragraphs_type.news_list
     - paragraphs.paragraphs_type.short_course_list_
+    - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
-    - paragraphs.paragraphs_type.vih_teacher_class_description
-    - taxonomy.vocabulary.vih_class
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_single_class_group
+    - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
-id: taxonomy_term.vih_class.field_class_package_paragraph
-field_name: field_class_package_paragraph
-entity_type: taxonomy_term
-bundle: vih_class
-label: class_package_paragraph
+    - user
+id: user.user.field_paragraphs
+field_name: field_paragraphs
+entity_type: user
+bundle: user
+label: Sektioner
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       1_column_action_centered: 1_column_action_centered
+      class_packages: class_packages
       event_list: event_list
       file: file
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
-      news_list: news_list
       short_course_list_: short_course_list_
+      user_quote: user_quote
       video: video
-      vih_teacher_class_description: vih_teacher_class_description
+      vih_class_groups_accordion: vih_class_groups_accordion
+      vih_single_class_group: vih_single_class_group
+      vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
-        weight: 18
+        weight: 24
       class_packages:
-        weight: 19
-        enabled: false
+        enabled: true
+        weight: 25
       event_list:
         enabled: true
-        weight: 20
+        weight: 26
       file:
         enabled: true
-        weight: 21
+        weight: 27
       list_of_news_teasers:
         enabled: true
-        weight: 22
+        weight: 28
       long_course_list_:
         enabled: true
-        weight: 23
+        weight: 29
       news_list:
-        enabled: true
-        weight: 24
+        weight: 30
+        enabled: false
       page_content:
-        weight: 25
+        weight: 31
         enabled: false
       short_course_list_:
         enabled: true
-        weight: 26
+        weight: 32
+      user_quote:
+        enabled: true
+        weight: 33
       video:
         enabled: true
-        weight: 27
+        weight: 34
+      vih_class_groups_accordion:
+        enabled: true
+        weight: 35
       vih_course_slot:
-        weight: 28
+        weight: 36
         enabled: false
       vih_option:
-        weight: 29
+        weight: 37
         enabled: false
       vih_option_group:
-        weight: 30
+        weight: 38
         enabled: false
       vih_ordered_course_period:
-        weight: 31
+        weight: 39
+        enabled: false
+      vih_ordered_course_person:
+        weight: 40
         enabled: false
       vih_ordered_course_slot:
-        weight: 32
+        weight: 41
+        enabled: false
+      vih_ordered_event_person:
+        weight: 42
         enabled: false
       vih_ordered_option:
-        weight: 33
+        weight: 43
         enabled: false
-      vih_teacher_class_description:
+      vih_single_class_group:
         enabled: true
-        weight: 34
+        weight: 44
+      vih_teacher_class_description:
+        weight: 45
+        enabled: false
+      vih_webform:
+        enabled: true
+        weight: 46
 field_type: entity_reference_revisions

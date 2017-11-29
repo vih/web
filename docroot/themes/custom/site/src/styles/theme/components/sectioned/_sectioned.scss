@@ -26,9 +26,10 @@ $sectioned-subheading-title-color: $text-color-light;
 
 // Heading
 .sectioned__heading {
+  margin-bottom: $grid-gutter-width;
 
   + .sectioned__subheading {
-    margin-top: 10px;
+    margin-top: (0 - ($grid-gutter-width - 10px));
   }
 }
 .sectioned__heading__title {

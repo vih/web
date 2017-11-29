@@ -99,14 +99,7 @@ $breadcrumb-active-background-color: $brand-primary;
 @media #{$breakpoint-mobile-only} {
 
   .breadcrumb {
-
-    li {
-
-      &:after,
-      &:before {
-        display: none;
-      }
-    }
+    display: none;
   }
 }
 

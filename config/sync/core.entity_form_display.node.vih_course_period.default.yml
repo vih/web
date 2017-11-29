@@ -11,6 +11,7 @@ dependencies:
     - node.type.vih_course_period
   module:
     - datetime
+    - inline_entity_form
     - paragraphs
     - path
     - text
@@ -83,10 +84,14 @@ content:
     weight: 122
     settings:
       match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: inline_entity_form_complex
     region: content
   status:
     type: boolean_checkbox

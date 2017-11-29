@@ -4,17 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.vih_class_table_teaser_modal
-    - field.field.taxonomy_term.vih_class.field_class_package_paragraph
+    - field.field.taxonomy_term.vih_class.field_banner
+    - field.field.taxonomy_term.vih_class.field_heading
+    - field.field.taxonomy_term.vih_class.field_paragraphs
+    - field.field.taxonomy_term.vih_class.field_subheading
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
     - image.style.vih_class_teaser
     - taxonomy.vocabulary.vih_class
   module:
-    - entity_reference_revisions
     - image
     - panelizer
     - text
@@ -45,17 +46,11 @@ content:
       image_style: vih_class_teaser
       image_link: ''
     third_party_settings: {  }
-  field_vih_teacher_class_descr:
-    type: entity_reference_revisions_entity_view
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
 hidden:
-  field_class_package_paragraph: true
+  field_banner: true
+  field_heading: true
+  field_paragraphs: true
+  field_subheading: true
   field_vih_class_class_packages: true
   field_vih_class_color: true
   field_vih_class_material_price: true

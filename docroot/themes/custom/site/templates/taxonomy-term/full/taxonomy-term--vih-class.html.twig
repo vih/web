@@ -1,58 +1,137 @@
 {% set classes = [
-node.bundle|clean_class,
-node.isPromoted() ? 'is-promoted',
-node.isSticky() ? 'is-sticky',
-not node.isPublished() ? 'is-unpublished',
+term.bundle|clean_class,
+term.isPromoted() ? 'is-promoted',
+term.isSticky() ? 'is-sticky',
+not term.isPublished() ? 'is-unpublished',
 view_mode ? view_mode|clean_class,
 'clearfix',
 ] %}
-
 <article{{ attributes.addClass(classes) }}>
-  <div class="container">
-    {{ title_prefix }}
-    {% if not page %}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
-    {% endif %}
-    {{ title_suffix }}
 
-    {% if display_submitted %}
-      <footer>
-        {{ author_picture }}
-        <div{{ author_attributes.addClass('author') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
+    <!-- Begin - content -->
+    <section class="sectioned sectioned--content">
+        <div class="sectioned__inner">
+            <div class="container">
+                <div class="partial">
+                    <div class="partial__body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+
+                                {# Begin - headings #}
+                                {% if term.field_heading.value or term.field_subheading.value %}
+
+                                    {% if term.field_heading.value %}
+                                        <!-- Begin - heading -->
+                                        <div class="sectioned__heading">
+                                            <h2 class="sectioned__heading__title">{{ content.field_heading.0 }}</h2>
+                                        </div>
+                                        <!-- End - heading -->
+                                    {% endif %}
+
+                                    {% if term.field_subheading.value %}
+                                        <!-- Begin - subheading -->
+                                        <div class="sectioned__subheading">
+                                            <h3 class="sectioned__subheading__title heading-h4">{{ content.field_subheading.0 }}</h3>
+                                        </div>
+                                        <!-- End - subheading -->
+                                    {% endif %}
+
+                                {% endif %}
+                                {# End - headings #}
+
+                                {{ content.description }}
+
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+
+                                {# Begin - period #}
+                                {% if content.field_event_start_date %}
+                                    <!-- Begin - time period -->
+                                    <div class="boxy boxy--time-period">
+                                        <div class="boxy__heading">
+                                            <h2 class="boxy__heading__title heading-h4">{{ "Event start" | trans }}</h2>
+                                        </div>
+
+                                        <div class="boxy__body">
+                                            <div class="time-period">
+                                                <div class="time-period__icon">
+                                                    <span class="icon icon-time"></span>
+                                                </div>
+
+                                                <div class="time-period__list">
+                                                    <div class="time-period__list__item">
+                                                        {{ content.field_event_start_date }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End - time period -->
+                                {% endif %}
+                                {# End - period #}
+
+                                {# Begin - price #}
+                                {% if content.field_event_price %}
+                                    <!-- Begin - price -->
+                                    <div class="boxy boxy--price">
+                                        <div class="boxy__heading">
+                                            <h2 class="boxy__heading__title heading-h4">{{ "Price per participant" | trans }}</h2>
+                                        </div>
+
+                                        <div class="boxy__body">
+                                            {{ content.field_event_price }}
+                                        </div>
+                                    </div>
+                                    <!-- End - price -->
+                                {% endif %}
+                                {# End - price #}
+
+                                {# Begin - class packages #}
+                                {% if term.field_vih_class_class_packages.value %}
+                                    <div class="partial partial--class-packages">
+                                        {{ content.field_vih_class_class_packages }}
+                                    </div>
+                                {% endif %}
+                                {# End - class packages #}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {# Begin - action button #}
+                {% if content.is_active and content.can_be_subscribed %}
+                    <div class="partial partial--action-button">
+                        <div class="partial__body">
+                            <a href="{{ url('vih_subscription.event_order_create', {'event': term.id}) }}"
+                               class="btn btn-primary">
+                                {{ "Start now" | trans }}
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+                {# End - action button #}
+
+                {# Begin - teacher #}
+                {% if term.field_vih_teacher_class_descr.value %}
+                    <div class="partial partial--teacher-description">
+                        <div class="partial__heading">
+                            <h2 class="partial__heading__title heading-h4">{{ 'Teachers descriptions' | trans }}</h2>
+                        </div>
+                        <div class="partial__body">
+                            {{ content.field_vih_teacher_class_descr }}
+                        </div>
+                    </div>
+                {% endif %}
+                {# End - teacher #}
+
+            </div>
         </div>
-      </footer>
-    {% endif %}
-  </div>
-  <div{{ content_attributes.addClass('content') }}>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h6> {{ term.field_vih_cp_subtitle.value }}</h6>
-          <p>{{ term.field_vih_cp_description.value }}</p>
-          <p>{{ term.description.value|raw }}</p>
-        </div>
-        <div class="col-sm-6">
-        </div>
-      </div>
-      <div class="row vih-btn-box">
-        <div class="col-xs-12">
-        </div>
-      </div>
-      <div class="row lc-contact-box">
-        <div class="col-xs-12">
-        </div>
-      </div>
-      <div class="row lc-price-box">
-        <div class="col-xs-12">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row paragraphs">
-    {{ content.field_class_package_paragraph }}
-  </div>
+    </section>
+    <!-- End - content -->
+
+    {# Begin - paragraphs #}
+    {{ content.field_paragraphs }}
+    {# End - paragraphs #}
+
 </article>

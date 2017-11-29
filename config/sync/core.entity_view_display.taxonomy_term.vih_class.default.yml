@@ -3,16 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.vih_class.field_class_package_paragraph
+    - field.field.taxonomy_term.vih_class.field_banner
+    - field.field.taxonomy_term.vih_class.field_heading
+    - field.field.taxonomy_term.vih_class.field_paragraphs
+    - field.field.taxonomy_term.vih_class.field_subheading
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - field.field.taxonomy_term.vih_class.field_vih_teacher_class_descr
+    - image.style.banner_small
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
+    - image
     - options
     - panelizer
     - text
@@ -34,18 +38,52 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_class_package_paragraph:
-    weight: 4
+  field_banner:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_heading:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 5
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
     region: content
+  field_subheading:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_class_class_packages:
+    type: entity_reference_entity_view
+    weight: 9
+    region: content
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
   field_vih_class_color:
     type: list_key
-    weight: 5
+    weight: 4
     region: content
     label: hidden
     settings: {  }
@@ -72,16 +110,6 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
-  field_vih_teacher_class_descr:
-    type: entity_reference_revisions_entity_view
-    weight: 3
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
 hidden:
-  field_vih_class_class_packages: true
   field_vih_class_image: true
   langcode: true

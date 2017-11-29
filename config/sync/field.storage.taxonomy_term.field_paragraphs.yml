@@ -1,4 +1,4 @@
-uuid: 11e6ba5f-e2f7-47ed-aed2-da08a1d669de
+uuid: 736342d5-ac9c-40b0-82ff-002b2664119c
 langcode: da
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - paragraphs
     - taxonomy
-id: taxonomy_term.field_vih_teacher_class_descr
-field_name: field_vih_teacher_class_descr
+id: taxonomy_term.field_paragraphs
+field_name: field_paragraphs
 entity_type: taxonomy_term
 type: entity_reference_revisions
 settings:

@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.vih_class_package.field_class_package_paragraph
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
+    - field.field.taxonomy_term.vih_class_package.field_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
-    - field.field.taxonomy_term.vih_class_package.field_vih_show_on_frontpage
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_reference_revisions
@@ -26,15 +25,6 @@ targetEntityType: taxonomy_term
 bundle: vih_class_package
 mode: default
 content:
-  field_class_package_paragraph:
-    type: entity_reference_revisions_entity_view
-    weight: -4
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_link_taxo:
     weight: -3
     label: above
@@ -47,11 +37,19 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_paragraphs:
+    weight: -2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
 hidden:
   description: true
   field_vih_class_package_color: true
   field_vih_cp_description: true
   field_vih_cp_image: true
   field_vih_cp_subtitle: true
-  field_vih_show_on_frontpage: true
   langcode: true

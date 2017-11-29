@@ -4,13 +4,12 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.taxonomy_term.vih_class_package.field_class_package_paragraph
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
+    - field.field.taxonomy_term.vih_class_package.field_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_description
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_subtitle
-    - field.field.taxonomy_term.vih_class_package.field_vih_show_on_frontpage
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
@@ -31,18 +30,6 @@ content:
       rows: 5
     third_party_settings: {  }
     region: content
-  field_class_package_paragraph:
-    type: entity_reference_paragraphs
-    weight: 10
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   field_link_taxo:
     weight: 2
     settings:
@@ -50,6 +37,20 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_paragraphs:
+    weight: 11
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: 1_column_action_centered
+    third_party_settings: {  }
+    type: paragraphs
     region: content
   field_vih_class_package_color:
     weight: 9
@@ -86,13 +87,6 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_vih_show_on_frontpage:
-    weight: 8
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   langcode:
     type: language_select
     weight: 3
@@ -117,4 +111,6 @@ content:
   translation:
     weight: 10
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
