@@ -10,6 +10,11 @@ php:
   - 5.6
   - 7.0
   - 7.1
+  
+matrix:
+  fast_finish: true
+  allow_failures:
+  - php: 5.6
 
 env:
   - VERSION=STABLE
@@ -61,10 +66,10 @@ install:
   - if [ $VERSION = "HEAD" ]; then drush updatedb -y; fi;
 
   # Copy behat file from Lightning
-  - cp ./profiles/contrib/lightning/behat.* ../
-  - sed -i -e 's/%paths.base%\/tests\/features/docroot\/profiles\/contrib\/lightning\/tests\/features/g' ../behat.yml
-  - sed -i -e 's/tests\/features\/bootstrap/docroot\/profiles\/contrib\/lightning\/tests\/features\/bootstrap/g' ../behat.yml
-  - sed -i -e 's/..\/..\//docroot/g' ../behat.local.yml
+  #- cp ./profiles/contrib/lightning/behat.* ../
+  #- sed -i -e 's/%paths.base%\/tests\/features/docroot\/profiles\/contrib\/lightning\/tests\/features/g' ../behat.yml
+  #- sed -i -e 's/tests\/features\/bootstrap/docroot\/profiles\/contrib\/lightning\/tests\/features\/bootstrap/g' ../behat.yml
+  #- sed -i -e 's/..\/..\//docroot/g' ../behat.local.yml
 
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
@@ -73,8 +78,5 @@ before_script:
   - cd ..
 
 script:
-  - bin/behat --strict
-
-matrix:
-  fast_finish: true
-
+  #- bin/behat --strict
+  - bin/phpcs docroot/modules/custom
