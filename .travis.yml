@@ -79,5 +79,10 @@ before_script:
   - cd ..
 
 script:
-  #- bin/behat --strict
+  - composer validate composer.json --no-check-all --ansi --no-interaction
   - bin/phpcs docroot/modules/custom
+  #- bin/behat --strict
+
+after_failure:
+  - cd docroot
+  - drush watchdog:show --count=100 --severity=Error --extended
