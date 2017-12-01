@@ -38,40 +38,38 @@
 
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
+                    {# Participant container START #}
+                    <div class="partial">
+                      <div class="partial__heading">
+                        <h4 class="partial__heading__title">
+                          {{ "Personlige oplysninger" | t }}
+                        </h4>
+                      </div>
+                      <div class="partial__body">
+                        {{ form['newParticipantContainer'] }}
+                        <br/>
+                      </div>
+                    </div>
 
                     {# Options START #}
-                    {{ form['addedOptionsContainer'] }}
-
                     <div class="partial">
-                        <div class="partial__heading">
-                            <h4 class="partial__heading__title">
-                                {{ "Available options" | t }}
-                            </h4>
-                        </div>
-                        <div class="partial__body">
-                            {{ form['availableOptionsContainer'] }}
-                            {{ form['addOption'] }}
-                        </div>
+                      <div class="partial__heading">
+                        <h4 class="partial__heading__title">
+                          {{ "Available options" | t }}
+                        </h4>
+                      </div>
+                      <div class="partial__body">
+                        {{ form['availableOptionsContainer'] }}
+                      </div>
                     </div>
                     {# Options END #}
+                    {# Participant container END #}
 
-                    {# Personal data START #}
-                    <div class="partial">
-                        <div class="partial__heading">
-                            <h4 class="partial__heading__title">
-                                {{ "Personlige oplysninger" | t }}
-                            </h4>
-                        </div>
-                        <div class="partial__body">
-                            {{ form['participantsContainer'] }}
-                            <br/>
-                            {{ form['message'] }}
-                            {{ form['actions'] }}
-                        </div>
-                    </div>
-                    {# Personal data END #}
-
+                    {{ form['message'] }}
+                    {{ form['actions'] }}
                 </div>
+
+
                 <div class="col-xs-12 col-sm-6">
 
                     <!-- Begin - price -->
@@ -86,6 +84,19 @@
                               {{ form['price'] }}
                             </div>
                         </div>
+                    </div>
+                    <!-- End - price -->
+
+                    <!-- Begin - price -->
+                    <div class="boxy boxy--price">
+                      <div class="boxy__heading">
+                        <h4 class="boxy__heading__title">
+                          {{ 'Added participants' | trans }}
+                        </h4>
+                      </div>
+                      <div class="boxy__body">
+                        {{ form['addedParticipantsContainer'] }}
+                      </div>
                     </div>
                     <!-- End - price -->
 

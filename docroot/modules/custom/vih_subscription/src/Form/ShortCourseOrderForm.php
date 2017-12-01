@@ -54,12 +54,20 @@ class ShortCourseOrderForm extends FormBase {
 
     $optionGroups = array();
     $optionGroupOptions = array();
+    $optionGroupOptionsWithPrice = array();
     $optionGroupSuboptions = array();
+
     foreach ($course->field_vih_sc_option_groups->referencedEntities() as $optionGroupDelta => $optionGroup) {
       $optionGroups[$optionGroupDelta] = $optionGroup->field_vih_og_title->value;
 
       foreach ($optionGroup->field_vih_og_options->referencedEntities() as $optionDelta => $option) {
-        $optionGroupOptions[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value . ' (DKK ' . $option->field_vih_option_price_addition->value . ')';
+        $optionGroupOptions[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value;
+        $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value;
+
+        $additionalPrice = $option->field_vih_option_price_addition->value;
+        if (isset($additionalPrice) && floatval($additionalPrice) !== 0.00) {
+          $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] .= " (+ kr. $additionalPrice)";
+        }
 
         foreach ($option->field_vih_option_suboptions as $suboptionDelta => $suboption) {
           $optionGroupSuboptions[$optionGroupDelta][$optionDelta][$suboptionDelta] = $suboption->value;
@@ -71,10 +79,18 @@ class ShortCourseOrderForm extends FormBase {
     $form_state->set('optionGroupOptions', $optionGroupOptions);
     $form_state->set('optionGroupSuboptions', $optionGroupSuboptions);
 
+    $addedParticipants = $form_state->get('addedParticipants');
+
     if ($order != NULL) {
       if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($course, $order))) {
         $this->courseOrder = $order;
         $this->price = $this->courseOrder->field_vih_sco_price->value;
+
+        if (!isset($addedParticipants)) {
+          //preloading data
+          $this->populateData($this->courseOrder, $form, $form_state);
+          $addedParticipants = $form_state->get('addedParticipants');
+        }
       }
     }
     //END VARIABLES INIT //
@@ -97,211 +113,180 @@ class ShortCourseOrderForm extends FormBase {
     );
     //END GENERAL DATA //
 
-    //START ADDED OPTIONS CONTAINER //
-    $form['addedOptionsContainer'] = array(
+    //START ADD NEW PARTICIPANT CONTAINER//
+    $form['newParticipantContainer'] = [
       '#type' => 'container',
-      '#prefix' => '<div id="added-options-container-wrapper">',
-      '#suffix' => '</div>',
-    );
-
-    if ($form_state->get('addedOptions')) {
-      $this->populateAddedOptions($form, $form_state);
-    }
-    //END ADDED OPTIONS CONTAINER //
-
-    //START AVAILABLE OPTIONS CONTAINER //
-    $form['availableOptionsContainer'] = array(
-      '#type' => 'container',
-      '#prefix' => '<div id="available-options-container-wrapper" class="form-group">',
-      '#suffix' => '</div>',
-    );
-
-    $form['availableOptionsContainer']['optionGroups'] = array(
-      '#title' => $this->t('Option name'),
-      '#type' => 'select',
-      '#options' => $optionGroups,
-      //'#value' => -1,
-      '#empty_value' => -1,
-      //'#required' => TRUE,
-      '#ajax' => [
-        'callback' => '::ajaxFillOptionsList',
-        'wrapper' => 'options-container-wrapper',
-        'event' => 'change',
-        'progress' => array(
-          'type' => 'none'
-        )
-      ],
-    );
-
-    $form['availableOptionsContainer']['optionsContainer'] = array(
-      '#type' => 'container',
-      '#prefix' => '<div id="options-container-wrapper">',
-      '#suffix' => '</div>',
-      '#states' => [
-        'invisible' => [
-          [':input[name="optionGroups"]' => ['value' => '-1' ]],
-        ]
-      ]
-    );
-
-    $form['availableOptionsContainer']['optionsContainer']['options'] = array(
-      '#title' => $this->t('Selected Option'),
-      '#type' => 'select',
-      '#value' => -1,
-      '#empty_value' => -1,
-      //'#required' => TRUE,
-      '#ajax' => [
-        'callback' => '::ajaxFillSuboptionsList',
-        'wrapper' => 'suboptions-container-wrapper',
-        'event' => 'change',
-        'progress' => array(
-          'type' => 'none'
-        )
-      ],
-    );
-    //filling the list of options
-    $this->ajaxFillOptionsList($form, $form_state);
-
-    $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer'] = array(
-      '#type' => 'container',
-      '#prefix' => '<div id="suboptions-container-wrapper">',
-      '#suffix' => '</div>',
-    );
-
-    $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions'] = array(
-      '#title' => $this->t('Selected suboption'),
-      '#type' => 'select',
-      '#value' => NULL,
-      '#empty_value' => -1,
-      '#access' => FALSE//hidden unless has some options
-    );
-
-    $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['amount'] = array(
-      '#type' => 'number',
-      '#title' => $this->t('Amount'),
-      '#value' => 1,
-      '#min' => 1
-    );
-
-    $form['addOption'] = array(
-      '#id' => 'add-option',
-      '#name' => 'add-option',
-      '#type' => 'submit',
-      '#value' => $this->t('Add option'),
-      '#submit' => array('::addOption'),
-      '#ajax' => [
-        'callback' => '::ajaxAddRemoveOptionCallback',
-        'wrapper' => 'added-options-container-wrapper',
-        'progress' => array(
-          'type' => 'none'
-        )
-      ],
-      '#limit_validation_errors' => array(
-        array('optionGroups'),
-        array('options')
-      )
-    );
-    //END AVAILABLE OPTIONS CONTAINER //
-
-    //START PARTICIPANTS CONTAINER //
-    $personsLimit = $course->field_vih_sc_persons_limit->value;
-    $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($course);
-    if ($personsLimit == 0) { //unlimited
-      $personsLimit = PHP_INT_MAX;
-    }
-
-    $participantsCounter = $form_state->get('participantsCounter');
-    if (empty($participantsCounter)) {
-      if ($this->courseOrder != NULL) {
-        $participantsCounter = count($this->courseOrder->get('field_vih_sco_persons')->getValue());
-      } else {
-        $participantsCounter = 1;
-      }
-
-      $form_state->set('participantsCounter', $participantsCounter);
-    }
-
-    $form['participantsContainer'] = [
-      '#type' => 'container',
-      '#prefix' => '<div id="participants-container-wrapper">',
+      '#prefix' => '<div id="new-participant-container-wrapper">',
       '#suffix' => '</div>',
       '#tree' => TRUE
     ];
 
-    for ($i = 0; $i < $participantsCounter; $i++) {
-      $personHumanCounter = $i+1;//starting from 1, not 0
+    //checking the limits
+    $personsLimit = $course->field_vih_sc_persons_limit->value;
+    $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($course);
 
-      if ($personHumanCounter + $personsSubscribed <= $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
-        $form['participantsContainer'][$i]['participant_fieldset'] = [
-          '#type' => 'fieldset',
-          '#title' => $this->t('Person') . ' ' . $personHumanCounter
-        ];
-        $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
-          '#type' => 'textfield',
-          '#placeholder' => $this->t('Fornavn'),
-          '#required' => TRUE,
+    if ($personsLimit == 0) { //unlimited
+      $personsLimit = PHP_INT_MAX;
+    }
+
+    if (count($addedParticipants) + $personsSubscribed < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
+      $form['newParticipantContainer']['newParticipantFieldset'] = [
+        '#type' => 'fieldset',
+        '#title' => $this->t('Person')
+      ];
+      $form['newParticipantContainer']['newParticipantFieldset']['firstName'] = array(
+        '#type' => 'textfield',
+        '#placeholder' => $this->t('Fornavn'),
+        '#required' => TRUE,
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['lastName'] = array(
+        '#type' => 'textfield',
+        '#placeholder' => $this->t('Efternavn'),
+        '#required' => TRUE,
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
+        '#type' => 'textfield',
+        '#placeholder' => $this->t('Email'),
+        '#required' => TRUE,
+      );
+
+      //START AVAILABLE OPTIONS CONTAINER //
+      $form['availableOptionsContainer'] = array(
+        '#type' => 'container',
+        '#prefix' => '<div id="available-options-container-wrapper" class="form-group">',
+        '#suffix' => '</div>',
+        '#tree' => TRUE
+      );
+
+      foreach ($optionGroups as $optionGroupDelta => $optionGroupName) {
+        $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['option'] = array(
+          '#title' => $optionGroupName,
+          '#type' => 'radios',
+          '#options' => $optionGroupOptionsWithPrice[$optionGroupDelta],
+          '#empty_value' => -1,
+          '#required' => TRUE
         );
-        $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
-          '#type' => 'textfield',
-          '#placeholder' => $this->t('Efternavn'),
-          '#required' => TRUE,
-        );
-        $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
-          '#type' => 'textfield',
-          '#placeholder' => $this->t('Email'),
-          '#required' => TRUE,
-        );
+
+        //adding suboptions, if any
+        foreach ($optionGroupOptions[$optionGroupDelta] as $optionDelta => $optionName) {
+          if (isset($optionGroupSuboptions[$optionGroupDelta][$optionDelta])) {
+            $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['options'][$optionDelta]['suboptions-container'] = array(
+              '#type' => 'container',
+              '#states' => array(
+                'visible' => array(
+                  ':input[name="availableOptionsContainer[optionGroups][' . $optionGroupDelta . '][option]"]' => array('value' => $optionDelta),
+                ),
+              ),
+              '#attributes' => array('class' => array('vih-suboptions-container')),
+            );
+
+            $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['options'][$optionDelta]['suboptions-container']['suboption'] = array(
+              '#type' => 'radios',
+              '#options' => $optionGroupSuboptions[$optionGroupDelta][$optionDelta],
+              '#empty_value' => -1,
+              '#default_value' => 0
+            );
+          }
+        }
       }
-    }
 
-    if ($personsSubscribed + $participantsCounter < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
-      $form['participantsContainer']['actions']['add_participant'] = [
+      $form['availableOptionsContainer']['addParticipantOptions'] = array(
+        '#id' => 'add-participant-options',
+        '#name' => 'add-participant-options',
         '#type' => 'submit',
-        '#value' => t('Tilføj flere'),
-        '#submit' => array('::addParticipant'),
+        '#value' => $this->t('Add participant and options'),
+        '#submit' => array('::addParticipantOptions'),
         '#ajax' => [
-          'callback' => '::addRemoveParticipantsCallback',
-          'wrapper' => 'participants-container-wrapper',
+          'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
+          'progress' => array(
+            'type' => 'none'
+          )
         ],
-        '#limit_validation_errors' => array()
-      ];
-    }
-
-    if ($participantsCounter > 1) {
-      $form['participantsContainer']['actions']['remove_participant'] = [
-        '#type' => 'submit',
-        '#value' => t('Fjern den sidste'),
-        '#submit' => array('::removeParticipant'),
-        '#ajax' => [
-          'callback' => '::addRemoveParticipantsCallback',
-          'wrapper' => 'participants-container-wrapper',
-        ],
-        '#limit_validation_errors' => array()
-      ];
-    }
-    //END PARTICIPANTS CONTAINER //
-
-    //START FORM CONTROLS //
-    if ($personsLimit > $personsSubscribed) {
-      $form['actions'] = [
-        '#type' => 'actions',
-      ];
-      $form['actions']['submit'] = array(
-        '#type' => 'submit',
-        '#value' => $this->t('Indsend oplynsinger'),
       );
     } else {
-      $form['message'] = array(
+      $form['availableOptionsContainer'] = array(
+        '#type' => 'container',
+        '#prefix' => '<div id="available-options-container-wrapper" class="form-group">',
+        '#suffix' => '</div>',
+        '#tree' => TRUE
+      );
+
+      $form['newParticipantContainer']['message'] = array(
         '#markup' => $this->t('Denne begivenhed kan ikke allokere flere deltagere')
       );
     }
-    //END FORM CONTROLS //
+    //END AVAILABLE OPTIONS CONTAINER //
+    //END ADD NEW PARTICIPANT CONTAINER //
 
-    //preloading data
-    if ($this->courseOrder != NULL) {
-      $this->populateData($this->courseOrder, $form, $form_state);
-      $this->populateAddedOptions($form, $form_state);
+    // START added participants container //
+    $form['addedParticipantsContainer'] = array(
+      '#type' => 'container',
+      '#prefix' => '<div id="added-participants-container-wrapper" class="form-group">',
+      '#suffix' => '</div>',
+      '#theme' => 'vih_subscription_added_participant',
+      '#addedParticipants' => $addedParticipants
+    );
+
+    //adding edit/remove buttons
+    if ($addedParticipants && is_array($addedParticipants)) {
+      foreach ($addedParticipants as $addedParticipantDelta => $addedParticipant) {
+        $form['addedParticipantsContainer']['controlButtons']['editButton-' . $addedParticipantDelta] = [
+          '#id' => 'edit-participant-options-' . $addedParticipantDelta,
+          '#name' => 'edit-participant-options-' . $addedParticipantDelta,
+          '#type' => 'submit',
+          '#value' => $this->t('Edit participant'),
+          '#submit' => array('::editParticipantOptions'),
+          '#ajax' => [
+            'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
+            'progress' => array(
+              'type' => 'none'
+            )
+          ],
+          '#participantOptionsDelta' => $addedParticipantDelta,
+          '#limit_validation_errors' => array()
+        ];
+
+        $form['addedParticipantsContainer']['controlButtons']['removeButton-' . $addedParticipantDelta] = [
+          '#id' => 'remove-participant-options-' . $addedParticipantDelta,
+          '#name' => 'remove-participant-options-' . $addedParticipantDelta,
+          '#type' => 'submit',
+          '#value' => $this->t('Remove participant'),
+          '#submit' => array('::removeParticipantOptions'),
+          '#ajax' => [
+            'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
+            'progress' => array(
+              'type' => 'none'
+            )
+          ],
+          '#participantOptionsDelta' => $addedParticipantDelta,
+          '#limit_validation_errors' => array()
+        ];
+      }
     }
+    // END added participants container
+
+    //START FORM CONTROLS //
+//    if ($personsLimit > $personsSubscribed) {
+    $form['actions'] = [
+      '#type' => 'actions',
+    ];
+    $form['actions']['submit'] = array(
+      '#type' => 'submit',
+      '#id' => 'vih-course-submit',
+      '#value' => $this->t('Indsend oplynsinger'),
+      '#limit_validation_errors' => array(
+        ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+      ),
+      '#submit' => array('::submitForm')
+    );
+    //} else {
+//      $form['message'] = array(
+//        '#markup' => $this->t('Denne begivenhed kan ikke allokere flere deltagere')
+//      );
+//    }
+    //END FORM CONTROLS //
 
     $form['#theme'] = 'vih_subscription_short_course_order_form';
     $form_state->setCached(FALSE);
@@ -309,53 +294,12 @@ class ShortCourseOrderForm extends FormBase {
   }
 
   /**
-   * Ajax callback that fill the list of options.
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   * @return mixed
-   */
-  public function ajaxFillOptionsList(array &$form, FormStateInterface $form_state) {
-    $selectedOptionGroup = $form_state->getValue('optionGroups');
-    $optionGroupOptions = $form_state->get('optionGroupOptions');
-
-    $form['availableOptionsContainer']['optionsContainer']['options']['#options'] = array(-1 => t('- None -'));
-    if (is_numeric($selectedOptionGroup) && $selectedOptionGroup != -1) {
-      $form['availableOptionsContainer']['optionsContainer']['options']['#options'] += $optionGroupOptions[$selectedOptionGroup];
-    }
-
-    return $form['availableOptionsContainer']['optionsContainer'];
-  }
-
-  /**
-   * Ajax callback that fills the list of suboptions.
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   * @return mixed
-   */
-  public function ajaxFillSuboptionsList(array &$form, FormStateInterface $form_state) {
-    $userInput = $form_state->getUserInput();
-
-    $selectedOptionGroup = $form_state->getValue('optionGroups');
-    $selectedOption = $userInput['options'];
-
-    $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
-    if (!empty($optionGroupSuboptions[$selectedOptionGroup][$selectedOption])) {
-      $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#options'] = $optionGroupSuboptions[$selectedOptionGroup][$selectedOption];
-      $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer']['suboptions']['#access'] = TRUE;
-    }
-
-    return $form['availableOptionsContainer']['optionsContainer']['suboptionsContainer'];
-  }
-
-  /**
-   * Callback function that adds the certain option to the list of added options.
+   * Callback function that adds participant and the selected options to the participants list.
    *
    * @param array $form
    * @param FormStateInterface $form_state
    */
-  public function addOption(array &$form, FormStateInterface $form_state) {
+  public function addParticipantOptions(array &$form, FormStateInterface $form_state) {
     $userInput = $form_state->getUserInput();
 
     if ($form_state->hasAnyErrors()) {
@@ -364,65 +308,166 @@ class ShortCourseOrderForm extends FormBase {
       return $response;
     }
 
-    $addedOptions = $form_state->get('addedOptions');
-    $option = [
-      'optionGroup' => $userInput['optionGroups'],
-      'option' => $userInput['options'],
-      'suboption' => (!empty($userInput['suboptions'])) ? $userInput['suboptions'] : '',
-      'amount' => $userInput['amount']
-    ];
-    $addedOptions[] = $option;
-    $form_state->set('addedOptions', $addedOptions);
+    //variables to get option names from
+    $optionGroups = $form_state->get('optionGroups');
+    $optionGroupOptions = $form_state->get('optionGroupOptions');
+    $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
 
+    //existing list of added participants
+    $addedParticipants = $form_state->get('addedParticipants');
+
+    //filling personal information
+    $participant = array();
+    $participant['firstName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'];
+    $participant['lastName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'];
+    $participant['email'] = $userInput['newParticipantContainer']['newParticipantFieldset']['email'];
+
+    //filling ordered options
+    $participant['orderedOptions'] = array();
+    foreach ($userInput['availableOptionsContainer']['optionGroups'] as $optionGroupDelta => $optionGroupSelection) {
+      $optionDelta = $optionGroupSelection['option'];
+      $optionName = NULL;
+      $subOptionDelta = NULL;
+      $subOptionName = NULL;
+      $subOptionDelta = NULL;
+
+      if (isset($optionDelta)) {
+        $optionName = $optionGroupOptions[$optionGroupDelta][$optionDelta];
+        if (isset($optionGroupSelection['options'][$optionDelta])) {
+          $subOptionDelta = $optionGroupSelection['options'][$optionDelta]['suboptions-container']['suboption'];
+          if (isset($subOptionDelta)) {
+            $subOptionName = $optionGroupSuboptions[$optionGroupDelta][$optionDelta][$subOptionDelta];
+          }
+        }
+      }
+
+      $participant['orderedOptions'][$optionGroupDelta] = array(
+        'optionGroup' => [
+          'delta' => $optionGroupDelta,
+          'name' => $optionGroups[$optionGroupDelta]
+        ],
+        'option' => [
+          'delta' => $optionDelta,
+          'name' => $optionName
+        ],
+        'suboption' => [
+          'delta' => $subOptionDelta,
+          'name' => $subOptionName
+        ]
+      );
+    }
+    $addedParticipants[] = $participant;
+
+    $form_state->set('addedParticipants', $addedParticipants);
+
+    // Clearing form
+    $clean_keys = $form_state->getCleanValueKeys();
+    $clean_keys[] = 'ajax_page_state';
+    foreach ($userInput as $key => $item) {
+      if (!in_array($key, $clean_keys) && substr($key, 0, 1) !== '_') {
+        unset($userInput[$key]);
+      }
+    }
+
+    $form_state->setUserInput($userInput);
     $form_state->setRebuild();
   }
 
   /**
-   * Callback function that removed a previously added option.
+   * Callback function that populates the newParticipant fields with the certain participant values, and removes that participant from the list of added participants.
    *
    * @param array $form
    * @param FormStateInterface $form_state
    */
-  public function removeOption(array &$form, FormStateInterface $form_state) {
+  function editParticipantOptions(array &$form, FormStateInterface $form_state) {
+    $userInput = $form_state->getUserInput();
+
+    //getting triggering element
     $triggeringElement = $form_state->getTriggeringElement();
-    $addedOptionDelta = $triggeringElement['#addedOptionDelta'];
+    $addedParticipants = $form_state->get('addedParticipants');
 
-    $addedOptions = $form_state->get('addedOptions');
-    unset($addedOptions[$addedOptionDelta]);
-    $form_state->set('addedOptions', $addedOptions);
+    $participantToEdit = $addedParticipants[$triggeringElement['#participantOptionsDelta']];
 
+    //unsetting the participant
+    unset($addedParticipants[$triggeringElement['#participantOptionsDelta']]);
+    $form_state->set('addedParticipants', $addedParticipants);
+
+    //filling personal information
+    $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'] = $participantToEdit['firstName'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'] = $participantToEdit['lastName'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $participantToEdit['email'];
+
+    //filling options
+    foreach ($participantToEdit['orderedOptions'] as $optionGroupDelta => $orderedOption) {
+      $optionDelta = $orderedOption['option']['delta'];
+      $subOptionDelta = NULL;
+      if (isset($orderedOption['suboption']['delta'])) {
+        $subOptionDelta = $orderedOption['suboption']['delta'];
+      }
+
+      $userInput['availableOptionsContainer']['optionGroups'][$optionGroupDelta] = [
+        'option' => $optionDelta,
+        'options' => [
+          0 => [
+            'suboptions-container' => [
+              'suboption' => $subOptionDelta
+            ]
+          ]
+        ]
+      ];
+    }
+
+    $form_state->setUserInput($userInput);
     $form_state->setRebuild();
   }
 
   /**
-   * Ajax callback function that fetches the refreshed version of added options, resets available options
+   * Callback function that removes a certain participant from the list of added participants.
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  function removeParticipantOptions(array &$form, FormStateInterface $form_state) {
+    //getting triggering element
+    $triggeringElement = $form_state->getTriggeringElement();
+    $addedParticipants = $form_state->get('addedParticipants');
+    //unsetting the participant
+    unset($addedParticipants[$triggeringElement['#participantOptionsDelta']]);
+    $form_state->set('addedParticipants', $addedParticipants);
+
+    //rebuilding form
+    $form_state->setRebuild();
+  }
+
+  /**
+   * Ajax callback function that fetches the refreshed version of added participants with options, resets add new participant form part
    * as well as updated the total course price
    *
    * @param array $form
    * @param FormStateInterface $form_state
    * @return AjaxResponse
    */
-  public function ajaxAddRemoveOptionCallback(array &$form, FormStateInterface $form_state) {
+  public function ajaxAddRemoveParticipantOptionsCallback(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+
     //checking for any errors
     if ($form_state->hasAnyErrors()) {
-      $response = new AjaxResponse();
       $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
       //redrawing elements
-      $response->addCommand(new ReplaceCommand('#added-options-container-wrapper', $form['addedOptionsContainer']));
+      $response->addCommand(new ReplaceCommand('#new-participant-container-wrapper', $form['newParticipantContainer']));
       $response->addCommand(new ReplaceCommand('#available-options-container-wrapper', $form['availableOptionsContainer']));
       return $response;
     }
 
-    //diselecting option groups
-    $form['availableOptionsContainer']['optionGroups']['#value'] = -1;
-
-    $response = new AjaxResponse();
     //resetting elements
-    $response->addCommand(new ReplaceCommand('#added-options-container-wrapper', $form['addedOptionsContainer']));
+    $response->addCommand(new ReplaceCommand('#new-participant-container-wrapper', $form['newParticipantContainer']));
     $response->addCommand(new ReplaceCommand('#available-options-container-wrapper', $form['availableOptionsContainer']));
 
     //updating the price
     $response->addCommand(new HtmlCommand('#vih-course-price', 'DKK ' . number_format($this->calculatePrice($form_state), 0, ',', '.')));
+
+    //updating added participants
+    $response->addCommand(new ReplaceCommand('#added-participants-container-wrapper', $form['addedParticipantsContainer']));
 
     //resetting the error, if any
     $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
@@ -430,69 +475,22 @@ class ShortCourseOrderForm extends FormBase {
     return $response;
   }
 
-
-  /**
-   * Callback function to add more participants fieldset
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   */
-  public function addParticipant(array &$form, FormStateInterface $form_state) {
-    $participantsCounter = $form_state->get('participantsCounter');
-    $participantsCounter = $participantsCounter + 1;
-    $form_state->set('participantsCounter', $participantsCounter);
-    $form_state->setRebuild();
-  }
-
-  /**
-   * Ajax callback function that fetches the refreshed version participants
-   * as well as updated the total course price
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   * @return AjaxResponse
-   */
-  public function addRemoveParticipantsCallback(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-
-    //updating the price
-    $response->addCommand(new HtmlCommand('#vih-course-price', 'DKK ' . number_format($this->calculatePrice($form_state), 0, ',', '.')));
-
-    //resetting elements
-    $response->addCommand(new ReplaceCommand('#participants-container-wrapper', $form['participantsContainer']));
-
-    return $response;
-  }
-
-  /**
-   * Callback function to remove the last added participants fieldset
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   */
-  public function removeParticipant(array &$form, FormStateInterface $form_state) {
-    $participantsCounter = $form_state->get('participantsCounter');
-    if ($participantsCounter > 1) {
-      $participantsCounter = $participantsCounter - 1;
-      $form_state->set('participantsCounter', $participantsCounter);
-    }
-    $form_state->setRebuild();
-  }
-
-
   /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    $userInput = $form_state->getUserInput();
     $triggeringElement = $form_state->getTriggeringElement();
 
-    if ($triggeringElement['#id'] == 'add-option') {
-      if ($userInput['optionGroups'] == -1) {
-        $form_state->setErrorByName('optionGroups', $this->t('This is not a .com email address.'));
-      }
-      if ($userInput['options'] == -1) {
-        $form_state->setErrorByName('options', $this->t('This is not a .com email address.'));
+    //submit button
+    if ($triggeringElement['#id'] == 'vih-course-submit') {
+      $form_state->clearErrors();
+
+      $addedParticipants = $form_state->get('addedParticipants');
+      //not added participants
+      if (!count($addedParticipants)) {
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['firstName'], $this->t('Tilføj venligst mindst én deltager'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Tilføj venligst mindst én deltager'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Tilføj venligst mindst én deltager'));
       }
     }
   }
@@ -501,53 +499,61 @@ class ShortCourseOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    //collection ordered options
-    $orderedOptions = array();
-    $addedOptions = $form_state->get('addedOptions');
-    if (isset($addedOptions) && !empty($addedOptions)) {
-      $optionGroups = $this->course->field_vih_sc_option_groups->referencedEntities();
-      foreach ($addedOptions as $addedOption) {
-        $optionGroup = $optionGroups[$addedOption['optionGroup']];
+    //collection subscribed participants information
+    $subscribedParticipants = array();
 
-        $options = $optionGroup->field_vih_og_options->referencedEntities();
-        $option = $options[$addedOption['option']];
-
-        $suboption = null;
-        if ($option && !empty($addedOption['suboption'])) {
-          $suboptions = $option->field_vih_option_suboptions;
-          $suboption = $suboptions[$addedOption['suboption']]->value;
-        }
-
-        $orderedOption = Paragraph::create([
-          'type' => 'vih_ordered_option',
-          'field_vih_oo_group_name' => $optionGroup->field_vih_og_title->value,
-          'field_vih_oo_option_name' => $option->field_vih_option_title->value,
-          'field_vih_oo_price_addition' => ($option->field_vih_option_price_addition->value)*$addedOption['amount'],
-          'field_vih_oo_suboption' => $suboption,
-          'field_vih_oo_amount' => $addedOption['amount'],
-        ]);
-        $orderedOptions[] = $orderedOption;
-      }
-    }
-
-    //collection subscribed persons
     $firstParticipantName = '';
-    $subscribedPersons = array();
-    foreach($form_state->getValue('participantsContainer') as $participant_fieldset) {
-      $participant = $participant_fieldset['participant_fieldset'];
-      if ($participant) {
-        if (empty($firstParticipantName)) {
-          $firstParticipantName = $participant['firstName'] . ' ' . $participant['lastName'];
+
+    $addedParticipants = $form_state->get('addedParticipants');
+    if (isset($addedParticipants) && !empty($addedParticipants)) {
+      $optionGroups = $this->course->field_vih_sc_option_groups->referencedEntities();
+
+      foreach ($addedParticipants as $addedParticipant) {
+        //going though options
+        $orderedOptions = array();
+        foreach ($addedParticipant['orderedOptions'] as $optionGroupDelta => $orderedOption) {
+          $optionDelta = $orderedOption['option']['delta'];
+          $subOptionDelta = NULL;
+
+          //option group
+          $optionGroup = $optionGroups[$optionGroupDelta];
+
+          //option
+          $options = $optionGroup->field_vih_og_options->referencedEntities();
+          $option = $options[$optionDelta];
+
+          //suboption
+          $suboption = NULL;
+          if ($option && isset($orderedOption['suboption']['delta'])) {
+            $suboptions = $option->field_vih_option_suboptions;
+            $suboption = $suboptions[$orderedOption['suboption']['delta']]->value;
+          }
+
+          $orderedOption = Paragraph::create([
+            'type' => 'vih_ordered_option',
+            'field_vih_oo_group_name' => $optionGroup->field_vih_og_title->value,
+            'field_vih_oo_option_name' => $option->field_vih_option_title->value,
+            'field_vih_oo_price_addition' => $option->field_vih_option_price_addition->value,
+            'field_vih_oo_suboption' => $suboption,
+          ]);
+          $orderedOptions[] = $orderedOption;
         }
 
-        $subscribedPerson = Paragraph::create([
+        //creating participant paragraph
+        $subscribedParticipant = Paragraph::create([
           'type' => 'vih_ordered_course_person',
-          'field_vih_ocp_first_name' => $participant['firstName'],
-          'field_vih_ocp_last_name' => $participant['lastName'],
-          'field_vih_ocp_email' => $participant['email'],
+          'field_vih_ocp_first_name' => $addedParticipant['firstName'],
+          'field_vih_ocp_last_name' => $addedParticipant['lastName'],
+          'field_vih_ocp_email' => $addedParticipant['email'],
+          'field_vih_ocp_ordered_options' => $orderedOptions
         ]);
-        $subscribedPerson->save();
-        $subscribedPersons[] = $subscribedPerson;
+        $subscribedParticipant->save();
+        $subscribedParticipants[] = $subscribedParticipant;
+
+        //saving first participant name to use in order title
+        if (empty($firstParticipantName)) {
+          $firstParticipantName = $addedParticipant['firstName'] . ' ' . $addedParticipant['lastName'];
+        }
       }
     }
 
@@ -562,8 +568,7 @@ class ShortCourseOrderForm extends FormBase {
         'status' => 0,
         'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $firstParticipantName . ' - '
           . \Drupal::service('date.formatter')->format(time(), 'short'),
-        'field_vih_sco_persons' => $subscribedPersons,
-        'field_vih_sco_ordered_options' => $orderedOptions,
+        'field_vih_sco_persons' => $subscribedParticipants,
         'field_vih_sco_course' => $this->course->id(),
         'field_vih_sco_status' => 'pending',
         'field_vih_sco_price' => $orderPrice
@@ -573,23 +578,23 @@ class ShortCourseOrderForm extends FormBase {
       $subscribedPersonsIds = $this->courseOrder->get('field_vih_sco_persons')->getValue();
       foreach ($subscribedPersonsIds as $subscribedPersonId) {
         $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
+
         if ($subscribedPerson) {
+          //removing added options
+          $orderedOptionsIds = $subscribedPerson->get('field_vih_ocp_ordered_options')->getValue();
+          foreach ($orderedOptionsIds as $orderedOptionId) {
+            $orderedOption = Paragraph::load($orderedOptionId['target_id']);
+            if ($orderedOption) {
+              $orderedOption->delete;
+            }
+          }
+
+          //finally removing the subscribed person itself
           $subscribedPerson->delete();
         }
       }
       //adding new participants
-      $this->courseOrder->set('field_vih_sco_persons', $subscribedPersons);
-
-      //removing old ordered options
-      $orderedOptionsIds = $this->courseOrder->get('field_vih_sco_ordered_options')->getValue();
-      foreach ($orderedOptionsIds as $orderedOptionId) {
-        $orderedOption = Paragraph::load($orderedOptionId['target_id']);
-        if ($orderedOption) {
-          $orderedOption->delete();
-        }
-      }
-      //adding new ordered options
-      $this->courseOrder->set('field_vih_sco_ordered_options', $orderedOptions);
+      $this->courseOrder->set('field_vih_sco_persons', $subscribedParticipants);
 
       $this->courseOrder->set('field_vih_sco_price', $orderPrice);
     }
@@ -614,21 +619,25 @@ class ShortCourseOrderForm extends FormBase {
   private function calculatePrice(FormStateInterface $form_state) {
     $base_price = $this->course->field_vih_sc_price->value;
 
-    //persons
-    $base_price *= $form_state->get('participantsCounter');
+    $addedParticipants = $form_state->get('addedParticipants');
 
-    //options
-    $addedOptions = $form_state->get('addedOptions');
-    if ($addedOptions) {
+    if (count($addedParticipants) > 0) {
+      //calculating persons
+      $base_price *= count($addedParticipants);
+
+      //calculating options
       $optionGroups = $this->course->field_vih_sc_option_groups->referencedEntities();
+      foreach ($addedParticipants as $addedParticipant) {
+        foreach ($addedParticipant['orderedOptions'] as $orderedOption) {
+          if (isset($orderedOption['option']['delta'])) {
+            $selectedOptionGroup = $optionGroups[$orderedOption['optionGroup']['delta']];
 
-      foreach ($addedOptions as $addedOption) {
-        $optionGroup = $optionGroups[$addedOption['optionGroup']];
+            $options = $selectedOptionGroup->field_vih_og_options->referencedEntities();
+            $selectedOption = $options[$orderedOption['option']['delta']];
 
-        $options = $optionGroup->field_vih_og_options->referencedEntities();
-        $option = $options[$addedOption['option']];
-
-        $base_price += ($option->field_vih_option_price_addition->value) * $addedOption['amount'];
+            $base_price += $selectedOption->field_vih_option_price_addition->value;
+          }
+        }
       }
     }
 
@@ -658,7 +667,7 @@ class ShortCourseOrderForm extends FormBase {
     foreach ($addedOptions as $addedOptionDelta => $addedOption) {
       $groupOptionName = $optionGroups[$addedOption['optionGroup']];
       $optionName = $optionGroupOptions[$addedOption['optionGroup']][$addedOption['option']];
-      $suboptionName = null;
+      $suboptionName = NULL;
       if (!empty($optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']])) {
         $suboptionName = $optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']];
       }
@@ -698,46 +707,57 @@ class ShortCourseOrderForm extends FormBase {
    * @param $form
    */
   private function populateData(NodeInterface $courseOrder, &$form, &$form_state) {
+    //variables that are used for extracing ordered options information
+    $optionGroups = $form_state->get('optionGroups');
+    $optionGroupOptions = $form_state->get('optionGroupOptions');
+    $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
+
+    $addedParticipants = array();
+
     //subscribed persons
     $subscribedPersonsIds = $courseOrder->get('field_vih_sco_persons')->getValue();
     foreach ($subscribedPersonsIds as $index => $subscribedPersonId) {
       $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
 
-      $form['participantsContainer'][$index]['participant_fieldset']['firstName']['#default_value'] = $subscribedPerson->field_vih_ocp_first_name->value;
-      $form['participantsContainer'][$index]['participant_fieldset']['lastName']['#default_value'] = $subscribedPerson->field_vih_ocp_last_name->value;
-      $form['participantsContainer'][$index]['participant_fieldset']['email']['#default_value'] = $subscribedPerson->field_vih_ocp_email->value;
-    }
+      //filling personal information
+      $participant = array();
+      $participant['firstName'] = $subscribedPerson->field_vih_ocp_first_name->value;
+      $participant['lastName'] = $subscribedPerson->field_vih_ocp_last_name->value;
+      $participant['email'] = $subscribedPerson->field_vih_ocp_email->value;
 
-    //populating added options only if not changed
-    if (is_null($form_state->get('addedOptions'))) {
-      $addedOptions = array();
+      //filling ordered options information
+      $orderedOptionsIds = $subscribedPerson->get('field_vih_ocp_ordered_options')->getValue();
+      foreach ($orderedOptionsIds as $orderedOptionId) {
+        $orderedOption = Paragraph::load($orderedOptionId['target_id']);
 
-      $optionGroups = $form_state->get('optionGroups');
-      $optionGroupOptions = $form_state->get('optionGroupOptions');
-      $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
-
-      $addedOptionsIds = $courseOrder->get('field_vih_sco_ordered_options')->getValue();
-      foreach ($addedOptionsIds as $index => $addedOptionId) {
-        $addedOption = Paragraph::load($addedOptionId['target_id']);
-
-        $optionGroupId = array_search($addedOption->field_vih_oo_group_name->value, $optionGroups);
-        $optionId = array_search($addedOption->field_vih_oo_option_name->value, $optionGroupOptions[$optionGroupId]);
+        $optionGroupId = array_search($orderedOption->field_vih_oo_group_name->value, $optionGroups);
+        $optionId = array_search($orderedOption->field_vih_oo_option_name->value, $optionGroupOptions[$optionGroupId]);
         $suboptionId = NULL;
+        $suboptionName = NULL;
         if (!empty($optionGroupSuboptions[$optionGroupId][$optionId])) {
-          $suboptionId = array_search($addedOption->field_vih_oo_suboption->value, $optionGroupSuboptions[$optionGroupId][$optionId]);
+          $suboptionId = array_search($orderedOption->field_vih_oo_suboption->value, $optionGroupSuboptions[$optionGroupId][$optionId]);
+          $suboptionName = $optionGroupSuboptions[$optionGroupId][$optionId][$suboptionId];
         }
 
-        $option = [
-          'optionGroup' => $optionGroupId,
-          'option' => $optionId,
-          'suboption' => $suboptionId,
-          'amount' => $addedOption->field_vih_oo_amount->value,
+        $participant['orderedOptions'][$optionGroupId] = [
+          'optionGroup' => [
+            'delta' => $optionGroupId,
+            'name' => $optionGroups[$optionGroupId]
+          ],
+          'option' => [
+            'delta' => $optionId,
+            'name' => $optionGroupOptions[$optionGroupId][$optionId]
+          ],
+          'suboption' => [
+            'delta' => $suboptionId,
+            'name' => $suboptionName
+          ]
         ];
-
-        $addedOptions[] = $option;
       }
 
-      $form_state->set('addedOptions', $addedOptions);
+      $addedParticipants[] = $participant;
     }
+
+    $form_state->set('addedParticipants', $addedParticipants);
   }
 }
