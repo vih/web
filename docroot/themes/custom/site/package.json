@@ -5,7 +5,9 @@
     "development": "cross-env NODE_ENV=development gulp build",
     "watch": "cross-env NODE_ENV=development gulp watch",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production"
+    "production": "cross-env NODE_ENV=production",
+    "setup": "npm install",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
   "dependencies": {
     "additional-bootstrap-colors": "^1.0.5",
@@ -55,6 +57,8 @@
     "gulp-modernizr": "^1.0.0-alpha",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "run-sequence": "^2.2.0"
+    "run-sequence": "^2.2.0",
+    "sass-lint": "~1.5.1",
+    "gulp-sass-lint": "~1.1.1"
   }
 }

@@ -26,6 +26,7 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const runSequence = require('run-sequence');
+const sassLint = require('gulp-sass-lint');
 
 
 // Builders
@@ -150,6 +151,16 @@ gulp.task('watcher:images', (callback) => {
 });
 gulp.task('watcher:templates', (callback) => {
     runSequence('reload:template', callback);
+});
+
+
+// Linters
+// SCSS Linting.
+gulp.task('scss-lint', function() {
+    return gulp.src(['./src/styles/**/*.scss'])
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError());
 });
 
 
