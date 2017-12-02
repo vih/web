@@ -37,13 +37,13 @@ install:
   - mysql -e 'SET GLOBAL wait_timeout = 5400;'
   - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
 
-  # PHP conf tweaks
+  # PHP conf tweaks.
   - echo 'max_execution_time = 120' >> drupal.php.ini;
   - echo 'sendmail_path = /bin/true' >> drupal.php.ini;
   - phpenv config-add drupal.php.ini
   - phpenv rehash
 
-  # Install drush
+  # Install drush.
   - composer require drush/drush:^9.0
 
   # Build the Lightning code base.
@@ -51,7 +51,10 @@ install:
 
   # Install Lightning.
   - cd docroot
-  - drush site-install lightning --yes --account-pass=admin --db-url=mysql://root:@localhost/drupal
+  - drush --verbose site-install lightning --yes --account-pass=admin --db-url=mysql://root:@localhost/drupal
+  
+  # Import config for our install.
+  - drush --verbose config-import active --yes
 
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
