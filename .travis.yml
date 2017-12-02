@@ -54,6 +54,7 @@ install:
   - drush --verbose site-install lightning --yes --account-pass=admin --db-url=mysql://root:@localhost/drupal
   
   # Import config for our install.
+  - drush cset system.site uuid 33168afd-6fef-4cad-8a71-1d93a63835ca
   - drush --verbose config-import active --yes
 
 before_script:
