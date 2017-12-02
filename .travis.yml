@@ -54,7 +54,9 @@ install:
   - drush --verbose site-install lightning --yes --account-pass=admin --db-url=mysql://root:@localhost/drupal
   
   # Set proper config directory settings.php
+  - chmod 777 sites/default/settings.php
   - echo '$config_directories["sync"] = "../config/sync";' >> sites/default/settings.php;
+  - chmod 644 sites/default/settings.php
   
   # Import config for our install.
   - drush cset system.site uuid 33168afd-6fef-4cad-8a71-1d93a63835ca --yes
