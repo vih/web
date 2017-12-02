@@ -64,7 +64,7 @@ before_script:
 
 script:
   - composer validate composer.json --no-check-all --ansi --no-interaction
-  - bin/phpcs docroot/modules/custom
+  - bin/phpcs --standard=Drupal docroot/modules/custom
 
 after_failure:
   - cd docroot
