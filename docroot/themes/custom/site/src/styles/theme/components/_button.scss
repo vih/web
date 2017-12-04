@@ -54,7 +54,7 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
       left: 0;
 
       display: flex;
-      justify-content: right;
+      justify-content: flex-end;
       align-items: center;
 
       width: $button-icon-wrapper-width;
