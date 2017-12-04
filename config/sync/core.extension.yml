@@ -45,7 +45,6 @@ module:
   layout_discovery: 0
   lightning: 0
   lightning_core: 0
-  lightning_layout: 0
   lightning_media: 0
   lightning_media_document: 0
   lightning_media_image: 0
@@ -71,7 +70,6 @@ module:
   node: 0
   options: 0
   page_cache: 0
-  page_manager: 0
   panelizer: 0
   panelizer_quickedit: 0
   panels: 0
