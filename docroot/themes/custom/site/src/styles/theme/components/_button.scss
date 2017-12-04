@@ -13,6 +13,10 @@
 $button-icon-wrapper-width: 45px;
 $button-arrow-width: 26px;
 
+// Responsive
+$button-sm-icon-wrapper-width: 30px;
+$button-sm-arrow-width: 14px;
+
 // Variants
 $button-primary-icon-background: $brand-cyan;
 $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
@@ -64,12 +68,29 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
       color: #fff;
 
       font-size: 30px;
+    }
 
-      &.btn-xs & {
+    &.btn-xs,
+    &.btn-sm {
+      padding-left: floor(($button-sm-icon-wrapper-width + $button-sm-arrow-width + $padding-small-horizontal));
+
+      &:before {
+        width: $button-sm-icon-wrapper-width;
+
         font-size: 22px;
       }
 
-      &.btn-lg & {
+      &:after {
+        left: $button-sm-icon-wrapper-width;
+
+        margin-top: floor( ( 0 - $button-sm-arrow-width ) );
+        border-width: $button-sm-arrow-width;
+      }
+    }
+
+    &.btn-lg {
+
+      &:before {
         font-size: 30px;
       }
     }
@@ -200,34 +221,30 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
   }
 }
 
+.text-right {
+
+  .form-actions .btn {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
 // --------------------------------------------------
 // Responsive
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {
+@media #{$breakpoint-mobile-and-up} {}
 
-  // Button
-  .btn { }
-}
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
+@media #{$breakpoint-mobile-only} {}
 
-  // Button
-  .btn { }
-}
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {
+@media #{$breakpoint-tablet-and-up} {}
 
-  // Button
-  .btn { }
-}
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
+@media #{$breakpoint-tablet-only} {}
 
-  // Button
-  .btn { }
-}
 // Desktop - and up
 @media #{$breakpoint-desktop-and-up} {}
 

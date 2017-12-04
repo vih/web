@@ -1,0 +1,90 @@
+// |--------------------------------------------------------------------------
+// | Fieldset
+// |--------------------------------------------------------------------------
+// |
+// | The fieldset is providing the same functionality as
+// | the .partial.
+// |
+// | This file contains styles for the following:
+// | - fieldset
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin fieldset-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+fieldset {
+  margin-bottom: $partial-bottom-spacing;
+
+  + .vih-suboptions-container {
+    margin-top: (0 - $partial-bottom-spacing);
+  }
+}
+
+// Legend
+legend {
+  margin: 0;
+  border: 0;
+
+  + .fieldset-wrapper {
+    margin-top: 10px;
+  }
+}
+.fieldset-legend {
+  @extend .heading-h4;
+
+  color: $partial-heading-title-color;
+}
+
+// Body
+.fieldset-wrapper {
+  margin-top: $partial-heading-body-spacing;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

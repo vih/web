@@ -1,25 +1,33 @@
-<!-- Begin - heading -->
-<div class="sectioned__heading">
-    <h1 class="sectioned__heading__title">{{ 'Please confirm your order' | trans }}</h1>
-</div>
-<!-- End - heading -->
+<section class="sectioned sectioned--content">
+    <div class="sectioned__inner">
+        <div class="container">
 
-{# Begin - order #}
-{{ page['#order'] }}
-{# End - order #}
+            <!-- Begin - heading -->
+            <div class="sectioned__heading">
+                <h1 class="sectioned__heading__title">{{ 'Please confirm your order' | trans }}</h1>
+            </div>
+            <!-- End - heading -->
 
-<!-- Begin - buttons -->
-<div class="partial partial--actions">
-    <div class="partial__body">
+            {# Begin - order #}
+            {{ page['#order'] }}
+            {# End - order #}
 
-        <a href="{{ page['#backLink'] }}" class="btn btn-default">
-            {{ 'Back to order' | trans }}
-        </a>
+            <!-- Begin - buttons -->
+            <div class="partial partial--actions">
+                <div class="partial__body">
 
-        <a href="{{ page['#paymentLink'] }}" class="btn btn-success">
-            {{ 'Proceed to payment' | trans }}
-        </a>
+                    <a href="{{ page['#backLink'] }}" class="btn btn-default">
+                        {{ 'Back to order' | trans }}
+                    </a>
 
+                    <a href="{{ page['#paymentLink'] }}" class="btn btn-success">
+                        {{ 'Proceed to payment' | trans }}
+                    </a>
+
+                </div>
+            </div>
+            <!-- End - buttons -->
+
+        </div>
     </div>
-</div>
-<!-- End - buttons -->
+</section>

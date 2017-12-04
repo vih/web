@@ -1,23 +1,30 @@
 {% for addedParticipantKey, addedParticipant in container['#addedParticipants'] %}
-  <div class="vih-course-added-participant">
-    <div class="vih-course-added-participant__information">
-      {{ addedParticipant['firstName'] }} {{ addedParticipant['lastName'] }}
-      <ul class="vih-course-added-participant__information__options">
-        {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
-          {% if addedParticipantOption['option']['name'] %}
-            <li>
-              {{ addedParticipantOption['option']['name'] }}
-              {% if addedParticipantOption['suboption']['name'] %}
-                / {{ addedParticipantOption['suboption']['name'] }}
-              {% endif %}
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+    <div class="boxy boxy--added-participant">
+        <div class="boxy__heading">
+            <h4 class="boxy__heading__title">
+                {{ 'Participant' | trans }}
+            </h4>
+        </div>
+        <div class="boxy__body">
+            <h5>{{ addedParticipant['firstName'] }} {{ addedParticipant['lastName'] }}</h5>
+
+            <ul>
+                {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
+                    {% if addedParticipantOption['option']['name'] %}
+                        <li>
+                            {{ addedParticipantOption['option']['name'] }}
+                            {% if addedParticipantOption['suboption']['name'] %}
+                                / {{ addedParticipantOption['suboption']['name'] }}
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            {{ container['controlButtons']["editButton-#{addedParticipantKey}"] }}
+            {{ container['controlButtons']["removeButton-#{addedParticipantKey}"] }}
+        </div>
     </div>
-    <div class="vih-course-added-participant__controls">
-      {{ container['controlButtons']["editButton-#{addedParticipantKey}"] }}
-      {{ container['controlButtons']["removeButton-#{addedParticipantKey}"] }}
-    </div>
-  </div>
 {% endfor %}

@@ -65,6 +65,7 @@ class ShortCourseOrderForm extends FormBase {
         $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value;
 
         $additionalPrice = $option->field_vih_option_price_addition->value;
+
         if (isset($additionalPrice) && floatval($additionalPrice) !== 0.00) {
           $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] .= " (+ kr. $additionalPrice)";
         }
@@ -72,7 +73,6 @@ class ShortCourseOrderForm extends FormBase {
         foreach ($option->field_vih_option_suboptions as $suboptionDelta => $suboption) {
           $optionGroupSuboptions[$optionGroupDelta][$optionDelta][$suboptionDelta] = $suboption->value;
         }
-
       }
     }
     $form_state->set('optionGroups', $optionGroups);
@@ -131,18 +131,21 @@ class ShortCourseOrderForm extends FormBase {
 
     if (count($addedParticipants) + $personsSubscribed < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
       $form['newParticipantContainer']['newParticipantFieldset'] = [
-        '#type' => 'fieldset',
-        '#title' => $this->t('Person')
+        '#type' => 'container',
       ];
       $form['newParticipantContainer']['newParticipantFieldset']['firstName'] = array(
         '#type' => 'textfield',
         '#placeholder' => $this->t('Fornavn'),
         '#required' => TRUE,
+        '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['lastName'] = array(
         '#type' => 'textfield',
         '#placeholder' => $this->t('Efternavn'),
         '#required' => TRUE,
+        '#prefix' => '<div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
         '#type' => 'textfield',
@@ -152,8 +155,8 @@ class ShortCourseOrderForm extends FormBase {
 
       //START AVAILABLE OPTIONS CONTAINER //
       $form['availableOptionsContainer'] = array(
-        '#type' => 'container',
-        '#prefix' => '<div id="available-options-container-wrapper" class="form-group">',
+        '#type' => 'markup',
+        '#prefix' => '<div id="available-options-container-wrapper">',
         '#suffix' => '</div>',
         '#tree' => TRUE
       );
@@ -194,7 +197,8 @@ class ShortCourseOrderForm extends FormBase {
         '#id' => 'add-participant-options',
         '#name' => 'add-participant-options',
         '#type' => 'submit',
-        '#value' => $this->t('Add participant and options'),
+        '#value' => $this->t('Add'),
+        '#attributes' => array('class' => array('btn-sm', 'btn-success')),
         '#submit' => array('::addParticipantOptions'),
         '#ajax' => [
           'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
@@ -206,7 +210,7 @@ class ShortCourseOrderForm extends FormBase {
     } else {
       $form['availableOptionsContainer'] = array(
         '#type' => 'container',
-        '#prefix' => '<div id="available-options-container-wrapper" class="form-group">',
+        '#prefix' => '<div id="available-options-container-wrapper">',
         '#suffix' => '</div>',
         '#tree' => TRUE
       );
@@ -221,7 +225,7 @@ class ShortCourseOrderForm extends FormBase {
     // START added participants container //
     $form['addedParticipantsContainer'] = array(
       '#type' => 'container',
-      '#prefix' => '<div id="added-participants-container-wrapper" class="form-group">',
+      '#prefix' => '<div id="added-participants-container-wrapper">',
       '#suffix' => '</div>',
       '#theme' => 'vih_subscription_added_participant',
       '#addedParticipants' => $addedParticipants
@@ -229,13 +233,16 @@ class ShortCourseOrderForm extends FormBase {
 
     //adding edit/remove buttons
     if ($addedParticipants && is_array($addedParticipants)) {
+
       foreach ($addedParticipants as $addedParticipantDelta => $addedParticipant) {
+
         $form['addedParticipantsContainer']['controlButtons']['editButton-' . $addedParticipantDelta] = [
           '#id' => 'edit-participant-options-' . $addedParticipantDelta,
           '#name' => 'edit-participant-options-' . $addedParticipantDelta,
           '#type' => 'submit',
-          '#value' => $this->t('Edit participant'),
+          '#value' => $this->t('Edit'),
           '#submit' => array('::editParticipantOptions'),
+          '#attributes' => array('class' => array('btn-sm', 'btn-primary')),
           '#ajax' => [
             'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
             'progress' => array(
@@ -250,8 +257,9 @@ class ShortCourseOrderForm extends FormBase {
           '#id' => 'remove-participant-options-' . $addedParticipantDelta,
           '#name' => 'remove-participant-options-' . $addedParticipantDelta,
           '#type' => 'submit',
-          '#value' => $this->t('Remove participant'),
+          '#value' => $this->t('Remove'),
           '#submit' => array('::removeParticipantOptions'),
+          '#attributes' => array('class' => array('btn-sm', 'btn-danger')),
           '#ajax' => [
             'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
             'progress' => array(
@@ -266,14 +274,15 @@ class ShortCourseOrderForm extends FormBase {
     // END added participants container
 
     //START FORM CONTROLS //
-//    if ($personsLimit > $personsSubscribed) {
+    //if ($personsLimit > $personsSubscribed) {
     $form['actions'] = [
       '#type' => 'actions',
     ];
     $form['actions']['submit'] = array(
       '#type' => 'submit',
       '#id' => 'vih-course-submit',
-      '#value' => $this->t('Indsend oplynsinger'),
+      '#value' => $this->t('Videre'),
+      '#attributes' => array('class' => array('btn-success')),
       '#limit_validation_errors' => array(
         ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
         ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
@@ -501,16 +510,17 @@ class ShortCourseOrderForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     //collection subscribed participants information
     $subscribedParticipants = array();
-
     $firstParticipantName = '';
-
     $addedParticipants = $form_state->get('addedParticipants');
+
     if (isset($addedParticipants) && !empty($addedParticipants)) {
       $optionGroups = $this->course->field_vih_sc_option_groups->referencedEntities();
 
       foreach ($addedParticipants as $addedParticipant) {
+
         //going though options
         $orderedOptions = array();
+
         foreach ($addedParticipant['orderedOptions'] as $optionGroupDelta => $orderedOption) {
           $optionDelta = $orderedOption['option']['delta'];
           $subOptionDelta = NULL;
@@ -576,14 +586,17 @@ class ShortCourseOrderForm extends FormBase {
     } else {
       //removing old participants paragraphs, and replacing with new ones
       $subscribedPersonsIds = $this->courseOrder->get('field_vih_sco_persons')->getValue();
+
       foreach ($subscribedPersonsIds as $subscribedPersonId) {
         $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
 
         if ($subscribedPerson) {
           //removing added options
           $orderedOptionsIds = $subscribedPerson->get('field_vih_ocp_ordered_options')->getValue();
+
           foreach ($orderedOptionsIds as $orderedOptionId) {
             $orderedOption = Paragraph::load($orderedOptionId['target_id']);
+
             if ($orderedOption) {
               $orderedOption->delete;
             }

@@ -27,8 +27,8 @@ function site_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function site_preprocess_page(array &$variables) {
-
   $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+
   if ($tid) {
     $variables['term'] = \Drupal\taxonomy\Entity\Term::load($tid);
   }
@@ -558,4 +558,14 @@ function site_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInte
   if (isset($form['name']['#attributes']['autofocus'])) {
     unset($form['name']['#attributes']['autofocus']);
   }
+}
+
+function site_bootstrap_colorize_text_alter(&$texts) {
+  $texts['contains'][t('Edit')->render()] = 'info';
+
+  $texts['contains'][t('Remove')->render()] = 'danger';
+  $texts['contains'][t('Delete')->render()] = 'danger';
+
+  $texts['contains'][t('Submit')->render()] = 'success';
+  $texts['contains'][t('Save')->render()] = 'success';
 }
