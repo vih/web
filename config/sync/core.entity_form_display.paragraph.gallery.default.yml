@@ -1,0 +1,91 @@
+uuid: 22b09a0c-a19c-4da7-8649-6d20c33580fb
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery.field_background_color
+    - field.field.paragraph.gallery.field_background_image
+    - field.field.paragraph.gallery.field_heading
+    - field.field.paragraph.gallery.field_images
+    - field.field.paragraph.gallery.field_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - entity_browser
+    - field_group
+    - image
+    - lightning_media
+    - link
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_background_image
+        - field_background_color
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
+id: paragraph.gallery.default
+targetEntityType: paragraph
+bundle: gallery
+mode: default
+content:
+  field_background_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_image:
+    type: image_image
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    region: content
+    third_party_settings: {  }
+  field_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_images:
+    type: entity_browser_file
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      entity_browser: null
+      open: false
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: default
+    region: content
+    third_party_settings:
+      lightning_media:
+        file_links: true
+        remove_button: true
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

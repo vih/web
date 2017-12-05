@@ -45,7 +45,8 @@
         "drupal/page_manager": "^4.0@beta",
         "drupal/entity_clone": "1.x-dev",
         "drupal/coffee": "1.x-dev",
-        "drupal/field_group": "3.x-dev"
+        "drupal/field_group": "3.x-dev",
+        "drupal/photoswipe": "1.0-beta3"
     },
     "repositories": [
         {

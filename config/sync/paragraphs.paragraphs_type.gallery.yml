@@ -1,0 +1,9 @@
+uuid: 6eded378-d121-4d9c-9876-399f36625235
+langcode: da
+status: true
+dependencies: {  }
+id: gallery
+label: Galleri
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

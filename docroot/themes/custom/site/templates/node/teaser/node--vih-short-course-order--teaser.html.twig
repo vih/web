@@ -13,9 +13,15 @@ view_mode ? view_mode|clean_class,
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
 
-                    {# Begin - course #}
-                    {{ content.field_vih_sco_course }}
-                    {# End - course #}
+                    <div class="partial">
+                        <div class="partial__body">
+
+                            {# Begin - course #}
+                            {{ content.field_vih_sco_course }}
+                            {# End - course #}
+
+                        </div>
+                    </div>
 
                     {# Begin - ordered options #}
                     {% if node.field_vih_sco_ordered_options.value %}

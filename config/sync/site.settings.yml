@@ -5,7 +5,7 @@ schemas:
 favicon:
   mimetype: image/vnd.microsoft.icon
   path: profiles/contrib/lightning/favicon.ico
-  url: 'http://vih.test/profiles/contrib/lightning/favicon.ico'
+  url: 'http://vih.test/themes/custom/site/favicon.ico'
   use_default: 1
 features:
   comment_user_picture: true
@@ -30,7 +30,9 @@ region_wells:
   footer_top_second: ''
   footer_top_third: ''
   footer_top_fourth: ''
+  notify: ''
 table_responsive: '-1'
 table: ''
 general_startup_year: '2011'
 cdn_provider: ''
+button_iconize: 0

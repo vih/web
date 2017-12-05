@@ -1,0 +1,53 @@
+uuid: f2c1f29c-64e5-4dbb-ae9c-b203981ccf6d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery.field_background_color
+    - field.field.paragraph.gallery.field_background_image
+    - field.field.paragraph.gallery.field_heading
+    - field.field.paragraph.gallery.field_images
+    - field.field.paragraph.gallery.field_link
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - link
+    - photoswipe
+id: paragraph.gallery.default
+targetEntityType: paragraph
+bundle: gallery
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_images:
+    weight: 1
+    label: hidden
+    settings:
+      photoswipe_node_style: medium
+      photoswipe_image_style: ''
+      photoswipe_caption: title
+      photoswipe_view_mode: default
+    third_party_settings: {  }
+    type: photoswipe_field_formatter
+    region: content
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_background_color: true
+  field_background_image: true

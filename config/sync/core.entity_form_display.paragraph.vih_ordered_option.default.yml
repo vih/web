@@ -48,5 +48,6 @@ content:
     region: content
 hidden:
   created: true
+  field_vih_oo_amount: true
   status: true
   uid: true

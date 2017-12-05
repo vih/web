@@ -1,0 +1,9 @@
+uuid: e1fa6f97-d833-4b79-b906-3fc62ee030e5
+langcode: da
+status: true
+dependencies: {  }
+id: article
+label: Artikel
+icon_uuid: null
+description: 'Består af overskrift, brødtekst og en action knap.'
+behavior_plugins: {  }

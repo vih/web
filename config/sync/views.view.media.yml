@@ -391,7 +391,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Udgivet
           exclude: false
           alter:
             alter_text: false

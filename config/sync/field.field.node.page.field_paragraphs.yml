@@ -6,9 +6,11 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.page
     - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.article
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
+    - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
     - paragraphs.paragraphs_type.page_content
@@ -43,8 +45,10 @@ settings:
       page_content: page_content
       short_course_list_: short_course_list_
       long_course_list_: long_course_list_
-      file: file
       vih_single_class_group: vih_single_class_group
+      article: article
+      file: file
+      gallery: gallery
       user_quote: user_quote
       vih_class_groups_accordion: vih_class_groups_accordion
       vih_webform: vih_webform
@@ -97,12 +101,18 @@ settings:
       long_course_list_:
         enabled: true
         weight: 22
-      file:
-        enabled: true
-        weight: 26
       vih_single_class_group:
         enabled: true
         weight: 26
+      article:
+        enabled: true
+        weight: 26
+      file:
+        enabled: true
+        weight: 26
+      gallery:
+        enabled: true
+        weight: 31
       user_quote:
         enabled: true
         weight: 32

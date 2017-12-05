@@ -251,7 +251,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: Udgivet
           exclude: false
           alter:
             alter_text: false
@@ -727,7 +727,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: Status
+            label: Udgivet
             description: ''
             identifier: status
             optional: true

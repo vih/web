@@ -6,9 +6,11 @@ dependencies:
     - field.storage.node.field_paragraphs
     - node.type.event
     - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.article
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
+    - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
     - paragraphs.paragraphs_type.short_course_list_
@@ -36,10 +38,12 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       class_packages: class_packages
+      article: article
       event_list: event_list
       file: file
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
+      gallery: gallery
       short_course_list_: short_course_list_
       user_quote: user_quote
       video: video
@@ -53,6 +57,9 @@ settings:
       class_packages:
         enabled: true
         weight: 25
+      article:
+        enabled: true
+        weight: 26
       event_list:
         enabled: true
         weight: 26
@@ -68,6 +75,9 @@ settings:
       news_list:
         weight: 30
         enabled: false
+      gallery:
+        enabled: true
+        weight: 31
       page_content:
         weight: 31
         enabled: false

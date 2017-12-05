@@ -28,7 +28,7 @@ bundle: vih_short_course_order
 mode: teaser
 content:
   body:
-    label: above
+    label: hidden
     type: text_summary_or_trimmed
     weight: 5
     settings:
@@ -47,7 +47,7 @@ content:
     type: entity_reference_revisions_entity_view
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
       view_mode: embedded
       link: ''
