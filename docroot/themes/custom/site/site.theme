@@ -561,4 +561,6 @@ function site_bootstrap_colorize_text_alter(&$texts) {
 
   $texts['contains'][t('Submit')->render()] = 'success';
   $texts['contains'][t('Save')->render()] = 'success';
+  $texts['contains'][t('Add')->render()] = 'success';
+  $texts['contains'][t('Continue')->render()] = 'success';
 }

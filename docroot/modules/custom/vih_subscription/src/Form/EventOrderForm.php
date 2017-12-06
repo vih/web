@@ -104,11 +104,15 @@ class EventOrderForm extends FormBase {
           '#type' => 'textfield',
           '#placeholder' => $this->t('Fornavn'),
           '#required' => TRUE,
+          '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
+          '#suffix' => '</div>',
         );
         $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
           '#type' => 'textfield',
           '#placeholder' => $this->t('Efternavn'),
           '#required' => TRUE,
+          '#prefix' => '<div class="col-xs-12 col-sm-6">',
+          '#suffix' => '</div></div>',
         );
         $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
           '#type' => 'textfield',
@@ -121,7 +125,8 @@ class EventOrderForm extends FormBase {
     if ($personsSubscribed + $participantsCounter < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
       $form['participantsContainer']['actions']['add_participant'] = [
         '#type' => 'submit',
-        '#value' => t('Tilføj flere'),
+        '#value' => $this->t('Add'),
+        '#attributes' => array('class' => array('btn-sm')),
         '#submit' => array('::addOne'),
         '#ajax' => [
           'callback' => '::addmoreCallback',
@@ -133,7 +138,8 @@ class EventOrderForm extends FormBase {
     if ($participantsCounter > 1) {
       $form['participantsContainer']['actions']['remove_participant'] = [
         '#type' => 'submit',
-        '#value' => t('Fjern den sidste'),
+        '#value' => t('Remove'),
+        '#attributes' => array('class' => array('btn-sm')),
         '#submit' => array('::removeCallback'),
         '#ajax' => [
           'callback' => '::addmoreCallback',
@@ -149,7 +155,7 @@ class EventOrderForm extends FormBase {
       ];
       $form['actions']['submit'] = array(
         '#type' => 'submit',
-        '#value' => $this->t('Indsend oplynsinger'),
+        '#value' => $this->t('Continue'),
       );
     } else {
       $form['message'] = array(

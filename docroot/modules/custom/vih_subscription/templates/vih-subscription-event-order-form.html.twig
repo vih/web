@@ -5,14 +5,6 @@
 <section class="sectioned sectioned--content" {{ content_attributes.addClass('content') }}>
     <div class="sectioned__inner">
         <div class="container">
-            <div class="row">
-              <div class="col-xs-12 tilmeldings-knap">
-                <a href="{{ form['#event']['url'] }}" class="btn-arrow">
-                  {{ "Back to event"|t }}
-                </a>
-              </div>
-            </div>
-
             <div class="sectioned__heading">
                 <h2 class="sectioned__heading__title">
                     {{ "Tilmelding til @title"|t({ '@title': form['#event']['title'] }) }}
@@ -25,6 +17,10 @@
                     <p>{{ "Du kan tilmelde så mange mennesker, som du har lyst til. Du tilføjer en person ad gangen i nedenstående formular."|t }}</p>
 
                     <p>{{ "Særligt for korte kurser - Tilkøb af linned: Du kan tilkøbe linnedpakke med sengetøj og to håndklæder, når du ankommer til skolen for 85 kroner per person eller selv medbringe eget sengetøj."|t }}<p>
+
+                    <a href="{{ form['#event']['url'] }}" class="btn btn-default btn-sm">
+                        {{ "Back to event" | trans }}
+                    </a>
                 </div>
             </div>
             {# Introduction information END #}
@@ -40,45 +36,54 @@
             {#{% endfor %}#}
             {# Options END #}
 
-            {# Personal data START #}
-            <div class="partial">
-                <div class="partial__heading">
-                    <h4 class="partial__heading__title">{{ "Personlige oplysninger"|t }}</h4>
+            <hr>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    {# Personal data START #}
+                    <div class="partial">
+                        <div class="partial__heading">
+                            <h4 class="partial__heading__title">{{ "Personlige oplysninger"|t }}</h4>
+                        </div>
+                        <div class="partial__body">
+                            {#{{ form['personalDataLeft'] }}#}
+
+                            {{ form['participantsContainer'] }}
+
+                            {{ form['message'] }}
+                        </div>
+                    </div>
+                    {# Personal data END #}
+
+                    <!-- Begin - form controls -->
+                    <div class="partial partial--form-controls">
+                        <div class="partial__body">
+                            {{ form['actions'] }}
+                        </div>
+                    </div>
+                    <!-- End - form controls -->
+
                 </div>
-                <div class="partial__body">
-                    {#{{ form['personalDataLeft'] }}#}
+                <div class="col-xs-12 col-sm-6">
 
-                    {{ form['participantsContainer'] }}
+                    <!-- Begin - price -->
+                    <div class="boxy boxy--price">
+                        <div class="boxy__heading">
+                            <h4 class="boxy__heading__title">
+                                {{ 'Total price' | trans }}
+                            </h4>
+                        </div>
+                        <div class="boxy__body">
+                            <div id="vih-event-price">
+                                {{ form['price'] }}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End - price -->
 
-                    {{ form['message'] }}
                 </div>
             </div>
-            {# Personal data END #}
-
-            <!-- Begin - form controls -->
-            <div class="partial partial--form-controls">
-                <div class="partial__body">
-                    {{ form['actions'] }}
-                </div>
-            </div>
-            <!-- End - form controls -->
-
-
-            <!-- Begin - price -->
-            <div class="boxy boxy--price">
-              <div class="boxy__heading">
-                <h4 class="boxy__heading__title">
-                  {{ 'Total price' | trans }}
-                </h4>
-              </div>
-              <div class="boxy__body">
-                <div id="vih-event-price">
-                  {{ form['price'] }}
-                </div>
-              </div>
-            </div>
-            <!-- End - price -->
-
 
         </div>
     </div>

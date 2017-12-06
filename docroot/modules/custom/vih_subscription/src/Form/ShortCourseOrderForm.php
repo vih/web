@@ -198,7 +198,7 @@ class ShortCourseOrderForm extends FormBase {
         '#name' => 'add-participant-options',
         '#type' => 'submit',
         '#value' => $this->t('Add'),
-        '#attributes' => array('class' => array('btn-sm', 'btn-success')),
+        '#attributes' => array('class' => array('btn-sm')),
         '#submit' => array('::addParticipantOptions'),
         '#ajax' => [
           'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
@@ -281,7 +281,7 @@ class ShortCourseOrderForm extends FormBase {
     $form['actions']['submit'] = array(
       '#type' => 'submit',
       '#id' => 'vih-course-submit',
-      '#value' => $this->t('Videre'),
+      '#value' => $this->t('Continue'),
       '#attributes' => array('class' => array('btn-success')),
       '#limit_validation_errors' => array(
         ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],

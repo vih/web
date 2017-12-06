@@ -270,7 +270,7 @@ class LongCourseOrderForm extends FormBase {
 
     $form['actions']['submit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Indsend oplynsinger'),
+      '#value' => $this->t('Continue'),
     );
 
     foreach ($course->field_vih_cource_contact_person->referencedEntities() as $contact_person) {
