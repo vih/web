@@ -89,10 +89,9 @@ third_party_settings:
         - promote
         - sticky
         - path
-        - status
         - scheduled_update
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -252,13 +251,6 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 11
-    third_party_settings: {  }
-    region: content
   sticky:
     type: boolean_checkbox
     settings:
@@ -283,4 +275,5 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  status: true

@@ -68,7 +68,6 @@ third_party_settings:
         - field_meta_tags
         - translation
         - scheduled_update
-        - status
       parent_name: ''
       weight: 2
       format_type: tab
@@ -184,13 +183,6 @@ content:
       form_mode: default
     third_party_settings: {  }
     region: content
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 12
-    third_party_settings: {  }
-    region: content
   sticky:
     type: boolean_checkbox
     settings:
@@ -222,3 +214,4 @@ content:
     region: content
 hidden:
   panelizer: true
+  status: true
