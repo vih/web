@@ -1,32 +1,35 @@
 // |--------------------------------------------------------------------------
-// | List of news teasers
+// | Quote
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .paragraph--type--list-of-news-teasers
+// | - .paragraph--type--quote
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
+$xs-paragraph-action-heading-margin-bottom: 20px;
+$sm-paragraph-action-heading-margin-bottom: 30px;
+$md-paragraph-action-heading-margin-bottom: 40px;
+$lg-paragraph-action-heading-margin-bottom: 50px;
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.paragraph--type--user-quote{
-  margin-top: 80px;
-  margin-bottom: 140px;
-  & .angled-background-inner{
-    & .container{
-      p {
-        color: #888;
-        text-align: left;
-        font-size: 0.9em;
-        text-transform: inherit;
-        font-weight: normal !important;
-      }
-    }
+// Quote
+.paragraph--type--user-quote {
+
+  .field--name-field-heading {
+    margin-bottom: 50px;
+  }
+
+  .field--name-field-link {
+    margin-top: 50px;
+
+    text-align: center;
   }
 }
 
@@ -41,76 +44,72 @@
 // Mobile - and up
 @media #{$breakpoint-mobile-and-up} {
 
-  // List of news teasers
-  .paragraph--type--user-quote {}
+  // Quote
+  .paragraph--type--quote {
+
+    .field--name-field-heading {
+      margin-bottom: $xs-paragraph-action-heading-margin-bottom;
+    }
+  }
 }
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
-
-  // List of news teasers
-  .paragraph--type--user-quote {}
-}
+@media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {
 
-  // List of news teasers
-  .paragraph--type--user-quote {}
+  // Quote
+  .paragraph--type--quote {
+
+    .field--name-field-heading {
+      margin-bottom: $sm-paragraph-action-heading-margin-bottom;
+    }
+  }
 }
 
 // Tablet - only
-@media #{$breakpoint-tablet-only} {
-
-  // List of news teasers
-  .paragraph--type--user-quote {}
-}
+@media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
 @media #{$breakpoint-desktop-and-up} {
 
-  // List of news teasers
-  .paragraph--type--user-quote {}
+  // Quote
+  .paragraph--type--quote {
+
+    .field--name-field-heading {
+      margin-bottom: $md-paragraph-action-heading-margin-bottom;
+    }
+  }
 }
 
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-
-  // List of news teasers
-  .paragraph--type--user-quote {}
-}
+@media #{$breakpoint-desktop-only} {}
 
 // Large desktop - and up
 @media #{$breakpoint-large-desktop-and-up} {
 
-  // List of news teasers
-  .paragraph--type--user-quote {}
+  // Quote
+  .paragraph--type--quote {
+
+    .field--name-field-heading {
+      margin-bottom: $lg-paragraph-action-heading-margin-bottom;
+    }
+  }
 }
 
 // Print
-@media print {
-
-  // List of news teasers
-  .paragraph--type--user-quote {}
-}
+@media print {}
 
 // Touch
-.touchevents {
-
-  // List of news teasers
-  .paragraph--type--user-quote {}
-}
+.touchevents {}
 
 // No touch
-.no-touchevents {
-
-  // List of news teasers
-  .paragraph--type--user-quote {}
-}
+.no-touchevents {}
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// List of news teasers mixin
+// Quote mixin
 @mixin paragraph-type-mixin-column-action-centered() {}

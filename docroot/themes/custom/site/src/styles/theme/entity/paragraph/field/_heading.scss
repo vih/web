@@ -17,11 +17,9 @@
 .paragraph {
 
   .field--name-field-heading {
-    @extend h2;
+    @extend .heading-h2;
 
     margin-top: 0;
-
-    text-transform: uppercase;
   }
 }
 

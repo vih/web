@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Body
+// | Author
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .field--name-field-body
+// | - .field--name-field-paragraph-text
 // |
 
 // --------------------------------------------------
@@ -16,7 +16,12 @@
 
 .paragraph {
 
-  .field--name-field-body {}
+  .field--name-field-paragraph-text {
+    @extend .heading-h3;
+
+    text-transform: none;
+    font-weight: $headings-font-weight-light;
+  }
 }
 
 // --------------------------------------------------
@@ -28,7 +33,7 @@
   // Background image
   &.sectioned--skewed--background-image {
 
-    .field--name-field-body {
+    .field--name-field-paragraph-text {
       color: #fff;
     }
   }
@@ -36,7 +41,7 @@
   // White
   &.sectioned--skewed--background-color-white {
 
-    .field--name-field-body {
+    .field--name-field-paragraph-text {
       color: $text-color;
     }
   }
@@ -44,7 +49,7 @@
   // Light gray
   &.sectioned--skewed--background-color-light-gray {
 
-    .field--name-field-body {
+    .field--name-field-paragraph-text {
       color: $text-color;
     }
   }
@@ -52,7 +57,7 @@
   // Gray
   &.sectioned--skewed--background-color-gray {
 
-    .field--name-field-body {
+    .field--name-field-paragraph-text {
       color: $headings-color;
     }
   }
@@ -60,7 +65,7 @@
   // Primary
   &.sectioned--skewed--background-color-primary {
 
-    .field--name-field-body {
+    .field--name-field-paragraph-text {
       color: $btn-primary-color;
     }
   }
@@ -68,7 +73,7 @@
   // Secondary
   &.sectioned--skewed--background-color-secondary {
 
-    .field--name-field-body {
+    .field--name-field-paragraph-text {
       color: $btn-secondary-color;
     }
   }
@@ -112,5 +117,5 @@
 // Mixins
 // --------------------------------------------------
 
-// Body mixin
-@mixin field--name-mixin-field-body() {}
+// Author mixin
+@mixin field--name-mixin-field-paragraph-text() {}

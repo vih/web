@@ -11,27 +11,71 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         <div class="sectioned--skewed-angle-bottom">
 
             {% if background_image %}
-            <div class="angled-background-image-wrapper">
-                <div class="cover-overlay"></div>
-                <div class="angled-background-image-element"
-                     style="background-image: url({{ background_image }})"></div>
-            </div>
+                <div class="angled-background-image-wrapper">
+                    <div class="cover-overlay"></div>
+                    <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+                </div>
             {% endif %}
 
             <div class="sectioned__inner">
                 <div class="container">
-                    {{ content.field_heading }}
-                    <div class="row">
-                        {% if content.field_paragraph_person_photo|render|trim %}
-                            <div class="col-xs-6 col-sm-4 col-md-3">{{ content.field_paragraph_person_photo }}</div>
-                            <div class="col-sm-6 col-sm-8 col-md-9">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
-                        {% else %}
-                            <div class="col-xs-12">{{ content|without('field_paragraph_person_photo', 'field_heading') }}</div>
-                        {% endif %}
 
-                    </div>
+                    {# Begin - heading #}
+                    {{ content.field_heading }}
+                    {# End - heading #}
+
+                    {# Begin - person #}
+                    {% if node.field_person_photo.value %}
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
+
+                                {# Begin - photo #}
+                                {{ content.field_person_photo }}
+                                {# End - photo #}
+
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-9">
+                                <blockquote>
+
+                                    {# Begin - quote #}
+                                    {{ content.field_paragraph_text }}
+                                    {# End - quote #}
+
+                                    {# Begin - author #}
+                                    <footer>
+                                        <cite>{{ content.field_author }}</cite>
+                                    </footer>
+                                    {# End - author #}
+
+                                </blockquote>
+
+                            </div>
+                        </div>
+                    {% else %}
+
+                        <blockquote>
+
+                            {# Begin - quote #}
+                            {{ content.field_paragraph_text }}
+                            {# End - quote #}
+
+                            {# Begin - author #}
+                            <footer>
+                                <cite>{{ content.field_author }}</cite>
+                            </footer>
+                            {# End - author #}
+
+                        </blockquote>
+
+                    {% endif %}
+                    {# End - person #}
+
+                    {# Begin - link #}
+                    {{ content.field_link }}
+                    {# End - link #}
 
                 </div>
+
             </div>
         </div>
     </div>
