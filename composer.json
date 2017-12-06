@@ -29,7 +29,7 @@
         "drupal/devel": "^1.2",
         "drupal/paragraphs": "1.x-dev",
         "drupal/linkit": "^4.0",
-        "acquia/lightning": "^2.2.2",
+        "acquia/lightning": "^2.2.4",
         "drupal/admin_toolbar": "^1.20",
         "drupal/twig_tweak": "2.x-dev",
         "drupal/eva": "^1.0@RC",
