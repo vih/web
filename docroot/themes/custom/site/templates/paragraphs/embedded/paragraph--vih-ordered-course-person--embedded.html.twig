@@ -1,0 +1,26 @@
+{%
+    set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<div{{ attributes.addClass(classes).addClass('boxy', 'boxy--participant') }}>
+    <div class="boxy__body">
+
+        {# Begin - name #}
+        <h4>
+            {{ paragraph.field_vih_ocp_first_name.value }} {{ paragraph.field_vih_ocp_last_name.value }}
+        </h4>
+        {# End - name #}
+
+        {# Begin - email #}
+        {{ content.field_vih_ocp_email }}
+        {# End - email #}
+
+        {# Begin - ordered options #}
+        {{ content.field_vih_ocp_ordered_options }}
+        {# End - ordered options #}
+
+    </div>
+</div>

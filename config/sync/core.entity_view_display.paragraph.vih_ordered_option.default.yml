@@ -16,23 +16,23 @@ mode: default
 content:
   field_vih_oo_group_name:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_vih_oo_option_name:
-    weight: 1
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_vih_oo_price_addition:
-    weight: 2
-    label: above
+    weight: 1
+    label: hidden
     settings:
       thousand_separator: .
       decimal_separator: ','
@@ -43,7 +43,7 @@ content:
     region: content
   field_vih_oo_suboption:
     weight: 3
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

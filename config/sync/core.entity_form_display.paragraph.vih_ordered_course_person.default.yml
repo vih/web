@@ -41,7 +41,7 @@ content:
     type: string_textfield
     region: content
   field_vih_ocp_ordered_options:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 9
     settings:
       title: Paragraph
@@ -50,6 +50,8 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
     third_party_settings: {  }
     region: content
 hidden:
