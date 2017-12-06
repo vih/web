@@ -13,29 +13,41 @@ dependencies:
     - paragraphs.paragraphs_type.video
   module:
     - entity_browser
+    - field_group
     - text
     - video_embed_field
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_background_image
+        - field_background_color
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
 id: paragraph.video.default
 targetEntityType: paragraph
 bundle: video
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_background_color:
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
     type: entity_browser_file
-    weight: 3
+    weight: 4
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -71,25 +83,12 @@ content:
     type: text_textfield
     region: content
   field_video:
-    weight: 8
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: video_embed_field_textfield
     region: content
-  status:
-    type: boolean_checkbox
-    weight: 6
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
-    weight: 5
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -12,22 +12,40 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
   module:
     - entity_browser
+    - field_group
     - text
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_background_color
+        - field_background_image
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
 id: paragraph.user_quote.default
 targetEntityType: paragraph
 bundle: user_quote
 mode: default
 content:
   field_background_color:
-    weight: 7
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
     type: entity_browser_file
-    weight: 8
+    weight: 5
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -48,7 +66,7 @@ content:
     region: content
   field_paragraph_person_photo:
     type: entity_browser_file
-    weight: 6
+    weight: 2
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -60,7 +78,7 @@ content:
     third_party_settings: {  }
     region: content
   field_paragraph_text:
-    weight: 2
+    weight: 1
     settings:
       rows: 5
       placeholder: ''

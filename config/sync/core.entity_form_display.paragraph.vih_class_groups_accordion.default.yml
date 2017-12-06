@@ -12,9 +12,27 @@ dependencies:
     - paragraphs.paragraphs_type.vih_class_groups_accordion
   module:
     - entity_browser
+    - field_group
     - link
     - paragraphs
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_background_color
+        - field_background_image
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
 id: paragraph.vih_class_groups_accordion.default
 targetEntityType: paragraph
 bundle: vih_class_groups_accordion
@@ -22,13 +40,13 @@ mode: default
 content:
   field_background_color:
     type: options_select
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_background_image:
     type: entity_browser_file
-    weight: 4
+    weight: 5
     settings:
       entity_browser: image_browser
       field_widget_edit: true

@@ -13,24 +13,42 @@ dependencies:
     - paragraphs.paragraphs_type.file
   module:
     - entity_browser
+    - field_group
     - file
     - link
     - text
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_background_image
+        - field_background_color
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
 id: paragraph.file.default
 targetEntityType: paragraph
 bundle: file
 mode: default
 content:
   field_background_color:
-    weight: 5
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_background_image:
     type: entity_browser_file
-    weight: 4
+    weight: 5
     settings:
       entity_browser: image_browser
       field_widget_edit: true
