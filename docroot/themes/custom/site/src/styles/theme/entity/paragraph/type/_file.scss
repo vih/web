@@ -36,6 +36,10 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
 
   .field--name-file {
     text-align: center;
+
+    + .field--name-field-link {
+      margin-top: 50px;
+    }
   }
 
   .field--name-field-link {
