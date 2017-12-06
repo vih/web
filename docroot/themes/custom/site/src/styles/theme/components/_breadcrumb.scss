@@ -96,12 +96,7 @@ $breadcrumb-active-background-color: $brand-primary;
 @media #{$breakpoint-mobile-and-up} {}
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
-
-  .breadcrumb {
-    display: none;
-  }
-}
+@media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {
