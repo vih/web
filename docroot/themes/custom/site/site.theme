@@ -129,10 +129,7 @@ function site_theme_suggestions_field_alter(
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function site_theme_suggestions_fieldset_alter(
-  array &$suggestions,
-  array $variables
-) {
+function site_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
   /*$element = $variables['element'];
   if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
     $suggestions[] = 'fieldset__form_composite';
@@ -142,10 +139,8 @@ function site_theme_suggestions_fieldset_alter(
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function site_theme_suggestions_menu_alter(
-  array &$suggestions,
-  array $variables
-) {
+function site_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+
   // Remove the block and replace dashes with underscores in the block ID to
   // use for the hook name.
   if (isset($variables['attributes']['block'])) {
@@ -165,10 +160,8 @@ function site_theme_suggestions_menu_alter(
  * @param array $suggestions
  * @param array $variables
  */
-function site_theme_suggestions_block_alter(
-  array &$suggestions,
-  array $variables
-) {
+function site_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+
   // Block suggestions for custom block bundles.
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
