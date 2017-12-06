@@ -42,7 +42,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 7
+    weight: 31
     settings:
       rows: 9
       summary_rows: 3
@@ -51,12 +51,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     region: content
   field_vih_lco_address:
-    weight: 15
+    weight: 39
     settings:
       size: 60
       placeholder: ''
@@ -64,7 +64,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_address:
-    weight: 28
+    weight: 52
     settings:
       size: 60
       placeholder: ''
@@ -72,7 +72,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_city:
-    weight: 29
+    weight: 53
     settings:
       size: 60
       placeholder: ''
@@ -80,7 +80,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_email:
-    weight: 27
+    weight: 51
     settings:
       size: 60
       placeholder: ''
@@ -88,7 +88,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_first_name:
-    weight: 24
+    weight: 48
     settings:
       size: 60
       placeholder: ''
@@ -96,7 +96,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_last_name:
-    weight: 25
+    weight: 49
     settings:
       size: 60
       placeholder: ''
@@ -104,7 +104,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_nationality:
-    weight: 31
+    weight: 55
     settings:
       size: 60
       placeholder: ''
@@ -112,7 +112,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_telefon:
-    weight: 26
+    weight: 50
     settings:
       size: 60
       placeholder: ''
@@ -120,7 +120,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_adult_zip:
-    weight: 30
+    weight: 54
     settings:
       size: 60
       placeholder: ''
@@ -128,7 +128,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_city:
-    weight: 16
+    weight: 40
     settings:
       size: 60
       placeholder: ''
@@ -136,7 +136,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_course:
-    weight: 8
+    weight: 32
     settings:
       match_operator: CONTAINS
       size: 60
@@ -145,7 +145,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_lco_cpr:
-    weight: 12
+    weight: 36
     settings:
       size: 60
       placeholder: ''
@@ -153,7 +153,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_education:
-    weight: 18
+    weight: 42
     settings:
       size: 60
       placeholder: ''
@@ -161,7 +161,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_email:
-    weight: 22
+    weight: 46
     settings:
       size: 60
       placeholder: ''
@@ -169,7 +169,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_first_name:
-    weight: 10
+    weight: 34
     settings:
       size: 60
       placeholder: ''
@@ -177,7 +177,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_found_from:
-    weight: 20
+    weight: 44
     settings:
       size: 60
       placeholder: ''
@@ -185,7 +185,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_last_name:
-    weight: 11
+    weight: 35
     settings:
       size: 60
       placeholder: ''
@@ -193,7 +193,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_message:
-    weight: 21
+    weight: 45
     settings:
       rows: 5
       placeholder: ''
@@ -201,7 +201,7 @@ content:
     type: string_textarea
     region: content
   field_vih_lco_nationality:
-    weight: 14
+    weight: 38
     settings:
       size: 60
       placeholder: ''
@@ -209,7 +209,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_newsletter:
-    weight: 23
+    weight: 47
     settings:
       display_label: true
     third_party_settings: {  }
@@ -217,7 +217,7 @@ content:
     region: content
   field_vih_lco_order_course_perio:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 33
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -228,7 +228,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_lco_payment:
-    weight: 19
+    weight: 43
     settings:
       size: 60
       placeholder: ''
@@ -236,13 +236,13 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_status:
-    weight: 32
+    weight: 121
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_lco_telefon:
-    weight: 13
+    weight: 37
     settings:
       size: 60
       placeholder: ''
@@ -250,7 +250,7 @@ content:
     type: string_textfield
     region: content
   field_vih_lco_zip:
-    weight: 17
+    weight: 41
     settings:
       size: 60
       placeholder: ''
@@ -259,14 +259,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 6
+    weight: 30
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -274,19 +274,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 15
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 122
     third_party_settings: {  }
     region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 16
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     settings:
       size: 60
       placeholder: ''
@@ -294,12 +301,11 @@ content:
     region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
-hidden:
-  status: true
+hidden: {  }

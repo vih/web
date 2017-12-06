@@ -19,7 +19,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -36,7 +36,7 @@ content:
     type: 'plugin_selector:plugin_select_list'
     region: content
   field_vih_eo_event:
-    weight: 7
+    weight: 31
     settings:
       match_operator: CONTAINS
       size: 60
@@ -46,7 +46,7 @@ content:
     region: content
   field_vih_eo_persons:
     type: entity_reference_paragraphs
-    weight: 8
+    weight: 32
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -57,28 +57,28 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_eo_price:
-    weight: 9
+    weight: 36
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_eo_status:
-    weight: 10
+    weight: 37
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -86,19 +86,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 15
     region: content
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 121
+    third_party_settings: {  }
+    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 16
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -106,12 +113,11 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden:
-  status: true
+hidden: {  }
