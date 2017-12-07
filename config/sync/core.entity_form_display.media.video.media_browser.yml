@@ -1,5 +1,5 @@
-uuid: 86bccdfa-37e7-42d1-a102-71099b7790a7
-langcode: da
+uuid: 513f2a50-8dcb-4097-a8c2-4feb084c8a7d
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,10 +8,10 @@ dependencies:
     - field.field.media.video.field_media_video_embed_field
     - media.type.video
   module:
+    - content_moderation
     - path
-    - workbench_moderation
 _core:
-  default_config_hash: ggUvzzCujjyCEfAyWiJyvfcbQdARZ9_0vH9wGeGHbqo
+  default_config_hash: Wft8ifOMAlgFjAvTyWmpKS_RnTcBkckjM2u90vzd7cM
 id: media.video.media_browser
 targetEntityType: media
 bundle: video
@@ -24,13 +24,12 @@ content:
       display_label: true
     third_party_settings: {  }
     region: content
-  langcode:
-    type: language_select
-    weight: 2
-    settings:
-      include_locked: true
-    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
     region: content
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0

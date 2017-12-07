@@ -1,12 +1,12 @@
-uuid: e7e9d2a2-bfee-4415-8fe7-64f0b3da9c5c
-langcode: da
+uuid: ed81e113-b11f-41b9-8246-00369a710372
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_in_library
     - media.type.tweet
 _core:
-  default_config_hash: wEXH7lwxCx5UjnepjJ74qq-LhsmBqMqKvq7gDFtVxBw
+  default_config_hash: Vu7aDQE5B_ZXzGFirW2FnEkCIVoxEuGQPeVfuk443vI
 id: media.tweet.field_media_in_library
 field_name: field_media_in_library
 entity_type: media

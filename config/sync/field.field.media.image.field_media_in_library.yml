@@ -1,16 +1,16 @@
-uuid: ae2173ff-7619-48e9-835c-d7a337d44d93
+uuid: d8fd4356-3b1a-444c-9a46-945144714303
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_in_library
-    - media.type.instagram
+    - media.type.image
 _core:
-  default_config_hash: JFA-021HimjorTYOjCqKaBQpkqFU4Ia732Def0onNLc
-id: media.instagram.field_media_in_library
+  default_config_hash: k4k5Gp34fkQ4u-AiE0sR5rIahNKHd4hPh_G9BX7-BKU
+id: media.image.field_media_in_library
 field_name: field_media_in_library
 entity_type: media
-bundle: instagram
+bundle: image
 label: 'Save to my media library'
 description: ''
 required: false

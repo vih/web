@@ -1,12 +1,10 @@
-uuid: 40c84be5-cad5-48a5-a1ee-1cdcf225ef79
-langcode: da
+uuid: 4e01b0c9-bea5-4ec9-8295-8cc9456f42ab
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.media.document.field_document
-    - field.field.media.document.field_document_size
     - field.field.media.document.field_media_in_library
-    - field.field.media.document.field_mime_type
     - image.style.thumbnail
     - media.type.document
   module:
@@ -14,7 +12,7 @@ dependencies:
     - image
     - user
 _core:
-  default_config_hash: RB_e7jnyg4lW5G9VkkpsZn1zR6EwiEPtd5OM3_5FqQk
+  default_config_hash: 4tgcXj_iKv9Fw3xmONUfCHKqO7OeOa11qVesruN4k4k
 id: media.document.default
 targetEntityType: media
 bundle: document
@@ -37,22 +35,13 @@ content:
     third_party_settings: {  }
     type: file_default
     region: content
-  field_document_size:
-    weight: 4
-    label: above
-    settings:
-      thousand_separator: ''
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_integer
-    region: content
-  field_mime_type:
-    weight: 3
-    label: above
+  name:
+    label: hidden
+    type: string
+    weight: -5
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
     region: content
   thumbnail:
     type: image
@@ -72,4 +61,3 @@ content:
     region: content
 hidden:
   field_media_in_library: true
-  langcode: true

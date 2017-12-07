@@ -1,5 +1,5 @@
-uuid: 3ead66c7-92c6-43a0-9678-3f704d5631a0
-langcode: da
+uuid: f96e58da-9868-4805-a55a-ac0081696dbf
+langcode: en
 status: true
 dependencies:
   config:
@@ -10,7 +10,7 @@ dependencies:
     - user
     - video_embed_field
 _core:
-  default_config_hash: '-RZEOZOlYJMw_KvH2fvrIyLled2qHf0AkdQVeO82COQ'
+  default_config_hash: ULSDSeb1LGUAS40ia_8qngabv0GTcJAaHGl67xDUNsA
 id: media.video.default
 targetEntityType: media
 bundle: video
@@ -37,6 +37,14 @@ content:
       autoplay: true
     third_party_settings: {  }
     region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
   uid:
     label: hidden
     type: author
@@ -46,5 +54,4 @@ content:
     region: content
 hidden:
   field_media_in_library: true
-  langcode: true
   thumbnail: true

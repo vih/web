@@ -1,12 +1,12 @@
-uuid: 13a67dc4-3f91-4ee2-8478-1f063da3a0bb
-langcode: da
+uuid: 8db605b5-5626-4731-b213-d02cc536123f
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_in_library
     - media.type.video
 _core:
-  default_config_hash: zC9pQIW8eM8eJMUOSvbfPmrFbV7DwSD0FXuHUZ7PxDs
+  default_config_hash: UDu8TgtylsU3kQVfxF7PTHXPLfuFeiPr6GV379CddbM
 id: media.video.field_media_in_library
 field_name: field_media_in_library
 entity_type: media

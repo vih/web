@@ -1,12 +1,12 @@
-uuid: 3e8fefcf-ef13-4fa6-a84e-38efcf28e05a
-langcode: da
+uuid: 7705f6b8-1d40-4af8-a4eb-a8052b34f5a9
+langcode: en
 status: true
 dependencies:
   module:
     - media
     - video_embed_field
 _core:
-  default_config_hash: E5AVsij555d536VmB9gmE42PtnM-u_htplK0ikh_Km4
+  default_config_hash: 21pzZpKD6NnVHoVsDfTdmRnj0PydQl-XSE1E9oqG2Lk
 id: media.field_media_video_embed_field
 field_name: field_media_video_embed_field
 entity_type: media

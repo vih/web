@@ -1,5 +1,5 @@
-uuid: d7628f42-ecd2-4520-9060-8d065ec9e91a
-langcode: da
+uuid: d93f56d7-0b48-431f-8731-e38811417884
+langcode: en
 status: true
 dependencies:
   config:
@@ -10,6 +10,8 @@ dependencies:
     - media.type.instagram
   module:
     - image
+_core:
+  default_config_hash: 1DOWWQCf9RT-KOigclqslxmujlvMK2M9xJnzaLcDX3o
 id: media.instagram.thumbnail
 targetEntityType: media
 bundle: instagram
@@ -28,5 +30,5 @@ hidden:
   created: true
   embed_code: true
   field_media_in_library: true
-  langcode: true
+  name: true
   uid: true

@@ -1,12 +1,12 @@
-uuid: 94ae2187-9401-4459-b2d7-fc4bec7ae87b
-langcode: da
+uuid: e7302867-a233-432d-8e85-99b103518b5a
+langcode: en
 status: true
 dependencies:
   module:
     - media
 _core:
-  default_config_hash: z8H9GesDfsJ5dtD0ObRUJ7s42aYrqDUAvFBJK_PI-DY
+  default_config_hash: IvohHEiv_tHXtdBNMu7elD10mqN5cVonX-h3Z4vCpZs
 id: media.embedded
-label: Indlejret
+label: Embedded
 targetEntityType: media
 cache: true

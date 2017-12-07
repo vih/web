@@ -1,5 +1,5 @@
-uuid: 68e7e26e-02df-44aa-b695-c1bde1b841aa
-langcode: da
+uuid: 6347739f-9c54-49e4-aa13-f6f1ed2b8577
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,12 +8,14 @@ dependencies:
     - media.type.image
   module:
     - entity_browser
+    - file
     - image
     - media
+    - system
     - user
     - views_infinite_scroll
 _core:
-  default_config_hash: KNUIpiRZ8XQL2Vo0qMQ0dJgug4PSNT3zia64LZ1aGFU
+  default_config_hash: '-q24ItFnGZ_VzC81AjnWyuzS-enfH7uGYBz7Pe2kLP4'
 id: media
 label: Media
 module: views
@@ -70,10 +72,10 @@ display:
             offset: false
             offset_label: Offset
           tags:
-            previous: '‹ Forrige'
-            next: 'Næste ›'
-            first: '« Første'
-            last: 'Sidste »'
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
           quantity: 9
       style:
         type: table
@@ -137,10 +139,63 @@ display:
               empty_column: false
               responsive: ''
           default: changed
-          empty_table: false
+          empty_table: true
       row:
         type: fields
       fields:
+        media_bulk_form:
+          id: media_bulk_form
+          table: media
+          field: media_bulk_form
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          action_title: Action
+          include_exclude: exclude
+          selected_actions: {  }
+          entity_type: media
+          plugin_id: media_bulk_form
         thumbnail__target_id:
           id: thumbnail__target_id
           table: media_field_data
@@ -261,7 +316,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Kilde
+          label: Source
           exclude: false
           alter:
             alter_text: false
@@ -305,7 +360,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -326,7 +381,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Forfatter
+          label: Author
           exclude: false
           alter:
             alter_text: false
@@ -391,7 +446,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Udgivet
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -436,8 +491,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Udgivet
-            format_custom_false: 'Ikke udgivet'
+            format_custom_true: Published
+            format_custom_false: Unpublished
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -458,7 +513,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Opdateret
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -570,93 +625,6 @@ display:
           entity_type: media
           plugin_id: entity_operations
       filters:
-        status:
-          id: status
-          table: media_field_data
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: true
-          expose:
-            operator_id: ''
-            label: Sandt
-            description: null
-            use_operator: false
-            operator: status_op
-            identifier: status
-            required: true
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: true
-          group_info:
-            label: Publiceringsstatus
-            description: ''
-            identifier: status
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1:
-                title: Udgivet
-                operator: '='
-                value: '1'
-              2:
-                title: 'Ikke udgivet'
-                operator: '='
-                value: '0'
-          plugin_id: boolean
-          entity_type: media
-          entity_field: status
-        bundle:
-          id: bundle
-          table: media_field_data
-          field: bundle
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: bundle_op
-            label: Kilde
-            description: ''
-            use_operator: false
-            operator: bundle_op
-            identifier: provider
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: media
-          entity_field: bundle
-          plugin_id: bundle
         name:
           id: name
           table: media_field_data
@@ -697,6 +665,93 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: string
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: bundle_op
+            label: Source
+            description: ''
+            use_operator: false
+            operator: bundle_op
+            identifier: source
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: media
+          entity_field: bundle
+          plugin_id: bundle
+        status:
+          id: status
+          table: media_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'True'
+            description: null
+            use_operator: false
+            operator: status_op
+            identifier: status
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: true
+          group_info:
+            label: 'Published status'
+            description: ''
+            identifier: status
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Published
+                operator: '='
+                value: '1'
+              2:
+                title: Unpublished
+                operator: '='
+                value: '0'
+          plugin_id: boolean
+          entity_type: media
+          entity_field: status
         langcode:
           id: langcode
           table: media_field_data
@@ -767,7 +822,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'Der er intet indhold at vise.'
+          content: 'No content available.'
           plugin_id: text_custom
       relationships: {  }
       arguments: {  }
@@ -808,6 +863,7 @@ display:
         empty: false
         pager: false
         css_class: false
+        arguments: false
       row:
         type: fields
         options: {  }
@@ -926,7 +982,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          selection_type: radio
           entity_type: media
           plugin_id: entity_browser_select
       filters:
@@ -1056,6 +1111,7 @@ display:
               media_creator: '0'
               media_manager: '0'
             reduce: false
+            argument: bundle
           is_grouped: false
           group_info:
             label: ''
@@ -1146,6 +1202,54 @@ display:
             automatically_load_content: false
       display_description: ''
       css_class: eb-media
+      arguments:
+        bundle:
+          id: bundle
+          table: media_field_data
+          field: bundle
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: entity_browser_widget_context
+          default_argument_options:
+            context_key: target_bundles
+            fallback: all
+            multiple: or
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: true
+          validate:
+            type: 'entity:media_type'
+            fail: ignore
+          validate_options:
+            operation: view
+            multiple: 1
+            access: false
+            bundles: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
+          break_phrase: true
+          entity_type: media
+          entity_field: bundle
+          plugin_id: string
     cache_metadata:
       max-age: -1
       contexts:
@@ -1301,7 +1405,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          selection_type: radio
           entity_type: file
           plugin_id: entity_browser_select
       filters:

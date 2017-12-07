@@ -1,34 +1,42 @@
-uuid: 047b8262-0824-42ca-a621-d3d4218e47b4
+uuid: 9ebd0ca2-d1fc-46d6-a11c-bc388adb1fe4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.instagram.embed_code
-    - field.field.media.instagram.field_media_in_library
-    - media.type.instagram
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - image.style.thumbnail
+    - media.type.image
   module:
     - content_moderation
+    - image_widget_crop
     - path
 _core:
-  default_config_hash: 59ziPzJNPAqMrCE-SBvcUQxVXORfAJ_tkMlS4sIUAFQ
-id: media.instagram.default
+  default_config_hash: kyoAHlZTGIuGTaQuBblGBk8EhfnVKOl19_0j5WbpQqM
+id: media.image.default
 targetEntityType: media
-bundle: instagram
+bundle: image
 mode: default
 content:
-  embed_code:
-    type: string_textarea
-    weight: 0
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   field_media_in_library:
     type: boolean_checkbox
-    weight: 1
+    weight: 4
     settings:
       display_label: true
+    third_party_settings: {  }
+    region: content
+  image:
+    type: image_widget_crop
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      crop_list:
+        - freeform
+      show_crop_area: true
+      crop_preview_image_style: crop_thumbnail
+      show_default_crop: true
+      warn_multiple_usages: false
     third_party_settings: {  }
     region: content
   moderation_state:
@@ -39,7 +47,7 @@ content:
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 0
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -51,9 +59,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  preview:
-    weight: 0
-    region: content
   status:
     type: boolean_checkbox
     settings:

@@ -1,5 +1,5 @@
-uuid: d1df14f6-7b1a-48db-99ae-8ae0c2b8dc28
-langcode: da
+uuid: b071dbfe-d37f-4d11-ae8d-88ee85c89d9e
+langcode: en
 status: true
 dependencies:
   config:
@@ -7,10 +7,10 @@ dependencies:
     - field.field.media.tweet.field_media_in_library
     - media.type.tweet
   module:
+    - content_moderation
     - path
-    - workbench_moderation
 _core:
-  default_config_hash: ptBSQ5lrg7HxikqhFDXWCd-f7Pvz5s9HCpj_h4udD_o
+  default_config_hash: j91gO-2d6metCelrtxdsMs2gxv9soQTwAVTN20S31Z8
 id: media.tweet.default
 targetEntityType: media
 bundle: tweet
@@ -31,13 +31,12 @@ content:
       display_label: true
     third_party_settings: {  }
     region: content
-  langcode:
-    type: language_select
-    weight: 2
-    settings:
-      include_locked: true
-    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
     region: content
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0

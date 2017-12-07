@@ -1,5 +1,5 @@
-uuid: 8390e09a-d6f4-4de7-972f-14f9e7e644e4
-langcode: da
+uuid: 720b5e0d-dfb9-4123-90b7-de6f57e8d72e
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - video_embed_field
 _core:
-  default_config_hash: s0fRdH-ukYES8apuij2fc5yhq2n4h6XBOWj8kG74Ma0
+  default_config_hash: pTxGhGrRqGET7TkQR6uWvcnXvGFcsQm1SlMMv1_LARI
 id: media.video.field_media_video_embed_field
 field_name: field_media_video_embed_field
 entity_type: media

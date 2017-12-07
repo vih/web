@@ -1,4 +1,4 @@
-uuid: 1e8e1d03-4550-4dbb-b158-d0f0526975ab
+uuid: ee38c8c1-efb7-4aab-a83b-6594dc46dd93
 langcode: und
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.media.embed_code
     - media.type.instagram
 _core:
-  default_config_hash: GFehPjHsnlFQvOAgu3JNYLfbm8i4qVhExxIYB_tBKyU
+  default_config_hash: L2i3lZTwf86RXzV6iD5u___bn48PaYgwDqd0W2qxPpw
 id: media.instagram.embed_code
 field_name: embed_code
 entity_type: media
