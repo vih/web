@@ -680,6 +680,7 @@ display:
         filters: false
         filter_groups: false
         relationships: false
+        pager: false
       display_description: ''
       arguments: {  }
       filters:
@@ -788,6 +789,10 @@ display:
           admin_label: 'field_vih_course_periods: Content'
           required: true
           plugin_id: standard
+      pager:
+        type: none
+        options:
+          offset: 0
     cache_metadata:
       max-age: -1
       contexts:
