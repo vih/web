@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Short course
+// | User
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .entity-teaser--short-course
+// | - .entity-teaser--user
 // |
 
 // --------------------------------------------------
@@ -14,13 +14,18 @@
 // Mixins
 // --------------------------------------------------
 
-@mixin entity-teaser-short-course-mixin() {}
+@mixin entity-teaser-user-mixin() {}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.entity-teaser--short-course {}
+.entity-teaser--user {
+
+  .entity-teaser__image {
+    min-height: 300px;
+  }
+}
 
 // --------------------------------------------------
 // Variants
