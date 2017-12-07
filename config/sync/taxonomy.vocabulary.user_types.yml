@@ -1,0 +1,9 @@
+uuid: e72ca39e-09f1-445b-aa17-c8354f970eae
+langcode: da
+status: true
+dependencies: {  }
+name: 'Bruger typer'
+vid: user_types
+description: ''
+hierarchy: 0
+weight: 0

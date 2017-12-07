@@ -21,6 +21,9 @@
 // --------------------------------------------------
 
 .entity-teaser--news {
+  padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing;
+
+  background-color: $body-bg-secondary;
 
   .entity-teaser__heading {
     min-height: 36px; // 2 lines

@@ -1,0 +1,42 @@
+uuid: f9213529-037b-4d68-9489-fc7bc500f7c4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.employee.field_background_color
+    - field.field.paragraph.employee.field_background_image
+    - field.field.paragraph.employee.field_heading
+    - field.field.paragraph.employee.field_link
+    - field.field.paragraph.employee.field_user_type_id
+    - paragraphs.paragraphs_type.employee
+  module:
+    - link
+id: paragraph.employee.default
+targetEntityType: paragraph
+bundle: employee
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_background_color: true
+  field_background_image: true
+  field_user_type_id: true

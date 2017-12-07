@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
     - paragraphs.paragraphs_type.class_packages
+    - paragraphs.paragraphs_type.employee
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
     - paragraphs.paragraphs_type.gallery
@@ -44,6 +45,7 @@ settings:
       file: file
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
+      employee: employee
       gallery: gallery
       short_course_list_: short_course_list_
       user_quote: user_quote
@@ -74,6 +76,9 @@ settings:
       long_course_list_:
         enabled: true
         weight: 29
+      employee:
+        enabled: true
+        weight: 30
       news_list:
         weight: 30
         enabled: false

@@ -1,0 +1,9 @@
+uuid: f760053d-b194-4142-abf6-26d1caae6767
+langcode: da
+status: true
+dependencies: {  }
+id: employee
+label: Medarbejder
+icon_uuid: null
+description: 'Viser medarbejdere udfra medarbejder type.'
+behavior_plugins: {  }

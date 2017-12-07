@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
     - paragraphs.paragraphs_type.class_packages
+    - paragraphs.paragraphs_type.employee
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
     - paragraphs.paragraphs_type.gallery
@@ -45,9 +46,10 @@ settings:
       page_content: page_content
       short_course_list_: short_course_list_
       long_course_list_: long_course_list_
-      vih_single_class_group: vih_single_class_group
-      article: article
       file: file
+      article: article
+      vih_single_class_group: vih_single_class_group
+      employee: employee
       gallery: gallery
       user_quote: user_quote
       vih_class_groups_accordion: vih_class_groups_accordion
@@ -71,24 +73,24 @@ settings:
       news_list:
         weight: 14
         enabled: false
-      vih_course_slot:
-        weight: 15
-        enabled: false
       event_list:
         enabled: true
         weight: 15
+      vih_course_slot:
+        weight: 15
+        enabled: false
+      vih_option:
+        weight: 16
+        enabled: false
       page_content:
         enabled: true
         weight: 16
-      vih_option:
-        weight: 16
+      vih_option_group:
+        weight: 17
         enabled: false
       short_course_list_:
         enabled: true
         weight: 17
-      vih_option_group:
-        weight: 17
-        enabled: false
       vih_ordered_course_period:
         weight: 18
         enabled: false
@@ -101,15 +103,18 @@ settings:
       long_course_list_:
         enabled: true
         weight: 22
-      vih_single_class_group:
+      file:
         enabled: true
         weight: 26
       article:
         enabled: true
         weight: 26
-      file:
+      vih_single_class_group:
         enabled: true
         weight: 26
+      employee:
+        enabled: true
+        weight: 30
       gallery:
         enabled: true
         weight: 31

@@ -1,0 +1,20 @@
+uuid: fb6cd9fa-b519-4896-a475-73ab25c998a1
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_user_type_id
+field_name: field_user_type_id
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

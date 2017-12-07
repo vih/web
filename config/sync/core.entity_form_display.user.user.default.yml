@@ -12,6 +12,7 @@ dependencies:
     - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
+    - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -183,6 +184,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_user_type_id:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_vih_user_descr:
     type: text_textarea
     weight: 6
@@ -227,5 +237,8 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
 hidden:
   timezone: true

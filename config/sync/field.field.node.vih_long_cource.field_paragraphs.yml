@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
     - paragraphs.paragraphs_type.class_packages
+    - paragraphs.paragraphs_type.employee
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
     - paragraphs.paragraphs_type.gallery
@@ -40,10 +41,11 @@ settings:
       class_packages: class_packages
       list_of_news_teasers: list_of_news_teasers
       video: video
-      article: article
       event_list: event_list
+      article: article
       file: file
       long_course_list_: long_course_list_
+      employee: employee
       gallery: gallery
       short_course_list_: short_course_list_
       user_quote: user_quote
@@ -87,10 +89,10 @@ settings:
       vih_teacher_class_description:
         weight: 24
         enabled: false
-      article:
+      event_list:
         enabled: true
         weight: 26
-      event_list:
+      article:
         enabled: true
         weight: 26
       file:
@@ -99,6 +101,9 @@ settings:
       long_course_list_:
         enabled: true
         weight: 29
+      employee:
+        enabled: true
+        weight: 30
       news_list:
         weight: 30
         enabled: false

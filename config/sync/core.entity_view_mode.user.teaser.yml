@@ -1,0 +1,14 @@
+uuid: 5946bac6-9c8c-4fcd-b7b4-6c54cad95d82
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - user
+third_party_settings:
+  lightning_core:
+    description: ''
+id: user.teaser
+label: 'Teaser - default'
+targetEntityType: user
+cache: true

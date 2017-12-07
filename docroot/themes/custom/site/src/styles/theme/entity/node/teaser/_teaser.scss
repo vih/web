@@ -12,8 +12,6 @@
 
 $entity-teaser-element-spacing: 20px;
 
-$entity-teaser-background-color: $body-bg-secondary;
-
 $entity-teaser-inner-top-bottom-spacing: 25px;
 $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
@@ -37,9 +35,6 @@ $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
 .entity-teaser {
   margin-bottom: $grid-gutter-width;
-  padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing;
-
-  background-color: $entity-teaser-background-color;
 
   transition: none; // Remove link transitions
 }
@@ -75,6 +70,16 @@ $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
   color: $brand-secondary;
 }
 
+.entity-teaser__image {
+  position: relative;
+
+  flex-shrink: 1;
+
+  img {
+    width: 100%;
+  }
+}
+
 .entity-teaser__image__overlay {
   @include entity-teaser-overlay-variant-mixin($brand-primary);
 
@@ -102,6 +107,15 @@ $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
     padding: 0;
 
     color: inherit;
+  }
+
+  .heading-h1,
+  .heading-h2,
+  .heading-h3,
+  .heading-h4,
+  .heading-h5,
+  .heading-h6 {
+    color: #fff;
   }
 }
 

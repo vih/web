@@ -1,0 +1,82 @@
+uuid: 2703de05-a501-4394-b24b-a53d8045862c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.employee.field_background_color
+    - field.field.paragraph.employee.field_background_image
+    - field.field.paragraph.employee.field_heading
+    - field.field.paragraph.employee.field_link
+    - field.field.paragraph.employee.field_user_type_id
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.employee
+  module:
+    - field_group
+    - image
+    - link
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_background_color
+        - field_background_image
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
+id: paragraph.employee.default
+targetEntityType: paragraph
+bundle: employee
+mode: default
+content:
+  field_background_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_background_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_user_type_id:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -340,6 +340,24 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
 /**
  * Implements hook_preprocess_hook().
  */
+function site_preprocess_paragraph__employee(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $ids = [];
+
+  if ($fields = $paragraph->get('field_user_type_id')->getValue()) {
+
+    foreach($fields as $field) {
+      $ids[] = $field['target_id'];
+    }
+  }
+  $contextual_filter = implode('+', $ids);
+
+  $variables['content']['embedded_view'] = views_embed_view('employees', 'embed_teaser', $contextual_filter);
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
 function site_preprocess_paragraph__short_course_list_(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
