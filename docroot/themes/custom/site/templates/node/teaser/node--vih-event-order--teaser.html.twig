@@ -13,8 +13,30 @@ view_mode ? view_mode|clean_class,
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
 
-                    {{ content.field_vih_eo_event }}
-                    {{ content.field_vih_eo_persons }}
+                    <div class="partial">
+                        <div class="partial__body">
+
+                            {# Begin - event #}
+                            {{ content.field_vih_eo_event }}
+                            {# End - event #}
+
+                        </div>
+                    </div>
+
+                    {# Begin - participants #}
+                    {% if node.field_vih_eo_persons.value %}
+                        <div class="partial partial--participants">
+                            <div class="partial__heading">
+                                <h2 class="partial__heading__title">
+                                    {{ 'Participants' | trans }}
+                                </h2>
+                            </div>
+                            <div class="partial__body">
+                                {{ content.field_vih_eo_persons }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - participants #}
 
                 </div>
                 <div class="col-xs-12 col-sm-6">

@@ -1,16 +1,17 @@
-uuid: 1e9f1635-641c-4b42-b8cf-9c6898a6be23
+uuid: 856f11b5-8596-491c-82cb-7fe2e178f24a
 langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.embedded
     - field.field.paragraph.vih_ordered_event_person.field_vih_oe_email
     - field.field.paragraph.vih_ordered_event_person.field_vih_oe_first_name
     - field.field.paragraph.vih_ordered_event_person.field_vih_oe_last_name
     - paragraphs.paragraphs_type.vih_ordered_event_person
-id: paragraph.vih_ordered_event_person.default
+id: paragraph.vih_ordered_event_person.embedded
 targetEntityType: paragraph
 bundle: vih_ordered_event_person
-mode: default
+mode: embedded
 content:
   field_vih_oe_email:
     weight: 2
