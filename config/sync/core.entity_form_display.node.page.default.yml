@@ -6,7 +6,7 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.page.body
     - field.field.node.page.field_banner
-    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_metatag
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
@@ -59,13 +59,13 @@ third_party_settings:
       region: content
     group_misc:
       children:
+        - field_metatag
         - uid
         - created
         - langcode
         - promote
         - sticky
         - path
-        - field_meta_tags
         - translation
         - scheduled_update
       parent_name: ''
@@ -97,7 +97,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -114,11 +114,11 @@ content:
       view_mode: default
     region: content
     third_party_settings: {  }
-  field_meta_tags:
-    type: metatag_firehose
-    weight: 9
+  field_metatag:
+    weight: 11
     settings: {  }
     third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_paragraphs:
     type: paragraphs
@@ -152,14 +152,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 5
+    weight: 14
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 8
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -167,12 +167,12 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 15
     third_party_settings: {  }
     region: content
   scheduled_update:
     type: inline_entity_form_complex
-    weight: 11
+    weight: 19
     settings:
       override_labels: false
       label_singular: ''
@@ -187,7 +187,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 16
     third_party_settings: {  }
     region: content
   title:
@@ -199,13 +199,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 10
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60

@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_banner
+    - field.field.node.vih_short_course.field_metatag
     - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
@@ -24,6 +25,7 @@ dependencies:
     - entity_browser
     - field_group
     - inline_entity_form
+    - metatag
     - paragraphs
     - path
     - text
@@ -64,6 +66,7 @@ third_party_settings:
       region: content
     group_misc:
       children:
+        - field_metatag
         - langcode
         - uid
         - created
@@ -120,7 +123,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -137,6 +140,12 @@ content:
       selection_mode: selection_append
     region: content
     third_party_settings: {  }
+  field_metatag:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_paragraphs:
     weight: 9
     settings:
@@ -237,14 +246,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 4
+    weight: 13
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 10
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -252,11 +261,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 17
     third_party_settings: {  }
     region: content
   scheduled_update:
-    weight: 11
+    weight: 20
     settings:
       form_mode: default
       override_labels: false
@@ -272,7 +281,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 18
     third_party_settings: {  }
     region: content
   title:
@@ -284,13 +293,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 7
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 14
     settings:
       match_operator: CONTAINS
       size: 60

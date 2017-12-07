@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.taxonomy_term.vih_class.field_banner
     - field.field.taxonomy_term.vih_class.field_heading
+    - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_paragraphs
     - field.field.taxonomy_term.vih_class.field_subheading
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
@@ -17,6 +18,7 @@ dependencies:
   module:
     - entity_browser
     - field_group
+    - metatag
     - paragraphs
     - path
     - text
@@ -74,6 +76,7 @@ third_party_settings:
       region: content
     group_misc:
       children:
+        - field_metatag
         - langcode
         - translation
         - path
@@ -121,6 +124,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_metatag:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_paragraphs:
     type: paragraphs
@@ -188,7 +197,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 0
+    weight: 19
     settings:
       include_locked: true
     third_party_settings: {  }
@@ -203,12 +212,12 @@ content:
     region: content
   path:
     type: path
-    weight: 2
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   translation:
-    weight: 1
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

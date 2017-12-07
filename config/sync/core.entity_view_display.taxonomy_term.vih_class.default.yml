@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.vih_class.field_banner
     - field.field.taxonomy_term.vih_class.field_heading
+    - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_paragraphs
     - field.field.taxonomy_term.vih_class.field_subheading
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
@@ -17,6 +18,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - metatag
     - panelizer
     - text
 third_party_settings:
@@ -53,6 +55,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_metatag:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_banner
-    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_metatag
     - field.field.node.page.field_paragraphs
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
@@ -49,12 +49,12 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    weight: 2
+  field_metatag:
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view

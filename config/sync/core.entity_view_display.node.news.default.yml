@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_banner
     - field.field.node.news.field_image
+    - field.field.node.news.field_metatag
     - field.field.node.news.field_news_tags
     - field.field.node.news.field_paragraphs
     - field.field.node.news.scheduled_update
@@ -14,6 +15,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - metatag
     - panelizer
     - text
     - user
@@ -52,6 +54,13 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_metatag:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_news_tags:
     weight: 4

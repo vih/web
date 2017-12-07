@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_banner
     - field.field.node.news.field_image
+    - field.field.node.news.field_metatag
     - field.field.node.news.field_news_tags
     - field.field.node.news.field_paragraphs
     - field.field.node.news.scheduled_update
@@ -15,6 +16,7 @@ dependencies:
     - entity_browser
     - field_group
     - inline_entity_form
+    - metatag
     - paragraphs
     - path
     - text
@@ -55,6 +57,7 @@ third_party_settings:
       region: content
     group_misc:
       children:
+        - field_metatag
         - langcode
         - uid
         - created
@@ -90,7 +93,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 29
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -120,6 +123,12 @@ content:
       selection_mode: selection_append
     third_party_settings: {  }
     region: content
+  field_metatag:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_news_tags:
     weight: 21
     settings:
@@ -145,14 +154,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 3
+    weight: 27
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 9
+    weight: 33
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -160,11 +169,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 31
     third_party_settings: {  }
     region: content
   scheduled_update:
-    weight: 11
+    weight: 34
     settings:
       match_operator: CONTAINS
       form_mode: default
@@ -180,7 +189,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 32
     third_party_settings: {  }
     region: content
   title:
@@ -192,13 +201,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 6
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 28
     settings:
       match_operator: CONTAINS
       size: 60

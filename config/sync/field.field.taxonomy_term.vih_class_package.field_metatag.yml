@@ -1,0 +1,23 @@
+uuid: 7f7259e3-945e-4adb-a2c9-9f6464411df0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_metatag
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - metatag
+id: taxonomy_term.vih_class_package.field_metatag
+field_name: field_metatag
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: Metatag
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag
