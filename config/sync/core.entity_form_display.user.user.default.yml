@@ -9,7 +9,6 @@ dependencies:
     - field.field.user.user.field_job_title
     - field.field.user.user.field_paragraphs
     - field.field.user.user.field_user_birthday
-    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
@@ -160,14 +159,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_user_kvalifikationer:
-    weight: 10
-    settings:
-      size: 255
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_user_name_first:
     type: string_textfield
     weight: 3

@@ -9,7 +9,6 @@ dependencies:
     - field.field.user.user.field_job_title
     - field.field.user.user.field_paragraphs
     - field.field.user.user.field_user_birthday
-    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
@@ -85,7 +84,6 @@ hidden:
   field_banner: true
   field_paragraphs: true
   field_user_birthday: true
-  field_user_kvalifikationer: true
   field_user_type_id: true
   field_vih_user_descr: true
   field_vih_user_title: true
