@@ -46,7 +46,8 @@
         "drupal/entity_clone": "1.x-dev",
         "drupal/coffee": "1.x-dev",
         "drupal/field_group": "3.x-dev",
-        "drupal/photoswipe": "1.0-beta3"
+        "drupal/photoswipe": "1.0-beta3",
+        "drupal/ckeditor_media_embed": "^1.1"
     },
     "repositories": [
         {
