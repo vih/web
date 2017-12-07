@@ -60,7 +60,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 3
+          items_per_page: 25
           offset: 0
       style:
         type: default
@@ -790,8 +790,9 @@ display:
           required: true
           plugin_id: standard
       pager:
-        type: none
+        type: some
         options:
+          items_per_page: 25
           offset: 0
     cache_metadata:
       max-age: -1
