@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.list_advanced
     - field.field.taxonomy_term.vih_class.field_banner
     - field.field.taxonomy_term.vih_class.field_heading
+    - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_paragraphs
     - field.field.taxonomy_term.vih_class.field_subheading
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
@@ -33,10 +34,9 @@ mode: list_advanced
 content:
   description:
     label: hidden
-    type: text_trimmed
+    type: text_default
     weight: 1
-    settings:
-      trim_length: 200
+    settings: {  }
     third_party_settings: {  }
     region: content
   field_vih_class_color:
@@ -58,6 +58,7 @@ content:
 hidden:
   field_banner: true
   field_heading: true
+  field_metatag: true
   field_paragraphs: true
   field_subheading: true
   field_vih_class_class_packages: true
