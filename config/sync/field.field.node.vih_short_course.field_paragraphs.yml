@@ -19,6 +19,7 @@ dependencies:
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_single_class_group
+    - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
@@ -41,6 +42,7 @@ settings:
       class_packages: class_packages
       list_of_news_teasers: list_of_news_teasers
       video: video
+      vih_teacher_class_description: vih_teacher_class_description
       event_list: event_list
       article: article
       file: file
@@ -87,8 +89,8 @@ settings:
         weight: 23
         enabled: false
       vih_teacher_class_description:
+        enabled: true
         weight: 24
-        enabled: false
       event_list:
         enabled: true
         weight: 26
