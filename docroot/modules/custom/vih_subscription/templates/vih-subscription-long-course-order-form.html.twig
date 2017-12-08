@@ -15,8 +15,9 @@
             {# Introduction information END #}
 
             {# Begin - course periods #}
+            {% set open_collapsible = true %}
+
             {% for periodDelta, coursePeriod in form['#coursePeriods'] %}
-                {% set open_collapsible = true %}
 
                 {% if coursePeriod['courseSlots'] | length %}
 

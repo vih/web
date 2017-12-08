@@ -8,10 +8,10 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes) }}>
     <div class="partial">
         <div class="partial__heading">
-            <h4 class="partial__heading__title">{{ label }}</h4>
+            <h5 class="partial__heading__title">{{ content.field_vih_ocs_title }}</h5>
         </div>
         <div class="partial__body">
-            {{ content }}
+            {{ content.field_vih_ocs_class }}
         </div>
     </div>
 </div>
