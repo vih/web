@@ -1,0 +1,116 @@
+// |--------------------------------------------------------------------------
+// | Gallery
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph--type--gallery
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$xs-paragraph-action-heading-margin-bottom: 20px;
+$sm-paragraph-action-heading-margin-bottom: 30px;
+$md-paragraph-action-heading-margin-bottom: 40px;
+$lg-paragraph-action-heading-margin-bottom: 50px;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Gallery
+.paragraph--type--gallery {
+
+  .field--name-field-images {
+
+    + .field--name-field-link {
+      margin-top: 50px;
+    }
+  }
+
+  .field--name-field-link {
+    text-align: center;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Gallery
+  .paragraph--type--gallery {
+
+    .field--name-field-heading {
+      margin-bottom: $xs-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Gallery
+  .paragraph--type--gallery {
+
+    .field--name-field-heading {
+      margin-bottom: $sm-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Gallery
+  .paragraph--type--gallery {
+
+    .field--name-field-heading {
+      margin-bottom: $md-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Gallery
+  .paragraph--type--gallery {
+
+    .field--name-field-heading {
+      margin-bottom: $lg-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Gallery mixin
+@mixin paragraph-type-mixin-column-action-centered() {}
