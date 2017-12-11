@@ -73,7 +73,7 @@ view_mode ? view_mode|clean_class,
                             <div class="col-xs-12 col-sm-6">
 
                                 {# Begin - period #}
-                                {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
+                                {% if node.field_vih_sc_start_date.value and node.field_vih_sc_end_date.value %}
                                     <div class="boxy boxy--time-period">
                                         <div class="boxy__heading">
                                             <h2 class="boxy__heading__title heading-h4">{{ 'Course start' | trans }}</h2>

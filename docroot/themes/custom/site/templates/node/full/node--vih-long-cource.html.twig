@@ -67,7 +67,7 @@ view_mode ? view_mode|clean_class,
                                 {# End - headings #}
 
                                 {# Begin - period #}
-                                {% if node.course_period_start.value or node.course_period_end.value %}
+                                {% if content.course_period_start or content.course_period_end %}
                                     <div class="boxy boxy--time-period">
                                         <div class="boxy__heading">
                                             <h2 class="boxy__heading__title heading-h4">{{ 'Course start' | trans }}</h2>
