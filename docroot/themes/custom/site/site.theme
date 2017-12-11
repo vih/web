@@ -556,8 +556,17 @@ function site_preprocess_taxonomy_term(&$variables) {
  * Implements template_preprocess_user().
  */
 function site_preprocess_user(&$variables) {
+  $user = $variables['user'];
   $variables['attributes']['class'][] = 'user';
   $variables['attributes']['class'][] = $variables['elements']['#view_mode'];
+
+  $ids = [];
+  $ids[] = $user->id();
+
+  $contextual_filter = implode('+', $ids);
+
+  $variables['content']['view_my_classes_nodes'] = views_embed_view('my_classes_nodes', 'embedded_embedded', $contextual_filter);
+  $variables['content']['view_my_classes_terms'] = views_embed_view('my_classes_terms', 'embedded_embedded', $contextual_filter);
 }
 
 /**

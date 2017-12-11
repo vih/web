@@ -1,26 +1,73 @@
-{% set classes = [
-'paragraph',
-'paragraph--type--' ~ paragraph.bundle|clean_class,
-view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-] %}
-<div{{ attributes.addClass(classes) }}>
+{%
+    set classes = [
+    'sectioned',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+<section{{ attributes.addClass(classes) }}>
+    <div class="sectioned--skewed-angle-top">
+        <div class="sectioned--skewed-angle-bottom">
 
-    {% if background_image %}
-        <div class="angled-background-image-wrapper">
-            <div class="cover-overlay"></div>
-            <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
-        </div>
-    {% endif %}
-    <div class="container">
-        <div class="row teacher-c-desc">
-            <div class="col-lg-3 col-md-3">
-                {{ content.field_photo }}
-            </div>
-            <div class="col-lg-9 col-md-9">
-                {{ content.field_heading }}
-                {{ content.field_description }}
-                {{ content.field_paragraph_user }}
+            {% if background_image %}
+                <div class="angled-background-image-wrapper">
+                    <div class="cover-overlay"></div>
+                    <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+                </div>
+            {% endif %}
+
+            <div class="sectioned__inner">
+                <div class="container">
+
+                    <div class="boxy">
+                        <div class="boxy__body">
+
+                            {% if paragraph.field_photo.value %}
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-3">
+
+                                        {# Begin - photo #}
+                                        {{ content.field_photo }}
+                                        {# End - photo #}
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-8 col-md-9">
+                                        <div class="content">
+
+                                            {# Begin - heading #}
+                                            {{ content.field_heading }}
+                                            {# End - heading #}
+
+                                            {# Begin - description #}
+                                            {{ content.field_description }}
+                                            {# End - description #}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            {% else %}
+
+                                <div class="content">
+
+                                    {# Begin - heading #}
+                                    {{ content.field_heading }}
+                                    {# End - heading #}
+
+                                    {# Begin - description #}
+                                    {{ content.field_description }}
+                                    {# End - description #}
+
+                                </div>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
-</div>
+</section>

@@ -1,0 +1,132 @@
+// |--------------------------------------------------------------------------
+// | Class description
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph--type--vih-teacher-class-description
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+$xs-paragraph-action-heading-margin-bottom: 20px;
+$sm-paragraph-action-heading-margin-bottom: 20px;
+$md-paragraph-action-heading-margin-bottom: 20px;
+$lg-paragraph-action-heading-margin-bottom: 20px;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Class description
+.paragraph--type--vih-teacher-class-description {
+
+  .field--name-field-photo {
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .field--name-field-description {
+
+    &,
+    h1, h2, h3, h4, h5, h6,
+    p {
+      font-family: $font-family-sans-serif;
+      font-size: $font-size-base;
+      text-transform: none;
+      font-weight: $font-weight;
+    }
+  }
+
+  .boxy__body {
+    padding: 0;
+
+    .content {
+      padding: $boxy-body-spacing-top-bottom $boxy-spacing-left-right;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {
+
+  // Class description
+  .paragraph--type--vih-teacher-class-description {
+
+    .field--name-field-heading {
+      margin-bottom: $xs-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  // Class description
+  .paragraph--type--vih-teacher-class-description {
+
+    .field--name-field-heading {
+      margin-bottom: $sm-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
+
+  // Class description
+  .paragraph--type--vih-teacher-class-description {
+
+    .field--name-field-heading {
+      margin-bottom: $md-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  // Class description
+  .paragraph--type--vih-teacher-class-description {
+
+    .field--name-field-heading {
+      margin-bottom: $lg-paragraph-action-heading-margin-bottom;
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Class description mixin
+@mixin paragraph-type-mixin-column-action-centered() {}

@@ -1,8 +1,9 @@
-uuid: 3c9bdadb-201f-49f3-9db6-5a70dcbbc436
+uuid: 7338335b-05ef-492b-8abe-a02317a45c06
 langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.embedded
     - field.field.paragraph.vih_teacher_class_description.field_background_color
     - field.field.paragraph.vih_teacher_class_description.field_background_image
     - field.field.paragraph.vih_teacher_class_description.field_description
@@ -14,10 +15,10 @@ dependencies:
   module:
     - image
     - text
-id: paragraph.vih_teacher_class_description.default
+id: paragraph.vih_teacher_class_description.embedded
 targetEntityType: paragraph
 bundle: vih_teacher_class_description
-mode: default
+mode: embedded
 content:
   field_description:
     weight: 2

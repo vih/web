@@ -24,6 +24,18 @@
                         {{ content.field_vih_user_descr }}
                         {# End - description #}
 
+                        <div class="partial">
+                            <div class="partial__heading">
+                                <h3 class="partial__heading__title heading-h4">
+                                    {{ 'Courses' | trans }}
+                                </h3>
+                            </div>
+                            <div class="partial__body">
+                                {{ content.view_my_classes_nodes }}
+                                {{ content.view_my_classes_terms }}
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="col-xs-12 col-md-6">
