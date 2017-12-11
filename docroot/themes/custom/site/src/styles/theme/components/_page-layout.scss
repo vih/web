@@ -1192,7 +1192,11 @@ ul.layout-navigation {
   display: flex !important;
   width: 100% !important;
   justify-content: center;
-  margin-left: -63px;
+
+  // Mobile - only
+  @media #{$breakpoint-mobile-only} {
+    margin-left: -63px;
+  }
 }
 .logo-wrapper-mobile img {
   width: 190px;

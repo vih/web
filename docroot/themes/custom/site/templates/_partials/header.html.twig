@@ -1,4 +1,4 @@
-<header class="layout__header layout__header-mobile visible-xs">
+<header class="layout__header layout__header-mobile visible-xs visible-sm">
     <div class=" layout__header-row layout__header-row--bottom">
         {% if page.mobile_header_navigation %}
             {{ page.mobile_header_navigation}}
@@ -9,11 +9,11 @@
 <header id="main-menu" class="layout__header">
 
     <!-- Begin - logo -->
-    <a class="layout__header-logo hidden-xs" href="{{ url('<front>') }}"></a>
+    <a class="layout__header-logo hidden-xs hidden-sm" href="{{ url('<front>') }}"></a>
     <!-- End - logo -->
 
     <!-- Begin - black bar -->
-    <div class="layout__header-row layout__header-row--top hidden-xs">
+    <div class="layout__header-row layout__header-row--top hidden-xs hidden-sm">
 
         <!-- Begin - contact information -->
         <aside class="layout-header-contact-information">

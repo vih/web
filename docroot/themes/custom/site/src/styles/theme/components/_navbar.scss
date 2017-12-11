@@ -1,58 +1,55 @@
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
-.navbar.navbar-default.hidden-xs{
+
+.navbar.navbar-default.hidden-xs {
   border: none !important;
   border-bottom: 1px solid #ccc;
-  & .dropdown-menu.layout-navigation__dropdown-menu{
+
+  & .dropdown-menu.layout-navigation__dropdown-menu {
     border-color: #ccc;
   }
 }
-
 // --------------------------------------------------
 // Responsive
 // --------------------------------------------------
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {
+@media #{$breakpoint-mobile-to-tablet} {
 
-    .navbar-toggle {
-      border: none;
-        padding: 0px!important;
-        padding-left: 20px!important;
+  .navbar-toggle {
+    display: inline;
 
-      &:hover,
-      &:focus {
-         background-color: $brand-primary;
+    border: none;
+    padding: 0 !important;
+    padding-left: 20px !important;
+
+    &:hover,
+    &:focus {
+      background-color: $brand-primary;
+    }
+    .icon-bar {
+      background-color: #fff;
+      height: 2px !important;
+      border-radius: 100px !important;
+      margin-top: 6px !important;
+      &.long {
+        width: 27px;
       }
-      .icon-bar {
-        background-color: #fff;
-        height: 2px!important;
-          border-radius: 100px!important;
-          margin-top: 6px!important;
-        &.long{
-          width: 27px;
-        }
-      }
     }
-   
-    .layout__header .layout__header-row--bottom {
-        height: $layout-desktop-header-default-height;
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-    }
-    .layout__header .layout__header-row--bottom .nav-button {
-        height: auto;
-    }
-    #toggle_mobile_menu {
-        height: auto;
-        margin-top: 02px;
-    }
-    
-    .layout__header-row--bottom {
-        background: rebeccapurple;
-    position: absolute;
-    right: 0;
-    }
+  }
+
+  .layout__header .layout__header-row--bottom {
+    height: $layout-desktop-header-default-height;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .layout__header .layout__header-row--bottom .nav-button {
+    height: auto;
+  }
+  #toggle_mobile_menu {
+    height: auto;
+    margin-top: 2px;
+  }
 }

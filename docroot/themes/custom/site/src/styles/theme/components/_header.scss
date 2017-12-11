@@ -10,6 +10,8 @@
 // Variables
 // --------------------------------------------------
 
+$breakpoint-mobile-to-tablet: "screen and (max-width: #{$screen-sm-max})";
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -210,7 +212,7 @@
   .layout-navigation__link__icon {
     max-width: 68px;
   }
-  
+
   .layout__header-row.layout__header-row--top.hidden-xs{
     flex-wrap: wrap;
   }
@@ -260,8 +262,6 @@
   background-size: 275%;
   background-position: 75px 0px;
 
-
-
   h5 {
     color: #fff;
     font-size: $font-size-small;
@@ -273,7 +273,6 @@
     padding-top: 30px;
     padding-bottom: 30px;
     margin-left: -20px;
-
   }
 }
 
@@ -324,7 +323,6 @@
 
 // Mobile - only
 @media #{$breakpoint-mobile-only} {
-  // Header
 
   .news-panel {
     display: flex;
@@ -367,6 +365,10 @@
   .news-banner {
     display: none;
   }
+
+}
+@media #{$breakpoint-mobile-to-tablet} {
+  // Header
   .layout__header {
     &.mobile-menu-open {
       //transform: translateX(0%);
@@ -434,7 +436,7 @@
           }
           > ul {
             max-width: 100%;
-          }           
+          }
         }
         .layout-navigation__link,
         .layout-navigation__dropdown {
@@ -568,12 +570,13 @@
 }
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {
+@media #{$breakpoint-tablet-and-up} {}
 
-  // Header
-  .layout__header {
-  }
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
 
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {
   .layout__header-row--bottom {
     .region {
       width: 100%;
@@ -584,65 +587,20 @@
   }
 }
 
-// Tablet - only
-@media #{$breakpoint-tablet-only} {
-
-  // Header
-  .layout__header {
-  }
-  .layout__header-row.layout__header-row--top.hidden-xs{
-    height: unset !important;
-    padding-top: 10px;
-  }
-}
-
-// Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-
-  // Header
-  .layout__header {
-  }
-}
-
 // Desktop - only
-@media #{$breakpoint-desktop-only} {
-
-  // Header
-  .layout__header {
-  }
-}
+@media #{$breakpoint-desktop-only} {}
 
 // Large desktop - and up
-@media #{$breakpoint-large-desktop-and-up} {
-
-  // Header
-  .layout__header {
-  }
-}
+@media #{$breakpoint-large-desktop-and-up} {}
 
 // Print
-@media print {
-
-  // Header
-  .layout__header {
-  }
-}
+@media print {}
 
 // Touch
-.touchevents {
-
-  // Header
-  .layout__header {
-  }
-}
+.touchevents {}
 
 // No touch
-.no-touchevents {
-
-  // Header
-  .layout__header {
-  }
-}
+.no-touchevents {}
 
 // --------------------------------------------------
 // Mixins
