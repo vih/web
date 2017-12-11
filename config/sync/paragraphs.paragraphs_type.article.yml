@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: article
-label: Artikel
+label: Tekst
 icon_uuid: null
 description: 'Består af overskrift, brødtekst og en action knap.'
 behavior_plugins: {  }
