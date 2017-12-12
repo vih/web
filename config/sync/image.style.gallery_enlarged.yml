@@ -1,0 +1,22 @@
+uuid: a9183725-f220-45c4-a7ce-20a8e9c70088
+langcode: da
+status: true
+dependencies:
+  module:
+    - crop
+name: gallery_enlarged
+label: 'Galleri - enlarged'
+effects:
+  f3adeae0-bd36-49b0-bef2-70ca9619d2a8:
+    uuid: f3adeae0-bd36-49b0-bef2-70ca9619d2a8
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: freeform
+  9ce43bdd-894c-4b43-8fad-1d4646f6b539:
+    uuid: 9ce43bdd-894c-4b43-8fad-1d4646f6b539
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1100
+      height: 800

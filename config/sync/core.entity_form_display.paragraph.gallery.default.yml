@@ -11,9 +11,9 @@ dependencies:
     - image.style.thumbnail
     - paragraphs.paragraphs_type.gallery
   module:
-    - entity_browser
     - field_group
     - image
+    - image_widget_crop
     - lightning_media
     - link
     - workbench_moderation
@@ -62,16 +62,17 @@ content:
     type: string_textfield
     region: content
   field_images:
-    type: entity_browser_file
+    type: image_widget_crop
     weight: 1
     settings:
+      show_crop_area: true
+      show_default_crop: true
       preview_image_style: thumbnail
-      entity_browser: null
-      open: false
-      field_widget_edit: true
-      field_widget_remove: true
-      selection_mode: selection_append
-      view_mode: default
+      crop_preview_image_style: crop_thumbnail
+      progress_indicator: throbber
+      crop_list:
+        - gallery_enlarged
+      warn_multiple_usages: false
     region: content
     third_party_settings:
       lightning_media:

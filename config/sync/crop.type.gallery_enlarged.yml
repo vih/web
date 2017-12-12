@@ -1,0 +1,12 @@
+uuid: 9f94ec12-3cc7-4bbc-813a-a21221743c74
+langcode: da
+status: true
+dependencies: {  }
+label: 'Galleri - enlarged'
+id: gallery_enlarged
+description: ''
+aspect_ratio: '1100:750'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 1100
+hard_limit_height: 750

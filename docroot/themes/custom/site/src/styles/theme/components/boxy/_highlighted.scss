@@ -21,6 +21,7 @@
 // --------------------------------------------------
 
 .boxy--highlighted {
+  margin-bottom: floor( ( $grid-gutter-width / 2 ) );
 
   .boxy__body {
     text-align: center;

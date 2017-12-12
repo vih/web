@@ -29,8 +29,8 @@ content:
     weight: 1
     label: hidden
     settings:
-      photoswipe_node_style: medium
-      photoswipe_image_style: banner
+      photoswipe_node_style: gallery_thumbnail
+      photoswipe_image_style: gallery_enlarged
       photoswipe_caption: title
       photoswipe_view_mode: default
     third_party_settings: {  }
