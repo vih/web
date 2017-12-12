@@ -23,7 +23,6 @@ $lg-paragraph-action-heading-margin-bottom: 20px;
 .paragraph--type--vih-teacher-class-description {
 
   .field--name-field-photo {
-    margin-right: 0 - floor( ( $grid-gutter-width / 2 ) );
 
     img {
       width: 100%;
@@ -82,6 +81,10 @@ $lg-paragraph-action-heading-margin-bottom: 20px;
 
     .field--name-field-heading {
       margin-bottom: $sm-paragraph-action-heading-margin-bottom;
+    }
+
+    .field--name-field-photo {
+      margin-right: 0 - floor( ( $grid-gutter-width / 2 ) );
     }
   }
 }
