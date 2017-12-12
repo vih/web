@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: user_quote
-label: 'User quote'
+label: Udtalelse
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

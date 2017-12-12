@@ -26,6 +26,20 @@ $lg-paragraph-action-heading-margin-bottom: 50px;
     margin-bottom: 50px;
   }
 
+  .field--name-field-paragraph-person-photo {
+    display: flex;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-items: center;
+
+    padding: ($line-height-computed / 2) 0; // Padding matches the dynamic set at blockquote by Bootstrap
+
+    img {
+      @extend .img-circle;
+    }
+  }
+
   .field--name-field-link {
     margin-top: 50px;
 
@@ -54,7 +68,16 @@ $lg-paragraph-action-heading-margin-bottom: 50px;
 }
 
 // Mobile - only
-@media #{$breakpoint-mobile-only} {}
+@media #{$breakpoint-mobile-only} {
+
+  // Quote
+  .paragraph--type--user-quote {
+
+    .field--name-field-paragraph-person-photo {
+      justify-content: center;
+    }
+  }
+}
 
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {

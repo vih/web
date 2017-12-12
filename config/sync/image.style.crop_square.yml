@@ -1,0 +1,15 @@
+uuid: d2bd9ada-2fef-4d34-9ef3-3585c88d1f4f
+langcode: da
+status: true
+dependencies:
+  module:
+    - crop
+name: crop_square
+label: 'Cropped: Kvadrat'
+effects:
+  72b936be-f83a-4f8e-9562-9d49a2f2932b:
+    uuid: 72b936be-f83a-4f8e-9562-9d49a2f2932b
+    id: crop_crop
+    weight: null
+    data:
+      crop_type: square
