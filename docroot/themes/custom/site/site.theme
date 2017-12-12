@@ -557,7 +557,7 @@ function site_preprocess_taxonomy_term(&$variables) {
  */
 function site_preprocess_user(&$variables) {
   $user = $variables['user'];
-  $view_mode = $variables['view_mode'];
+  $view_mode = $variables['elements']['#view_mode'];
   $variables['attributes']['class'][] = 'user';
   $variables['attributes']['class'][] = $variables['elements']['#view_mode'];
 
