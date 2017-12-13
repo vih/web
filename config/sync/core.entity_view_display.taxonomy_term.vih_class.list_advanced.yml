@@ -34,9 +34,10 @@ mode: list_advanced
 content:
   description:
     label: hidden
-    type: text_default
+    type: text_trimmed
     weight: 1
-    settings: {  }
+    settings:
+      trim_length: 120
     third_party_settings: {  }
     region: content
   field_vih_class_color:

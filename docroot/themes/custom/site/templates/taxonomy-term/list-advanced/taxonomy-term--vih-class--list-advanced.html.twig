@@ -2,27 +2,23 @@
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
-
-            {# Begin - name #}
-            <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
-                {{ name }}
-            </div>
-            {# End - name #}
-
-        </div>
+        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});"></div>
     {% endif %}
     {# End - image #}
 
     <!-- Begin - body -->
     <div class="entity-list-advanced__body">
 
-        {# Begin - description #}
+        {# Begin - name #}
         <div class="entity-list-advanced__heading">
             <h2 class="entity-list-advanced__heading__title heading-h4">
-                {{ content.description | render | striptags('<!-- -->') | length > 70 ? content.description | render | striptags('<!-- -->') | slice(0, 70) ~ '...' : content.description }}
+                {{ name }}
             </h2>
         </div>
+        {# End - name #}
+
+        {# Begin - description #}
+        {{ content.description | render | striptags('<!-- -->') }}
         {# End - description #}
 
     </div>

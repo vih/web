@@ -14,10 +14,12 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - image.style.thumbnail
     - taxonomy.vocabulary.vih_class
   module:
     - entity_browser
     - field_group
+    - image_widget_crop
     - metatag
     - paragraphs
     - path
@@ -67,11 +69,12 @@ third_party_settings:
       weight: 3
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
+        label: 'Fag detaljer'
+        formatter: open
         description: ''
         required_fields: true
+        id: ''
+        classes: ''
       label: 'Fag detaljer'
       region: content
     group_misc:
@@ -105,16 +108,16 @@ content:
     third_party_settings: {  }
     region: content
   field_banner:
-    type: entity_browser_file
+    type: image_widget_crop
     weight: 14
     settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
       preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
+      progress_indicator: throbber
+      crop_preview_image_style: crop_thumbnail
+      crop_list: {  }
+      show_crop_area: false
+      show_default_crop: true
+      warn_multiple_usages: false
     region: content
     third_party_settings: {  }
   field_heading:
