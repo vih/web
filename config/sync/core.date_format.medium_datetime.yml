@@ -1,0 +1,8 @@
+uuid: 0ef41bbd-ae32-4925-bfc3-86aa3b1970a4
+langcode: da
+status: true
+dependencies: {  }
+id: medium_datetime
+label: 'Medium datetime'
+locked: false
+pattern: 'd. M Y - H:i'
