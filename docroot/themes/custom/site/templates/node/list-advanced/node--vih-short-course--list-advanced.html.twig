@@ -6,10 +6,13 @@ set classes = [
     not node.isPublished() ? 'is-unpublished',
     view_mode ? view_mode|clean_class,
     'clearfix',
+    'element-wrapper-link',
+    'entity-list-advanced',
+    'entity-list-advanced--short-course'
 ]
 %}
 
-<a href="{{ url }}" class="element-wrapper-link entity-list-advanced entity-list-advanced--short-course">
+<a href="{{ url }}" {{ attributes.addClass(classes) }}>
 
     {# Begin - image #}
     {% if node.field_vih_sc_image.value %}

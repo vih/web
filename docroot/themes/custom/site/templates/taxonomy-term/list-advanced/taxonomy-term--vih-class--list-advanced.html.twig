@@ -1,4 +1,17 @@
-<div {{ attributes.addClass('entity-list-advanced', 'entity-list-advanced--class') }}>
+{%
+    set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+    'element-wrapper-link',
+    'entity-list-advanced',
+    'entity-list-advanced--class'
+]
+%}
+<a href="{{ url }}" {{ attributes.addClass(classes) }}>
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
@@ -26,36 +39,8 @@
 
     <!-- Begin - action -->
     <div class="entity-list-advanced__action">
-        <button class="btn btn-default" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
-            <span class="icon icon-info-circle"></span>
-        </button>
+        <button class="btn btn-default">{{ 'Read more' | trans }}</button>
     </div>
     <!-- End - action -->
 
-    <!-- Begin - modal -->
-    <div class="modal fade" id="class-modal-cp-{{ term.id }}" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-
-                {# Begin - header #}
-                <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal') }});">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    <h3 class="modal-title heading-h1">{{ name }}</h3>
-                </div>
-                {# End - header #}
-
-                {# Begin - body #}
-                <div class="modal-body">
-                    {{ content.description }}
-                </div>
-                {# End - body #}
-
-            </div>
-        </div>
-    </div>
-    <!-- End - modal -->
-
-</div>
+</a>
