@@ -1,5 +1,5 @@
 <!-- Begin - wrapper -->
-<div class="layout__wrapper layout--fixed-header">
+<div class="layout__wrapper layout--fixed-header" id="page-html">
 
     <!-- Begin - drawer -->
     <div class="layout__drawer" aria-hidden="true">
@@ -29,32 +29,82 @@
             {% endif %}
             {# End - notify #}
 
+            {# Begin - banner #}
+            {% if is_front %}
+
+                {% if page.banner %}
+                    {% block banner %}
+                        {{ page.banner }}
+                    {% endblock %}
+                {% endif %}
+
+            {% else %}
+
+                {% if node.field_banner.value or user.field_banner.value or term.field_banner.value %}
+
+                    {# Begin - image #}
+                    {% if node.field_banner.value %}
+                        {% set banner_background_image = node.field_banner.entity.fileuri | image_style('banner_small') %}
+                    {% elseif user.field_banner.value %}
+                        {% set banner_background_image = user.field_banner.entity.fileuri | image_style('banner_small') %}
+                    {% elseif term.field_banner.value %}
+                        {% set banner_background_image = term.field_banner.entity.fileuri | image_style('banner_small') %}
+                    {% endif %}
+                    {# End - image #}
+
+                    <div class="banner banner--small" style="background-image: url({{ banner_background_image }})">
+                        <div class="banner__inner">
+                            <div class="container">
+                                <div class="banner__heading">
+
+                                    {% if node.title.value %}
+                                        <h1 class="banner__heading__title">{{ node.title.value }}</h1>
+                                    {% elseif user.title.value %}
+                                        <h1 class="banner__heading__title">{{ user.title.value }}</h1>
+                                    {% elseif term.name.value %}
+                                        <h1 class="banner__heading__title">{{ term.name.value }}</h1>
+                                    {% elseif page['#title'] %}
+                                        <h1 class="banner__heading__title">{{ page['#title'] }}</h1>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+            {# End - banner #}
+
+            {# Begin - header #}
+            {% if page.header is defined and page.header | render | striptags | trim %}
+                {% block header %}
+                    <section class="sectioned sectioned--header sectioned--small-inner-spacing hidden-xs">
+                        <div class="sectioned__inner">
+                            <div class="container">
+                                {{ page.header }}
+                            </div>
+                        </div>
+                    </section>
+                {% endblock %}
+            {% endif %}
+            {# End - header #}
+
             <!-- Begin - content -->
-            <section{{ content_attributes.addClass(content_classes) }}>
+            <div{{ content_attributes.addClass(content_classes) }}>
                 {% block content %}
                     <!-- Begin - content -->
                     <a id="main-content"></a>
 
-                    {% if node and node.getType == 'page' %}
-                        {{ page.content }}
-                        {{ page.breadcrumb }}
-                    {% else %}
-                        <div class="angled-background-color angled-background-color-white">
-                            <div class="angled-background-inner" style="position: unset !important;">
-                                <div class="container">
-                                    <div id="main">
-                                        <div class="fof">
-                                            <h1>Error 404</h1>
-                                        </div>
-                                    </div>
-                                </div>
+                    <section class="sectioned sectioned--content">
+                        <div class="sectioned__inner">
+                            <div class="container">
+                                <h1>404</h1>
                             </div>
                         </div>
-                    {% endif %}
-
+                    </section>
                     <!-- End - content -->
                 {% endblock %}
-            </section>
+            </div>
             <!-- End - content -->
 
         </div>
