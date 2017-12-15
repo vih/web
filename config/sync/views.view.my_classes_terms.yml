@@ -120,7 +120,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -208,7 +208,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"boxy boxy--highlighted\">\n  <div class=\"boxy__heading\">\n    <h3 class=\"boxy__heading__title heading-h5\">{{ title }}</h3>\n  </div>\n  <div class=\"boxy__body\">\n    {{ field_description }}\n  </div>\n</div>"
+            text: "<div class=\"boxy\">\n  <div class=\"boxy__heading\">\n    <h3 class=\"boxy__heading__title heading-h5\">{{ name }}</h3>\n  </div>\n  <div class=\"boxy__body\">\n    {{ field_description }}\n  </div>\n</div>"
             make_link: false
             path: ''
             absolute: false
