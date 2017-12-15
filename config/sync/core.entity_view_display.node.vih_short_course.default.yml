@@ -102,7 +102,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: vih_medium_date_short_month
+      format_type: medium_datetime
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -149,7 +149,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: vih_medium_date_short_month
+      format_type: medium_datetime
     third_party_settings: {  }
     type: datetime_default
     region: content
