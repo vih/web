@@ -45,6 +45,12 @@ $lg-paragraph-action-heading-margin-bottom: 20px;
     padding: 0;
 
     .content {
+      display: flex;
+
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+
       padding: $boxy-body-spacing-top-bottom floor( ( $grid-gutter-width / 2 ) );
     }
   }
