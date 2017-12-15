@@ -1,0 +1,95 @@
+// |--------------------------------------------------------------------------
+// | Center content
+// |--------------------------------------------------------------------------
+// |
+// | For use w. context module. Look for: context_center_content.
+// |
+// | This file contains styles for the following:
+// | - .context-center-content
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin context-center-content-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.context-center-content {
+
+  .region-content {
+    @extend .container;
+
+    padding-bottom: 30px;
+    margin-bottom: $xs-sectioned-skewed-angle-height * 1px;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  .context-center-content {
+
+    .region-content {
+      margin-bottom: $sm-sectioned-skewed-angle-height * 1px;
+    }
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  .context-center-content {
+
+    .region-content {
+      margin-bottom: $md-sectioned-skewed-angle-height * 1px;
+    }
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  .context-center-content {
+
+    .region-content {
+      margin-bottom: $lg-sectioned-skewed-angle-height * 1px;
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

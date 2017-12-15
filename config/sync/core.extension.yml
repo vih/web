@@ -13,6 +13,8 @@ module:
   contact: 0
   contact_block: 0
   contact_storage: 0
+  context: 0
+  context_ui: 0
   contextual: 0
   crop: 0
   ctools: 0
@@ -106,6 +108,7 @@ module:
   webform_ui: 0
   workbench_moderation: 0
   menu_link_content: 1
+  pathauto: 1
   webform_bootstrap: 1
   content_translation: 10
   views: 10

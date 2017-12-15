@@ -47,7 +47,8 @@
         "drupal/coffee": "1.x-dev",
         "drupal/field_group": "3.x-dev",
         "drupal/photoswipe": "1.0-beta3",
-        "drupal/ckeditor_media_embed": "^1.1"
+        "drupal/ckeditor_media_embed": "^1.1",
+        "drupal/context": "4.0-beta2"
     },
     "repositories": [
         {
