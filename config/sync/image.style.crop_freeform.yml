@@ -10,6 +10,6 @@ effects:
   f077de0d-3af7-4bd1-9b5e-8790f21289bf:
     uuid: f077de0d-3af7-4bd1-9b5e-8790f21289bf
     id: crop_crop
-    weight: null
+    weight: -10
     data:
       crop_type: freeform

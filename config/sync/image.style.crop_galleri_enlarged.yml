@@ -1,0 +1,15 @@
+uuid: d95c4b42-9bc0-4e4f-b950-647696740866
+langcode: da
+status: true
+dependencies:
+  module:
+    - crop
+name: crop_galleri_enlarged
+label: 'Cropped: Galleri - enlarged'
+effects:
+  bf955b58-33d5-4953-b24e-86231c3d54ad:
+    uuid: bf955b58-33d5-4953-b24e-86231c3d54ad
+    id: crop_crop
+    weight: null
+    data:
+      crop_type: galleri_enlarged

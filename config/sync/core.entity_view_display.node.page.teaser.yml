@@ -38,6 +38,7 @@ content:
     region: content
 hidden:
   field_banner: true
+  field_metatag: true
   field_paragraphs: true
   field_vih_course_heading: true
   field_vih_course_subheading: true

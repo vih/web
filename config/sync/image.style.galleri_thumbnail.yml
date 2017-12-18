@@ -1,0 +1,22 @@
+uuid: bd694283-0dc2-48cf-aff7-17f8a8877c91
+langcode: da
+status: true
+dependencies:
+  module:
+    - crop
+name: galleri_thumbnail
+label: 'Galleri - thumbnail'
+effects:
+  5d47d288-c3f0-4941-9c89-daae46a1e8a2:
+    uuid: 5d47d288-c3f0-4941-9c89-daae46a1e8a2
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: freeform
+  6529e87e-0210-4e0c-908d-9fcb2cdd00a9:
+    uuid: 6529e87e-0210-4e0c-908d-9fcb2cdd00a9
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 220
+      height: 150

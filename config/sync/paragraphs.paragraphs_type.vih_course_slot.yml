@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: vih_course_slot
 label: 'Course Slot'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

@@ -29,7 +29,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      photoswipe_node_style: medium
+      photoswipe_node_style: galleri_thumbnail
       photoswipe_image_style: ''
       photoswipe_caption: title
       photoswipe_view_mode: default

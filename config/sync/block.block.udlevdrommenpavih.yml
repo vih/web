@@ -1,21 +1,21 @@
-uuid: c7fc4f97-6ecd-4beb-94d0-ad8ab0dea095
-langcode: da
+uuid: aac63cce-b2e8-41f1-ae24-0fd70379182f
+langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:banner:38a6b38c-f577-48e2-967f-1b595aa70591'
+    - 'block_content:banner:cddf1a28-7fdb-49d3-8907-b090646464d1'
   module:
     - block_content
   theme:
     - site
-id: komgodtigang
+id: udlevdrommenpavih
 theme: site
 region: banner
-weight: 0
+weight: -11
 provider: null
-plugin: 'block_content:38a6b38c-f577-48e2-967f-1b595aa70591'
+plugin: 'block_content:cddf1a28-7fdb-49d3-8907-b090646464d1'
 settings:
-  id: 'block_content:38a6b38c-f577-48e2-967f-1b595aa70591'
+  id: 'block_content:cddf1a28-7fdb-49d3-8907-b090646464d1'
   label: 'Udlev drømmen på VIH'
   provider: block_content
   label_display: visible

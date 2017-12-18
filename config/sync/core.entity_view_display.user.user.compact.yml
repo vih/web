@@ -73,8 +73,12 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_banner: true
   field_e_mail: true
+  field_job_title: true
+  field_paragraphs: true
   field_user_birthday: true
   field_user_kvalifikationer: true
+  field_user_type_id: true
   langcode: true
   member_for: true

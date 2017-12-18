@@ -246,6 +246,8 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_banner: true
+  field_metatag: true
   field_paragraphs: true
   field_vih_cource_contact_person: true
   field_vih_course_heading: true
@@ -258,3 +260,4 @@ hidden:
   field_vih_course_week_price: true
   langcode: true
   links: true
+  scheduled_update: true

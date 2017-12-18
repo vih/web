@@ -82,6 +82,7 @@ content:
 hidden:
   field_banner: true
   field_event_price: true
+  field_metatag: true
   field_paragraphs: true
   field_vih_cource_contact_person: true
   field_vih_course_subheading: true
