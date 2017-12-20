@@ -50,7 +50,10 @@ class SubscriptionSuccessfulController extends ControllerBase {
     //Send email
     $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
     $message = array();
-    $token = ['@subject_name', '@person_name', '@date', '@url'];
+    
+    $order_rendered = drupal_render(node_view($order, 'teaser'))->__toString();
+    
+    $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
     if ($subject->getType() == 'vih_long_cource') {
       $message = [
@@ -171,6 +174,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $firstName . ' ' . $lastName,
           !empty($orderDate) ? $orderDate : '',
           $subject->toUrl()->setAbsolute()->toString(),
+          $order_rendered,
         ];
       }
 
