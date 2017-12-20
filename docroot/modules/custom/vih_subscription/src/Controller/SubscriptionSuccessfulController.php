@@ -51,7 +51,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
     $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
     $message = array();
     
-    $order_rendered = drupal_render(node_view($order, 'teaser'))->__toString();
+    $order_rendered = drupal_render(node_view($order, 'email_teaser'))->__toString();
     
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
@@ -108,6 +108,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value,
         !empty($courseDate) ? $courseDate : '',
         $subject->toUrl()->setAbsolute()->toString(),
+        $order_rendered,
       ];
 
       //updating course order status
@@ -216,6 +217,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $firstName . ' ' . $lastName,
           !empty($eventDate) ? $eventDate : '',
           $subject->toUrl()->setAbsolute()->toString(),
+          $order_rendered,
         ];
       }
 

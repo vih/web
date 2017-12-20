@@ -1,0 +1,27 @@
+<div>
+  <div>
+    <div>
+      {{ content.field_vih_eo_event }}
+    </div>
+    {% if node.field_vih_eo_persons.value %}
+      <div>
+        <h2>
+          {{ 'Participants' | trans }}
+        </h2>
+        {{ content.field_vih_eo_persons }}
+      </div>
+    {% endif %}
+  </div>
+  <div>
+    {% if content.field_vih_eo_price %}
+      <!-- Begin - price -->
+      <div>
+        <h2>{{ "Total price" | trans }}</h2>
+        {{ content.field_vih_eo_price }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+
+
