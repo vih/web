@@ -58,7 +58,8 @@ class NotificationsSettingsForm extends ConfigFormBase {
       <b>@subject_name</b> => Name of the course <br>
       <b>@person_name</b> => Name of the person <br>
       <b>@date</b> => Date of the course <br>
-      <b>@url</b> => Link to the course")
+      <b>@url</b> => Link to the course <br>
+      <b>@order</b> => Order full information")
     ];
 
     // Short course
@@ -107,7 +108,8 @@ class NotificationsSettingsForm extends ConfigFormBase {
       <b>@subject_name</b> => Name of the event <br>
       <b>@person_name</b> => Name of the person <br>
       <b>@date</b> => Date of the event<br>
-      <b>@url</b> => Link to the event")
+      <b>@url</b> => Link to the event <br>
+      <b>@order</b> => Order full information")
     ];
 
     return parent::buildForm($form, $form_state);
