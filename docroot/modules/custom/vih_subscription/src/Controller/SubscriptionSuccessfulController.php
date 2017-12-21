@@ -24,7 +24,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
    */
   public function content(NodeInterface $subject, NodeInterface $order, $checksum) {
     if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($subject, $order))) {
-      $this->sendNotificationEmail($subject, $order);
+      $this->registerOrder($subject, $order);
 
       //the actual content comes from template file: templates/vih_subscription_thank_you_page.html.twig
       $build = array(
@@ -41,12 +41,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
   }
 
   /**
-   * Wrapper function to conveniently send the email notification
+   * Wrapper function register order:
+   * Sending notification email, changing order status, registering on EDB system
    *
    * @param NodeInterface $subject
    * @param NodeInterface $order
    */
-  private function sendNotificationEmail(NodeInterface $subject, NodeInterface $order) {
+  private function registerOrder(NodeInterface $subject, NodeInterface $order) {
     //Send email
     $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
     $message = array();
@@ -111,13 +112,6 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $order_rendered,
       ];
 
-      //updating course order status
-      $order->set('field_vih_lco_status', 'confirmed');
-      //deleting CPR from order
-      $studentCpr = $order->field_vih_lco_cpr->value;
-      $order->set('field_vih_lco_cpr', '');
-      $order->save();
-
       // Mailchimp integration
       if ($order->field_vih_lco_newsletter->value) {
         $email = $order->field_vih_lco_email->value;
@@ -140,6 +134,14 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
         $edbBrugsenIntegration->addRegistration($registration);
       }
+      
+      //updating course order status
+      $order->set('field_vih_lco_status', 'confirmed');
+      //deleting CPR from order
+      $studentCpr = $order->field_vih_lco_cpr->value;
+      $order->set('field_vih_lco_cpr', '');
+      $order->save();
+      
     } elseif ($subject->getType() == 'vih_short_course') {
       $allParticipants = $order->get('field_vih_sco_persons')->getValue();
       if (!empty($allParticipants)) {
