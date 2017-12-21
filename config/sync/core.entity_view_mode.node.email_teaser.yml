@@ -1,0 +1,14 @@
+uuid: 3c370290-b3b3-4504-a525-32661f3eefed
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: 'Order details on email confirmations'
+id: node.email_teaser
+label: 'Email teaser'
+targetEntityType: node
+cache: true
