@@ -133,5 +133,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
+  field_user_kvalifikationer: true
   langcode: true
   member_for: true
