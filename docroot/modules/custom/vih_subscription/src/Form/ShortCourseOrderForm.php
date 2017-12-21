@@ -145,6 +145,13 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('Efternavn'),
         '#required' => TRUE,
         '#prefix' => '<div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div>',
+      );
+        $form['newParticipantContainer']['newParticipantFieldset']['cpr'] = array(
+        '#type' => 'textfield',
+        '#placeholder' => $this->t('CPR'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(

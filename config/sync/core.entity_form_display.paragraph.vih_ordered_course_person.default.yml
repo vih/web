@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_last_name
@@ -16,8 +17,16 @@ targetEntityType: paragraph
 bundle: vih_ordered_course_person
 mode: default
 content:
+  field_vih_ocp_cpr:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_ocp_email:
-    weight: 8
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -25,7 +34,7 @@ content:
     type: email_default
     region: content
   field_vih_ocp_first_name:
-    weight: 6
+    weight: 0
     settings:
       size: 60
       placeholder: ''
@@ -33,7 +42,7 @@ content:
     type: string_textfield
     region: content
   field_vih_ocp_last_name:
-    weight: 7
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -42,7 +51,7 @@ content:
     region: content
   field_vih_ocp_ordered_options:
     type: paragraphs
-    weight: 9
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
