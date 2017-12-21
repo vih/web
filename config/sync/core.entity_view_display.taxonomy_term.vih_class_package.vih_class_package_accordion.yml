@@ -42,6 +42,7 @@ hidden:
   field_banner: true
   field_heading: true
   field_link_taxo: true
+  field_metatag: true
   field_paragraphs: true
   field_subheading: true
   field_vih_class_package_color: true

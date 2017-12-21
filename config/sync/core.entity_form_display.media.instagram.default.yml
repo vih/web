@@ -1,5 +1,5 @@
-uuid: a8c44ed8-a565-43f6-963d-c52ab64cb279
-langcode: da
+uuid: 047b8262-0824-42ca-a621-d3d4218e47b4
+langcode: en
 status: true
 dependencies:
   config:
@@ -7,10 +7,10 @@ dependencies:
     - field.field.media.instagram.field_media_in_library
     - media.type.instagram
   module:
+    - content_moderation
     - path
-    - workbench_moderation
 _core:
-  default_config_hash: jDN_C9WDRGh8kbivibYIFFgSscT2mELFjSQGoCppakY
+  default_config_hash: 59ziPzJNPAqMrCE-SBvcUQxVXORfAJ_tkMlS4sIUAFQ
 id: media.instagram.default
 targetEntityType: media
 bundle: instagram
@@ -34,10 +34,10 @@ content:
   langcode:
     type: language_select
     weight: 2
+    region: content
     settings:
       include_locked: true
     third_party_settings: {  }
-    region: content
   name:
     type: string_textfield
     weight: 0

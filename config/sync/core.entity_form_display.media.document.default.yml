@@ -1,19 +1,17 @@
-uuid: ead12577-8692-43ef-9b35-5a4b96a308a5
-langcode: da
+uuid: 6d920807-fb69-4481-866e-52930f9706da
+langcode: en
 status: true
 dependencies:
   config:
     - field.field.media.document.field_document
-    - field.field.media.document.field_document_size
     - field.field.media.document.field_media_in_library
-    - field.field.media.document.field_mime_type
     - media.type.document
   module:
+    - content_moderation
     - file
     - path
-    - workbench_moderation
 _core:
-  default_config_hash: cJuFx19N5_sxWYHHlmO3RQGGsc47AjZ5a1HfNN2fOzc
+  default_config_hash: xFJUl0MccoGPEv1eb_I_XnxzjqvZ8M5HA1G3PBtv9IE
 id: media.document.default
 targetEntityType: media
 bundle: document
@@ -36,10 +34,10 @@ content:
   langcode:
     type: language_select
     weight: 2
+    region: content
     settings:
       include_locked: true
     third_party_settings: {  }
-    region: content
   name:
     type: string_textfield
     weight: 2
@@ -63,6 +61,4 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_document_size: true
-  field_mime_type: true
   uid: true

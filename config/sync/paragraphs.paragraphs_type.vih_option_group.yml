@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: vih_option_group
 label: 'Option Group'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

@@ -1,9 +1,9 @@
-uuid: cd38fcdf-e86c-40f1-b0ff-3c72a3883ffe
-langcode: da
+uuid: 07a265de-a3c6-4a5d-ad39-a3e539cf94d5
+langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:bdf8c109-34ac-4a29-abde-6a8c2e22f5d9'
+    - 'block_content:basic:d63076f5-44b5-4794-8ee2-ecf377288021'
   module:
     - block_content
   theme:
@@ -11,12 +11,12 @@ dependencies:
 id: sidefodkontaktinformation
 theme: site
 region: footer_top_fourth
-weight: -8
+weight: 0
 provider: null
-plugin: 'block_content:bdf8c109-34ac-4a29-abde-6a8c2e22f5d9'
+plugin: 'block_content:d63076f5-44b5-4794-8ee2-ecf377288021'
 settings:
-  id: 'block_content:bdf8c109-34ac-4a29-abde-6a8c2e22f5d9'
-  label: Kontakt
+  id: 'block_content:d63076f5-44b5-4794-8ee2-ecf377288021'
+  label: 'Sidefod - kontakt information'
   provider: block_content
   label_display: visible
   status: true

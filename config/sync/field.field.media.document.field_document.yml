@@ -1,5 +1,5 @@
-uuid: 279cc72c-9a57-4aa7-877c-7e38f606b53d
-langcode: da
+uuid: 01a697e7-5fb2-4678-8f24-36f1991a9f26
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,12 +8,12 @@ dependencies:
   module:
     - file
 _core:
-  default_config_hash: 9qJp-irUTNhCk-FqqZERqwvp-ie7ojMB1FshFdMqzFQ
+  default_config_hash: f7bnl0YEQNufiBJE33He44yXOU2kf-QBrmvz_7SVDB8
 id: media.document.field_document
 field_name: field_document
 entity_type: media
 bundle: document
-label: Dokument
+label: Document
 description: ''
 required: false
 translatable: false

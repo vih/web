@@ -1,9 +1,9 @@
-uuid: 772d06ab-7a14-4831-9c3e-b7dad96c081a
-langcode: da
+uuid: 710ac7e5-712d-4a83-b5f7-994140a19e8d
+langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:6f2694b2-00ac-40df-9158-8f59e8972b3e'
+    - 'block_content:basic:d9c92266-a4c6-4017-a3f9-34f34deb5537'
   module:
     - block_content
   theme:
@@ -11,11 +11,11 @@ dependencies:
 id: sidefodlogo
 theme: site
 region: footer_top_first
-weight: -8
+weight: 0
 provider: null
-plugin: 'block_content:6f2694b2-00ac-40df-9158-8f59e8972b3e'
+plugin: 'block_content:d9c92266-a4c6-4017-a3f9-34f34deb5537'
 settings:
-  id: 'block_content:6f2694b2-00ac-40df-9158-8f59e8972b3e'
+  id: 'block_content:d9c92266-a4c6-4017-a3f9-34f34deb5537'
   label: 'Sidefod - logo'
   provider: block_content
   label_display: '0'

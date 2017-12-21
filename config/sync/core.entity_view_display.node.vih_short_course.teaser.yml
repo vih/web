@@ -72,6 +72,8 @@ content:
       format_type: vih_medium_date_short_month
     third_party_settings: {  }
 hidden:
+  field_banner: true
+  field_metatag: true
   field_paragraphs: true
   field_vih_course_heading: true
   field_vih_course_subheading: true

@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: 1_column_action_centered
 label: Hero
+icon_uuid: null
+description: null
 behavior_plugins: {  }

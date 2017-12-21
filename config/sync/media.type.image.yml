@@ -1,9 +1,9 @@
-uuid: 2e06cf74-205d-48a6-bd69-489bce3ffb30
+uuid: ada5cee7-0f2a-4eb6-be41-053f551006fb
 langcode: und
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: VkPfZJrZ0ZdHG3-gS9hH-0chO52UGwahux7soQSg_GY
+  default_config_hash: UbLy1_yBV5jSxil0-k8gV9GiVUg3Oik3hlAJzqeT8YQ
 id: image
 label: Image
 description: 'Locally hosted images.'
@@ -11,5 +11,5 @@ source: image
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
-  source_field: field_media_image_1
+  source_field: image
 field_map: {  }

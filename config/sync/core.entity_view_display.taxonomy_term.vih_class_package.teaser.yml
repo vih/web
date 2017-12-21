@@ -57,5 +57,6 @@ hidden:
   field_banner: true
   field_heading: true
   field_link_taxo: true
+  field_metatag: true
   field_paragraphs: true
   langcode: true

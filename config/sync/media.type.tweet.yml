@@ -1,11 +1,11 @@
-uuid: 4cbd071f-4a53-4990-b888-bec27dcef15c
+uuid: be34b43d-b2ca-4842-b898-94148704d57f
 langcode: und
 status: true
 dependencies:
   module:
     - media_entity_twitter
 _core:
-  default_config_hash: 1xtdwAmrcU6ENsXhoxDWRUETrvHcp0K21rVb6DZEzLg
+  default_config_hash: JJfzQKRxzJtlEzDVMBiB9pz9RAilNURCbnSgFrHJUxw
 id: tweet
 label: Tweet
 description: 'Represents a tweet.'
@@ -16,8 +16,8 @@ source_configuration:
   source_field: embed_code
   use_twitter_api: false
   generate_thumbnails: false
-  consumer_key: EOPhWrgHCRnCB9cGualb1UVBM
-  consumer_secret: AX5w9QYDvUJWdD0y0g2EtG3tFIZC9Lg4kR21iaAYakkPG8YKIp
-  oauth_access_token: 52258222-N6keKduOHPIvgtvSoxle2CI6vPU2987DZd0Rzi3Te
-  oauth_access_token_secret: K9Yml5JeqfX216YUKSBedebD57YqAUoOItSMbBke1aMeb
+  consumer_key: ''
+  consumer_secret: ''
+  oauth_access_token: ''
+  oauth_access_token_secret: ''
 field_map: {  }

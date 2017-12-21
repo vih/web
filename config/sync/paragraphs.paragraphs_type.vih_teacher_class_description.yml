@@ -4,4 +4,6 @@ status: true
 dependencies: {  }
 id: vih_teacher_class_description
 label: 'Teacher class description'
+icon_uuid: null
+description: null
 behavior_plugins: {  }

@@ -37,6 +37,7 @@ content:
 hidden:
   field_banner: true
   field_image: true
+  field_metatag: true
   field_news_tags: true
   field_paragraphs: true
   langcode: true

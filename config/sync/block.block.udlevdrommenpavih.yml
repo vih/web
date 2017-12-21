@@ -1,0 +1,25 @@
+uuid: aac63cce-b2e8-41f1-ae24-0fd70379182f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:banner:cddf1a28-7fdb-49d3-8907-b090646464d1'
+  module:
+    - block_content
+  theme:
+    - site
+id: udlevdrommenpavih
+theme: site
+region: banner
+weight: -11
+provider: null
+plugin: 'block_content:cddf1a28-7fdb-49d3-8907-b090646464d1'
+settings:
+  id: 'block_content:cddf1a28-7fdb-49d3-8907-b090646464d1'
+  label: 'Udlev drømmen på VIH'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

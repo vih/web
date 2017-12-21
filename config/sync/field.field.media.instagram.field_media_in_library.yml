@@ -1,12 +1,12 @@
-uuid: c80a2beb-31d1-4b5e-b5cd-7c63a8f3e558
-langcode: da
+uuid: ae2173ff-7619-48e9-835c-d7a337d44d93
+langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_in_library
     - media.type.instagram
 _core:
-  default_config_hash: tO2-8ZW4Qrh4LdJ26ZDTLXx2opRwRiTb7bN9ErwWzlc
+  default_config_hash: JFA-021HimjorTYOjCqKaBQpkqFU4Ia732Def0onNLc
 id: media.instagram.field_media_in_library
 field_name: field_media_in_library
 entity_type: media

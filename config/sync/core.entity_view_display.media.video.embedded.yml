@@ -1,5 +1,5 @@
-uuid: df7079e7-e2ae-4b28-82d4-be584c1b6af1
-langcode: da
+uuid: 475d8811-13ac-4e9d-ac13-7758d817bdca
+langcode: en
 status: true
 dependencies:
   config:
@@ -10,7 +10,7 @@ dependencies:
   module:
     - video_embed_field
 _core:
-  default_config_hash: _5zVhxHLl7qwxArEds2R869aXPHs3Ow8_nhjZIEqsKU
+  default_config_hash: DSsWBWw_gj2xxlQ12665l-yIIfFWIt7DJX33DGgbEHY
 id: media.video.embedded
 targetEntityType: media
 bundle: video
@@ -31,5 +31,6 @@ hidden:
   created: true
   field_media_in_library: true
   langcode: true
+  name: true
   thumbnail: true
   uid: true

@@ -1,5 +1,5 @@
-uuid: e915e5b1-f6a6-4e6b-93f1-39d63b09f8ba
-langcode: da
+uuid: c9266889-bedb-48ed-ae67-16dd762adcc4
+langcode: en
 status: true
 dependencies:
   config:
@@ -10,7 +10,7 @@ dependencies:
   module:
     - media_entity_twitter
 _core:
-  default_config_hash: h5mYORXehVbamAkCZmI6dOteePaae1GDnIB5Szm4oQI
+  default_config_hash: 576jZt8I-8Q1YDaS7WRwUEkAFKl2XEXG9X6aS00uiEc
 id: media.tweet.embedded
 targetEntityType: media
 bundle: tweet
@@ -27,5 +27,6 @@ hidden:
   created: true
   field_media_in_library: true
   langcode: true
+  name: true
   thumbnail: true
   uid: true
