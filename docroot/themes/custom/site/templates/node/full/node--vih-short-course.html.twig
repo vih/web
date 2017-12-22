@@ -86,12 +86,23 @@ view_mode ? view_mode|clean_class,
                                                 </div>
 
                                                 <div class="time-period__list">
-                                                    <div class="time-period__list__item">
-                                                        {{ content.field_vih_sc_start_date }}
-                                                    </div>
-                                                    <div class="time-period__list__item">
-                                                        {{ content.field_vih_sc_end_date }}
-                                                    </div>
+
+                                                    {# Begin - start date #}
+                                                    {% if node.field_vih_sc_start_date.value %}
+                                                        <div class="time-period__list__item">
+                                                            {{ content.field_vih_sc_start_date }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {# End - start date #}
+
+                                                    {# Begin - end date #}
+                                                    {% if node.field_vih_sc_end_date.value %}
+                                                        <div class="time-period__list__item">
+                                                            {{ content.field_vih_sc_end_date }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {# End - end date #}
+
                                                 </div>
                                             </div>
                                         </div>
