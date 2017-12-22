@@ -562,6 +562,7 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_first_name' => $addedParticipant['firstName'],
           'field_vih_ocp_last_name' => $addedParticipant['lastName'],
           'field_vih_ocp_email' => $addedParticipant['email'],
+          'field_vih_ocp_cpr' => $addedParticipant['cpr'],
           'field_vih_ocp_ordered_options' => $orderedOptions
         ]);
         $subscribedParticipant->save();

@@ -181,9 +181,45 @@ class SubscriptionSuccessfulController extends ControllerBase {
         ];
       }
 
+      $order_persons =  $order->field_vih_sco_persons->referencedEntities();
+      $person_data = array();
+      foreach($order_persons as $order_person){
+       
+      $person_data['cpr'] = $order_person->field_vih_ocp_cpr->getValue()[0]['value'];
+      $person_data['email'] = $order_person->field_vih_ocp_email->getValue()[0]['value'];
+      $person_data['first_name'] = $order_person->field_vih_ocp_first_name->getValue()[0]['value'];
+      $person_data['last_name'] = $order_person->field_vih_ocp_last_name->getValue()[0]['value'];
+      
+      
+         dpm($person_data);
+      }
+
+      
+//      
+//      //EDBBrugsen Integration
+//      $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
+//      if ($edbBrugsenConfig->get('active')) {
+//        $username = $edbBrugsenConfig->get('username');
+//        $password = $edbBrugsenConfig->get('password');
+//        $school_code = $edbBrugsenConfig->get('school_code');
+//        $book_number = $edbBrugsenConfig->get('book_number');
+//
+//        $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
+//        $registration = $edbBrugsenIntegration->convertToRegistration($order);
+//        $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
+//        $edbBrugsenIntegration->addRegistration($registration);
+//      }
+      
+      
+      
       //updating course order status
       $order->set('field_vih_sco_status', 'confirmed');
+      //deleting CPR from order
+//      $studentCpr = $order->field_vih_lco_cpr->value;
+//      $order->set('field_vih_sco_cpr', '');
       $order->save();
+      
+      
     } elseif ($subject->getType() == 'event') {
       $allParticipants = $order->get('field_vih_eo_persons')->getValue();
       if (!empty($allParticipants)) {
