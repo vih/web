@@ -17,8 +17,8 @@ third_party_settings:
   field_group:
     group_appearance:
       children:
-        - field_background_color
         - field_background_image
+        - field_background_color
       parent_name: ''
       weight: 2
       format_type: tab
@@ -36,7 +36,7 @@ bundle: list_of_news_teasers
 mode: default
 content:
   field_background_color:
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
