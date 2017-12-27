@@ -130,7 +130,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $book_number = $edbBrugsenConfig->get('book_number');
 
         $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
-        $registration = $edbBrugsenIntegration->convertToRegistration($order);
+        $registration = $edbBrugsenIntegration->convertLongCourseToRegistration($order);
         $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
         $edbBrugsenIntegration->addRegistration($registration);
       }

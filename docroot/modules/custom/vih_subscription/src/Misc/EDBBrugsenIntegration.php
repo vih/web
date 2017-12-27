@@ -41,7 +41,7 @@ class EDBBrugsenIntegration {
    * @param NodeInterface $longCourse
    * @return array
    */
-  public function convertToRegistration(NodeInterface $longCourse) {
+  public function convertLongCourseToRegistration(NodeInterface $longCourse) {
     $registration = array();
 
     if ($longCourse->getType() == 'vih_long_course_order') {
