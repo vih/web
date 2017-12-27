@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_birthdate
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
@@ -10,12 +11,22 @@ dependencies:
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_ordered_options
     - paragraphs.paragraphs_type.vih_ordered_course_person
   module:
+    - datetime
     - entity_reference_revisions
 id: paragraph.vih_ordered_course_person.default
 targetEntityType: paragraph
 bundle: vih_ordered_course_person
 mode: default
 content:
+  field_vih_ocp_birthdate:
+    weight: 5
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_vih_ocp_cpr:
     type: string
     weight: 3

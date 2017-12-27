@@ -1,0 +1,20 @@
+uuid: 0d36164f-8de9-4b82-9694-ef2a98827846
+langcode: da
+status: true
+dependencies:
+  module:
+    - datetime
+    - paragraphs
+id: paragraph.field_vih_ocp_birthdate
+field_name: field_vih_ocp_birthdate
+entity_type: paragraph
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
