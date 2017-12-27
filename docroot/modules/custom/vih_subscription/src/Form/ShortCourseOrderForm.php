@@ -558,6 +558,16 @@ class ShortCourseOrderForm extends FormBase {
           $orderedOptions[] = $orderedOption;
         }
 
+        //Get birthdate from CPR
+        // We need to convert 2 digit year to 4 digit year, not to get 2065 instead of 1965
+        $birthdate_year = \DateTime::createFromFormat('y', substr($addedParticipant['cpr'], 4, 2));
+        if($birthdate_year > date('Y')){
+          $birthdate_year = \DateTime::createFromFormat('Y', '19' . substr($addedParticipant['cpr'], 4, 2));
+        }
+
+        $birthdate = substr($addedParticipant['cpr'], 0, 4) . $birthdate_year->format('Y');
+        $birthdate = \DateTime::createFromFormat('dmY', $birthdate)->format('Y-m-d');
+
         //creating participant paragraph
         $subscribedParticipant = Paragraph::create([
           'type' => 'vih_ordered_course_person',
@@ -565,6 +575,7 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_last_name' => $addedParticipant['lastName'],
           'field_vih_ocp_email' => $addedParticipant['email'],
           'field_vih_ocp_cpr' => $addedParticipant['cpr'], //CPR will be deleted from database immediately, after order is confirmed
+          'field_vih_ocp_birthdate' => $birthdate,
           'field_vih_ocp_ordered_options' => $orderedOptions
         ]);
         $subscribedParticipant->save();
