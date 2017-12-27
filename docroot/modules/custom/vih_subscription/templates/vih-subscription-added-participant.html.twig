@@ -7,7 +7,9 @@
         </div>
         <div class="boxy__body">
             <h5>{{ addedParticipant['firstName'] }} {{ addedParticipant['lastName'] }}</h5>
-
+            {% if addedParticipant['cpr'] %}
+              CPR: {{ addedParticipant['cpr'] }}
+            {% endif %}
             <ul>
                 {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
                     {% if addedParticipantOption['option']['name'] %}

@@ -11,6 +11,7 @@ use Drupal\node\NodeInterface;
 use EDBBrugs\Client;
 use EDBBrugs\Credentials;
 use EDBBrugs\RegistrationRepository;
+use Drupal\paragraphs\Entity\Paragraph;
 
 class EDBBrugsenIntegration {
 
@@ -36,7 +37,7 @@ class EDBBrugsenIntegration {
   }
 
   /**
-   * Converts a course order node (both long and short) to the registration array, which can later on be added via webservice.
+   * Converts a long course order node to the registration array, which can later on be added via webservice.
    *
    * @param NodeInterface $longCourse
    * @return array
@@ -76,6 +77,42 @@ class EDBBrugsenIntegration {
     } elseif ($longCourse->getType() == 'vih_short_course_order') {
       $registration += $this->getDefaultRegistrationValues();
     }
+
+    return $registration;
+  }
+
+   /**
+   * Converts a Ordered Course Person paragraph to the registration array, which can later on be added via webservice.
+   *
+   * @param Paragraph $order_person
+   * @return array
+   */
+  public function convertShortCourseToRegistration(Paragraph $order_person) {
+    $registration = array();
+
+    if ($order_person->getType() == 'vih_ordered_course_person') {
+
+      //student = elev information
+      $registration['Elev.Fornavn'] = $order_person->field_vih_ocp_first_name->getValue()[0]['value'];
+      $registration['Elev.Efternavn'] = $order_person->field_vih_ocp_last_name->getValue()[0]['value'];
+      $registration['Elev.Email'] = $order_person->field_vih_ocp_email->getValue()[0]['value'];
+      // Trying not to use default registration data
+      //$registration += $this->getDefaultRegistrationValues();
+    } else {
+      //$registration += $this->getDefaultRegistrationValues();
+    }
+
+    return $registration;
+  }
+
+  /**
+   * Functions that add course name to the registration array
+   *
+   * @param $registration
+   * @param $name
+   */
+  public function addCourseName($registration, $name) {
+    $registration['Kursus'] = $name;
 
     return $registration;
   }

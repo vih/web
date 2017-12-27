@@ -51,8 +51,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
     //Send email
     $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
     $message = array();
-    
-    $order_rendered = drupal_render(node_view($order, 'email_teaser'))->__toString();
+    $node_view = node_view($order, 'email_teaser');
+    $order_rendered = render($node_view)->__toString();
     
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
@@ -95,7 +95,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
       // course date
       $courseDate = NULL;
       if ($start_course_date) {
-        $courseDate =  \Drupal::service('date.formatter')->format(strtotime($start_course_date), "default_medium_date_without_time");
+        $courseDate = \Drupal::service('date.formatter')->format(strtotime($start_course_date), "default_medium_date_without_time");
       }
       if ($end_course_date) {
         if (!(empty($courseDate))) {
@@ -157,7 +157,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         //course date
         $courseDate = NULL;
         if ($subject->field_vih_sc_start_date->value) {
-          $courseDate =  \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_start_date->value), "default_medium_date_without_time");
+          $courseDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_start_date->value), "default_medium_date_without_time");
         }
         if ($subject->field_vih_sc_end_date->value) {
           if (!(empty($courseDate))) {
@@ -181,42 +181,34 @@ class SubscriptionSuccessfulController extends ControllerBase {
         ];
       }
 
-      $order_persons =  $order->field_vih_sco_persons->referencedEntities();
-      $person_data = array();
-      foreach($order_persons as $order_person){
-       
-      $person_data['cpr'] = $order_person->field_vih_ocp_cpr->getValue()[0]['value'];
-      $person_data['email'] = $order_person->field_vih_ocp_email->getValue()[0]['value'];
-      $person_data['first_name'] = $order_person->field_vih_ocp_first_name->getValue()[0]['value'];
-      $person_data['last_name'] = $order_person->field_vih_ocp_last_name->getValue()[0]['value'];
-      
-      
-         dpm($person_data);
+      $order_persons = $order->field_vih_sco_persons->referencedEntities();
+      $order_data = array();
+      foreach ($order_persons as $order_person) {
+
+        //EDBBrugsen Integration
+        $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
+        if ($edbBrugsenConfig->get('active')) {
+          $username = $edbBrugsenConfig->get('username');
+          $password = $edbBrugsenConfig->get('password');
+          $school_code = $edbBrugsenConfig->get('school_code');
+          $book_number = $edbBrugsenConfig->get('book_number');
+
+          $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
+          $registration = $edbBrugsenIntegration->convertShortCourseToRegistration($order_person);
+          if(!empty($order_person->field_vih_ocp_cpr->getValue()[0]['value'])){
+            $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $order_person->field_vih_ocp_cpr->getValue()[0]['value']); 
+          }
+          $registration = $edbBrugsenIntegration->addCourseName($registration, $order->get('field_vih_sco_course')->entity->getTitle());
+          $edbBrugsenIntegration->addRegistration($registration);
+
+          //deleting CPR from order person
+          $order_person->set('field_vih_ocp_cpr', '');
+          $order_person->save();
+        }
       }
 
-      
-//      
-//      //EDBBrugsen Integration
-//      $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
-//      if ($edbBrugsenConfig->get('active')) {
-//        $username = $edbBrugsenConfig->get('username');
-//        $password = $edbBrugsenConfig->get('password');
-//        $school_code = $edbBrugsenConfig->get('school_code');
-//        $book_number = $edbBrugsenConfig->get('book_number');
-//
-//        $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
-//        $registration = $edbBrugsenIntegration->convertToRegistration($order);
-//        $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
-//        $edbBrugsenIntegration->addRegistration($registration);
-//      }
-      
-      
-      
       //updating course order status
       $order->set('field_vih_sco_status', 'confirmed');
-      //deleting CPR from order
-//      $studentCpr = $order->field_vih_lco_cpr->value;
-//      $order->set('field_vih_sco_cpr', '');
       $order->save();
       
       
@@ -235,7 +227,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         //event date
         $eventDate = NULL;
         if ($subject->field_event_start_date->value) {
-          $eventDate =  \Drupal::service('date.formatter')->format(strtotime($subject->field_event_start_date->value), "default_medium_date_without_time");
+          $eventDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_event_start_date->value), "default_medium_date_without_time");
         }
         if ($subject->field_event_end_date->value) {
           if (!(empty($eventDate))) {
