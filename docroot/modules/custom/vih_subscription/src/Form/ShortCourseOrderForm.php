@@ -145,6 +145,13 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('Efternavn'),
         '#required' => TRUE,
         '#prefix' => '<div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div>',
+      );
+        $form['newParticipantContainer']['newParticipantFieldset']['cpr'] = array(
+        '#type' => 'textfield',
+        '#placeholder' => $this->t('CPR'),
+        //'#required' => TRUE,
+        '#prefix' => '<div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
@@ -330,6 +337,7 @@ class ShortCourseOrderForm extends FormBase {
     $participant['firstName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'];
     $participant['lastName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'];
     $participant['email'] = $userInput['newParticipantContainer']['newParticipantFieldset']['email'];
+    $participant['cpr'] = $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'];
 
     //filling ordered options
     $participant['orderedOptions'] = array();
@@ -405,6 +413,7 @@ class ShortCourseOrderForm extends FormBase {
     $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'] = $participantToEdit['firstName'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'] = $participantToEdit['lastName'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $participantToEdit['email'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'] = $participantToEdit['cpr'];
 
     //filling options
     foreach ($participantToEdit['orderedOptions'] as $optionGroupDelta => $orderedOption) {
@@ -555,6 +564,7 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_first_name' => $addedParticipant['firstName'],
           'field_vih_ocp_last_name' => $addedParticipant['lastName'],
           'field_vih_ocp_email' => $addedParticipant['email'],
+          'field_vih_ocp_cpr' => $addedParticipant['cpr'], //CPR will be deleted from database immediately, after order is confirmed
           'field_vih_ocp_ordered_options' => $orderedOptions
         ]);
         $subscribedParticipant->save();

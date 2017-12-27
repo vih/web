@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_last_name
@@ -15,6 +16,14 @@ targetEntityType: paragraph
 bundle: vih_ordered_course_person
 mode: default
 content:
+  field_vih_ocp_cpr:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_vih_ocp_email:
     weight: 2
     label: hidden
@@ -40,7 +49,7 @@ content:
     region: content
   field_vih_ocp_ordered_options:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: embedded
