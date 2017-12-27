@@ -150,7 +150,7 @@ class ShortCourseOrderForm extends FormBase {
         $form['newParticipantContainer']['newParticipantFieldset']['cpr'] = array(
         '#type' => 'textfield',
         '#placeholder' => $this->t('CPR'),
-        //'#required' => TRUE,
+        '#required' => TRUE,
         '#prefix' => '<div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div></div>',
       );
@@ -294,6 +294,7 @@ class ShortCourseOrderForm extends FormBase {
         ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
         ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
         ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
       ),
       '#submit' => array('::submitForm')
     );
@@ -509,6 +510,7 @@ class ShortCourseOrderForm extends FormBase {
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['firstName'], $this->t('Tilføj venligst mindst én deltager'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Tilføj venligst mindst én deltager'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Tilføj venligst mindst én deltager'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Tilføj venligst mindst én deltager'));
       }
     }
   }
@@ -758,6 +760,7 @@ class ShortCourseOrderForm extends FormBase {
       $participant['firstName'] = $subscribedPerson->field_vih_ocp_first_name->value;
       $participant['lastName'] = $subscribedPerson->field_vih_ocp_last_name->value;
       $participant['email'] = $subscribedPerson->field_vih_ocp_email->value;
+      $participant['cpr'] = $subscribedPerson->field_vih_ocp_cpr->value;
 
       //filling ordered options information
       $orderedOptionsIds = $subscribedPerson->get('field_vih_ocp_ordered_options')->getValue();
