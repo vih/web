@@ -228,7 +228,7 @@
             "version": "v2.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fengyuanchen/cropper.git",
+                "url": "git@github.com:fengyuanchen/cropper.git",
                 "reference": "30c58b29ee21010e17e58ebab165fbd84285c685"
             },
             "dist": {
@@ -3231,22 +3231,24 @@
         },
         {
             "name": "drupal/jsonapi",
-            "version": "1.4.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/jsonapi",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "ba38178daaecac2e6b88a5180fccb3edecd00b67"
+                "url": "https://ftp.drupal.org/files/projects/jsonapi-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "818396f1d3fe539fb8141adf141bea1c5309cb8a"
             },
             "require": {
-                "drupal/core": "^8.2"
+                "drupal/core": "^8.3"
             },
             "require-dev": {
+                "drupal/schemata": "1.x-dev#8325d172e1d6880aa24073f8f751ef089282cf9a",
+                "drupal/schemata_json_schema": "*",
                 "justinrainbow/json-schema": "^4.1"
             },
             "type": "drupal-module",
@@ -3255,8 +3257,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1512815585",
+                    "version": "8.x-1.6",
+                    "datestamp": "1514359384",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3451,17 +3453,17 @@
         },
         {
             "name": "drupal/mailchimp",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/mailchimp",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mailchimp-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "40b3fe40614ef1adcd29d83c04da73baa9fa8671"
+                "url": "https://ftp.drupal.org/files/projects/mailchimp-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "c70c4af9dd6abd8929a00b213f98c292981abbb6"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -3476,8 +3478,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1511809684",
+                    "version": "8.x-1.5",
+                    "datestamp": "1514410985",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4731,20 +4733,20 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/search_api",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "e03324c0e2fede8d283db83ec4a5f2ed4b818934"
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "c590bfb9752f39087e66ea9ff6c98ad103508f0b"
             },
             "require": {
-                "drupal/core": "^8.3"
+                "drupal/core": "^8.4"
             },
             "require-dev": {
                 "drupal/search_api_autocomplete": "@dev",
@@ -4756,11 +4758,16 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1507989244",
+                    "version": "8.x-1.6",
+                    "datestamp": "1514109785",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
                     }
                 }
             },
@@ -5309,17 +5316,17 @@
         },
         {
             "name": "drupal/webform",
-            "version": "5.0.0-beta25",
+            "version": "5.0.0-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform",
-                "reference": "8.x-5.0-beta25"
+                "reference": "8.x-5.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-beta25.zip",
-                "reference": "8.x-5.0-beta25",
-                "shasum": "e384d069bc0e61a30115f366e3ac0eb2ae3ff6ff"
+                "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.0-rc1.zip",
+                "reference": "8.x-5.0-rc1",
+                "shasum": "44d0dc4194f9ce3217e4d333a40ed6b88815d83b"
             },
             "require": {
                 "drupal/core": "*"
@@ -5330,11 +5337,11 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.0-beta25",
-                    "datestamp": "1513003985",
+                    "version": "8.x-5.0-rc1",
+                    "datestamp": "1514196484",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -5998,16 +6005,16 @@
         },
         {
             "name": "league/oauth2-server",
-            "version": "6.0.2",
+            "version": "6.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "925776958fc3f5278e74363663c20147af32b668"
+                "reference": "a0cabb573c7cd5ee01803daec992d6ee3677c4ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/925776958fc3f5278e74363663c20147af32b668",
-                "reference": "925776958fc3f5278e74363663c20147af32b668",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/a0cabb573c7cd5ee01803daec992d6ee3677c4ae",
+                "reference": "a0cabb573c7cd5ee01803daec992d6ee3677c4ae",
                 "shasum": ""
             },
             "require": {
@@ -6024,7 +6031,7 @@
                 "lncd/oauth2": "*"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0",
+                "phpunit/phpunit": "^4.8.38 || ^5.7.21",
                 "zendframework/zend-diactoros": "^1.0"
             },
             "type": "library",
@@ -6062,7 +6069,7 @@
                 "secure",
                 "server"
             ],
-            "time": "2017-08-03T15:09:23+00:00"
+            "time": "2017-12-23T23:33:42+00:00"
         },
         {
             "name": "lsolesen/edbbrugs-php-sdk",
@@ -10159,16 +10166,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.1.2",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "08131e7ff29de6bb9f12275c7d35df71f25f4d89"
+                "reference": "579f4ce846734a1cf55d6a531d00ca07a43e3cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/08131e7ff29de6bb9f12275c7d35df71f25f4d89",
-                "reference": "08131e7ff29de6bb9f12275c7d35df71f25f4d89",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/579f4ce846734a1cf55d6a531d00ca07a43e3cda",
+                "reference": "579f4ce846734a1cf55d6a531d00ca07a43e3cda",
                 "shasum": ""
             },
             "require": {
@@ -10206,7 +10213,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-11-04T11:48:34+00:00"
+            "time": "2017-12-26T14:43:21+00:00"
         },
         {
             "name": "pear/console_table",
