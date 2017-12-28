@@ -66,6 +66,7 @@ module:
   mailchimp_lists: 0
   mailchimp_signup: 0
   media: 0
+  media_entity_facebook: 0
   media_entity_instagram: 0
   media_entity_twitter: 0
   menu_ui: 0
@@ -76,12 +77,10 @@ module:
   options: 0
   page_cache: 0
   panelizer: 0
-  panelizer_quickedit: 0
   panels: 0
   panels_ipe: 0
   path: 0
   photoswipe: 0
-  quickedit: 0
   rdf: 0
   scheduled_updates: 0
   search: 0
@@ -98,6 +97,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   twig_xdebug: 0
+  url_embed: 0
   user: 0
   video_embed_field: 0
   video_embed_media: 0

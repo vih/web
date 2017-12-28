@@ -6,10 +6,9 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.social_media_embed.field_background_color
     - field.field.paragraph.social_media_embed.field_background_image
+    - field.field.paragraph.social_media_embed.field_embed
     - field.field.paragraph.social_media_embed.field_heading
-    - field.field.paragraph.social_media_embed.field_instagram_embed
     - field.field.paragraph.social_media_embed.field_link
-    - field.field.paragraph.social_media_embed.field_twitter_embed
     - paragraphs.paragraphs_type.social_media_embed
   module:
     - entity_browser
@@ -32,21 +31,6 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Udseende
-      region: content
-    group_social_medias:
-      children:
-        - field_twitter_embed
-        - field_instagram_embed
-      parent_name: ''
-      weight: 2
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: open
-        description: ''
-        required_fields: true
-      label: 'Sociale medier'
       region: content
 id: paragraph.social_media_embed.default
 targetEntityType: paragraph
@@ -72,6 +56,14 @@ content:
     third_party_settings: {  }
     type: entity_browser_file
     region: content
+  field_embed:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_heading:
     weight: 0
     settings:
@@ -80,29 +72,13 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_instagram_embed:
-    weight: 6
-    settings:
-      rows: 2
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
   field_link:
-    weight: 1
+    weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_twitter_embed:
-    weight: 5
-    settings:
-      rows: 2
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
     region: content
 hidden:
   created: true

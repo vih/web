@@ -1,0 +1,29 @@
+uuid: 9c38267c-71d2-48ee-a301-f9b531c710c7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.media.facebook.embed_code
+    - field.field.media.facebook.field_media_in_library
+    - media.type.facebook
+  module:
+    - media_entity_facebook
+id: media.facebook.default
+targetEntityType: media
+bundle: facebook
+mode: default
+content:
+  embed_code:
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: facebook_embed
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

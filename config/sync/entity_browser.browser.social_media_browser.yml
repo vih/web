@@ -1,0 +1,27 @@
+uuid: 8d148f53-4a46-44cb-a427-c21eb963846c
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_media
+name: social_media_browser
+label: 'Social medier'
+display: iframe
+display_configuration:
+  width: 100%
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  12dd2df9-17cd-4336-8920-0b236ec0b23e:
+    settings:
+      submit_text: 'Select entities'
+      form_mode: media_browser
+    uuid: 12dd2df9-17cd-4336-8920-0b236ec0b23e
+    weight: -9
+    label: Embed
+    id: embed_code

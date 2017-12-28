@@ -1,0 +1,62 @@
+uuid: 8d9cbfda-b388-4eff-b160-7237677c069a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.media.facebook.embed_code
+    - field.field.media.facebook.field_media_in_library
+    - media.type.facebook
+  module:
+    - path
+    - workbench_moderation
+id: media.facebook.default
+targetEntityType: media
+bundle: facebook
+mode: default
+content:
+  embed_code:
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    weight: 1
+    region: content
+  field_media_in_library:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    third_party_settings: {  }
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

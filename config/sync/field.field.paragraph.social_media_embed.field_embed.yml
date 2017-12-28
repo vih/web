@@ -1,0 +1,23 @@
+uuid: 0aa018c3-1edb-4f6f-88ae-7356b56dbe22
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embed
+    - paragraphs.paragraphs_type.social_media_embed
+  module:
+    - link
+id: paragraph.social_media_embed.field_embed
+field_name: field_embed
+entity_type: paragraph
+bundle: social_media_embed
+label: 'oEmbed URL'
+description: 'Bl.a. Instagram, Twitter og facebook.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

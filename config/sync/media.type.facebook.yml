@@ -1,0 +1,19 @@
+uuid: 5554415f-3da6-4689-aca3-79b683490f20
+langcode: da
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_facebook
+third_party_settings:
+  crop:
+    image_field: null
+id: facebook
+label: Facebook
+description: 'Facebook posts.'
+source: facebook
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: embed_code
+field_map: {  }

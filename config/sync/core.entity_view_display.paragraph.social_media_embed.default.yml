@@ -5,20 +5,25 @@ dependencies:
   config:
     - field.field.paragraph.social_media_embed.field_background_color
     - field.field.paragraph.social_media_embed.field_background_image
+    - field.field.paragraph.social_media_embed.field_embed
     - field.field.paragraph.social_media_embed.field_heading
-    - field.field.paragraph.social_media_embed.field_instagram_embed
     - field.field.paragraph.social_media_embed.field_link
-    - field.field.paragraph.social_media_embed.field_twitter_embed
     - paragraphs.paragraphs_type.social_media_embed
   module:
     - link
-    - media_entity_instagram
-    - media_entity_twitter
+    - url_embed
 id: paragraph.social_media_embed.default
 targetEntityType: paragraph
 bundle: social_media_embed
 mode: default
 content:
+  field_embed:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: url_embed
+    region: content
   field_heading:
     weight: 0
     label: hidden
@@ -27,17 +32,8 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_instagram_embed:
-    weight: 4
-    label: hidden
-    settings:
-      width: null
-      hidecaption: false
-    third_party_settings: {  }
-    type: instagram_embed
-    region: content
   field_link:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       trim_length: null
@@ -47,13 +43,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
-  field_twitter_embed:
-    weight: 3
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: twitter_embed
     region: content
 hidden:
   field_background_color: true
