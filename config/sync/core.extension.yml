@@ -6,7 +6,6 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
-  ckeditor_media_embed: 0
   coffee: 0
   config: 0
   consumers: 0
@@ -67,7 +66,6 @@ module:
   mailchimp_lists: 0
   mailchimp_signup: 0
   media: 0
-  media_entity_facebook: 0
   media_entity_instagram: 0
   media_entity_twitter: 0
   menu_ui: 0
