@@ -29,7 +29,7 @@
         "drupal/devel": "^1.2",
         "drupal/paragraphs": "1.x-dev",
         "drupal/linkit": "^4.0",
-        "acquia/lightning": "^2.2.2",
+        "acquia/lightning": "~2.2.6",
         "drupal/admin_toolbar": "^1.20",
         "drupal/twig_tweak": "2.x-dev",
         "drupal/eva": "^1.0@RC",
@@ -49,7 +49,7 @@
         "drupal/photoswipe": "1.0-beta3",
         "drupal/ckeditor_media_embed": "^1.1",
         "drupal/context": "4.0-beta2",
-        "drupal/lightning_media_facebook": "^1.0"
+        "drupal/media_entity_facebook": "2.0-alpha1"
     },
     "repositories": [
         {

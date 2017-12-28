@@ -327,7 +327,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Created
+          label: Oprettet
           exclude: false
           alter:
             alter_text: false

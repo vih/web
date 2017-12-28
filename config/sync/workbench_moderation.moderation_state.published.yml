@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: Q0hYjxO3nkaaqrRfXnX3Kx5MPktx3EueHEj36vP40dM
 id: published
-label: Udgivet
+label: Published
 published: true
 default_revision: true
