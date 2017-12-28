@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: short_course_list_
-label: 'Short Course List '
+label: 'Liste af korte kurser'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

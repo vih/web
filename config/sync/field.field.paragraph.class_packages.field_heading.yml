@@ -9,7 +9,7 @@ id: paragraph.class_packages.field_heading
 field_name: field_heading
 entity_type: paragraph
 bundle: class_packages
-label: Heading
+label: Overskrift
 description: ''
 required: false
 translatable: false

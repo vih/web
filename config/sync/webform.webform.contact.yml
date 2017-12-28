@@ -1,9 +1,12 @@
+uuid: e215dc70-ed99-41f8-9137-94d317a5ab64
 langcode: da
 status: open
 dependencies:
   enforced:
     module:
       - webform
+_core:
+  default_config_hash: wn06eL40L0LLwBac3EprLc2EE3B93WlUg39fTOOmDdU
 open: null
 close: null
 uid: null
@@ -158,6 +161,7 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      twig: false
   email_notification:
     id: email
     label: E-mail-notifikation
@@ -189,6 +193,4 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-uuid: e215dc70-ed99-41f8-9137-94d317a5ab64
-_core:
-  default_config_hash: wn06eL40L0LLwBac3EprLc2EE3B93WlUg39fTOOmDdU
+      twig: false

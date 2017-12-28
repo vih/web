@@ -10,7 +10,7 @@ id: taxonomy_term.vih_class.field_vih_class_class_packages
 field_name: field_vih_class_class_packages
 entity_type: taxonomy_term
 bundle: vih_class
-label: 'Class Packages'
+label: Fagpakker
 description: ''
 required: false
 translatable: true

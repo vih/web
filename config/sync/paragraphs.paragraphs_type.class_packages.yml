@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: class_packages
-label: 'All Class Packages'
+label: Fagpakker
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

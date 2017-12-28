@@ -18,7 +18,7 @@ id: taxonomy_term.vih_class.field_vih_class_image
 field_name: field_vih_class_image
 entity_type: taxonomy_term
 bundle: vih_class
-label: Image
+label: Billede
 description: ''
 required: false
 translatable: true

@@ -10,7 +10,7 @@ id: user.user.field_vih_user_phone
 field_name: field_vih_user_phone
 entity_type: user
 bundle: user
-label: Phone
+label: Telefon
 description: ''
 required: false
 translatable: false

@@ -1,9 +1,0 @@
-uuid: 1f7fc5b7-20b2-4737-a17b-7e62707a6564
-langcode: da
-status: true
-dependencies: {  }
-id: page_content
-label: 'Page Content'
-icon_uuid: null
-description: null
-behavior_plugins: {  }

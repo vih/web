@@ -9,7 +9,7 @@ id: node.vih_long_cource.field_vih_course_subheading
 field_name: field_vih_course_subheading
 entity_type: node
 bundle: vih_long_cource
-label: Subheading
+label: Underoverskrift
 description: ''
 required: false
 translatable: false

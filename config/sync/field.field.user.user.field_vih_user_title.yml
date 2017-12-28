@@ -10,7 +10,7 @@ id: user.user.field_vih_user_title
 field_name: field_vih_user_title
 entity_type: user
 bundle: user
-label: Title
+label: Titel
 description: ''
 required: false
 translatable: false

@@ -9,7 +9,7 @@ id: taxonomy_term.vih_class_package.field_subheading
 field_name: field_subheading
 entity_type: taxonomy_term
 bundle: vih_class_package
-label: Subheading
+label: Underoverskrift
 description: ''
 required: false
 translatable: true

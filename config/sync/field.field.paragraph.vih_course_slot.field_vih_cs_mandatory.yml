@@ -9,7 +9,7 @@ id: paragraph.vih_course_slot.field_vih_cs_mandatory
 field_name: field_vih_cs_mandatory
 entity_type: paragraph
 bundle: vih_course_slot
-label: Mandatory
+label: Obligatorisk
 description: ''
 required: false
 translatable: false

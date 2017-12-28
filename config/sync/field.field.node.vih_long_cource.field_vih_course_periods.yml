@@ -10,7 +10,7 @@ id: node.vih_long_cource.field_vih_course_periods
 field_name: field_vih_course_periods
 entity_type: node
 bundle: vih_long_cource
-label: 'Periode:'
+label: Periode
 description: ''
 required: false
 translatable: true

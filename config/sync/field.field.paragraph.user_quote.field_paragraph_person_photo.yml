@@ -11,8 +11,8 @@ id: paragraph.user_quote.field_paragraph_person_photo
 field_name: field_paragraph_person_photo
 entity_type: paragraph
 bundle: user_quote
-label: 'Person photo'
-description: ''
+label: Billede
+description: 'Kunne være et billede af personen der har indsendt udtalelsen'
 required: false
 translatable: false
 default_value: {  }

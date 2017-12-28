@@ -11,7 +11,7 @@ id: taxonomy_term.vih_class_package.field_vih_class_package_color
 field_name: field_vih_class_package_color
 entity_type: taxonomy_term
 bundle: vih_class_package
-label: 'Class package color'
+label: 'Farve på fagpakke'
 description: ''
 required: false
 translatable: true

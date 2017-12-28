@@ -11,7 +11,7 @@ id: user.user.field_vih_user_photo
 field_name: field_vih_user_photo
 entity_type: user
 bundle: user
-label: Photo
+label: Foto
 description: ''
 required: false
 translatable: false
@@ -28,7 +28,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 3f3f7ef2-4a5a-4a02-b3cc-6db2b855c873
+    uuid: ''
     alt: Placeholder
     title: Placeholder
     width: 250

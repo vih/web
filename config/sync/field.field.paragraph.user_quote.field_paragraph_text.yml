@@ -11,7 +11,7 @@ id: paragraph.user_quote.field_paragraph_text
 field_name: field_paragraph_text
 entity_type: paragraph
 bundle: user_quote
-label: 'Paragraph text'
+label: Tekst
 description: ''
 required: true
 translatable: false

@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: event_list
-label: 'Event List'
+label: 'Liste af events'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

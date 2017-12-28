@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_banner
     - field.field.node.page.field_metatag
-    - field.field.node.page.field_paragraphs
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.panelizer
@@ -14,7 +13,6 @@ dependencies:
     - image.style.banner_small
     - node.type.page
   module:
-    - entity_reference_revisions
     - image
     - metatag
     - panelizer
@@ -55,15 +53,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
-    region: content
-  field_paragraphs:
-    type: entity_reference_revisions_entity_view
-    weight: 3
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
   field_vih_course_heading:
     weight: 4

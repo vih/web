@@ -10,7 +10,7 @@ id: paragraph.vih_single_class_group.field_vih_scg_classes
 field_name: field_vih_scg_classes
 entity_type: paragraph
 bundle: vih_single_class_group
-label: Classes
+label: Fag
 description: ''
 required: false
 translatable: false

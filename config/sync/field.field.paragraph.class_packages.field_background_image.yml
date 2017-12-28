@@ -6,12 +6,19 @@ dependencies:
     - field.storage.paragraph.field_background_image
     - paragraphs.paragraphs_type.class_packages
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: paragraph.class_packages.field_background_image
 field_name: field_background_image
 entity_type: paragraph
 bundle: class_packages
-label: 'Background image'
+label: Baggrundsbillede
 description: ''
 required: false
 translatable: true

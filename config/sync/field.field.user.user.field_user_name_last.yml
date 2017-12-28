@@ -10,8 +10,8 @@ id: user.user.field_user_name_last
 field_name: field_user_name_last
 entity_type: user
 bundle: user
-label: 'Last name (s)'
-description: 'Including middle names'
+label: Efternavn(e)
+description: 'Inkl. mellemnavne'
 required: false
 translatable: false
 default_value: {  }

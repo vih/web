@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: long_course_list_
-label: 'Long Course List '
+label: 'Liste af lange kurser'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }
