@@ -1,5 +1,5 @@
 uuid: badcb981-c4f9-40df-b744-64d7da9c8d4c
-langcode: en
+langcode: da
 status: true
 dependencies:
   config:

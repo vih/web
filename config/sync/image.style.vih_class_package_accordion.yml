@@ -1,5 +1,5 @@
 uuid: d7de0579-9481-4450-82c0-b6f7cbdff646
-langcode: en
+langcode: da
 status: true
 dependencies: {  }
 name: vih_class_package_accordion

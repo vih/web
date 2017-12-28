@@ -1,5 +1,5 @@
 uuid: f033a3fb-7de7-4c5d-9426-341339ee3c6b
-langcode: en
+langcode: da
 status: true
 dependencies: {  }
 id: content_publish_unpublish
