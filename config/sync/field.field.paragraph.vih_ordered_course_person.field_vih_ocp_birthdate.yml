@@ -1,0 +1,21 @@
+uuid: 959b151b-218b-4714-b8c1-4e409f379c3f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocp_birthdate
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+  module:
+    - datetime
+id: paragraph.vih_ordered_course_person.field_vih_ocp_birthdate
+field_name: field_vih_ocp_birthdate
+entity_type: paragraph
+bundle: vih_ordered_course_person
+label: Birthdate
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

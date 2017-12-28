@@ -145,6 +145,13 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('Efternavn'),
         '#required' => TRUE,
         '#prefix' => '<div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div>',
+      );
+        $form['newParticipantContainer']['newParticipantFieldset']['cpr'] = array(
+        '#type' => 'textfield',
+        '#placeholder' => $this->t('CPR'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
@@ -287,6 +294,7 @@ class ShortCourseOrderForm extends FormBase {
         ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
         ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
         ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
       ),
       '#submit' => array('::submitForm')
     );
@@ -330,6 +338,7 @@ class ShortCourseOrderForm extends FormBase {
     $participant['firstName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'];
     $participant['lastName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'];
     $participant['email'] = $userInput['newParticipantContainer']['newParticipantFieldset']['email'];
+    $participant['cpr'] = $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'];
 
     //filling ordered options
     $participant['orderedOptions'] = array();
@@ -405,6 +414,7 @@ class ShortCourseOrderForm extends FormBase {
     $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'] = $participantToEdit['firstName'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'] = $participantToEdit['lastName'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $participantToEdit['email'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'] = $participantToEdit['cpr'];
 
     //filling options
     foreach ($participantToEdit['orderedOptions'] as $optionGroupDelta => $orderedOption) {
@@ -500,6 +510,7 @@ class ShortCourseOrderForm extends FormBase {
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['firstName'], $this->t('Tilføj venligst mindst én deltager'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Tilføj venligst mindst én deltager'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Tilføj venligst mindst én deltager'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Tilføj venligst mindst én deltager'));
       }
     }
   }
@@ -549,12 +560,24 @@ class ShortCourseOrderForm extends FormBase {
           $orderedOptions[] = $orderedOption;
         }
 
+        //Get birthdate from CPR
+        // We need to convert 2 digit year to 4 digit year, not to get 2065 instead of 1965
+        $birthdate_year = \DateTime::createFromFormat('y', substr($addedParticipant['cpr'], 4, 2));
+        if($birthdate_year > date('Y')){
+          $birthdate_year = \DateTime::createFromFormat('Y', '19' . substr($addedParticipant['cpr'], 4, 2));
+        }
+
+        $birthdate = substr($addedParticipant['cpr'], 0, 4) . $birthdate_year->format('Y');
+        $birthdate = \DateTime::createFromFormat('dmY', $birthdate)->format('Y-m-d');
+
         //creating participant paragraph
         $subscribedParticipant = Paragraph::create([
           'type' => 'vih_ordered_course_person',
           'field_vih_ocp_first_name' => $addedParticipant['firstName'],
           'field_vih_ocp_last_name' => $addedParticipant['lastName'],
           'field_vih_ocp_email' => $addedParticipant['email'],
+          'field_vih_ocp_cpr' => $addedParticipant['cpr'], //CPR will be deleted from database immediately, after order is confirmed
+          'field_vih_ocp_birthdate' => $birthdate,
           'field_vih_ocp_ordered_options' => $orderedOptions
         ]);
         $subscribedParticipant->save();
@@ -737,6 +760,7 @@ class ShortCourseOrderForm extends FormBase {
       $participant['firstName'] = $subscribedPerson->field_vih_ocp_first_name->value;
       $participant['lastName'] = $subscribedPerson->field_vih_ocp_last_name->value;
       $participant['email'] = $subscribedPerson->field_vih_ocp_email->value;
+      $participant['cpr'] = $subscribedPerson->field_vih_ocp_cpr->value;
 
       //filling ordered options information
       $orderedOptionsIds = $subscribedPerson->get('field_vih_ocp_ordered_options')->getValue();
