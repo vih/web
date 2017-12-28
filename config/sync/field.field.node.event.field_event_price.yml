@@ -9,7 +9,7 @@ id: node.event.field_event_price
 field_name: field_event_price
 entity_type: node
 bundle: event
-label: Price
+label: Pris
 description: ''
 required: false
 translatable: false

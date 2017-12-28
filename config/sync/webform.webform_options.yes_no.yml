@@ -9,5 +9,5 @@ _core:
   default_config_hash: R5K3iFPTM3Qdj08wy805Rbm0-xvp_DJ0R7VvpHMgQpw
 id: yes_no
 label: Ja/nej
-category: General
+category: Generelt
 options: "Yes: Yes\nNo: No\n"

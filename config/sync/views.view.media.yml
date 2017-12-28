@@ -51,11 +51,11 @@ display:
         options:
           submit_button: Filter
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
       pager:
         type: full
         options:
@@ -65,12 +65,12 @@ display:
           total_pages: null
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Antal elementer'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Forskydning
           tags:
             previous: '‹ Previous'
             next: 'Next ›'
@@ -191,7 +191,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Handling
           include_exclude: exclude
           selected_actions: {  }
           entity_type: media
@@ -316,7 +316,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Source
+          label: Kilde
           exclude: false
           alter:
             alter_text: false
@@ -580,7 +580,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Handlinger
           exclude: false
           alter:
             alter_text: false
@@ -678,7 +678,7 @@ display:
           exposed: true
           expose:
             operator_id: bundle_op
-            label: Source
+            label: Kilde
             description: ''
             use_operator: false
             operator: bundle_op
@@ -719,7 +719,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'True'
+            label: Sandt
             description: null
             use_operator: false
             operator: status_op
@@ -731,7 +731,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: Publiceringsstatus
             description: ''
             identifier: status
             optional: true
@@ -765,7 +765,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Sprog
             description: ''
             use_operator: false
             operator: langcode_op

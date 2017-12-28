@@ -9,7 +9,7 @@ id: node.vih_short_course.field_vih_sc_price
 field_name: field_vih_sc_price
 entity_type: node
 bundle: vih_short_course
-label: Price
+label: Pris
 description: ''
 required: false
 translatable: false

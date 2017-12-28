@@ -11,7 +11,7 @@ id: node.vih_short_course.field_vih_sc_start_date
 field_name: field_vih_sc_start_date
 entity_type: node
 bundle: vih_short_course
-label: 'Start date'
+label: 'Start dato'
 description: ''
 required: false
 translatable: false

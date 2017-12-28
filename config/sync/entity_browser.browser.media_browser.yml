@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: kT3o2OhRMWgZX6kGxRYSsItntaw241e3UwpGCD3RpJE
 name: media_browser
-label: 'Media browser'
+label: Mediebrowser
 display: iframe
 display_configuration:
   width: 100%

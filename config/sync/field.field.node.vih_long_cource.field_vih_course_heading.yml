@@ -9,7 +9,7 @@ id: node.vih_long_cource.field_vih_course_heading
 field_name: field_vih_course_heading
 entity_type: node
 bundle: vih_long_cource
-label: Heading
+label: Overskrift
 description: ''
 required: false
 translatable: false

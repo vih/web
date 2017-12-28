@@ -9,7 +9,7 @@ id: node.page.field_vih_course_subheading
 field_name: field_vih_course_subheading
 entity_type: node
 bundle: page
-label: Subheading
+label: Underoverskrift
 description: ''
 required: false
 translatable: true

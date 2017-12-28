@@ -11,7 +11,7 @@ id: node.vih_short_course.body
 field_name: body
 entity_type: node
 bundle: vih_short_course
-label: Body
+label: Brødtekst
 description: ''
 required: false
 translatable: true

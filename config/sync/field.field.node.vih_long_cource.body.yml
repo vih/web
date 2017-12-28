@@ -11,7 +11,7 @@ id: node.vih_long_cource.body
 field_name: body
 entity_type: node
 bundle: vih_long_cource
-label: Body
+label: Brødtekst
 description: ''
 required: false
 translatable: true

@@ -9,7 +9,7 @@ id: node.event.field_vih_cource_contact_person
 field_name: field_vih_cource_contact_person
 entity_type: node
 bundle: event
-label: 'Contact Person'
+label: Kontaktperson
 description: ''
 required: false
 translatable: true

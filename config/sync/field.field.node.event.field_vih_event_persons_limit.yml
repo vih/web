@@ -9,8 +9,8 @@ id: node.event.field_vih_event_persons_limit
 field_name: field_vih_event_persons_limit
 entity_type: node
 bundle: event
-label: 'Persons limit'
-description: '0 for unlimited'
+label: 'Deltager begrænsning'
+description: 'Indtast 0 for ubegrænset'
 required: false
 translatable: false
 default_value:

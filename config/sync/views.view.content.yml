@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: fUDNcSYKNw6cTMPsX3G9VhsUGov5yUe6_TBHbcnZHyo
 id: content
-label: Content
+label: Indhold
 module: node
 description: 'Find og håndtér indhold.'
 tag: default
@@ -31,11 +31,11 @@ display:
         options:
           submit_button: Filter
           reset_button: true
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
       pager:
         type: full
         options:
@@ -290,7 +290,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Handlinger
           exclude: false
           alter:
             alter_text: false
@@ -495,7 +495,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Sprog
             description: ''
             use_operator: false
             operator: langcode_op
@@ -524,7 +524,7 @@ display:
           entity_type: node
           entity_field: langcode
       sorts: {  }
-      title: Content
+      title: Indhold
       empty:
         area_text_custom:
           id: area_text_custom
@@ -567,20 +567,20 @@ display:
       path: admin/content/node
       menu:
         type: 'default tab'
-        title: Content
+        title: Indhold
         description: ''
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: Content
+        title: Indhold
         description: 'Find og håndtér indhold'
         menu_name: admin
         weight: -10
       display_extenders: {  }
     display_plugin: page
-    display_title: Page
+    display_title: Side
     id: page_1
     position: 1
     cache_metadata:

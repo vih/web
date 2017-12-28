@@ -9,7 +9,7 @@ id: node.vih_short_course.field_vih_cs_contact_person
 field_name: field_vih_cs_contact_person
 entity_type: node
 bundle: vih_short_course
-label: 'Contact Person'
+label: Kontaktperson
 description: ''
 required: false
 translatable: true

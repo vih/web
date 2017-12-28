@@ -9,5 +9,5 @@ label: 'Personlig kontaktformular'
 recipients: {  }
 reply: ''
 weight: 0
-message: 'Your message has been sent.'
+message: 'Din besked er blevet sendt.'
 redirect: ''
