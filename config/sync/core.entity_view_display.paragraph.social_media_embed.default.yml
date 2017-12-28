@@ -1,0 +1,49 @@
+uuid: dd0c1d44-32e7-4321-82d2-66bac20b9e7c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_media_embed.field_background_color
+    - field.field.paragraph.social_media_embed.field_background_image
+    - field.field.paragraph.social_media_embed.field_heading
+    - field.field.paragraph.social_media_embed.field_link
+    - field.field.paragraph.social_media_embed.field_social_media
+    - paragraphs.paragraphs_type.social_media_embed
+  module:
+    - link
+id: paragraph.social_media_embed.default
+targetEntityType: paragraph
+bundle: social_media_embed
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_social_media:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_background_color: true
+  field_background_image: true

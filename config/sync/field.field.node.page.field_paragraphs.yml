@@ -16,6 +16,7 @@ dependencies:
     - paragraphs.paragraphs_type.long_course_list_
     - paragraphs.paragraphs_type.page_content
     - paragraphs.paragraphs_type.short_course_list_
+    - paragraphs.paragraphs_type.social_media_embed
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
@@ -51,6 +52,7 @@ settings:
       file: file
       article: article
       vih_single_class_group: vih_single_class_group
+      social_media_embed: social_media_embed
       employee: employee
       gallery: gallery
       user_quote: user_quote
@@ -81,12 +83,12 @@ settings:
       vih_course_slot:
         weight: 15
         enabled: false
-      vih_option:
-        weight: 16
-        enabled: false
       page_content:
         enabled: true
         weight: 16
+      vih_option:
+        weight: 16
+        enabled: false
       vih_option_group:
         weight: 17
         enabled: false
@@ -114,6 +116,9 @@ settings:
       vih_single_class_group:
         enabled: true
         weight: 26
+      social_media_embed:
+        enabled: true
+        weight: 28
       employee:
         enabled: true
         weight: 30

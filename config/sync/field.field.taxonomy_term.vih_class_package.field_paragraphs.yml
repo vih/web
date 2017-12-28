@@ -14,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
     - paragraphs.paragraphs_type.short_course_list_
+    - paragraphs.paragraphs_type.social_media_embed
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
@@ -43,6 +44,7 @@ settings:
       article: article
       event_list: event_list
       file: file
+      social_media_embed: social_media_embed
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
       employee: employee
@@ -70,6 +72,9 @@ settings:
       file:
         enabled: true
         weight: 27
+      social_media_embed:
+        enabled: true
+        weight: 28
       list_of_news_teasers:
         enabled: true
         weight: 28

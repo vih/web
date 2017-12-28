@@ -1,0 +1,9 @@
+uuid: 6fb81d9c-1592-4bb8-8ef2-a9a8af3009a4
+langcode: da
+status: true
+dependencies: {  }
+id: social_media_embed
+label: 'Sociale medier'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

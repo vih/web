@@ -67,6 +67,7 @@ module:
   mailchimp_lists: 0
   mailchimp_signup: 0
   media: 0
+  media_entity_facebook: 0
   media_entity_instagram: 0
   media_entity_twitter: 0
   menu_ui: 0

@@ -1,0 +1,20 @@
+uuid: ad6ead72-adc7-4ec1-a124-515f0d5d9b70
+langcode: da
+status: true
+dependencies:
+  module:
+    - entity_browser
+    - paragraphs
+id: paragraph.field_social_media
+field_name: field_social_media
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: entity_browser
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

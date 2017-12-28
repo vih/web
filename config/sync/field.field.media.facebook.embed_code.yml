@@ -1,0 +1,19 @@
+uuid: 4fa7b8cb-529d-4798-b235-6d65a25434e7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.media.embed_code
+    - media.type.facebook
+id: media.facebook.embed_code
+field_name: embed_code
+entity_type: media
+bundle: facebook
+label: Facebook
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
