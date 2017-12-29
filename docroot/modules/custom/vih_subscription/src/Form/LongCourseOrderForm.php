@@ -373,7 +373,7 @@ class LongCourseOrderForm extends FormBase {
     if ($this->courseOrder == NULL) {
       $this->courseOrder = Node::create(array(
         'type' => 'vih_long_course_order',
-        'status' => 0,
+        'status' => 1, //We restrict direct access to the node in site_preprocess_node hook
         'title' => $this->course->getTitle() . ' - kursus tilmelding - ' . $form_state->getValue('firstName')
           . ' ' . $form_state->getValue('lastName') . ' - ' . \Drupal::service('date.formatter')->format(time(), 'short'),
         //student information

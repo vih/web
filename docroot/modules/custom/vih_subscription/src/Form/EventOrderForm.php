@@ -212,7 +212,7 @@ class EventOrderForm extends FormBase {
     if ($this->eventOrder == NULL) {
       $this->eventOrder = Node::create(array(
         'type' => 'vih_event_order',
-        'status' => 0,
+        'status' => 1, //We restrict direct access to the node in site_preprocess_node hook
         'title' => $this->event->getTitle() . ' - begivenhed tilmelding - ' . $firstParticipantName . ' - '
           . \Drupal::service('date.formatter')->format(time(), 'short'),
         'field_vih_eo_persons' => $subscribedPersons,
