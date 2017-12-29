@@ -6,6 +6,7 @@
  */
 
 use Drupal\image\Entity\ImageStyle;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * Implements hook_page_attachments_alter().
@@ -186,6 +187,15 @@ function site_preprocess_node(array &$variables) {
     $variables['content']['can_be_subscribed'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
     $variables['content']['is_active'] = ($node->field_vih_event_status->value == 'active');
     $variables['content']['is_closed'] = ($node->field_vih_event_status->value == 'closed');
+  }
+
+// Kort kursus - bestilling
+  elseif ($node->getType() == 'vih_short_course_order') {
+    if(!in_array($variables['view_mode'], ['teaser','email_teaser'])){
+      if(!$variables['user']->hasPermission('Access the Content overview page')){
+        throw new AccessDeniedHttpException();
+      }  
+    }
   }
 
   // Short course
