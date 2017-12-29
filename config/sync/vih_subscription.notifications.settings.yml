@@ -1,11 +1,11 @@
 vih_subscription_long_course_notifications_subject: 'Order of @subject_name'
-vih_subscription_long_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\nThe course will take place on @date, more information available here: @url."
+vih_subscription_long_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe course will take place on @date, more information available here: @url."
 vih_subscription_short_course_notifications_subject: 'Order of @subject_name'
 vih_subscription_short_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe course will take place on @date, more information available here: @url."
 vih_subscription_event_notifications_subject: 'Order of @subject_name'
-vih_subscription_event_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name.\r\nThe event will take place on @date, more information available here: @url."
+vih_subscription_event_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe event will take place on @date, more information available here: @url."
 submit: 'Save configuration'
-form_build_id: form-kkP3xokEdLb8nK52F9HB67uEwBoP4xEwUmkf6axkQ_o
-form_token: hlxocp9rKPaUaEFYzZ8QuMGaQ4W69qOo82WE-2MguHw
+form_build_id: form-gFtsH_cj9xI_NVs_PKYUDKqpfuA8OW-OVeVQXCQ585U
+form_token: EEavl7LRGF_G--IHwtXkwZCoT-T7ccqMDTp-Xh0glkI
 form_id: vih_subscription_notifications_settings_form
 op: 'Save configuration'
