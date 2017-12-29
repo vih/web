@@ -54,7 +54,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
     $node_view = node_view($order, 'email_teaser');
     $order_rendered = render($node_view)->__toString();
     //HTML string cleanup
-    $order_rendered = strip_tags($order_rendered, '<p><div><h1><h2><h3><h4><h5><span>');
+    $order_rendered = strip_tags($order_rendered, '<p><div><h1><h2><h3><h4><h5><span><table><tr><td>');
     $order_rendered = preg_replace("#(</?\w+)(?:\s(?:[^<>/]|/[^<>])*)?(/?>)#ui", '$1$2', $order_rendered);
     
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
