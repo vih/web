@@ -1,14 +1,13 @@
-<div class="container">
-  <br>
-  <h3>
-    {{ "Oh - an error occured!"|t }}
-  </h3>
-  <br>
-  <div class="row">
-      <div class="col-xs-12 tilmeldings-knap">
-          <a href="{{ url('<front>') }}" class="btn-arrow">
-              {{ "Go back"|t }}
-          </a>
-      </div>
-  </div>
-</div>
+<section class="sectioned sectioned--content">
+    <div class="sectioned__inner">
+        <div class="container">
+            <div class="sectioned__heading">
+                <h2 class="sectioned__heading__title">{{ "Oh - an error occured!"|t }}</h2>
+            </div>
+
+            <a href="{{ url('<front>') }}" class="btn btn-primary">
+                {{ "Go back to home"|t }}
+            </a>
+        </div>
+    </div>
+</section>
