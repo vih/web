@@ -505,10 +505,10 @@ class ShortCourseOrderForm extends FormBase {
       $addedParticipants = $form_state->get('addedParticipants');
       //not added participants
       if (!count($addedParticipants)) {
-        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['firstName'], $this->t('Tilføj venligst mindst én deltager'));
-        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Tilføj venligst mindst én deltager'));
-        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Tilføj venligst mindst én deltager'));
-        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Tilføj venligst mindst én deltager'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['firstName'], $this->t('Please add, at least, one participant'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Please add, at least, one participant'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Please add, at least, one participant'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Please add, at least, one participant'));
       }
     }
   }
