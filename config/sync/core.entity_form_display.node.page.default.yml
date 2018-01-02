@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_banner
     - field.field.node.page.field_metatag
+    - field.field.node.page.field_paragraphs
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.panelizer
@@ -17,6 +18,7 @@ dependencies:
     - field_group
     - inline_entity_form
     - metatag
+    - paragraphs
     - path
     - text
     - workbench_moderation
@@ -117,6 +119,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_paragraphs:
+    type: paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: 1_column_action_centered
+    third_party_settings: {  }
     region: content
   field_vih_course_heading:
     weight: 2
