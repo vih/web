@@ -20,11 +20,11 @@ settings:
             - Bold
             - Italic
             - Underline
-            - Strike
-            - Superscript
-            - Subscript
             - '-'
             - RemoveFormat
+            - Cut
+            - Copy
+            - PasteFromWord
         -
           name: Linking
           items:
@@ -42,7 +42,6 @@ settings:
             - Blockquote
             - Table
             - HorizontalRule
-            - media_browser
             - video_embed
             - DrupalImage
         -
