@@ -8,16 +8,11 @@
 namespace Drupal\vih_subscription\Form;
 
 use Drupal\Component\Utility\Crypt;
-use Drupal\Core\Datetime\DateFormatter;
-use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
-use Drupal\taxonomy\Entity\Term;
-use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
 
 /**
@@ -32,7 +27,7 @@ class LongCourseOrderForm extends FormBase {
    * Returns page title
    */
   public function getTitle() {
-    return $this->t('Skræddersy dit ophold');
+    return $this->t('Tailor your stay');
   }
 
   /**
@@ -105,12 +100,12 @@ class LongCourseOrderForm extends FormBase {
     );
     $form['personalDataLeft']['firstName'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Fornavn'),
+      '#placeholder' => $this->t('Firstname'),
       '#required' => TRUE,
     );
     $form['personalDataLeft']['lastName'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Efternavn'),
+      '#placeholder' => $this->t('Lastname'),
       '#required' => TRUE,
     );
     $form['personalDataLeft']['cpr'] = array(
@@ -120,17 +115,17 @@ class LongCourseOrderForm extends FormBase {
     );
     $form['personalDataLeft']['telefon'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Telefon'),
+      '#placeholder' => $this->t('Phone'),
       '#required' => TRUE,
     );
     $form['personalDataLeft']['email'] = array(
       '#type' => 'email',
-      '#placeholder' => $this->t('E-mail'),
+      '#placeholder' => $this->t('E-mail address'),
       '#required' => TRUE,
     );
     $form['personalDataLeft']['nationality'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Nationalitet'),
+      '#title' => $this->t('Nationality'),
       '#options' => CourseOrderOptionsList::getNationalityList(),
       '#default_value' => 'DK',
       '#required' => TRUE,
@@ -138,7 +133,7 @@ class LongCourseOrderForm extends FormBase {
 
     $form['personalDataLeft']['newsletter'] = array(
       '#type' => 'checkbox',
-      '#title' => $this->t('Tilmeld dig nyhedsbreve'),
+      '#title' => $this->t('Sign up for newsletter'),
     );
 
     //Personal data - right side
@@ -147,49 +142,49 @@ class LongCourseOrderForm extends FormBase {
     );
     $form['personalDataRight']['address'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Adresse'),
+      '#placeholder' => $this->t('Address'),
       '#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseNumber'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Hus nr'),
+      '#placeholder' => $this->t('House no.'),
       '#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseLetter'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Bogstav'),
+      '#placeholder' => $this->t('House letter'),
       //'#required' => TRUE,
     );
     $form['personalDataRight']['house']['houseFloor'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Etage'),
+      '#placeholder' => $this->t('Floor'),
       //'#required' => TRUE,
     );
     $form['personalDataRight']['city'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('By'),
+      '#placeholder' => $this->t('City'),
       '#required' => TRUE,
     );
     $form['personalDataRight']['zip'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Postnummer'),
+      '#placeholder' => $this->t('Zipcode'),
       '#required' => TRUE,
     );
     $form['personalDataRight']['education'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Uddanelse'),
+      '#title' => $this->t('Education'),
       '#options' => CourseOrderOptionsList::getEducationList(),
       '#required' => TRUE,
     );
     $form['personalDataRight']['payment'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Betaling'),
+      '#title' => $this->t('Payment'),
       '#options' => CourseOrderOptionsList::getPaymentList(),
       '#required' => TRUE,
     );
     $form['personalDataRight']['foundFrom'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Hvor kender du os fra?'),
+      '#title' => $this->t('How did you find us?'),
       '#options' => CourseOrderOptionsList::getFoundFromList(),
       '#required' => TRUE,
     );
@@ -200,27 +195,27 @@ class LongCourseOrderForm extends FormBase {
     );
     $form['adultDataLeft']['adultFirstName'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Fornavn'),
+      '#placeholder' => $this->t('Firstname'),
       '#required' => TRUE,
     );
     $form['adultDataLeft']['adultLastName'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Efternavn'),
+      '#placeholder' => $this->t('Lastname'),
       '#required' => TRUE,
     );
     $form['adultDataLeft']['adultTelefon'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Telefon'),
+      '#placeholder' => $this->t('Phone'),
       '#required' => TRUE,
     );
     $form['adultDataLeft']['adultEmail'] = array(
       '#type' => 'email',
-      '#placeholder' => $this->t('E-mail'),
+      '#placeholder' => $this->t('E-mail address'),
       '#required' => TRUE,
     );
     $form['adultDataLeft']['adultNationality'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Nationalitet'),
+      '#title' => $this->t('Nationality'),
       '#options' => CourseOrderOptionsList::getNationalityList(),
       '#default_value' => 'DK',
       '#required' => TRUE,
@@ -232,39 +227,39 @@ class LongCourseOrderForm extends FormBase {
     );
     $form['adultDataRight']['adultAddress'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Adresse'),
+      '#placeholder' => $this->t('Address'),
       '#required' => TRUE,
     );
     $form['adultDataRight']['adultHouse']['adultHouseNumber'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Hus nr'),
+      '#placeholder' => $this->t('House no.'),
       '#required' => TRUE,
     );
     $form['adultDataRight']['adultHouse']['adultHouseLetter'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Bogstav'),
+      '#placeholder' => $this->t('House letter'),
       //'#required' => TRUE,
     );
     $form['adultDataRight']['adultHouse']['adultHouseFloor'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Etage'),
+      '#placeholder' => $this->t('Floor'),
       //'#required' => TRUE,
     );
     $form['adultDataRight']['adultCity'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('By'),
+      '#placeholder' => $this->t('City'),
       '#required' => TRUE,
     );
     $form['adultDataRight']['adultZip'] = array(
       '#type' => 'textfield',
-      '#placeholder' => $this->t('Postnummer'),
+      '#placeholder' => $this->t('Zipcode'),
       '#required' => TRUE,
     );
 
     ////////
     $form['message'] = array(
       '#type' => 'textarea',
-      '#placeholder' => $this->t('Skriv os en besked...'),
+      '#placeholder' => $this->t('Message...'),
       '#required' => TRUE,
     );
 

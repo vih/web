@@ -135,14 +135,14 @@ class ShortCourseOrderForm extends FormBase {
       ];
       $form['newParticipantContainer']['newParticipantFieldset']['firstName'] = array(
         '#type' => 'textfield',
-        '#placeholder' => $this->t('Fornavn'),
+        '#placeholder' => $this->t('Firstname'),
         '#required' => TRUE,
         '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['lastName'] = array(
         '#type' => 'textfield',
-        '#placeholder' => $this->t('Efternavn'),
+        '#placeholder' => $this->t('Lastname'),
         '#required' => TRUE,
         '#prefix' => '<div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div></div>',
@@ -154,7 +154,7 @@ class ShortCourseOrderForm extends FormBase {
       );
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
         '#type' => 'textfield',
-        '#placeholder' => $this->t('Email'),
+        '#placeholder' => $this->t('E-mail address'),
         '#required' => TRUE,
       );
 

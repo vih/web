@@ -34,7 +34,7 @@ class EventOrderForm extends FormBase {
    * Returns page title
    */
   public function getTitle() {
-    return $this->t('Tilmelding');
+    return $this->t('Sign up');
   }
 
   /**
@@ -102,21 +102,21 @@ class EventOrderForm extends FormBase {
         ];
         $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
           '#type' => 'textfield',
-          '#placeholder' => $this->t('Fornavn'),
+          '#placeholder' => $this->t('Firstname'),
           '#required' => TRUE,
           '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
           '#suffix' => '</div>',
         );
         $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
           '#type' => 'textfield',
-          '#placeholder' => $this->t('Efternavn'),
+          '#placeholder' => $this->t('Lastname'),
           '#required' => TRUE,
           '#prefix' => '<div class="col-xs-12 col-sm-6">',
           '#suffix' => '</div></div>',
         );
         $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
           '#type' => 'textfield',
-          '#placeholder' => $this->t('Email'),
+          '#placeholder' => $this->t('E-mail address'),
           '#required' => TRUE,
         );
       }
@@ -159,7 +159,7 @@ class EventOrderForm extends FormBase {
       );
     } else {
       $form['message'] = array(
-        '#markup' => $this->t('Denne begivenhed kan ikke allokere flere deltagere')
+        '#markup' => $this->t('This event cannot allocate more participants')
       );
     }
 
