@@ -7,16 +7,14 @@
         <div class="container">
             <div class="sectioned__heading">
                 <h2 class="sectioned__heading__title">
-                    {{ "Tilmelding til @title"|t({ '@title': form['#event']['title'] }) }}
+                    {{ "Sign up for @title"|t({ '@title': form['#event']['title'] }) }}
                 </h2>
             </div>
 
             {# Introduction information START #}
             <div class="partial">
                 <div class="partial__body">
-                    <p>{{ "Du kan tilmelde så mange mennesker, som du har lyst til. Du tilføjer en person ad gangen i nedenstående formular."|t }}</p>
-
-                    <p>{{ "Særligt for korte kurser - Tilkøb af linned: Du kan tilkøbe linnedpakke med sengetøj og to håndklæder, når du ankommer til skolen for 85 kroner per person eller selv medbringe eget sengetøj."|t }}<p>
+                    <p>{{ "You can sign up, as many as you'd like. You will add one person at a time in the form below."|t }}</p>
 
                     <a href="{{ form['#event']['url'] }}" class="btn btn-default btn-sm">
                         {{ "Back to event" | trans }}
@@ -44,7 +42,7 @@
                     {# Personal data START #}
                     <div class="partial">
                         <div class="partial__heading">
-                            <h4 class="partial__heading__title">{{ "Personlige oplysninger"|t }}</h4>
+                            <h4 class="partial__heading__title">{{ "Personal information"|t }}</h4>
                         </div>
                         <div class="partial__body">
                             {#{{ form['personalDataLeft'] }}#}
