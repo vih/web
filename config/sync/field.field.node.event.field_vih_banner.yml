@@ -1,9 +1,9 @@
-uuid: 93f6fd4b-ebee-40a0-b7ff-b90ad9ac28aa
+uuid: 9b0f0de0-2a5d-496c-856e-f29a3f0d9421
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_banner
+    - field.storage.node.field_vih_banner
     - node.type.event
   module:
     - content_translation
@@ -14,8 +14,8 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: node.event.field_banner
-field_name: field_banner
+id: node.event.field_vih_banner
+field_name: field_vih_banner
 entity_type: node
 bundle: event
 label: Banner

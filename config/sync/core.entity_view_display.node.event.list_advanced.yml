@@ -5,12 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.list_advanced
     - field.field.node.event.body
-    - field.field.node.event.field_banner
     - field.field.node.event.field_event_end_date
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
+    - field.field.node.event.field_metatag
     - field.field.node.event.field_paragraphs
+    - field.field.node.event.field_vih_banner
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -80,10 +81,10 @@ content:
     type: string
     region: content
 hidden:
-  field_banner: true
   field_event_price: true
   field_metatag: true
   field_paragraphs: true
+  field_vih_banner: true
   field_vih_cource_contact_person: true
   field_vih_course_subheading: true
   field_vih_event_persons_limit: true
