@@ -1,9 +1,9 @@
-uuid: 1ff74295-8275-417e-97bd-a4e43f69fd0c
-langcode: da
+uuid: d90b74bd-d7c2-4429-921e-2a3221371339
+langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_banner
+    - field.storage.node.field_vih_banner
     - node.type.vih_short_course
   module:
     - content_translation
@@ -14,14 +14,14 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: node.vih_short_course.field_banner
-field_name: field_banner
+id: node.vih_short_course.field_vih_banner
+field_name: field_vih_banner
 entity_type: node
 bundle: vih_short_course
 label: Banner
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -31,7 +31,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: false
-  alt_field_required: false
+  alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
