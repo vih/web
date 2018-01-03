@@ -1,14 +1,21 @@
-uuid: 678ef42f-be53-4b57-bb96-2afbdbf30d8b
-langcode: da
+uuid: 78b61f96-30b1-4d92-a4c9-595567d40da9
+langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_banner
+    - field.storage.node.field_vih_banner
     - node.type.page
   module:
+    - content_translation
     - image
-id: node.page.field_banner
-field_name: field_banner
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: node.page.field_vih_banner
+field_name: field_vih_banner
 entity_type: node
 bundle: page
 label: Banner
@@ -24,7 +31,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: false
-  alt_field_required: true
+  alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:

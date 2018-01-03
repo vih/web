@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_banner
     - field.field.node.page.field_metatag
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_vih_banner
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.panelizer
@@ -40,17 +40,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_banner:
-    weight: 7
-    label: hidden
-    settings:
-      image_style: banner_small
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
   field_metatag:
-    weight: 8
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -58,15 +49,24 @@ content:
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
+  field_vih_banner:
+    weight: 6
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   field_vih_course_heading:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -74,7 +74,7 @@ content:
     type: string
     region: content
   field_vih_course_subheading:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false

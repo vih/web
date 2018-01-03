@@ -5,9 +5,9 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.page.body
-    - field.field.node.page.field_banner
     - field.field.node.page.field_metatag
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_vih_banner
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.panelizer
@@ -28,6 +28,7 @@ third_party_settings:
       children:
         - title
         - field_banner
+        - field_vih_banner
       parent_name: ''
       weight: 0
       format_type: tab
@@ -101,19 +102,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_banner:
-    type: entity_browser_file
-    weight: 29
-    settings:
-      entity_browser: image_browser
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      preview_image_style: thumbnail
-      field_widget_edit: true
-      view_mode: default
-    region: content
-    third_party_settings: {  }
   field_metatag:
     weight: 11
     settings: {  }
@@ -134,6 +122,19 @@ content:
       default_paragraph_type: 1_column_action_centered
     third_party_settings: {  }
     region: content
+  field_vih_banner:
+    type: entity_browser_file
+    weight: 30
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+    region: content
+    third_party_settings: {  }
   field_vih_course_heading:
     weight: 2
     settings:
