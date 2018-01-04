@@ -1,9 +1,9 @@
-uuid: 304968b4-b960-48b7-aaa8-49498c8e8880
+uuid: 3a81a96f-8fda-4a94-bee3-92f0598d7406
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_banner
+    - field.storage.taxonomy_term.field_vih_banner
     - taxonomy.vocabulary.vih_class_package
   module:
     - content_translation
@@ -14,14 +14,14 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: taxonomy_term.vih_class_package.field_banner
-field_name: field_banner
+id: taxonomy_term.vih_class_package.field_vih_banner
+field_name: field_vih_banner
 entity_type: taxonomy_term
 bundle: vih_class_package
 label: Banner
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
