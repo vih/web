@@ -1,12 +1,12 @@
-uuid: e01be8ae-f5b8-4d32-9981-3f316b4b4384
+uuid: f8b2e6b6-95c8-48c4-9973-4c714deb910e
 langcode: da
 status: true
 dependencies:
   config:
     - block_content.type.notify
-    - field.storage.block_content.field_heading
-id: block_content.notify.field_heading
-field_name: field_heading
+    - field.storage.block_content.field_vih_heading
+id: block_content.notify.field_vih_heading
+field_name: field_vih_heading
 entity_type: block_content
 bundle: notify
 label: Overskrift

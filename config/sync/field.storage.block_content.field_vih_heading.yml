@@ -1,11 +1,11 @@
-uuid: fb713e63-0d18-4619-a8fd-8ec29f94ddc8
+uuid: 15bcb3b8-1926-47ad-bf01-62ae7eea7743
 langcode: da
 status: true
 dependencies:
   module:
     - block_content
-id: block_content.field_heading
-field_name: field_heading
+id: block_content.field_vih_heading
+field_name: field_vih_heading
 entity_type: block_content
 type: string
 settings:
