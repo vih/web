@@ -1,9 +1,9 @@
-uuid: 87dea6b4-bd55-45b9-8af6-f956abb84b6f
+uuid: 4c6a2191-4759-4d25-b19e-379090fca70a
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_banner
+    - field.storage.node.field_vih_banner
     - node.type.vih_long_cource
   module:
     - content_translation
@@ -14,14 +14,14 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: node.vih_long_cource.field_banner
-field_name: field_banner
+id: node.vih_long_cource.field_vih_banner
+field_name: field_vih_banner
 entity_type: node
 bundle: vih_long_cource
 label: Banner
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

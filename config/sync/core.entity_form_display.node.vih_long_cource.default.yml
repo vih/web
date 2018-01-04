@@ -5,9 +5,9 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.vih_long_cource.body
-    - field.field.node.vih_long_cource.field_banner
     - field.field.node.vih_long_cource.field_metatag
     - field.field.node.vih_long_cource.field_paragraphs
+    - field.field.node.vih_long_cource.field_vih_banner
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -35,6 +35,7 @@ third_party_settings:
       children:
         - title
         - field_banner
+        - field_vih_banner
       parent_name: ''
       weight: 0
       format_type: tab
@@ -126,19 +127,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_banner:
-    type: entity_browser_file
-    weight: 2
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    region: content
-    third_party_settings: {  }
   field_metatag:
     weight: 26
     settings: {  }
@@ -159,6 +147,19 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
+  field_vih_banner:
+    type: entity_browser_file
+    weight: 3
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+    region: content
+    third_party_settings: {  }
   field_vih_cource_contact_person:
     weight: 10
     settings:
