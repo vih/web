@@ -1,9 +1,9 @@
-uuid: 29106b72-6b01-4692-aec9-aa12458b897f
+uuid: e5fc57df-c5e8-4a8b-a41c-5439b4014c85
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_banner
+    - field.storage.node.field_vih_banner
     - node.type.news
   module:
     - content_translation
@@ -14,14 +14,14 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: node.news.field_banner
-field_name: field_banner
+id: node.news.field_vih_banner
+field_name: field_vih_banner
 entity_type: node
 bundle: news
 label: Banner
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
