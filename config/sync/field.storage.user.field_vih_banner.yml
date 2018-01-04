@@ -1,4 +1,4 @@
-uuid: 3ac9320e-920e-4f33-b492-8381f6c51b3a
+uuid: 40ccf0f8-c42a-4ee0-b515-52008e45b1aa
 langcode: da
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - user
-id: user.field_banner
-field_name: field_banner
+id: user.field_vih_banner
+field_name: field_vih_banner
 entity_type: user
 type: image
 settings:

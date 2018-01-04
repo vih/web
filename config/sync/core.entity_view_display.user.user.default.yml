@@ -3,14 +3,15 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_banner
     - field.field.user.user.field_e_mail
     - field.field.user.user.field_job_title
     - field.field.user.user.field_paragraphs
     - field.field.user.user.field_user_birthday
+    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
+    - field.field.user.user.field_vih_banner
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -34,18 +35,9 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_banner:
-    weight: 10
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
   field_e_mail:
     type: email_mailto
-    weight: 6
+    weight: 5
     region: content
     label: above
     settings: {  }
@@ -60,7 +52,7 @@ content:
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 8
     label: hidden
     settings:
       view_mode: default
@@ -69,7 +61,7 @@ content:
     region: content
   field_user_birthday:
     type: datetime_default
-    weight: 7
+    weight: 6
     region: content
     label: above
     settings:
@@ -100,6 +92,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_vih_banner:
+    type: image
+    weight: 10
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   field_vih_user_descr:
     weight: 4
     label: above
@@ -109,7 +110,7 @@ content:
     region: content
   field_vih_user_phone:
     type: string
-    weight: 8
+    weight: 7
     region: content
     label: above
     settings:

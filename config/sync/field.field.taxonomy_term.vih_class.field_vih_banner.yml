@@ -1,16 +1,16 @@
-uuid: 8e013b2f-33fc-480b-98f5-85572d4ce4aa
+uuid: dfb4eaeb-d414-4e75-8d00-91fe400c424e
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_banner
+    - field.storage.taxonomy_term.field_vih_banner
+    - taxonomy.vocabulary.vih_class
   module:
     - image
-    - user
-id: user.user.field_banner
-field_name: field_banner
-entity_type: user
-bundle: user
+id: taxonomy_term.vih_class.field_vih_banner
+field_name: field_vih_banner
+entity_type: taxonomy_term
+bundle: vih_class
 label: Banner
 description: ''
 required: false
