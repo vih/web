@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .field--name-field-heading
+// | - .field--name-field-vih-heading
 // |
 
 // --------------------------------------------------
@@ -16,7 +16,7 @@
 
 .paragraph {
 
-  .field--name-field-heading {
+  .field--name-field-vih-heading {
     @extend .heading-h2;
 
     margin-top: 0;
@@ -32,7 +32,7 @@
   // Background image
   &.sectioned--skewed--background-image {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       color: #fff;
     }
   }
@@ -40,7 +40,7 @@
   // White
   &.sectioned--skewed--background-color-white {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       color: $headings-color;
     }
   }
@@ -48,7 +48,7 @@
   // Light gray
   &.sectioned--skewed--background-color-light-gray {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       color: $headings-color;
     }
   }
@@ -56,7 +56,7 @@
   // Gray
   &.sectioned--skewed--background-color-gray {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       color: $headings-color;
     }
   }
@@ -64,7 +64,7 @@
   // Primary
   &.sectioned--skewed--background-color-primary {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       color: $btn-primary-color;
     }
   }
@@ -72,7 +72,7 @@
   // Secondary
   &.sectioned--skewed--background-color-secondary {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       color: $btn-secondary-color;
     }
   }
@@ -117,4 +117,4 @@
 // --------------------------------------------------
 
 // Heading mixin
-@mixin field--name-mixin-field-heading() {}
+@mixin field--name-mixin-field-vih-heading() {}
