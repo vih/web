@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.vih_teacher_class_description.field_background_color
     - field.field.paragraph.vih_teacher_class_description.field_background_image
     - field.field.paragraph.vih_teacher_class_description.field_description
     - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
@@ -21,6 +21,7 @@ third_party_settings:
     group_appearance:
       children:
         - field_background_color
+        - field_vih_background_color
         - field_background_image
       parent_name: ''
       weight: 5
@@ -38,15 +39,9 @@ targetEntityType: paragraph
 bundle: vih_teacher_class_description
 mode: default
 content:
-  field_background_color:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_background_image:
     type: entity_browser_file
-    weight: 2
+    weight: 3
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -86,6 +81,12 @@ content:
       open: true
       selection_mode: selection_append
     third_party_settings: {  }
+    region: content
+  field_vih_background_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_vih_heading:
     weight: 2
