@@ -240,7 +240,7 @@ html {
   border-bottom: none;
   padding: 10px;
 }
-.div.views-field.views-field-field-image {
+.div.views-field.views-field-field-vih-image {
   overflow: hidden !important;
 }
 #view-title-table-column {
@@ -679,7 +679,7 @@ flex-direction: column;
     }
   }
 }
-.layout__news .views-field-field-image .field-content {
+.layout__news .views-field-field-vih-image .field-content {
   width: 310px;
 }
 .layout__news .fpnews-title {
@@ -709,10 +709,10 @@ flex-direction: column;
 .news-info .fpnews-date span {
   color: #999;
 }
-.field--name-field-image .field--label {
+.field--name-field-vih-image .field--label {
   display: none;
 }
-.page-node-type-news .field--name-field-image img {
+.page-node-type-news .field--name-field-vih-image img {
   width: 50%;
   margin-top: 20px;
 }
@@ -1218,7 +1218,7 @@ ul.layout-navigation {
 .course-periods-accordion .field--name-description p {
   font-weight: bold !important;
 }
-.page-node-type-news article .field--name-field-image {
+.page-node-type-news article .field--name-field-vih-image {
   display: none;
 }
 .news-banner {

@@ -12,8 +12,8 @@ set classes = [
 <a href="{{ url }}" class="element-wrapper-link entity-list-advanced entity-list-advanced--event">
 
     {# Begin - image #}
-    {% if node.field_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ node.field_image.entity.fileuri | image_style(content.field_image[0]['#image_style']) }});">
+    {% if node.field_vih_image.value %}
+        <div class="entity-list-advanced__image" style="background-image: url({{ node.field_vih_image.entity.fileuri | image_style(content.field_vih_image[0]['#image_style']) }});">
 
             {# Begin - period #}
             {% if content.field_event_start_date and content.field_event_end_date %}
