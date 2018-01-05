@@ -6,9 +6,9 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.gallery.field_background_color
     - field.field.paragraph.gallery.field_background_image
-    - field.field.paragraph.gallery.field_heading
     - field.field.paragraph.gallery.field_images
     - field.field.paragraph.gallery.field_link
+    - field.field.paragraph.gallery.field_vih_heading
     - paragraphs.paragraphs_type.gallery
   module:
     - entity_browser
@@ -22,7 +22,7 @@ third_party_settings:
         - field_background_image
         - field_background_color
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -56,17 +56,9 @@ content:
       view_mode: default
     region: content
     third_party_settings: {  }
-  field_heading:
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_images:
     type: entity_browser_file
-    weight: 1
+    weight: 2
     settings:
       entity_browser: image_browser
       field_widget_remove: true
@@ -78,12 +70,20 @@ content:
     region: content
     third_party_settings: {  }
   field_link:
-    weight: 2
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_vih_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true

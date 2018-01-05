@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.field.paragraph.gallery.field_background_color
     - field.field.paragraph.gallery.field_background_image
-    - field.field.paragraph.gallery.field_heading
     - field.field.paragraph.gallery.field_images
     - field.field.paragraph.gallery.field_link
+    - field.field.paragraph.gallery.field_vih_heading
     - paragraphs.paragraphs_type.gallery
   module:
     - link
@@ -17,16 +17,8 @@ targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
-  field_heading:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_images:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       photoswipe_node_style: gallery_thumbnail
@@ -37,7 +29,7 @@ content:
     type: photoswipe_field_formatter
     region: content
   field_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: null
@@ -47,6 +39,14 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
+    region: content
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   field_background_color: true
