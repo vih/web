@@ -5,10 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.vih_short_course.body
-    - field.field.node.vih_short_course.field_paragraphs
+    - field.field.node.vih_short_course.field_metatag
+    - field.field.node.vih_short_course.field_vih_banner
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_paragraphs
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
@@ -74,10 +76,11 @@ content:
 hidden:
   field_banner: true
   field_metatag: true
-  field_paragraphs: true
+  field_vih_banner: true
   field_vih_course_heading: true
   field_vih_course_subheading: true
   field_vih_cs_contact_person: true
+  field_vih_paragraphs: true
   field_vih_sc_option_groups: true
   field_vih_sc_persons_limit: true
   field_vih_sc_price: true

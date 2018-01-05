@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_metatag
-    - field.field.node.vih_short_course.field_paragraphs
     - field.field.node.vih_short_course.field_vih_banner
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_paragraphs
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
@@ -54,15 +54,6 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_paragraphs:
-    weight: 6
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_vih_banner:
     weight: 15
     label: hidden
@@ -73,7 +64,7 @@ content:
     type: image
     region: content
   field_vih_course_heading:
-    weight: 10
+    weight: 11
     label: hidden
     settings:
       link_to_entity: false
@@ -81,7 +72,7 @@ content:
     type: string
     region: content
   field_vih_course_subheading:
-    weight: 11
+    weight: 12
     label: hidden
     settings:
       link_to_entity: false
@@ -97,8 +88,17 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
+  field_vih_paragraphs:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
   field_vih_sc_end_date:
-    weight: 9
+    weight: 10
     label: hidden
     settings:
       timezone_override: ''
@@ -125,7 +125,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_sc_persons_limit:
-    weight: 12
+    weight: 13
     label: hidden
     settings:
       thousand_separator: ''
@@ -145,7 +145,7 @@ content:
     type: number_decimal
     region: content
   field_vih_sc_start_date:
-    weight: 8
+    weight: 9
     label: hidden
     settings:
       timezone_override: ''
@@ -155,7 +155,7 @@ content:
     region: content
   field_vih_sc_status:
     type: list_default
-    weight: 13
+    weight: 14
     region: content
     label: hidden
     settings: {  }
@@ -166,7 +166,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   scheduled_update:
-    weight: 7
+    weight: 8
     label: above
     settings:
       link: true
