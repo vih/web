@@ -1,9 +1,9 @@
-uuid: 8ff8591d-0f0e-4259-9c76-c3ec6106fda0
+uuid: b5537d65-d8cb-4036-b9ee-93cf04de3c2a
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_paragraphs
+    - field.storage.taxonomy_term.field_vih_paragraphs
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
     - paragraphs.paragraphs_type.class_packages
@@ -24,8 +24,8 @@ dependencies:
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
-id: taxonomy_term.vih_class.field_paragraphs
-field_name: field_paragraphs
+id: taxonomy_term.vih_class.field_vih_paragraphs
+field_name: field_vih_paragraphs
 entity_type: taxonomy_term
 bundle: vih_class
 label: Sektioner
