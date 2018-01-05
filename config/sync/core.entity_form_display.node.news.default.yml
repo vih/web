@@ -8,8 +8,8 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_metatag
     - field.field.node.news.field_news_tags
-    - field.field.node.news.field_paragraphs
     - field.field.node.news.field_vih_banner
+    - field.field.node.news.field_vih_paragraphs
     - field.field.node.news.scheduled_update
     - node.type.news
   module:
@@ -26,7 +26,6 @@ third_party_settings:
     group_banner:
       children:
         - title
-        - field_banner
         - field_vih_banner
       parent_name: ''
       weight: 0
@@ -44,6 +43,7 @@ third_party_settings:
         - field_image
         - body
         - field_paragraphs
+        - field_vih_paragraphs
         - field_news_tags
       parent_name: ''
       weight: 1
@@ -118,27 +118,13 @@ content:
     type: metatag_firehose
     region: content
   field_news_tags:
-    weight: 21
+    weight: 22
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_paragraphs:
-    weight: 20
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
-    type: paragraphs
     region: content
   field_vih_banner:
     type: entity_browser_file
@@ -153,6 +139,20 @@ content:
       view_mode: default
     region: content
     third_party_settings: {  }
+  field_vih_paragraphs:
+    weight: 21
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
   langcode:
     type: language_select
     weight: 27

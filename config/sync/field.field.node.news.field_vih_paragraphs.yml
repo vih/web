@@ -1,9 +1,9 @@
-uuid: 09a39549-3651-4e3b-8b91-c9f9aa257be2
+uuid: e05dd464-1e6f-45cb-8405-84575ffa0576
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
+    - field.storage.node.field_vih_paragraphs
     - node.type.news
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
@@ -23,8 +23,8 @@ dependencies:
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
-id: node.news.field_paragraphs
-field_name: field_paragraphs
+id: node.news.field_vih_paragraphs
+field_name: field_vih_paragraphs
 entity_type: node
 bundle: news
 label: Sektioner
@@ -39,16 +39,16 @@ settings:
     negate: 0
     target_bundles:
       1_column_action_centered: 1_column_action_centered
-      class_packages: class_packages
       article: article
+      class_packages: class_packages
+      employee: employee
       event_list: event_list
       file: file
-      social_media_embed: social_media_embed
+      gallery: gallery
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
-      employee: employee
-      gallery: gallery
       short_course_list_: short_course_list_
+      social_media_embed: social_media_embed
       user_quote: user_quote
       video: video
       vih_class_groups_accordion: vih_class_groups_accordion
@@ -57,83 +57,77 @@ settings:
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
-        weight: 24
-      class_packages:
-        enabled: true
-        weight: 25
+        weight: 26
       article:
         enabled: true
-        weight: 26
-      event_list:
-        enabled: true
-        weight: 26
-      file:
-        enabled: true
         weight: 27
-      social_media_embed:
+      class_packages:
         enabled: true
         weight: 28
-      list_of_news_teasers:
-        enabled: true
-        weight: 28
-      long_course_list_:
-        enabled: true
-        weight: 29
       employee:
         enabled: true
+        weight: 29
+      event_list:
+        enabled: true
         weight: 30
-      news_list:
-        weight: 30
-        enabled: false
+      file:
+        enabled: true
+        weight: 31
       gallery:
         enabled: true
-        weight: 31
-      page_content:
-        weight: 31
-        enabled: false
-      short_course_list_:
-        enabled: true
         weight: 32
-      user_quote:
+      list_of_news_teasers:
         enabled: true
         weight: 33
-      video:
+      long_course_list_:
         enabled: true
         weight: 34
-      vih_class_groups_accordion:
+      short_course_list_:
         enabled: true
         weight: 35
-      vih_course_slot:
+      social_media_embed:
+        enabled: true
         weight: 36
-        enabled: false
-      vih_option:
+      user_quote:
+        enabled: true
         weight: 37
-        enabled: false
-      vih_option_group:
+      video:
+        enabled: true
         weight: 38
-        enabled: false
-      vih_ordered_course_period:
+      vih_class_groups_accordion:
+        enabled: true
         weight: 39
-        enabled: false
-      vih_ordered_course_person:
+      vih_course_slot:
         weight: 40
         enabled: false
-      vih_ordered_course_slot:
+      vih_option:
         weight: 41
         enabled: false
-      vih_ordered_event_person:
+      vih_option_group:
         weight: 42
         enabled: false
-      vih_ordered_option:
+      vih_ordered_course_period:
         weight: 43
+        enabled: false
+      vih_ordered_course_person:
+        weight: 44
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 45
+        enabled: false
+      vih_ordered_event_person:
+        weight: 46
+        enabled: false
+      vih_ordered_option:
+        weight: 47
         enabled: false
       vih_single_class_group:
         enabled: true
-        weight: 44
+        weight: 48
       vih_teacher_class_description:
-        weight: 45
+        weight: 49
         enabled: false
       vih_webform:
         enabled: true
-        weight: 46
+        weight: 50
 field_type: entity_reference_revisions
