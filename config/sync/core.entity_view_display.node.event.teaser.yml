@@ -17,11 +17,19 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
     - node.type.event
   module:
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.event.teaser
 targetEntityType: node
 bundle: event
@@ -38,6 +46,8 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_event_end_date: true
   field_event_price: true
@@ -51,5 +61,6 @@ hidden:
   field_vih_course_subheading: true
   field_vih_event_persons_limit: true
   field_vih_event_status: true
+  field_vih_paragraphs: true
   langcode: true
   scheduled_update: true

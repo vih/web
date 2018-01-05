@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
     - node.type.event
   module:
@@ -34,7 +35,6 @@ third_party_settings:
     group_banner:
       children:
         - title
-        - field_banner
         - field_vih_banner
       parent_name: ''
       weight: 0
@@ -54,6 +54,7 @@ third_party_settings:
         - field_vih_course_subheading
         - body
         - field_paragraphs
+        - field_vih_paragraphs
       parent_name: ''
       weight: 1
       format_type: tab
@@ -228,6 +229,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_vih_paragraphs:
+    weight: 12
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: 1_column_action_centered
+    third_party_settings: {  }
+    type: paragraphs
     region: content
   langcode:
     type: language_select

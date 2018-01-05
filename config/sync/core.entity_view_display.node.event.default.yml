@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
     - image.style.banner_small
     - node.type.event
@@ -110,7 +111,7 @@ content:
       image_link: ''
     third_party_settings: {  }
   field_vih_cource_contact_person:
-    weight: 8
+    weight: 9
     label: hidden
     settings:
       view_mode: compact
@@ -119,7 +120,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_vih_course_heading:
-    weight: 9
+    weight: 10
     label: hidden
     settings:
       link_to_entity: false
@@ -127,7 +128,7 @@ content:
     type: string
     region: content
   field_vih_course_subheading:
-    weight: 10
+    weight: 11
     label: hidden
     settings:
       link_to_entity: false
@@ -144,11 +145,20 @@ content:
     type: number_integer
     region: content
   field_vih_event_status:
-    weight: 11
+    weight: 12
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
+    region: content
+  field_vih_paragraphs:
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   links:
     weight: 2
@@ -156,7 +166,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   scheduled_update:
-    weight: 12
+    weight: 13
     label: hidden
     settings:
       link: true
