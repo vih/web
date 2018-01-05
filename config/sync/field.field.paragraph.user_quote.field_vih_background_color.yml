@@ -1,14 +1,14 @@
-uuid: 58df1b1a-99f5-4b37-9501-5e3609a50249
+uuid: 757d7097-a6f3-4b86-a348-931551ae0856
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_color
+    - field.storage.paragraph.field_vih_background_color
     - paragraphs.paragraphs_type.user_quote
   module:
     - options
-id: paragraph.user_quote.field_background_color
-field_name: field_background_color
+id: paragraph.user_quote.field_vih_background_color
+field_name: field_vih_background_color
 entity_type: paragraph
 bundle: user_quote
 label: Baggrundsfarve
