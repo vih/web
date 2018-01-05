@@ -6,9 +6,9 @@ dependencies:
     - field.field.paragraph.video.field_background_color
     - field.field.paragraph.video.field_background_image
     - field.field.paragraph.video.field_description
-    - field.field.paragraph.video.field_heading
     - field.field.paragraph.video.field_highlighted
     - field.field.paragraph.video.field_video
+    - field.field.paragraph.video.field_vih_heading
     - paragraphs.paragraphs_type.video
   module:
     - text
@@ -19,29 +19,21 @@ bundle: video
 mode: default
 content:
   field_description:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_heading:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_highlighted:
     weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_video:
+  field_highlighted:
     weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_video:
+    weight: 4
     label: hidden
     settings:
       responsive: true
@@ -50,6 +42,14 @@ content:
       autoplay: false
     third_party_settings: {  }
     type: video_embed_field_video
+    region: content
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   field_background_color: true
