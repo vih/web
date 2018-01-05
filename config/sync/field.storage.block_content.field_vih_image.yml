@@ -1,4 +1,4 @@
-uuid: af0134de-d84b-4496-96b3-f45e2c625858
+uuid: cb542e00-e839-45b1-a58b-3ce4e3578e7a
 langcode: da
 status: true
 dependencies:
@@ -6,14 +6,14 @@ dependencies:
     - block_content
     - file
     - image
-id: block_content.field_image
-field_name: field_image
+id: block_content.field_vih_image
+field_name: field_vih_image
 entity_type: block_content
 type: image
 settings:
   uri_scheme: public
   default_image:
-    uuid: 64ba9f79-a2b8-4cdd-ba68-cc7b99d6a287
+    uuid: null
     alt: ''
     title: ''
     width: 1275
