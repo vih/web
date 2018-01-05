@@ -5,8 +5,8 @@ dependencies:
   config:
     - block_content.type.notify
     - field.field.block_content.notify.field_highlighted_text
-    - field.field.block_content.notify.field_link
     - field.field.block_content.notify.field_vih_heading
+    - field.field.block_content.notify.field_vih_link
   module:
     - link
 id: block_content.notify.default
@@ -22,8 +22,18 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_link:
+  field_vih_heading:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_link:
+    type: link
     weight: 3
+    region: content
     label: hidden
     settings:
       trim_length: null
@@ -31,16 +41,6 @@ content:
       url_plain: false
       rel: '0'
       target: '0'
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_vih_heading:
-    type: string
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
     third_party_settings: {  }
 hidden:
   langcode: true
