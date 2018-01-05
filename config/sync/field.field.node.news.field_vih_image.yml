@@ -1,9 +1,9 @@
-uuid: 15c0ef4c-c2a4-47cc-b196-37e74231bdaa
+uuid: e2a745a4-4c74-4bd2-bfa6-b9b58a19084e
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.field_vih_image
     - node.type.news
   module:
     - content_translation
@@ -14,8 +14,8 @@ third_party_settings:
       alt: alt
       title: title
       file: '0'
-id: node.news.field_image
-field_name: field_image
+id: node.news.field_vih_image
+field_name: field_vih_image
 entity_type: node
 bundle: news
 label: Billede
@@ -26,7 +26,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png jpg jpeg'
+  file_extensions: 'png gif jpg jpeg'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''

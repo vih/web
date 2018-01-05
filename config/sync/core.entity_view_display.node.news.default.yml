@@ -4,10 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.news.body
-    - field.field.node.news.field_image
     - field.field.node.news.field_metatag
     - field.field.node.news.field_news_tags
     - field.field.node.news.field_vih_banner
+    - field.field.node.news.field_vih_image
     - field.field.node.news.field_vih_paragraphs
     - field.field.node.news.scheduled_update
     - image.style.banner_small
@@ -37,15 +37,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_image:
-    weight: 2
-    label: hidden
-    settings:
-      image_style: banner_small
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
   field_metatag:
     weight: 7
     label: above
@@ -54,7 +45,7 @@ content:
     type: metatag_empty_formatter
     region: content
   field_news_tags:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link: true
@@ -63,6 +54,15 @@ content:
     region: content
   field_vih_banner:
     weight: 6
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_image:
+    weight: 3
     label: hidden
     settings:
       image_style: banner_small
