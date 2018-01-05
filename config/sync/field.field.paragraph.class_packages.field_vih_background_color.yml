@@ -1,14 +1,14 @@
-uuid: c68559c0-356b-4e38-bdfb-98d9c9f4a127
+uuid: ccdd285d-4728-469f-84d9-0b1e2a899b80
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_color
+    - field.storage.paragraph.field_vih_background_color
     - paragraphs.paragraphs_type.class_packages
   module:
     - options
-id: paragraph.class_packages.field_background_color
-field_name: field_background_color
+id: paragraph.class_packages.field_vih_background_color
+field_name: field_vih_background_color
 entity_type: paragraph
 bundle: class_packages
 label: Baggrundsfarve
