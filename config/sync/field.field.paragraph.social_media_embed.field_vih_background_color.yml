@@ -1,23 +1,21 @@
-uuid: f421a619-cd3e-41e7-ab85-d5dda676f019
+uuid: b2461651-3aea-4a82-9bac-62602d528189
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_color
+    - field.storage.paragraph.field_vih_background_color
     - paragraphs.paragraphs_type.social_media_embed
   module:
     - options
-id: paragraph.social_media_embed.field_background_color
-field_name: field_background_color
+id: paragraph.social_media_embed.field_vih_background_color
+field_name: field_vih_background_color
 entity_type: paragraph
 bundle: social_media_embed
 label: Baggrundsfarve
 description: ''
 required: false
 translatable: true
-default_value:
-  -
-    value: white
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string
