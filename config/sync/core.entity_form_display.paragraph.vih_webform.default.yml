@@ -6,7 +6,7 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.vih_webform.field_background_color
     - field.field.paragraph.vih_webform.field_background_image
-    - field.field.paragraph.vih_webform.field_heading
+    - field.field.paragraph.vih_webform.field_vih_heading
     - field.field.paragraph.vih_webform.field_vih_webform
     - paragraphs.paragraphs_type.vih_webform
   module:
@@ -37,8 +37,8 @@ content:
       selection_mode: selection_append
     region: content
     third_party_settings: {  }
-  field_heading:
-    weight: 0
+  field_vih_heading:
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -46,8 +46,9 @@ content:
     type: string_textfield
     region: content
   field_vih_webform:
-    weight: 1
-    settings: {  }
+    weight: 2
+    settings:
+      default_data: true
     third_party_settings: {  }
     type: webform_entity_reference_select
     region: content
