@@ -7,9 +7,9 @@ dependencies:
     - field.field.paragraph.vih_teacher_class_description.field_background_color
     - field.field.paragraph.vih_teacher_class_description.field_background_image
     - field.field.paragraph.vih_teacher_class_description.field_description
-    - field.field.paragraph.vih_teacher_class_description.field_heading
     - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
+    - field.field.paragraph.vih_teacher_class_description.field_vih_heading
     - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
@@ -27,14 +27,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_photo:
     weight: 0
     label: hidden
@@ -48,3 +40,4 @@ hidden:
   field_background_color: true
   field_background_image: true
   field_paragraph_user: true
+  field_vih_heading: true
