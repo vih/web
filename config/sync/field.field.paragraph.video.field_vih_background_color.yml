@@ -1,23 +1,21 @@
-uuid: 5a84a062-da56-4e22-9a4d-260d47c53c1f
+uuid: 310f6e50-b827-418e-af1f-b66d379cc979
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_color
+    - field.storage.paragraph.field_vih_background_color
     - paragraphs.paragraphs_type.video
   module:
     - options
-id: paragraph.video.field_background_color
-field_name: field_background_color
+id: paragraph.video.field_vih_background_color
+field_name: field_vih_background_color
 entity_type: paragraph
 bundle: video
 label: Baggrundsfarve
 description: ''
 required: false
-translatable: false
-default_value:
-  -
-    value: white
+translatable: true
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string
