@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - block_content.type.notify
-    - field.field.block_content.notify.field_highlighted_text
     - field.field.block_content.notify.field_vih_heading
+    - field.field.block_content.notify.field_vih_highlighted_text
     - field.field.block_content.notify.field_vih_link
   module:
     - link
@@ -15,17 +15,17 @@ targetEntityType: block_content
 bundle: notify
 mode: default
 content:
-  field_highlighted_text:
-    weight: 1
+  field_vih_heading:
+    type: string_textfield
+    weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_vih_highlighted_text:
     type: string_textfield
-    region: content
-  field_vih_heading:
-    type: string_textfield
-    weight: 0
+    weight: 2
     region: content
     settings:
       size: 60

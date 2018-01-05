@@ -1,11 +1,11 @@
-uuid: 9c7cbf7e-37eb-4fac-a236-4f5e1afc13cd
+uuid: 1cfa6eb0-d2e8-4887-9348-f55a74625b4d
 langcode: da
 status: true
 dependencies:
   module:
     - block_content
-id: block_content.field_highlighted_text
-field_name: field_highlighted_text
+id: block_content.field_vih_highlighted_text
+field_name: field_vih_highlighted_text
 entity_type: block_content
 type: string
 settings:
