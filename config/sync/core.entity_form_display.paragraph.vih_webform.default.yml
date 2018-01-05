@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.vih_webform.field_background_color
     - field.field.paragraph.vih_webform.field_background_image
+    - field.field.paragraph.vih_webform.field_vih_background_color
     - field.field.paragraph.vih_webform.field_vih_heading
     - field.field.paragraph.vih_webform.field_vih_webform
     - paragraphs.paragraphs_type.vih_webform
@@ -18,12 +18,6 @@ targetEntityType: paragraph
 bundle: vih_webform
 mode: default
 content:
-  field_background_color:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_background_image:
     type: entity_browser_file
     weight: 3
@@ -37,6 +31,12 @@ content:
       selection_mode: selection_append
     region: content
     third_party_settings: {  }
+  field_vih_background_color:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_vih_heading:
     weight: 1
     settings:

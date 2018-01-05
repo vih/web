@@ -1,14 +1,14 @@
-uuid: 609040cd-a3fe-4d5d-80ef-55ab3a919cc6
+uuid: 1932f62a-9f5f-476f-93dc-acf1df56d148
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_color
+    - field.storage.paragraph.field_vih_background_color
     - paragraphs.paragraphs_type.vih_webform
   module:
     - options
-id: paragraph.vih_webform.field_background_color
-field_name: field_background_color
+id: paragraph.vih_webform.field_vih_background_color
+field_name: field_vih_background_color
 entity_type: paragraph
 bundle: vih_webform
 label: Baggrundsfarve
