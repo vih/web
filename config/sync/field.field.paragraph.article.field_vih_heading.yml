@@ -1,12 +1,12 @@
-uuid: fc0657b6-4749-4421-b245-cecf1eb3f5cc
+uuid: e53246cd-2843-470e-b548-d3ac62982c85
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_vih_heading
     - paragraphs.paragraphs_type.article
-id: paragraph.article.field_heading
-field_name: field_heading
+id: paragraph.article.field_vih_heading
+field_name: field_vih_heading
 entity_type: paragraph
 bundle: article
 label: Overskrift
