@@ -7,8 +7,8 @@ dependencies:
     - field.field.paragraph.social_media_embed.field_background_color
     - field.field.paragraph.social_media_embed.field_background_image
     - field.field.paragraph.social_media_embed.field_embed
-    - field.field.paragraph.social_media_embed.field_link
     - field.field.paragraph.social_media_embed.field_vih_heading
+    - field.field.paragraph.social_media_embed.field_vih_link
     - paragraphs.paragraphs_type.social_media_embed
   module:
     - entity_browser
@@ -57,15 +57,7 @@ content:
     type: entity_browser_file
     region: content
   field_embed:
-    weight: 2
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
-  field_link:
-    weight: 3
+    weight: 1
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -73,12 +65,20 @@ content:
     type: link_default
     region: content
   field_vih_heading:
-    weight: 1
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_vih_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   created: true
