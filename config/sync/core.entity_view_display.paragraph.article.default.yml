@@ -6,8 +6,8 @@ dependencies:
     - field.field.paragraph.article.field_background_color
     - field.field.paragraph.article.field_background_image
     - field.field.paragraph.article.field_body
-    - field.field.paragraph.article.field_link
     - field.field.paragraph.article.field_vih_heading
+    - field.field.paragraph.article.field_vih_link
     - paragraphs.paragraphs_type.article
   module:
     - link
@@ -24,8 +24,16 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_link:
-    weight: 3
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
+    weight: 4
     label: hidden
     settings:
       trim_length: null
@@ -35,14 +43,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
-  field_vih_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
   field_background_color: true
