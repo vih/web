@@ -1,12 +1,12 @@
-uuid: 28beb56f-937c-41cd-8a44-7997bddf558a
+uuid: 1582d3ee-27bc-47ae-b4eb-9f39613b78fc
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_price
+    - field.storage.node.field_vih_event_price
     - node.type.event
-id: node.event.field_event_price
-field_name: field_event_price
+id: node.event.field_vih_event_price
+field_name: field_vih_event_price
 entity_type: node
 bundle: event
 label: Pris

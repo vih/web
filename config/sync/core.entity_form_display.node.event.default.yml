@@ -5,7 +5,6 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.event.body
-    - field.field.node.event.field_event_price
     - field.field.node.event.field_image
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
@@ -14,6 +13,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_price
     - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
@@ -67,10 +67,10 @@ third_party_settings:
     group_event_details:
       children:
         - field_vih_event_status
-        - field_event_start_date
         - field_vih_event_start_date
         - field_vih_event_end_date
         - field_event_price
+        - field_vih_event_price
         - field_vih_cource_contact_person
         - field_vih_event_persons_limit
       parent_name: ''
@@ -125,13 +125,6 @@ content:
     weight: 15
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_event_price:
-    weight: 7
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
   field_image:
     type: entity_browser_file
@@ -192,7 +185,7 @@ content:
     region: content
   field_vih_event_end_date:
     type: datetime_default
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -203,9 +196,16 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  field_vih_event_price:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_vih_event_start_date:
     type: datetime_default
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

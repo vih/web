@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_event_price
     - field.field.node.event.field_image
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
@@ -13,6 +12,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_price
     - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
@@ -45,17 +45,6 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_event_price:
-    weight: 7
-    label: hidden
-    settings:
-      thousand_separator: .
-      decimal_separator: ','
-      scale: 0
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
     region: content
   field_image:
     weight: 0
@@ -109,7 +98,7 @@ content:
     region: content
   field_vih_event_end_date:
     type: datetime_default
-    weight: 6
+    weight: 5
     region: content
     label: hidden
     settings:
@@ -125,9 +114,20 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_vih_event_price:
+    type: number_decimal
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
   field_vih_event_start_date:
     type: datetime_default
-    weight: 5
+    weight: 4
     region: content
     label: hidden
     settings:

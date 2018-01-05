@@ -1,11 +1,11 @@
-uuid: 369cf03d-4194-44d5-91be-3e708735bbf1
+uuid: b6394b5a-7eef-473f-8dcc-71d9f463e89f
 langcode: da
 status: true
 dependencies:
   module:
     - node
-id: node.field_event_price
-field_name: field_event_price
+id: node.field_vih_event_price
+field_name: field_vih_event_price
 entity_type: node
 type: decimal
 settings:
