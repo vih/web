@@ -6,9 +6,9 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.vih_class_groups_accordion.field_background_color
     - field.field.paragraph.vih_class_groups_accordion.field_background_image
-    - field.field.paragraph.vih_class_groups_accordion.field_link
     - field.field.paragraph.vih_class_groups_accordion.field_vih_cg_single_class_groups
     - field.field.paragraph.vih_class_groups_accordion.field_vih_heading
+    - field.field.paragraph.vih_class_groups_accordion.field_vih_link
     - paragraphs.paragraphs_type.vih_class_groups_accordion
   module:
     - entity_browser
@@ -57,17 +57,9 @@ content:
       selection_mode: selection_append
     region: content
     third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 3
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
   field_vih_cg_single_class_groups:
     type: entity_reference_paragraphs
-    weight: 2
+    weight: 1
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -78,12 +70,20 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_heading:
-    weight: 1
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_vih_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   created: true

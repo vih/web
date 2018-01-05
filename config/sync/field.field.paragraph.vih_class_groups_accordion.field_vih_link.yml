@@ -1,14 +1,14 @@
-uuid: a86f3ef0-7e2b-46a7-bbc8-4f499bb756df
+uuid: b2411c03-07a8-4e5e-9491-78113dfdf819
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_vih_link
     - paragraphs.paragraphs_type.vih_class_groups_accordion
   module:
     - link
-id: paragraph.vih_class_groups_accordion.field_link
-field_name: field_link
+id: paragraph.vih_class_groups_accordion.field_vih_link
+field_name: field_vih_link
 entity_type: paragraph
 bundle: vih_class_groups_accordion
 label: Link
