@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.article.field_background_color
     - field.field.paragraph.article.field_background_image
     - field.field.paragraph.article.field_body
+    - field.field.paragraph.article.field_vih_background_color
     - field.field.paragraph.article.field_vih_heading
     - field.field.paragraph.article.field_vih_link
     - paragraphs.paragraphs_type.article
@@ -22,6 +22,7 @@ third_party_settings:
       children:
         - field_background_image
         - field_background_color
+        - field_vih_background_color
       parent_name: ''
       weight: 4
       format_type: tab
@@ -38,12 +39,6 @@ targetEntityType: paragraph
 bundle: article
 mode: default
 content:
-  field_background_color:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_background_image:
     type: entity_browser_file
     weight: 4
@@ -64,6 +59,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_vih_background_color:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_vih_heading:
     weight: 0

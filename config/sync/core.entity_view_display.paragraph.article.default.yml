@@ -3,14 +3,15 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.article.field_background_color
     - field.field.paragraph.article.field_background_image
     - field.field.paragraph.article.field_body
+    - field.field.paragraph.article.field_vih_background_color
     - field.field.paragraph.article.field_vih_heading
     - field.field.paragraph.article.field_vih_link
     - paragraphs.paragraphs_type.article
   module:
     - link
+    - options
     - text
 id: paragraph.article.default
 targetEntityType: paragraph
@@ -18,14 +19,21 @@ bundle: article
 mode: default
 content:
   field_body:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_vih_background_color:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_vih_heading:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
@@ -33,7 +41,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 4
+    weight: 2
     label: hidden
     settings:
       trim_length: null
@@ -45,5 +53,4 @@ content:
     type: link
     region: content
 hidden:
-  field_background_color: true
   field_background_image: true
