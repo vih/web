@@ -1,12 +1,12 @@
-uuid: d84d2e42-6e92-4f84-bd04-2998f33ac02c
+uuid: d7b6957f-630f-4c89-a3e2-1e7276b5b79c
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_vih_heading
     - paragraphs.paragraphs_type.social_media_embed
-id: paragraph.social_media_embed.field_heading
-field_name: field_heading
+id: paragraph.social_media_embed.field_vih_heading
+field_name: field_vih_heading
 entity_type: paragraph
 bundle: social_media_embed
 label: Overskrift
