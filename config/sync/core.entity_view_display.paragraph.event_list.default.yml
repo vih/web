@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.event_list.field_event_id
     - field.field.paragraph.event_list.field_heading
     - field.field.paragraph.event_list.field_link
+    - field.field.paragraph.event_list.field_vih_heading
     - paragraphs.paragraphs_type.event_list
   module:
     - link
@@ -25,7 +26,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_link:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       trim_length: null
@@ -35,6 +36,14 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
+    region: content
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   field_background_color: true

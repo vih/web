@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.event_list.field_event_id
     - field.field.paragraph.event_list.field_heading
     - field.field.paragraph.event_list.field_link
+    - field.field.paragraph.event_list.field_vih_heading
     - paragraphs.paragraphs_type.event_list
   module:
     - entity_browser
@@ -22,7 +23,7 @@ third_party_settings:
         - field_background_image
         - field_background_color
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -57,7 +58,7 @@ content:
     region: content
     third_party_settings: {  }
   field_event_id:
-    weight: 1
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -74,12 +75,20 @@ content:
     type: string_textfield
     region: content
   field_link:
-    weight: 2
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_vih_heading:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true
