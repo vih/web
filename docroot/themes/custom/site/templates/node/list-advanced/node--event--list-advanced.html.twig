@@ -16,9 +16,9 @@ set classes = [
         <div class="entity-list-advanced__image" style="background-image: url({{ node.field_vih_image.entity.fileuri | image_style(content.field_vih_image[0]['#image_style']) }});">
 
             {# Begin - period #}
-            {% if content.field_event_start_date and content.field_event_end_date %}
+            {% if content.field_event_start_date and content.field_vih_event_end_date %}
                 <div class="entity-list-advanced__image__overlay">
-                    {{ content.field_event_start_date }} - {{ content.field_event_end_date }}
+                    {{ content.field_event_start_date }} - {{ content.field_vih_event_end_date }}
                 </div>
             {% endif %}
             {# End - period #}
