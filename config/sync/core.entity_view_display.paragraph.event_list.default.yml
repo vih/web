@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.event_list.field_background_color
     - field.field.paragraph.event_list.field_background_image
     - field.field.paragraph.event_list.field_event_id
-    - field.field.paragraph.event_list.field_heading
     - field.field.paragraph.event_list.field_link
     - field.field.paragraph.event_list.field_vih_heading
     - paragraphs.paragraphs_type.event_list
@@ -17,14 +16,6 @@ targetEntityType: paragraph
 bundle: event_list
 mode: default
 content:
-  field_heading:
-    type: string
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_link:
     weight: 2
     label: hidden
