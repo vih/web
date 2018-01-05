@@ -1,9 +1,9 @@
-uuid: e513b619-53c8-490b-b8f9-26ed0456df2c
+uuid: 155a13b1-1961-4e33-ae5f-2588e6451fd9
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
+    - field.storage.node.field_vih_paragraphs
     - node.type.vih_long_cource
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
@@ -24,8 +24,8 @@ dependencies:
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
-id: node.vih_long_cource.field_paragraphs
-field_name: field_paragraphs
+id: node.vih_long_cource.field_vih_paragraphs
+field_name: field_vih_paragraphs
 entity_type: node
 bundle: vih_long_cource
 label: Sektioner
