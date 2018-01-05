@@ -1,14 +1,14 @@
-uuid: 3ddabd77-67eb-47fe-85ea-d1b019cd0b8c
+uuid: 44fd3a88-15a2-4142-b239-fe247e369695
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_vih_link
     - paragraphs.paragraphs_type.employee
   module:
     - link
-id: paragraph.employee.field_link
-field_name: field_link
+id: paragraph.employee.field_vih_link
+field_name: field_vih_link
 entity_type: paragraph
 bundle: employee
 label: Link
@@ -19,5 +19,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   link_type: 17
-  title: 2
+  title: 1
 field_type: link

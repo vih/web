@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.field.paragraph.employee.field_background_color
     - field.field.paragraph.employee.field_background_image
-    - field.field.paragraph.employee.field_link
     - field.field.paragraph.employee.field_user_type_id
     - field.field.paragraph.employee.field_vih_heading
+    - field.field.paragraph.employee.field_vih_link
     - paragraphs.paragraphs_type.employee
   module:
     - link
@@ -16,8 +16,16 @@ targetEntityType: paragraph
 bundle: employee
 mode: default
 content:
-  field_link:
-    weight: 2
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
+    weight: 3
     label: hidden
     settings:
       trim_length: null
@@ -27,14 +35,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
-  field_vih_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
   field_background_color: true

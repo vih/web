@@ -6,9 +6,9 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.paragraph.employee.field_background_color
     - field.field.paragraph.employee.field_background_image
-    - field.field.paragraph.employee.field_link
     - field.field.paragraph.employee.field_user_type_id
     - field.field.paragraph.employee.field_vih_heading
+    - field.field.paragraph.employee.field_vih_link
     - paragraphs.paragraphs_type.employee
   module:
     - entity_browser
@@ -56,16 +56,8 @@ content:
     third_party_settings: {  }
     type: entity_browser_file
     region: content
-  field_link:
-    weight: 3
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   field_user_type_id:
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -74,12 +66,20 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_heading:
-    weight: 1
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_vih_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   created: true
