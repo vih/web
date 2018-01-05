@@ -1,11 +1,11 @@
-uuid: 1d3ed8d8-d210-42bc-82ae-195d2ae1355f
+uuid: d3a32fca-b1fc-4738-8183-4be2ad798d99
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_author
-field_name: field_author
+id: paragraph.field_vih_author
+field_name: field_vih_author
 entity_type: paragraph
 type: string
 settings:

@@ -3,11 +3,11 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.user_quote.field_author
     - field.field.paragraph.user_quote.field_background_color
     - field.field.paragraph.user_quote.field_background_image
     - field.field.paragraph.user_quote.field_paragraph_person_photo
     - field.field.paragraph.user_quote.field_paragraph_text
+    - field.field.paragraph.user_quote.field_vih_author
     - field.field.paragraph.user_quote.field_vih_heading
     - field.field.paragraph.user_quote.field_vih_link
     - image.style.vih_person_teaser
@@ -21,14 +21,6 @@ targetEntityType: paragraph
 bundle: user_quote
 mode: default
 content:
-  field_author:
-    weight: 5
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_paragraph_person_photo:
     type: image
     weight: 1
@@ -45,6 +37,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_vih_author:
+    type: string
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_vih_heading:
     weight: 0
     label: hidden
@@ -54,7 +54,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       trim_length: null
