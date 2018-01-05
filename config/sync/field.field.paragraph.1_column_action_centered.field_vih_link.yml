@@ -1,14 +1,14 @@
-uuid: 27c31d4d-0a69-4913-a3ce-1a73437c0782
+uuid: ce843411-b4f6-4850-8d8c-2745ce37417a
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_vih_link
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
     - link
-id: paragraph.1_column_action_centered.field_link
-field_name: field_link
+id: paragraph.1_column_action_centered.field_vih_link
+field_name: field_vih_link
 entity_type: paragraph
 bundle: 1_column_action_centered
 label: Link
@@ -19,5 +19,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   link_type: 17
-  title: 2
+  title: 1
 field_type: link

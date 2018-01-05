@@ -6,8 +6,8 @@ dependencies:
     - field.field.paragraph.1_column_action_centered.field_background_color
     - field.field.paragraph.1_column_action_centered.field_background_image
     - field.field.paragraph.1_column_action_centered.field_description
-    - field.field.paragraph.1_column_action_centered.field_link
     - field.field.paragraph.1_column_action_centered.field_vih_heading
+    - field.field.paragraph.1_column_action_centered.field_vih_link
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
     - link
@@ -24,8 +24,16 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_link:
-    weight: 3
+  field_vih_heading:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_link:
+    weight: 4
     label: hidden
     settings:
       trim_length: null
@@ -36,14 +44,6 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_vih_heading:
-    type: string
-    weight: 1
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
   created: true
   field_background_color: true

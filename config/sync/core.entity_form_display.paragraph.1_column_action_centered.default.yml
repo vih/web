@@ -7,8 +7,8 @@ dependencies:
     - field.field.paragraph.1_column_action_centered.field_background_color
     - field.field.paragraph.1_column_action_centered.field_background_image
     - field.field.paragraph.1_column_action_centered.field_description
-    - field.field.paragraph.1_column_action_centered.field_link
     - field.field.paragraph.1_column_action_centered.field_vih_heading
+    - field.field.paragraph.1_column_action_centered.field_vih_link
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
     - entity_browser
@@ -65,7 +65,15 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_link:
+  field_vih_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_link:
     weight: 2
     settings:
       placeholder_url: ''
@@ -73,14 +81,6 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_vih_heading:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 4
