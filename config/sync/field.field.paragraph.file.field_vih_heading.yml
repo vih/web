@@ -1,18 +1,18 @@
-uuid: b7f855be-64a4-4e34-a949-5f726a8b5a57
+uuid: f9fdb606-beec-44e7-8cfe-97453ac73dd9
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_vih_heading
     - paragraphs.paragraphs_type.file
-id: paragraph.file.field_heading
-field_name: field_heading
+id: paragraph.file.field_vih_heading
+field_name: field_vih_heading
 entity_type: paragraph
 bundle: file
 label: Overskrift
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
