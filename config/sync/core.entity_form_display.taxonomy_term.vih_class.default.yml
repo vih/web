@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.taxonomy_term.vih_class.field_heading
     - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_paragraphs
     - field.field.taxonomy_term.vih_class.field_subheading
@@ -14,6 +13,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_heading
     - taxonomy.vocabulary.vih_class
   module:
     - entity_browser
@@ -27,6 +27,7 @@ third_party_settings:
     group_content:
       children:
         - field_heading
+        - field_vih_heading
         - field_subheading
         - field_paragraphs
       parent_name: ''
@@ -42,7 +43,6 @@ third_party_settings:
       region: content
     group_banner:
       children:
-        - field_banner
         - field_vih_banner
       parent_name: ''
       weight: 2
@@ -106,14 +106,6 @@ content:
       rows: 5
     third_party_settings: {  }
     region: content
-  field_heading:
-    weight: 15
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_metatag:
     weight: 18
     settings: {  }
@@ -122,7 +114,7 @@ content:
     region: content
   field_paragraphs:
     type: paragraphs
-    weight: 17
+    weight: 18
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -135,7 +127,7 @@ content:
     third_party_settings: {  }
     region: content
   field_subheading:
-    weight: 16
+    weight: 17
     settings:
       size: 60
       placeholder: ''
@@ -196,6 +188,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_vih_heading:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select

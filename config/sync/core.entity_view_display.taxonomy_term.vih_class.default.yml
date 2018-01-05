@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.vih_class.field_heading
     - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_paragraphs
     - field.field.taxonomy_term.vih_class.field_subheading
@@ -13,6 +12,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_heading
     - image.style.banner_small
     - taxonomy.vocabulary.vih_class
   module:
@@ -39,14 +39,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_heading:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_metatag:
     weight: 9
     label: above
@@ -72,7 +64,7 @@ content:
     type: string
     region: content
   field_vih_banner:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       image_style: banner_small
@@ -110,6 +102,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
+  field_vih_heading:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   field_vih_class_color: true

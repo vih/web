@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.radio_selection
-    - field.field.taxonomy_term.vih_class.field_heading
     - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_paragraphs
     - field.field.taxonomy_term.vih_class.field_subheading
@@ -14,6 +13,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
+    - field.field.taxonomy_term.vih_class.field_vih_heading
     - image.style.vih_class_teaser
     - taxonomy.vocabulary.vih_class
   module:
@@ -49,7 +49,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_heading: true
   field_metatag: true
   field_paragraphs: true
   field_subheading: true
@@ -58,4 +57,5 @@ hidden:
   field_vih_class_color: true
   field_vih_class_material_price: true
   field_vih_class_price_addition: true
+  field_vih_heading: true
   langcode: true
