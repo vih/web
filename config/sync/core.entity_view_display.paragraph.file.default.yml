@@ -6,8 +6,8 @@ dependencies:
     - field.field.paragraph.file.field_background_color
     - field.field.paragraph.file.field_background_image
     - field.field.paragraph.file.field_description
-    - field.field.paragraph.file.field_link
     - field.field.paragraph.file.field_vih_heading
+    - field.field.paragraph.file.field_vih_link
     - field.field.paragraph.file.file
     - paragraphs.paragraphs_type.file
   module:
@@ -26,8 +26,16 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_link:
-    weight: 4
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
+    weight: 5
     label: hidden
     settings:
       trim_length: null
@@ -37,14 +45,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
-  field_vih_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   file:
     type: file_default

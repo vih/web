@@ -7,8 +7,8 @@ dependencies:
     - field.field.paragraph.file.field_background_color
     - field.field.paragraph.file.field_background_image
     - field.field.paragraph.file.field_description
-    - field.field.paragraph.file.field_link
     - field.field.paragraph.file.field_vih_heading
+    - field.field.paragraph.file.field_vih_link
     - field.field.paragraph.file.file
     - paragraphs.paragraphs_type.file
   module:
@@ -60,14 +60,22 @@ content:
     third_party_settings: {  }
     region: content
   field_description:
-    weight: 2
+    weight: 1
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_link:
+  field_vih_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_link:
     weight: 4
     settings:
       placeholder_url: ''
@@ -75,17 +83,9 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  field_vih_heading:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   file:
     type: file_generic
-    weight: 3
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber

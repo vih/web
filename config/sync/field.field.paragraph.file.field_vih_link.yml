@@ -1,14 +1,14 @@
-uuid: bec35f53-8582-4008-91c7-15d2b8924735
+uuid: 24b6ff15-c94b-4652-96a8-d8f27db32a8b
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_vih_link
     - paragraphs.paragraphs_type.file
   module:
     - link
-id: paragraph.file.field_link
-field_name: field_link
+id: paragraph.file.field_vih_link
+field_name: field_vih_link
 entity_type: paragraph
 bundle: file
 label: Link
