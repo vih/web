@@ -1,18 +1,18 @@
-uuid: b3a0cbeb-ac30-4d63-91e1-c5878c884583
+uuid: 834825f9-50d1-4eef-9e28-22ab9d746d0f
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_vih_heading
     - paragraphs.paragraphs_type.list_of_news_teasers
-id: paragraph.list_of_news_teasers.field_heading
-field_name: field_heading
+id: paragraph.list_of_news_teasers.field_vih_heading
+field_name: field_vih_heading
 entity_type: paragraph
 bundle: list_of_news_teasers
 label: Overskrift
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

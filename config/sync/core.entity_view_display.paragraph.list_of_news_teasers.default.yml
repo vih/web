@@ -5,16 +5,16 @@ dependencies:
   config:
     - field.field.paragraph.list_of_news_teasers.field_background_color
     - field.field.paragraph.list_of_news_teasers.field_background_image
-    - field.field.paragraph.list_of_news_teasers.field_heading
     - field.field.paragraph.list_of_news_teasers.field_tags
+    - field.field.paragraph.list_of_news_teasers.field_vih_heading
     - paragraphs.paragraphs_type.list_of_news_teasers
 id: paragraph.list_of_news_teasers.default
 targetEntityType: paragraph
 bundle: list_of_news_teasers
 mode: default
 content:
-  field_heading:
-    weight: 0
+  field_vih_heading:
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
