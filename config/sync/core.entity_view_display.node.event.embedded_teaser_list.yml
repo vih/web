@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.embedded_teaser_list
     - field.field.node.event.body
     - field.field.node.event.field_event_price
-    - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
@@ -15,6 +14,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
@@ -44,15 +44,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_event_start_date:
-    weight: 2
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_image:
     weight: 0
     label: hidden
@@ -65,6 +56,15 @@ content:
   field_vih_event_end_date:
     type: datetime_default
     weight: 4
+    region: content
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_vih_event_start_date:
+    type: datetime_default
+    weight: 3
     region: content
     label: hidden
     settings:

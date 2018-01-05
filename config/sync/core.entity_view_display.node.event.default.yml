@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_event_price
-    - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
@@ -14,6 +13,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
@@ -47,7 +47,7 @@ content:
     third_party_settings: {  }
     region: content
   field_event_price:
-    weight: 6
+    weight: 7
     label: hidden
     settings:
       thousand_separator: .
@@ -56,15 +56,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-    region: content
-  field_event_start_date:
-    weight: 4
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium_datetime
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_image:
     weight: 0
@@ -116,6 +107,15 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_event_end_date:
+    type: datetime_default
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium_datetime
+    third_party_settings: {  }
   field_vih_event_persons_limit:
     weight: 3
     label: hidden
@@ -125,6 +125,15 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_vih_event_start_date:
+    type: datetime_default
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium_datetime
+    third_party_settings: {  }
   field_vih_event_status:
     weight: 12
     label: hidden
@@ -155,5 +164,4 @@ content:
     type: entity_reference_label
     region: content
 hidden:
-  field_vih_event_end_date: true
   langcode: true

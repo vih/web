@@ -6,7 +6,6 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.event.body
     - field.field.node.event.field_event_price
-    - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
@@ -15,6 +14,7 @@ dependencies:
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
@@ -68,7 +68,7 @@ third_party_settings:
       children:
         - field_vih_event_status
         - field_event_start_date
-        - field_event_end_date
+        - field_vih_event_start_date
         - field_vih_event_end_date
         - field_event_price
         - field_vih_cource_contact_person
@@ -132,12 +132,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
-    region: content
-  field_event_start_date:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_image:
     type: entity_browser_file
@@ -209,6 +203,12 @@ content:
     third_party_settings: {  }
     type: number
     region: content
+  field_vih_event_start_date:
+    type: datetime_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_vih_event_status:
     weight: 3
     settings: {  }
