@@ -7,8 +7,8 @@ dependencies:
     - field.field.paragraph.class_packages.field_background_color
     - field.field.paragraph.class_packages.field_background_image
     - field.field.paragraph.class_packages.field_class_id
-    - field.field.paragraph.class_packages.field_link
     - field.field.paragraph.class_packages.field_vih_heading
+    - field.field.paragraph.class_packages.field_vih_link
     - paragraphs.paragraphs_type.class_packages
   module:
     - entity_browser
@@ -57,7 +57,7 @@ content:
     type: entity_browser_file
     region: content
   field_class_id:
-    weight: 2
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -65,21 +65,21 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_link:
+  field_vih_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_link:
     weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_vih_heading:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
 hidden:
   created: true
