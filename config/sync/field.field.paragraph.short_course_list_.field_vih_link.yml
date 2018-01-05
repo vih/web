@@ -1,14 +1,14 @@
-uuid: 53ede2cd-996b-4fc7-8ca0-44f609ec434c
+uuid: dc26f03f-3086-471e-9e99-d4ab013fc47b
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_vih_link
     - paragraphs.paragraphs_type.short_course_list_
   module:
     - link
-id: paragraph.short_course_list_.field_link
-field_name: field_link
+id: paragraph.short_course_list_.field_vih_link
+field_name: field_vih_link
 entity_type: paragraph
 bundle: short_course_list_
 label: Link
