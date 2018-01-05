@@ -3,8 +3,8 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.vih_class_groups_accordion.field_background_color
     - field.field.paragraph.vih_class_groups_accordion.field_background_image
+    - field.field.paragraph.vih_class_groups_accordion.field_vih_background_color
     - field.field.paragraph.vih_class_groups_accordion.field_vih_cg_single_class_groups
     - field.field.paragraph.vih_class_groups_accordion.field_vih_heading
     - field.field.paragraph.vih_class_groups_accordion.field_vih_link
@@ -12,14 +12,22 @@ dependencies:
   module:
     - entity_reference_revisions
     - link
+    - options
 id: paragraph.vih_class_groups_accordion.default
 targetEntityType: paragraph
 bundle: vih_class_groups_accordion
 mode: default
 content:
+  field_vih_background_color:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_vih_cg_single_class_groups:
     type: entity_reference_revisions_entity_view
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -27,7 +35,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_heading:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
@@ -35,7 +43,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 4
+    weight: 2
     label: hidden
     settings:
       trim_length: null
@@ -47,5 +55,4 @@ content:
     type: link
     region: content
 hidden:
-  field_background_color: true
   field_background_image: true
