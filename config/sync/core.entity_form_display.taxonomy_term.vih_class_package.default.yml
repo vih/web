@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.taxonomy_term.vih_class_package.field_heading
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_metatag
     - field.field.taxonomy_term.vih_class_package.field_paragraphs
@@ -12,6 +11,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
+    - field.field.taxonomy_term.vih_class_package.field_vih_heading
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
@@ -60,7 +60,6 @@ third_party_settings:
       region: content
     group_banner:
       children:
-        - field_banner
         - field_vih_banner
       parent_name: ''
       weight: 0
@@ -76,6 +75,7 @@ third_party_settings:
     group_content:
       children:
         - field_heading
+        - field_vih_heading
         - field_subheading
         - field_paragraphs
       parent_name: ''
@@ -101,14 +101,6 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
-    region: content
-  field_heading:
-    weight: 10
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   field_link_taxo:
     weight: 15
@@ -139,7 +131,7 @@ content:
     type: paragraphs
     region: content
   field_subheading:
-    weight: 11
+    weight: 12
     settings:
       size: 60
       placeholder: ''
@@ -177,6 +169,14 @@ content:
       field_widget_edit: true
       view_mode: default
     third_party_settings: {  }
+    region: content
+  field_vih_heading:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
