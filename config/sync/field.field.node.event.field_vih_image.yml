@@ -1,14 +1,14 @@
-uuid: 924dde96-d8dd-4662-b369-429e83ed8897
+uuid: d0f0063a-cec8-4866-8d3e-3a86688488fd
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.field_vih_image
     - node.type.event
   module:
     - image
-id: node.event.field_image
-field_name: field_image
+id: node.event.field_vih_image
+field_name: field_vih_image
 entity_type: node
 bundle: event
 label: Billede

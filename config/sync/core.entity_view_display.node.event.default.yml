@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_image
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
     - field.field.node.event.field_vih_cource_contact_person
@@ -15,6 +14,7 @@ dependencies:
     - field.field.node.event.field_vih_event_price
     - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.field_vih_image
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
     - image.style.banner_small
@@ -42,18 +42,9 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_image:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: banner_small
-      image_link: ''
-    third_party_settings: {  }
-    type: image
     region: content
   field_metatag:
     weight: 15
@@ -98,7 +89,7 @@ content:
     region: content
   field_vih_event_end_date:
     type: datetime_default
-    weight: 5
+    weight: 6
     region: content
     label: hidden
     settings:
@@ -106,7 +97,7 @@ content:
       format_type: medium_datetime
     third_party_settings: {  }
   field_vih_event_persons_limit:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       thousand_separator: ''
@@ -127,7 +118,7 @@ content:
     third_party_settings: {  }
   field_vih_event_start_date:
     type: datetime_default
-    weight: 4
+    weight: 5
     region: content
     label: hidden
     settings:
@@ -141,6 +132,15 @@ content:
     third_party_settings: {  }
     type: list_key
     region: content
+  field_vih_image:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
   field_vih_paragraphs:
     weight: 8
     label: hidden
@@ -151,7 +151,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   links:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
