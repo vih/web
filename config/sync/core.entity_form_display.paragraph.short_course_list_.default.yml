@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.short_course_list_.field_background_color
     - field.field.paragraph.short_course_list_.field_background_image
     - field.field.paragraph.short_course_list_.field_course_id
+    - field.field.paragraph.short_course_list_.field_vih_background_color
     - field.field.paragraph.short_course_list_.field_vih_heading
     - field.field.paragraph.short_course_list_.field_vih_link
     - paragraphs.paragraphs_type.short_course_list_
@@ -21,6 +21,7 @@ third_party_settings:
       children:
         - field_background_image
         - field_background_color
+        - field_vih_background_color
       parent_name: ''
       weight: 4
       format_type: tab
@@ -37,12 +38,6 @@ targetEntityType: paragraph
 bundle: short_course_list_
 mode: default
 content:
-  field_background_color:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_background_image:
     type: entity_browser_file
     weight: 4
@@ -64,6 +59,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_vih_background_color:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_vih_heading:
     weight: 0
