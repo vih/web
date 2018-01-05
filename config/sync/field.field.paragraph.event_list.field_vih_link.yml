@@ -1,14 +1,14 @@
-uuid: 95ac3b44-fe86-4442-82b6-1202aba4ee7d
+uuid: 2716d833-09b3-4ae1-aeae-bd7dda2fe6e7
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_vih_link
     - paragraphs.paragraphs_type.event_list
   module:
     - link
-id: paragraph.event_list.field_link
-field_name: field_link
+id: paragraph.event_list.field_vih_link
+field_name: field_vih_link
 entity_type: paragraph
 bundle: event_list
 label: Link
