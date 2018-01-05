@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
     - field.field.node.event.field_metatag
-    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_vih_banner
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
@@ -164,20 +163,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
-    region: content
-  field_paragraphs:
-    weight: 11
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: 1_column_action_centered
-    third_party_settings: {  }
-    type: paragraphs
     region: content
   field_vih_banner:
     type: entity_browser_file
