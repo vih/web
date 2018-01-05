@@ -1,12 +1,12 @@
-uuid: 093f1f21-350d-44bc-b816-ef618143e6ba
+uuid: 17fa0cd3-3493-4a5f-9503-e9762f4838dc
 langcode: da
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-id: node.field_news_tags
-field_name: field_news_tags
+id: node.field_vih_news_tags
+field_name: field_vih_news_tags
 entity_type: node
 type: entity_reference
 settings:

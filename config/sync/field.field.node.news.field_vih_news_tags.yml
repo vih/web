@@ -1,13 +1,13 @@
-uuid: 5ebc5f0a-b901-44ef-87fc-22eec5547d22
+uuid: d455f7e8-369b-4d5f-b1a5-de45822b0e13
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_news_tags
+    - field.storage.node.field_vih_news_tags
     - node.type.news
     - taxonomy.vocabulary.news_tags
-id: node.news.field_news_tags
-field_name: field_news_tags
+id: node.news.field_vih_news_tags
+field_name: field_vih_news_tags
 entity_type: node
 bundle: news
 label: 'Nyheds tags'
