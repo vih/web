@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_metatag
-    - field.field.taxonomy_term.vih_class_package.field_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
+    - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - image.style.banner_small
     - taxonomy.vocabulary.vih_class_package
   module:
@@ -33,13 +33,13 @@ mode: default
 content:
   description:
     type: text_default
-    weight: 4
+    weight: 3
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_link_taxo:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -57,17 +57,8 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_paragraphs:
-    weight: 6
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_subheading:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
@@ -84,12 +75,21 @@ content:
     type: image
     region: content
   field_vih_heading:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_vih_paragraphs:
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
 hidden:
   field_vih_class_package_color: true

@@ -6,12 +6,12 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_metatag
-    - field.field.taxonomy_term.vih_class_package.field_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
+    - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
@@ -74,10 +74,10 @@ third_party_settings:
       region: content
     group_content:
       children:
-        - field_heading
         - field_vih_heading
         - field_subheading
         - field_paragraphs
+        - field_vih_paragraphs
       parent_name: ''
       weight: 2
       format_type: tab
@@ -115,20 +115,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
-    region: content
-  field_paragraphs:
-    weight: 13
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: 1_column_action_centered
-    third_party_settings: {  }
-    type: paragraphs
     region: content
   field_subheading:
     weight: 12
@@ -177,6 +163,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_vih_paragraphs:
+    weight: 14
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
+      form_display_mode: default
+      default_paragraph_type: 1_column_action_centered
+    third_party_settings: {  }
+    type: paragraphs
     region: content
   langcode:
     type: language_select
