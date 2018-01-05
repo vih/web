@@ -3,9 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.1_column_action_centered.field_background_color
     - field.field.paragraph.1_column_action_centered.field_background_image
     - field.field.paragraph.1_column_action_centered.field_description
+    - field.field.paragraph.1_column_action_centered.field_vih_background_color
     - field.field.paragraph.1_column_action_centered.field_vih_heading
     - field.field.paragraph.1_column_action_centered.field_vih_link
     - paragraphs.paragraphs_type.1_column_action_centered
@@ -46,6 +46,6 @@ content:
     region: content
 hidden:
   created: true
-  field_background_color: true
   field_background_image: true
+  field_vih_background_color: true
   uid: true

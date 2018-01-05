@@ -1,0 +1,36 @@
+uuid: bf133f28-2f2e-4ae9-b9a2-11cebcc032b4
+langcode: da
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: white
+      label: Hvid
+    -
+      value: light-gray
+      label: 'Lys grå'
+    -
+      value: gray
+      label: Grå
+    -
+      value: primary
+      label: Blå
+    -
+      value: secondary
+      label: Rød
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
