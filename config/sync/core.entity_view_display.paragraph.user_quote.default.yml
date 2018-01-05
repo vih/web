@@ -6,10 +6,10 @@ dependencies:
     - field.field.paragraph.user_quote.field_author
     - field.field.paragraph.user_quote.field_background_color
     - field.field.paragraph.user_quote.field_background_image
-    - field.field.paragraph.user_quote.field_link
     - field.field.paragraph.user_quote.field_paragraph_person_photo
     - field.field.paragraph.user_quote.field_paragraph_text
     - field.field.paragraph.user_quote.field_vih_heading
+    - field.field.paragraph.user_quote.field_vih_link
     - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.user_quote
   module:
@@ -29,7 +29,31 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_link:
+  field_paragraph_person_photo:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: vih_person_teaser
+      image_link: ''
+    third_party_settings: {  }
+  field_paragraph_text:
+    type: text_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_vih_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
     weight: 4
     label: hidden
     settings:
@@ -40,30 +64,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
-  field_paragraph_person_photo:
-    type: image
-    weight: 2
-    region: content
-    label: hidden
-    settings:
-      image_style: vih_person_teaser
-      image_link: ''
-    third_party_settings: {  }
-  field_paragraph_text:
-    type: text_default
-    weight: 3
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_vih_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
   field_background_color: true
