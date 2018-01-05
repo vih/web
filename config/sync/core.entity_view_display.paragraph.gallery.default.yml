@@ -6,8 +6,8 @@ dependencies:
     - field.field.paragraph.gallery.field_background_color
     - field.field.paragraph.gallery.field_background_image
     - field.field.paragraph.gallery.field_images
-    - field.field.paragraph.gallery.field_link
     - field.field.paragraph.gallery.field_vih_heading
+    - field.field.paragraph.gallery.field_vih_link
     - paragraphs.paragraphs_type.gallery
   module:
     - link
@@ -28,8 +28,16 @@ content:
     third_party_settings: {  }
     type: photoswipe_field_formatter
     region: content
-  field_link:
-    weight: 3
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
+    weight: 4
     label: hidden
     settings:
       trim_length: null
@@ -39,14 +47,6 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
-    region: content
-  field_vih_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
   field_background_color: true
