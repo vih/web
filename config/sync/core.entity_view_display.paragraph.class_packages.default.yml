@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.class_packages.field_class_id
     - field.field.paragraph.class_packages.field_heading
     - field.field.paragraph.class_packages.field_link
+    - field.field.paragraph.class_packages.field_vih_heading
     - image.style.paragraph_background_image
     - paragraphs.paragraphs_type.class_packages
   module:
@@ -19,7 +20,7 @@ bundle: class_packages
 mode: default
 content:
   field_background_image:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       image_style: paragraph_background_image
@@ -36,7 +37,7 @@ content:
     type: string
     region: content
   field_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: 80
@@ -46,6 +47,14 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
+  field_vih_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   field_background_color: true
