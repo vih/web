@@ -5,7 +5,6 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.event.body
-    - field.field.node.event.field_event_end_date
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
@@ -14,6 +13,7 @@ dependencies:
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
+    - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
@@ -52,7 +52,6 @@ third_party_settings:
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
-        - field_paragraphs
         - field_vih_paragraphs
       parent_name: ''
       weight: 1
@@ -70,6 +69,7 @@ third_party_settings:
         - field_vih_event_status
         - field_event_start_date
         - field_event_end_date
+        - field_vih_event_end_date
         - field_event_price
         - field_vih_cource_contact_person
         - field_vih_event_persons_limit
@@ -126,14 +126,8 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_event_end_date:
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_event_price:
-    weight: 6
+    weight: 7
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -202,6 +196,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_vih_event_end_date:
+    type: datetime_default
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_vih_event_persons_limit:
     weight: 9
     settings:

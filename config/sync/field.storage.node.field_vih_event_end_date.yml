@@ -1,12 +1,12 @@
-uuid: 7b213ec8-1881-4b23-bcd6-adfe3e302a6d
+uuid: cc9262b2-de34-443a-a291-816d5c2bd38e
 langcode: da
 status: true
 dependencies:
   module:
     - datetime
     - node
-id: node.field_event_end_date
-field_name: field_event_end_date
+id: node.field_vih_event_end_date
+field_name: field_vih_event_end_date
 entity_type: node
 type: datetime
 settings:

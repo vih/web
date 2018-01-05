@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_event_end_date
     - field.field.node.event.field_event_price
     - field.field.node.event.field_event_start_date
     - field.field.node.event.field_image
@@ -13,6 +12,7 @@ dependencies:
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
+    - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_paragraphs
@@ -45,15 +45,6 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_event_end_date:
-    weight: 5
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium_datetime
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_event_price:
     weight: 6
@@ -164,4 +155,5 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_vih_event_end_date: true
   langcode: true
