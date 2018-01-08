@@ -3,11 +3,11 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.employee.field_user_type_id
     - field.field.paragraph.employee.field_vih_background_color
     - field.field.paragraph.employee.field_vih_background_image
     - field.field.paragraph.employee.field_vih_heading
     - field.field.paragraph.employee.field_vih_link
+    - field.field.paragraph.employee.field_vih_user_type_id
     - paragraphs.paragraphs_type.employee
   module:
     - image
@@ -55,4 +55,4 @@ content:
     type: link
     region: content
 hidden:
-  field_user_type_id: true
+  field_vih_user_type_id: true

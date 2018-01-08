@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.employee.field_user_type_id
     - field.field.paragraph.employee.field_vih_background_color
     - field.field.paragraph.employee.field_vih_background_image
     - field.field.paragraph.employee.field_vih_heading
     - field.field.paragraph.employee.field_vih_link
+    - field.field.paragraph.employee.field_vih_user_type_id
     - paragraphs.paragraphs_type.employee
   module:
     - entity_browser
@@ -20,7 +20,6 @@ third_party_settings:
     group_appearance:
       children:
         - field_vih_background_color
-        - field_background_image
         - field_vih_background_image
       parent_name: ''
       weight: 4
@@ -38,15 +37,6 @@ targetEntityType: paragraph
 bundle: employee
 mode: default
 content:
-  field_user_type_id:
-    weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_vih_background_color:
     weight: 3
     settings: {  }
@@ -82,6 +72,15 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  field_vih_user_type_id:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

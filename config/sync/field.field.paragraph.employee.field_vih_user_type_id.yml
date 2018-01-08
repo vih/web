@@ -1,13 +1,13 @@
-uuid: eca15db2-9bc8-4fa2-b9a5-13ea1a0286ec
+uuid: 56a654a1-fd3d-462e-8cff-e9d37eb7a464
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_user_type_id
+    - field.storage.paragraph.field_vih_user_type_id
     - paragraphs.paragraphs_type.employee
     - taxonomy.vocabulary.user_types
-id: paragraph.employee.field_user_type_id
-field_name: field_user_type_id
+id: paragraph.employee.field_vih_user_type_id
+field_name: field_vih_user_type_id
 entity_type: paragraph
 bundle: employee
 label: 'Bruger type'
