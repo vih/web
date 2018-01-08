@@ -9920,7 +9920,7 @@ flex-direction: column;
   padding-top: 20px;
   padding-bottom: 20px; }
 
-.layout__news .views-field-body {
+.layout__news .views-field-vih-paragraphs-body {
   height: 150px; }
 
 .field-content span.fpnews-content p {
@@ -11499,7 +11499,7 @@ ul.layout-navigation .layout-navigation__dropdown-menu {
         -ms-flex-direction: column;
             flex-direction: column;
     height: auto; }
-  .news-panel .views-field-body {
+  .news-panel .views-field-vih-paragraphs-body {
     width: 100%; }
   .news-panel .views-field-field-vih-image {
     width: 100%; }
@@ -12544,22 +12544,22 @@ legend {
 .paragraph.sectioned--skewed--background-color-secondary .field--name-field-description p {
   color: #fff; }
 
-.paragraph.sectioned--skewed--background-image .field--name-field-body {
+.paragraph.sectioned--skewed--background-image .field--name-field-vih-paragraphs-body {
   color: #fff; }
 
-.paragraph.sectioned--skewed--background-color-white .field--name-field-body {
+.paragraph.sectioned--skewed--background-color-white .field--name-field-vih-paragraphs-body {
   color: #888; }
 
-.paragraph.sectioned--skewed--background-color-light-gray .field--name-field-body {
+.paragraph.sectioned--skewed--background-color-light-gray .field--name-field-vih-paragraphs-body {
   color: #888; }
 
-.paragraph.sectioned--skewed--background-color-gray .field--name-field-body {
+.paragraph.sectioned--skewed--background-color-gray .field--name-field-vih-paragraphs-body {
   color: #212121; }
 
-.paragraph.sectioned--skewed--background-color-primary .field--name-field-body {
+.paragraph.sectioned--skewed--background-color-primary .field--name-field-vih-paragraphs-body {
   color: #fff; }
 
-.paragraph.sectioned--skewed--background-color-secondary .field--name-field-body {
+.paragraph.sectioned--skewed--background-color-secondary .field--name-field-vih-paragraphs-body {
   color: #fff; }
 
 .paragraph .field--name-field-highlighted {
@@ -12716,7 +12716,7 @@ legend {
 .paragraph.sectioned--skewed--background-color-secondary .field--name-field-paragraph-text {
   color: #fff; }
 
-.paragraph--type--article .field--name-field-body + .field--name-field-vih-link {
+.paragraph--type--article .field--name-field-vih-paragraphs-body + .field--name-field-vih-link {
   margin-top: 50px; }
 
 .paragraph--type--article .field--name-field-vih-link {
