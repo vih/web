@@ -336,7 +336,7 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
 
-  if ($fields = $paragraph->get('field_tags')->getValue()) {
+  if ($fields = $paragraph->get('field_vih_tags')->getValue()) {
 
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
