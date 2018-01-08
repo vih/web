@@ -1,13 +1,13 @@
-uuid: cd34bd3a-4c66-4dd1-aeb3-34b9d6033051
+uuid: 6e82a858-7803-4e6b-a503-423b417d4951
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_tags
+    - field.storage.paragraph.field_vih_tags
     - paragraphs.paragraphs_type.list_of_news_teasers
     - taxonomy.vocabulary.news_tags
-id: paragraph.list_of_news_teasers.field_tags
-field_name: field_tags
+id: paragraph.list_of_news_teasers.field_vih_tags
+field_name: field_vih_tags
 entity_type: paragraph
 bundle: list_of_news_teasers
 label: Tags

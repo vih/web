@@ -1,12 +1,12 @@
-uuid: 1700eb20-59a9-4c7a-86c5-95a86551f0f0
+uuid: 31f78643-0796-4b06-a873-31caa67a8d56
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-id: paragraph.field_tags
-field_name: field_tags
+id: paragraph.field_vih_tags
+field_name: field_vih_tags
 entity_type: paragraph
 type: entity_reference
 settings:

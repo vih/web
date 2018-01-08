@@ -3,10 +3,10 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.list_of_news_teasers.field_tags
     - field.field.paragraph.list_of_news_teasers.field_vih_background_color
     - field.field.paragraph.list_of_news_teasers.field_vih_background_image
     - field.field.paragraph.list_of_news_teasers.field_vih_heading
+    - field.field.paragraph.list_of_news_teasers.field_vih_tags
     - paragraphs.paragraphs_type.list_of_news_teasers
   module:
     - image
@@ -41,4 +41,4 @@ content:
     type: string
     region: content
 hidden:
-  field_tags: true
+  field_vih_tags: true
