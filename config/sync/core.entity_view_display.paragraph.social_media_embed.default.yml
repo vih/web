@@ -3,9 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_media_embed.field_embed
     - field.field.paragraph.social_media_embed.field_vih_background_color
     - field.field.paragraph.social_media_embed.field_vih_background_image
+    - field.field.paragraph.social_media_embed.field_vih_embed
     - field.field.paragraph.social_media_embed.field_vih_heading
     - field.field.paragraph.social_media_embed.field_vih_link
     - paragraphs.paragraphs_type.social_media_embed
@@ -19,22 +19,15 @@ targetEntityType: paragraph
 bundle: social_media_embed
 mode: default
 content:
-  field_embed:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: url_embed
-    region: content
   field_vih_background_color:
-    weight: 3
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_vih_background_image:
-    weight: 4
+    weight: 5
     label: above
     settings:
       image_style: ''
@@ -42,6 +35,13 @@ content:
     third_party_settings: {  }
     type: image
     region: content
+  field_vih_embed:
+    type: url_embed
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_vih_heading:
     weight: 0
     label: hidden
@@ -51,7 +51,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: null

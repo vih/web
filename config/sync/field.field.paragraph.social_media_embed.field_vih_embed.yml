@@ -1,14 +1,14 @@
-uuid: 0aa018c3-1edb-4f6f-88ae-7356b56dbe22
+uuid: 9a044b33-9f39-4a88-b0e5-3358cdd2ba96
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_embed
+    - field.storage.paragraph.field_vih_embed
     - paragraphs.paragraphs_type.social_media_embed
   module:
     - link
-id: paragraph.social_media_embed.field_embed
-field_name: field_embed
+id: paragraph.social_media_embed.field_vih_embed
+field_name: field_vih_embed
 entity_type: paragraph
 bundle: social_media_embed
 label: 'oEmbed URL'
