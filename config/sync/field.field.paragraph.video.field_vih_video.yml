@@ -1,14 +1,14 @@
-uuid: f51c34cc-aa65-40be-a1e7-f8876e029048
+uuid: 568b723b-77b3-4f62-9e18-55f5e159298f
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_video
+    - field.storage.paragraph.field_vih_video
     - paragraphs.paragraphs_type.video
   module:
     - video_embed_field
-id: paragraph.video.field_video
-field_name: field_video
+id: paragraph.video.field_vih_video
+field_name: field_vih_video
 entity_type: paragraph
 bundle: video
 label: 'URL til video'

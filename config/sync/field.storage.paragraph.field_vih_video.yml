@@ -1,12 +1,12 @@
-uuid: a6a41bac-ffaa-4f64-93a6-dd20b8efcd4d
+uuid: 3e2827ae-3568-4d8d-a40f-d01961a01477
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
     - video_embed_field
-id: paragraph.field_video
-field_name: field_video
+id: paragraph.field_vih_video
+field_name: field_vih_video
 entity_type: paragraph
 type: video_embed_field
 settings: {  }
