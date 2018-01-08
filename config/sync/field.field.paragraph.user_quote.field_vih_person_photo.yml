@@ -1,14 +1,14 @@
-uuid: 4af2baea-7d0f-4455-9cde-b94654882007
+uuid: 6b68dfa2-9a69-41c1-90be-dc85443abf21
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraph_person_photo
+    - field.storage.paragraph.field_vih_person_photo
     - paragraphs.paragraphs_type.user_quote
   module:
     - image
-id: paragraph.user_quote.field_paragraph_person_photo
-field_name: field_paragraph_person_photo
+id: paragraph.user_quote.field_vih_person_photo
+field_name: field_vih_person_photo
 entity_type: paragraph
 bundle: user_quote
 label: Billede

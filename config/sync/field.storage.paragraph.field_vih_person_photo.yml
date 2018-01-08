@@ -1,4 +1,4 @@
-uuid: 6c81e128-75bc-43d7-a267-394ce5908b97
+uuid: a8b3f2ff-dff2-499b-8f7b-1ae98e48269a
 langcode: da
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - paragraphs
-id: paragraph.field_paragraph_person_photo
-field_name: field_paragraph_person_photo
+id: paragraph.field_vih_person_photo
+field_name: field_vih_person_photo
 entity_type: paragraph
 type: image
 settings:
