@@ -3,11 +3,11 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.article.field_body
     - field.field.paragraph.article.field_vih_background_color
     - field.field.paragraph.article.field_vih_background_image
     - field.field.paragraph.article.field_vih_heading
     - field.field.paragraph.article.field_vih_link
+    - field.field.paragraph.article.field_vih_paragraphs_body
     - paragraphs.paragraphs_type.article
   module:
     - image
@@ -19,22 +19,15 @@ targetEntityType: paragraph
 bundle: article
 mode: default
 content:
-  field_body:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_vih_background_color:
-    weight: 3
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_vih_background_image:
-    weight: 4
+    weight: 5
     label: above
     settings:
       image_style: ''
@@ -51,7 +44,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: null
@@ -62,4 +55,11 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_vih_paragraphs_body:
+    type: text_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

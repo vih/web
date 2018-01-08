@@ -1,14 +1,14 @@
-uuid: 3bd012b6-33c9-44c7-874d-99006a77dd0c
+uuid: cd6266f5-3c58-4afe-9559-f8a98c54577f
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_body
+    - field.storage.paragraph.field_vih_paragraphs_body
     - paragraphs.paragraphs_type.article
   module:
     - text
-id: paragraph.article.field_body
-field_name: field_body
+id: paragraph.article.field_vih_paragraphs_body
+field_name: field_vih_paragraphs_body
 entity_type: paragraph
 bundle: article
 label: Brødtekst
