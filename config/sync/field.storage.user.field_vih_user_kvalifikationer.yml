@@ -1,11 +1,11 @@
-uuid: 630f965a-2faf-48d2-89c3-4341156181d2
+uuid: 3563d28d-3839-4ecd-b9e1-423bd3859939
 langcode: da
 status: true
 dependencies:
   module:
     - user
-id: user.field_user_kvalifikationer
-field_name: field_user_kvalifikationer
+id: user.field_vih_user_kvalifikationer
+field_name: field_vih_user_kvalifikationer
 entity_type: user
 type: string
 settings:

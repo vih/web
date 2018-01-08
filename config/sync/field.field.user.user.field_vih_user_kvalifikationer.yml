@@ -1,13 +1,13 @@
-uuid: 7cae4d68-e44b-41c2-9985-355685e70f11
+uuid: 798b9403-599e-4856-9813-c579b544c379
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_user_kvalifikationer
+    - field.storage.user.field_vih_user_kvalifikationer
   module:
     - user
-id: user.user.field_user_kvalifikationer
-field_name: field_user_kvalifikationer
+id: user.user.field_vih_user_kvalifikationer
+field_name: field_vih_user_kvalifikationer
 entity_type: user
 bundle: user
 label: Kvalifikationer

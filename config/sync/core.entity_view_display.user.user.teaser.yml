@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.teaser
-    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
@@ -13,6 +12,7 @@ dependencies:
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
+    - field.field.user.user.field_vih_user_kvalifikationer
     - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -82,11 +82,11 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
-  field_user_kvalifikationer: true
   field_user_type_id: true
   field_vih_banner: true
   field_vih_user_birthday: true
   field_vih_user_descr: true
+  field_vih_user_kvalifikationer: true
   field_vih_user_paragraphs: true
   field_vih_user_title: true
   langcode: true

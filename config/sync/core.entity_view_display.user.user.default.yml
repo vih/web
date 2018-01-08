@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
@@ -12,6 +11,7 @@ dependencies:
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
+    - field.field.user.user.field_vih_user_kvalifikationer
     - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -134,6 +134,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-  field_user_kvalifikationer: true
+  field_vih_user_kvalifikationer: true
   langcode: true
   member_for: true
