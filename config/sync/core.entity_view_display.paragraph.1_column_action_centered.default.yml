@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.1_column_action_centered.field_description
     - field.field.paragraph.1_column_action_centered.field_vih_background_color
     - field.field.paragraph.1_column_action_centered.field_vih_background_image
+    - field.field.paragraph.1_column_action_centered.field_vih_description
     - field.field.paragraph.1_column_action_centered.field_vih_heading
     - field.field.paragraph.1_column_action_centered.field_vih_link
     - paragraphs.paragraphs_type.1_column_action_centered
@@ -34,6 +35,13 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+  field_vih_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_vih_heading:
     type: string
     weight: 0
@@ -43,7 +51,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_vih_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: null
