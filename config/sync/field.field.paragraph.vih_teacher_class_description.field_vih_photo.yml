@@ -1,14 +1,14 @@
-uuid: 258a1192-640b-4936-b8da-047a197bef30
+uuid: ed6db2b3-1412-4d5f-af4d-a25229576699
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_photo
+    - field.storage.paragraph.field_vih_photo
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
-id: paragraph.vih_teacher_class_description.field_photo
-field_name: field_photo
+id: paragraph.vih_teacher_class_description.field_vih_photo
+field_name: field_vih_photo
 entity_type: paragraph
 bundle: vih_teacher_class_description
 label: Billede
