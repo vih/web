@@ -1,9 +1,9 @@
-uuid: bef3add2-898c-458e-83ed-cbcb7b85185c
+uuid: fca21271-8269-4bd5-94ed-bf634c0bcb20
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_image
+    - field.storage.paragraph.field_vih_background_image
     - paragraphs.paragraphs_type.article
   module:
     - content_translation
@@ -14,8 +14,8 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: paragraph.article.field_background_image
-field_name: field_background_image
+id: paragraph.article.field_vih_background_image
+field_name: field_vih_background_image
 entity_type: paragraph
 bundle: article
 label: Baggrundsbillede
