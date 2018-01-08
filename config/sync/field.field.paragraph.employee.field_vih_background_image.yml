@@ -1,9 +1,9 @@
-uuid: 7de4400c-7e58-4841-8010-83ccef61e79c
+uuid: 400c4bfd-beca-4302-8b58-a49b8e9c3861
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_image
+    - field.storage.paragraph.field_vih_background_image
     - paragraphs.paragraphs_type.employee
   module:
     - content_translation
@@ -14,8 +14,8 @@ third_party_settings:
       file: '0'
       alt: '0'
       title: '0'
-id: paragraph.employee.field_background_image
-field_name: field_background_image
+id: paragraph.employee.field_vih_background_image
+field_name: field_vih_background_image
 entity_type: paragraph
 bundle: employee
 label: Baggrundsbillede
