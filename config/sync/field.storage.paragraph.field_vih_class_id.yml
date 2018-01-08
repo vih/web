@@ -1,12 +1,12 @@
-uuid: 4c5c7375-ab4e-4dec-9209-65f27ee83ccf
+uuid: e7b98715-f322-4c4b-86e9-8a77868cc73f
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-id: paragraph.field_class_id
-field_name: field_class_id
+id: paragraph.field_vih_class_id
+field_name: field_vih_class_id
 entity_type: paragraph
 type: entity_reference
 settings:

@@ -3,9 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.class_packages.field_class_id
     - field.field.paragraph.class_packages.field_vih_background_color
     - field.field.paragraph.class_packages.field_vih_background_image
+    - field.field.paragraph.class_packages.field_vih_class_id
     - field.field.paragraph.class_packages.field_vih_heading
     - field.field.paragraph.class_packages.field_vih_link
     - image.style.paragraph_background_image
@@ -56,4 +56,4 @@ content:
     type: link
     region: content
 hidden:
-  field_class_id: true
+  field_vih_class_id: true
