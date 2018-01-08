@@ -1,12 +1,12 @@
-uuid: 95f45c3b-f882-4773-8f5e-f0e45c613cb3
+uuid: ecd3a0f8-46e2-4882-9ea6-721b5b925839
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_subheading
+    - field.storage.taxonomy_term.field_vih_subheading
     - taxonomy.vocabulary.vih_class_package
-id: taxonomy_term.vih_class_package.field_subheading
-field_name: field_subheading
+id: taxonomy_term.vih_class_package.field_vih_subheading
+field_name: field_vih_subheading
 entity_type: taxonomy_term
 bundle: vih_class_package
 label: Underoverskrift

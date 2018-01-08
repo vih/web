@@ -6,12 +6,12 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.vih_class_package_accordion
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_metatag
-    - field.field.taxonomy_term.vih_class_package.field_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
+    - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - image.style.vih_class_package_accordion
     - taxonomy.vocabulary.vih_class_package
   module:
@@ -42,9 +42,9 @@ content:
 hidden:
   field_link_taxo: true
   field_metatag: true
-  field_subheading: true
   field_vih_banner: true
   field_vih_class_package_color: true
   field_vih_heading: true
   field_vih_paragraphs: true
+  field_vih_subheading: true
   langcode: true

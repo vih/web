@@ -6,12 +6,12 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_metatag
-    - field.field.taxonomy_term.vih_class_package.field_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
+    - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
@@ -76,7 +76,7 @@ third_party_settings:
       children:
         - field_vih_heading
         - field_subheading
-        - field_paragraphs
+        - field_vih_subheading
         - field_vih_paragraphs
       parent_name: ''
       weight: 2
@@ -115,14 +115,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
-    region: content
-  field_subheading:
-    weight: 12
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   field_vih_banner:
     type: entity_browser_file
@@ -177,6 +169,14 @@ content:
       default_paragraph_type: 1_column_action_centered
     third_party_settings: {  }
     type: paragraphs
+    region: content
+  field_vih_subheading:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
