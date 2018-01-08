@@ -3,14 +3,15 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.video.field_background_image
     - field.field.paragraph.video.field_description
     - field.field.paragraph.video.field_highlighted
     - field.field.paragraph.video.field_video
     - field.field.paragraph.video.field_vih_background_color
+    - field.field.paragraph.video.field_vih_background_image
     - field.field.paragraph.video.field_vih_heading
     - paragraphs.paragraphs_type.video
   module:
+    - image
     - options
     - text
     - video_embed_field
@@ -51,6 +52,15 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
+  field_vih_background_image:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   field_vih_heading:
     weight: 0
     label: hidden
@@ -59,5 +69,4 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden:
-  field_background_image: true
+hidden: {  }
