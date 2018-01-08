@@ -12964,7 +12964,7 @@ legend {
 .paragraph--type--vih-ordered-course-period.paragraph--view-mode--embedded .field .field--item:last-child .partial {
   margin-bottom: 0; }
 
-.paragraph--type--vih-teacher-class-description .field--name-field-photo img {
+.paragraph--type--vih-teacher-class-description .field--name-field-vih-photo img {
   width: 100%; }
 
 .paragraph--type--vih-teacher-class-description .field--name-field-vih-description,
@@ -13088,7 +13088,7 @@ legend {
 @media screen and (min-width: 768px) {
   .paragraph--type--vih-teacher-class-description .field--name-field-heading {
     margin-bottom: 20px; }
-  .paragraph--type--vih-teacher-class-description .field--name-field-photo {
+  .paragraph--type--vih-teacher-class-description .field--name-field-vih-photo {
     margin-right: -15px; } }
 
 @media screen and (min-width: 992px) {
