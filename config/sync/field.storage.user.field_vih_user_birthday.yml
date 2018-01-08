@@ -1,12 +1,12 @@
-uuid: d7a60313-bef8-4d6f-962b-fb5ad1bc7503
+uuid: 8d234174-2a9e-4a94-9dc0-86e4b42254fc
 langcode: da
 status: true
 dependencies:
   module:
     - datetime
     - user
-id: user.field_user_birthday
-field_name: field_user_birthday
+id: user.field_vih_user_birthday
+field_name: field_vih_user_birthday
 entity_type: user
 type: datetime
 settings:

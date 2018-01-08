@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_banner
+    - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
@@ -36,6 +36,7 @@ third_party_settings:
         - field_user_name_first
         - field_user_name_last
         - field_user_birthday
+        - field_vih_user_birthday
         - field_vih_user_descr
         - field_vih_user_phone
         - field_vih_user_email
@@ -52,8 +53,7 @@ third_party_settings:
       label: Bruger
       region: content
     group_content:
-      children:
-        - field_paragraphs
+      children: {  }
       parent_name: ''
       weight: 2
       format_type: tab
@@ -113,15 +113,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_user_birthday:
-    type: datetime_default
-    weight: 17
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_user_name_first:
     type: string_textfield
-    weight: 15
+    weight: 14
     region: content
     settings:
       size: 60
@@ -129,7 +123,7 @@ content:
     third_party_settings: {  }
   field_user_name_last:
     type: string_textfield
-    weight: 16
+    weight: 15
     region: content
     settings:
       size: 60
@@ -157,6 +151,12 @@ content:
       selection_mode: selection_append
     region: content
     third_party_settings: {  }
+  field_vih_user_birthday:
+    type: datetime_default
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_vih_user_descr:
     type: text_textarea
     weight: 18
@@ -175,7 +175,7 @@ content:
     third_party_settings: {  }
   field_vih_user_job_title:
     type: string_textfield
-    weight: 14
+    weight: 13
     region: content
     settings:
       size: 60
