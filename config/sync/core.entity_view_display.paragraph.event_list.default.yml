@@ -3,9 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.event_list.field_event_id
     - field.field.paragraph.event_list.field_vih_background_color
     - field.field.paragraph.event_list.field_vih_background_image
+    - field.field.paragraph.event_list.field_vih_event_id
     - field.field.paragraph.event_list.field_vih_heading
     - field.field.paragraph.event_list.field_vih_link
     - paragraphs.paragraphs_type.event_list
@@ -55,4 +55,4 @@ content:
     type: link
     region: content
 hidden:
-  field_event_id: true
+  field_vih_event_id: true

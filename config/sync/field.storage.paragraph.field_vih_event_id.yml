@@ -1,12 +1,12 @@
-uuid: a5786656-547b-40da-b11e-21f8f94666d7
+uuid: acc81195-4f2f-47b1-86a2-013406a53544
 langcode: da
 status: true
 dependencies:
   module:
     - node
     - paragraphs
-id: paragraph.field_event_id
-field_name: field_event_id
+id: paragraph.field_vih_event_id
+field_name: field_vih_event_id
 entity_type: paragraph
 type: entity_reference
 settings:

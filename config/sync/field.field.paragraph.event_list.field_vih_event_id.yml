@@ -1,13 +1,13 @@
-uuid: d9264516-a6bf-4897-affa-20d5e018431b
+uuid: 7de15d6a-2ce0-4776-bc09-2e1282df723c
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_event_id
+    - field.storage.paragraph.field_vih_event_id
     - node.type.event
     - paragraphs.paragraphs_type.event_list
-id: paragraph.event_list.field_event_id
-field_name: field_event_id
+id: paragraph.event_list.field_vih_event_id
+field_name: field_vih_event_id
 entity_type: paragraph
 bundle: event_list
 label: Events
