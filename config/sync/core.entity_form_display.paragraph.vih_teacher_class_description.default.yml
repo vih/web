@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.vih_teacher_class_description.field_background_image
     - field.field.paragraph.vih_teacher_class_description.field_description
     - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
     - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_image
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
@@ -20,9 +20,9 @@ third_party_settings:
   field_group:
     group_appearance:
       children:
-        - field_background_color
         - field_vih_background_color
         - field_background_image
+        - field_vih_background_image
       parent_name: ''
       weight: 5
       format_type: tab
@@ -39,19 +39,6 @@ targetEntityType: paragraph
 bundle: vih_teacher_class_description
 mode: default
 content:
-  field_background_image:
-    type: entity_browser_file
-    weight: 3
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    third_party_settings: {  }
-    region: content
   field_description:
     weight: 4
     settings:
@@ -88,6 +75,19 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_vih_background_image:
+    type: entity_browser_file
+    weight: 4
+    settings:
+      entity_browser: image_browser
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
+    region: content
+    third_party_settings: {  }
   field_vih_heading:
     weight: 2
     settings:

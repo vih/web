@@ -3,13 +3,12 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.vih_teacher_class_description.field_background_image
     - field.field.paragraph.vih_teacher_class_description.field_description
     - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
     - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_image
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
-    - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
@@ -43,6 +42,15 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
+  field_vih_background_image:
+    weight: 4
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   field_vih_heading:
     weight: 1
     label: hidden
@@ -52,5 +60,4 @@ content:
     type: string
     region: content
 hidden:
-  field_background_image: true
   field_paragraph_user: true

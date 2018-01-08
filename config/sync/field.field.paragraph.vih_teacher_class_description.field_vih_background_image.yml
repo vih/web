@@ -1,20 +1,27 @@
-uuid: 6d5fa314-c19b-44a5-a0e8-1b9a0669b847
+uuid: e3e8a5d9-1afa-42e8-9207-592394356813
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_image
+    - field.storage.paragraph.field_vih_background_image
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
+    - content_translation
     - image
-id: paragraph.vih_teacher_class_description.field_background_image
-field_name: field_background_image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: paragraph.vih_teacher_class_description.field_vih_background_image
+field_name: field_vih_background_image
 entity_type: paragraph
 bundle: vih_teacher_class_description
 label: Baggrundsbillede
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,7 +31,7 @@ settings:
   max_resolution: ''
   min_resolution: ''
   alt_field: false
-  alt_field_required: true
+  alt_field_required: false
   title_field: false
   title_field_required: false
   default_image:
