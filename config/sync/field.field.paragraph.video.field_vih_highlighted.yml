@@ -1,14 +1,14 @@
-uuid: 25ba1872-f90a-43b6-b33a-b16c698fbbde
+uuid: e98bff55-591e-40e4-a8ab-7455d50006de
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_highlighted
+    - field.storage.paragraph.field_vih_highlighted
     - paragraphs.paragraphs_type.video
   module:
     - text
-id: paragraph.video.field_highlighted
-field_name: field_highlighted
+id: paragraph.video.field_vih_highlighted
+field_name: field_vih_highlighted
 entity_type: paragraph
 bundle: video
 label: 'Fremhævet tekst'

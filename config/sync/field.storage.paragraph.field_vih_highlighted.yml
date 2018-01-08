@@ -1,12 +1,12 @@
-uuid: 5f95f45c-83ab-4955-8ed0-c0fb63e98775
+uuid: 29ad8502-5ef8-4b0a-95e6-0da43ad74c19
 langcode: da
 status: true
 dependencies:
   module:
     - paragraphs
     - text
-id: paragraph.field_highlighted
-field_name: field_highlighted
+id: paragraph.field_vih_highlighted
+field_name: field_vih_highlighted
 entity_type: paragraph
 type: text
 settings:

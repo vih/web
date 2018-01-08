@@ -3,12 +3,12 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.video.field_highlighted
     - field.field.paragraph.video.field_video
     - field.field.paragraph.video.field_vih_background_color
     - field.field.paragraph.video.field_vih_background_image
     - field.field.paragraph.video.field_vih_description
     - field.field.paragraph.video.field_vih_heading
+    - field.field.paragraph.video.field_vih_highlighted
     - paragraphs.paragraphs_type.video
   module:
     - image
@@ -20,13 +20,6 @@ targetEntityType: paragraph
 bundle: video
 mode: default
 content:
-  field_highlighted:
-    weight: 3
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_video:
     weight: 4
     label: hidden
@@ -55,7 +48,7 @@ content:
     type: image
     region: content
   field_vih_description:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -69,4 +62,11 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_highlighted:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
