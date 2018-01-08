@@ -1,20 +1,27 @@
-uuid: daeb1daa-8c96-4b0a-bf0a-65574a21c576
+uuid: 41b7e5df-a0bd-449c-bceb-f0f2b2d2804c
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_image
+    - field.storage.paragraph.field_vih_background_image
     - paragraphs.paragraphs_type.list_of_news_teasers
   module:
+    - content_translation
     - image
-id: paragraph.list_of_news_teasers.field_background_image
-field_name: field_background_image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      file: '0'
+      alt: '0'
+      title: '0'
+id: paragraph.list_of_news_teasers.field_vih_background_image
+field_name: field_vih_background_image
 entity_type: paragraph
 bundle: list_of_news_teasers
 label: Baggrundsbillede
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -23,7 +30,7 @@ settings:
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: true
   title_field: false
   title_field_required: false
