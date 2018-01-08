@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_e_mail
     - field.field.user.user.field_job_title
     - field.field.user.user.field_paragraphs
     - field.field.user.user.field_user_birthday
@@ -13,6 +12,7 @@ dependencies:
     - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_banner
     - field.field.user.user.field_vih_user_descr
+    - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
@@ -35,13 +35,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_e_mail:
-    type: email_mailto
-    weight: 5
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_job_title:
     weight: 11
     label: above
@@ -52,7 +45,7 @@ content:
     region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 8
+    weight: 9
     label: hidden
     settings:
       view_mode: default
@@ -61,7 +54,7 @@ content:
     region: content
   field_user_birthday:
     type: datetime_default
-    weight: 6
+    weight: 7
     region: content
     label: above
     settings:
@@ -108,9 +101,16 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_vih_user_email:
+    type: email_mailto
+    weight: 6
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_vih_user_phone:
     type: string
-    weight: 7
+    weight: 8
     region: content
     label: above
     settings:

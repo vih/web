@@ -1,11 +1,11 @@
-uuid: 90c6b832-d166-4fbd-8117-e141ee87b4b1
+uuid: cd310072-c373-4a93-9228-6ada8fdc81fa
 langcode: da
 status: true
 dependencies:
   module:
     - user
-id: user.field_e_mail
-field_name: field_e_mail
+id: user.field_vih_user_email
+field_name: field_vih_user_email
 entity_type: user
 type: email
 settings: {  }

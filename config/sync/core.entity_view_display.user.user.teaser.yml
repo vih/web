@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.teaser
-    - field.field.user.user.field_e_mail
     - field.field.user.user.field_job_title
     - field.field.user.user.field_paragraphs
     - field.field.user.user.field_user_birthday
@@ -14,6 +13,7 @@ dependencies:
     - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_banner
     - field.field.user.user.field_vih_user_descr
+    - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
@@ -33,13 +33,6 @@ targetEntityType: user
 bundle: user
 mode: teaser
 content:
-  field_e_mail:
-    type: basic_string
-    weight: 4
-    region: content
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
   field_job_title:
     weight: 1
     label: hidden
@@ -64,9 +57,16 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_user_email:
+    type: basic_string
+    weight: 5
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
   field_vih_user_phone:
     type: string
-    weight: 5
+    weight: 6
     region: content
     label: inline
     settings:

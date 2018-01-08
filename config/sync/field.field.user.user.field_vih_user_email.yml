@@ -1,13 +1,13 @@
-uuid: dedf507c-7c89-45da-b63f-a0abcca9de17
+uuid: 8a872ec6-bbd3-4c55-8921-57166b47c453
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_e_mail
+    - field.storage.user.field_vih_user_email
   module:
     - user
-id: user.user.field_e_mail
-field_name: field_e_mail
+id: user.user.field_vih_user_email
+field_name: field_vih_user_email
 entity_type: user
 bundle: user
 label: E-mail
