@@ -1,13 +1,13 @@
-uuid: 58ac847e-926d-4399-ae55-1e9dba5d4a1e
+uuid: ddb6b3d2-dd6b-403b-8fee-eee9c377eb05
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_course_id
+    - field.storage.paragraph.field_vih_course_id
     - node.type.vih_short_course
     - paragraphs.paragraphs_type.short_course_list_
-id: paragraph.short_course_list_.field_course_id
-field_name: field_course_id
+id: paragraph.short_course_list_.field_vih_course_id
+field_name: field_vih_course_id
 entity_type: paragraph
 bundle: short_course_list_
 label: Kurser
