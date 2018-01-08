@@ -1,12 +1,12 @@
-uuid: 6fe7baf6-0e0a-41d4-ab8f-0f7d31e728e3
+uuid: 8c980d18-79ab-4e3b-8e2e-88aaec59d938
 langcode: da
 status: true
 dependencies:
   module:
     - link
     - taxonomy
-id: taxonomy_term.field_link_taxo
-field_name: field_link_taxo
+id: taxonomy_term.field_vih_link_taxo
+field_name: field_vih_link_taxo
 entity_type: taxonomy_term
 type: link
 settings: {  }

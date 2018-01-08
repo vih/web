@@ -3,12 +3,12 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.vih_class_package.field_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_metatag
     - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
+    - field.field.taxonomy_term.vih_class_package.field_vih_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - image.style.banner_small
@@ -33,23 +33,11 @@ mode: default
 content:
   description:
     type: text_default
-    weight: 4
+    weight: 3
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_link_taxo:
-    weight: 5
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    type: link
-    region: content
   field_metatag:
     weight: 7
     label: above
@@ -74,6 +62,18 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_link_taxo:
+    type: link
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
   field_vih_paragraphs:
     weight: 6
     label: hidden
@@ -84,7 +84,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_subheading:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
