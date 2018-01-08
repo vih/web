@@ -1,13 +1,13 @@
-uuid: 3f6a1200-bdfd-40bc-9c8c-29b02aea6dbf
+uuid: 664922b6-652f-4d52-b0fc-2a4b043507e4
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_user_name_first
+    - field.storage.user.field_vih_user_name_first
   module:
     - user
-id: user.user.field_user_name_first
-field_name: field_user_name_first
+id: user.user.field_vih_user_name_first
+field_name: field_vih_user_name_first
 entity_type: user
 bundle: user
 label: Fornavn

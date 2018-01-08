@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_banner
@@ -13,6 +12,7 @@ dependencies:
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
     - field.field.user.user.field_vih_user_kvalifikationer
+    - field.field.user.user.field_vih_user_name_first
     - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -34,8 +34,8 @@ third_party_settings:
         - field_vih_user_photo
         - field_vih_user_job_title
         - field_user_name_first
+        - field_vih_user_name_first
         - field_user_name_last
-        - field_user_birthday
         - field_vih_user_birthday
         - field_vih_user_descr
         - field_vih_user_phone
@@ -113,17 +113,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_user_name_first:
-    type: string_textfield
-    weight: 14
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_user_name_last:
     type: string_textfield
-    weight: 15
+    weight: 16
     region: content
     settings:
       size: 60
@@ -176,6 +168,14 @@ content:
   field_vih_user_job_title:
     type: string_textfield
     weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_name_first:
+    type: string_textfield
+    weight: 15
     region: content
     settings:
       size: 60

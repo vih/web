@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_user_name_first
     - field.field.user.user.field_user_name_last
     - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_banner
@@ -13,6 +12,7 @@ dependencies:
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
     - field.field.user.user.field_vih_user_kvalifikationer
+    - field.field.user.user.field_vih_user_name_first
     - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
@@ -34,16 +34,8 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
-  field_user_name_first:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_user_name_last:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -52,7 +44,7 @@ content:
     region: content
   field_vih_user_descr:
     type: text_trimmed
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       trim_length: 150
@@ -60,22 +52,30 @@ content:
     region: content
   field_vih_user_email:
     type: basic_string
-    weight: 6
+    weight: 7
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
   field_vih_user_kvalifikationer:
     type: string
-    weight: 9
+    weight: 8
     region: content
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_vih_user_name_first:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_vih_user_phone:
     type: string
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       link_to_entity: false
