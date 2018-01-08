@@ -1,12 +1,12 @@
-uuid: b1b4d8af-cc08-428d-b5a4-a469540d5ae9
+uuid: 4cc9516f-67d1-40c2-b620-6256625f5d17
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraph_user
+    - field.storage.paragraph.field_vih_user
     - paragraphs.paragraphs_type.vih_teacher_class_description
-id: paragraph.vih_teacher_class_description.field_paragraph_user
-field_name: field_paragraph_user
+id: paragraph.vih_teacher_class_description.field_vih_user
+field_name: field_vih_user
 entity_type: paragraph
 bundle: vih_teacher_class_description
 label: Undervisere

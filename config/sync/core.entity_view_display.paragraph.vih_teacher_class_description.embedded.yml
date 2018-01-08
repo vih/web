@@ -4,17 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.embedded
-    - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
     - field.field.paragraph.vih_teacher_class_description.field_photo
     - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
     - field.field.paragraph.vih_teacher_class_description.field_vih_background_image
     - field.field.paragraph.vih_teacher_class_description.field_vih_description
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
+    - field.field.paragraph.vih_teacher_class_description.field_vih_user
     - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
     - text
+    - user
 id: paragraph.vih_teacher_class_description.embedded
 targetEntityType: paragraph
 bundle: vih_teacher_class_description
@@ -31,13 +32,19 @@ content:
     region: content
   field_vih_description:
     type: text_default
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_vih_user:
+    type: author
+    weight: 2
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_paragraph_user: true
   field_vih_background_color: true
   field_vih_background_image: true
   field_vih_heading: true
