@@ -1,11 +1,11 @@
-uuid: 2303ac24-1aa4-40ea-98d4-25b1a3d76d37
+uuid: f4fd9d98-297e-49bc-97bd-5950e9694e34
 langcode: da
 status: true
 dependencies:
   module:
     - user
-id: user.field_user_name_last
-field_name: field_user_name_last
+id: user.field_vih_user_name_last
+field_name: field_vih_user_name_last
 entity_type: user
 type: string
 settings:
