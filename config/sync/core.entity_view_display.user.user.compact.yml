@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_user_type_id
     - field.field.user.user.field_vih_banner
     - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
@@ -17,6 +16,7 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
+    - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
     - image
@@ -36,7 +36,7 @@ mode: compact
 content:
   field_vih_user_descr:
     type: text_trimmed
-    weight: 6
+    weight: 5
     label: hidden
     settings:
       trim_length: 150
@@ -44,14 +44,14 @@ content:
     region: content
   field_vih_user_email:
     type: basic_string
-    weight: 7
+    weight: 6
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
   field_vih_user_kvalifikationer:
     type: string
-    weight: 8
+    weight: 7
     region: content
     label: above
     settings:
@@ -67,7 +67,7 @@ content:
     third_party_settings: {  }
   field_vih_user_name_last:
     type: string
-    weight: 4
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -75,7 +75,7 @@ content:
     third_party_settings: {  }
   field_vih_user_phone:
     type: string
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -98,9 +98,17 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     region: content
+  field_vih_user_type_id:
+    type: entity_reference_entity_view
+    weight: 10
+    region: content
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
 hidden:
   field_banner: true
-  field_user_type_id: true
   field_vih_banner: true
   field_vih_user_birthday: true
   field_vih_user_job_title: true
