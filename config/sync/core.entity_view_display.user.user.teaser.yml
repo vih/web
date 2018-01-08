@@ -14,6 +14,7 @@ dependencies:
     - field.field.user.user.field_vih_banner
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
+    - field.field.user.user.field_vih_user_job_title
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
@@ -42,7 +43,7 @@ content:
     type: string
     region: content
   field_user_name_first:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -50,7 +51,7 @@ content:
     type: string
     region: content
   field_user_name_last:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -63,6 +64,14 @@ content:
     region: content
     label: inline
     settings: {  }
+    third_party_settings: {  }
+  field_vih_user_job_title:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
   field_vih_user_phone:
     type: string

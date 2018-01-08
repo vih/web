@@ -1,0 +1,20 @@
+uuid: 09f77f11-2cb3-4853-ba1e-2731a1e08eca
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_vih_user_job_title
+  module:
+    - user
+id: user.user.field_vih_user_job_title
+field_name: field_vih_user_job_title
+entity_type: user
+bundle: user
+label: Jobtitel
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
