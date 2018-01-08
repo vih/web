@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .field--name-field-paragraph-text
+// | - .field--name-field-vih-text
 // |
 
 // --------------------------------------------------
@@ -16,7 +16,7 @@
 
 .paragraph {
 
-  .field--name-field-paragraph-text {
+  .field--name-field-vih-text {
     @extend .heading-h3;
 
     text-transform: none;
@@ -33,7 +33,7 @@
   // Background image
   &.sectioned--skewed--background-image {
 
-    .field--name-field-paragraph-text {
+    .field--name-field-vih-text {
       color: #fff;
     }
   }
@@ -41,7 +41,7 @@
   // White
   &.sectioned--skewed--background-color-white {
 
-    .field--name-field-paragraph-text {
+    .field--name-field-vih-text {
       color: $text-color;
     }
   }
@@ -49,7 +49,7 @@
   // Light gray
   &.sectioned--skewed--background-color-light-gray {
 
-    .field--name-field-paragraph-text {
+    .field--name-field-vih-text {
       color: $text-color;
     }
   }
@@ -57,7 +57,7 @@
   // Gray
   &.sectioned--skewed--background-color-gray {
 
-    .field--name-field-paragraph-text {
+    .field--name-field-vih-text {
       color: $headings-color;
     }
   }
@@ -65,7 +65,7 @@
   // Primary
   &.sectioned--skewed--background-color-primary {
 
-    .field--name-field-paragraph-text {
+    .field--name-field-vih-text {
       color: $btn-primary-color;
     }
   }
@@ -73,7 +73,7 @@
   // Secondary
   &.sectioned--skewed--background-color-secondary {
 
-    .field--name-field-paragraph-text {
+    .field--name-field-vih-text {
       color: $btn-secondary-color;
     }
   }
@@ -118,4 +118,4 @@
 // --------------------------------------------------
 
 // Author mixin
-@mixin field--name-mixin-field-paragraph-text() {}
+@mixin field--name-mixin-field-vih-text() {}
