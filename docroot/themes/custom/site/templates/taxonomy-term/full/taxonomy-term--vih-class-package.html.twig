@@ -16,7 +16,7 @@ view_mode ? view_mode|clean_class,
                     <div class="partial__body">
 
                         {# Begin - headings #}
-                        {% if term.field_heading.value or term.field_subheading.value %}
+                        {% if term.field_heading.value or term.field_vih_subheading.value %}
 
                             {% if term.field_heading.value %}
                                 <!-- Begin - heading -->
@@ -26,10 +26,10 @@ view_mode ? view_mode|clean_class,
                                 <!-- End - heading -->
                             {% endif %}
 
-                            {% if term.field_subheading.value %}
+                            {% if term.field_vih_subheading.value %}
                                 <!-- Begin - subheading -->
                                 <div class="sectioned__subheading">
-                                    <h3 class="sectioned__subheading__title heading-h4">{{ content.field_subheading.0 }}</h3>
+                                    <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_subheading.0 }}</h3>
                                 </div>
                                 <!-- End - subheading -->
                             {% endif %}
