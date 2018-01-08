@@ -8,8 +8,8 @@
                 <!-- Begin - heading -->
                 <div class="sectioned__heading">
                     <h2 class="sectioned__heading__title">
-                        {% if user.field_job_title.value %}
-                            {{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}, {{ user.field_job_title.value }}
+                        {% if user.field_vih_user_job_title.value %}
+                            {{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}, {{ user.field_vih_user_job_title.value }}
                         {% else %}
                             {{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}
                         {% endif %}
