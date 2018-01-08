@@ -3,9 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.file.field_description
     - field.field.paragraph.file.field_vih_background_color
     - field.field.paragraph.file.field_vih_background_image
+    - field.field.paragraph.file.field_vih_description
     - field.field.paragraph.file.field_vih_heading
     - field.field.paragraph.file.field_vih_link
     - field.field.paragraph.file.file
@@ -21,28 +21,28 @@ targetEntityType: paragraph
 bundle: file
 mode: default
 content:
-  field_description:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_vih_background_color:
-    weight: 4
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_vih_background_image:
-    weight: 5
+    weight: 6
     label: above
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
+  field_vih_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   field_vih_heading:
     weight: 0
@@ -53,7 +53,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: null
@@ -66,7 +66,7 @@ content:
     region: content
   file:
     type: file_default
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings: {  }
