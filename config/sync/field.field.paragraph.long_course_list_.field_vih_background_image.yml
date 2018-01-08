@@ -1,9 +1,9 @@
-uuid: e1a8d74c-032e-4909-becf-4ad9cc197d68
+uuid: e1741d56-837a-431e-a193-789ec9278f00
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_image
+    - field.storage.paragraph.field_vih_background_image
     - paragraphs.paragraphs_type.long_course_list_
   module:
     - content_translation
@@ -11,11 +11,11 @@ dependencies:
 third_party_settings:
   content_translation:
     translation_sync:
-      alt: alt
-      title: title
       file: '0'
-id: paragraph.long_course_list_.field_background_image
-field_name: field_background_image
+      alt: '0'
+      title: '0'
+id: paragraph.long_course_list_.field_vih_background_image
+field_name: field_vih_background_image
 entity_type: paragraph
 bundle: long_course_list_
 label: Baggrundsbillede
@@ -30,7 +30,7 @@ settings:
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: true
   title_field: false
   title_field_required: false
