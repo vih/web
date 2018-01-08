@@ -372,7 +372,7 @@ function site_preprocess_paragraph__short_course_list_(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
 
-  if ($fields = $paragraph->get('field_course_id')->getValue()) {
+  if ($fields = $paragraph->get('field_vih_course_id')->getValue()) {
 
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
@@ -396,7 +396,7 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
 
-  if ($fields = $paragraph->get('field_course_id')->getValue()) {
+  if ($fields = $paragraph->get('field_vih_course_id')->getValue()) {
 
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
