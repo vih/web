@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.paragraph.long_course_list_.field_course_id
     - field.field.paragraph.long_course_list_.field_vih_background_color
     - field.field.paragraph.long_course_list_.field_vih_background_image
+    - field.field.paragraph.long_course_list_.field_vih_course_id
     - field.field.paragraph.long_course_list_.field_vih_heading
     - field.field.paragraph.long_course_list_.field_vih_link
     - paragraphs.paragraphs_type.long_course_list_
@@ -19,11 +19,10 @@ third_party_settings:
   field_group:
     group_appearance:
       children:
-        - field_background_image
         - field_vih_background_image
         - field_vih_background_color
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -38,15 +37,6 @@ targetEntityType: paragraph
 bundle: long_course_list_
 mode: default
 content:
-  field_course_id:
-    weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_vih_background_color:
     weight: 5
     settings: {  }
@@ -66,6 +56,15 @@ content:
       view_mode: default
     region: content
     third_party_settings: {  }
+  field_vih_course_id:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_vih_heading:
     weight: 0
     settings:
@@ -75,7 +74,7 @@ content:
     type: string_textfield
     region: content
   field_vih_link:
-    weight: 3
+    weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
