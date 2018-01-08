@@ -1,14 +1,14 @@
-uuid: dd7fe1a6-e6ca-4bff-aa6b-bd56befa64a0
+uuid: ad5fd93e-857f-4f3b-b647-756655d0600b
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_vih_description
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - text
-id: paragraph.vih_teacher_class_description.field_description
-field_name: field_description
+id: paragraph.vih_teacher_class_description.field_vih_description
+field_name: field_vih_description
 entity_type: paragraph
 bundle: vih_teacher_class_description
 label: Beskrivelse
