@@ -1,20 +1,20 @@
-uuid: 0da46645-e0ac-4842-9005-158063e0ac25
+uuid: 517ac4d6-b25a-44fa-a080-bc4a3c87ab29
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_vih_description
     - paragraphs.paragraphs_type.video
   module:
     - text
-id: paragraph.video.field_description
-field_name: field_description
+id: paragraph.video.field_vih_description
+field_name: field_vih_description
 entity_type: paragraph
 bundle: video
 label: Beskrivelse
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
