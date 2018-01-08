@@ -1,14 +1,14 @@
-uuid: 7603cc82-4930-46c5-ac06-407be9fce65a
+uuid: 72b2754a-2b39-4196-9dd3-b4de7e130fda
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_background_image
+    - field.storage.paragraph.field_vih_background_image
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
     - image
-id: paragraph.1_column_action_centered.field_background_image
-field_name: field_background_image
+id: paragraph.1_column_action_centered.field_vih_background_image
+field_name: field_vih_background_image
 entity_type: paragraph
 bundle: 1_column_action_centered
 label: Baggrundsbillede
@@ -28,7 +28,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 60b29283-a46e-4e20-9bd8-de2ee1e6af7a
+    uuid: null
     alt: ''
     title: ''
     width: 1400

@@ -3,13 +3,14 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.1_column_action_centered.field_background_image
     - field.field.paragraph.1_column_action_centered.field_description
     - field.field.paragraph.1_column_action_centered.field_vih_background_color
+    - field.field.paragraph.1_column_action_centered.field_vih_background_image
     - field.field.paragraph.1_column_action_centered.field_vih_heading
     - field.field.paragraph.1_column_action_centered.field_vih_link
     - paragraphs.paragraphs_type.1_column_action_centered
   module:
+    - image
     - link
     - text
 id: paragraph.1_column_action_centered.default
@@ -18,22 +19,31 @@ bundle: 1_column_action_centered
 mode: default
 content:
   field_description:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_vih_background_image:
+    type: image
+    weight: 4
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
   field_vih_heading:
     type: string
-    weight: 1
+    weight: 0
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_vih_link:
-    weight: 4
+    weight: 2
     label: hidden
     settings:
       trim_length: null
@@ -46,6 +56,5 @@ content:
     region: content
 hidden:
   created: true
-  field_background_image: true
   field_vih_background_color: true
   uid: true
