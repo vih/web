@@ -420,7 +420,7 @@ function site_preprocess_paragraph__event_list(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
 
-  if ($fields = $paragraph->get('field_event_id')->getValue()) {
+  if ($fields = $paragraph->get('field_vih_event_id')->getValue()) {
 
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
