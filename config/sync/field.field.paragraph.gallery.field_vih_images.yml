@@ -1,14 +1,14 @@
-uuid: c8cc2f03-74dd-4ada-b270-fd12a9c3cdac
+uuid: 708f7f09-1d2e-4e1b-be23-c78cba0ff77e
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_images
+    - field.storage.paragraph.field_vih_images
     - paragraphs.paragraphs_type.gallery
   module:
     - image
-id: paragraph.gallery.field_images
-field_name: field_images
+id: paragraph.gallery.field_vih_images
+field_name: field_vih_images
 entity_type: paragraph
 bundle: gallery
 label: Billeder
