@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.user.user.field_job_title
-    - field.field.user.user.field_paragraphs
     - field.field.user.user.field_user_birthday
     - field.field.user.user.field_user_kvalifikationer
     - field.field.user.user.field_user_name_first
@@ -15,6 +13,7 @@ dependencies:
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
+    - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
@@ -33,7 +32,6 @@ third_party_settings:
     group_user:
       children:
         - field_vih_user_photo
-        - field_job_title
         - field_vih_user_job_title
         - field_user_name_first
         - field_user_name_last
@@ -90,7 +88,7 @@ third_party_settings:
         - language
         - translation
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -115,28 +113,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_job_title:
-    weight: 13
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_paragraphs:
-    type: paragraphs
-    weight: 10
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: 1_column_action_centered
-    third_party_settings: {  }
-    region: content
   field_user_birthday:
     type: datetime_default
     weight: 17
@@ -205,6 +181,20 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_vih_user_paragraphs:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: 1_column_action_centered
+    third_party_settings: {  }
   field_vih_user_phone:
     type: string_textfield
     weight: 19
@@ -243,7 +233,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -1,9 +1,9 @@
-uuid: dafbed44-1b52-4f61-868a-72da30d812f2
+uuid: 5511c80b-04e2-412b-8378-a36f37856ff5
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.user.field_paragraphs
+    - field.storage.user.field_vih_user_paragraphs
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.event_list
@@ -19,8 +19,8 @@ dependencies:
   module:
     - entity_reference_revisions
     - user
-id: user.user.field_paragraphs
-field_name: field_paragraphs
+id: user.user.field_vih_user_paragraphs
+field_name: field_vih_user_paragraphs
 entity_type: user
 bundle: user
 label: Sektioner
