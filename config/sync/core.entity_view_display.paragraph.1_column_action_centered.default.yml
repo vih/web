@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.1_column_action_centered.field_description
     - field.field.paragraph.1_column_action_centered.field_vih_background_color
     - field.field.paragraph.1_column_action_centered.field_vih_background_image
     - field.field.paragraph.1_column_action_centered.field_vih_description
@@ -19,13 +18,6 @@ targetEntityType: paragraph
 bundle: 1_column_action_centered
 mode: default
 content:
-  field_description:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_vih_background_image:
     type: image
     weight: 4

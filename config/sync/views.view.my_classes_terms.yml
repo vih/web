@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_vih_description
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - paragraphs
@@ -69,8 +69,8 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
-        name:
-          id: name
+        name_1:
+          id: name_1
           table: taxonomy_term_field_data
           field: name
           relationship: none
@@ -96,8 +96,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: false
-            ellipsis: false
+            word_boundary: true
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -135,11 +135,11 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        field_description:
-          id: field_description
-          table: paragraph__field_description
-          field: field_description
-          relationship: field_paragraphs
+        field_vih_description:
+          id: field_vih_description
+          table: paragraph__field_vih_description
+          field: field_vih_description
+          relationship: field_vih_paragraphs
           group_type: group
           admin_label: ''
           label: ''
@@ -208,7 +208,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"boxy\">\n  <div class=\"boxy__heading\">\n    <h3 class=\"boxy__heading__title heading-h5\">{{ name }}</h3>\n  </div>\n  <div class=\"boxy__body\">\n    {{ field_description }}\n  </div>\n</div>"
+            text: "<div class=\"boxy\">\n  <div class=\"boxy__heading\">\n    <h3 class=\"boxy__heading__title heading-h5\">{{ name_1 }}</h3>\n  </div>\n  <div class=\"boxy__body\">\n    {{ field_vih_description }}\n  </div>\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -251,7 +251,7 @@ display:
           id: type
           table: paragraphs_item_field_data
           field: type
-          relationship: field_paragraphs
+          relationship: field_vih_paragraphs
           group_type: group
           admin_label: ''
           operator: in
@@ -293,22 +293,22 @@ display:
       footer: {  }
       empty: {  }
       relationships:
-        field_paragraphs:
-          id: field_paragraphs
-          table: taxonomy_term__field_paragraphs
-          field: field_paragraphs
+        field_vih_paragraphs:
+          id: field_vih_paragraphs
+          table: taxonomy_term__field_vih_paragraphs
+          field: field_vih_paragraphs
           relationship: none
           group_type: group
-          admin_label: 'field_paragraphs: Paragraph'
+          admin_label: 'field_vih_paragraphs: Paragraph'
           required: true
           plugin_id: standard
-        field_paragraph_user:
-          id: field_paragraph_user
-          table: paragraph__field_paragraph_user
-          field: field_paragraph_user
-          relationship: field_paragraphs
+        field_vih_user:
+          id: field_vih_user
+          table: paragraph__field_vih_user
+          field: field_vih_user
+          relationship: field_vih_paragraphs
           group_type: group
-          admin_label: 'field_paragraph_user: Bruger'
+          admin_label: 'field_vih_user: User'
           required: true
           plugin_id: standard
       arguments:
@@ -316,7 +316,7 @@ display:
           id: uid
           table: users_field_data
           field: uid
-          relationship: field_paragraph_user
+          relationship: field_vih_user
           group_type: group
           admin_label: ''
           default_action: 'not found'
@@ -358,7 +358,7 @@ display:
         - url
         - user.permissions
       tags:
-        - 'config:field.storage.paragraph.field_description'
+        - 'config:field.storage.paragraph.field_vih_description'
   embedded_embedded:
     display_plugin: embed
     id: embedded_embedded
@@ -375,4 +375,4 @@ display:
         - url
         - user.permissions
       tags:
-        - 'config:field.storage.paragraph.field_description'
+        - 'config:field.storage.paragraph.field_vih_description'
