@@ -441,7 +441,7 @@ function site_preprocess_paragraph__class_packages(&$variables) {
   $paragraph = $variables['paragraph'];
   $class_tids = [];
 
-  if ($fields = $paragraph->get('field_class_id')->getValue()) {
+  if ($fields = $paragraph->get('field_vih_class_id')->getValue()) {
 
     foreach($fields as $field) {
       $class_tids[] = $field['target_id'];
