@@ -9,10 +9,10 @@ dependencies:
     - image.style.medium
     - media.type.image
   module:
-    - content_moderation
     - image_widget_crop
     - lightning_media
     - path
+    - workbench_moderation
 _core:
   default_config_hash: iVmRBD7y3Gmddt29sSx9DwwH6Q4UaROqMu7FLyy_bvQ
 id: media.image.media_browser
@@ -31,18 +31,20 @@ content:
     type: image_widget_crop
     weight: 0
     settings:
+      show_crop_area: true
+      show_default_crop: true
       preview_image_style: medium
+      crop_preview_image_style: crop_thumbnail
       progress_indicator: throbber
       crop_list:
         - freeform
-      show_crop_area: true
-      crop_preview_image_style: crop_thumbnail
-      show_default_crop: true
+        - gallery_enlarged
+        - square
       warn_multiple_usages: false
     third_party_settings:
       lightning_media:
-        file_links: false
-        remove_button: false
+        file_links: true
+        remove_button: true
     region: content
   langcode:
     type: language_select
