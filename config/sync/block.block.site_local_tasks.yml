@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - system
+    - user
   theme:
     - site
 _core:
@@ -27,3 +28,13 @@ visibility:
     pages: /node/1
     negate: true
     context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      administrator: administrator
+      media_creator: media_creator
+      media_manager: media_manager
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
