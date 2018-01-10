@@ -1,0 +1,34 @@
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
+    theme.has_glyphicons ? 'has-glyphicons',
+  ]
+%}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="lt-ie10 lt-ie9 lt-ie8 lt-ie7 no-js" {{ html_attributes }}><![endif]-->
+<!--[if IE 7 ]><html class="lt-ie10 lt-ie9 lt-ie8 ie7 no-js" {{ html_attributes }}><![endif]-->
+<!--[if IE 8 ]><html class="lt-ie10 lt-ie9 ie8 no-js" {{ html_attributes }}><![endif]-->
+<!--[if IE 9 ]><html class="lt-ie10 ie9 no-js" {{ html_attributes }}><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html {{ html_attributes }} class="not-ie no-js">
+<!--<![endif]-->
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>

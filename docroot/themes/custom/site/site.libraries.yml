@@ -7,14 +7,14 @@ fonts:
 styles:
   css:
     theme:
-      dist/stylesheets/stylesheet.css: { preprocess: false }
+      dist/stylesheets/stylesheet.css: {}
       dist/jasny-bootstrap/css/jasny-bootstrap.min.css: {}
-      'https://afeld.github.io/emoji-css/emoji.css': {}
+      'https://afeld.github.io/emoji-css/emoji.css': { type: external }
 
 javascripts:
   js:
-    dist/javascripts/modernizr.js: { preprocess: false }
-    dist/javascripts/app.js: { preprocess: false }
+    dist/javascripts/modernizr.js: {}
+    dist/javascripts/app.js: {}
     dist/jasny-bootstrap/js/jasny-bootstrap.js: {}
   dependencies:
     - core/drupal

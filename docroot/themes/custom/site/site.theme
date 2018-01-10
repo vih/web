@@ -9,22 +9,6 @@ use Drupal\image\Entity\ImageStyle;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
- * Implements hook_page_attachments_alter().
- */
-function site_page_attachments_alter(array &$page) {
-  // Tell IE to use latest rendering engine (not to use compatibility mode).
-  /*$ie_edge = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-    'http-equiv' => 'X-UA-Compatible',
-    'content' => 'IE=edge',
-    ],
-  ];
-  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
-}
-
-/**
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function site_preprocess_page(array &$variables) {
@@ -74,20 +58,6 @@ function site_theme_suggestions_page_alter(
   }
 }
 
-/**
- * Implements hook_theme_suggestions_node_alter().
- */
-function site_theme_suggestions_node_alter(
-  array &$suggestions,
-  array $variables
-) {
-  /*$node = $variables['elements']['#node'];
-
-  if ($variables['elements']['#view_mode'] == "full") {
-
-  }*/
-}
-
 function site_theme_suggestions_taxonomy_term_alter(
   &$suggestions,
   $variables,
@@ -95,14 +65,6 @@ function site_theme_suggestions_taxonomy_term_alter(
 ) {
   $suggestions[] = 'taxonomy_term__' . $variables['elements']['#taxonomy_term']->getVocabularyId() . '__' . $variables['elements']['#view_mode'];
   $suggestions[] = 'taxonomy_term__' . $variables['elements']['#view_mode'];
-}
-
-function site_theme_suggestions_alter(
-  array &$suggestions,
-  array $variables,
-  $hook
-) {
-
 }
 
 /**
@@ -125,16 +87,6 @@ function site_theme_suggestions_field_alter(
   $suggestions[] = 'field__' . $element['#view_mode'];
   $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#view_mode'] . '__' . $element['#field_name'];
-}
-
-/**
- * Implements hook_theme_suggestions_field_alter().
- */
-function site_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
-    $suggestions[] = 'fieldset__form_composite';
-  }*/
 }
 
 /**
@@ -170,7 +122,6 @@ function site_theme_suggestions_block_alter(array &$suggestions, array $variable
 }
 
 function site_theme_suggestions_file_link_alter(&$suggestions, $vars, $hook) {
-
   $suggestions[] = 'file_link__' . 'type__' . 'page';
 }
 

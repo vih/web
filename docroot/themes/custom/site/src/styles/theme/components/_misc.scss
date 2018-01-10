@@ -1,0 +1,1120 @@
+//  -----------------------------------
+// Diffent fixes | START
+// This CSS contains fixes allover
+// the page.
+//
+// Has been moved by mn@bellcom.dk from _page-layout.scss
+// as this don't belong there.
+//  -----------------------------------
+
+
+.field--name-field-news-tags .field__items {
+  padding: 15px;
+  border: 1px solid #eee;
+}
+.field--name-field-news-tags .field--label {
+  margin-bottom: 10px;
+}
+
+.fagpakker-hovering {
+  position: absolute;
+  left: 0;
+}
+.fagpakker-container {
+  position: relative;
+}
+
+.view-header h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+#block-popup-cta {
+  overflow: hidden;
+}
+.table tr {
+  border: 1px solid #ddd;
+  background: none;
+}
+.table-responsive .views-field-field-course-image {
+  width: 330px;
+  border: none;
+  padding: 0;
+}
+.table-responsive .views-field-title {
+  padding: 23px;
+}
+.table-responsive .img-responsive {
+  min-width: 100%;
+  max-width: inherit;
+}
+.angled-background-color .container p {
+  color: #928f8f;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#view-field-vih-course-periods-table-column {
+  border-bottom: none;
+  padding: 10px;
+}
+.div.views-field.views-field-field-image {
+  overflow: hidden !important;
+}
+#view-title-table-column {
+  border-bottom: none;
+  padding: 10px;
+}
+.course-title {
+  margin-bottom: 10px;
+}
+.course-title a {
+  font-weight: bold;
+  font-size: 18px;
+}
+.course-body {
+  margin-bottom: 10px;
+}
+.course-supervisor {
+  color: #888;
+
+  a {
+    color: #212121;
+    font-size: 14px;
+  }
+}
+tr {
+  background: transparent !important;
+}
+.search-content {
+  //padding-top: 100px!important;
+  min-height: 100vh;
+}
+.path-soeg {
+
+  .view-vih-search {
+
+    .view-header {
+      margin-bottom: 20px;
+      font-weight: $font-weight-bold;
+      color: $headings-color;
+    }
+  }
+
+  .form--inline {
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .control-label {
+      display: none;
+    }
+  }
+}
+.view-vih-search .views-row {
+  padding: 20px 0;
+  border-bottom: 1px solid $border-color;
+}
+.path-soeg .btn-info {
+  height: 48px;
+  margin-left: 20px;
+  background: #00a5e2;
+}
+.table-responsive {
+  min-height: 100% !important;
+}
+.fagpakker-hovering p {
+  font-size: 14px !important;
+  color: #fff !important;
+}
+#edit-preview {
+  text-transform: inherit !important;
+}
+.select-wrapper:after {
+  color: #aaa;
+  padding-right: 1.2em;
+  margin-top: -.4em;
+}
+.form-icon {
+  color: #999;
+  padding: 7px;
+  margin-right: 5px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+}
+//.panel-body tr td:nth-child(2) {
+//    width: 30%;
+//}
+
+table .btn-radio-select {
+  background: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  top: 0 !important;
+  margin-right: 10px;
+}
+table .btn-radio-select.active {
+  background: #00bcff !important;
+  box-shadow: none;
+}
+.breaker {
+  width: 100%;
+  height: 30px;
+}
+.select-wrapper select {
+  line-height: 22px !important;
+}
+/* 404 */
+
+#main {
+  display: table;
+  width: 100%;
+  height: 50vh;
+  text-align: center;
+}
+.fof {
+  display: table-cell;
+  vertical-align: middle;
+}
+.fof h1 {
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  animation: type .5s alternate infinite;
+  line-height: inherit !important;
+}
+@keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
+}
+.course-supervisor span:first-letter {
+  text-transform: uppercase !important;
+}
+.table-responsive .views-field-field-vih-course-periods {
+  width: 150px;
+  padding: 25px;
+  padding-left: 10px;
+}
+.path-node .angled-background-inner .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.path-node .angled-background-inner .container p {
+  margin-bottom: 25px;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: bold !important;
+  color: #fff;
+  font-family: "Open Sans", Sens-serif !important;
+}
+.path-node .paragraph--type--class-packages .angled-background-inner {
+  margin-bottom: 100px;
+}
+.popover .arrow {
+  display: none;
+}
+.popover #search-form {
+  height: 100%;
+}
+.popover .form-group {
+  height: 100%;
+}
+.popover .form-control {
+  height: 100%;
+}
+.layout-navigation {
+
+  .popover {
+    right: 0;
+    max-width: 100%;
+
+    .btn-search {
+      position: absolute;
+      top: 0;
+      width: 70px;
+      height: 70px;
+      background-color: #00bcff;
+      right: 0;
+      box-shadow: none;
+      border: none;
+    }
+  }
+}
+ul.layout-navigation.layout-navigation--full-width.layout--large-screen-only.dropdown-menu.layout-navigation__dropdown-menu {
+  top: 35px;
+}
+ul.layout-navigation__link {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+.views-field .field-content a {
+  text-transform: uppercase;
+}
+#pc-description p {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#pc-description a {
+  text-transform: uppercase;
+  color: #000 !important;
+}
+.pc-description a {
+  color: #000 !important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.search-form-popover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 67px;
+  width: 100%;
+
+  form#search-form {
+    height: 100%;
+
+    .form-group.add-on {
+      height: 100%;
+
+      .form-control {
+        height: 100%;
+        font-size: $navigation-list-item-font-size;
+        border: 0;
+      }
+
+      .form-submit.btn-search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70px;
+        height: 68px;
+        background-color: $brand-primary;
+        box-shadow: none;
+        border: none;
+
+        .icon {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+.popover-content {
+  padding: 0;
+  height: 100%
+}
+.popover {
+  position: absolute;
+  left: 0 !important;
+  top: 80px !important;
+  z-index: 2;
+  /*    top: 57px !important;*/
+  margin-right: -5px;
+  overflow: hidden;
+  height: 68px;
+}
+.popover-content input {
+  border: none;
+  box-shadow: none;
+}
+.field--name-field-video {
+  width: 100%;
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
+}
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+ul li {
+  color: #888;
+}
+/*
+.related-classes-span{
+  margin-top: auto;
+  background: #00a5e2;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  opacity: 0.8;
+}
+
+.related-classes-span a{
+  color:#fff;
+}
+
+.related-classes-col{
+background-image: url('http://test.vih.bellcom.dk/sites/default/files/styles/class_packages_frontpage/public/vih-fodbold.jpg');
+height:125px;
+border:15px solid #fff;
+display: flex;
+flex-direction: column;
+}
+*/
+
+//  ***********************************
+// News conainer //
+.layout__news .view-content {
+  display: flex;
+  flex-direction: column;
+}
+.layout__news .news-container {
+  padding-top: 50px;
+}
+.layout__news .view-header {
+  display: none;
+}
+.angled-background-color.paragraph.paragraph--type--class-package.paragraph--view-mode--default,
+.angled-background-color.paragraph.paragraph--type--class.paragraph--view-mode--default {
+  & .container {
+    color: #212121 !important;
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5em;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 150px;
+  }
+}
+.layout__news {
+  & .view.view-class-packages-frontpage.view-display-id-class_package_list {
+    color: #212121;
+    & .view-content {
+      padding-bottom: 0px;
+      padding-top: 40px;
+      & .contextual-region.vih_class_table_teaser.vih_class {
+        & .multiple-elements {
+          & p {
+            color: #212121 !important;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+.layout__news {
+  & .view.view-class-packages-frontpage.view-display-id-class_list {
+    color: #212121;
+    & .view-content {
+      padding-bottom: 0px;
+      padding-top: 40px;
+      & .contextual-region.vih_class_table_teaser.vih_class {
+        & .multiple-elements {
+          & p {
+            color: #212121 !important;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+.field--name-field-event-list .field--label {
+  display: none;
+}
+.field--name-field-event-list .fpnews-content p {
+  margin-top: 0px;
+}
+.view-nyhedsside .view-content {
+  padding-bottom: 150px;
+}
+.view-eventside .view-content {
+  padding-bottom: 150px;
+}
+.view-class-packages-frontpage .view-header {
+  font-size: 24px !important;
+}
+.field--name-field-news-list .field--label {
+  display: none;
+}
+.news-info p {
+  color: #777 !important;
+  line-height: 18px;
+  margin-top: 18px;
+  text-transform: inherit !important;
+}
+.fpnews-title {
+  margin-bottom: 10px;
+}
+.layout__news .content .field--name-field-bg-image {
+  display: none;
+}
+.layout__news {
+  & .page-heading {
+    & .angled-background-color {
+      & .angled-background-inner:before {
+        height: 170px !important;
+        z-index: 2;
+        top: -195px;
+        position: relative;
+      }
+    }
+  }
+}
+.path-langeophold .news-container {
+  padding-bottom: 150px !important;
+}
+#page-html .angled-background-color .angled-background-inner:before {
+  display: none;
+}
+.news-info {
+  justify-content: space-between;
+  height: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.layout__news .views-field-body {
+  height: 150px;
+}
+.field-content {
+  & span.fpnews-content {
+    & p {
+      text-transform: none;
+    }
+  }
+}
+.layout__news .views-field-field-image .field-content {
+  width: 310px;
+}
+.layout__news .fpnews-title {
+  font-size: 20px;
+}
+.layout__news .views-field-view-node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+.news-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 40vw;
+}
+.news-info .fpnews-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.news-info .fpnews-date i {
+  margin-right: 8px;
+}
+.news-info .fpnews-date span {
+  color: #999;
+}
+.field--name-field-image .field--label {
+  display: none;
+}
+.page-node-type-news .field--name-field-image img {
+  width: 50%;
+  margin-top: 20px;
+}
+.btn-simple {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+.news-container {
+  padding-bottom: 0px !important;
+  position: relative;
+  z-index: 99;
+  margin-top: -170px;
+}
+.path-node article .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+}
+.fagpakker-overlay {
+  left: 0;
+}
+.page-node-type-vih-long-cource .paragraphs {
+  width: 100vw;
+}
+div[role=heading] {
+  margin-top: 120px;
+}
+.layout__header .layout__header-row--bottom .layout-navigation > .layout-navigation__link.active > a {
+  background-color: transparent !important;
+}
+//.field--item:nth-child(5) .field--name-field-heading {
+//  margin-top: -50px;
+//}
+.field--type-string p {
+  color: #928f8f !important;
+}
+.path-frontpage .field--name-field-bg-image {
+  display: none !important;
+}
+.panel-banner {
+  background-position: center !important;
+}
+.teacher-c-desc {
+  margin-bottom: 80px;
+}
+.teacher-c-desc .col-md-9 p {
+  box-shadow: 0px 15px 40px 5px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+}
+.teacher-c-desc .col-md-9 p:before {
+  content: "";
+  position: absolute;
+  /* bottom: 0; */
+  top: 60px;
+  left: 15px;
+  border-width: 0 0 30px 50px;
+  border-style: solid;
+  border-color: transparent #fff;
+  display: block;
+  width: 0;
+}
+.tilmeldings-knap {
+  max-width: 340px !important;
+}
+.field--type-entity-reference-revisions .col-md-9 .field--label {
+  display: block !important; }
+.angled-background-image-element {
+  background-size: cover;
+  background-position: center;
+}
+.btn-radio-select.active label.control-label.option {
+  margin-right: 10px;
+}
+.views-field-field-vih-course-image .image-overlay {
+  padding: 0 !important;
+  padding-bottom: 10px !important;
+  padding-right: 10px !important;
+}
+.image-overlay {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  //    background: rgba(255, 100, 0, 0.85);
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJkaWFnb25hbCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIGZpbGw9InJnYmEoMjU1LCAxMDAsIDAsIDAuODUpIj4KICAgIDxwb2x5bGluZSBwb2ludHM9Ii0xMDAsMTQwIDEwMCwwIDEwMCwxMDAgMCwxMDAiLz4KICA8L3N2Zz4g');
+  background-size: 400px;
+  background-position: 0px -10px;
+  background-repeat: no-repeat;
+}
+.image-with-overlay {
+  position: relative;
+}
+//  -----------------------------------
+//  Frontpage Class Package | START
+//  This CSS is used for the frontpage
+//  class package view.
+//  -----------------------------------
+.view-fagpakker-forside .view-content .views-row {
+  border: 0px solid #00a5e2;
+}
+.view-class-packages-frontpage .view-header {
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  color: #fff;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 1;
+}
+.popover {
+  border-radius: 0px;
+}
+.popover .glyphicon-search {
+  color: #fff;
+}
+.path-frontpage .field--name-field-heading p {
+  font-weight: bold !important;
+}
+.fagpakker-container {
+  width: 100%;
+  height: auto;
+  max-width: 283px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-position: -90px 0px;
+  transition: 400ms;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 30px;
+  background-position: top left;
+}
+.color-blue {
+  background-color: #00a5e2;
+}
+.accordion-color-blue {
+  border-left: 6px solid #00a5e2 !important;
+  border-radius: 0;
+}
+.color-red {
+  background-color: #ff5300;
+}
+.accordion-color-red {
+  border-left: 6px solid #ff5300 !important;
+  border-radius: 0;
+}
+.color-cyan {
+  background-color: #9ed200;
+}
+.accordion-color-cyan {
+  border-left: 6px solid #9ed200 !important;
+  border-radius: 0;
+}
+.color-purple {
+  background-color: #45535d;
+}
+.accordion-color-purple {
+  border-left: 6px solid #45535d !important;
+  border-radius: 0;
+}
+.color-green {
+  background-color: #00c885;
+}
+.accordion-color-green {
+  border-left: 6px solid #00c885 !important;
+  border-radius: 0;
+}
+.color-yellow {
+  background-color: #ffc400;
+}
+.accordion-color-yellow {
+  border-left: 6px solid #ffc400 !important;
+  border-radius: 0;
+}
+.fagpakker-headline a {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  font-size: 20px;
+  font-weight: 600;
+}
+.fagpakker-hovering p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  font-size: 12px;
+  font-weight: bold;
+}
+.fagpakker-container:hover > .fagpakker-hovering {
+  opacity: 1 !important;
+  transition: 400ms;
+  padding: 0;
+}
+.fagpakker-container:hover .fagpakker-overlay {
+  background: rgba(30, 125, 150, 0.898);
+}
+.fagpakker-container {
+  overflow: hidden;
+  position: relative;
+}
+//  ***********************************
+//  -----------------------------------
+//  Class Package Class CSS | START
+//  This CSS is used for the Class
+//  package class CSS
+//  -----------------------------------
+.fp-container {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url("http://test.vih.bellcom.dk/sites/default/files/circles-and-roundabouts.png");
+  background-position: -90px 0px;
+  transition: 400ms;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+.fp-container:hover > .fp-hovering {
+  opacity: 1 !important;
+  transition: 400ms;
+  padding: 0;
+}
+.fp-container:hover .fp-overlay {
+  background: rgba(30, 125, 150, 0.898);
+}
+.fp-container {
+  overflow: hidden;
+}
+.fp-container .fp-overlay {
+  width: 100%;
+  height: 20vh;
+  position: relative;
+  background: #00bcff;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 70%, 100% 50%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 70%, 100% 50%, 100% 100%, 0% 100%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 1;
+  transition: 300ms;
+}
+.fp-container:hover .fp-overlay:hover {
+  background: #00a5e2;
+}
+.fp-overlay h1 {
+  font-family: lato;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;;
+  font-size: 13px;
+  bottom: 0;
+  padding: 0px;
+  padding-right: 10px;
+  z-index: 2;
+  text-align: right;
+}
+.fp-overlay a {
+  color: #fff;
+}
+.fp-hovering {
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 0;
+  display: inline-flex;
+  position: absolute;
+  opacity: 0;
+  transition: 400ms;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: flex-start;
+}
+.fp-hovering p {
+  color: #fff;
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  line-height: 19px;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 18px;
+}
+.fp-bg-container {
+  background-color: #f1f1f1 !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  border-top: 25px solid #fff;
+}
+//  ***********************************
+//  -----------------------------------
+//  Teacher related CSS | START
+//  This CSS is used for the teachers
+//  and relations
+//  -----------------------------------
+.teacher-teaches-row {
+  background-color: #00bcff;
+  color: #fff !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  border-top: 25px solid #fff;
+}
+.teacher-teaches-row a {
+  color: #fff !important;
+}
+.teacher-teaches-row h2 {
+  color: #fff !important;
+}
+.teacher-c-desc {
+  background-color: #f1f1f1 !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+.view-vih-teacher-teaches-classes .views-field-name-1 {
+  background: #00a5e2;
+  min-height: 85px;
+  text-align: center;
+  padding-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.vih-price-box {
+  margin-top: 7px;
+}
+.vih-contact-box {
+  margin-top: 55px;
+}
+.vih-btn-box {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+// Long Course
+
+.page-node-type-vih-long-cource .blue h4 a {
+  font-size: 16px !important;
+}
+.page-node-type-vih-long-cource article .field .field__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.field--name-field-vih-course-periods .field--item {
+  font-weight: bold;
+  color: #555;
+}
+.clock-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+.clock-icon .icon {
+  font-size: 32px;
+  color: #ff6400;
+}
+.course-period-wrapper {
+  text-align: left;
+}
+.course-period-wrapper span i {
+  margin-right: 10px;
+}
+// Page node
+
+.path-node .field--name-body {
+  width: 100%;
+}
+.field--name-field-vih-class-image img {
+  min-width: 100% !important;
+}
+.vih_class_table_teaser {
+  overflow: hidden;
+}
+.vih_class_table_teaser tr {
+  padding: 0;
+}
+.vih_class_table_teaser .col-xs-6 {
+  padding: 0;
+}
+.vih_class_table_teaser .field--type-text-long {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-class div.field--name-description {
+  padding: 30px !important;
+}
+.multiple-elements {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 90% !important;
+  margin-top: 15px;
+}
+.multiple-elements .btn-more {
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.multiple-elements .btn-more i {
+  margin: 0;
+}
+.course-periods-accordion .radio_selection div p {
+  text-transform: uppercase;
+  font-weight: bold !important;
+  color: #555 !important;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.radio_selection .col-xs-3 {
+  width: 20% !important;
+}
+.radio_selection .class-selection {
+  margin-bottom: -1px !important
+}
+.panel-body__zero-padding .field--name-description p {
+  text-transform: uppercase !important;
+}
+.course-subheading {
+  color: #888 !important;
+}
+.layout-navigation__link.active {
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 67px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  & a {
+    color: #888;
+  }
+}
+ul.layout-navigation {
+  .layout-navigation__dropdown-menu {
+    max-width: none;
+    border-radius: 0;
+    min-width: 100%;
+    li a {
+      padding: 23px 15px;
+    }
+  }
+}
+.layout-navigation__dropdown-menu .layout-navigation__link {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.logo-wrapper-mobile {
+  display: flex !important;
+  width: 100% !important;
+  justify-content: center;
+
+  // Mobile - only
+  @media #{$breakpoint-mobile-only} {
+    margin-left: -63px;
+  }
+}
+.logo-wrapper-mobile img {
+  width: 190px;
+}
+.layout__header-mobile .active a {
+  background: none !important;
+}
+.layout__header-mobile .active ul {
+  background: none !important;
+}
+.layout__header-mobile .active ul .layout-navigation__link {
+  border-left: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.btn-radio-select .control-label {
+  font-weight: bold !important;
+}
+.course-periods-accordion .field--name-description p {
+  font-weight: bold !important;
+}
+.page-node-type-news article .field--name-field-image {
+  display: none;
+}
+.news-banner {
+  background-size: cover !important;
+  background-position: center !important;
+}
+.field--name-field-news-tags {
+  display: none;
+}
+.view-kurser-relateret-til-laere .views-field-title a {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 980px) {
+
+  .logo-wrapper-mobile {
+    width: -0px !important;
+    margin-left: -100px !important;
+  }
+
+  .path-node {
+    & .news-container {
+      padding-bottom: 0px !important;
+      position: relative;
+      z-index: 99;
+      margin-top: -220px;
+    }
+  }
+
+  .path-taxonomy {
+    & .news-container {
+      padding-bottom: 0px !important;
+      position: relative;
+      z-index: 99;
+      margin-top: -120px;
+    }
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .vih_class_table_teaser .field--name-field-vih-class-image img {
+    min-width: 150% !important;
+  }
+  .field--name-field-vih-class-image { overflow: hidden !important; }
+}
+@media only screen and (max-width: 870px) {
+  #main-menu {
+    overflow: hidden;
+  }
+  .modal-course-content-teaser-wrapper .field--type-string {
+    margin: 20px;
+    padding-bottom: 10px;
+  }
+
+  /*    .breadcrumb li, .breadcrumb li a {
+          width: 100%;
+          font-size: 12px!important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+      }
+      .breadcrumb li + li:before {
+          height: 100%!important;
+      margin-top: -28px!important;
+              border-width: 30px!important;
+      }
+      .breadcrumb {
+          display: flex!important;
+          flex-direction: row;
+          max-width: 450px;
+      }
+      .breadcrumb li:first-child a:before {
+          padding-right: 10px;
+      }*/
+  header .layout__header-row {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+}
+//  ***********************************
+@media #{$breakpoint-mobile-only} {
+  .search-content div[role=heading] {
+    margin-top: 40px;
+  }
+}

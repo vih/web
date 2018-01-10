@@ -147,7 +147,6 @@
     top: 100%;
     left: 0;
     min-width: 180px;
-    max-width: 240px;
     z-index: 1000;
     background-color: $layout-header-navigation-dropdown-menu-background;
 
@@ -201,3 +200,11 @@
     justify-content: flex-end;
   }
 }
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+.flexbox {}
+
+.no-flexbox {}

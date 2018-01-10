@@ -37,8 +37,8 @@ $md-footer-bottom-padding-top-bottom: 55px;
   border-top: 0;
   margin: 0;
 
-  background-color: $footer-background-color;
   @include angled-edge('outside top', 'upper right', $brand-primary, $xs-sectioned-skewed-angle-height);
+  background-color: $footer-background-color;
 
   .block,
   nav {
