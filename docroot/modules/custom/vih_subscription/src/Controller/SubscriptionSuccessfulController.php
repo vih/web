@@ -114,7 +114,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $subject->getTitle(),
         $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value,
         !empty($courseDate) ? $courseDate : '',
-        $subject->toUrl()->setAbsolute()->toString(),
+        '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
         $order_rendered,
       ];
 

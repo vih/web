@@ -213,7 +213,7 @@ content:
     region: content
     label: hidden
     settings:
-      view_mode: embedded
+      view_mode: email_teaser
       link: ''
     third_party_settings: {  }
   field_vih_lco_payment:
