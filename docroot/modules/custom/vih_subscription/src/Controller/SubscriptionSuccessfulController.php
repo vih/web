@@ -252,7 +252,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
           !empty($eventDate) ? $eventDate : '',
-          $subject->toUrl()->setAbsolute()->toString(),
+          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
       }
