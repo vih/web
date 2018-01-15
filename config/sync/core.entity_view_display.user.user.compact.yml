@@ -42,21 +42,6 @@ content:
       trim_length: 150
     third_party_settings: {  }
     region: content
-  field_vih_user_email:
-    type: basic_string
-    weight: 6
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_vih_user_kvalifikationer:
-    type: string
-    weight: 7
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_vih_user_name_first:
     type: string
     weight: 2
@@ -98,20 +83,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     region: content
-  field_vih_user_type_id:
-    type: entity_reference_entity_view
-    weight: 10
-    region: content
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
 hidden:
   field_banner: true
   field_vih_banner: true
   field_vih_user_birthday: true
+  field_vih_user_email: true
   field_vih_user_job_title: true
+  field_vih_user_kvalifikationer: true
   field_vih_user_paragraphs: true
+  field_vih_user_type_id: true
   langcode: true
   member_for: true

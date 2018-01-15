@@ -23,7 +23,6 @@ dependencies:
   module:
     - datetime
     - entity_browser
-    - entity_reference_revisions
     - field_group
     - inline_entity_form
     - metatag
@@ -36,7 +35,6 @@ third_party_settings:
     group_banner:
       children:
         - title
-        - field_banner
         - field_vih_banner
       parent_name: ''
       weight: 0
@@ -54,7 +52,7 @@ third_party_settings:
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
-        - field_paragraphs
+        - field_vih_paragraphs
       parent_name: ''
       weight: 1
       format_type: tab
@@ -78,7 +76,7 @@ third_party_settings:
         - path
         - scheduled_update
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -99,7 +97,7 @@ third_party_settings:
         - field_vih_cs_contact_person
         - field_vih_sc_persons_limit
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -174,13 +172,18 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_paragraphs:
-    weight: 26
+    weight: 9
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: vih_webform
     third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
+    type: paragraphs
     region: content
   field_vih_sc_end_date:
     weight: 8
