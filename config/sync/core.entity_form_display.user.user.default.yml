@@ -4,18 +4,19 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
-    - field.field.user.user.field_banner
-    - field.field.user.user.field_e_mail
-    - field.field.user.user.field_job_title
-    - field.field.user.user.field_paragraphs
-    - field.field.user.user.field_user_birthday
-    - field.field.user.user.field_user_name_first
-    - field.field.user.user.field_user_name_last
-    - field.field.user.user.field_user_type_id
+    - field.field.user.user.field_vih_banner
+    - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
+    - field.field.user.user.field_vih_user_email
+    - field.field.user.user.field_vih_user_job_title
+    - field.field.user.user.field_vih_user_kvalifikationer
+    - field.field.user.user.field_vih_user_name_first
+    - field.field.user.user.field_vih_user_name_last
+    - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
+    - field.field.user.user.field_vih_user_type_id
     - image.style.thumbnail
   module:
     - datetime
@@ -23,6 +24,7 @@ dependencies:
     - field_group
     - image
     - paragraphs
+    - path
     - text
     - user
 third_party_settings:
@@ -30,14 +32,15 @@ third_party_settings:
     group_user:
       children:
         - field_vih_user_photo
-        - field_job_title
-        - field_user_name_first
-        - field_user_name_last
-        - field_user_birthday
+        - field_vih_user_job_title
+        - field_vih_user_name_first
+        - field_vih_user_name_last
+        - field_vih_user_birthday
         - field_vih_user_descr
         - field_vih_user_phone
-        - field_e_mail
+        - field_vih_user_email
         - field_user_type_id
+        - field_vih_user_type_id
       parent_name: ''
       weight: 1
       format_type: tab
@@ -50,8 +53,7 @@ third_party_settings:
       label: Bruger
       region: content
     group_content:
-      children:
-        - field_paragraphs
+      children: {  }
       parent_name: ''
       weight: 2
       format_type: tab
@@ -66,7 +68,7 @@ third_party_settings:
     group_banner:
       children:
         - field_vih_user_title
-        - field_banner
+        - field_vih_banner
       parent_name: ''
       weight: 0
       format_type: tab
@@ -86,7 +88,7 @@ third_party_settings:
         - language
         - translation
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -111,7 +113,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_banner:
+  field_vih_banner:
     type: entity_browser_file
     weight: 3
     settings:
@@ -124,67 +126,12 @@ content:
       selection_mode: selection_append
     region: content
     third_party_settings: {  }
-  field_e_mail:
-    type: email_default
-    weight: 19
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_job_title:
-    weight: 13
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_paragraphs:
-    type: paragraphs
-    weight: 10
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: 1_column_action_centered
-    third_party_settings: {  }
-    region: content
-  field_user_birthday:
+  field_vih_user_birthday:
     type: datetime_default
     weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_user_name_first:
-    type: string_textfield
-    weight: 14
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_user_name_last:
-    type: string_textfield
-    weight: 15
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_user_type_id:
-    weight: 20
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_vih_user_descr:
     type: text_textarea
     weight: 17
@@ -192,6 +139,52 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_email:
+    type: email_default
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_job_title:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_name_first:
+    type: string_textfield
+    weight: 14
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_name_last:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_paragraphs:
+    type: paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: 1_column_action_centered
     third_party_settings: {  }
   field_vih_user_phone:
     type: string_textfield
@@ -217,6 +210,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_vih_user_type_id:
+    type: entity_reference_autocomplete
+    weight: 21
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 6
@@ -231,7 +233,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -241,5 +243,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_user_kvalifikationer: true
+  field_vih_user_kvalifikationer: true
   timezone: true

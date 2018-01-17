@@ -1,0 +1,21 @@
+uuid: cd6266f5-3c58-4afe-9559-f8a98c54577f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_paragraphs_body
+    - paragraphs.paragraphs_type.article
+  module:
+    - text
+id: paragraph.article.field_vih_paragraphs_body
+field_name: field_vih_paragraphs_body
+entity_type: paragraph
+bundle: article
+label: Brødtekst
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

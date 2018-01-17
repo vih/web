@@ -1,0 +1,23 @@
+uuid: 341d6844-f54c-419c-8550-a4ef1618f480
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_link
+    - paragraphs.paragraphs_type.social_media_embed
+  module:
+    - link
+id: paragraph.social_media_embed.field_vih_link
+field_name: field_vih_link
+entity_type: paragraph
+bundle: social_media_embed
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -4,18 +4,19 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.teaser
-    - field.field.user.user.field_banner
-    - field.field.user.user.field_e_mail
-    - field.field.user.user.field_job_title
-    - field.field.user.user.field_paragraphs
-    - field.field.user.user.field_user_birthday
-    - field.field.user.user.field_user_name_first
-    - field.field.user.user.field_user_name_last
-    - field.field.user.user.field_user_type_id
+    - field.field.user.user.field_vih_banner
+    - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
+    - field.field.user.user.field_vih_user_email
+    - field.field.user.user.field_vih_user_job_title
+    - field.field.user.user.field_vih_user_kvalifikationer
+    - field.field.user.user.field_vih_user_name_first
+    - field.field.user.user.field_vih_user_name_last
+    - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
+    - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
     - image
@@ -32,37 +33,37 @@ targetEntityType: user
 bundle: user
 mode: teaser
 content:
-  field_e_mail:
+  field_vih_user_email:
     type: basic_string
     weight: 4
     region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
-  field_job_title:
+  field_vih_user_job_title:
+    type: string
     weight: 1
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_vih_user_name_first:
     type: string
-    region: content
-  field_user_name_first:
     weight: 2
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+  field_vih_user_name_last:
     type: string
-    region: content
-  field_user_name_last:
     weight: 3
+    region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: content
   field_vih_user_phone:
     type: string
     weight: 5
@@ -81,12 +82,12 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
-  field_banner: true
-  field_paragraphs: true
-  field_user_birthday: true
-  field_user_kvalifikationer: true
-  field_user_type_id: true
+  field_vih_banner: true
+  field_vih_user_birthday: true
   field_vih_user_descr: true
+  field_vih_user_kvalifikationer: true
+  field_vih_user_paragraphs: true
   field_vih_user_title: true
+  field_vih_user_type_id: true
   langcode: true
   member_for: true

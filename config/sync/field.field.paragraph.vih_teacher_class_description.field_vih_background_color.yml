@@ -1,0 +1,21 @@
+uuid: 2d8e631c-8ee2-44bb-80d5-f854ba4f4aa8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_color
+    - paragraphs.paragraphs_type.vih_teacher_class_description
+  module:
+    - options
+id: paragraph.vih_teacher_class_description.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+bundle: vih_teacher_class_description
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

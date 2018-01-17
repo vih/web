@@ -1,0 +1,23 @@
+uuid: 1582d3ee-27bc-47ae-b4eb-9f39613b78fc
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_event_price
+    - node.type.event
+id: node.event.field_vih_event_price
+field_name: field_vih_event_price
+entity_type: node
+bundle: event
+label: Pris
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: 'DKK '
+  suffix: ''
+field_type: decimal

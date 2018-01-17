@@ -3,20 +3,38 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.short_course_list_.field_background_color
-    - field.field.paragraph.short_course_list_.field_background_image
-    - field.field.paragraph.short_course_list_.field_course_id
-    - field.field.paragraph.short_course_list_.field_heading
-    - field.field.paragraph.short_course_list_.field_link
+    - field.field.paragraph.short_course_list_.field_vih_background_color
+    - field.field.paragraph.short_course_list_.field_vih_background_image
+    - field.field.paragraph.short_course_list_.field_vih_course_id
+    - field.field.paragraph.short_course_list_.field_vih_heading
+    - field.field.paragraph.short_course_list_.field_vih_link
     - paragraphs.paragraphs_type.short_course_list_
   module:
+    - image
     - link
+    - options
 id: paragraph.short_course_list_.default
 targetEntityType: paragraph
 bundle: short_course_list_
 mode: default
 content:
-  field_heading:
+  field_vih_background_color:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_vih_background_image:
+    weight: 3
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_heading:
     weight: 0
     label: hidden
     settings:
@@ -24,7 +42,7 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_link:
+  field_vih_link:
     weight: 1
     label: hidden
     settings:
@@ -37,6 +55,4 @@ content:
     type: link
     region: content
 hidden:
-  field_background_color: true
-  field_background_image: true
-  field_course_id: true
+  field_vih_course_id: true

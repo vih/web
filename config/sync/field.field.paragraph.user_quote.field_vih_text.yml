@@ -1,0 +1,21 @@
+uuid: 095e26df-e029-4b42-824f-6b93e9b0a033
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_text
+    - paragraphs.paragraphs_type.user_quote
+  module:
+    - text
+id: paragraph.user_quote.field_vih_text
+field_name: field_vih_text
+entity_type: paragraph
+bundle: user_quote
+label: Tekst
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

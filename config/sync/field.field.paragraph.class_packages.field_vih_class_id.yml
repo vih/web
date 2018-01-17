@@ -1,0 +1,29 @@
+uuid: 699c6a08-6ac3-4a1b-b387-b51d90436716
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_class_id
+    - paragraphs.paragraphs_type.class_packages
+    - taxonomy.vocabulary.vih_class_package
+id: paragraph.class_packages.field_vih_class_id
+field_name: field_vih_class_id
+entity_type: paragraph
+bundle: class_packages
+label: Fag
+description: 'Vælg de fag som du ønsker vist.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      vih_class_package: vih_class_package
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

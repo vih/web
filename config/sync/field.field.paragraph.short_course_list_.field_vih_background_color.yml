@@ -1,0 +1,21 @@
+uuid: a44905dc-c032-440c-a7b6-9872ccd0b44b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_color
+    - paragraphs.paragraphs_type.short_course_list_
+  module:
+    - options
+id: paragraph.short_course_list_.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+bundle: short_course_list_
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

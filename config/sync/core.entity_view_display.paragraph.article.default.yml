@@ -3,28 +3,39 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.article.field_background_color
-    - field.field.paragraph.article.field_background_image
-    - field.field.paragraph.article.field_body
-    - field.field.paragraph.article.field_heading
-    - field.field.paragraph.article.field_link
+    - field.field.paragraph.article.field_vih_background_color
+    - field.field.paragraph.article.field_vih_background_image
+    - field.field.paragraph.article.field_vih_heading
+    - field.field.paragraph.article.field_vih_link
+    - field.field.paragraph.article.field_vih_paragraphs_body
     - paragraphs.paragraphs_type.article
   module:
+    - image
     - link
+    - options
     - text
 id: paragraph.article.default
 targetEntityType: paragraph
 bundle: article
 mode: default
 content:
-  field_body:
-    weight: 1
-    label: hidden
+  field_vih_background_color:
+    weight: 4
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    type: list_default
     region: content
-  field_heading:
+  field_vih_background_image:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_heading:
     weight: 0
     label: hidden
     settings:
@@ -32,8 +43,8 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_link:
-    weight: 2
+  field_vih_link:
+    weight: 3
     label: hidden
     settings:
       trim_length: null
@@ -44,6 +55,11 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-hidden:
-  field_background_color: true
-  field_background_image: true
+  field_vih_paragraphs_body:
+    type: text_default
+    weight: 2
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

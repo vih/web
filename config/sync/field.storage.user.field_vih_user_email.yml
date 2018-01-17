@@ -1,0 +1,18 @@
+uuid: cd310072-c373-4a93-9228-6ada8fdc81fa
+langcode: da
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_vih_user_email
+field_name: field_vih_user_email
+entity_type: user
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: c12cf34a-462d-46b0-bb56-6e9a6b89d7ec
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_vih_link
+  module:
+    - link
+id: block_content.banner.field_vih_link
+field_name: field_vih_link
+entity_type: block_content
+bundle: banner
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

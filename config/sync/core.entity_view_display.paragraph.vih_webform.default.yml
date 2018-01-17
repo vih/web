@@ -3,9 +3,9 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.vih_webform.field_background_color
-    - field.field.paragraph.vih_webform.field_background_image
-    - field.field.paragraph.vih_webform.field_heading
+    - field.field.paragraph.vih_webform.field_vih_background_color
+    - field.field.paragraph.vih_webform.field_vih_background_image
+    - field.field.paragraph.vih_webform.field_vih_heading
     - field.field.paragraph.vih_webform.field_vih_webform
     - image.style.paragraph_background_image
     - paragraphs.paragraphs_type.vih_webform
@@ -18,14 +18,14 @@ targetEntityType: paragraph
 bundle: vih_webform
 mode: default
 content:
-  field_background_color:
+  field_vih_background_color:
     weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
-  field_background_image:
+  field_vih_background_image:
     weight: 2
     label: hidden
     settings:
@@ -34,7 +34,7 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  field_heading:
+  field_vih_heading:
     weight: 0
     label: hidden
     settings:

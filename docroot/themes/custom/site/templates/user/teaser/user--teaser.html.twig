@@ -5,19 +5,19 @@
         {{ content.field_vih_user_photo }}
 
         {# Begin - overlay #}
-        {% if user.field_job_title.value %}
+        {% if user.field_vih_user_job_title.value %}
             <div class="entity-teaser__image__overlay">
                 <div>
-                    <span class="heading-h4">{{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}</span>
+                    <span class="heading-h4">{{ user.field_vih_user_name_first.value }} {{ user.field_vih_user_name_last.value }}</span>
                 </div>
                 <div>
-                    <span class="heading-h5">{{ user.field_job_title.value }}</span>
+                    <span class="heading-h5">{{ user.field_vih_user_job_title.value }}</span>
                 </div>
             </div>
         {% else %}
             <div class="entity-teaser__image__overlay">
                 <div>
-                    <span class="heading-h4">{{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}</span>
+                    <span class="heading-h4">{{ user.field_vih_user_name_first.value }} {{ user.field_vih_user_name_last.value }}</span>
                 </div>
             </div>
         {% endif %}

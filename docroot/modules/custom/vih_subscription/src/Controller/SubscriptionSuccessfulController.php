@@ -229,14 +229,14 @@ class SubscriptionSuccessfulController extends ControllerBase {
 
         //event date
         $eventDate = NULL;
-        if ($subject->field_event_start_date->value) {
-          $eventDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_event_start_date->value), "default_medium_date_without_time");
+        if ($subject->field_vih_event_start_date->value) {
+          $eventDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_start_date->value), "default_medium_date_without_time");
         }
-        if ($subject->field_event_end_date->value) {
+        if ($subject->field_vih_event_end_date->value) {
           if (!(empty($eventDate))) {
             $eventDate .= ' - ';
           }
-          $eventDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_event_end_date->value), "default_medium_date_without_time");
+          $eventDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_end_date->value), "default_medium_date_without_time");
         }
 
         $message = [

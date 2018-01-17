@@ -4,9 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_long_cource.body
-    - field.field.node.vih_long_cource.field_banner
     - field.field.node.vih_long_cource.field_metatag
-    - field.field.node.vih_long_cource.field_paragraphs
+    - field.field.node.vih_long_cource.field_vih_banner
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -17,6 +16,7 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_subheading
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
+    - field.field.node.vih_long_cource.field_vih_paragraphs
     - field.field.node.vih_long_cource.scheduled_update
     - image.style.banner_small
     - node.type.vih_long_cource
@@ -240,30 +240,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_banner:
-    weight: 13
+  field_metatag:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_vih_banner:
+    weight: 14
     label: hidden
     settings:
       image_style: banner_small
       image_link: ''
     third_party_settings: {  }
     type: image
-    region: content
-  field_metatag:
-    weight: 14
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-    region: content
-  field_paragraphs:
-    weight: 9
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
     region: content
   field_vih_cource_contact_person:
     weight: 7
@@ -293,7 +284,7 @@ content:
     region: content
   field_vih_course_persons_limit:
     type: number_integer
-    weight: 12
+    weight: 13
     region: content
     label: hidden
     settings:
@@ -312,7 +303,7 @@ content:
     type: number_decimal
     region: content
   field_vih_course_status:
-    weight: 10
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -348,13 +339,22 @@ content:
     third_party_settings: {  }
     type: number_decimal
     region: content
+  field_vih_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 10
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduled_update:
-    weight: 11
+    weight: 12
     label: above
     settings:
       link: true

@@ -1,0 +1,20 @@
+uuid: a13dc4c4-3cce-43f5-896c-c71fd7946382
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_vih_user_type_id
+field_name: field_vih_user_type_id
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

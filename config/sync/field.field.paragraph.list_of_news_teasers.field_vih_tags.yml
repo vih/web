@@ -1,0 +1,29 @@
+uuid: 6e82a858-7803-4e6b-a503-423b417d4951
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_tags
+    - paragraphs.paragraphs_type.list_of_news_teasers
+    - taxonomy.vocabulary.news_tags
+id: paragraph.list_of_news_teasers.field_vih_tags
+field_name: field_vih_tags
+entity_type: paragraph
+bundle: list_of_news_teasers
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_tags: news_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

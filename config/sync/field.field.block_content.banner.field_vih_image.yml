@@ -1,0 +1,38 @@
+uuid: 1f1cc5cf-8807-410a-a66d-b0fcc1f83077
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_vih_image
+  module:
+    - image
+id: block_content.banner.field_vih_image
+field_name: field_vih_image
+entity_type: block_content
+bundle: banner
+label: Billede
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: banner
+  file_extensions: 'png jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: 1275
+    height: 850
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

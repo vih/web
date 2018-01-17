@@ -1,0 +1,23 @@
+uuid: 23767a88-82b4-4df2-802c-30f3730e9413
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_link
+    - paragraphs.paragraphs_type.user_quote
+  module:
+    - link
+id: paragraph.user_quote.field_vih_link
+field_name: field_vih_link
+entity_type: paragraph
+bundle: user_quote
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,19 @@
+uuid: 0a5eb5d6-11a2-4736-9e7a-5463277d6d68
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_heading
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.field_vih_heading
+field_name: field_vih_heading
+entity_type: paragraph
+bundle: video
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

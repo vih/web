@@ -1,0 +1,19 @@
+uuid: baf92ad4-ad85-495c-bc04-6426d31b073c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_heading
+    - paragraphs.paragraphs_type.1_column_action_centered
+id: paragraph.1_column_action_centered.field_vih_heading
+field_name: field_vih_heading
+entity_type: paragraph
+bundle: 1_column_action_centered
+label: Overskrift
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -17,12 +17,12 @@
 // Video
 .paragraph--type--video {
 
-  .field--name-field-heading,
-  .field--name-field-description {
+  .field--name-field-vih-heading,
+  .field--name-field-vih-description {
     margin-bottom: 40px;
   }
 
-  .field--name-field-description {
+  .field--name-field-vih-description {
 
     &,
     h1, h2, h3, h4, h5, h6,
@@ -35,7 +35,7 @@
     }
   }
 
-  .field--name-field-highlighted {
+  .field--name-field-vih-highlighted {
     margin-bottom: 80px;
 
     font-weight: $font-weight-bold;

@@ -1,0 +1,19 @@
+uuid: 690c64ee-8ffe-414b-b33e-917220c9e530
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_vih_text
+field_name: field_vih_text
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

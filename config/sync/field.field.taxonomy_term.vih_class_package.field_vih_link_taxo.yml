@@ -1,0 +1,23 @@
+uuid: a6d536cc-d63c-4e20-8ddd-90540d9dd1b0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_link_taxo
+    - taxonomy.vocabulary.vih_class_package
+  module:
+    - link
+id: taxonomy_term.vih_class_package.field_vih_link_taxo
+field_name: field_vih_link_taxo
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

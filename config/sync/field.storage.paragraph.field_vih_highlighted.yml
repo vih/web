@@ -1,0 +1,20 @@
+uuid: 29ad8502-5ef8-4b0a-95e6-0da43ad74c19
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_vih_highlighted
+field_name: field_vih_highlighted
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

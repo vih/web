@@ -4,18 +4,18 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_banner
-    - field.field.node.event.field_event_end_date
-    - field.field.node.event.field_event_price
-    - field.field.node.event.field_event_start_date
-    - field.field.node.event.field_image
     - field.field.node.event.field_metatag
-    - field.field.node.event.field_paragraphs
+    - field.field.node.event.field_vih_banner
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
+    - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
+    - field.field.node.event.field_vih_event_price
+    - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
+    - field.field.node.event.field_vih_image
+    - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.scheduled_update
     - image.style.banner_small
     - node.type.event
@@ -42,56 +42,9 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
-    region: content
-  field_banner:
-    weight: 14
-    label: hidden
-    settings:
-      image_style: banner_small
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_event_end_date:
-    weight: 5
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium_datetime
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_event_price:
-    weight: 6
-    label: hidden
-    settings:
-      thousand_separator: .
-      decimal_separator: ','
-      scale: 0
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
-    region: content
-  field_event_start_date:
-    weight: 4
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: medium_datetime
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_image:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: banner_small
-      image_link: ''
-    third_party_settings: {  }
-    type: image
     region: content
   field_metatag:
     weight: 15
@@ -100,17 +53,17 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_paragraphs:
-    weight: 7
+  field_vih_banner:
+    type: image
+    weight: 14
+    region: content
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      image_style: banner_small
+      image_link: ''
     third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
   field_vih_cource_contact_person:
-    weight: 8
+    weight: 9
     label: hidden
     settings:
       view_mode: compact
@@ -119,14 +72,6 @@ content:
     type: entity_reference_entity_view
     region: content
   field_vih_course_heading:
-    weight: 9
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_vih_course_subheading:
     weight: 10
     label: hidden
     settings:
@@ -134,8 +79,25 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_course_subheading:
+    weight: 11
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_event_end_date:
+    type: datetime_default
+    weight: 6
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium_datetime
+    third_party_settings: {  }
   field_vih_event_persons_limit:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       thousand_separator: ''
@@ -143,20 +105,58 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
+  field_vih_event_price:
+    type: number_decimal
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_vih_event_start_date:
+    type: datetime_default
+    weight: 5
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium_datetime
+    third_party_settings: {  }
   field_vih_event_status:
-    weight: 11
+    weight: 12
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_key
     region: content
+  field_vih_image:
+    type: image
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      image_style: banner_small
+      image_link: ''
+    third_party_settings: {  }
+  field_vih_paragraphs:
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
   links:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduled_update:
-    weight: 12
+    weight: 13
     label: hidden
     settings:
       link: true

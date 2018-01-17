@@ -72,7 +72,7 @@ view_mode ? view_mode|clean_class,
                             <div class="col-xs-12 col-sm-6">
 
                                 {# Begin - period #}
-                                {% if node.field_event_start_date.value %}
+                                {% if node.field_vih_event_start_date.value %}
                                     <!-- Begin - time period -->
                                     <div class="boxy boxy--time-period">
                                         <div class="boxy__heading">
@@ -87,10 +87,10 @@ view_mode ? view_mode|clean_class,
 
                                                 <div class="time-period__list">
                                                     <div class="time-period__list__item">
-                                                        {{ content.field_event_start_date }}
+                                                        {{ content.field_vih_event_start_date }}
                                                     </div>
                                                     <div class="time-period__list__item">
-                                                        {{ content.field_event_end_date }}
+                                                        {{ content.field_vih_event_end_date }}
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,7 +101,7 @@ view_mode ? view_mode|clean_class,
                                 {# End - period #}
 
                                 {# Begin - price #}
-                                {% if content.field_event_price %}
+                                {% if content.field_vih_event_price %}
                                     <!-- Begin - price -->
                                     <div class="boxy boxy--price">
                                         <div class="boxy__heading">
@@ -109,7 +109,7 @@ view_mode ? view_mode|clean_class,
                                         </div>
 
                                         <div class="boxy__body">
-                                            {{ content.field_event_price }}
+                                            {{ content.field_vih_event_price }}
                                         </div>
                                     </div>
                                     <!-- End - price -->
@@ -153,7 +153,7 @@ view_mode ? view_mode|clean_class,
     <!-- End - content -->
 
     {# Begin - paragraphs #}
-    {{ content.field_paragraphs }}
+    {{ content.field_vih_paragraphs }}
     {# End - paragraphs #}
 
 </article>

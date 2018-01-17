@@ -1,0 +1,19 @@
+uuid: 5b817dd8-063f-48af-8ff4-0be5203b78c0
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.notify
+    - field.storage.block_content.field_vih_highlighted_text
+id: block_content.notify.field_vih_highlighted_text
+field_name: field_vih_highlighted_text
+entity_type: block_content
+bundle: notify
+label: 'Fremhævet tekst'
+description: 'Eks. "Lige nu" eller "Live".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

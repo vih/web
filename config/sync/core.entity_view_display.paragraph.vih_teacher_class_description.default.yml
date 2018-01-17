@@ -3,30 +3,46 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.paragraph.vih_teacher_class_description.field_background_color
-    - field.field.paragraph.vih_teacher_class_description.field_background_image
-    - field.field.paragraph.vih_teacher_class_description.field_description
-    - field.field.paragraph.vih_teacher_class_description.field_heading
-    - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
-    - field.field.paragraph.vih_teacher_class_description.field_photo
-    - image.style.vih_person_teaser
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_image
+    - field.field.paragraph.vih_teacher_class_description.field_vih_description
+    - field.field.paragraph.vih_teacher_class_description.field_vih_heading
+    - field.field.paragraph.vih_teacher_class_description.field_vih_photo
+    - field.field.paragraph.vih_teacher_class_description.field_vih_user
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
+    - options
     - text
 id: paragraph.vih_teacher_class_description.default
 targetEntityType: paragraph
 bundle: vih_teacher_class_description
 mode: default
 content:
-  field_description:
-    weight: 2
+  field_vih_background_color:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_vih_background_image:
+    weight: 5
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_description:
+    type: text_default
+    weight: 3
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
-  field_heading:
+  field_vih_heading:
     weight: 1
     label: hidden
     settings:
@@ -34,16 +50,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_photo:
-    weight: 0
-    label: hidden
-    settings:
-      image_style: vih_person_teaser
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
 hidden:
-  field_background_color: true
-  field_background_image: true
-  field_paragraph_user: true
+  field_vih_photo: true
+  field_vih_user: true

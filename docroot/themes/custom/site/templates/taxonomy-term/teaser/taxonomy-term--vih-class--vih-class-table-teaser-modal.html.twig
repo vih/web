@@ -26,7 +26,7 @@
         </div>
 
         {# Begin - description #}
-        {{ content.field_description }}
+        {{ content.field_vih_description }}
         {# End - description #}
 
     </div>
@@ -87,7 +87,7 @@
 
         {#<div class="col-xs-12 col-sm-6 flex-center-middle">#}
             {#{% if content.description|render is not empty %}#}
-                {#<div class="field-description-wrapper">#}
+                {#<div class="field-vih-description-wrapper">#}
                     {#{{ content.description|render|striptags('<!-- -->')|length > 70 ? content.description|render|striptags('<!-- -->')|slice(0, 70) ~ '...' : content.description }}#}
                 {#</div>#}
             {#{% endif %}#}

@@ -1,0 +1,23 @@
+uuid: dc26f03f-3086-471e-9e99-d4ab013fc47b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_link
+    - paragraphs.paragraphs_type.short_course_list_
+  module:
+    - link
+id: paragraph.short_course_list_.field_vih_link
+field_name: field_vih_link
+entity_type: paragraph
+bundle: short_course_list_
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,20 @@
+uuid: acc81195-4f2f-47b1-86a2-013406a53544
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_vih_event_id
+field_name: field_vih_event_id
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

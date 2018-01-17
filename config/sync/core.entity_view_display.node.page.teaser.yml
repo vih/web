@@ -5,10 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
-    - field.field.node.page.field_banner
-    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_metatag
+    - field.field.node.page.field_vih_banner
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
+    - field.field.node.page.field_vih_paragraphs
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
     - node.type.page
@@ -37,11 +38,11 @@ content:
     weight: -20
     region: content
 hidden:
-  field_banner: true
   field_metatag: true
-  field_paragraphs: true
+  field_vih_banner: true
   field_vih_course_heading: true
   field_vih_course_subheading: true
+  field_vih_paragraphs: true
   langcode: true
   panelizer: true
   scheduled_update: true

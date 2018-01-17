@@ -1,0 +1,30 @@
+uuid: 3e2a2e96-327c-442c-8345-838e2572beaf
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_vih_user_type_id
+    - taxonomy.vocabulary.user_types
+  module:
+    - user
+id: user.user.field_vih_user_type_id
+field_name: field_vih_user_type_id
+entity_type: user
+bundle: user
+label: 'Bruger type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      user_types: user_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

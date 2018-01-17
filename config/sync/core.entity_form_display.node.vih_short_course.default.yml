@@ -5,12 +5,12 @@ dependencies:
   config:
     - entity_browser.browser.image_browser
     - field.field.node.vih_short_course.body
-    - field.field.node.vih_short_course.field_banner
     - field.field.node.vih_short_course.field_metatag
-    - field.field.node.vih_short_course.field_paragraphs
+    - field.field.node.vih_short_course.field_vih_banner
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
+    - field.field.node.vih_short_course.field_vih_paragraphs
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
     - field.field.node.vih_short_course.field_vih_sc_option_groups
@@ -35,7 +35,7 @@ third_party_settings:
     group_banner:
       children:
         - title
-        - field_banner
+        - field_vih_banner
       parent_name: ''
       weight: 0
       format_type: tab
@@ -52,7 +52,7 @@ third_party_settings:
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
-        - field_paragraphs
+        - field_vih_paragraphs
       parent_name: ''
       weight: 1
       format_type: tab
@@ -76,7 +76,7 @@ third_party_settings:
         - path
         - scheduled_update
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -97,7 +97,7 @@ third_party_settings:
         - field_vih_cs_contact_person
         - field_vih_sc_persons_limit
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -127,39 +127,25 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_banner:
-    type: entity_browser_file
-    weight: 4
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    region: content
-    third_party_settings: {  }
   field_metatag:
     weight: 12
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_paragraphs:
-    weight: 9
+  field_vih_banner:
+    type: entity_browser_file
+    weight: 5
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      closed_mode: summary
-      autocollapse: all
-      add_mode: modal
-      form_display_mode: default
-      default_paragraph_type: vih_webform
-    third_party_settings: {  }
-    type: paragraphs
+      entity_browser: image_browser
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      view_mode: default
     region: content
+    third_party_settings: {  }
   field_vih_course_heading:
     weight: 6
     settings:
@@ -184,6 +170,20 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_vih_paragraphs:
+    weight: 9
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: vih_webform
+    third_party_settings: {  }
+    type: paragraphs
     region: content
   field_vih_sc_end_date:
     weight: 8

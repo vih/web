@@ -4,47 +4,47 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.embedded
-    - field.field.paragraph.vih_teacher_class_description.field_background_color
-    - field.field.paragraph.vih_teacher_class_description.field_background_image
-    - field.field.paragraph.vih_teacher_class_description.field_description
-    - field.field.paragraph.vih_teacher_class_description.field_heading
-    - field.field.paragraph.vih_teacher_class_description.field_paragraph_user
-    - field.field.paragraph.vih_teacher_class_description.field_photo
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_image
+    - field.field.paragraph.vih_teacher_class_description.field_vih_description
+    - field.field.paragraph.vih_teacher_class_description.field_vih_heading
+    - field.field.paragraph.vih_teacher_class_description.field_vih_photo
+    - field.field.paragraph.vih_teacher_class_description.field_vih_user
     - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
     - text
+    - user
 id: paragraph.vih_teacher_class_description.embedded
 targetEntityType: paragraph
 bundle: vih_teacher_class_description
 mode: embedded
 content:
-  field_description:
-    weight: 2
+  field_vih_description:
+    type: text_default
+    weight: 1
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: content
-  field_heading:
-    weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_photo:
+  field_vih_photo:
+    type: image
     weight: 0
-    label: hidden
+    region: content
+    label: above
     settings:
       image_style: vih_person_teaser
       image_link: ''
     third_party_settings: {  }
-    type: image
+  field_vih_user:
+    type: author
+    weight: 2
     region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_background_color: true
-  field_background_image: true
-  field_paragraph_user: true
+  field_vih_background_color: true
+  field_vih_background_image: true
+  field_vih_heading: true

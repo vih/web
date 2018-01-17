@@ -1,0 +1,20 @@
+uuid: 798b9403-599e-4856-9813-c579b544c379
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_vih_user_kvalifikationer
+  module:
+    - user
+id: user.user.field_vih_user_kvalifikationer
+field_name: field_vih_user_kvalifikationer
+entity_type: user
+bundle: user
+label: Kvalifikationer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 9d7cdeeb-1853-4b4a-916c-7c33a3e99a0d
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: paragraph.field_vih_course_id
+field_name: field_vih_course_id
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

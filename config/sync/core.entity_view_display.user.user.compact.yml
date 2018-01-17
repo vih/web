@@ -4,41 +4,36 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_e_mail
-    - field.field.user.user.field_user_birthday
-    - field.field.user.user.field_user_kvalifikationer
-    - field.field.user.user.field_user_name_first
-    - field.field.user.user.field_user_name_last
+    - field.field.user.user.field_vih_banner
+    - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
+    - field.field.user.user.field_vih_user_email
+    - field.field.user.user.field_vih_user_job_title
+    - field.field.user.user.field_vih_user_kvalifikationer
+    - field.field.user.user.field_vih_user_name_first
+    - field.field.user.user.field_vih_user_name_last
+    - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_title
+    - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
     - image
+    - panelizer
     - text
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
 content:
-  field_user_name_first:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_user_name_last:
-    weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_vih_user_descr:
     type: text_trimmed
     weight: 5
@@ -47,6 +42,22 @@ content:
       trim_length: 150
     third_party_settings: {  }
     region: content
+  field_vih_user_name_first:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_user_name_last:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_vih_user_phone:
     type: string
     weight: 4
@@ -74,11 +85,12 @@ content:
     region: content
 hidden:
   field_banner: true
-  field_e_mail: true
-  field_job_title: true
-  field_paragraphs: true
-  field_user_birthday: true
-  field_user_kvalifikationer: true
-  field_user_type_id: true
+  field_vih_banner: true
+  field_vih_user_birthday: true
+  field_vih_user_email: true
+  field_vih_user_job_title: true
+  field_vih_user_kvalifikationer: true
+  field_vih_user_paragraphs: true
+  field_vih_user_type_id: true
   langcode: true
   member_for: true

@@ -1,0 +1,21 @@
+uuid: 5e7218ae-cfc8-4600-bfdb-54cd1d426140
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_description
+    - paragraphs.paragraphs_type.file
+  module:
+    - text
+id: paragraph.file.field_vih_description
+field_name: field_vih_description
+entity_type: paragraph
+bundle: file
+label: Beskrivelse
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

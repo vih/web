@@ -1,0 +1,29 @@
+uuid: 56a654a1-fd3d-462e-8cff-e9d37eb7a464
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_user_type_id
+    - paragraphs.paragraphs_type.employee
+    - taxonomy.vocabulary.user_types
+id: paragraph.employee.field_vih_user_type_id
+field_name: field_vih_user_type_id
+entity_type: paragraph
+bundle: employee
+label: 'Bruger type'
+description: 'Hvis ingen bruger typer vælges, vises alle medarbejdere.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      user_types: user_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

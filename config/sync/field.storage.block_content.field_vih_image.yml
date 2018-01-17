@@ -1,0 +1,30 @@
+uuid: cb542e00-e839-45b1-a58b-3ce4e3578e7a
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+    - file
+    - image
+id: block_content.field_vih_image
+field_name: field_vih_image
+entity_type: block_content
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: 1275
+    height: 850
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

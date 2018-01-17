@@ -1,0 +1,19 @@
+uuid: b35fd6d1-a897-4675-ad0f-71ea6fbb5f53
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_heading
+    - taxonomy.vocabulary.vih_class_package
+id: taxonomy_term.vih_class_package.field_vih_heading
+field_name: field_vih_heading
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 0537e188-4bc9-425b-a671-6078dedeb63b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_heading
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+id: paragraph.vih_class_groups_accordion.field_vih_heading
+field_name: field_vih_heading
+entity_type: paragraph
+bundle: vih_class_groups_accordion
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

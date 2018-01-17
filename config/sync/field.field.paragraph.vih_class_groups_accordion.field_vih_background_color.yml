@@ -1,0 +1,21 @@
+uuid: 586e81ca-ae5f-4275-a316-37bad7ea8160
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_color
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+  module:
+    - options
+id: paragraph.vih_class_groups_accordion.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+bundle: vih_class_groups_accordion
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

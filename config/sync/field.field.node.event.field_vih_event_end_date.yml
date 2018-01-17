@@ -1,0 +1,21 @@
+uuid: c93f8306-0164-4a35-ad8f-7bc1f26f1940
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_event_end_date
+    - node.type.event
+  module:
+    - datetime
+id: node.event.field_vih_event_end_date
+field_name: field_vih_event_end_date
+entity_type: node
+bundle: event
+label: 'Slut dato'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

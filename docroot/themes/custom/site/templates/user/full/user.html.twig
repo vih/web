@@ -8,10 +8,10 @@
                 <!-- Begin - heading -->
                 <div class="sectioned__heading">
                     <h2 class="sectioned__heading__title">
-                        {% if user.field_job_title.value %}
-                            {{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}, {{ user.field_job_title.value }}
+                        {% if user.field_vih_user_job_title.value %}
+                            {{ user.field_vih_user_name_first.value }} {{ user.field_vih_user_name_last.value }}, {{ user.field_vih_user_job_title.value }}
                         {% else %}
-                            {{ user.field_user_name_first.value }} {{ user.field_user_name_last.value }}
+                            {{ user.field_vih_user_name_first.value }} {{ user.field_vih_user_name_last.value }}
                         {% endif %}
                     </h2>
                 </div>
@@ -45,7 +45,7 @@
                         {# End - user picture #}
 
                         {# Begin - e-mail address #}
-                        {{ content.field_e_mail }}
+                        {{ content.field_vih_user_email }}
                         {# End - e-mail address #}
 
                         {# Begin - phone #}
@@ -62,7 +62,7 @@
     <!-- End - content -->
 
     {# Begin - paragraphs #}
-    {{ content.field_paragraphs }}
+    {{ content.field_vih_paragraphs }}
     {# End - paragraphs #}
 
 </article>

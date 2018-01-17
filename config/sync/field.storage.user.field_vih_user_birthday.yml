@@ -1,0 +1,20 @@
+uuid: 8d234174-2a9e-4a94-9dc0-86e4b42254fc
+langcode: da
+status: true
+dependencies:
+  module:
+    - datetime
+    - user
+id: user.field_vih_user_birthday
+field_name: field_vih_user_birthday
+entity_type: user
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 57a51f6d-8464-4a4f-aeb3-a1c577efd47f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_heading
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.field_vih_heading
+field_name: field_vih_heading
+entity_type: paragraph
+bundle: gallery
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

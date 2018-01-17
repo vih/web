@@ -1,0 +1,19 @@
+uuid: bfe4cfa9-9bd6-4fc3-a69e-ad6841ede0d7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_heading
+    - paragraphs.paragraphs_type.event_list
+id: paragraph.event_list.field_vih_heading
+field_name: field_vih_heading
+entity_type: paragraph
+bundle: event_list
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

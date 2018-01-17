@@ -1,0 +1,21 @@
+uuid: b82ef8fc-857e-4435-b946-60dc96562d8d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_course_id
+    - paragraphs.paragraphs_type.long_course_list_
+id: paragraph.long_course_list_.field_vih_course_id
+field_name: field_vih_course_id
+entity_type: paragraph
+bundle: long_course_list_
+label: Kurser
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings: {  }
+field_type: entity_reference

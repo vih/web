@@ -21,16 +21,16 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                 <div class="container">
 
                     {# Begin - heading #}
-                    {{ content.field_heading }}
+                    {{ content.field_vih_heading }}
                     {# End - heading #}
 
                     {# Begin - person #}
-                    {% if paragraph.field_paragraph_person_photo.value %}
+                    {% if paragraph.field_vih_person_photo.value %}
                         <div class="row row--equal-height-columns">
                             <div class="col-xs-12 col-sm-4 col-md-3">
 
                                 {# Begin - photo #}
-                                {{ content.field_paragraph_person_photo }}
+                                {{ content.field_vih_person_photo }}
                                 {# End - photo #}
 
                             </div>
@@ -38,12 +38,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                                 <blockquote>
 
                                     {# Begin - quote #}
-                                    {{ content.field_paragraph_text }}
+                                    {{ content.field_vih_text }}
                                     {# End - quote #}
 
                                     {# Begin - author #}
                                     <footer>
-                                        <cite>{{ content.field_author }}</cite>
+                                        <cite>{{ content.field_vih_author }}</cite>
                                     </footer>
                                     {# End - author #}
 
@@ -56,12 +56,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                         <blockquote>
 
                             {# Begin - quote #}
-                            {{ content.field_paragraph_text }}
+                            {{ content.field_vih_text }}
                             {# End - quote #}
 
                             {# Begin - author #}
                             <footer>
-                                <cite>{{ content.field_author }}</cite>
+                                <cite>{{ content.field_vih_author }}</cite>
                             </footer>
                             {# End - author #}
 
@@ -71,7 +71,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
                     {# End - person #}
 
                     {# Begin - link #}
-                    {{ content.field_link }}
+                    {{ content.field_vih_link }}
                     {# End - link #}
 
                 </div>

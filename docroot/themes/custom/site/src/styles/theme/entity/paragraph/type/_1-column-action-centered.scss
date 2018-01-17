@@ -22,15 +22,15 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
 // 1 column action - centered
 .paragraph--type--_-column-action-centered {
 
-  .field--name-field-description {
+  .field--name-field-vih-description {
     text-align: center;
 
-    + .field--name-field-link {
+    + .field--name-field-vih-link {
       margin-top: 50px;
     }
   }
 
-  .field--name-field-link {
+  .field--name-field-vih-link {
     text-align: center;
   }
 }
@@ -49,7 +49,7 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
   // 1 column action - centered
   .paragraph--type--_-column-action-centered {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       margin-bottom: $xs-paragraph-action-heading-margin-bottom;
     }
   }
@@ -68,7 +68,7 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
   // 1 column action - centered
   .paragraph--type--_-column-action-centered {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       margin-bottom: $sm-paragraph-action-heading-margin-bottom;
     }
   }
@@ -87,7 +87,7 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
   // 1 column action - centered
   .paragraph--type--_-column-action-centered {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       margin-bottom: $md-paragraph-action-heading-margin-bottom;
     }
   }
@@ -106,7 +106,7 @@ $lg-paragraph-action-heading-margin-bottom: 100px;
   // 1 column action - centered
   .paragraph--type--_-column-action-centered {
 
-    .field--name-field-heading {
+    .field--name-field-vih-heading {
       margin-bottom: $lg-paragraph-action-heading-margin-bottom;
     }
   }

@@ -1,0 +1,21 @@
+uuid: 9f021b42-6d56-4b99-8472-1762da1df55d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_color
+    - paragraphs.paragraphs_type.list_of_news_teasers
+  module:
+    - options
+id: paragraph.list_of_news_teasers.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+bundle: list_of_news_teasers
+label: Baggrundsfarve
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

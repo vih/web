@@ -49,7 +49,7 @@ class EventOrderForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $event = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     $this->event = $event;
-    $this->price = $event->field_event_price->value;
+    $this->price = $event->field_vih_event_price->value;
 
     if ($order != NULL) {
       if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($event, $order))) {
@@ -317,7 +317,7 @@ class EventOrderForm extends FormBase {
    * @return mixed
    */
   private function calculatePrice(FormStateInterface $form_state) {
-    $base_price = $this->event->field_event_price->value;
+    $base_price = $this->event->field_vih_event_price->value;
 
     //persons
     $base_price *= $form_state->get('participantsCounter');
