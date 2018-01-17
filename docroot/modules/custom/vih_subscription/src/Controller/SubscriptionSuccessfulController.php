@@ -53,10 +53,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
     $message = array();
     $node_view = node_view($order, 'email_teaser');
     $order_rendered = render($node_view)->__toString();
-    //HTML string cleanup
-    $order_rendered = strip_tags($order_rendered, '<p><div><h1><h2><h3><h4><h5><span><table><tr><td>');
-    $order_rendered = preg_replace("#(</?\w+)(?:\s(?:[^<>/]|/[^<>])*)?(/?>)#ui", '$1$2', $order_rendered);
     
+    $logo = '<div style="background-color:#009bec; width:100%; text-align:center">'
+        . '<img src="' 
+        . \Drupal::request()->getSchemeAndHttpHost() 
+        . '/themes/custom/site/dist/images/layout-header-logo.png" alt="VIH" />'
+        . '</div><br>';
+
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
     if ($subject->getType() == 'vih_long_cource') {
@@ -111,7 +114,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $subject->getTitle(),
         $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value,
         !empty($courseDate) ? $courseDate : '',
-        $subject->toUrl()->setAbsolute()->toString(),
+        '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
         $order_rendered,
       ];
 
@@ -178,8 +181,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $replacement = [
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
-          !empty($orderDate) ? $orderDate : '',
-          $subject->toUrl()->setAbsolute()->toString(),
+          !empty($courseDate) ? $courseDate : '',
+          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
       }
@@ -249,7 +252,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
           !empty($eventDate) ? $eventDate : '',
-          $subject->toUrl()->setAbsolute()->toString(),
+          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
       }
@@ -258,7 +261,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
       $order->set('field_vih_eo_status', 'confirmed');
       $order->save();
     }
-
+//Add logo to message body
+    $message['body'] = $logo . $message['body'];
     if (!empty($message)) {
       VihSubscriptionUtils::makeReplacements($message, $token, $replacement);
       VihSubscriptionUtils::sendMail($message);

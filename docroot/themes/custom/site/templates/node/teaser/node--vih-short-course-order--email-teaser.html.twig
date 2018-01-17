@@ -1,33 +1,18 @@
-<div>
-  <div>
-    <h2>
-      {{ content.field_vih_sco_course.0}}
-    </h2>
-    {% if node.field_vih_sco_ordered_options %}
-      <div>
-        <h2>
-          {{ 'Ordered options' | trans }}
-        </h2>
-        {{ content.field_vih_sco_ordered_options }}
-      </div>
-    {% endif %}
-    {% if node.field_vih_sco_persons.value %}
-      <div>
-        <h2>
-          {{ 'Participants' | trans }}
-        </h2>
-        {{ content.field_vih_sco_persons }}
-      </div>
-    {% endif %}
-  </div>
-  <div>
-    {% if content.field_vih_sco_price %}
-      <div>
-        <h2>
-          {{ "Total price" | trans }}
-        </h2>
-        {{ content.field_vih_sco_price }}
-      </div>
-    {% endif %}
-  </div>
-</div>
+<h2>
+  {{ content.field_vih_sco_course.0}}
+</h2>
+{% if node.field_vih_sco_persons.value %}
+  <h3>
+    {{ 'Participants' | trans }}
+  </h3>
+  {{ content.field_vih_sco_persons }}
+{% endif %}
+
+{% if content.field_vih_sco_price %}
+  <hr>  
+  <h3>
+    {{ "Total price" | trans }}
+  </h3>
+  <b>{{ content.field_vih_sco_price }}</b>
+  <br>
+{% endif %}
