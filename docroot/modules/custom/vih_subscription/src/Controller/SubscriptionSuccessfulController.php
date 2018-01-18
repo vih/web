@@ -31,7 +31,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
         '#theme' => 'vih_subscription_thank_you_page'
       );
       return $build;
-    } else {
+    }
+    else {
       return $this->redirect('vih_subscription.subscription_error_redirect');
     }
   }
@@ -53,10 +54,10 @@ class SubscriptionSuccessfulController extends ControllerBase {
     $message = array();
     $node_view = node_view($order, 'email_teaser');
     $order_rendered = render($node_view)->__toString();
-    
+
     $logo = '<div style="background-color:#009bec; width:100%; text-align:center">'
-        . '<img src="' 
-        . \Drupal::request()->getSchemeAndHttpHost() 
+        . '<img src="'
+        . \Drupal::request()->getSchemeAndHttpHost()
         . '/themes/custom/site/dist/images/layout-header-logo.png" alt="VIH" />'
         . '</div><br>';
 
@@ -74,30 +75,34 @@ class SubscriptionSuccessfulController extends ControllerBase {
       $start_course_date = '';
       $end_course_date = '';
       foreach ($subject->field_vih_course_periods->referencedEntities() as $period) {
-        if (is_array($period->field_vih_cp_start_date->getValue()[0])) {
-          $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
+        if (!empty($period->field_vih_cp_start_date->getValue()[0])) {
+          if (is_array($period->field_vih_cp_start_date->getValue()[0])) {
+            $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
+          }
         }
-        if (is_array($period->field_vih_cp_end_date->getValue()[0])) {
-          $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
+        if (!empty($period->field_vih_cp_end_date->getValue()[0])) {
+          if (is_array($period->field_vih_cp_end_date->getValue()[0])) {
+            $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
+          }
         }
-
         if ($start_course_date) {
           if (strtotime($curr_start_date) < strtotime($start_course_date)) {
             $start_course_date = $curr_start_date;
           }
-        } else {
+        }
+        else {
           $start_course_date = $curr_start_date;
         }
         if ($end_course_date) {
           if (strtotime($curr_end_date) > strtotime($end_course_date)) {
             $end_course_date = $curr_end_date;
           }
-        } else {
+        }
+        else {
           $end_course_date = $curr_end_date;
         }
       }
       // getting start and end date for the long course END
-
       // course date
       $courseDate = NULL;
       if ($start_course_date) {
@@ -135,20 +140,21 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $school_code = $edbBrugsenConfig->get('school_code');
         $book_number = $edbBrugsenConfig->get('book_number');
 
+        $studentCpr = $order->field_vih_lco_cpr->value;
+        
         $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
         $registration = $edbBrugsenIntegration->convertLongCourseToRegistration($order);
         $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
         $edbBrugsenIntegration->addRegistration($registration);
       }
-      
+
       //updating course order status
       $order->set('field_vih_lco_status', 'confirmed');
       //deleting CPR from order
-      $studentCpr = $order->field_vih_lco_cpr->value;
       $order->set('field_vih_lco_cpr', '');
       $order->save();
-      
-    } elseif ($subject->getType() == 'vih_short_course') {
+    }
+    elseif ($subject->getType() == 'vih_short_course') {
       $allParticipants = $order->get('field_vih_sco_persons')->getValue();
       if (!empty($allParticipants)) {
         //getting first participant
@@ -201,8 +207,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
 
           $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
           $registration = $edbBrugsenIntegration->convertShortCourseToRegistration($order_person);
-          if(!empty($order_person->field_vih_ocp_cpr->getValue()[0]['value'])){
-            $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $order_person->field_vih_ocp_cpr->getValue()[0]['value']); 
+          if (!empty($order_person->field_vih_ocp_cpr->getValue()[0]['value'])) {
+            $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $order_person->field_vih_ocp_cpr->getValue()[0]['value']);
           }
           $registration = $edbBrugsenIntegration->addCourseName($registration, $order->get('field_vih_sco_course')->entity->getTitle());
           $edbBrugsenIntegration->addRegistration($registration);
@@ -216,9 +222,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
       //updating course order status
       $order->set('field_vih_sco_status', 'confirmed');
       $order->save();
-      
-      
-    } elseif ($subject->getType() == 'event') {
+    }
+    elseif ($subject->getType() == 'event') {
       $allParticipants = $order->get('field_vih_eo_persons')->getValue();
       if (!empty($allParticipants)) {
         //getting first participant
@@ -268,4 +273,5 @@ class SubscriptionSuccessfulController extends ControllerBase {
       VihSubscriptionUtils::sendMail($message);
     }
   }
+
 }
