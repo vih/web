@@ -31,13 +31,10 @@ const runSequence = require('run-sequence');
 
 // Builders
 gulp.task('build:modernizr', (callback) => {
-    runSequence(['build:javascripts', 'build:styles', 'build:styles_ie9'], 'clean:modernizr', 'process:modernizr', callback);
+    runSequence(['build:javascripts', 'build:styles'], 'clean:modernizr', 'process:modernizr', callback);
 });
 gulp.task('build:styles', (callback) => {
     runSequence('clean:styles', 'process:styles', callback);
-});
-gulp.task('build:styles_ie9', (callback) => {
-    runSequence('clean:styles_ie9', 'process:styles_ie9', callback);
 });
 gulp.task('build:javascripts', (callback) => {
     runSequence('clean:javascripts', 'process:javascripts', callback);
@@ -74,23 +71,10 @@ gulp.task('process:styles', () => {
         .pipe(sourcemaps.init())
         .pipe(styles().on('error', swallowError))
         .pipe(autoprefixer('last 2 version'))
+        .pipe(bless())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/stylesheets'))
         .pipe(browserSync.stream({match: '**/*.css'}));
-});
-gulp.task('process:styles_ie9', () => {
-    return gulp.src(config.settings.styles)
-        .pipe(sourcemaps.init())
-        .pipe(styles().on('error', swallowError))
-        .pipe(autoprefixer('last 2 version'))
-        .pipe(bless({
-                suffix: function (index) {
-                    return "-ie" + index;
-                }
-            }
-        ))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/stylesheets/ie'));
 });
 gulp.task('process:javascripts', () => {
     return gulp.src(config.settings.javascripts)
@@ -126,9 +110,6 @@ gulp.task('clean:modernizr', () => {
 });
 gulp.task('clean:styles', () => {
     return del(['dist/stylesheets']);
-});
-gulp.task('clean:styles_ie9', () => {
-    return del(['dist/stylesheets/ie']);
 });
 gulp.task('clean:javascripts', () => {
     return del(['dist/javascripts/*.js', '!dist/javascripts/modernizr.js']);
