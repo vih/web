@@ -1,7 +1,19 @@
 .lt-ie10 {
-  .btn {
+  & .btn {
     &:before {
       padding-top: 7px;
     }
+  }
+  & .banner .banner__inner .container .banner__heading{
+    margin-top: 300px;
+  }
+  & label[for="edit-newparticipantcontainer-newparticipantfieldset-firstname"],
+  & label[for="edit-newparticipantcontainer-newparticipantfieldset-lastname"],
+  & label[for="edit-newparticipantcontainer-newparticipantfieldset-cpr"],
+  & label[for="edit-newparticipantcontainer-newparticipantfieldset-email"]{
+    display: block;
+  }
+  & .vih-suboptions-container.form-group{
+    display: block !important;
   }
 }

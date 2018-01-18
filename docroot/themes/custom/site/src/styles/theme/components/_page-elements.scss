@@ -264,3 +264,9 @@ $font-family-primary: 'Lato', sans-serif;
 .color-gray {
   color: #777;
 }
+  label[for="edit-newparticipantcontainer-newparticipantfieldset-firstname"],
+  label[for="edit-newparticipantcontainer-newparticipantfieldset-lastname"],
+  label[for="edit-newparticipantcontainer-newparticipantfieldset-cpr"],
+  label[for="edit-newparticipantcontainer-newparticipantfieldset-email"]{
+  display: none;
+}
