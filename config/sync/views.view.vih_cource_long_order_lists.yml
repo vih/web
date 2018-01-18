@@ -15,6 +15,7 @@ dependencies:
     - field.storage.paragraph.field_vih_ocp_order_course_slots
     - node.type.vih_long_cource
     - node.type.vih_long_course_order
+    - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
     - node
@@ -233,7 +234,8 @@ display:
             thousand_separator: ''
             prefix_suffix: true
           group_column: value
-          group_columns: {  }
+          group_columns:
+            value: value
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -250,7 +252,7 @@ display:
           table: node__field_vih_lco_first_name
           field: field_vih_lco_first_name
           relationship: none
-          group_type: group
+          group_type: stddev_pop
           admin_label: ''
           label: 'First name'
           exclude: false
@@ -298,7 +300,8 @@ display:
           settings:
             link_to_entity: false
           group_column: value
-          group_columns: {  }
+          group_columns:
+            value: value
           group_rows: true
           delta_limit: 0
           delta_offset: 0
@@ -755,11 +758,11 @@ display:
           relationship: field_vih_lco_order_course_perio
           group_type: group
           admin_label: ''
-          label: 'Course Period'
+          label: Periode
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{{ field_vih_ocp_course_period }} ({{ field_vih_ocp_course_period__target_id }})'
             make_link: false
             path: ''
             absolute: false
@@ -801,69 +804,6 @@ display:
           settings:
             link: true
           group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_vih_ocp_order_course_slots_1:
-          id: field_vih_ocp_order_course_slots_1
-          table: paragraph__field_vih_ocp_order_course_slots
-          field: field_vih_ocp_order_course_slots
-          relationship: field_vih_lco_order_course_perio
-          group_type: group
-          admin_label: ''
-          label: 'Ordered Course Slots'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_revisions_entity_view
-          settings:
-            view_mode: default
-          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1316,6 +1256,192 @@ display:
         title: Indhold
         description: ''
         weight: 0
+      group_by: false
+      defaults:
+        group_by: false
+        filters: false
+        filter_groups: false
+      filters:
+        type_1:
+          id: type_1
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            vih_long_course_order: vih_long_course_order
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            argument: null
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+        field_vih_ocp_course_period_target_id:
+          id: field_vih_ocp_course_period_target_id
+          table: paragraph__field_vih_ocp_course_period
+          field: field_vih_ocp_course_period_target_id
+          relationship: field_vih_lco_order_course_perio
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_vih_ocp_course_period_target_id_op
+            label: 'Periode ID'
+            description: ''
+            use_operator: false
+            operator: field_vih_ocp_course_period_target_id_op
+            identifier: course_period
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              media_creator: '0'
+              media_manager: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
+        field_vih_ocs_class_target_id:
+          id: field_vih_ocs_class_target_id
+          table: paragraph__field_vih_ocs_class
+          field: field_vih_ocs_class_target_id
+          relationship: field_vih_lco_order_course_perio
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_vih_ocs_class_target_id_op
+            label: Fag
+            description: ''
+            use_operator: false
+            operator: field_vih_ocs_class_target_id_op
+            identifier: field_vih_ocs_class_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              media_creator: '0'
+              media_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          type: select
+          limit: true
+          vid: vih_class
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: nid_op
+            label: 'Ordre ID'
+            description: ''
+            use_operator: false
+            operator: nid_op
+            identifier: nid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              media_creator: '0'
+              media_manager: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: nid
+          plugin_id: numeric
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: 0
       contexts:
@@ -1323,6 +1449,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags:

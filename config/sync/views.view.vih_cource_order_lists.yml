@@ -2258,7 +2258,7 @@ display:
       display_extenders: {  }
       path: admin/content/orders
       menu:
-        type: tab
+        type: none
         title: Ordrer
         description: ''
         expanded: false
