@@ -1,3 +1,7 @@
 .lt-ie10 {
-  // Put styles in here
+  .btn {
+    &:before {
+      padding-top: 7px;
+    }
+  }
 }
