@@ -1,7 +1,12 @@
 .lt-ie10 {
   & .btn {
     &:before {
-      padding-top: 7px;
+      padding-top: 8px;
+    }
+  }
+  & .btn.btn-sm {
+    &:before {
+      padding-top: 2px;
     }
   }
   & .banner .banner__inner .container .banner__heading{
@@ -20,6 +25,9 @@
     display: block;  
     font-size: 14px;
   }
+  & #participants-container-wrapper div[data-drupal-selector="edit-participantscontainer"] label{
+    display: block;
+  }
 }
 
 /*IE9 fixes revert for other browsers*/
@@ -31,4 +39,7 @@ label[for="edit-newparticipantcontainer-newparticipantfieldset-email"]{
 }
 .vih-suboptions-container fieldset.fieldgroup.form-composite.form-item.form-wrapper legend span.fieldset-legend{
   display: none;  
+}
+#participants-container-wrapper div[data-drupal-selector="edit-participantscontainer"] label{
+  display: none;
 }

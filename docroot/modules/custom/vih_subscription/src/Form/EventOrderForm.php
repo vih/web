@@ -102,6 +102,7 @@ class EventOrderForm extends FormBase {
         ];
         $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
           '#type' => 'textfield',
+          '#title' => $this->t('Firstname'),
           '#placeholder' => $this->t('Firstname'),
           '#required' => TRUE,
           '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
@@ -109,6 +110,7 @@ class EventOrderForm extends FormBase {
         );
         $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
           '#type' => 'textfield',
+          '#title' => $this->t('Lastname'),
           '#placeholder' => $this->t('Lastname'),
           '#required' => TRUE,
           '#prefix' => '<div class="col-xs-12 col-sm-6">',
@@ -116,6 +118,7 @@ class EventOrderForm extends FormBase {
         );
         $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
           '#type' => 'textfield',
+          '#title' => $this->t('E-mail address'),
           '#placeholder' => $this->t('E-mail address'),
           '#required' => TRUE,
         );
@@ -187,8 +190,8 @@ class EventOrderForm extends FormBase {
     $firstParticipantName = '';
     $subscribedPersons = array();
     foreach ($form_state->getValue('participantsContainer') as $participant_fieldset) {
-      $participant = $participant_fieldset['participant_fieldset'];
-      if ($participant) {
+      if ($participant_fieldset['participant_fieldset']) {
+        $participant = $participant_fieldset['participant_fieldset'];
         if (empty($firstParticipantName)) {
           $firstParticipantName = $participant['firstName'] . ' ' . $participant['lastName'];
         }
