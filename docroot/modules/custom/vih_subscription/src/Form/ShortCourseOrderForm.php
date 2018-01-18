@@ -194,6 +194,7 @@ class ShortCourseOrderForm extends FormBase {
 
             $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['options'][$optionDelta]['suboptions-container']['suboption'] = array(
               '#type' => 'radios',
+              '#title' => $optionName,
               '#options' => $optionGroupSuboptions[$optionGroupDelta][$optionDelta],
               '#empty_value' => -1,
               '#default_value' => 0
