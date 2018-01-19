@@ -16,6 +16,7 @@ function swallowError(error) {
 
 // Load plugins
 const gulp = require('gulp');
+const bless = require('gulp-bless');
 const babel = require('gulp-babel');
 const styles = require('gulp-sass');
 const del = require('del');
@@ -70,6 +71,7 @@ gulp.task('process:styles', () => {
         .pipe(sourcemaps.init())
         .pipe(styles().on('error', swallowError))
         .pipe(autoprefixer('last 2 version'))
+        .pipe(bless())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/stylesheets'))
         .pipe(browserSync.stream({match: '**/*.css'}));
