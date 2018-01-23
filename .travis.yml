@@ -10,7 +10,7 @@ cache:
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
 php:
-  - 7.0
+  - 7.1
 
 env:
   - VERSION=LIGHTNING TEST_TAGS=lightning PROFILE_NAME=lightning
