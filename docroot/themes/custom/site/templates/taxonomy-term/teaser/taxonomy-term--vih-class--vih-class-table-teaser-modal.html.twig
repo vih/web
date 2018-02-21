@@ -59,7 +59,7 @@
 
                 {# Begin - body #}
                 <div class="modal-body">
-                    {{ content.description }}
+                    {{ content.field_short_description }}
                 </div>
                 {# End - body #}
 
@@ -69,33 +69,3 @@
     <!-- End - modal -->
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {#<div class="col-xs-12 col-sm-6 flex-center-middle">#}
-            {#{% if content.description|render is not empty %}#}
-                {#<div class="field-vih-description-wrapper">#}
-                    {#{{ content.description|render|striptags('<!-- -->')|length > 70 ? content.description|render|striptags('<!-- -->')|slice(0, 70) ~ '...' : content.description }}#}
-                {#</div>#}
-            {#{% endif %}#}
-
-            {#<button type="button" class="btn btn-default">#}
-                {#<span class="icon icon-info-circle" aria-hidden="true"></span>#}
-            {#</button>#}
-        {#</div>#}
-    {#</div>#}
-
-{#</div>#}
