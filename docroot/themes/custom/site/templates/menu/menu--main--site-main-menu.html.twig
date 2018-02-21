@@ -26,7 +26,7 @@
 
             {# List item #}
             {% if item.below and item.is_expanded %}
-            <li{{ item.attributes.addClass('dropdown', 'layout-navigation__dropdown', item_classes) }}>
+                <li{{ item.attributes.addClass('dropdown', 'layout-navigation__dropdown', item_classes) }}>
             {% else %}
                 <li{{ item.attributes.addClass('layout-navigation__link', item_classes) }}>
             {% endif %}

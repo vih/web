@@ -1183,6 +1183,20 @@ ul.layout-navigation {
     }
   }
 }
+
+
+.layout-navigation__dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .layout-navigation__link {
+    height: auto;
+
+    flex-grow: 0;
+  }
+}
+
 .layout-navigation__dropdown-menu .layout-navigation__link {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
