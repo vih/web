@@ -28,8 +28,9 @@ settings:
         -
           name: Linking
           items:
-            - Linkit
+            - DrupalLink
             - DrupalUnlink
+            - Linkit
         -
           name: Lists
           items:

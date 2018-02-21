@@ -28,7 +28,7 @@ bundle: vih_short_course_order
 mode: email_teaser
 content:
   body:
-    label: inline
+    label: hidden
     type: text_summary_or_trimmed
     weight: 5
     settings:
@@ -37,7 +37,7 @@ content:
     region: content
   field_vih_sco_course:
     weight: 1
-    label: inline
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -46,7 +46,7 @@ content:
   field_vih_sco_ordered_options:
     type: entity_reference_revisions_entity_view
     weight: 2
-    label: inline
+    label: hidden
     settings:
       view_mode: embedded
       link: ''
@@ -57,7 +57,7 @@ content:
     weight: 3
     label: hidden
     settings:
-      view_mode: email_teaser
+      view_mode: embedded
       link: ''
     third_party_settings: {  }
     region: content
