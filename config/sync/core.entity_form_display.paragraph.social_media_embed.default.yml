@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
+    - field.field.paragraph.social_media_embed.field_instagram_oembed_url
     - field.field.paragraph.social_media_embed.field_vih_background_color
     - field.field.paragraph.social_media_embed.field_vih_background_image
     - field.field.paragraph.social_media_embed.field_vih_embed
@@ -37,6 +38,14 @@ targetEntityType: paragraph
 bundle: social_media_embed
 mode: default
 content:
+  field_instagram_oembed_url:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_vih_background_color:
     weight: 3
     settings: {  }
@@ -58,7 +67,7 @@ content:
     third_party_settings: {  }
   field_vih_embed:
     type: link_default
-    weight: 2
+    weight: 1
     region: content
     settings:
       placeholder_url: ''

@@ -1,18 +1,18 @@
-uuid: 9a044b33-9f39-4a88-b0e5-3358cdd2ba96
+uuid: b0e9c7c0-4192-43b1-8e1d-15b3731caf3c
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_vih_embed
+    - field.storage.paragraph.field_instagram_oembed_url
     - paragraphs.paragraphs_type.social_media_embed
   module:
     - link
-id: paragraph.social_media_embed.field_vih_embed
-field_name: field_vih_embed
+id: paragraph.social_media_embed.field_instagram_oembed_url
+field_name: field_instagram_oembed_url
 entity_type: paragraph
 bundle: social_media_embed
-label: 'oEmbed URL'
-description: 'Bl.a. Twitter og facebook - dog ikke Instagram'
+label: 'Instagram oEmbed URL'
+description: ''
 required: false
 translatable: false
 default_value: {  }

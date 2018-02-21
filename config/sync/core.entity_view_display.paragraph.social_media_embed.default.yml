@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.social_media_embed.field_instagram_oembed_url
     - field.field.paragraph.social_media_embed.field_vih_background_color
     - field.field.paragraph.social_media_embed.field_vih_background_image
     - field.field.paragraph.social_media_embed.field_vih_embed
@@ -10,34 +11,26 @@ dependencies:
     - field.field.paragraph.social_media_embed.field_vih_link
     - paragraphs.paragraphs_type.social_media_embed
   module:
-    - image
     - link
-    - options
+    - media_entity_instagram
     - url_embed
 id: paragraph.social_media_embed.default
 targetEntityType: paragraph
 bundle: social_media_embed
 mode: default
 content:
-  field_vih_background_color:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_vih_background_image:
-    weight: 5
-    label: above
+  field_instagram_oembed_url:
+    weight: 2
+    label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      width: null
+      hidecaption: false
     third_party_settings: {  }
-    type: image
+    type: instagram_embed
     region: content
   field_vih_embed:
     type: url_embed
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings: {  }
@@ -62,4 +55,6 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-hidden: {  }
+hidden:
+  field_vih_background_color: true
+  field_vih_background_image: true
