@@ -1,0 +1,19 @@
+uuid: 5cdb30c4-f337-4e51-9efd-58ca8f5e1170
+langcode: da
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_short_description
+field_name: field_short_description
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

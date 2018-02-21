@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.vih_class.field_metatag
+    - field.field.taxonomy_term.vih_class.field_short_description
     - field.field.taxonomy_term.vih_class.field_vih_banner
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
@@ -18,7 +19,6 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
-    - metatag
     - panelizer
     - text
 third_party_settings:
@@ -35,16 +35,16 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_metatag:
-    weight: 9
-    label: above
+  field_short_description:
+    weight: 8
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: metatag_empty_formatter
+    type: text_default
     region: content
   field_vih_banner:
     weight: 0
@@ -57,7 +57,7 @@ content:
     region: content
   field_vih_class_class_packages:
     type: entity_reference_entity_view
-    weight: 7
+    weight: 6
     region: content
     label: hidden
     settings:
@@ -65,7 +65,7 @@ content:
       link: false
     third_party_settings: {  }
   field_vih_class_material_price:
-    weight: 6
+    weight: 5
     label: above
     settings:
       thousand_separator: ''
@@ -76,7 +76,7 @@ content:
     type: number_decimal
     region: content
   field_vih_class_price_addition:
-    weight: 5
+    weight: 4
     label: above
     settings:
       thousand_separator: ''
@@ -96,7 +96,7 @@ content:
     region: content
   field_vih_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 8
+    weight: 7
     region: content
     label: hidden
     settings:
@@ -105,13 +105,14 @@ content:
     third_party_settings: {  }
   field_vih_subheading:
     type: string
-    weight: 3
+    weight: 2
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
+  field_metatag: true
   field_vih_class_color: true
   field_vih_class_image: true
   langcode: true
