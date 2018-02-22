@@ -1,0 +1,80 @@
+// |--------------------------------------------------------------------------
+// | My course
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .boxy--my-course
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin boxy--my-course-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.boxy--my-course {
+
+  .boxy__body {
+    display: flex;
+  }
+
+  .boxy__image {
+    padding-right: floor( ( $grid-gutter-width / 2) );
+
+    margin-top: 0 - $boxy-body-spacing-top-bottom;
+    margin-bottom: 0 - $boxy-body-spacing-top-bottom;
+    margin-left: 0 - $boxy-spacing-left-right;
+
+    img {
+      max-width: 100px;
+    }
+  }
+
+  .boxy__content {}
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
