@@ -11,28 +11,12 @@ dependencies:
     - paragraphs.paragraphs_type.article
   module:
     - link
-    - options
     - text
 id: paragraph.article.default
 targetEntityType: paragraph
 bundle: article
 mode: default
 content:
-  field_vih_background_color:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_vih_background_img:
-    weight: 6
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_vih_heading:
     weight: 0
     label: hidden
@@ -42,7 +26,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       trim_length: null
@@ -55,9 +39,11 @@ content:
     region: content
   field_vih_paragraphs_body:
     type: text_default
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_vih_background_color: true
+  field_vih_background_img: true
