@@ -4,12 +4,13 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.node.news.body
     - field.field.node.news.field_metatag
-    - field.field.node.news.field_vih_banner
     - field.field.node.news.field_vih_image
     - field.field.node.news.field_vih_news_tags
     - field.field.node.news.field_vih_paragraphs
+    - field.field.node.news.field_vih_top_banner
     - field.field.node.news.scheduled_update
     - node.type.news
   module:
@@ -43,10 +44,9 @@ third_party_settings:
         - field_vih_image
         - body
         - field_vih_paragraphs
-        - field_news_tags
         - field_vih_news_tags
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tab
       format_settings:
         id: ''
@@ -68,7 +68,7 @@ third_party_settings:
         - path
         - scheduled_update
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -104,19 +104,6 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_vih_banner:
-    type: entity_browser_file
-    weight: 17
-    settings:
-      entity_browser: image_browser
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      preview_image_style: thumbnail
-      field_widget_edit: true
-      view_mode: default
-    region: content
-    third_party_settings: {  }
   field_vih_image:
     type: entity_browser_file
     weight: 19
@@ -153,6 +140,20 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
+  field_vih_top_banner:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 27

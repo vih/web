@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_image
     - field.field.node.event.field_vih_paragraphs
+    - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
     - image.style.banner_small
     - node.type.event
@@ -149,6 +150,14 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
+  field_vih_top_banner:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 3

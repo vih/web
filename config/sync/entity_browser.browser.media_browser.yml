@@ -11,14 +11,21 @@ _core:
   default_config_hash: kT3o2OhRMWgZX6kGxRYSsItntaw241e3UwpGCD3RpJE
 name: media_browser
 label: Mediebrowser
-display: iframe
+display: modal
 display_configuration:
-  width: 100%
+  width: ''
   height: '640'
   link_text: 'Select entities'
-  auto_open: true
+  auto_open: false
 selection_display: no_display
-selection_display_configuration: {  }
+selection_display_configuration:
+  view: null
+  view_display: null
+  entity_type: node
+  display: label
+  display_settings: {  }
+  select_text: 'Use selected'
+  selection_hidden: true
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:

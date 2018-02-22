@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.taxonomy_term.vih_class.field_metatag
     - field.field.taxonomy_term.vih_class.field_short_description
     - field.field.taxonomy_term.vih_class.field_vih_banner
@@ -15,6 +16,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_heading
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
+    - field.field.taxonomy_term.vih_class.field_vih_top_banner
     - taxonomy.vocabulary.vih_class
   module:
     - entity_browser
@@ -31,7 +33,7 @@ third_party_settings:
         - field_vih_subheading
         - field_vih_paragraphs
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -66,7 +68,7 @@ third_party_settings:
         - field_vih_class_price_addition
         - field_vih_class_class_packages
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tab
       format_settings:
         label: 'Fag detaljer'
@@ -205,6 +207,20 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_vih_top_banner:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
     third_party_settings: {  }
   langcode:
     type: language_select

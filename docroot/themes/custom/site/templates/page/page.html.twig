@@ -30,15 +30,15 @@
 
             {% else %}
 
-                {% if node.field_vih_banner.value or user.field_vih_banner.value or term.field_vih_banner.value %}
+                {% if node.field_vih_top_banner.value or user.field_vih_top_banner.value or term.field_vih_top_banner.value %}
 
                     {# Begin - image #}
-                    {% if node.field_vih_banner.value %}
-                        {% set banner_background_image = node.field_vih_banner.entity.fileuri | image_style('banner_small') %}
-                    {% elseif user.field_vih_banner.value %}
-                        {% set banner_background_image = user.field_vih_banner.entity.fileuri | image_style('banner_small') %}
-                    {% elseif term.field_vih_banner.value %}
-                        {% set banner_background_image = term.field_vih_banner.entity.fileuri | image_style('banner_small') %}
+                    {% if node.field_vih_top_banner.value %}
+                        {% set banner_background_image = node.ffield_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+                    {% elseif user.field_vih_top_banner.value %}
+                        {% set banner_background_image = user.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+                    {% elseif term.field_vih_top_banner.value %}
+                        {% set banner_background_image = term.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
                     {% endif %}
                     {# End - image #}
 
