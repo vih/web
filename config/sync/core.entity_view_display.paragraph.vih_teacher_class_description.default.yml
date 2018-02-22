@@ -20,14 +20,14 @@ bundle: vih_teacher_class_description
 mode: default
 content:
   field_vih_background_color:
-    weight: 4
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_vih_background_image:
-    weight: 5
+    weight: 4
     label: above
     settings:
       image_style: ''
@@ -37,7 +37,7 @@ content:
     region: content
   field_vih_description:
     type: text_default
-    weight: 3
+    weight: 2
     region: content
     label: hidden
     settings: {  }
@@ -50,6 +50,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_photo:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
 hidden:
-  field_vih_photo: true
   field_vih_user: true
