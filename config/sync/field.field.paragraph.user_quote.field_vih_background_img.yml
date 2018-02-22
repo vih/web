@@ -1,0 +1,28 @@
+uuid: 2bb2d1a1-ac2f-45c1-95ba-2e3ea75f4d2f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_img
+    - media.type.image
+    - paragraphs.paragraphs_type.user_quote
+id: paragraph.user_quote.field_vih_background_img
+field_name: field_vih_background_img
+entity_type: paragraph
+bundle: user_quote
+label: 'Background image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

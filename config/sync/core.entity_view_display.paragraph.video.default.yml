@@ -4,14 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.video.field_vih_background_color
-    - field.field.paragraph.video.field_vih_background_image
+    - field.field.paragraph.video.field_vih_background_img
     - field.field.paragraph.video.field_vih_description
     - field.field.paragraph.video.field_vih_heading
     - field.field.paragraph.video.field_vih_highlighted
     - field.field.paragraph.video.field_vih_video
     - paragraphs.paragraphs_type.video
   module:
-    - image
     - options
     - text
     - video_embed_field
@@ -27,14 +26,13 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
-  field_vih_background_image:
-    weight: 6
+  field_vih_background_img:
+    weight: 7
     label: above
     settings:
-      image_style: ''
-      image_link: ''
+      link: true
     third_party_settings: {  }
-    type: image
+    type: entity_reference_label
     region: content
   field_vih_description:
     weight: 1

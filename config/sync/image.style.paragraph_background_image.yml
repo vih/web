@@ -1,14 +1,24 @@
 uuid: f27c9aeb-cdb2-4fde-acc8-a93223948b6a
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: paragraph_background_image
 label: 'Paragraph baggrundsbillede'
 effects:
   e660f852-644b-4ee5-b2f4-1c05638909a1:
     uuid: e660f852-644b-4ee5-b2f4-1c05638909a1
     id: image_scale_and_crop
-    weight: 1
+    weight: -9
     data:
       width: 1400
       height: 650
+  9b67e0d6-74bc-449c-8e15-1795ef97569b:
+    uuid: 9b67e0d6-74bc-449c-8e15-1795ef97569b
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 1400
+      height: 650
+      crop_type: focal_point
