@@ -38,24 +38,13 @@
  * @ingroup themeable
  */
 #}
-<ul>
-  <li>
-    {{ paragraph.field_vih_oo_group_name.value }}
-  </li>
-  <ul>
-    <li>
-      {{ paragraph.field_vih_oo_option_name.value }}
+<div>
+    {{ paragraph.field_vih_oo_group_name.value }} {{ paragraph.field_vih_oo_option_name.value }}
       {% if paragraph.field_vih_oo_price_addition.value %}
         ({{ 'Price addition' | trans }}: {{ paragraph.field_vih_oo_price_addition.value }} {{ 'DKK' | trans}})
       {% endif %}
       {% if paragraph.field_vih_oo_suboption.value %}
-        <ul>
-          <li>
             {{ paragraph.field_vih_oo_suboption.value }}
-          </li>
-        </ul>
       {% endif %}
-    </li>
-  </ul>
-</ul>
+</div>
 

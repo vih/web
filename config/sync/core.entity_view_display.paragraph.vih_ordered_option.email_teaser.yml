@@ -1,0 +1,54 @@
+uuid: 52153aa8-fa42-4821-8167-bb6ff64580b4
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.email_teaser
+    - field.field.paragraph.vih_ordered_option.field_vih_oo_amount
+    - field.field.paragraph.vih_ordered_option.field_vih_oo_group_name
+    - field.field.paragraph.vih_ordered_option.field_vih_oo_option_name
+    - field.field.paragraph.vih_ordered_option.field_vih_oo_price_addition
+    - field.field.paragraph.vih_ordered_option.field_vih_oo_suboption
+    - paragraphs.paragraphs_type.vih_ordered_option
+id: paragraph.vih_ordered_option.email_teaser
+targetEntityType: paragraph
+bundle: vih_ordered_option
+mode: email_teaser
+content:
+  field_vih_oo_group_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_oo_option_name:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_oo_price_addition:
+    weight: 1
+    label: hidden
+    settings:
+      thousand_separator: .
+      decimal_separator: ','
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_vih_oo_suboption:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_vih_oo_amount: true

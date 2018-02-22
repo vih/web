@@ -1,0 +1,62 @@
+uuid: e03a5d52-c504-4216-a361-08b5bf3341b0
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.email_teaser
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_birthdate
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_last_name
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_ordered_options
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+  module:
+    - entity_reference_revisions
+id: paragraph.vih_ordered_course_person.email_teaser
+targetEntityType: paragraph
+bundle: vih_ordered_course_person
+mode: email_teaser
+content:
+  field_vih_ocp_cpr:
+    type: string
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_ocp_email:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_vih_ocp_first_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_ocp_last_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_ocp_ordered_options:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: email_teaser
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_vih_ocp_birthdate: true

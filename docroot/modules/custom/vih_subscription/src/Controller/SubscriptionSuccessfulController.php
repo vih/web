@@ -106,13 +106,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
       // course date
       $courseDate = NULL;
       if ($start_course_date) {
-        $courseDate = \Drupal::service('date.formatter')->format(strtotime($start_course_date), "default_medium_date_without_time");
+        $courseDate = \Drupal::service('date.formatter')->format(strtotime($start_course_date), "long");
       }
       if ($end_course_date) {
         if (!(empty($courseDate))) {
           $courseDate .= ' - ';
         }
-        $courseDate .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "default_medium_date_without_time");
+        $courseDate .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "long");
       }
 
       $replacement = [
@@ -169,13 +169,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
         //course date
         $courseDate = NULL;
         if ($subject->field_vih_sc_start_date->value) {
-          $courseDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_start_date->value), "default_medium_date_without_time");
+          $courseDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_start_date->value), "long");
         }
         if ($subject->field_vih_sc_end_date->value) {
           if (!(empty($courseDate))) {
             $courseDate .= ' - ';
           }
-          $courseDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_end_date->value), "default_medium_date_without_time");
+          $courseDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_end_date->value), "long");
         }
 
         $message = [
@@ -238,13 +238,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
         //event date
         $eventDate = NULL;
         if ($subject->field_vih_event_start_date->value) {
-          $eventDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_start_date->value), "default_medium_date_without_time");
+          $eventDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_start_date->value), "long");
         }
         if ($subject->field_vih_event_end_date->value) {
           if (!(empty($eventDate))) {
             $eventDate .= ' - ';
           }
-          $eventDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_end_date->value), "default_medium_date_without_time");
+          $eventDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_end_date->value), "long");
         }
 
         $message = [
