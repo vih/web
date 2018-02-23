@@ -7,7 +7,6 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.event.body
     - field.field.node.event.field_metatag
-    - field.field.node.event.field_vih_banner
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -133,19 +132,6 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_vih_banner:
-    type: entity_browser_file
-    weight: 3
-    settings:
-      entity_browser: image_browser
-      field_widget_edit: true
-      field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
-      selection_mode: selection_append
-    region: content
-    third_party_settings: {  }
   field_vih_cource_contact_person:
     weight: 8
     settings:

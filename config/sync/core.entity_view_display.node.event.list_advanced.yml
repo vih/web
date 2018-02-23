@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.list_advanced
     - field.field.node.event.body
     - field.field.node.event.field_metatag
-    - field.field.node.event.field_vih_banner
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -17,6 +16,7 @@ dependencies:
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_image
     - field.field.node.event.field_vih_paragraphs
+    - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
     - image.style.list_advanced
     - node.type.event
@@ -82,13 +82,13 @@ content:
     third_party_settings: {  }
 hidden:
   field_metatag: true
-  field_vih_banner: true
   field_vih_cource_contact_person: true
   field_vih_course_subheading: true
   field_vih_event_persons_limit: true
   field_vih_event_price: true
   field_vih_event_status: true
   field_vih_paragraphs: true
+  field_vih_top_banner: true
   langcode: true
   links: true
   scheduled_update: true
