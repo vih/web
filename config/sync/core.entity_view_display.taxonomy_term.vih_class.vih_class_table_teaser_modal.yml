@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.vih_class_table_teaser_modal
     - field.field.taxonomy_term.vih_class.field_metatag
+    - field.field.taxonomy_term.vih_class.field_short_description
     - field.field.taxonomy_term.vih_class.field_vih_banner
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
@@ -14,12 +15,12 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_heading
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
+    - field.field.taxonomy_term.vih_class.field_vih_top_banner
     - image.style.vih_class_teaser
     - taxonomy.vocabulary.vih_class
   module:
     - image
     - panelizer
-    - text
 third_party_settings:
   panelizer:
     enable: false
@@ -31,8 +32,8 @@ targetEntityType: taxonomy_term
 bundle: vih_class
 mode: vih_class_table_teaser_modal
 content:
-  description:
-    type: text_default
+  field_short_description:
+    type: basic_string
     weight: 1
     region: content
     label: hidden
@@ -48,6 +49,7 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
+  description: true
   field_metatag: true
   field_vih_banner: true
   field_vih_class_class_packages: true
@@ -57,4 +59,5 @@ hidden:
   field_vih_heading: true
   field_vih_paragraphs: true
   field_vih_subheading: true
+  field_vih_top_banner: true
   langcode: true

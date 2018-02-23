@@ -40,13 +40,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_short_description:
-    weight: 8
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_vih_banner:
     weight: 0
     label: hidden
@@ -113,7 +106,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_vih_top_banner:
-    weight: 9
+    weight: 8
     label: above
     settings:
       link: true
@@ -122,6 +115,7 @@ content:
     region: content
 hidden:
   field_metatag: true
+  field_short_description: true
   field_vih_class_color: true
   field_vih_class_image: true
   langcode: true

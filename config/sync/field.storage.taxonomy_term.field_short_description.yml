@@ -1,16 +1,16 @@
-uuid: 5cdb30c4-f337-4e51-9efd-58ca8f5e1170
+uuid: 13763d86-9019-4daf-92d5-729a1f56498b
 langcode: da
 status: true
 dependencies:
   module:
     - taxonomy
-    - text
 id: taxonomy_term.field_short_description
 field_name: field_short_description
 entity_type: taxonomy_term
-type: text_long
-settings: {  }
-module: text
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true
