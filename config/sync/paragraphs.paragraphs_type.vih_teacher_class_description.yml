@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: vih_teacher_class_description
-label: 'Beskrivelse af fag'
+label: 'Lærerbeskrivelse af fag'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

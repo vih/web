@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: employee
-label: Medarbejder
+label: 'Liste af medarbejdere'
 icon_uuid: null
 description: 'Viser medarbejdere udfra medarbejder type.'
 behavior_plugins: {  }
