@@ -391,6 +391,18 @@ function site_preprocess_paragraph__event_list(&$variables) {
   }
 }
 
+function site_preprocess_paragraph__vih_teacher_class_description(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $teacher_uids = [];
+
+  if ($fields = $paragraph->get('field_vih_user')->getValue()) {
+
+    foreach($fields as $field) {
+      $teacher_uids[] = $field['target_id'];
+    }
+  }
+}
+
 function site_preprocess_paragraph__class_packages(&$variables) {
   $paragraph = $variables['paragraph'];
   $class_tids = [];
