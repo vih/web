@@ -1,0 +1,28 @@
+uuid: 244b0f64-467f-4799-80c6-39d3f40b3818
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vih_top_banner
+    - media.type.image
+    - taxonomy.vocabulary.vih_class
+id: taxonomy_term.vih_class.field_vih_top_banner
+field_name: field_vih_top_banner
+entity_type: taxonomy_term
+bundle: vih_class
+label: 'Top Banner'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 389b5f51-873c-413c-9d53-e953c1593abb
+langcode: da
+status: true
+dependencies:
+  module:
+    - media
+    - taxonomy
+id: taxonomy_term.field_vih_top_banner
+field_name: field_vih_top_banner
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

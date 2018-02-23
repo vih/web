@@ -256,8 +256,8 @@ function site_preprocess_paragraph(&$variables) {
       $variables['attributes']['class'][] = 'sectioned--skewed';
 
       // Background image
-      if ($paragraph->field_vih_background_image && !$paragraph->field_vih_background_image->isEmpty()) {
-        $image_uri = $paragraph->field_vih_background_image->entity->getFileUri();
+      if ($paragraph->field_vih_background_img && !$paragraph->field_vih_background_img->isEmpty()) {
+        $image_uri = $paragraph->field_vih_background_img->entity->image->entity->getFileUri();
         $image_style = ImageStyle::load('paragraph_background_image');
         $image_url = $image_style->buildUrl($image_uri);
 

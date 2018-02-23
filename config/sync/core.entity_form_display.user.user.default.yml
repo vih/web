@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.user.user.field_vih_banner
+    - field.field.user.user.field_vih_top_banner
     - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
@@ -39,10 +41,9 @@ third_party_settings:
         - field_vih_user_descr
         - field_vih_user_phone
         - field_vih_user_email
-        - field_user_type_id
         - field_vih_user_type_id
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tab
       format_settings:
         id: ''
@@ -55,7 +56,7 @@ third_party_settings:
     group_content:
       children: {  }
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -88,7 +89,7 @@ third_party_settings:
         - language
         - translation
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -124,6 +125,20 @@ content:
       preview_image_style: thumbnail
       open: true
       selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_vih_top_banner:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
     region: content
     third_party_settings: {  }
   field_vih_user_birthday:
@@ -174,7 +189,7 @@ content:
     third_party_settings: {  }
   field_vih_user_paragraphs:
     type: paragraphs
-    weight: 3
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -233,7 +248,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
