@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.social_media_embed.field_instagram_oembed_url
     - field.field.paragraph.social_media_embed.field_vih_background_color
-    - field.field.paragraph.social_media_embed.field_vih_background_image
+    - field.field.paragraph.social_media_embed.field_vih_background_img
     - field.field.paragraph.social_media_embed.field_vih_embed
     - field.field.paragraph.social_media_embed.field_vih_heading
     - field.field.paragraph.social_media_embed.field_vih_link
@@ -57,4 +57,4 @@ content:
     region: content
 hidden:
   field_vih_background_color: true
-  field_vih_background_image: true
+  field_vih_background_img: true

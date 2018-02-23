@@ -1,0 +1,29 @@
+uuid: d399dcc5-1b59-4370-9e64-8e54cf3c25c8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_vih_top_banner
+    - media.type.image
+  module:
+    - user
+id: user.user.field_vih_top_banner
+field_name: field_vih_top_banner
+entity_type: user
+bundle: user
+label: 'Top Banner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

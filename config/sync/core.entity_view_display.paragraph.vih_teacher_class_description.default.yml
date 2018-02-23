@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.vih_teacher_class_description.field_vih_background_color
-    - field.field.paragraph.vih_teacher_class_description.field_vih_background_image
+    - field.field.paragraph.vih_teacher_class_description.field_vih_background_img
     - field.field.paragraph.vih_teacher_class_description.field_vih_description
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
     - field.field.paragraph.vih_teacher_class_description.field_vih_photo
@@ -45,5 +45,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_vih_background_color: true
-  field_vih_background_image: true
+  field_vih_background_img: true
   field_vih_user: true

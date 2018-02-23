@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.list_advanced
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_metatag
-    - field.field.node.vih_short_course.field_vih_banner
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
@@ -18,6 +17,7 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_price
     - field.field.node.vih_short_course.field_vih_sc_start_date
     - field.field.node.vih_short_course.field_vih_sc_status
+    - field.field.node.vih_short_course.field_vih_top_banner
     - field.field.node.vih_short_course.scheduled_update
     - image.style.list_advanced
     - node.type.vih_short_course
@@ -79,7 +79,6 @@ content:
 hidden:
   field_banner: true
   field_metatag: true
-  field_vih_banner: true
   field_vih_course_heading: true
   field_vih_course_subheading: true
   field_vih_cs_contact_person: true
@@ -88,6 +87,7 @@ hidden:
   field_vih_sc_persons_limit: true
   field_vih_sc_price: true
   field_vih_sc_status: true
+  field_vih_top_banner: true
   langcode: true
   links: true
   scheduled_update: true

@@ -1,0 +1,28 @@
+uuid: f82c4c8c-8fbd-470a-a8db-1b1e47bd48ac
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_top_banner
+    - media.type.image
+    - node.type.vih_short_course
+id: node.vih_short_course.field_vih_top_banner
+field_name: field_vih_top_banner
+entity_type: node
+bundle: vih_short_course
+label: 'Top Banner'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

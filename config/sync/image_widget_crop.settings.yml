@@ -2,9 +2,11 @@ settings:
   library_url: ''
   css_url: ''
   crop_preview_image_style: crop_thumbnail
-  crop_list: {  }
-  warn_multiple_usages: false
+  crop_list:
+    banner_small_crop: banner_small_crop
+  warn_multiple_usages: true
   show_default_crop: true
+  show_crop_area: true
 _core:
   default_config_hash: Yew0jAlVowXHCAcybHScr6viLQf_tvHwC48O16wkg2w
 langcode: da

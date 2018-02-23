@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.list_advanced
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_metatag
-    - field.field.node.vih_long_cource.field_vih_banner
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -18,6 +17,7 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_subsc_price
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - field.field.node.vih_long_cource.field_vih_paragraphs
+    - field.field.node.vih_long_cource.field_vih_top_banner
     - field.field.node.vih_long_cource.scheduled_update
     - image.style.list_advanced
     - node.type.vih_long_cource
@@ -251,7 +251,6 @@ content:
 hidden:
   field_banner: true
   field_metatag: true
-  field_vih_banner: true
   field_vih_cource_contact_person: true
   field_vih_course_heading: true
   field_vih_course_periods: true
@@ -262,6 +261,7 @@ hidden:
   field_vih_course_subsc_price: true
   field_vih_course_week_price: true
   field_vih_paragraphs: true
+  field_vih_top_banner: true
   langcode: true
   links: true
   scheduled_update: true

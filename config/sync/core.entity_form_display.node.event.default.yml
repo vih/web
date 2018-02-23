@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.node.event.body
     - field.field.node.event.field_metatag
     - field.field.node.event.field_vih_banner
@@ -17,6 +18,7 @@ dependencies:
     - field.field.node.event.field_vih_event_status
     - field.field.node.event.field_vih_image
     - field.field.node.event.field_vih_paragraphs
+    - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
     - node.type.event
   module:
@@ -48,14 +50,13 @@ third_party_settings:
       region: content
     group_content:
       children:
-        - field_image
         - field_vih_image
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
         - field_vih_paragraphs
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: tab
       format_settings:
         id: ''
@@ -74,7 +75,7 @@ third_party_settings:
         - field_vih_cource_contact_person
         - field_vih_event_persons_limit
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -96,7 +97,7 @@ third_party_settings:
         - scheduled_update
         - translation
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -185,7 +186,7 @@ content:
     region: content
   field_vih_event_price:
     type: number
-    weight: 7
+    weight: 6
     region: content
     settings:
       placeholder: ''
@@ -229,6 +230,20 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
+  field_vih_top_banner:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 13
