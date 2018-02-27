@@ -129,7 +129,6 @@ class EventOrderForm extends FormBase {
       $form['participantsContainer']['actions']['add_participant'] = [
         '#type' => 'submit',
         '#value' => $this->t('Add'),
-        '#attributes' => array('class' => array('btn-sm')),
         '#submit' => array('::addOne'),
         '#ajax' => [
           'callback' => '::addmoreCallback',
@@ -142,7 +141,6 @@ class EventOrderForm extends FormBase {
       $form['participantsContainer']['actions']['remove_participant'] = [
         '#type' => 'submit',
         '#value' => t('Remove'),
-        '#attributes' => array('class' => array('btn-sm')),
         '#submit' => array('::removeCallback'),
         '#ajax' => [
           'callback' => '::addmoreCallback',

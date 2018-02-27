@@ -17,7 +17,7 @@
                         {{ "You can sign up, as many as you'd like. You will add one person at a time in the form below."|t }}
                     </p>
 
-                    <a href="{{ form['#course']['url'] }}" class="btn btn-default btn-sm">
+                    <a href="{{ form['#course']['url'] }}" class="btn btn-default">
                         {{ "Back to course" | trans }}
                     </a>
                 </div>
@@ -74,6 +74,10 @@
                       </div>
                     </div>
                     <!-- End - participants -->
+
+                    <div class="text-right">
+                        {{ form['actions'] }}
+                    </div>
 
                 </div>
             </div>

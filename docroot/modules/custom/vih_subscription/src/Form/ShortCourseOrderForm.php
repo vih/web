@@ -208,7 +208,6 @@ class ShortCourseOrderForm extends FormBase {
         '#name' => 'add-participant-options',
         '#type' => 'submit',
         '#value' => $this->t('Add'),
-        '#attributes' => array('class' => array('btn-sm')),
         '#submit' => array('::addParticipantOptions'),
         '#ajax' => [
           'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
@@ -252,7 +251,7 @@ class ShortCourseOrderForm extends FormBase {
           '#type' => 'submit',
           '#value' => $this->t('Edit'),
           '#submit' => array('::editParticipantOptions'),
-          '#attributes' => array('class' => array('btn-sm', 'btn-primary')),
+          '#attributes' => array('class' => array('btn-primary', 'btn-sm')),
           '#ajax' => [
             'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
             'progress' => array(
@@ -269,7 +268,7 @@ class ShortCourseOrderForm extends FormBase {
           '#type' => 'submit',
           '#value' => $this->t('Remove'),
           '#submit' => array('::removeParticipantOptions'),
-          '#attributes' => array('class' => array('btn-sm', 'btn-danger')),
+          '#attributes' => array('class' => array('btn-danger', 'btn-sm')),
           '#ajax' => [
             'callback' => '::ajaxAddRemoveParticipantOptionsCallback',
             'progress' => array(
