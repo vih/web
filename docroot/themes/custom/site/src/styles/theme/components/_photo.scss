@@ -1,0 +1,136 @@
+// |--------------------------------------------------------------------------
+// | Photo
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .photo
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin photo-mixin() {}
+
+@mixin photo-overlay-variant-mixin($background-color) {
+  @include angled-edge('outside top', 'upper left', rgba($background-color, .85), 40);
+
+  position: absolute;
+
+  background-color: rgba($background-color, .85);
+}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.photo {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.photo__overlay {
+  @include photo-overlay-variant-mixin($brand-primary);
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: floor( ( $grid-gutter-width / 2 ) );
+
+  background-color: rgba($brand-primary, .85);
+}
+.photo__overlay__text {
+
+  text-transform: uppercase;
+  text-align: right;
+
+  font-weight: $font-weight-bold;
+  color: #fff;
+
+  .field {
+    @extend .heading-h4;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    color: inherit;
+  }
+
+  .heading-h1,
+  .heading-h2,
+  .heading-h3,
+  .heading-h4,
+  .heading-h5,
+  .heading-h6 {
+    color: #fff;
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.photo__overlay--color-red {
+  @include photo-overlay-variant-mixin($brand-red);
+}
+.photo__overlay--color-blue {
+  @include photo-overlay-variant-mixin($brand-primary);
+}
+.photo__overlay--color-cyan {
+  @include photo-overlay-variant-mixin($brand-cyan);
+}
+.photo__overlay--color-purple {
+  @include photo-overlay-variant-mixin($brand-quaternary);
+}
+.photo__overlay--color-yellow {
+  @include photo-overlay-variant-mixin($brand-yellow);
+}
+.photo__overlay--color-green {
+  @include photo-overlay-variant-mixin($brand-tertiary);
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

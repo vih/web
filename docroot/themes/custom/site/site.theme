@@ -6,6 +6,7 @@
  */
 
 use Drupal\image\Entity\ImageStyle;
+use Drupal\user\Entity\User;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
@@ -400,6 +401,10 @@ function site_preprocess_paragraph__vih_teacher_class_description(&$variables) {
     foreach($fields as $field) {
       $teacher_uids[] = $field['target_id'];
     }
+  }
+
+  if (count($teacher_uids)) {
+    $variables['content']['teacher'] = User::load($teacher_uids[0]);
   }
 }
 
