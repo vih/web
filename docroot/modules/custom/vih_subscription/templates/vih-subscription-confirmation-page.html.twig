@@ -12,21 +12,21 @@
             {{ page['#order'] }}
             {# End - order #}
 
-            <!-- Begin - buttons -->
-            <div class="partial partial--actions">
-                <div class="partial__body">
-                    <div class="text-right">
-                        <a href="{{ page['#backLink'] }}" class="btn btn-default">
-                            {{ 'Back to order' | trans }}
-                        </a>
+            <hr>
 
-                        <a href="{{ page['#paymentLink'] }}" class="btn btn-success">
-                            {{ 'Proceed to payment' | trans }}
-                        </a>
-                    </div>
+            <!-- Begin - form controls -->
+            <div class="partial partial--form-controls">
+                <div class="partial__body">
+                    <a href="{{ page['#backLink'] }}" class="btn btn-default">
+                        {{ 'Back to order' | trans }}
+                    </a>
+
+                    <a href="{{ page['#paymentLink'] }}" class="btn btn-success">
+                        {{ 'Proceed to payment' | trans }}
+                    </a>
                 </div>
             </div>
-            <!-- End - buttons -->
+            <!-- End - form controls -->
 
         </div>
     </div>
