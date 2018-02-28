@@ -1,0 +1,19 @@
+uuid: 0468ecc6-c833-4034-b4c6-f3556e2c5322
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_municipality
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.field_vih_lco_municipality
+field_name: field_vih_lco_municipality
+entity_type: node
+bundle: vih_long_course_order
+label: Municipality
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

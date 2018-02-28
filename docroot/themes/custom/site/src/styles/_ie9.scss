@@ -12,33 +12,16 @@
   & .banner .banner__inner .container .banner__heading{
     margin-top: 300px;
   }
-  & label[for="edit-newparticipantcontainer-newparticipantfieldset-firstname"],
-  & label[for="edit-newparticipantcontainer-newparticipantfieldset-lastname"],
-  & label[for="edit-newparticipantcontainer-newparticipantfieldset-cpr"],
-  & label[for="edit-newparticipantcontainer-newparticipantfieldset-email"], 
-  & label[for="edit-firstname"],
-  & label[for="edit-lastname"],
-  & label[for="edit-cpr"],
-  & label[for="edit-telefon"],
-  & label[for="edit-email"],
-  & label[for="edit-address"],
-  & label[for="edit-housenumber"],
-  & label[for="edit-houseletter"],
-  & label[for="edit-housefloor"],
-  & label[for="edit-city"],
-  & label[for="edit-zip"],
-  & label[for="edit-adultfirstname"],
-  & label[for="edit-adultlastname"],
-  & label[for="edit-adulttelefon"],
-  & label[for="edit-adultemail"],
-  & label[for="edit-message"],
-  & label[for="edit-adultaddress"],
-  & label[for="edit-adulthousenumber"],
-  & label[for="edit-adulthouseletter"],
-  & label[for="edit-adulthousefloor"],
-  & label[for="edit-adultcity"],
-  & label[for="edit-adultzip"] {
-    display: block;
+  .vih-subscription-long-course-order-form,
+  .vih-subscription-short-course-order-form,
+  .vih-subscription-event-order-form {
+    .form-type-textfield,
+    .form-type-email,
+    .form-type-textarea {
+      label {
+        display: block;
+      }
+    }
   }
   & .vih-suboptions-container.form-group{
     display: block !important;
@@ -67,34 +50,16 @@
 }
 
 /*IE9 fixes revert for other browsers*/
-label[for="edit-newparticipantcontainer-newparticipantfieldset-firstname"],
-label[for="edit-newparticipantcontainer-newparticipantfieldset-lastname"],
-label[for="edit-newparticipantcontainer-newparticipantfieldset-cpr"],
-label[for="edit-firstname"],
-label[for="edit-newparticipantcontainer-newparticipantfieldset-email"], 
-label[for="edit-firstname"],
-label[for="edit-lastname"],
-label[for="edit-cpr"],
-label[for="edit-telefon"],
-label[for="edit-email"],
-label[for="edit-address"],
-label[for="edit-housenumber"],
-label[for="edit-houseletter"],
-label[for="edit-housefloor"],
-label[for="edit-city"],
-label[for="edit-zip"],
-label[for="edit-adultfirstname"],
-label[for="edit-adultlastname"],
-label[for="edit-adulttelefon"],
-label[for="edit-adultemail"],
-label[for="edit-message"],
-label[for="edit-adultaddress"],
-label[for="edit-adulthousenumber"],
-label[for="edit-adulthouseletter"],
-label[for="edit-adulthousefloor"],
-label[for="edit-adultcity"],
-label[for="edit-adultzip"] {
-  display: none;
+.vih-subscription-long-course-order-form,
+.vih-subscription-short-course-order-form,
+.vih-subscription-event-order-form {
+  .form-type-textfield,
+  .form-type-email,
+  .form-type-textarea {
+    label {
+      display: none;
+    }
+  }
 }
 .vih-suboptions-container fieldset.fieldgroup.form-composite.form-item.form-wrapper legend span.fieldset-legend{
   display: none;  

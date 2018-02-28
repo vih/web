@@ -54,7 +54,7 @@ class EDBBrugsenIntegration {
       $registration['Elev.Adresse'] = $longCourseOrder->get('field_vih_lco_address')->value;
       $registration['Elev.Lokalby'] = $longCourseOrder->get('field_vih_lco_city')->value;
       $registration['Elev.Postnr'] = $longCourseOrder->get('field_vih_lco_zip')->value;
-      $registration['Elev.Bynavn'] = $longCourseOrder->get('field_vih_lco_city')->value;
+      $registration['Elev.Bynavn'] = $longCourseOrder->get('field_vih_lco_municipality')->value;
       $registration['Elev.Fastnet']  = $longCourseOrder->get('field_vih_lco_telefon')->value;
       $registration['Elev.Mobil'] = $longCourseOrder->get('field_vih_lco_telefon')->value;
       $registration['Elev.Email'] = $longCourseOrder->get('field_vih_lco_email')->value;
@@ -67,7 +67,7 @@ class EDBBrugsenIntegration {
       $registration['Voksen.Adresse'] = $longCourseOrder->get('field_vih_lco_adult_address')->value;
       $registration['Voksen.Lokalby'] = $longCourseOrder->get('field_vih_lco_adult_city')->value;
       $registration['Voksen.Postnr'] = $longCourseOrder->get('field_vih_lco_adult_zip')->value;
-      $registration['Voksen.Bynavn'] = $longCourseOrder->get('field_vih_lco_adult_city')->value;
+      $registration['Voksen.Bynavn'] = $longCourseOrder->get('field_vih_lco_adult_municipality')->value;
       $registration['Voksen.Fastnet']  = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
       $registration['Voksen.Mobil'] = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
       $registration['Voksen.Email'] = $longCourseOrder->get('field_vih_lco_adult_email')->value;
@@ -154,7 +154,7 @@ class EDBBrugsenIntegration {
       'Elev.Land' => 'Danmark',
       'Elev.Notat' => 'Svend Aage Thomsen er skolens grundlægger',
       // Specific for student
-      'Elev.Linje' => 'Fodbold',//there is not specific course track that student is subscribing, instead each subscription is a set several of course trackes
+      //'Elev.Linje' => 'Fodbold',//there is not specific course track that student is subscribing, instead each subscription is a set several of course trackes
       'Voksen.Fornavn' => 'Svend Aage',
       'Voksen.Efternavn' => 'Thomsen',
       'Voksen.Adresse' => 'Ørnebjergvej 28',

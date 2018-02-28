@@ -135,7 +135,12 @@ class LongCourseOrderForm extends FormBase {
       '#default_value' => 'DK',
       '#required' => TRUE,
     );
-
+    $form['personalDataLeft']['payment'] = array(
+      '#type' => 'select',
+      '#title' => $this->t('Payment'),
+      '#options' => CourseOrderOptionsList::getPaymentList(),
+      '#required' => TRUE,
+    );
     $form['personalDataLeft']['newsletter'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('Sign up for newsletter'),
@@ -175,6 +180,12 @@ class LongCourseOrderForm extends FormBase {
       '#placeholder' => $this->t('City'),
       '#required' => TRUE,
     );
+    $form['personalDataRight']['municipality'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Municipality'),
+      '#placeholder' => $this->t('Municipality'),
+      '#required' => TRUE,
+    );
     $form['personalDataRight']['zip'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Zipcode'),
@@ -185,12 +196,6 @@ class LongCourseOrderForm extends FormBase {
       '#type' => 'select',
       '#title' => $this->t('Education'),
       '#options' => CourseOrderOptionsList::getEducationList(),
-      '#required' => TRUE,
-    );
-    $form['personalDataRight']['payment'] = array(
-      '#type' => 'select',
-      '#title' => $this->t('Payment'),
-      '#options' => CourseOrderOptionsList::getPaymentList(),
       '#required' => TRUE,
     );
     $form['personalDataRight']['foundFrom'] = array(
@@ -263,6 +268,12 @@ class LongCourseOrderForm extends FormBase {
       '#title' => $this->t('Floor'),
       '#placeholder' => $this->t('Floor'),
       //'#required' => TRUE,
+    );
+    $form['adultDataRight']['adultMunicipality'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Municipality'),
+      '#placeholder' => $this->t('Municipality'),
+      '#required' => TRUE,
     );
     $form['adultDataRight']['adultCity'] = array(
       '#type' => 'textfield',
@@ -408,6 +419,7 @@ class LongCourseOrderForm extends FormBase {
           $form_state->getValue('houseFloor')
         )),
         'field_vih_lco_city' => $form_state->getValue('city'),
+        'field_vih_lco_municipality' => $form_state->getValue('municipality'),
         'field_vih_lco_zip' => $form_state->getValue('zip'),
         'field_vih_lco_education' => CourseOrderOptionsList::getEducationList($form_state->getValue('education')),
         'field_vih_lco_payment' => CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')),
@@ -428,6 +440,7 @@ class LongCourseOrderForm extends FormBase {
           $form_state->getValue('adultHouseFloor')
         )),
         'field_vih_lco_adult_city' => $form_state->getValue('adultCity'),
+        'field_vih_lco_adult_municipality' => $form_state->getValue('adultMunicipality'),
         'field_vih_lco_adult_zip' => $form_state->getValue('adultZip'),
       ));
     } else {
@@ -457,6 +470,7 @@ class LongCourseOrderForm extends FormBase {
         $form_state->getValue('houseFloor')
       )));
       $this->courseOrder->set('field_vih_lco_city', $form_state->getValue('city'));
+      $this->courseOrder->set('field_vih_lco_municipality', $form_state->getValue('municipality'));
       $this->courseOrder->set('field_vih_lco_zip', $form_state->getValue('zip'));
       $this->courseOrder->set('field_vih_lco_education', CourseOrderOptionsList::getEducationList($form_state->getValue('education')));
       $this->courseOrder->set('field_vih_lco_payment', CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')));
@@ -476,6 +490,7 @@ class LongCourseOrderForm extends FormBase {
         $form_state->getValue('adultHouseFloor')
       )));
       $this->courseOrder->set('field_vih_lco_adult_city', $form_state->getValue('adultCity'));
+      $this->courseOrder->set('field_vih_lco_adult_municipality', $form_state->getValue('adultMunicipality'));
       $this->courseOrder->set('field_vih_lco_adult_zip', $form_state->getValue('adultZip'));
     }
 
@@ -521,6 +536,7 @@ class LongCourseOrderForm extends FormBase {
     $form['personalDataLeft']['telefon']['#default_value'] = $courseOrder->field_vih_lco_telefon->value;
     $form['personalDataLeft']['email']['#default_value'] = $courseOrder->field_vih_lco_email->value;
     $form['personalDataLeft']['nationality']['#default_value'] = array_search($courseOrder->field_vih_lco_nationality->value, CourseOrderOptionsList::getNationalityList());
+    $form['personalDataLeft']['payment']['#default_value'] = array_search($courseOrder->field_vih_lco_payment->value, CourseOrderOptionsList::getPaymentList());
     $form['personalDataLeft']['newsletter']['#default_value'] = $courseOrder->field_vih_lco_newsletter->value ;
 
     //Personal data - right side
@@ -533,9 +549,9 @@ class LongCourseOrderForm extends FormBase {
     $form['personalDataRight']['house']['houseFloor']['#default_value'] = $address_parts[3];
 
     $form['personalDataRight']['city']['#default_value'] = $courseOrder->field_vih_lco_city->value;
+    $form['personalDataRight']['municipality']['#default_value'] = $courseOrder->field_vih_lco_municipality->value;
     $form['personalDataRight']['zip']['#default_value'] = $courseOrder->field_vih_lco_zip->value;
     $form['personalDataRight']['education']['#default_value'] = array_search($courseOrder->field_vih_lco_education->value, CourseOrderOptionsList::getEducationList());
-    $form['personalDataRight']['payment']['#default_value'] = array_search($courseOrder->field_vih_lco_payment->value, CourseOrderOptionsList::getPaymentList());
     $form['personalDataRight']['foundFrom']['#default_value'] = array_search($courseOrder->field_vih_lco_found_from->value, CourseOrderOptionsList::getFoundFromList());
 
     //adult information left
@@ -554,6 +570,7 @@ class LongCourseOrderForm extends FormBase {
     $form['adultDataRight']['adultHouse']['adultHouseLetter']['#default_value'] = $adult_address_parts[2];
     $form['adultDataRight']['adultHouse']['adultHouseFloor']['#default_value'] = $adult_address_parts[3];
     $form['adultDataRight']['adultCity']['#default_value'] = $courseOrder->field_vih_lco_adult_city->value;
+    $form['adultDataRight']['adultMunicipality']['#default_value'] = $courseOrder->field_vih_lco_adult_municipality->value;
     $form['adultDataRight']['adultZip']['#default_value'] = $courseOrder->field_vih_lco_adult_zip->value;
 
     $form['message']['#default_value'] = $courseOrder->field_vih_lco_message->value;

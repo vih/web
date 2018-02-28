@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_adult_email
     - field.field.node.vih_long_course_order.field_vih_lco_adult_first_name
     - field.field.node.vih_long_course_order.field_vih_lco_adult_last_name
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_municipality
     - field.field.node.vih_long_course_order.field_vih_lco_adult_nationality
     - field.field.node.vih_long_course_order.field_vih_lco_adult_telefon
     - field.field.node.vih_long_course_order.field_vih_lco_adult_zip
@@ -22,6 +23,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_found_from
     - field.field.node.vih_long_course_order.field_vih_lco_last_name
     - field.field.node.vih_long_course_order.field_vih_lco_message
+    - field.field.node.vih_long_course_order.field_vih_lco_municipality
     - field.field.node.vih_long_course_order.field_vih_lco_nationality
     - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
@@ -97,6 +99,14 @@ content:
     region: content
   field_vih_lco_adult_last_name:
     weight: 49
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_adult_municipality:
+    weight: 123
     settings:
       size: 60
       placeholder: ''
@@ -199,6 +209,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_vih_lco_municipality:
+    weight: 124
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_vih_lco_nationality:
     weight: 38

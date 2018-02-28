@@ -68,6 +68,12 @@ view_mode ? view_mode|clean_class,
                             </div>
                             {# End - zipcode and city #}
 
+                            {# Begin - municipality #}
+                            <div>
+                                {{ node.field_vih_lco_municipality.value }}
+                            </div>
+                            {# End - municipality #}
+
                             {# Begin - nationality #}
                             {{ content.field_vih_lco_nationality }}
                             {# End - nationality #}
@@ -112,6 +118,12 @@ view_mode ? view_mode|clean_class,
                                 {{ node.field_vih_lco_adult_zip.value }} {{ node.field_vih_lco_adult_city.value }}
                             </div>
                             {# End - zipcode and city #}
+
+                            {# Begin - municipality #}
+                            <div>
+                              {{ content.field_vih_lco_adult_municipality }}
+                            </div>
+                            {# End - municipality #}
 
                             {# Begin - nationality #}
                             <div>

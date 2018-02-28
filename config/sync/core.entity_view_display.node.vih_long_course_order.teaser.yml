@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_adult_email
     - field.field.node.vih_long_course_order.field_vih_lco_adult_first_name
     - field.field.node.vih_long_course_order.field_vih_lco_adult_last_name
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_municipality
     - field.field.node.vih_long_course_order.field_vih_lco_adult_nationality
     - field.field.node.vih_long_course_order.field_vih_lco_adult_telefon
     - field.field.node.vih_long_course_order.field_vih_lco_adult_zip
@@ -23,6 +24,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_found_from
     - field.field.node.vih_long_course_order.field_vih_lco_last_name
     - field.field.node.vih_long_course_order.field_vih_lco_message
+    - field.field.node.vih_long_course_order.field_vih_lco_municipality
     - field.field.node.vih_long_course_order.field_vih_lco_nationality
     - field.field.node.vih_long_course_order.field_vih_lco_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_order_course_perio
@@ -64,7 +66,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_address:
     type: string
-    weight: 21
+    weight: 23
     region: content
     label: hidden
     settings:
@@ -72,7 +74,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_city:
     type: string
-    weight: 20
+    weight: 21
     region: content
     label: hidden
     settings:
@@ -80,7 +82,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_email:
     type: string
-    weight: 13
+    weight: 14
     region: content
     label: hidden
     settings:
@@ -88,7 +90,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_first_name:
     type: string
-    weight: 9
+    weight: 10
     region: content
     label: hidden
     settings:
@@ -96,7 +98,15 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_last_name:
     type: string
-    weight: 10
+    weight: 11
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_lco_adult_municipality:
+    type: string
+    weight: 22
     region: content
     label: hidden
     settings:
@@ -104,7 +114,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_nationality:
     type: string
-    weight: 18
+    weight: 19
     region: content
     label: hidden
     settings:
@@ -112,7 +122,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_telefon:
     type: string
-    weight: 19
+    weight: 20
     region: content
     label: hidden
     settings:
@@ -120,7 +130,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_adult_zip:
     type: string
-    weight: 15
+    weight: 16
     region: content
     label: hidden
     settings:
@@ -144,7 +154,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_education:
     type: string
-    weight: 11
+    weight: 12
     region: content
     label: above
     settings:
@@ -168,7 +178,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_found_from:
     type: string
-    weight: 24
+    weight: 26
     region: content
     label: above
     settings:
@@ -184,14 +194,22 @@ content:
     third_party_settings: {  }
   field_vih_lco_message:
     type: basic_string
-    weight: 23
+    weight: 25
     region: content
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_vih_lco_municipality:
+    type: string
+    weight: 9
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
   field_vih_lco_nationality:
     type: string
-    weight: 14
+    weight: 15
     region: content
     label: hidden
     settings:
@@ -199,7 +217,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_newsletter:
     type: boolean
-    weight: 17
+    weight: 18
     region: content
     label: above
     settings:
@@ -209,7 +227,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_order_course_perio:
     type: entity_reference_revisions_entity_view
-    weight: 16
+    weight: 17
     region: content
     label: hidden
     settings:
@@ -218,7 +236,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_payment:
     type: string
-    weight: 22
+    weight: 24
     region: content
     label: hidden
     settings:
@@ -226,7 +244,7 @@ content:
     third_party_settings: {  }
   field_vih_lco_telefon:
     type: string
-    weight: 12
+    weight: 13
     region: content
     label: hidden
     settings:
