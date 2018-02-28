@@ -231,7 +231,7 @@ view_mode ? view_mode|clean_class,
                         <div class="vih-price-box">
                             <div class="row">
                                 <div class="col-xs-12">
-                                    <div class="price-table col-sm-12 col-md-4">
+                                    <div class="price-table col-sm-12 col-md-3">
                                         <div class="table-heading">
                                             {{ "Material fee"|trans }}
                                         </div>
@@ -239,7 +239,7 @@ view_mode ? view_mode|clean_class,
                                             {{ content.field_vih_course_price }}
                                         </div>
                                     </div>
-                                    <div class="price-table col-sm-12 col-md-4">
+                                    <div class="price-table col-sm-12 col-md-3">
                                         <div class="table-heading">
                                             {{ "Signup fee"|trans }}
                                         </div>
@@ -247,13 +247,21 @@ view_mode ? view_mode|clean_class,
                                             {{ content.field_vih_course_subsc_price }}
                                         </div>
                                     </div>
-                                    <div class="price-table col-sm-12 col-md-4">
+                                    <div class="price-table col-sm-12 col-md-3">
                                         <div class="table-heading">
                                             {{ "Weekly payment"|trans }}
                                         </div>
                                         <div class="table-cell">
                                             {{ content.field_vih_course_week_price }}
                                         </div>
+                                    </div>
+                                    <div class="price-table col-sm-12 col-md-3">
+                                      <div class="table-heading">
+                                        {{ "Travel payment"|trans }}
+                                      </div>
+                                      <div class="table-cell">
+                                        DKK {{ content.travel_price|number_format(2, ',', '.') }}
+                                      </div>
                                     </div>
                                 </div>
                             </div>
