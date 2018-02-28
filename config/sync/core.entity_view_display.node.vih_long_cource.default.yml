@@ -241,7 +241,7 @@ content:
     third_party_settings: {  }
     region: content
   field_metatag:
-    weight: 15
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -275,7 +275,7 @@ content:
     region: content
   field_vih_course_persons_limit:
     type: number_integer
-    weight: 13
+    weight: 12
     region: content
     label: hidden
     settings:
@@ -294,7 +294,7 @@ content:
     type: number_decimal
     region: content
   field_vih_course_status:
-    weight: 11
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -332,7 +332,7 @@ content:
     region: content
   field_vih_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 10
+    weight: 9
     region: content
     label: hidden
     settings:
@@ -340,12 +340,13 @@ content:
       link: ''
     third_party_settings: {  }
   field_vih_top_banner:
-    weight: 16
-    label: above
+    weight: 13
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   links:
     weight: 0
@@ -353,7 +354,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   scheduled_update:
-    weight: 12
+    weight: 11
     label: above
     settings:
       link: true

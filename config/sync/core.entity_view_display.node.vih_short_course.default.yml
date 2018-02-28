@@ -48,14 +48,14 @@ content:
     third_party_settings: {  }
     region: content
   field_metatag:
-    weight: 16
+    weight: 15
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_vih_course_heading:
-    weight: 11
+    weight: 10
     label: hidden
     settings:
       link_to_entity: false
@@ -63,7 +63,7 @@ content:
     type: string
     region: content
   field_vih_course_subheading:
-    weight: 12
+    weight: 11
     label: hidden
     settings:
       link_to_entity: false
@@ -80,7 +80,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_vih_paragraphs:
-    weight: 7
+    weight: 6
     label: hidden
     settings:
       view_mode: default
@@ -89,7 +89,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_sc_end_date:
-    weight: 10
+    weight: 9
     label: hidden
     settings:
       timezone_override: ''
@@ -116,7 +116,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_sc_persons_limit:
-    weight: 13
+    weight: 12
     label: hidden
     settings:
       thousand_separator: ''
@@ -136,7 +136,7 @@ content:
     type: number_decimal
     region: content
   field_vih_sc_start_date:
-    weight: 9
+    weight: 8
     label: hidden
     settings:
       timezone_override: ''
@@ -146,18 +146,19 @@ content:
     region: content
   field_vih_sc_status:
     type: list_default
-    weight: 14
+    weight: 13
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_vih_top_banner:
-    weight: 17
-    label: above
+    weight: 14
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   links:
     weight: 0
@@ -165,7 +166,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   scheduled_update:
-    weight: 8
+    weight: 7
     label: above
     settings:
       link: true

@@ -39,14 +39,14 @@ content:
     third_party_settings: {  }
     region: content
   field_metatag:
-    weight: 7
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_vih_course_heading:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
@@ -54,7 +54,7 @@ content:
     type: string
     region: content
   field_vih_course_subheading:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -62,7 +62,7 @@ content:
     type: string
     region: content
   field_vih_paragraphs:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -71,8 +71,8 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_top_banner:
-    weight: 10
-    label: above
+    weight: 5
+    label: hidden
     settings:
       view_mode: default
       link: false

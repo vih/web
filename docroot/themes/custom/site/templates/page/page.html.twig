@@ -34,7 +34,7 @@
 
                     {# Begin - image #}
                     {% if node.field_vih_top_banner.value %}
-                        {% set banner_background_image = node.ffield_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+                        {% set banner_background_image = node.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
                     {% elseif user.field_vih_top_banner.value %}
                         {% set banner_background_image = user.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
                     {% elseif term.field_vih_top_banner.value %}

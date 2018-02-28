@@ -35,7 +35,7 @@ third_party_settings:
     group_banner:
       children:
         - title
-        - field_vih_banner
+        - field_vih_top_banner
       parent_name: ''
       weight: 0
       format_type: tab
@@ -218,7 +218,7 @@ content:
     region: content
   field_vih_top_banner:
     type: entity_browser_entity_reference
-    weight: 1
+    weight: 2
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
