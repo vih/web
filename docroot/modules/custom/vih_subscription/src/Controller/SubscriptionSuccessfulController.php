@@ -194,9 +194,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
       }
 
       $order_persons = $order->field_vih_sco_persons->referencedEntities();
-      $order_data = array();
       foreach ($order_persons as $order_person) {
-
         //EDBBrugsen Integration
         $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
         if ($edbBrugsenConfig->get('active')) {
@@ -206,11 +204,10 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $book_number = $edbBrugsenConfig->get('book_number');
 
           $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
-          $registration = $edbBrugsenIntegration->convertShortCourseToRegistration($order_person);
+          $registration = $edbBrugsenIntegration->convertShortCourseOrderPersonToRegistration($order, $order_person);
           if (!empty($order_person->field_vih_ocp_cpr->getValue()[0]['value'])) {
             $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $order_person->field_vih_ocp_cpr->getValue()[0]['value']);
           }
-          $registration = $edbBrugsenIntegration->addCourseName($registration, $order->get('field_vih_sco_course')->entity->getTitle());
           $edbBrugsenIntegration->addRegistration($registration);
 
           //deleting CPR from order person

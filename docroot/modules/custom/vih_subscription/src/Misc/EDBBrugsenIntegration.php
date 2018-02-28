@@ -39,80 +39,69 @@ class EDBBrugsenIntegration {
   /**
    * Converts a long course order node to the registration array, which can later on be added via webservice.
    *
-   * @param NodeInterface $longCourse
+   * @param NodeInterface $longCourseOrder
    * @return array
    */
-  public function convertLongCourseToRegistration(NodeInterface $longCourse) {
+  public function convertLongCourseToRegistration(NodeInterface $longCourseOrder) {
     $registration = array();
 
-    if ($longCourse->getType() == 'vih_long_course_order') {
-      $registration['Kursus'] = $longCourse->get('field_vih_lco_course')->entity->getTitle();
+    if ($longCourseOrder->getType() == 'vih_long_course_order') {
+      $registration['Kursus'] = $longCourseOrder->get('field_vih_lco_course')->entity->getTitle();
 
       //student = elev information
-      $registration['Elev.Fornavn'] = $longCourse->get('field_vih_lco_first_name')->value;
-      $registration['Elev.Efternavn'] = $longCourse->get('field_vih_lco_last_name')->value;
-      $registration['Elev.Adresse'] = $longCourse->get('field_vih_lco_address')->value;
-      $registration['Elev.Lokalby'] = $longCourse->get('field_vih_lco_city')->value;
-      $registration['Elev.Postnr'] = $longCourse->get('field_vih_lco_zip')->value;
-      $registration['Elev.Bynavn'] = $longCourse->get('field_vih_lco_city')->value;
-      $registration['Elev.Fastnet']  = $longCourse->get('field_vih_lco_telefon')->value;
-      $registration['Elev.Mobil'] = $longCourse->get('field_vih_lco_telefon')->value;
-      $registration['Elev.Email'] = $longCourse->get('field_vih_lco_email')->value;
-      $registration['Elev.Land'] = (string) $longCourse->get('field_vih_lco_nationality')->value;
-      $registration['Elev.Notat'] = $longCourse->get('field_vih_lco_message')->value;
+      $registration['Elev.Fornavn'] = $longCourseOrder->get('field_vih_lco_first_name')->value;
+      $registration['Elev.Efternavn'] = $longCourseOrder->get('field_vih_lco_last_name')->value;
+      $registration['Elev.Adresse'] = $longCourseOrder->get('field_vih_lco_address')->value;
+      $registration['Elev.Lokalby'] = $longCourseOrder->get('field_vih_lco_city')->value;
+      $registration['Elev.Postnr'] = $longCourseOrder->get('field_vih_lco_zip')->value;
+      $registration['Elev.Bynavn'] = $longCourseOrder->get('field_vih_lco_city')->value;
+      $registration['Elev.Fastnet']  = $longCourseOrder->get('field_vih_lco_telefon')->value;
+      $registration['Elev.Mobil'] = $longCourseOrder->get('field_vih_lco_telefon')->value;
+      $registration['Elev.Email'] = $longCourseOrder->get('field_vih_lco_email')->value;
+      $registration['Elev.Land'] = (string) $longCourseOrder->get('field_vih_lco_nationality')->value;
+      $registration['Elev.Notat'] = $longCourseOrder->get('field_vih_lco_message')->value;
 
       // adult = voksen information
-      $registration['Voksen.Fornavn'] = $longCourse->get('field_vih_lco_adult_first_name')->value;
-      $registration['Voksen.Efternavn'] = $longCourse->get('field_vih_lco_adult_last_name')->value;
-      $registration['Voksen.Adresse'] = $longCourse->get('field_vih_lco_adult_address')->value;
-      $registration['Voksen.Lokalby'] = $longCourse->get('field_vih_lco_adult_city')->value;
-      $registration['Voksen.Postnr'] = $longCourse->get('field_vih_lco_adult_zip')->value;
-      $registration['Voksen.Bynavn'] = $longCourse->get('field_vih_lco_adult_city')->value;
-      $registration['Voksen.Fastnet']  = $longCourse->get('field_vih_lco_adult_telefon')->value;
-      $registration['Voksen.Mobil'] = $longCourse->get('field_vih_lco_adult_telefon')->value;
-      $registration['Voksen.Email'] = $longCourse->get('field_vih_lco_adult_email')->value;
-      $registration['Voksen.Land'] = (string) $longCourse->get('field_vih_lco_adult_nationality')->value;
+      $registration['Voksen.Fornavn'] = $longCourseOrder->get('field_vih_lco_adult_first_name')->value;
+      $registration['Voksen.Efternavn'] = $longCourseOrder->get('field_vih_lco_adult_last_name')->value;
+      $registration['Voksen.Adresse'] = $longCourseOrder->get('field_vih_lco_adult_address')->value;
+      $registration['Voksen.Lokalby'] = $longCourseOrder->get('field_vih_lco_adult_city')->value;
+      $registration['Voksen.Postnr'] = $longCourseOrder->get('field_vih_lco_adult_zip')->value;
+      $registration['Voksen.Bynavn'] = $longCourseOrder->get('field_vih_lco_adult_city')->value;
+      $registration['Voksen.Fastnet']  = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
+      $registration['Voksen.Mobil'] = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
+      $registration['Voksen.Email'] = $longCourseOrder->get('field_vih_lco_adult_email')->value;
+      $registration['Voksen.Land'] = (string) $longCourseOrder->get('field_vih_lco_adult_nationality')->value;
 
       $registration += $this->getDefaultRegistrationValues();
-    } elseif ($longCourse->getType() == 'vih_short_course_order') {
+    } elseif ($longCourseOrder->getType() == 'vih_short_course_order') {
       $registration += $this->getDefaultRegistrationValues();
-    }
-
-    return $registration;
-  }
-
-   /**
-   * Converts a Ordered Course Person paragraph to the registration array, which can later on be added via webservice.
-   *
-   * @param Paragraph $order_person
-   * @return array
-   */
-  public function convertShortCourseToRegistration(Paragraph $order_person) {
-    $registration = array();
-
-    if ($order_person->getType() == 'vih_ordered_course_person') {
-
-      //student = elev information
-      $registration['Elev.Fornavn'] = $order_person->field_vih_ocp_first_name->getValue()[0]['value'];
-      $registration['Elev.Efternavn'] = $order_person->field_vih_ocp_last_name->getValue()[0]['value'];
-      $registration['Elev.Email'] = $order_person->field_vih_ocp_email->getValue()[0]['value'];
-      // Trying not to use default registration data
-      //$registration += $this->getDefaultRegistrationValues();
-    } else {
-      //$registration += $this->getDefaultRegistrationValues();
     }
 
     return $registration;
   }
 
   /**
-   * Functions that add course name to the registration array
+   * Converts a Ordered Course Person paragraph to the registration array, which can later on be added via webservice.
    *
-   * @param $registration
-   * @param $name
+   * @param NodeInterface $shortCourseOrder
+   * @param Paragraph $order_person
+   * @return array
    */
-  public function addCourseName($registration, $name) {
-    $registration['Kursus'] = $name;
+  public function convertShortCourseOrderPersonToRegistration(NodeInterface $shortCourseOrder, Paragraph $order_person) {
+    $registration = array();
+
+    if ($order_person->getType() == 'vih_ordered_course_person') {
+      $registration['Kursus'] = $shortCourseOrder->get('field_vih_sco_course')->entity->getTitle();
+      //student = elev information
+      $registration['Elev.Fornavn'] = $order_person->field_vih_ocp_first_name->getValue()[0]['value'];
+      $registration['Elev.Efternavn'] = $order_person->field_vih_ocp_last_name->getValue()[0]['value'];
+      $registration['Elev.Email'] = $order_person->field_vih_ocp_email->getValue()[0]['value'];
+
+      //using only Booking number/Kartotek from default values
+      $defaultValues = $this->getDefaultRegistrationValues();
+      $registration['Kartotek'] = $defaultValues['Kartotek'];
+    }
 
     return $registration;
   }
