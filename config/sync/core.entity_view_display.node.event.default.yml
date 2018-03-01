@@ -104,7 +104,7 @@ content:
     settings:
       thousand_separator: .
       decimal_separator: ','
-      scale: 0
+      scale: 2
       prefix_suffix: true
     third_party_settings: {  }
   field_vih_event_start_date:

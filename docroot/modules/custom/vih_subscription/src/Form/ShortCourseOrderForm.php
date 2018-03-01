@@ -93,6 +93,14 @@ class ShortCourseOrderForm extends FormBase {
         }
       }
     }
+
+    //checking the limits
+    $personsLimit = $course->field_vih_sc_persons_limit->value;
+    $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($course);
+
+    if ($personsLimit == 0) { //unlimited
+      $personsLimit = PHP_INT_MAX;
+    }
     //END VARIABLES INIT //
 
     //START GENERAL DATA //
@@ -120,14 +128,6 @@ class ShortCourseOrderForm extends FormBase {
       '#suffix' => '</div>',
       '#tree' => TRUE
     ];
-
-    //checking the limits
-    $personsLimit = $course->field_vih_sc_persons_limit->value;
-    $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($course);
-
-    if ($personsLimit == 0) { //unlimited
-      $personsLimit = PHP_INT_MAX;
-    }
 
     if (count($addedParticipants) + $personsSubscribed < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
       $form['newParticipantContainer']['newParticipantFieldset'] = [
@@ -694,65 +694,11 @@ class ShortCourseOrderForm extends FormBase {
   }
 
   /**
-   * Populating the ordered options from form_state
-   *
-   * @param $form
-   * @param $form_state
-   */
-  private function populateAddedOptions(&$form, $form_state) {
-    $optionGroups = $form_state->get('optionGroups');
-    $optionGroupOptions = $form_state->get('optionGroupOptions');
-    $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
-
-    $addedOptions = $form_state->get('addedOptions');
-
-    $form['addedOptionsContainer']['added_options_title'] = array(
-      '#markup' => $this->t('Added options'),
-      '#prefix' => '<h4>',
-      '#suffix' => '</h4>',
-    );
-
-    foreach ($addedOptions as $addedOptionDelta => $addedOption) {
-      $groupOptionName = $optionGroups[$addedOption['optionGroup']];
-      $optionName = $optionGroupOptions[$addedOption['optionGroup']][$addedOption['option']];
-      $suboptionName = NULL;
-      if (!empty($optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']])) {
-        $suboptionName = $optionGroupSuboptions[$addedOption['optionGroup']][$addedOption['option']][$addedOption['suboption']];
-      }
-      $amount = $addedOption['amount'];
-
-      $form['addedOptionsContainer']['addedOption-' . $addedOptionDelta] = [
-        '#markup' => $groupOptionName . ' / ' . $optionName . ' / ' . $suboptionName . ' stk. :' . $amount
-      ];
-
-      $form['addedOptionsContainer']['deleteAddedOption-' . $addedOptionDelta] = [
-        '#name' => 'deleteAddedOption-' . $addedOptionDelta,
-        '#type' => 'submit',
-        '#value' => $this->t('Slet'),
-        '#submit' => array('::removeOption'),
-        '#ajax' => [
-          'callback' => '::ajaxAddRemoveOptionCallback',
-          'wrapper' => 'added-options-container-wrapper',
-          'progress' => array(
-            'type' => 'none'
-          )
-        ],
-        '#addedOptionDelta' => $addedOptionDelta,
-        '#limit_validation_errors' => array(),
-        '#button_type' => 'danger',
-      ];
-
-      $form['addedOptionsContainer'][] = [
-        '#markup' => '<br/>'
-      ];
-    }
-  }
-
-  /**
    * Populate the data into the form the existing courseOrder
    *
    * @param NodeInterface $courseOrder
    * @param $form
+   * @param $form_state
    */
   private function populateData(NodeInterface $courseOrder, &$form, &$form_state) {
     //variables that are used for extracing ordered options information

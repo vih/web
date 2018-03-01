@@ -48,126 +48,173 @@ class EventOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $event = NULL, NodeInterface $order = NULL, $checksum = NULL) {
+    //START VARIABLES INIT //
     $this->event = $event;
     $this->price = $event->field_vih_event_price->value;
+
+    $addedParticipants = $form_state->get('addedParticipants');
 
     if ($order != NULL) {
       if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($event, $order))) {
         $this->eventOrder = $order;
-        $this->price = $event->field_vih_eo_price->value;
+        $this->price = $this->eventOrder->field_vih_eo_price->value;
+
+        if (!isset($addedParticipants)) {
+          //preloading data
+          $this->populateData($this->eventOrder, $form, $form_state);
+          $addedParticipants = $form_state->get('addedParticipants');
+        }
       }
     }
-
-    $form['price'] = array(
-      '#markup' => 'DKK ' . number_format($this->price, 0, ',', '.'),
-    );
-
-    $form['#event'] = array(
-      'title' => $event->getTitle(),
-      'url' => $event->toUrl()
-    );
 
     $personsLimit = $event->field_vih_event_persons_limit->value;
     $personsSubscribed = VihSubscriptionUtils::calculateSubscribedPeopleNumber($event);
     if ($personsLimit == 0) { //unlimited
       $personsLimit = PHP_INT_MAX;
     }
+    //END VARIABLES INIT //
 
-    $participantsCounter = $form_state->get('participantsCounter');
-    if (empty($participantsCounter)) {
-      if ($this->eventOrder != NULL) {
-        $participantsCounter = count($this->eventOrder->get('field_vih_eo_persons')->getValue());
-      } else {
-        $participantsCounter = 1;
-      }
+    //START GENERAL DATA //
+    $form['price'] = array(
+      '#markup' => 'DKK ' . number_format($this->price, 0, ',', '.'),
+    );
 
-      $form_state->set('participantsCounter', $participantsCounter);
-    }
-
-    $form['#tree'] = TRUE;
-
-    $form['participantsContainer'] = [
-      '#type' => 'container',
-      '#prefix' => '<div id="participants-container-wrapper">',
-      '#suffix' => '</div>',
+    $form['status_messages'] = [
+      '#type' => 'status_messages',
+      '#weight' => -10,
+      '#prefix' => '<div id="messages">',
+      '#suffix' => '</div>'
     ];
 
-    for ($i = 0; $i < $participantsCounter; $i++) {
-      $personHumanCounter = $i + 1; //starting from 1, not 0
+    $form['#event'] = array(
+      'title' => $event->getTitle(),
+      'url' => $event->toUrl()
+    );
+    //END GENERAL DATA //
 
-      if ($personHumanCounter + $personsSubscribed <= $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
-        $form['participantsContainer'][$i]['participant_fieldset'] = [
-          '#type' => 'fieldset',
-          '#title' => $this->t('Person') . ' ' . $personHumanCounter
-        ];
-        $form['participantsContainer'][$i]['participant_fieldset']['firstName'] = array(
-          '#type' => 'textfield',
-          '#title' => $this->t('Firstname'),
-          '#placeholder' => $this->t('Firstname'),
-          '#required' => TRUE,
-          '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
-          '#suffix' => '</div>',
-        );
-        $form['participantsContainer'][$i]['participant_fieldset']['lastName'] = array(
-          '#type' => 'textfield',
-          '#title' => $this->t('Lastname'),
-          '#placeholder' => $this->t('Lastname'),
-          '#required' => TRUE,
-          '#prefix' => '<div class="col-xs-12 col-sm-6">',
-          '#suffix' => '</div></div>',
-        );
-        $form['participantsContainer'][$i]['participant_fieldset']['email'] = array(
-          '#type' => 'textfield',
-          '#title' => $this->t('E-mail address'),
-          '#placeholder' => $this->t('E-mail address'),
-          '#required' => TRUE,
-        );
-      }
-    }
+    //START ADD NEW PARTICIPANT CONTAINER//
+    $form['newParticipantContainer'] = [
+      '#type' => 'container',
+      '#prefix' => '<div id="new-participant-container-wrapper">',
+      '#suffix' => '</div>',
+      '#tree' => TRUE
+    ];
 
-    if ($personsSubscribed + $participantsCounter < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
-      $form['participantsContainer']['actions']['add_participant'] = [
+    if (count($addedParticipants) + $personsSubscribed < $personsLimit) { //not allowing to have more fieldsets that the event have capacity for
+      $form['newParticipantContainer']['newParticipantFieldset'] = [
+        '#type' => 'container',
+      ];
+      $form['newParticipantContainer']['newParticipantFieldset']['firstName'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('Firstname'),
+        '#placeholder' => $this->t('Firstname'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['lastName'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('Lastname'),
+        '#placeholder' => $this->t('Lastname'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="col-xs-12 col-sm-6">',
+        '#suffix' => '</div></div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('E-mail address'),
+        '#placeholder' => $this->t('E-mail address'),
+        '#required' => TRUE,
+      );
+
+      $form['newParticipantContainer']['addParticipant'] = array(
+        '#id' => 'add-participant',
+        '#name' => 'add-participant',
         '#type' => 'submit',
         '#value' => $this->t('Add'),
-        '#submit' => array('::addOne'),
+        '#submit' => array('::addParticipant'),
         '#ajax' => [
-          'callback' => '::addmoreCallback',
-          'wrapper' => 'participants-container-wrapper',
+          'callback' => '::ajaxAddRemoveParticipantCallback',
+          'progress' => array(
+            'type' => 'none'
+          )
         ],
-        '#limit_validation_errors' => array()
-      ];
-    }
-    if ($participantsCounter > 1) {
-      $form['participantsContainer']['actions']['remove_participant'] = [
-        '#type' => 'submit',
-        '#value' => t('Remove'),
-        '#submit' => array('::removeCallback'),
-        '#ajax' => [
-          'callback' => '::addmoreCallback',
-          'wrapper' => 'participants-container-wrapper',
-        ],
-        '#limit_validation_errors' => array()
-      ];
-    }
-
-    if ($personsLimit > $personsSubscribed) {
-      $form['actions'] = [
-        '#type' => 'actions',
-      ];
-      $form['actions']['submit'] = array(
-        '#type' => 'submit',
-        '#value' => $this->t('Continue'),
       );
     } else {
-      $form['message'] = array(
-        '#markup' => $this->t('This event cannot allocate more participants')
+      $form['newParticipantContainer']['message'] = array(
+        '#markup' => $this->t('Denne begivenhed kan ikke allokere flere deltagere')
       );
     }
+    //END ADD NEW PARTICIPANT CONTAINER //
 
-    //preloading data
-    if ($this->eventOrder != NULL) {
-      $this->populateData($this->eventOrder, $form);
+    // START added participants container //
+    $form['addedParticipantsContainer'] = array(
+      '#type' => 'container',
+      '#prefix' => '<div id="added-participants-container-wrapper">',
+      '#suffix' => '</div>',
+      '#theme' => 'vih_subscription_added_participant',
+      '#addedParticipants' => $addedParticipants
+    );
+
+    //adding edit/remove buttons
+    if ($addedParticipants && is_array($addedParticipants)) {
+
+      foreach ($addedParticipants as $addedParticipantDelta => $addedParticipant) {
+
+        $form['addedParticipantsContainer']['controlButtons']['editButton-' . $addedParticipantDelta] = [
+          '#id' => 'edit-participant-' . $addedParticipantDelta,
+          '#name' => 'edit-participant-' . $addedParticipantDelta,
+          '#type' => 'submit',
+          '#value' => $this->t('Edit'),
+          '#submit' => array('::editParticipant'),
+          '#attributes' => array('class' => array('btn-primary', 'btn-sm')),
+          '#ajax' => [
+            'callback' => '::ajaxAddRemoveParticipantCallback',
+            'progress' => array(
+              'type' => 'none'
+            )
+          ],
+          '#participantDelta' => $addedParticipantDelta,
+          '#limit_validation_errors' => array()
+        ];
+
+        $form['addedParticipantsContainer']['controlButtons']['removeButton-' . $addedParticipantDelta] = [
+          '#id' => 'remove-participant-' . $addedParticipantDelta,
+          '#name' => 'remove-participant-' . $addedParticipantDelta,
+          '#type' => 'submit',
+          '#value' => $this->t('Remove'),
+          '#submit' => array('::removeParticipant'),
+          '#attributes' => array('class' => array('btn-danger', 'btn-sm')),
+          '#ajax' => [
+            'callback' => '::ajaxAddRemoveParticipantCallback',
+            'progress' => array(
+              'type' => 'none'
+            )
+          ],
+          '#participantDelta' => $addedParticipantDelta,
+          '#limit_validation_errors' => array()
+        ];
+      }
     }
+    // END added participants container
+
+    //START FORM CONTROLS //
+    $form['actions'] = [
+      '#type' => 'actions',
+    ];
+    $form['actions']['submit'] = array(
+      '#type' => 'submit',
+      '#id' => 'vih-event-submit',
+      '#value' => $this->t('Continue'),
+      '#attributes' => array('class' => array('btn-success')),
+      '#limit_validation_errors' => array(
+        ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+      ),
+      '#submit' => array('::submitForm')
+    );
+    //END FORM CONTROLS //
 
     $form['#theme'] = 'vih_subscription_event_order_form';
     $form_state->setCached(FALSE);
@@ -176,33 +223,172 @@ class EventOrderForm extends FormBase {
   }
 
   /**
+   * Callback function that adds participant to the participants list.
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  public function addParticipant(array &$form, FormStateInterface $form_state) {
+    $userInput = $form_state->getUserInput();
+
+    if ($form_state->hasAnyErrors()) {
+      $response = new AjaxResponse();
+      $response->addCommand(new ReplaceCommand('#status_messages', $form['status_messages']));
+      return $response;
+    }
+
+    //existing list of added participants
+    $addedParticipants = $form_state->get('addedParticipants');
+
+    //filling personal information
+    $participant = array();
+    $participant['firstName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'];
+    $participant['lastName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'];
+    $participant['email'] = $userInput['newParticipantContainer']['newParticipantFieldset']['email'];
+
+    $addedParticipants[] = $participant;
+
+    $form_state->set('addedParticipants', $addedParticipants);
+
+    // Clearing form
+    $clean_keys = $form_state->getCleanValueKeys();
+    $clean_keys[] = 'ajax_page_state';
+    foreach ($userInput as $key => $item) {
+      if (!in_array($key, $clean_keys) && substr($key, 0, 1) !== '_') {
+        unset($userInput[$key]);
+      }
+    }
+
+    $form_state->setUserInput($userInput);
+    $form_state->setRebuild();
+  }
+
+  /**
+   * Callback function that populates the newParticipant fields with the certain participant values, and removes that participant from the list of added participants.
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  function editParticipant(array &$form, FormStateInterface $form_state) {
+    $userInput = $form_state->getUserInput();
+
+    //getting triggering element
+    $triggeringElement = $form_state->getTriggeringElement();
+    $addedParticipants = $form_state->get('addedParticipants');
+
+    $participantToEdit = $addedParticipants[$triggeringElement['#participantDelta']];
+
+    //unsetting the participant
+    unset($addedParticipants[$triggeringElement['#participantDelta']]);
+    $form_state->set('addedParticipants', $addedParticipants);
+
+    //filling personal information
+    $userInput['newParticipantContainer']['newParticipantFieldset']['firstName'] = $participantToEdit['firstName'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'] = $participantToEdit['lastName'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $participantToEdit['email'];
+
+    $form_state->setUserInput($userInput);
+    $form_state->setRebuild();
+  }
+
+  /**
+   * Callback function that removes a certain participant from the list of added participants.
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   */
+  function removeParticipant(array &$form, FormStateInterface $form_state) {
+    //getting triggering element
+    $triggeringElement = $form_state->getTriggeringElement();
+    $addedParticipants = $form_state->get('addedParticipants');
+    //unsetting the participant
+    unset($addedParticipants[$triggeringElement['#participantDelta']]);
+    $form_state->set('addedParticipants', $addedParticipants);
+
+    //rebuilding form
+    $form_state->setRebuild();
+  }
+
+  /**
+   * Ajax callback function that fetches the refreshed version of added participants, resets add new participant form part
+   * as well as updated the total event price
+   *
+   * @param array $form
+   * @param FormStateInterface $form_state
+   * @return AjaxResponse
+   */
+  public function ajaxAddRemoveParticipantCallback(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+
+    //checking for any errors
+    if ($form_state->hasAnyErrors()) {
+      $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
+      //redrawing elements
+      $response->addCommand(new ReplaceCommand('#new-participant-container-wrapper', $form['newParticipantContainer']));
+      return $response;
+    }
+
+    //resetting elements
+    $response->addCommand(new ReplaceCommand('#new-participant-container-wrapper', $form['newParticipantContainer']));
+
+    //updating the price
+    $response->addCommand(new HtmlCommand('#vih-event-price', 'DKK ' . number_format($this->calculatePrice($form_state), 0, ',', '.')));
+
+    //updating added participants
+    $response->addCommand(new ReplaceCommand('#added-participants-container-wrapper', $form['addedParticipantsContainer']));
+
+    //resetting the error, if any
+    $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
+
+    return $response;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    $triggeringElement = $form_state->getTriggeringElement();
+
+    //submit button
+    if ($triggeringElement['#id'] == 'vih-event-submit') {
+      $form_state->clearErrors();
+
+      $addedParticipants = $form_state->get('addedParticipants');
+      //not added participants
+      if (!count($addedParticipants)) {
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['firstName'], $this->t('Please add, at least, one participant'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Please add, at least, one participant'));
+        $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Please add, at least, one participant'));
+      }
+    }
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    //collection subscribed participants information
+    $subscribedParticipants = array();
     $firstParticipantName = '';
-    $subscribedPersons = array();
-    foreach ($form_state->getValue('participantsContainer') as $participant_fieldset) {
-      if ($participant_fieldset['participant_fieldset']) {
-        $participant = $participant_fieldset['participant_fieldset'];
-        if (empty($firstParticipantName)) {
-          $firstParticipantName = $participant['firstName'] . ' ' . $participant['lastName'];
-        }
+    $addedParticipants = $form_state->get('addedParticipants');
 
-        $subscribedPerson = Paragraph::create([
+    if (isset($addedParticipants) && !empty($addedParticipants)) {
+      foreach ($addedParticipants as $addedParticipant) {
+
+        //creating participant paragraph
+        $subscribedParticipant = Paragraph::create([
           'type' => 'vih_ordered_event_person',
-          'field_vih_oe_first_name' => $participant['firstName'],
-          'field_vih_oe_last_name' => $participant['lastName'],
-          'field_vih_oe_email' => $participant['email'],
+          'field_vih_oe_first_name' => $addedParticipant['firstName'],
+          'field_vih_oe_last_name' => $addedParticipant['lastName'],
+          'field_vih_oe_email' => $addedParticipant['email'],
         ]);
-        $subscribedPerson->save();
+        $subscribedParticipant->save();
+        $subscribedParticipants[] = $subscribedParticipant;
 
-        $subscribedPersons[] = $subscribedPerson;
+        //saving first participant name to use in order title
+        if (empty($firstParticipantName)) {
+          $firstParticipantName = $addedParticipant['firstName'] . ' ' . $addedParticipant['lastName'];
+        }
       }
     }
 
@@ -216,7 +402,7 @@ class EventOrderForm extends FormBase {
         'status' => 1, //We restrict direct access to the node in site_preprocess_node hook
         'title' => $this->event->getTitle() . ' - begivenhed tilmelding - ' . $firstParticipantName . ' - '
           . \Drupal::service('date.formatter')->format(time(), 'short'),
-        'field_vih_eo_persons' => $subscribedPersons,
+        'field_vih_eo_persons' => $subscribedParticipants,
         'field_vih_eo_event' => $this->event->id(),
         'field_vih_eo_status' => 'pending',
         'field_vih_eo_price' => $orderPrice,
@@ -224,14 +410,16 @@ class EventOrderForm extends FormBase {
     } else {
       //removing old participants paragraphs, and replacing with new ones
       $subscribedPersonsIds = $this->eventOrder->get('field_vih_eo_persons')->getValue();
+
       foreach ($subscribedPersonsIds as $subscribedPersonId) {
         $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
+
         if ($subscribedPerson) {
          $subscribedPerson->delete();
         }
       }
       //adding new participants
-      $this->eventOrder->set('field_vih_eo_persons', $subscribedPersons);
+      $this->eventOrder->set('field_vih_eo_persons', $subscribedParticipants);
 
       $this->eventOrder->set('field_vih_eo_price', $orderPrice);
     }
@@ -248,70 +436,6 @@ class EventOrderForm extends FormBase {
   }
 
   /**
-   * Callback function to add more participants fieldset
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   */
-  public function addOne(array &$form, FormStateInterface $form_state) {
-    $participantsCounter = $form_state->get('participantsCounter');
-    $participantsCounter = $participantsCounter + 1;
-    $form_state->set('participantsCounter', $participantsCounter);
-    $form_state->setRebuild();
-  }
-
-  /**
-   * Ajax callback the returns the participantsContainer container
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   * @return AjaxResponse
-   */
-  public function addmoreCallback(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-
-    //updating the price
-    $response->addCommand(new HtmlCommand('#vih-event-price', 'DKK ' . number_format($this->calculatePrice($form_state), 0, ',', '.')));
-
-    //resetting elements
-    $response->addCommand(new ReplaceCommand('#participants-container-wrapper', $form['participantsContainer']));
-
-    return $response;
-  }
-
-  /**
-   * Callback function to remove the last added participants fieldset
-   *
-   * @param array $form
-   * @param FormStateInterface $form_state
-   */
-  public function removeCallback(array &$form, FormStateInterface $form_state) {
-    $participantsCounter = $form_state->get('participantsCounter');
-    if ($participantsCounter > 1) {
-      $participantsCounter = $participantsCounter - 1;
-      $form_state->set('participantsCounter', $participantsCounter);
-    }
-    $form_state->setRebuild();
-  }
-
-  /**
-   * Populate the data into the form the existing eventOrder
-   *
-   * @param NodeInterface $eventOrder
-   * @param $form
-   */
-  private function populateData(NodeInterface $eventOrder, &$form) {
-    $subscribedPersonsIds = $eventOrder->get('field_vih_eo_persons')->getValue();
-    foreach ($subscribedPersonsIds as $index => $subscribedPersonId) {
-      $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
-
-      $form['participantsContainer'][$index]['participant_fieldset']['firstName']['#default_value'] = $subscribedPerson->field_vih_oe_first_name->value;
-      $form['participantsContainer'][$index]['participant_fieldset']['lastName']['#default_value'] = $subscribedPerson->field_vih_oe_last_name->value;
-      $form['participantsContainer'][$index]['participant_fieldset']['email']['#default_value'] = $subscribedPerson->field_vih_oe_email->value;
-    }
-  }
-
-  /**
    * Traverses through the selected options and calculates the total price for the event.
    *
    * @param FormStateInterface $form_state
@@ -320,10 +444,40 @@ class EventOrderForm extends FormBase {
   private function calculatePrice(FormStateInterface $form_state) {
     $base_price = $this->event->field_vih_event_price->value;
 
-    //persons
-    $base_price *= $form_state->get('participantsCounter');
+    $addedParticipants = $form_state->get('addedParticipants');
+    if (count($addedParticipants) > 0) {
+      //calculating persons
+      $base_price *= count($addedParticipants);
+    }
 
     $this->price = $base_price;
     return $this->price;
+  }
+
+  /**
+   * Populate the data into the form the existing eventOrder
+   *
+   * @param NodeInterface $eventOrder
+   * @param $form
+   * @param $form_state
+   */
+  private function populateData(NodeInterface $eventOrder, &$form, $form_state) {
+    $addedParticipants = array();
+
+    //subscribed persons
+    $subscribedPersonsIds = $eventOrder->get('field_vih_eo_persons')->getValue();
+    foreach ($subscribedPersonsIds as $index => $subscribedPersonId) {
+      $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
+
+      //filling personal information
+      $participant = array();
+      $participant['firstName'] = $subscribedPerson->field_vih_oe_first_name->value;
+      $participant['lastName'] = $subscribedPerson->field_vih_oe_last_name->value;
+      $participant['email'] = $subscribedPerson->field_vih_oe_email->value;
+
+      $addedParticipants[] = $participant;
+    }
+
+    $form_state->set('addedParticipants', $addedParticipants);
   }
 }
