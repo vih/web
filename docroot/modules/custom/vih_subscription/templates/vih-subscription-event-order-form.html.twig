@@ -23,38 +23,33 @@
             </div>
             {# Introduction information END #}
 
-            {# Options START #}
-            {#{% for optionGroupsDelta, optionGroup in form['#optionGroups'] %}#}
-                {#{{ form[optionGroup['options']['cid']] }}#}
-                {#{% if optionGroup['suboptions'] is not empty %}#}
-                    {#{% for suboptions in optionGroup['suboptions'] %}#}
-                        {#{{ form[suboptions['cid']] }}#}
-                    {#{% endfor %}#}
-                {#{% endif %}#}
-            {#{% endfor %}#}
-            {# Options END #}
-
             <hr>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-
-                    {# Personal data START #}
-                    <div class="partial">
-                        <div class="partial__heading">
-                            <h4 class="partial__heading__title">{{ "Personal information"|t }}</h4>
-                        </div>
-                        <div class="partial__body">
-                            {#{{ form['personalDataLeft'] }}#}
-
-                            {{ form['participantsContainer'] }}
-
-                            {{ form['message'] }}
-                        </div>
+                  {# Participant container START #}
+                  <div class="partial">
+                    <div class="partial__heading">
+                      <h4 class="partial__heading__title">
+                        {{ "Personlige oplysninger" | t }}
+                      </h4>
                     </div>
-                    {# Personal data END #}
+                    <div class="partial__body">
+                      {{ form['newParticipantContainer'] }}
+                    </div>
+                  </div>
+
+                  {# Options START #}
+                  <div class="partial">
+                    <div class="partial__body">
+                      {{ form['availableOptionsContainer'] }}
+                    </div>
+                  </div>
+                  {# Options END #}
+                  {# Participant container END #}
 
                 </div>
+
                 <div class="col-xs-12 col-sm-6">
 
                     <!-- Begin - price -->
@@ -71,6 +66,14 @@
                         </div>
                     </div>
                     <!-- End - price -->
+
+                    <!-- Begin - participants -->
+                    <div class="partial partial--participants">
+                      <div class="partial__body">
+                        {{ form['addedParticipantsContainer'] }}
+                      </div>
+                    </div>
+                    <!-- End - participants -->
 
                     <!-- Begin - form controls -->
                     <div class="partial partial--form-controls">
