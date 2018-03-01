@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 
 class TermsAndConditionsSettingsForm extends ConfigFormBase {
+
   public static $configName = 'vih_subscription.terms_and_conditions.settings';
 
   /**
@@ -35,7 +36,7 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function  buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(TermsAndConditionsSettingsForm::$configName);
     // Long course
     $form['vih_subscription_terms_and_conditions_long_course_fs'] = [
@@ -43,8 +44,6 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Long course terms and conditions page'),
       '#open' => FALSE,
     ];
-
-  
 
     $form['vih_subscription_terms_and_conditions_long_course_fs']['vih_subscription_long_course_terms_and_conditions_page'] = [
       '#type' => 'entity_autocomplete',
@@ -71,7 +70,6 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
       '#description' => $this->t("You can use any 'page' node as terms and conditions page"),
     ];
 
-
     // Events
     $form['vih_subscription_terms_and_conditions_event_fs'] = [
       '#type' => 'details',
@@ -88,8 +86,6 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
       '#description' => $this->t("You can use any 'page' node as terms and conditions page"),
     ];
 
-  
-
     return parent::buildForm($form, $form_state);
   }
 
@@ -101,9 +97,9 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
     foreach ($form_state->getValues() as $key => $value) {
       $confObject->set($key, $value);
     }
-
     $confObject->save();
 
     parent::submitForm($form, $form_state);
   }
+
 }
