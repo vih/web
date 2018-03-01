@@ -154,12 +154,19 @@ class ShortCourseOrderForm extends FormBase {
         '#title' => $this->t('CPR'),
         '#placeholder' => $this->t('CPR'),
         '#required' => TRUE,
+        '#pattern' => '[0-9]{10}',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
         '#type' => 'textfield',
         '#title' => $this->t('E-mail address'),
         '#placeholder' => $this->t('E-mail address'),
         '#required' => TRUE,
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['comment'] = array(
+        '#type' => 'textarea',
+        '#title' => $this->t('Comment'),
+        '#placeholder' => $this->t('Comment'),
+        '#rows' => 3,
       );
 
       //START AVAILABLE OPTIONS CONTAINER //
@@ -341,6 +348,7 @@ class ShortCourseOrderForm extends FormBase {
     $participant['lastName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'];
     $participant['email'] = $userInput['newParticipantContainer']['newParticipantFieldset']['email'];
     $participant['cpr'] = $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'];
+    $participant['comment'] = $userInput['newParticipantContainer']['newParticipantFieldset']['comment'];
 
     //filling ordered options
     $participant['orderedOptions'] = array();
@@ -417,6 +425,7 @@ class ShortCourseOrderForm extends FormBase {
     $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'] = $participantToEdit['lastName'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $participantToEdit['email'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'] = $participantToEdit['cpr'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $participantToEdit['comment'];
 
     //filling options
     foreach ($participantToEdit['orderedOptions'] as $optionGroupDelta => $orderedOption) {
@@ -579,6 +588,7 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_last_name' => $addedParticipant['lastName'],
           'field_vih_ocp_email' => $addedParticipant['email'],
           'field_vih_ocp_cpr' => $addedParticipant['cpr'], //CPR will be deleted from database immediately, after order is confirmed
+          'field_vih_ocp_comment' => $addedParticipant['comment'],
           'field_vih_ocp_birthdate' => $birthdate,
           'field_vih_ocp_ordered_options' => $orderedOptions
         ]);
@@ -763,6 +773,7 @@ class ShortCourseOrderForm extends FormBase {
       $participant['lastName'] = $subscribedPerson->field_vih_ocp_last_name->value;
       $participant['email'] = $subscribedPerson->field_vih_ocp_email->value;
       $participant['cpr'] = $subscribedPerson->field_vih_ocp_cpr->value;
+      $participant['comment'] = $subscribedPerson->field_vih_ocp_comment->value;
 
       //filling ordered options information
       $orderedOptionsIds = $subscribedPerson->get('field_vih_ocp_ordered_options')->getValue();

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_birthdate
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_comment
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
@@ -24,6 +25,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_vih_ocp_comment:
+    weight: 5
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
     region: content
   field_vih_ocp_cpr:
     weight: 2
@@ -59,7 +68,7 @@ content:
     region: content
   field_vih_ocp_ordered_options:
     type: paragraphs
-    weight: 5
+    weight: 6
     settings:
       title: Paragraph
       title_plural: Paragraphs

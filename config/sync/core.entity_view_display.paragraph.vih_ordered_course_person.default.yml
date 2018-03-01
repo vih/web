@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_birthdate
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_comment
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
@@ -26,6 +27,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_vih_ocp_comment:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_vih_ocp_cpr:
     type: string

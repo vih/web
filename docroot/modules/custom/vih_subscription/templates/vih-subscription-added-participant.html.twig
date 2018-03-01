@@ -14,6 +14,7 @@
                 {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
                     {% if addedParticipantOption['option']['name'] %}
                         <li>
+                            <b>{{ addedParticipantOption['optionGroup']['name'] }}</b><br/>
                             {{ addedParticipantOption['option']['name'] }}
                             {% if addedParticipantOption['suboption']['name'] %}
                                 / {{ addedParticipantOption['suboption']['name'] }}
@@ -22,6 +23,10 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+
+            {% if (addedParticipant['comment']) %}
+              {{ "Comment"|t }}: {{ addedParticipant['comment'] }}
+            {% endif %}
 
             <hr>
 
