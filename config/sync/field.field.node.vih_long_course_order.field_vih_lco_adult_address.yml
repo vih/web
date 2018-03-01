@@ -9,7 +9,7 @@ id: node.vih_long_course_order.field_vih_lco_adult_address
 field_name: field_vih_lco_adult_address
 entity_type: node
 bundle: vih_long_course_order
-label: 'Adult address'
+label: Address
 description: ''
 required: false
 translatable: false

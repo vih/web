@@ -9,7 +9,7 @@ id: node.vih_long_course_order.field_vih_lco_adult_municipality
 field_name: field_vih_lco_adult_municipality
 entity_type: node
 bundle: vih_long_course_order
-label: 'Adult municipality'
+label: Municipality
 description: ''
 required: false
 translatable: false

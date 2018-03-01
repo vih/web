@@ -9,7 +9,7 @@ id: node.vih_long_course_order.field_vih_lco_adult_nationality
 field_name: field_vih_lco_adult_nationality
 entity_type: node
 bundle: vih_long_course_order
-label: 'Adult Nationality'
+label: Nationality
 description: ''
 required: false
 translatable: false

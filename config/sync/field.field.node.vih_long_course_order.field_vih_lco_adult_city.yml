@@ -9,7 +9,7 @@ id: node.vih_long_course_order.field_vih_lco_adult_city
 field_name: field_vih_lco_adult_city
 entity_type: node
 bundle: vih_long_course_order
-label: 'Adult city'
+label: City
 description: ''
 required: false
 translatable: false

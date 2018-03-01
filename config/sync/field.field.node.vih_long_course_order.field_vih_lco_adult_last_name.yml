@@ -9,7 +9,7 @@ id: node.vih_long_course_order.field_vih_lco_adult_last_name
 field_name: field_vih_lco_adult_last_name
 entity_type: node
 bundle: vih_long_course_order
-label: 'Adult last name'
+label: 'Last name'
 description: ''
 required: false
 translatable: false
