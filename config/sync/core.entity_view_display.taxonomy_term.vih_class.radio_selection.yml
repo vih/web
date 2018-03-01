@@ -48,14 +48,34 @@ content:
       image_link: ''
     third_party_settings: {  }
     region: content
+  field_vih_class_material_price:
+    type: number_decimal
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+  field_vih_class_price_addition:
+    type: number_decimal
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
 hidden:
   description: true
   field_metatag: true
   field_vih_banner: true
   field_vih_class_class_packages: true
   field_vih_class_color: true
-  field_vih_class_material_price: true
-  field_vih_class_price_addition: true
   field_vih_heading: true
   field_vih_paragraphs: true
   field_vih_subheading: true

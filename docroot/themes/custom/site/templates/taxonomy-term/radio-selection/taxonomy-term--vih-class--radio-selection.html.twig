@@ -18,10 +18,25 @@
     {# Begin - short description #}
     <div class="entity-list-advanced__heading">
         <h2 class="entity-list-advanced__heading__title heading-h4">
-            {{ content.field_short_description }}
+          {{ name }}
         </h2>
     </div>
     {# End - short description #}
+
+    {# Begin - short description #}
+    {{ content.field_short_description }}
+    {# End - short description #}
+
+    {# Begin - price addition #}
+    <div class="entity-list-advanced__emphasize">
+      {% if term.field_vih_class_price_addition.value %}
+        {{ "Price addition"|t }}: DKK {{ term.field_vih_class_price_addition.value }}
+        {% if term.field_vih_class_material_price.value %}
+          ({{ "material price"|t }} DKK {{ term.field_vih_class_material_price.value }})
+        {% endif %}
+      {% endif %}
+    </div>
+    {# End - price addition #}
 
 </div>
 <!-- End - body -->
