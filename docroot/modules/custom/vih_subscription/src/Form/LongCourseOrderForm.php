@@ -240,6 +240,10 @@ class LongCourseOrderForm extends FormBase {
       '#default_value' => 'DK',
       '#required' => TRUE,
     );
+    $form['adultDataLeft']['adultNewsletter'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Get updates from the school'),
+    );
 
     //Adult data - right side
     $form['adultDataRight'] = array(
@@ -293,7 +297,6 @@ class LongCourseOrderForm extends FormBase {
       '#type' => 'textarea',
       '#title' => $this->t('Message'),
       '#placeholder' => $this->t('Message...'),
-      '#required' => TRUE,
     );
 
     $form['actions']['submit'] = array(
@@ -321,13 +324,15 @@ class LongCourseOrderForm extends FormBase {
 
     $config = $this->config(TermsAndConditionsSettingsForm::$configName);
     $terms_and_conditions_page_id = $config->get('vih_subscription_long_course_terms_and_conditions_page');
-    $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
-    $form['terms_and_conditions']['accepted'] = array(
-      '#type' => 'checkboxes',
-      '#options' => array('SAT' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions'=>$terms_and_conditions_link))),
-      '#title' => $this->t('Terms and conditions'),
-      '#required' => TRUE,
-    );
+    if ($terms_and_conditions_page_id) {
+      $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
+      $form['terms_and_conditions']['accepted'] = array(
+        '#type' => 'checkboxes',
+        '#options' => array('SAT' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions'=>$terms_and_conditions_link))),
+        '#title' => $this->t('Terms and conditions'),
+        '#required' => TRUE,
+      );
+    }
 
     return $form;
   }
@@ -452,6 +457,7 @@ class LongCourseOrderForm extends FormBase {
         'field_vih_lco_adult_city' => $form_state->getValue('adultCity'),
         'field_vih_lco_adult_municipality' => $form_state->getValue('adultMunicipality'),
         'field_vih_lco_adult_zip' => $form_state->getValue('adultZip'),
+        'field_vih_lco_adult_newsletter' => $form_state->getValue('adultNewsletter'),
       ));
     } else {
       //removing old ordered course periods
@@ -570,6 +576,7 @@ class LongCourseOrderForm extends FormBase {
     $form['adultDataLeft']['adultTelefon']['#default_value'] = $courseOrder->field_vih_lco_adult_telefon->value;
     $form['adultDataLeft']['adultEmail']['#default_value'] = $courseOrder->field_vih_lco_adult_email->value;
     $form['adultDataLeft']['adultNationality']['#default_value'] = array_search($courseOrder->field_vih_lco_adult_nationality->value, CourseOrderOptionsList::getNationalityList());
+    $form['adultDataLeft']['adultNewsletter']['#default_value'] = $courseOrder->field_vih_lco_adult_newsletter->value ;
 
     $adult_address = $courseOrder->field_vih_lco_adult_address->value;
     $adult_address_parts = explode('; ', $adult_address);

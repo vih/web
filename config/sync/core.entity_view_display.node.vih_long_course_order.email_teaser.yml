@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.vih_long_course_order.field_vih_lco_adult_last_name
     - field.field.node.vih_long_course_order.field_vih_lco_adult_municipality
     - field.field.node.vih_long_course_order.field_vih_lco_adult_nationality
+    - field.field.node.vih_long_course_order.field_vih_lco_adult_newsletter
     - field.field.node.vih_long_course_order.field_vih_lco_adult_telefon
     - field.field.node.vih_long_course_order.field_vih_lco_adult_zip
     - field.field.node.vih_long_course_order.field_vih_lco_city
@@ -120,6 +121,16 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vih_lco_adult_newsletter:
+    type: boolean
+    weight: 26
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
   field_vih_lco_adult_telefon:
     weight: 19
     label: above
