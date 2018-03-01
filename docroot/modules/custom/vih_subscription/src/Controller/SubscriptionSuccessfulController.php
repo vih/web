@@ -118,7 +118,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
       $replacement = [
         $subject->getTitle(),
         $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value,
-        !empty($courseDate) ? $courseDate : '',
+        !empty($courseDate) ? mb_strtolower($courseDate) : '',
         '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
         $order_rendered,
       ];
@@ -187,7 +187,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $replacement = [
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
-          !empty($courseDate) ? $courseDate : '',
+          !empty($courseDate) ? mb_strtolower($courseDate) : '',
           '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
@@ -253,7 +253,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $replacement = [
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
-          !empty($eventDate) ? $eventDate : '',
+          !empty($eventDate) ? mb_strtolower($eventDate) : '',
           '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
