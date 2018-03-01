@@ -54,6 +54,7 @@ class ShortCourseOrderForm extends FormBase {
 
     $optionGroups = array();
     $optionGroupOptions = array();
+    $optionGroupOptionsPrices = array();
     $optionGroupOptionsWithPrice = array();
     $optionGroupSuboptions = array();
 
@@ -68,6 +69,7 @@ class ShortCourseOrderForm extends FormBase {
 
         if (isset($additionalPrice) && floatval($additionalPrice) !== 0.00) {
           $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] .= " (+ kr. $additionalPrice)";
+          $optionGroupOptionsPrices[$optionGroupDelta][$optionDelta] = $additionalPrice;
         }
 
         foreach ($option->field_vih_option_suboptions as $suboptionDelta => $suboption) {
@@ -77,6 +79,7 @@ class ShortCourseOrderForm extends FormBase {
     }
     $form_state->set('optionGroups', $optionGroups);
     $form_state->set('optionGroupOptions', $optionGroupOptions);
+    $form_state->set('optionGroupOptionsPrices', $optionGroupOptionsPrices);
     $form_state->set('optionGroupSuboptions', $optionGroupSuboptions);
 
     $addedParticipants = $form_state->get('addedParticipants');
@@ -337,6 +340,7 @@ class ShortCourseOrderForm extends FormBase {
     //variables to get option names from
     $optionGroups = $form_state->get('optionGroups');
     $optionGroupOptions = $form_state->get('optionGroupOptions');
+    $optionGroupOptionsPrices = $form_state->get('optionGroupOptionsPrices');
     $optionGroupSuboptions = $form_state->get('optionGroupSuboptions');
 
     //existing list of added participants
@@ -355,12 +359,16 @@ class ShortCourseOrderForm extends FormBase {
     foreach ($userInput['availableOptionsContainer']['optionGroups'] as $optionGroupDelta => $optionGroupSelection) {
       $optionDelta = $optionGroupSelection['option'];
       $optionName = NULL;
+      $optionPrice = NULL;
       $subOptionDelta = NULL;
       $subOptionName = NULL;
       $subOptionDelta = NULL;
 
       if (isset($optionDelta)) {
         $optionName = $optionGroupOptions[$optionGroupDelta][$optionDelta];
+        if (isset($optionGroupOptionsPrices[$optionGroupDelta][$optionDelta])) {
+          $optionPrice = $optionGroupOptionsPrices[$optionGroupDelta][$optionDelta];
+        }
         if (isset($optionGroupSelection['options'][$optionDelta])) {
           $subOptionDelta = $optionGroupSelection['options'][$optionDelta]['suboptions-container']['suboption'];
           if (isset($subOptionDelta)) {
@@ -376,7 +384,8 @@ class ShortCourseOrderForm extends FormBase {
         ],
         'option' => [
           'delta' => $optionDelta,
-          'name' => $optionName
+          'name' => $optionName,
+          'additionalPrice' => $optionPrice
         ],
         'suboption' => [
           'delta' => $subOptionDelta,
@@ -728,6 +737,8 @@ class ShortCourseOrderForm extends FormBase {
 
         $optionGroupId = array_search($orderedOption->field_vih_oo_group_name->value, $optionGroups);
         $optionId = array_search($orderedOption->field_vih_oo_option_name->value, $optionGroupOptions[$optionGroupId]);
+        $additionalPrice = $orderedOption->field_vih_oo_price_addition->value;
+
         $suboptionId = NULL;
         $suboptionName = NULL;
         if (!empty($optionGroupSuboptions[$optionGroupId][$optionId])) {
@@ -742,7 +753,8 @@ class ShortCourseOrderForm extends FormBase {
           ],
           'option' => [
             'delta' => $optionId,
-            'name' => $optionGroupOptions[$optionGroupId][$optionId]
+            'name' => $optionGroupOptions[$optionGroupId][$optionId],
+            'additionalPrice' => $additionalPrice,
           ],
           'suboption' => [
             'delta' => $suboptionId,

@@ -19,6 +19,9 @@
                             {% if addedParticipantOption['suboption']['name'] %}
                                 / {{ addedParticipantOption['suboption']['name'] }}
                             {% endif %}
+                            {% if (addedParticipantOption['option']['additionalPrice']) %}
+                              (+ kr. {{ addedParticipantOption['option']['additionalPrice'] }})
+                            {% endif %}
                         </li>
                     {% endif %}
                 {% endfor %}
