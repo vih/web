@@ -50,7 +50,7 @@ class RedirectionPagesSettingsForm extends ConfigFormBase {
       '#target_type' => 'node',
       '#selection_settings' => ['target_bundles' => ['page']],
       '#title' => $this->t('Page'),
-      '#default_value' => !empty($config->get('vih_subscription_long_course_redirection_page'))? Node::load($config->get('vih_subscription_long_course_redirection_pages_page')) : NULL,
+      '#default_value' => !empty($config->get('vih_subscription_long_course_redirection_page'))? Node::load($config->get('vih_subscription_long_course_redirection_page')) : NULL,
       '#description' => $this->t("You can use any 'page' node to redirect after order submitted successfully"),
     ];
 
