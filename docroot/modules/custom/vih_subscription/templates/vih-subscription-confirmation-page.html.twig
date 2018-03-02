@@ -22,7 +22,16 @@
                     </a>
 
                     <a href="{{ page['#paymentLink'] }}" class="btn btn-success">
-                        {{ 'Proceed to payment' | trans }}
+
+                        {% if page['#course-type'] == 'vih_long_cource' %}
+                            {{ 'Accept' | trans }}
+                        {% elseif page['#course-type'] == 'vih_short_cource' %}
+                            {{ 'Proceed to payment' | trans }}
+                        {% elseif page['#course-type'] == 'event' %}
+                            {{ 'Proceed to payment' | trans }}
+                        {% else %}
+                            {{ 'Proceed to payment' | trans }}
+                        {% endif %}
                     </a>
                 </div>
             </div>
