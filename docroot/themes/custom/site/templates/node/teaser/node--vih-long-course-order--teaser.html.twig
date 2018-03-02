@@ -132,13 +132,31 @@ view_mode ? view_mode|clean_class,
 
                     {# Begin - course #}
                     {% if node.field_vih_lco_course.value %}
-                        <div class="partial">
-                            <div class="partial__body">
+                        <div class="boxy">
+                            <div class="boxy__heading">
+                                <h3 class="boxy__heading__title">{{ 'Selected course' | trans }}</h3>
+                            </div>
+                            <div class="boxy__body">
                                 {{ content.field_vih_lco_course }}
                             </div>
                         </div>
                     {% endif %}
                     {# End - course #}
+
+                    {# Begin - message #}
+                    {{ content.field_vih_lco_message }}
+                    {# End - message #}
+
+                    {# Begin - education #}
+                    {{ content.field_vih_lco_education }}
+                    {# End - education #}
+
+                    {# Begin - found from #}
+                    {{ content.field_vih_lco_found_from }}
+                    {# End - found from #}
+
+                </div>
+                <div class="col-xs-12 col-sm-6">
 
                     {# Begin - subjects #}
                     {% if node.field_vih_lco_order_course_perio.value %}
@@ -154,21 +172,6 @@ view_mode ? view_mode|clean_class,
                         </div>
                     {% endif %}
                     {# End - subjects #}
-
-                </div>
-                <div class="col-xs-12 col-sm-6">
-
-                    {# Begin - message #}
-                    {{ content.field_vih_lco_message }}
-                    {# End - message #}
-
-                    {# Begin - education #}
-                    {{ content.field_vih_lco_education }}
-                    {# End - education #}
-
-                    {# Begin - found from #}
-                    {{ content.field_vih_lco_found_from }}
-                    {# End - found from #}
 
                 </div>
             </div>

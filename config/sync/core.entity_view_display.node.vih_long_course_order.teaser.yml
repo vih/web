@@ -156,12 +156,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_vih_lco_course:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     weight: 6
     region: content
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: embedded_teaser_list
+      link: false
     third_party_settings: {  }
   field_vih_lco_education:
     type: string
