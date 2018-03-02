@@ -225,6 +225,13 @@ class ShortCourseOrderForm extends FormBase {
             'type' => 'none'
           )
         ],
+        '#limit_validation_errors' => array(
+          ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
+          ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
+          ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+          ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
+          ['availableOptionsContainer']
+        ),
       );
     } else {
       $form['availableOptionsContainer'] = array(
@@ -292,8 +299,31 @@ class ShortCourseOrderForm extends FormBase {
     }
     // END added participants container
 
+    //START OTHER GENERAL DATA //
+    $config = $this->config(TermsAndConditionsSettingsForm::$configName);
+    if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
+      $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
+      $form['terms_and_conditions'] = array(
+        '#type' => 'checkboxes',
+        '#options' => array('accepted' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions' => $terms_and_conditions_link))),
+        '#title' => $this->t('Terms and conditions'),
+        '#required' => TRUE,
+        '#attributes' => [
+          'required' => ''
+        ],
+      );
+    }
+
+    // Making sure that default value stays if it's there
+    $form['order_comment'] += array(
+      '#type' => 'textarea',
+      '#title' => $this->t('Comment'),
+      '#placeholder' => $this->t('Comment'),
+      '#rows' => 3,
+    );
+    //END OTHER GENERAL DATA //
+
     //START FORM CONTROLS //
-    //if ($personsLimit > $personsSubscribed) {
     $form['actions'] = [
       '#type' => 'actions',
     ];
@@ -308,29 +338,15 @@ class ShortCourseOrderForm extends FormBase {
         ['newParticipantContainer', 'newParticipantFieldset', 'email'],
         ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
         ['terms_and_conditions'],
+        ['order_comment']
       ),
       '#submit' => array('::submitForm')
     );
-    //} else {
-//      $form['message'] = array(
-//        '#markup' => $this->t('Denne begivenhed kan ikke allokere flere deltagere')
-//      );
-//    }
     //END FORM CONTROLS //
 
     $form['#theme'] = 'vih_subscription_short_course_order_form';
     $form_state->setCached(FALSE);
     
-    $config = $this->config(TermsAndConditionsSettingsForm::$configName);
-    if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
-      $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
-      $form['terms_and_conditions'] = array(
-        '#type' => 'checkboxes',
-        '#options' => array('accepted' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions' => $terms_and_conditions_link))),
-        '#title' => $this->t('Terms and conditions'),
-      );
-    }
-
     return $form;
   }
 
@@ -641,7 +657,8 @@ class ShortCourseOrderForm extends FormBase {
         'field_vih_sco_persons' => $subscribedParticipants,
         'field_vih_sco_course' => $this->course->id(),
         'field_vih_sco_status' => 'pending',
-        'field_vih_sco_price' => $orderPrice
+        'field_vih_sco_price' => $orderPrice,
+        'field_vih_sco_comment' => $form_state->getValue('order_comment')
       ));
     } else {
       //removing old participants paragraphs, and replacing with new ones
@@ -670,6 +687,7 @@ class ShortCourseOrderForm extends FormBase {
       $this->courseOrder->set('field_vih_sco_persons', $subscribedParticipants);
 
       $this->courseOrder->set('field_vih_sco_price', $orderPrice);
+      $this->courseOrder->set('field_vih_sco_comment', $form_state->getValue('order_comment'));
     }
 
     //saving the order (works for both new/edited)
@@ -781,7 +799,8 @@ class ShortCourseOrderForm extends FormBase {
 
       $addedParticipants[] = $participant;
     }
-
     $form_state->set('addedParticipants', $addedParticipants);
+
+    $form['order_comment']['#default_value'] = $courseOrder->field_vih_sco_comment->value;
   }
 }

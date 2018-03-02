@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.vih_short_course_order.body
+    - field.field.node.vih_short_course_order.field_vih_sco_comment
     - field.field.node.vih_short_course_order.field_vih_sco_course
     - field.field.node.vih_short_course_order.field_vih_sco_ordered_options
     - field.field.node.vih_short_course_order.field_vih_sco_persons
@@ -33,6 +34,13 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_vih_sco_comment:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_vih_sco_course:
     weight: 2

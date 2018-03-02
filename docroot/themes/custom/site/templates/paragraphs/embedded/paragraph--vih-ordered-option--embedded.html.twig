@@ -5,24 +5,26 @@ set classes = [
 view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
-<div{{ attributes.addClass(classes) }}>
+<li>
+  <div{{ attributes.addClass(classes) }}>
 
-    {# Begin - name #}
-    <h5>{{ content.field_vih_oo_group_name }}</h5>
-    {# End - name #}
+      {# Begin - name #}
+      <b>{{ content.field_vih_oo_group_name }}</b>
+      {# End - name #}
 
-    {# Begin - price addition #}
-    {{ content.field_vih_oo_price_addition }}
-    {# End - price addition #}
+      {# Begin - option #}
+      {{ paragraph.field_vih_oo_option_name.value }}
+        {# Begin - suboption #}
+        {% if paragraph.field_vih_oo_suboption.value %}
+          / {{ paragraph.field_vih_oo_suboption.value }}
+        {% endif %}
+        {# End - suboption #}
 
-    {# Begin - option #}
-    {{ content.field_vih_oo_option_name }}
-    {# End - option #}
-
-    {# Begin - suboption #}
-    {% if paragraph.field_vih_oo_suboption.value %}
-        - {{ paragraph.field_vih_oo_suboption.value }}
-    {% endif %}
-    {# End - suboption #}
-
-</div>
+        {% if paragraph.field_vih_oo_price_addition.value %}
+          {# Begin - price addition #}
+          (+ kr. {{ paragraph.field_vih_oo_price_addition.value }})
+          {# End - price addition #}
+        {% endif %}
+      {# End - option #}
+  </div>
+</li>

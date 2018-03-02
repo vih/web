@@ -16,3 +16,12 @@
   <b>{{ content.field_vih_sco_price }}</b>
   <br>
 {% endif %}
+
+{% if content.field_vih_sco_comment %}
+  <hr>
+  <h3>
+    {{ "Comment" | trans }}
+  </h3>
+  <b>{{ content.field_vih_sco_comment }}</b>
+  <br>
+{% endif %}

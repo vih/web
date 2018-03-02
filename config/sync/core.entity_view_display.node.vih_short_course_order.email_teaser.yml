@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.email_teaser
     - field.field.node.vih_short_course_order.body
+    - field.field.node.vih_short_course_order.field_vih_sco_comment
     - field.field.node.vih_short_course_order.field_vih_sco_course
     - field.field.node.vih_short_course_order.field_vih_sco_ordered_options
     - field.field.node.vih_short_course_order.field_vih_sco_persons
@@ -35,6 +36,13 @@ content:
       trim_length: 600
     third_party_settings: {  }
     region: content
+  field_vih_sco_comment:
+    type: basic_string
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_vih_sco_course:
     weight: 1
     label: inline
