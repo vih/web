@@ -19,7 +19,6 @@ dependencies:
     - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
-    - datetime
     - entity_reference_revisions
     - image
     - panelizer
@@ -40,31 +39,22 @@ content:
     type: image
     weight: 9
     region: content
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
   field_vih_top_banner:
-    weight: 13
-    label: above
+    weight: 11
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_vih_user_birthday:
-    type: datetime_default
-    weight: 6
-    region: content
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: vih_medium_date_short_month
-    third_party_settings: {  }
   field_vih_user_descr:
     weight: 4
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
@@ -80,6 +70,14 @@ content:
     type: string
     weight: 10
     region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_user_kvalifikationer:
+    type: string
+    weight: 7
+    region: content
     label: above
     settings:
       link_to_entity: false
@@ -88,7 +86,7 @@ content:
     type: string
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -96,7 +94,7 @@ content:
     type: string
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -111,7 +109,7 @@ content:
     third_party_settings: {  }
   field_vih_user_phone:
     type: string
-    weight: 7
+    weight: 6
     region: content
     label: above
     settings:
@@ -134,15 +132,8 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  field_vih_user_type_id:
-    type: entity_reference_label
-    weight: 12
-    region: content
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
 hidden:
-  field_vih_user_kvalifikationer: true
+  field_vih_user_birthday: true
+  field_vih_user_type_id: true
   langcode: true
   member_for: true

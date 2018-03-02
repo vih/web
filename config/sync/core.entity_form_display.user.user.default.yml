@@ -39,6 +39,7 @@ third_party_settings:
         - field_vih_user_name_last
         - field_vih_user_birthday
         - field_vih_user_descr
+        - field_vih_user_kvalifikationer
         - field_vih_user_phone
         - field_vih_user_email
         - field_vih_user_type_id
@@ -54,7 +55,8 @@ third_party_settings:
       label: Bruger
       region: content
     group_content:
-      children: {  }
+      children:
+        - field_vih_user_paragraphs
       parent_name: ''
       weight: 3
       format_type: tab
@@ -157,7 +159,7 @@ content:
     third_party_settings: {  }
   field_vih_user_email:
     type: email_default
-    weight: 19
+    weight: 20
     region: content
     settings:
       size: 60
@@ -166,6 +168,14 @@ content:
   field_vih_user_job_title:
     type: string_textfield
     weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vih_user_kvalifikationer:
+    type: string_textfield
+    weight: 18
     region: content
     settings:
       size: 60
@@ -203,7 +213,7 @@ content:
     third_party_settings: {  }
   field_vih_user_phone:
     type: string_textfield
-    weight: 18
+    weight: 19
     region: content
     settings:
       size: 60
@@ -258,5 +268,4 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_vih_user_kvalifikationer: true
   timezone: true
