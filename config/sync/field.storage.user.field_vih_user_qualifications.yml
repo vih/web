@@ -1,0 +1,19 @@
+uuid: 342cc7ec-b42f-4246-a4e5-ed0e28c94b25
+langcode: da
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_vih_user_qualifications
+field_name: field_vih_user_qualifications
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

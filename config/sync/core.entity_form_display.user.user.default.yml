@@ -11,12 +11,12 @@ dependencies:
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
-    - field.field.user.user.field_vih_user_kvalifikationer
     - field.field.user.user.field_vih_user_name_first
     - field.field.user.user.field_vih_user_name_last
     - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
+    - field.field.user.user.field_vih_user_qualifications
     - field.field.user.user.field_vih_user_title
     - field.field.user.user.field_vih_user_type_id
     - image.style.thumbnail
@@ -39,7 +39,7 @@ third_party_settings:
         - field_vih_user_name_last
         - field_vih_user_birthday
         - field_vih_user_descr
-        - field_vih_user_kvalifikationer
+        - field_vih_user_qualifications
         - field_vih_user_phone
         - field_vih_user_email
         - field_vih_user_type_id
@@ -173,14 +173,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_vih_user_kvalifikationer:
-    type: string_textfield
-    weight: 18
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_vih_user_name_first:
     type: string_textfield
     weight: 14
@@ -227,6 +219,14 @@ content:
       progress_indicator: throbber
     region: content
     third_party_settings: {  }
+  field_vih_user_qualifications:
+    weight: 18
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
   field_vih_user_title:
     type: string_textfield
     weight: 2

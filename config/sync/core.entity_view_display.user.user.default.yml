@@ -9,12 +9,12 @@ dependencies:
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
     - field.field.user.user.field_vih_user_job_title
-    - field.field.user.user.field_vih_user_kvalifikationer
     - field.field.user.user.field_vih_user_name_first
     - field.field.user.user.field_vih_user_name_last
     - field.field.user.user.field_vih_user_paragraphs
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
+    - field.field.user.user.field_vih_user_qualifications
     - field.field.user.user.field_vih_user_title
     - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
@@ -74,14 +74,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  field_vih_user_kvalifikationer:
-    type: string
-    weight: 7
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_vih_user_name_first:
     type: string
     weight: 2
@@ -124,6 +116,13 @@ content:
       image_style: vih_person_teaser
       image_link: ''
     third_party_settings: {  }
+  field_vih_user_qualifications:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_vih_user_title:
     type: string
     weight: 0
