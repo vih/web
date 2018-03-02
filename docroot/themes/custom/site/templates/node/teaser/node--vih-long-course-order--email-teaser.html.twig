@@ -59,6 +59,14 @@
         {{ node.field_vih_lco_adult_email.value }}
       </p>
       <p>
+        <b>{{ node.field_vih_lco_adult_newsletter.fieldDefinition.label }}:</b><br>
+        {% if node.field_vih_lco_adult_newsletter.value == 0 %}
+          {{ 'Off' | trans }}
+        {% else %}
+          {{ 'On' | trans }}
+        {% endif %}
+      </p>
+      <p>
         <b>{{ node.field_vih_lco_education.fieldDefinition.label }}:</b><br>
         {{ node.field_vih_lco_education.value }}
       </p>

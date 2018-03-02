@@ -1,0 +1,23 @@
+uuid: 6400ebdf-3c10-4795-b3e0-530bf3582902
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_adult_newsletter
+    - node.type.vih_long_course_order
+id: node.vih_long_course_order.field_vih_lco_adult_newsletter
+field_name: field_vih_lco_adult_newsletter
+entity_type: node
+bundle: vih_long_course_order
+label: 'Contact person newsletter'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
