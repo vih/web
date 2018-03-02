@@ -37,7 +37,7 @@ mode: default
 content:
   field_vih_banner:
     type: image
-    weight: 8
+    weight: 9
     region: content
     label: hidden
     settings:
@@ -45,7 +45,7 @@ content:
       image_link: ''
     third_party_settings: {  }
   field_vih_top_banner:
-    weight: 10
+    weight: 11
     label: hidden
     settings:
       link: true
@@ -68,9 +68,17 @@ content:
     third_party_settings: {  }
   field_vih_user_job_title:
     type: string
-    weight: 9
+    weight: 10
     region: content
     label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_vih_user_kvalifikationer:
+    type: string
+    weight: 7
+    region: content
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -92,7 +100,7 @@ content:
     third_party_settings: {  }
   field_vih_user_paragraphs:
     type: entity_reference_revisions_entity_view
-    weight: 7
+    weight: 8
     region: content
     label: above
     settings:
@@ -126,7 +134,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_vih_user_birthday: true
-  field_vih_user_kvalifikationer: true
   field_vih_user_type_id: true
   langcode: true
   member_for: true
