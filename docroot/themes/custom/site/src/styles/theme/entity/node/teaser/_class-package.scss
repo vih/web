@@ -38,7 +38,7 @@ $entity-teaser-class-package-image-min-height: 350px;
 
     padding: $entity-teaser-inner-top-bottom-spacing $entity-teaser-inner-left-right-spacing 100px; // 100px is approx. height of angle, so it wont overlap the text
 
-    .field {
+    .field--name-field-short-description {
       color: #fff;
       text-transform: uppercase;
     }
@@ -97,7 +97,7 @@ $entity-teaser-class-package-image-min-height: 350px;
       background-color: transparent;
       transition: background-color $transition-time-short ease-in-out;
 
-      .field {
+      .field--name-field-short-description {
         opacity: 0;
         transition: opacity $transition-time-short ease-in-out;
       }
@@ -108,7 +108,7 @@ $entity-teaser-class-package-image-min-height: 350px;
       .entity-teaser__inner {
         background-color: rgba(0, 0, 0, .8);
 
-        .field {
+        .field--name-field-short-description {
           opacity: 1;
         }
       }
