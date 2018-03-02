@@ -50,7 +50,7 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
       '#target_type' => 'node',
       '#selection_settings' => ['target_bundles' => ['page']],
       '#title' => $this->t('Page'),
-      '#default_value' => Node::load($config->get('vih_subscription_long_course_terms_and_conditions_page')),
+      '#default_value' => !empty($config->get('vih_subscription_long_course_terms_and_conditions_page'))? Node::load($config->get('vih_subscription_long_course_terms_and_conditions_page')) : NULL,
       '#description' => $this->t("You can use any 'page' node as terms and conditions page"),
     ];
 
@@ -66,7 +66,7 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
       '#target_type' => 'node',
       '#selection_settings' => ['target_bundles' => ['page']],
       '#title' => $this->t('Page'),
-      '#default_value' => Node::load($config->get('vih_subscription_short_course_terms_and_conditions_page')),
+      '#default_value' => !empty($config->get('vih_subscription_short_course_terms_and_conditions_page'))? Node::load($config->get('vih_subscription_short_course_terms_and_conditions_page')) : NULL,
       '#description' => $this->t("You can use any 'page' node as terms and conditions page"),
     ];
 
@@ -82,7 +82,7 @@ class TermsAndConditionsSettingsForm extends ConfigFormBase {
       '#target_type' => 'node',
       '#selection_settings' => ['target_bundles' => ['page']],
       '#title' => $this->t('Page'),
-      '#default_value' => Node::load($config->get('vih_subscription_event_terms_and_conditions_page')),
+      '#default_value' => !empty($config->get('vih_subscription_event_terms_and_conditions_page'))? Node::load($config->get('vih_subscription_event_terms_and_conditions_page')) : NULL,
       '#description' => $this->t("You can use any 'page' node as terms and conditions page"),
     ];
 
