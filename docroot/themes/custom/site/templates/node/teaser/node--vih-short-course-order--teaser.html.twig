@@ -1,10 +1,10 @@
 {% set classes = [
-node.bundle|clean_class,
-node.isPromoted() ? 'is-promoted',
-node.isSticky() ? 'is-sticky',
-not node.isPublished() ? 'is-unpublished',
-view_mode ? view_mode|clean_class,
-'clearfix',
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
@@ -72,19 +72,19 @@ view_mode ? view_mode|clean_class,
                     {% endif %}
                     {# End - price #}
 
-                  {% if content.field_vih_sco_comment %}
-                    <!-- Begin - comment -->
-                    <div class="boxy">
-                      <div class="boxy__heading">
-                        <h2 class="boxy__heading__title heading-h4">{{ "Comment" | trans }}</h2>
-                      </div>
+                    {% if node.field_vih_sco_comment.value %}
+                        <!-- Begin - comment -->
+                        <div class="boxy">
+                            <div class="boxy__heading">
+                                <h2 class="boxy__heading__title heading-h4">{{ "Comment" | trans }}</h2>
+                            </div>
 
-                      <div class="boxy__body">
-                        {{ content.field_vih_sco_comment }}
-                      </div>
-                    </div>
-                    <!-- End - comment -->
-                  {% endif %}
+                            <div class="boxy__body">
+                                {{ content.field_vih_sco_comment }}
+                            </div>
+                        </div>
+                        <!-- End - comment -->
+                    {% endif %}
 
                 </div>
             </div>
