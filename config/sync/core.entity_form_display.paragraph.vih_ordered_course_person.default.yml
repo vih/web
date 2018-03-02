@@ -3,13 +3,18 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_address
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_birthdate
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_city
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_comment
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_cpr
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_last_name
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_municipality
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_newsletter
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_ordered_options
+    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_zip
     - paragraphs.paragraphs_type.vih_ordered_course_person
   module:
     - datetime
@@ -20,14 +25,30 @@ targetEntityType: paragraph
 bundle: vih_ordered_course_person
 mode: default
 content:
+  field_vih_ocp_address:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_ocp_birthdate:
     weight: 4
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_vih_ocp_city:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_ocp_comment:
-    weight: 5
+    weight: 9
     settings:
       rows: 3
       placeholder: ''
@@ -66,9 +87,24 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_vih_ocp_municipality:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_ocp_newsletter:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_vih_ocp_ordered_options:
     type: paragraphs
-    weight: 6
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -79,6 +115,14 @@ content:
       closed_mode: summary
       autocollapse: none
     third_party_settings: {  }
+    region: content
+  field_vih_ocp_zip:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true

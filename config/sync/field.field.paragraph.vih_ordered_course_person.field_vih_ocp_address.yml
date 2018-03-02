@@ -1,0 +1,19 @@
+uuid: 8f681c9e-b3f3-413a-a5ea-a13759e8cd57
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocp_address
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+id: paragraph.vih_ordered_course_person.field_vih_ocp_address
+field_name: field_vih_ocp_address
+entity_type: paragraph
+bundle: vih_ordered_course_person
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

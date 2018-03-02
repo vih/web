@@ -60,3 +60,4 @@ content:
     region: content
 hidden:
   field_vih_ocp_birthdate: true
+  field_vih_ocp_comment: true

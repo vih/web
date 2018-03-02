@@ -1,0 +1,23 @@
+uuid: bea6dcb3-b22c-4ec6-89bb-18e2184299e7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_ocp_newsletter
+    - paragraphs.paragraphs_type.vih_ordered_course_person
+id: paragraph.vih_ordered_course_person.field_vih_ocp_newsletter
+field_name: field_vih_ocp_newsletter
+entity_type: paragraph
+bundle: vih_ordered_course_person
+label: Newsletter
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

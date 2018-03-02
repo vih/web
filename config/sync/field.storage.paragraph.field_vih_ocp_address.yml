@@ -1,0 +1,21 @@
+uuid: 5e0c3380-c89b-488a-842e-250c73e3cbe0
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_vih_ocp_address
+field_name: field_vih_ocp_address
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

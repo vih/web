@@ -13,14 +13,31 @@
             {{ paragraph.field_vih_ocp_first_name.value }} {{ paragraph.field_vih_ocp_last_name.value }}
         </h4>
         {# End - name #}
+        {# Begin - CPR #}
         <div>
           {{ "CPR"|t }}: {{ paragraph.field_vih_ocp_cpr.value }}
         </div>
+        {# End - email #}
         {# Begin - email #}
         <div>
           {{ "Email"|t }}: {{ paragraph.field_vih_ocp_email.value }}
         </div>
         {# End - email #}
+        {# Begin - address #}
+        <div>
+          {{ "Address"|t }}: {{ paragraph.field_vih_ocp_address.value }}
+        </div>
+        {# End - address #}
+        {# Begin - city #}
+        <div>
+          {{ "City"|t }}: {{ paragraph.field_vih_ocp_zip.value }} {{ paragraph.field_vih_ocp_city.value }}
+        </div>
+        {# End - city #}
+        {# Begin - municipality #}
+        <div>
+          {{ "Municipality"|t }}: {{ paragraph.field_vih_ocp_municipality.value }}
+        </div>
+        {# End - municipality #}
 
         {# Begin - ordered options #}
         <ul>
@@ -30,9 +47,22 @@
 
         {# Begin - comment #}
         {% if paragraph.field_vih_ocp_comment.value %}
-          {{ "Comment"|t }}: {{ paragraph.field_vih_ocp_comment.value }}
+          <div>
+            {{ "Comment"|t }}: {{ paragraph.field_vih_ocp_comment.value }}
+          </div>
         {% endif %}
         {# End - comement #}
+
+        {# Begin - newsletter #}
+        <div>
+          {{ "Newsletter"|t }}:
+          {% if paragraph.field_vih_ocp_newsletter.value %}
+            {{ "yes"|t }}
+          {% else %}
+            {{ "no"|t }}
+          {% endif %}
+        </div>
+        {# End - newsletter #}
 
     </div>
 </div>

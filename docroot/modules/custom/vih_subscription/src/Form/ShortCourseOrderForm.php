@@ -152,7 +152,7 @@ class ShortCourseOrderForm extends FormBase {
         '#prefix' => '<div class="col-xs-12 col-sm-6">',
         '#suffix' => '</div></div>',
       );
-        $form['newParticipantContainer']['newParticipantFieldset']['cpr'] = array(
+      $form['newParticipantContainer']['newParticipantFieldset']['cpr'] = array(
         '#type' => 'textfield',
         '#title' => $this->t('CPR'),
         '#placeholder' => $this->t('CPR'),
@@ -165,11 +165,65 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('E-mail address'),
         '#required' => TRUE,
       );
+      $form['newParticipantContainer']['newParticipantFieldset']['address'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('Address'),
+        '#placeholder' => $this->t('Address'),
+        '#required' => TRUE,
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['house']['houseNumber'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('House no.'),
+        '#placeholder' => $this->t('House no.'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="row"><div class="col-xs-4">',
+        '#suffix' => '</div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['house']['houseLetter'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('House letter'),
+        '#placeholder' => $this->t('House letter'),
+        '#prefix' => '<div class="col-xs-4">',
+        '#suffix' => '</div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('Floor'),
+        '#placeholder' => $this->t('Floor'),
+        '#prefix' => '<div class="col-xs-4">',
+        '#suffix' => '</div></div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['city'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('City'),
+        '#placeholder' => $this->t('City'),
+        '#required' => TRUE,
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['municipality'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('Municipality'),
+        '#placeholder' => $this->t('Municipality'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="row"><div class="col-xs-7">',
+        '#suffix' => '</div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['zip'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('Zipcode'),
+        '#placeholder' => $this->t('Zipcode'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="col-xs-5">',
+        '#suffix' => '</div></div>',
+      );
       $form['newParticipantContainer']['newParticipantFieldset']['comment'] = array(
         '#type' => 'textarea',
         '#title' => $this->t('Comment'),
         '#placeholder' => $this->t('Comment'),
         '#rows' => 3,
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['newsletter'] = array(
+        '#type' => 'checkbox',
+        '#title' => $this->t('Get updates from the school'),
       );
 
       //START AVAILABLE OPTIONS CONTAINER //
@@ -226,14 +280,12 @@ class ShortCourseOrderForm extends FormBase {
           )
         ],
         '#limit_validation_errors' => array(
-          ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
-          ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
-          ['newParticipantContainer', 'newParticipantFieldset', 'email'],
-          ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
+          ['newParticipantContainer', 'newParticipantFieldset'],
           ['availableOptionsContainer']
         ),
       );
-    } else {
+    }
+    else {
       $form['availableOptionsContainer'] = array(
         '#type' => 'container',
         '#prefix' => '<div id="available-options-container-wrapper">',
@@ -349,7 +401,7 @@ class ShortCourseOrderForm extends FormBase {
 
     $form['#theme'] = 'vih_subscription_short_course_order_form';
     $form_state->setCached(FALSE);
-    
+
     return $form;
   }
 
@@ -383,6 +435,14 @@ class ShortCourseOrderForm extends FormBase {
     $participant['lastName'] = $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'];
     $participant['email'] = $userInput['newParticipantContainer']['newParticipantFieldset']['email'];
     $participant['cpr'] = $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'];
+    $participant['address'] = $userInput['newParticipantContainer']['newParticipantFieldset']['address'];
+    $participant['house']['houseNumber'] = $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseNumber'];
+    $participant['house']['houseLetter'] = $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseLetter'];
+    $participant['house']['houseFloor'] = $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'];
+    $participant['city'] = $userInput['newParticipantContainer']['newParticipantFieldset']['city'];
+    $participant['zip'] = $userInput['newParticipantContainer']['newParticipantFieldset']['zip'];
+    $participant['municipality'] = $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'];
+    $participant['newsletter'] = $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'];
     $participant['comment'] = $userInput['newParticipantContainer']['newParticipantFieldset']['comment'];
 
     //filling ordered options
@@ -465,6 +525,14 @@ class ShortCourseOrderForm extends FormBase {
     $userInput['newParticipantContainer']['newParticipantFieldset']['lastName'] = $participantToEdit['lastName'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $participantToEdit['email'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['cpr'] = $participantToEdit['cpr'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['address'] = $participantToEdit['address'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseNumber'] = $participantToEdit['house']['houseNumber'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseLetter'] = $participantToEdit['house']['houseLetter'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = $participantToEdit['house']['houseFloor'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $participantToEdit['city'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $participantToEdit['zip'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'] = $participantToEdit['municipality'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'] = $participantToEdit['newsletter'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $participantToEdit['comment'];
 
     //filling options
@@ -564,7 +632,7 @@ class ShortCourseOrderForm extends FormBase {
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Please add, at least, one participant'));
       }
       $config = $this->config(TermsAndConditionsSettingsForm::$configName);
-      if(empty($form_state->getValue('terms_and_conditions')['accepted']) && !empty($config->get('vih_subscription_short_course_terms_and_conditions_page'))){
+      if (empty($form_state->getValue('terms_and_conditions')['accepted']) && !empty($config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
         $form_state->setError($form['terms_and_conditions'], $this->t('Before you can proceed you must accept the terms and conditions'));
       }
     }
@@ -618,12 +686,19 @@ class ShortCourseOrderForm extends FormBase {
         //Get birthdate from CPR
         // We need to convert 2 digit year to 4 digit year, not to get 2065 instead of 1965
         $birthdate_year = \DateTime::createFromFormat('y', substr($addedParticipant['cpr'], 4, 2));
-        if($birthdate_year > date('Y')){
+        if ($birthdate_year > date('Y')) {
           $birthdate_year = \DateTime::createFromFormat('Y', '19' . substr($addedParticipant['cpr'], 4, 2));
         }
 
         $birthdate = substr($addedParticipant['cpr'], 0, 4) . $birthdate_year->format('Y');
         $birthdate = \DateTime::createFromFormat('dmY', $birthdate)->format('Y-m-d');
+
+        $address = implode('; ', array(
+          $addedParticipant['address'],
+          $addedParticipant['house']['houseNumber'],
+          $addedParticipant['house']['houseLetter'],
+          $addedParticipant['house']['houseFloor'],
+        ));
 
         //creating participant paragraph
         $subscribedParticipant = Paragraph::create([
@@ -631,7 +706,13 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_first_name' => $addedParticipant['firstName'],
           'field_vih_ocp_last_name' => $addedParticipant['lastName'],
           'field_vih_ocp_email' => $addedParticipant['email'],
-          'field_vih_ocp_cpr' => $addedParticipant['cpr'], //CPR will be deleted from database immediately, after order is confirmed
+          'field_vih_ocp_cpr' => $addedParticipant['cpr'],
+          //CPR will be deleted from database immediately, after order is confirmed
+          'field_vih_ocp_address' => $address,
+          'field_vih_ocp_city' => $addedParticipant['city'],
+          'field_vih_ocp_zip' => $addedParticipant['zip'],
+          'field_vih_ocp_municipality' => $addedParticipant['municipality'],
+          'field_vih_ocp_newsletter' => $addedParticipant['newsletter'],
           'field_vih_ocp_comment' => $addedParticipant['comment'],
           'field_vih_ocp_birthdate' => $birthdate,
           'field_vih_ocp_ordered_options' => $orderedOptions
@@ -663,7 +744,8 @@ class ShortCourseOrderForm extends FormBase {
         'field_vih_sco_price' => $orderPrice,
         'field_vih_sco_comment' => $form_state->getValue('order_comment')
       ));
-    } else {
+    }
+    else {
       //removing old participants paragraphs, and replacing with new ones
       $subscribedPersonsIds = $this->courseOrder->get('field_vih_sco_persons')->getValue();
 
@@ -760,11 +842,21 @@ class ShortCourseOrderForm extends FormBase {
       $subscribedPerson = Paragraph::load($subscribedPersonId['target_id']);
 
       //filling personal information
+      $address_parts = explode('; ', $subscribedPerson->field_vih_ocp_address->value);
+
       $participant = array();
       $participant['firstName'] = $subscribedPerson->field_vih_ocp_first_name->value;
       $participant['lastName'] = $subscribedPerson->field_vih_ocp_last_name->value;
       $participant['email'] = $subscribedPerson->field_vih_ocp_email->value;
       $participant['cpr'] = $subscribedPerson->field_vih_ocp_cpr->value;
+      $participant['address'] = $address_parts[0];
+      $participant['house']['houseNumber'] = $address_parts[1];
+      $participant['house']['houseLetter'] = $address_parts[2];
+      $participant['house']['houseFloor'] = $address_parts[3];
+      $participant['city'] = $subscribedPerson->field_vih_ocp_city->value;
+      $participant['zip'] = $subscribedPerson->field_vih_ocp_zip->value;
+      $participant['municipality'] = $subscribedPerson->field_vih_ocp_municipality->value;
+      $participant['newsletter'] = $subscribedPerson->field_vih_ocp_newsletter->value;
       $participant['comment'] = $subscribedPerson->field_vih_ocp_comment->value;
 
       //filling ordered options information

@@ -17,6 +17,36 @@
                 {{ "Email"|t }}: {{ addedParticipant['email'] }}
               </div>
             {% endif %}
+            {% if addedParticipant['address'] %}
+              <div>
+                {{ "Address"|t }}: {{ addedParticipant['address'] }}
+                {% if addedParticipant['house'] %}
+                  {% if addedParticipant['house']['houseNumber'] %}
+                    {{ addedParticipant['house']['houseNumber'] }},
+                  {% endif %}
+                  {% if addedParticipant['house']['houseLetter'] %}
+                    {{ addedParticipant['house']['houseLetter'] }},
+                  {% endif %}
+                  {% if addedParticipant['house']['houseFloor'] %}
+                    {{ addedParticipant['house']['houseFloor'] }}
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if addedParticipant['city'] %}
+              <div>
+                {{ "City"|t }}:
+                {% if addedParticipant['zip'] %}
+                    {{ addedParticipant['zip'] }}
+                {% endif %}
+                {{ addedParticipant['city'] }}
+              </div>
+            {% endif %}
+            {% if addedParticipant['municipality'] %}
+              <div>
+                {{ "Municipality"|t }}: {{ addedParticipant['municipality'] }}
+              </div>
+            {% endif %}
             <ul>
                 {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
                     {% if addedParticipantOption['option']['name'] %}
@@ -35,8 +65,19 @@
             </ul>
 
             {% if (addedParticipant['comment']) %}
-              {{ "Comment"|t }}: {{ addedParticipant['comment'] }}
+              <div>
+                {{ "Comment"|t }}: {{ addedParticipant['comment'] }}
+              </div>
             {% endif %}
+
+            <div>
+              {{ "Newsletter"|t }}:
+              {% if addedParticipant['newsletter'] %}
+                {{ "yes"|t }}
+              {% else %}
+                {{ "no"|t }}
+              {% endif %}
+            </div>
 
             <hr>
 

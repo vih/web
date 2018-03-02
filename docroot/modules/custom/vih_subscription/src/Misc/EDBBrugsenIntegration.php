@@ -96,9 +96,14 @@ class EDBBrugsenIntegration {
     if ($order_person->getType() == 'vih_ordered_course_person') {
       $registration['Kursus'] = $shortCourseOrder->get('field_vih_sco_course')->entity->getTitle();
       //student = elev information
-      $registration['Elev.Fornavn'] = $order_person->field_vih_ocp_first_name->getValue()[0]['value'];
-      $registration['Elev.Efternavn'] = $order_person->field_vih_ocp_last_name->getValue()[0]['value'];
-      $registration['Elev.Email'] = $order_person->field_vih_ocp_email->getValue()[0]['value'];
+      $registration['Elev.Fornavn'] = $order_person->field_vih_ocp_first_name->value;
+      $registration['Elev.Efternavn'] = $order_person->field_vih_ocp_last_name->value;
+      $registration['Elev.Email'] = $order_person->field_vih_ocp_email->value;
+      $registration['Elev.Adresse'] = $order_person->field_vih_ocp_address->value;
+      $registration['Elev.Lokalby'] = $order_person->field_vih_ocp_city->value;
+      $registration['Elev.Postnr'] = $order_person->field_vih_ocp_zip->value;
+      $registration['Elev.Bynavn'] = $order_person->field_vih_ocp_city->value;
+      $registration['Elev.Kommune'] = $order_person->field_vih_ocp_municipality->value;
 
       //using only Booking number/Kartotek from default values
       $defaultValues = $this->getDefaultRegistrationValues();

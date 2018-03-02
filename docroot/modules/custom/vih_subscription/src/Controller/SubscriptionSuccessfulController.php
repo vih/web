@@ -226,7 +226,16 @@ class SubscriptionSuccessfulController extends ControllerBase {
 
       $order_persons = $order->field_vih_sco_persons->referencedEntities();
       foreach ($order_persons as $order_person) {
-        //EDBBrugsen Integration
+        // Mailchimp integration.
+        if ($order_person->field_vih_ocp_newsletter->value) {
+          $email = $order_person->field_vih_ocp_email->value;
+          $firstName = $order_person->field_vih_ocp_first_name->value;
+          $lastName = $order_person->field_vih_ocp_last_name->value;
+
+          VihSubscriptionUtils::subscribeToMailchimp($firstName, $lastName, $email);
+        }
+
+        // EDBBrugsen Integration.
         $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
         if ($edbBrugsenConfig->get('active')) {
           $username = $edbBrugsenConfig->get('username');

@@ -1,0 +1,18 @@
+uuid: 229fc488-82a8-492f-a39b-632eb10f5f9c
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_vih_ocp_newsletter
+field_name: field_vih_ocp_newsletter
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
