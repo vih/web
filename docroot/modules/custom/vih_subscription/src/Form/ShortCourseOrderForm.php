@@ -307,6 +307,7 @@ class ShortCourseOrderForm extends FormBase {
         ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
         ['newParticipantContainer', 'newParticipantFieldset', 'email'],
         ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
+        ['terms_and_conditions'],
       ),
       '#submit' => array('::submitForm')
     );
@@ -319,6 +320,20 @@ class ShortCourseOrderForm extends FormBase {
 
     $form['#theme'] = 'vih_subscription_short_course_order_form';
     $form_state->setCached(FALSE);
+    
+    $config = $this->config(TermsAndConditionsSettingsForm::$configName);
+    if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
+      $terms_and_conditions_page_id = $config->get('vih_subscription_short_course_terms_and_conditions_page');
+      if ($terms_and_conditions_page_id) {
+        $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
+        $form['terms_and_conditions'] = array(
+          '#type' => 'checkboxes',
+          '#options' => array('accepted' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions' => $terms_and_conditions_link))),
+          '#title' => $this->t('Terms and conditions'),
+        );
+      }
+    }
+    
     return $form;
   }
 
@@ -531,6 +546,9 @@ class ShortCourseOrderForm extends FormBase {
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['lastName'], $this->t('Please add, at least, one participant'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Please add, at least, one participant'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Please add, at least, one participant'));
+      }
+      if(empty($form_state->getValue('terms_and_conditions')['accepted'])){
+        $form_state->setError($form['terms_and_conditions'], $this->t('Before you can proceed you must accept the terms and conditions'));
       }
     }
   }
