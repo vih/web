@@ -118,12 +118,6 @@ view_mode ? view_mode|clean_class,
                             </div>
                             {# End - email #}
 
-                            {# Begin - adult newsletter #}
-                            <div>
-                              {{ content.field_vih_lco_adult_newsletter }}
-                            </div>
-                            {# End - newsletter #}
-
                         </div>
                     </div>
                     {# End - adult information #}
@@ -146,12 +140,12 @@ view_mode ? view_mode|clean_class,
                     {% endif %}
                     {# End - course #}
 
-                    {# Begin - ordered options #}
+                    {# Begin - subjects #}
                     {% if node.field_vih_lco_order_course_perio.value %}
                         <div class="partial partial--ordered-options">
                             <div class="partial__heading">
                                 <h3 class="partial__heading__title">
-                                    {{ 'Ordered options' | trans }}
+                                    {{ 'Subjects' | trans }}
                                 </h3>
                             </div>
                             <div class="partial__body">
@@ -159,7 +153,7 @@ view_mode ? view_mode|clean_class,
                             </div>
                         </div>
                     {% endif %}
-                    {# End - ordered options #}
+                    {# End - subjects #}
 
                 </div>
                 <div class="col-xs-12 col-sm-6">
@@ -171,10 +165,6 @@ view_mode ? view_mode|clean_class,
                     {# Begin - education #}
                     {{ content.field_vih_lco_education }}
                     {# End - education #}
-
-                    {# Begin - newsletter #}
-                    {{ content.field_vih_lco_newsletter }}
-                    {# End - newsletter #}
 
                     {# Begin - found from #}
                     {{ content.field_vih_lco_found_from }}

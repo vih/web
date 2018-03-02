@@ -6,11 +6,9 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
-    <div class="partial">
-        <div class="partial__heading">
-            <h5 class="partial__heading__title">{{ content.field_vih_ocs_title }}</h5>
-        </div>
+    <div class="partial partial--ordered-course-slot">
         <div class="partial__body">
+            {{ content.field_vih_ocs_title }}
             {{ content.field_vih_ocs_class }}
         </div>
     </div>
