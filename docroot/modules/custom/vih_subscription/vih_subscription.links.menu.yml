@@ -1,4 +1,10 @@
 # Define default links for this module.
+vih_subscription.redirection_pages.settings:
+  title: 'VIH redirection pages settings'
+  description: 'Page redirect after order submitted successfully settings'
+  route_name: vih_subscription.admin.redirection_pages.settings_form
+  parent: system.admin_config_system
+  weight: 99
 vih_subsciption.terms_and_conditions.settings:
   title: 'VIH Subscription Terms and Conditions settings'
   description: 'Orders "terms and conditions" settings'

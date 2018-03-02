@@ -13,6 +13,9 @@ use Drupal\vih_subscription\Form\EdbbrugsenSettingsForm;
 use Drupal\vih_subscription\Form\NotificationsSettingsForm;
 use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
+use Drupal\vih_subscription\Form\RedirectionPagesSettingsForm;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
 /**
  * An example controller.
@@ -26,11 +29,32 @@ class SubscriptionSuccessfulController extends ControllerBase {
     if (Crypt::hashEquals($checksum, VihSubscriptionUtils::generateChecksum($subject, $order))) {
       $this->registerOrder($subject, $order);
 
-      //the actual content comes from template file: templates/vih_subscription_thank_you_page.html.twig
-      $build = array(
-        '#theme' => 'vih_subscription_thank_you_page'
-      );
-      return $build;
+      $order_type = $order->type->entity->get('type');
+      $config = $this->config(RedirectionPagesSettingsForm::$configName);
+      $redirection_page_id = NULL;
+      switch ($order_type) {
+        case "vih_short_course_order":
+          $redirection_page_id = $config->get('vih_subscription_short_course_redirection_page');
+          break;
+        case "vih_long_course_order":
+          $redirection_page_id = $config->get('vih_subscription_long_course_redirection_page');
+          break;
+        case "vih_event_order":
+          $redirection_page_id = $config->get('vih_subscription_event_redirection_page');
+          break;
+      }
+      if (!empty($redirection_page_id)) {
+        $redirect_url = Url::fromRoute('entity.node.canonical', array('node' => $redirection_page_id));
+        $response = new RedirectResponse($redirect_url->toString());
+        $response->send();
+      }
+      else {
+        //the actual content comes from template file: templates/vih_subscription_thank_you_page.html.twig
+        $build = array(
+          '#theme' => 'vih_subscription_thank_you_page'
+        );
+        return $build;
+      }
     }
     else {
       return $this->redirect('vih_subscription.subscription_error_redirect');
