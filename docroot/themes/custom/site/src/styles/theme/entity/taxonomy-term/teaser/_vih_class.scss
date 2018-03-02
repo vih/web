@@ -40,23 +40,23 @@
     }
 
     h5, .field.field--name-name.field--item {
-      position:absolute; 
+      position: absolute;
       bottom: 8px;
       right: 20px;
     }
   }
-    .panel-heading label {
-        border-left: 1px solid #ddd!important;
-    }
-/*  .vih-col-center {
-    display: flex; 
-    align-items: center; 
-    min-height: 107px;
-  }*/
+  .panel-heading label {
+    border-left: 1px solid #ddd !important;
+  }
+  /*  .vih-col-center {
+      display: flex;
+      align-items: center;
+      min-height: 107px;
+    }*/
 }
 article.vih_class {
-  & .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions{
-    & .field__items{
+  & .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions {
+    & .field__items {
       border: none;
     }
   }
