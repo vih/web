@@ -137,13 +137,13 @@ class LongCourseOrderForm extends FormBase {
     );
     $form['personalDataLeft']['payment'] = array(
       '#type' => 'select',
-      '#title' => $this->t('Payment'),
+      '#title' => $this->t('How are you planning to pay?'),
       '#options' => CourseOrderOptionsList::getPaymentList(),
       '#required' => TRUE,
     );
     $form['personalDataLeft']['newsletter'] = array(
       '#type' => 'checkbox',
-      '#title' => $this->t('Sign up for newsletter'),
+      '#title' => $this->t('Get updates from the school'),
     );
 
     //Personal data - right side
