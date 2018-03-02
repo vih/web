@@ -315,6 +315,9 @@ class ShortCourseOrderForm extends FormBase {
     }
 
     // Making sure that default value stays if it's there
+    if (!isset($form['order_comment'])) {
+      $form['order_comment'] = array();
+    }
     $form['order_comment'] += array(
       '#type' => 'textarea',
       '#title' => $this->t('Comment'),
