@@ -8,7 +8,14 @@
         <div class="boxy__body">
             <h5>{{ addedParticipant['firstName'] }} {{ addedParticipant['lastName'] }}</h5>
             {% if addedParticipant['cpr'] %}
-              CPR: {{ addedParticipant['cpr'] }}
+              <div>
+                {{ "CPR"|t }}: {{ addedParticipant['cpr'] }}
+              </div>
+            {% endif %}
+            {% if addedParticipant['email'] %}
+              <div>
+                {{ "Email"|t }}: {{ addedParticipant['email'] }}
+              </div>
             {% endif %}
             <ul>
                 {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
