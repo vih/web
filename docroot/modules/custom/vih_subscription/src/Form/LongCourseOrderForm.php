@@ -323,15 +323,17 @@ class LongCourseOrderForm extends FormBase {
     $form['#theme'] = 'vih_subscription_long_course_order_form';
 
     $config = $this->config(TermsAndConditionsSettingsForm::$configName);
-    $terms_and_conditions_page_id = $config->get('vih_subscription_long_course_terms_and_conditions_page');
-    if ($terms_and_conditions_page_id) {
-      $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
-      $form['terms_and_conditions']['accepted'] = array(
-        '#type' => 'checkboxes',
-        '#options' => array('SAT' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions'=>$terms_and_conditions_link))),
-        '#title' => $this->t('Terms and conditions'),
-        '#required' => TRUE,
-      );
+    if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_long_course_terms_and_conditions_page'))) {
+      $terms_and_conditions_page_id = $config->get('vih_subscription_long_course_terms_and_conditions_page');
+      if ($terms_and_conditions_page_id) {
+        $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
+        $form['terms_and_conditions']['accepted'] = array(
+          '#type' => 'checkboxes',
+          '#options' => array('SAT' => $this->t('I agree to the @terms_and_conditions', array('@terms_and_conditions' => $terms_and_conditions_link))),
+          '#title' => $this->t('Terms and conditions'),
+          '#required' => TRUE,
+        );
+      }
     }
 
     return $form;
