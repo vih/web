@@ -1,0 +1,19 @@
+uuid: 2fc4061c-05a4-4b8c-ab76-1113a8eccbb0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_short_description
+    - taxonomy.vocabulary.vih_class_package
+id: taxonomy_term.vih_class_package.field_short_description
+field_name: field_short_description
+entity_type: taxonomy_term
+bundle: vih_class_package
+label: 'Forkortet beskrivelse'
+description: 'Bruges til bl.a. teasers, listevisning o.l.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
