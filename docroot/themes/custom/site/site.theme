@@ -277,7 +277,7 @@ function site_preprocess_paragraph(&$variables) {
       }
 
       // Background color
-      elseif ($paragraph->field_vih_background_image && !$paragraph->field_vih_background_color->isEmpty()) {
+      elseif (!$paragraph->field_vih_background_color->isEmpty()) {
         $background_color = $paragraph->field_vih_background_color->getValue();
 
         $variables['attributes']['class'][] = 'sectioned--skewed--background-color';
