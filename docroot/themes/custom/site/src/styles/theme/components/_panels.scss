@@ -68,6 +68,7 @@
   > a {
     position: relative;
 
+    &[data-toggle=modal]:after,
     &[aria-expanded=true]:after,
     &[aria-expanded=false]:after {
       position: absolute;
@@ -80,6 +81,13 @@
       color: #000;
     }
 
+    &[data-toggle=modal]:after {
+      @extend .icon;
+
+      margin-top: -10px;
+
+      content: $icon-info-circle;
+    }
     &[aria-expanded=false]:after {
       content: "+";
     }

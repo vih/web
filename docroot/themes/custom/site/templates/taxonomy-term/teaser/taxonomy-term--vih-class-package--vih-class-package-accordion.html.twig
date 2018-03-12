@@ -1,116 +1,90 @@
-{% set description %}
-    {{ content.description }}
-{% endset %}
+<a role="button" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
+    {{ name }}
+</a>
 
-<div{{ attributes }}>
-    <div class="row">
-        <div class="col-xs-12">
-            {{ title_prefix }}
-            {% if not page %}
-                <h4>{{ name }}</h4>
-            {% endif %}
-            {{ title_suffix }}
-        </div>
-    </div>
+{# Begin - modal #}
+<div class="modal fade" id="class-modal-cp-{{ term.id }}" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
 
-    <div class="row align-c">
-        <div class="col-sm-8">
-            <p>{{ description|striptags }}</p>
-        </div>
-        <div class="col-sm-4">
-            <div class="text-right">
-                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#class-modal-cp-{{ term.id }}">
-                    {{ 'Show courses' | trans }}
+            {# Begin - header #}
+            <div class="modal-header" style="background-image: url('{{ elements['#background_image'] }}');">
+                <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
+                    <span aria-hidden="true">&times;</span>
                 </button>
+
+                <h3 class="modal-title heading-h1">
+                    {{ name }}
+                </h3>
             </div>
+            {# End - header #}
 
-            {# Begin - modal #}
-            <div class="modal fade" id="class-modal-cp-{{ term.id }}" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
+            {# Begin - body #}
+            <div class="modal-body">
+                <h2>{{ name }}</h2>
 
-                        {# Begin - header #}
-                        <div class="modal-header" style="background-image: url('{{ elements['#background_image'] }}');">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                <div class="partial">
+                    <div class="partial__body">
+                        <p>{{ description|striptags }}</p>
+                    </div>
+                </div>
 
-                            <h3 class="modal-title heading-h1">
-                                {{ name }}
-                            </h3>
-                        </div>
-                        {# End - header #}
+                <!-- Begin - class packages -->
+                <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
+                    <div class="boxy__body">
 
-                        {# Begin - body #}
-                        <div class="modal-body">
-                            <h2>{{ name }}</h2>
+                        <!-- Begin - panels -->
+                        <div class="panel-group" id="tabs-class-package-{{ term.id }}" role="tablist">
 
-                            <div class="partial">
-                                <div class="partial__body">
-                                    <p>{{ description|striptags }}</p>
-                                </div>
+                            <div class="panel-group__heading">
+                                <h4 class="panel-group__heading__title">
+                                    {{ 'List of courses in ' | trans }}{{ term.name.value }}
+                                </h4>
                             </div>
 
-                            <!-- Begin - class packages -->
-                            <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
-                                <div class="boxy__body">
+                            {% for key, slot in elements['#slots'] %}
+                                <div class="panel panel-default">
 
-                                    <!-- Begin - panels -->
-                                    <div class="panel-group" id="tabs-class-package-{{ term.id }}" role="tablist">
-
-                                        <div class="panel-group__heading">
-                                            <h4 class="panel-group__heading__title">
-                                                {{ 'List of courses in ' | trans }}{{ term.name.value }}
-                                            </h4>
-                                        </div>
-
-                                        {% for key, slot in elements['#slots'] %}
-                                            <div class="panel panel-default">
-
-                                                <!-- Begin - heading -->
-                                                <div class="panel-heading" id="heading-{{ class_package_id }}">
-                                                    <h4 class="panel-title heading-h5">
-                                                        <a role="button" data-toggle="collapse"
-                                                           data-parent="#tabs-class-package-{{ term.id }}"
-                                                           href="#tabs-class-package-{{ term.id }}-slot-{{ key }}"
-                                                           aria-expanded="false"
-                                                           aria-controls="collapse-{{ class_package_id }}">
-                                                            {{ slot.name }}
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <!-- End - heading -->
-
-                                                <!-- Begin - body -->
-                                                <div id="tabs-class-package-{{ term.id }}-slot-{{ key }}"
-                                                     class="panel-collapse collapse" role="tabpanel">
-
-                                                    <div class="panel-body">
-                                                        {% for class in slot['classes'] %}
-                                                            {{ class }}
-                                                        {% endfor %}
-                                                    </div>
-                                                </div>
-                                                <!-- End - body -->
-
-                                            </div>
-                                        {% endfor %}
-
+                                    <!-- Begin - heading -->
+                                    <div class="panel-heading" id="heading-{{ class_package_id }}">
+                                        <h4 class="panel-title heading-h5">
+                                            <a role="button" data-toggle="collapse"
+                                               data-parent="#tabs-class-package-{{ term.id }}"
+                                               href="#tabs-class-package-{{ term.id }}-slot-{{ key }}"
+                                               aria-expanded="false"
+                                               aria-controls="collapse-{{ class_package_id }}">
+                                                {{ slot.name }}
+                                            </a>
+                                        </h4>
                                     </div>
-                                    <!-- End - panels -->
+                                    <!-- End - heading -->
+
+                                    <!-- Begin - body -->
+                                    <div id="tabs-class-package-{{ term.id }}-slot-{{ key }}"
+                                         class="panel-collapse collapse" role="tabpanel">
+
+                                        <div class="panel-body">
+                                            {% for class in slot['classes'] %}
+                                                {{ class }}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <!-- End - body -->
 
                                 </div>
-                            </div>
-                            <!-- End - class packages -->
+                            {% endfor %}
 
                         </div>
-                        {# End - body #}
+                        <!-- End - panels -->
 
                     </div>
                 </div>
+                <!-- End - class packages -->
+
             </div>
-            {# End - modal #}
+            {# End - body #}
 
         </div>
     </div>
 </div>
+{# End - modal #}
