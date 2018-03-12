@@ -145,29 +145,31 @@ view_mode ? view_mode|clean_class,
                                                     <div class="modal-body">
                                                         {% for period_id, period_content in content.periods %}
 
-                                                            <!-- Begin - class packages -->
-                                                            <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
-                                                                <div class="boxy__body">
+                                                            <h2>{{ period_content.title }}</h2>
 
-                                                                    <!-- Begin - panels -->
-                                                                    <div class="panel-group" role="tablist">
+                                                            {% for period_class_package_id, period_class_package in period_content.classes_packages %}
+                                                                <!-- Begin - class packages -->
+                                                                <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
+                                                                    <div class="boxy__body">
 
-                                                                        <div class="panel-group__heading">
-                                                                            <h4 class="panel-group__heading__title">
-                                                                                {{ period_content.title }}
-                                                                            </h4>
-                                                                        </div>
+                                                                        <!-- Begin - panels -->
+                                                                        <div class="panel-group">
 
-                                                                        {% for period_class_package_id, period_class_package in period_content.classes_packages %}
+                                                                            <div class="panel-group__heading">
+                                                                                <h4 class="panel-group__heading__title">
+                                                                                    {{ period_class_package.name }}
+                                                                                </h4>
+                                                                            </div>
+
                                                                             {{ period_class_package.term }}
-                                                                        {% endfor %}
+
+                                                                        </div>
+                                                                        <!-- End - panels -->
 
                                                                     </div>
-                                                                    <!-- End - panels -->
-
                                                                 </div>
-                                                            </div>
-                                                            <!-- End - class packages -->
+                                                                <!-- End - class packages -->
+                                                            {% endfor %}
 
                                                         {% endfor %}
                                                     </div>

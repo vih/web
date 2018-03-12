@@ -241,9 +241,9 @@ function site_preprocess_node(array &$variables) {
                 ->getViewBuilder('taxonomy_term')
                 ->view($class, 'list_advanced');
 
-              $variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
-                ->getViewBuilder('taxonomy_term')
-                ->view($class, 'list_advanced');
+              //$variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
+              //  ->getViewBuilder('taxonomy_term')
+              //  ->view($class, 'list_advanced');
             }
 
             if ($travel) {
