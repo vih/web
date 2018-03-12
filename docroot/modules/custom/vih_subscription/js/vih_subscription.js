@@ -34,6 +34,8 @@
             $class_collection_body = $class_collection.find('.panel-body'),
             $class_collection_buttons = $class_collection.find('.btn-radio-select'),
             $next_class_collection = $class_collection.next('.panel'),
+            $next_period = $period.parents('.boxy--course-periods').next('.boxy--course-periods'),
+            $next_period_class_collection = $next_period.find('.panel').first(),
             $class = $element.parents('.entity-list-advanced--class');
 
         $class_collection_buttons
@@ -89,11 +91,25 @@
 
           // Next collection exists
           if ($next_class_collection.length) {
+            console.log('Class collection exists');
 
             // There is classes inside the collection
             if ($next_class_collection.find('.entity-list-advanced--class').length) {
 
               $next_class_collection
+                  .find('.panel-collapse')
+                  .collapse('show');
+            }
+          }
+
+          // No more class collections inside this period (look inside the next period)
+          else {
+
+            // There is classes inside the collection
+            if ($next_period_class_collection.find('.entity-list-advanced--class').length) {
+              console.log('Class collection does not exist');
+
+              $next_period_class_collection
                   .find('.panel-collapse')
                   .collapse('show');
             }
