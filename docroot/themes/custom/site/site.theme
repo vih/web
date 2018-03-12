@@ -146,7 +146,7 @@ function site_preprocess_node(array &$variables) {
     if(!in_array($variables['view_mode'], ['teaser','email_teaser'])){
       if(!$variables['user']->hasPermission('Access the Content overview page')){
         throw new AccessDeniedHttpException();
-      }  
+      }
     }
   }
 
@@ -196,27 +196,52 @@ function site_preprocess_node(array &$variables) {
 
       //only for full display
       if ($variables['view_mode'] == 'full') {
+        $variables['content']['periods'][$period->id()] = array(
+          'title' => $period->getTitle(),
+          'period_id' => $period->id(),
+        );
+
         foreach ($period->field_vih_cp_course_slots->referencedEntities() as $slot) {
           $travel = array_pop($slot->field_vih_cs_travel->getValue()[0]);
           $mandatory = array_pop($slot->field_vih_cs_mandatory->getValue()[0]);
 
           foreach ($slot->field_vih_cs_classes->referencedEntities() as $class) {
             foreach ($class->field_vih_class_class_packages->referencedEntities() as $class_package) {
+
+              // For the list
               if (!isset($variables['content']['classes_packages']) || empty($variables['content']['classes_packages'][$class_package->id()])) {
                 $variables['content']['classes_packages'][$class_package->id()] = [
+                  'period_id' => $period->id(),
+                  'id' => $class_package->id(),
                   'name' => $class_package->getName(),
                   'term' => \Drupal::entityTypeManager()
                     ->getViewBuilder('taxonomy_term')
                     ->view($class_package, 'vih_class_package_accordion'),
                 ];
-                $variables['content']['classes_packages'][$class_package->id()]['term']['#background_image'] = $class_package->field_vih_cp_image->entity->url();
+              }
+
+              // For listing inside modal
+              if (!isset($variables['content']['periods'][$period->id()]['classes_packages']) || empty($variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()])) {
+                $variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()] = [
+                  'period_id' => $period->id(),
+                  'id' => $class_package->id(),
+                  'name' => $class_package->getName(),
+                  'term' => \Drupal::entityTypeManager()
+                    ->getViewBuilder('taxonomy_term')
+                    ->view($class_package, 'vih_class_package_accordion'),
+                ];
               }
 
               if ($slot->field_vih_cs_title->value) {
                 $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = $slot->field_vih_cs_title->value;
+                $variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = $slot->field_vih_cs_title->value;
               }
 
               $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
+                ->getViewBuilder('taxonomy_term')
+                ->view($class, 'list_advanced');
+
+              $variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
                 ->getViewBuilder('taxonomy_term')
                 ->view($class, 'list_advanced');
             }
