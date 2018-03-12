@@ -143,17 +143,23 @@ view_mode ? view_mode|clean_class,
                     {% endif %}
                     {# End - course #}
 
-                    {# Begin - message #}
-                    {{ content.field_vih_lco_message }}
-                    {# End - message #}
+                    <div class="boxy">
+                        <div class="boxy__body">
 
-                    {# Begin - education #}
-                    {{ content.field_vih_lco_education }}
-                    {# End - education #}
+                            {# Begin - message #}
+                            {{ content.field_vih_lco_message }}
+                            {# End - message #}
 
-                    {# Begin - found from #}
-                    {{ content.field_vih_lco_found_from }}
-                    {# End - found from #}
+                            {# Begin - education #}
+                            {{ content.field_vih_lco_education }}
+                            {# End - education #}
+
+                            {# Begin - found from #}
+                            {{ content.field_vih_lco_found_from }}
+                            {# End - found from #}
+
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-xs-12 col-sm-6">
