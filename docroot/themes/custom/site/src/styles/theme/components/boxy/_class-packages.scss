@@ -38,6 +38,10 @@
     .panel-body {
       padding: 0;
     }
+
+    .entity-list-advanced {
+      margin-bottom: 0;
+    }
   }
 
   // Overrides
@@ -54,6 +58,9 @@
 
       > a {
         margin-right: 0;
+
+        padding-left: 5px;
+        padding-right: 5px;
 
         border: 0;
 

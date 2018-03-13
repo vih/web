@@ -113,7 +113,14 @@ $modal-header-angle-height: 70; // Unit less
 @media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {}
+@media #{$breakpoint-desktop-and-up} {
+
+  .modal-body {
+    padding-top: 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
 
 // Desktop - only
 @media #{$breakpoint-desktop-only} {}

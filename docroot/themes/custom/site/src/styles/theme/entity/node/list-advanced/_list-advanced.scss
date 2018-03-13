@@ -47,6 +47,7 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
     transition: none; // Remove link transitions
   }
 
+  .tab-content &,
   .panel & {
     margin-bottom: 0;
 
