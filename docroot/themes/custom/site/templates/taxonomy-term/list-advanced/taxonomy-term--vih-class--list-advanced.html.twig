@@ -11,7 +11,9 @@
     'entity-list-advanced--class'
 ]
 %}
-<a href="{{ url }}" {{ attributes.addClass(classes) }}>
+{% set class_modal_id = 'modal-class--'~term.id~'--'~random() %}
+
+<div {{ attributes.addClass(classes) }}>
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
@@ -35,10 +37,38 @@
 
     <!-- Begin - action -->
     <div class="entity-list-advanced__action">
-        <button class="btn btn-default">
+        <button class="btn btn-default" data-toggle="modal" data-target="#{{ class_modal_id }}">
             <span class="icon icon-info-circle"></span>
         </button>
     </div>
     <!-- End - action -->
 
-</a>
+    {# Begin - modal #}
+    <div class="modal fade" id="{{ class_modal_id }}" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                {# Begin - header #}
+                {% if term.field_vih_class_image.value %}
+                    <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal')}});">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+
+                        <h3 class="modal-title heading-h1">{{ name }}</h3>
+                    </div>
+                {% endif %}
+                {# End - header #}
+
+                {# Begin - body #}
+                <div class="modal-body">
+                    {{ content.description }}
+                </div>
+                {# End - body #}
+
+            </div>
+        </div>
+    </div>
+    {# End - modal #}
+
+</div>
