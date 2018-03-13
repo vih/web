@@ -37,21 +37,21 @@
 
     <!-- Begin - action -->
     <div class="entity-list-advanced__action">
-        <button class="btn btn-default" data-toggle="modal" data-target="#{{ class_modal_id }}">
+        <button class="btn btn-default" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
             <span class="icon icon-info-circle"></span>
         </button>
     </div>
     <!-- End - action -->
 
     {# Begin - modal #}
-    <div class="modal fade" id="{{ class_modal_id }}" tabindex="-1" role="dialog">
+    <div class="modal fade modal-static" id="{{ class_modal_id }}" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
                 {# Begin - header #}
                 {% if term.field_vih_class_image.value %}
                     <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal')}});">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
+                        <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
                             <span aria-hidden="true">&times;</span>
                         </button>
 

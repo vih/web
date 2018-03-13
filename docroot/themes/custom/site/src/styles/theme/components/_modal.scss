@@ -69,6 +69,10 @@ $modal-header-angle-height: 70; // Unit less
 
     opacity: 1;
   }
+
+  &.modal-header--no-image {
+    min-height: auto;
+  }
 }
 .modal-title {
   color: #fff;

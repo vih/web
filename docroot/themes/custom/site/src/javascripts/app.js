@@ -88,4 +88,10 @@
     );
   }
 
+  $('.modal-close--this-modal-only').on('click', function(event) {
+    var $element = $(this),
+    $modal = $element.parents('.modal').first();
+
+    $modal.modal('hide');
+  });
 })(jQuery);

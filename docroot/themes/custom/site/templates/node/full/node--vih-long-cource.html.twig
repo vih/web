@@ -137,9 +137,15 @@ view_mode ? view_mode|clean_class,
                                     <div class="boxy__body">
 
                                         <!-- Begin - show all modal -->
-                                        <div class="modal fade" id="all-courses" tabindex="-1" role="dialog">
+                                        <div class="modal fade modal-static" id="all-courses" tabindex="-1" role="dialog">
                                             <div class="modal-dialog modal-lg" role="document">
                                                 <div class="modal-content">
+
+                                                    <div class="modal-header modal-header--no-image" style="">
+                                                        <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
 
                                                     {# Begin - body #}
                                                     <div class="modal-body">
@@ -196,7 +202,7 @@ view_mode ? view_mode|clean_class,
                                                     <!-- Begin - heading -->
                                                     <div class="panel-heading" id="heading-{{ class_package_id }}">
                                                         <h4 class="panel-title heading-h5">
-                                                            <a role="button" data-toggle="modal" data-target="#class-modal-cp-{{ class_package_id }}">
+                                                            <a role="button" data-toggle="modal" data-target="#class-modal-cp-{{ class_package_id }}" data-backdrop="static">
                                                                 {{ class_package.name }} {{ class_package.period_name }}
                                                             </a>
                                                         </h4>
@@ -204,14 +210,14 @@ view_mode ? view_mode|clean_class,
                                                     <!-- End - heading -->
 
                                                     <!-- Begin - modal -->
-                                                    <div class="modal fade" id="class-modal-cp-{{ class_package_id }}" tabindex="-1" role="dialog">
+                                                    <div class="modal fade modal-static" id="class-modal-cp-{{ class_package_id }}" tabindex="-1" role="dialog">
                                                         <div class="modal-dialog modal-lg" role="document">
                                                             <div class="modal-content">
 
                                                                 {% if file_url(class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri) %}
                                                                     {# Begin - header #}
                                                                     <div class="modal-header" style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
+                                                                        <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
 
@@ -266,7 +272,7 @@ view_mode ? view_mode|clean_class,
 
                                         <!-- Begin - action -->
                                         <div class="text-right">
-                                            <a role="button" class="btn btn-default" data-toggle="modal" data-target="#all-courses">
+                                            <a role="button" class="btn btn-default" data-toggle="modal" data-target="#all-courses" data-backdrop="static">
                                                 {{ 'Show all subjects' | trans }}
                                             </a>
                                         </div>
