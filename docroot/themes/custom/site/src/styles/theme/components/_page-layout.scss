@@ -23,6 +23,13 @@ $md-page-layout-content-inner-padding-bottom: 60px;
 // Styling
 // --------------------------------------------------
 
+.region-header {
+
+  .alert {
+    margin-top: $grid-gutter-width;
+  }
+}
+
 html {
   min-height: 100vh;
   height: inherit;
