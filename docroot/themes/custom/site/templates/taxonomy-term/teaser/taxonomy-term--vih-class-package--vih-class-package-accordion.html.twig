@@ -8,8 +8,12 @@
             {% for key, slot in elements['#slots'] %}
                 {% set slot_id = "term--"~term.id~"--slot--"~key~"--"~random_number %}
 
-                <li role="presentation">
-                    <a href="#{{ slot_id }}" role="tab" data-toggle="tab">{{ slot.name }}</a>
+                {% if loop.first %}
+                    <li role="presentation" class="active">
+                {% else %}
+                    <li role="presentation">
+                {% endif %}
+                    <a href="#{{ slot_id }}" aria-controls="{{ slot_id }}" role="tab" data-toggle="tab">{{ slot.name }}</a>
                 </li>
             {% endfor %}
         </ul>
@@ -22,8 +26,12 @@
             {% for key, slot in elements['#slots'] %}
                 {% set slot_id = "term--"~term.id~"--slot--"~key~"--"~random_number %}
 
-                <li role="presentation">
-                    <a href="#{{ slot_id }}" role="tab" data-toggle="tab">{{ slot.name }}</a>
+                {% if loop.first %}
+                    <li role="presentation" class="active">
+                {% else %}
+                    <li role="presentation">
+                {% endif %}
+                    <a href="#{{ slot_id }}" aria-controls="{{ slot_id }}" role="tab" data-toggle="pill">{{ slot.name }}</a>
                 </li>
             {% endfor %}
         </ul>
