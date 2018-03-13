@@ -8,11 +8,7 @@
             {% for key, slot in elements['#slots'] %}
                 {% set slot_id = "tabs-class-package--"~term.id~"--slot--"~key~"--"~random_number %}
 
-                {% if loop.first %}
-                    <li role="presentation" class="active">
-                {% else %}
-                    <li role="presentation">
-                {% endif %}
+                <li role="presentation">
                     <a href="#{{ slot_id }}" role="tab" data-toggle="tab">{{ slot.name }}</a>
                 </li>
             {% endfor %}
@@ -26,12 +22,8 @@
             {% for key, slot in elements['#slots'] %}
                 {% set slot_id = "tabs-class-package--"~term.id~"--slot--"~key~"--"~random_number %}
 
-                {% if loop.first %}
-                    <li role="presentation" class="active">
-                {% else %}
-                    <li role="presentation">
-                {% endif %}
-                    <a href="#{{ slot_id }}" aria-controls="home" role="tab" data-toggle="tab">{{ slot.name }}</a>
+                <li role="presentation">
+                    <a href="#{{ slot_id }}" role="tab" data-toggle="tab">{{ slot.name }}</a>
                 </li>
             {% endfor %}
         </ul>
@@ -44,16 +36,10 @@
         {% for key, slot in elements['#slots'] %}
             {% set slot_id = "tabs-class-package--"~term.id~"--slot--"~key~"--"~random_number %}
 
-            {% if loop.first %}
-                <div role="tabpanel" class="tab-pane active" id="{{ slot_id }}">
-            {% else %}
-                <div role="tabpanel" class="tab-pane" id="{{ slot_id }}">
-            {% endif %}
-
+            <div role="tabpanel" class="tab-pane" id="{{ slot_id }}">
                 {% for class in slot['classes'] %}
                     {{ class }}
                 {% endfor %}
-
             </div>
         {% endfor %}
 
