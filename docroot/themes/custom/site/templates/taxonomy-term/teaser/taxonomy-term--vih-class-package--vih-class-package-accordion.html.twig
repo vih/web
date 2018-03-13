@@ -2,21 +2,41 @@
 
 <div>
 
-    <!-- Begin - tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        {% for key, slot in elements['#slots'] %}
-            {% set slot_id = "tabs-class-package--"~term.id~"--slot--"~key~"--"~random_number %}
+    <!-- Begin - desktop tabs -->
+    <div class="hidden-xs hidden-sm">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            {% for key, slot in elements['#slots'] %}
+                {% set slot_id = "tabs-class-package--"~term.id~"--slot--"~key~"--"~random_number %}
 
-            {% if loop.first %}
-                <li role="presentation" class="active">
-            {% else %}
-                <li role="presentation">
-            {% endif %}
+                {% if loop.first %}
+                    <li role="presentation" class="active">
+                {% else %}
+                    <li role="presentation">
+                {% endif %}
                 <a href="#{{ slot_id }}" aria-controls="home" role="tab" data-toggle="tab">{{ slot.name }}</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <!-- End - tabs -->
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- End - desktop tabs -->
+
+    <!-- Begin - responsive tabs -->
+    <div class="visible-xs visible-sm">
+        <ul class="nav nav-pills nav-stacked">
+            {% for key, slot in elements['#slots'] %}
+                {% set slot_id = "tabs-class-package--"~term.id~"--slot--"~key~"--"~random_number %}
+
+                {% if loop.first %}
+                    <li role="presentation" class="active">
+                {% else %}
+                    <li role="presentation">
+                {% endif %}
+                <a href="#{{ slot_id }}" aria-controls="home" role="tab" data-toggle="tab">{{ slot.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- End - responsive tabs -->
 
     <!-- Begin - content -->
     <div class="tab-content">

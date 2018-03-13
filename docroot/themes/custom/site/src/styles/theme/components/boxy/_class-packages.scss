@@ -24,6 +24,8 @@
 
   .boxy__body {
     padding: 0;
+
+    border-top: 0;
   }
 
   .boxy__footer {
@@ -35,6 +37,75 @@
 
     .panel-body {
       padding: 0;
+    }
+  }
+
+  // Overrides
+  .nav-tabs {
+    background-color: #fbfbfb;
+    border-bottom: 0;
+
+    > li {
+      border-right: 1px solid $border-color;
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      > a {
+        margin-right: 0;
+
+        border: 0;
+
+        color: $text-color;
+        font-weight: $font-weight-bold;
+      }
+
+      &.active > a {
+
+        &,
+        &:hover,
+        &:focus {
+          border: 0;
+
+          color: $nav-tabs-active-link-hover-color;
+        }
+      }
+    }
+  }
+
+  // Overrides
+  .nav-pills {
+    background-color: #fbfbfb;
+
+    > li {
+
+      > a {
+        color: $text-color;
+        font-weight: $font-weight-bold;
+      }
+
+      &.active > a {
+
+        &,
+        &:hover,
+        &:focus {
+          background-color: $nav-tabs-active-link-hover-bg;
+
+          color: $nav-tabs-active-link-hover-color;
+        }
+      }
+    }
+  }
+
+  // Overrides
+  .nav-stacked {
+
+    > li {
+
+      + li {
+        margin-top: 0;
+      }
     }
   }
 }
