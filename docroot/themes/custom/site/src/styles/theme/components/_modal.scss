@@ -70,6 +70,10 @@ $modal-header-angle-height: 70; // Unit less
     opacity: 1;
   }
 
+  .modal-close--this-modal-only {
+    z-index: $zindex-modal
+  }
+
   &.modal-header--no-image {
     min-height: auto;
   }

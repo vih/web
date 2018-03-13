@@ -92,6 +92,8 @@
     var $element = $(this),
     $modal = $element.parents('.modal').first();
 
+    console.log('Hi');
+
     $modal.modal('hide');
   });
 })(jQuery);
