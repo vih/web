@@ -15,20 +15,16 @@
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});"></div>
+        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
+            <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
+                {{ name }}
+            </div>
+        </div>
     {% endif %}
     {# End - image #}
 
     <!-- Begin - body -->
     <div class="entity-list-advanced__body">
-
-        {# Begin - name #}
-        <div class="entity-list-advanced__heading">
-            <h2 class="entity-list-advanced__heading__title heading-h4">
-                {{ name }}
-            </h2>
-        </div>
-        {# End - name #}
 
         {# Begin - short description #}
         {{ content.field_short_description }}
@@ -39,7 +35,9 @@
 
     <!-- Begin - action -->
     <div class="entity-list-advanced__action">
-        <button class="btn btn-default">{{ 'Read more' | trans }}</button>
+        <button class="btn btn-default">
+            <span class="icon icon-info-circle"></span>
+        </button>
     </div>
     <!-- End - action -->
 

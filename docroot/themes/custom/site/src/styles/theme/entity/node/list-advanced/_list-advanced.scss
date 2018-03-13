@@ -124,8 +124,15 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
   align-items: center;
   justify-content: center;
 
-  .btn + .btn {
-    margin-left: 10px;
+  .btn {
+
+    .icon {
+      font-size: 24px;
+    }
+
+    + .btn {
+      margin-left: 10px;
+    }
   }
 }
 
