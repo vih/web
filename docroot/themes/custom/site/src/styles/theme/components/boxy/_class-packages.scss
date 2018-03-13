@@ -43,7 +43,7 @@
   // Overrides
   .nav-tabs {
     background-color: #fbfbfb;
-    border-bottom: 0;
+    border-bottom: 1px solid $border-color;
 
     > li {
       border-right: 1px solid $border-color;
@@ -77,6 +77,7 @@
   // Overrides
   .nav-pills {
     background-color: #fbfbfb;
+    border-bottom: 1px solid $border-color;
 
     > li {
 
