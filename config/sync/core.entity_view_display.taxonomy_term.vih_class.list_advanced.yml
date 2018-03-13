@@ -20,8 +20,8 @@ dependencies:
     - taxonomy.vocabulary.vih_class
   module:
     - image
-    - options
     - panelizer
+    - text
 third_party_settings:
   panelizer:
     enable: false
@@ -33,16 +33,16 @@ targetEntityType: taxonomy_term
 bundle: vih_class
 mode: list_advanced
 content:
-  field_short_description:
-    type: basic_string
-    weight: 1
+  description:
+    type: text_default
+    weight: 2
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_vih_class_color:
-    type: list_key
-    weight: 2
+  field_short_description:
+    type: basic_string
+    weight: 1
     region: content
     label: hidden
     settings: {  }
@@ -57,10 +57,10 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
-  description: true
   field_metatag: true
   field_vih_banner: true
   field_vih_class_class_packages: true
+  field_vih_class_color: true
   field_vih_class_material_price: true
   field_vih_class_price_addition: true
   field_vih_heading: true
