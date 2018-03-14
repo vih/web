@@ -91,6 +91,7 @@ hidden:
   field_vih_user_email: true
   field_vih_user_job_title: true
   field_vih_user_paragraphs: true
+  field_vih_user_qualifications: true
   field_vih_user_type_id: true
   langcode: true
   member_for: true

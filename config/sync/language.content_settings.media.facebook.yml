@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - media.type.facebook
+third_party_settings:
+  content_translation:
+    enabled: false
 id: media.facebook
 target_entity_type_id: media
 target_bundle: facebook

@@ -7,6 +7,12 @@ dependencies:
     - node.type.event
   module:
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.event.field_vih_image
 field_name: field_vih_image
 entity_type: node
