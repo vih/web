@@ -1,0 +1,18 @@
+uuid: 3bf09c04-81ce-4a48-8b0f-6ce8092e774a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+id: paragraph.vih_class_groups_accordion.created
+field_name: created
+entity_type: paragraph
+bundle: vih_class_groups_accordion
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

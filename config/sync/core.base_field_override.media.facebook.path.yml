@@ -1,0 +1,20 @@
+uuid: 96711c2f-8aea-4849-8a78-f6b85146ba4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.facebook
+  module:
+    - path
+id: media.facebook.path
+field_name: path
+entity_type: media
+bundle: facebook
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

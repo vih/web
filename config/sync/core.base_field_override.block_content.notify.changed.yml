@@ -1,0 +1,18 @@
+uuid: 678867a6-4f52-499a-842e-1110ab8c160f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.notify
+id: block_content.notify.changed
+field_name: changed
+entity_type: block_content
+bundle: notify
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

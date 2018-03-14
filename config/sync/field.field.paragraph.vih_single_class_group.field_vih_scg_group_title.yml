@@ -9,10 +9,10 @@ id: paragraph.vih_single_class_group.field_vih_scg_group_title
 field_name: field_vih_scg_group_title
 entity_type: paragraph
 bundle: vih_single_class_group
-label: 'Navn på gruppe'
+label: 'Group name'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

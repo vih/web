@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_vih_image
     - node.type.event
   module:
+    - content_translation
     - image
 third_party_settings:
   content_translation:

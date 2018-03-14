@@ -1,0 +1,18 @@
+uuid: fc79d353-f5eb-4105-b938-67bfcb898d20
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_event_order
+id: node.vih_event_order.changed
+field_name: changed
+entity_type: node
+bundle: vih_event_order
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,22 @@
+uuid: bb24d5e2-5ff9-4258-8d70-8a1e3e5621be
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_class_groups_accordion
+id: paragraph.vih_class_groups_accordion.status
+field_name: status
+entity_type: paragraph
+bundle: vih_class_groups_accordion
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: 6dbe9e10-7057-4058-9af7-22c880cc60b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_event_order
+id: node.vih_event_order.title
+field_name: title
+entity_type: node
+bundle: vih_event_order
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: a136c220-5dcc-423a-a948-38a7d6589966
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.facebook
+id: media.facebook.changed
+field_name: changed
+entity_type: media
+bundle: facebook
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -9,10 +9,10 @@ id: paragraph.vih_course_slot.field_vih_cs_title
 field_name: field_vih_cs_title
 entity_type: paragraph
 bundle: vih_course_slot
-label: Titel
+label: Title
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

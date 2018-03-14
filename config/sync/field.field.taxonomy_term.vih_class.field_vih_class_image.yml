@@ -19,7 +19,7 @@ field_name: field_vih_class_image
 entity_type: taxonomy_term
 bundle: vih_class
 label: Billede
-description: ''
+description: Image
 required: false
 translatable: true
 default_value: {  }

@@ -1,0 +1,20 @@
+uuid: 7b723e1b-66ad-42c7-93da-021866e01f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.vih_event_order
+  module:
+    - path
+id: node.vih_event_order.path
+field_name: path
+entity_type: node
+bundle: vih_event_order
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path
