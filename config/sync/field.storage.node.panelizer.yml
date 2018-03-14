@@ -1,4 +1,3 @@
-uuid: 01873d03-f1fb-4c26-b712-fc7ee11938f6
 langcode: da
 status: true
 dependencies:
@@ -6,7 +5,7 @@ dependencies:
     - node
     - panelizer
 _core:
-  default_config_hash: yxhkx498XU3RY3pDK0idjZeSAMn3tmVjyc2B3CZxF68
+  default_config_hash: NiOL0Is3NHwD8cIUAJ4gh2YuATP9I9dw6htrxIkIztk
 id: node.panelizer
 field_name: panelizer
 entity_type: node
