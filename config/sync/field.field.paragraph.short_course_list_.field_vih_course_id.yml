@@ -13,7 +13,7 @@ bundle: short_course_list_
 label: Kurser
 description: 'Vælg de kurser som du ønsker vist. Vælges ingen, vises de 3 seneste fremtidige kurser.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

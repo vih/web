@@ -9,10 +9,10 @@ id: paragraph.vih_course_slot.field_vih_cs_travel
 field_name: field_vih_cs_travel
 entity_type: paragraph
 bundle: vih_course_slot
-label: Rejse
+label: Travel
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 0

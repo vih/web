@@ -13,7 +13,7 @@ bundle: event_list
 label: Events
 description: 'Vælg de events som du ønsker vist. Vælges ingen, vises de 3 seneste fremtidige events.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

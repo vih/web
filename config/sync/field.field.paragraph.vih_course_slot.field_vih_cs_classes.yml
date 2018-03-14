@@ -10,10 +10,10 @@ id: paragraph.vih_course_slot.field_vih_cs_classes
 field_name: field_vih_cs_classes
 entity_type: paragraph
 bundle: vih_course_slot
-label: 'Tilgængelige fag'
+label: 'Available classes'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

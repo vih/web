@@ -8,9 +8,9 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
 id: paragraph.short_course_list_
 target_entity_type_id: paragraph
 target_bundle: short_course_list_
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

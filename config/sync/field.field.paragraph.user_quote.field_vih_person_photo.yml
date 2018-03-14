@@ -6,7 +6,14 @@ dependencies:
     - field.storage.paragraph.field_vih_person_photo
     - paragraphs.paragraphs_type.user_quote
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: paragraph.user_quote.field_vih_person_photo
 field_name: field_vih_person_photo
 entity_type: paragraph
@@ -14,7 +21,7 @@ bundle: user_quote
 label: Billede
 description: 'Kunne være et billede af personen der har indsendt udtalelsen'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
