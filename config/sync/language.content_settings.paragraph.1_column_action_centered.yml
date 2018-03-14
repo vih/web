@@ -8,9 +8,9 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
 id: paragraph.1_column_action_centered
 target_entity_type_id: paragraph
 target_bundle: 1_column_action_centered
 default_langcode: site_default
-language_alterable: false
+language_alterable: true
