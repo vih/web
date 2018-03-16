@@ -52,7 +52,8 @@
         "drupal/url_embed": "1.x-dev",
         "drupal/advagg": "^3.4",
         "drupal/focal_point": "^1.0@beta",
-        "drupal/schema_metatag": "^1.0"
+        "drupal/schema_metatag": "^1.0",
+        "drupal/warden": "^1.1"
     },
     "repositories": [
         {
