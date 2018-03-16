@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.vih_class_package.field_metatag
     - field.field.taxonomy_term.vih_class_package.field_short_description
-    - field.field.taxonomy_term.vih_class_package.field_vih_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
@@ -65,7 +64,6 @@ content:
 hidden:
   description: true
   field_metatag: true
-  field_vih_banner: true
   field_vih_heading: true
   field_vih_paragraphs: true
   field_vih_subheading: true

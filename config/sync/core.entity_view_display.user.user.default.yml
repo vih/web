@@ -3,7 +3,6 @@ langcode: da
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_vih_banner
     - field.field.user.user.field_vih_top_banner
     - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
@@ -35,15 +34,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_vih_banner:
-    type: image
-    weight: 9
-    region: content
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
   field_vih_top_banner:
     weight: 11
     label: hidden
