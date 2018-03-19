@@ -497,6 +497,21 @@ class ShortCourseOrderForm extends FormBase {
         unset($userInput[$key]);
       }
     }
+    // Setting data from first (main) participant as a default values for new participant
+    $main_participant = array();
+    if (count($addedParticipants) >= 1) {
+      $main_participant = array_shift($addedParticipants);
+    }
+    if (!empty($main_participant)) {
+      $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $main_participant['email'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['address'] = $main_participant['address'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseNumber'] = $main_participant['house']['houseNumber'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseLetter'] = $main_participant['house']['houseLetter'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = $main_participant['house']['houseFloor'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $main_participant['city'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $main_participant['zip'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'] = $main_participant['municipality'];
+    }
 
     $form_state->setUserInput($userInput);
     $form_state->setRebuild();
