@@ -11,6 +11,7 @@
 // --------------------------------------------------
 
 $modal-header-angle-height: 70; // Unit less
+$modal-margin: 70px;
 
 // --------------------------------------------------
 // Mixins
@@ -100,6 +101,28 @@ $modal-header-angle-height: 70; // Unit less
   }
 }
 
+.modal.terms-and-conditions{
+  & .field.field--name-field-vih-paragraphs{
+    margin-left: -$modal-margin;
+    margin-right: -$modal-margin;
+  }
+  & .modal-header{
+    min-height: unset;
+    padding-bottom: unset;
+    content: '';
+    &::after{
+      display: none;
+      content: '';
+    }
+    & .modal-title{
+      display: none;
+    }
+  }
+  & .modal-body{
+    padding-top: 0px;
+    margin-top: $modal-margin;
+  }
+}
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -124,9 +147,15 @@ $modal-header-angle-height: 70; // Unit less
 @media #{$breakpoint-desktop-and-up} {
 
   .modal-body {
-    padding-top: 70px;
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-top: $modal-margin;
+    padding-left: $modal-margin;
+    padding-right: $modal-margin;
+  }
+
+  .modal.terms-and-conditions{
+    & .modal-dialog{
+      width: 800px;
+    }
   }
 }
 
