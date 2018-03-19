@@ -5,3 +5,10 @@ vih-subscription-accordion-class-selection:
   dependencies:
     - core/jquery
     - core/drupalSettings
+vih-subscription-terms-and-conditions-modal:
+  version: 1.x
+  js:
+    js/vih_subscription-terms-and-conditions.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

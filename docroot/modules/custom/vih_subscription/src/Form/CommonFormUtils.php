@@ -22,7 +22,10 @@ class CommonFormUtils {
 
     $options = [
       'attributes' => [
-        'target' => '_blank'
+        'target' => '_blank',
+        'class' => ['use-ajax'],
+        'data-dialog-class' => 'terms-and-conditions',
+        'data-dialog-type' => 'modal',
       ]
     ];
 

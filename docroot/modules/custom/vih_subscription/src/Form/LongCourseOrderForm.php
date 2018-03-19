@@ -42,6 +42,7 @@ class LongCourseOrderForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     $form['#attached']['library'][] = 'vih_subscription/vih-subscription-accordion-class-selection';
+    $form['#attached']['library'][] = 'vih_subscription/vih-subscription-terms-and-conditions-modal';
 
     $this->course = $course;
     if ($order != NULL) {

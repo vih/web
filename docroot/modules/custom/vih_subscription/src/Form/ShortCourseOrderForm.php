@@ -48,6 +48,7 @@ class ShortCourseOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL, NodeInterface $order = NULL, $checksum = NULL) {
+    $form['#attached']['library'][] = 'vih_subscription/vih-subscription-terms-and-conditions-modal';
     //START VARIABLES INIT //
     $this->course = $course;
     $this->price = $course->field_vih_sc_price->value;

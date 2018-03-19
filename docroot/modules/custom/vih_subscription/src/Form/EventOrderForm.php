@@ -48,6 +48,7 @@ class EventOrderForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $event = NULL, NodeInterface $order = NULL, $checksum = NULL) {
+    $form['#attached']['library'][] = 'vih_subscription/vih-subscription-terms-and-conditions-modal';    
     //START VARIABLES INIT //
     $this->event = $event;
     $this->price = $event->field_vih_event_price->value;
