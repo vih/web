@@ -47,7 +47,7 @@
   $("#toggle_mobile_menu").click(function (event) {
     $('#main-menu').toggleClass('mobile-menu-open');
     $('.layout__document').toggleClass('mobile-menu-open');
-  })
+  });
 
   //Show search form block
   $(".search-button").click(function (event) {
@@ -94,4 +94,35 @@
 
     $modal.modal('hide');
   });
+
+  // Toggler
+  $('[data-toggler]').on('click', function(event) {
+    event.preventDefault();
+
+    console.log('Whats up');
+
+    var $element = $(this),
+        target = $element.attr('data-toggler'),
+        $parent = $element.parents('.toggler'),
+        $target = $parent.find(target),
+        $all_toggle_buttons = $parent.find('[data-toggler]'),
+        $toggle_button = $parent.find('[data-toggler="' + target + '"]'),
+        $all_content = $parent.find('.toggler__content');
+
+    console.log('Parent: ', $parent);
+    console.log('Target: ', $target);
+    console.log('All content: ', $all_content);
+
+    // Remove all active togglers
+    $all_toggle_buttons
+        .parent()
+        .removeClass('active');
+
+    $all_content.removeClass('active');
+
+    // Show
+    $toggle_button.parent().addClass('active');
+    $target.addClass('active');
+  });
+
 })(jQuery);

@@ -1,6 +1,6 @@
 {% set random_number = random() %}
 
-<div>
+<div class="toggler">
 
     <!-- Begin - desktop tabs -->
     <div class="hidden-xs hidden-sm">
@@ -13,7 +13,7 @@
                 {% else %}
                     <li role="presentation">
                 {% endif %}
-                    <a href="#{{ slot_id }}" aria-controls="{{ slot_id }}" role="tab" data-toggle="tab">{{ slot.name }}</a>
+                    <a href="#" class="toggler__button" data-toggler="#{{ slot_id }}" aria-controls="{{ slot_id }}" role="tab">{{ slot.name }}</a>
                 </li>
             {% endfor %}
         </ul>
@@ -31,7 +31,7 @@
                 {% else %}
                     <li role="presentation">
                 {% endif %}
-                    <a href="#{{ slot_id }}" aria-controls="{{ slot_id }}" role="tab" data-toggle="pill">{{ slot.name }}</a>
+                    <a href="#" class="toggler__button" data-toggler="#{{ slot_id }}" aria-controls="{{ slot_id }}" role="tab">{{ slot.name }}</a>
                 </li>
             {% endfor %}
         </ul>
@@ -45,9 +45,9 @@
             {% set slot_id = "term-"~term.id~"-slot-"~key~"-"~random_number %}
 
             {% if loop.first %}
-                <div role="tabpanel active" class="tab-pane" id="{{ slot_id }}">
+                <div role="tabpanel" class="tab-pane toggler__content active" id="{{ slot_id }}">
             {% else %}
-                <div role="tabpanel" class="tab-pane" id="{{ slot_id }}">
+                <div role="tabpanel" class="tab-pane toggler__content" id="{{ slot_id }}">
             {% endif %}
                 {% for class in slot['classes'] %}
                     {{ class }}
