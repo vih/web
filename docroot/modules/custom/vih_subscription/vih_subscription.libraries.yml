@@ -8,7 +8,7 @@ vih-subscription-accordion-class-selection:
 vih-subscription-terms-and-conditions-modal:
   version: 1.x
   js:
-    js/vih_subscription-terms-and-conditions.js: {}
+    js/vih_subscription_terms_and_conditions.js: {}
   dependencies:
     - core/jquery
     - core/drupalSettings
