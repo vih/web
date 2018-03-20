@@ -10,6 +10,7 @@ use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
@@ -165,6 +166,9 @@ class ShortCourseOrderForm extends FormBase {
         '#title' => $this->t('E-mail address'),
         '#placeholder' => $this->t('E-mail address'),
         '#required' => TRUE,
+        '#prefix' => '<a data-toggle="collapse" data-target="#participant-form-collapse" id="participant-form-collapse-switch" class="hidden">
+          '. t('Change address or email') .'          
+          </a><div id="participant-form-collapse" class="collapse in">',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['address'] = array(
         '#type' => 'textfield',
@@ -214,7 +218,7 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('Zipcode'),
         '#required' => TRUE,
         '#prefix' => '<div class="col-xs-5">',
-        '#suffix' => '</div></div>',
+        '#suffix' => '</div></div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['comment'] = array(
         '#type' => 'textarea',
@@ -625,6 +629,12 @@ class ShortCourseOrderForm extends FormBase {
 
     //resetting the error, if any
     $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
+    
+    //collapse email and address fields of participant form
+    $response->addCommand(new InvokeCommand('#participant-form-collapse', 'removeClass', ['in']));
+    
+    //show participant form collapse switch
+    $response->addCommand(new InvokeCommand('#participant-form-collapse-switch', 'removeClass', ['hidden']));
 
     return $response;
   }
