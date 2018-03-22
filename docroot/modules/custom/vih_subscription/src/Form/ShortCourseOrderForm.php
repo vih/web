@@ -161,14 +161,28 @@ class ShortCourseOrderForm extends FormBase {
         '#required' => TRUE,
         '#pattern' => '[0-9]{10}',
       );
+
+    if (empty($addedParticipants)) {
+        //Do not collapse form if no participants added
+        $collapse_toggle_class = 'class = "hidden"';
+        $collapsed_elements_class = 'class = "collapse in"';
+        //Disable submit button and hide extra submit button if no participants added
+        $form['actions']['submit']['#attributes']['class'][] = 'disabled';
+        $form['extra_actions']['submit']['#attributes']['class'][] = 'hidden';
+      }
+      else {
+        //Collapse form if any participants added
+        $collapse_toggle_class = NULL;
+        $collapsed_elements_class = 'class = "collapse"';
+      }
       $form['newParticipantContainer']['newParticipantFieldset']['email'] = array(
         '#type' => 'textfield',
         '#title' => $this->t('E-mail address'),
         '#placeholder' => $this->t('E-mail address'),
         '#required' => TRUE,
-        '#prefix' => '<a data-toggle="collapse" data-target="#participant-form-collapse" id="participant-form-collapse-switch" class="hidden">
-          '. t('Change address or email') .'          
-          </a><div id="participant-form-collapse" class="collapse in">',
+        '#prefix' => '<a data-toggle="collapse" data-target="#participant-form-collapse" id="participant-form-collapse-switch" ' .
+        $collapse_toggle_class . ' >' . t('Change address or email') .
+        '</a><div id="participant-form-collapse" '  . $collapsed_elements_class . ' >',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['address'] = array(
         '#type' => 'textfield',
@@ -402,6 +416,27 @@ class ShortCourseOrderForm extends FormBase {
       ),
       '#submit' => array('::submitForm')
     );
+    
+    $form['extra_actions']['submit'] = array(
+      '#type' => 'submit',
+      '#id' => 'vih-course-submit-extra',
+      '#value' => $this->t('Continue'),
+      '#attributes' => array('class' => array('btn-success')),
+      '#limit_validation_errors' => array(
+        ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'cpr'],
+        ['terms_and_conditions'],
+        ['order_comment']
+      ),
+      '#submit' => array('::submitForm')
+    );
+    //Disable submit button and hide extra submit button if no participants added
+    if(empty($addedParticipants)){
+      $form['actions']['submit']['#attributes']['class'][] = 'disabled';
+      $form['extra_actions']['submit']['#attributes']['class'][] = 'hidden';
+    }
     //END FORM CONTROLS //
 
     $form['#theme'] = 'vih_subscription_short_course_order_form';
@@ -635,6 +670,17 @@ class ShortCourseOrderForm extends FormBase {
     
     //show participant form collapse switch
     $response->addCommand(new InvokeCommand('#participant-form-collapse-switch', 'removeClass', ['hidden']));
+    
+    //Enable submit button and show extra submit button if participants added
+    if (!empty($form['addedParticipantsContainer']['#addedParticipants'])) {
+      $response->addCommand(new InvokeCommand('#vih-course-submit-extra', 'removeClass', ['hidden']));
+      $response->addCommand(new InvokeCommand('#vih-course-submit', 'removeClass', ['disabled']));
+    }
+    else {
+      //Disable submit button and hide extra submit button if no participants added
+      $response->addCommand(new InvokeCommand('#vih-course-submit-extra', 'addClass', ['hidden']));
+      $response->addCommand(new InvokeCommand('#vih-course-submit', 'addClass', ['disabled']));
+    }
 
     return $response;
   }
@@ -646,7 +692,7 @@ class ShortCourseOrderForm extends FormBase {
     $triggeringElement = $form_state->getTriggeringElement();
 
     //submit button
-    if ($triggeringElement['#id'] == 'vih-course-submit') {
+    if ($triggeringElement['#id'] == 'vih-course-submit' or $triggeringElement['#id'] == 'vih-course-submit-extra') {
       $form_state->clearErrors();
 
       $addedParticipants = $form_state->get('addedParticipants');
