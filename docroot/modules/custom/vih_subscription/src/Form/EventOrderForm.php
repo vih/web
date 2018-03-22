@@ -10,6 +10,7 @@ use Drupal\bellcom_quickpay_integration\Misc\BellcomQuickpayClient;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Field\Plugin\Field\FieldFormatter;
 use Drupal\Core\Form\FormBase;
@@ -216,6 +217,30 @@ class EventOrderForm extends FormBase {
       ),
       '#submit' => array('::submitForm')
     );
+    
+    //Extra action button
+    $form['extra_actions'] = [
+      '#type' => 'actions',
+    ];
+    
+    $form['extra_actions']['submit'] = array(
+      '#type' => 'submit',
+      '#id' => 'vih-event-submit-extra',
+      '#value' => $this->t('Continue'),
+      '#attributes' => array('class' => array('btn-success' )),
+      '#limit_validation_errors' => array(
+        ['newParticipantContainer', 'newParticipantFieldset', 'firstName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'lastName'],
+        ['newParticipantContainer', 'newParticipantFieldset', 'email'],
+        ['terms_and_conditions'],
+      ),
+      '#submit' => array('::submitForm'),
+    );
+    //Disable submit and hide extra submit button if no participants added
+    if(empty($addedParticipants)){
+      $form['actions']['submit']['#attributes']['class'][] = 'disabled';
+      $form['extra_actions']['submit']['#attributes']['class'][] = 'hidden';
+    }
     //END FORM CONTROLS //
 
     $form['#theme'] = 'vih_subscription_event_order_form';
@@ -351,6 +376,17 @@ class EventOrderForm extends FormBase {
 
     //resetting the error, if any
     $response->addCommand(new HtmlCommand('#status_messages', $form['status_messages']));
+    
+    //Enable submit button and show extra submit button if participants added
+    if (!empty($form['addedParticipantsContainer']['#addedParticipants'])) {
+      $response->addCommand(new InvokeCommand('#vih-event-submit-extra', 'removeClass', ['hidden']));
+      $response->addCommand(new InvokeCommand('#vih-event-submit', 'removeClass', ['disabled']));
+    }
+    else {
+      //Disable submit button and hide extra submit button if no participants added
+      $response->addCommand(new InvokeCommand('#vih-event-submit-extra', 'addClass', ['hidden']));
+      $response->addCommand(new InvokeCommand('#vih-event-submit', 'addClass', ['disabled']));
+    }
 
     return $response;
   }
@@ -362,7 +398,7 @@ class EventOrderForm extends FormBase {
     $triggeringElement = $form_state->getTriggeringElement();
 
     //submit button
-    if ($triggeringElement['#id'] == 'vih-event-submit') {
+    if ($triggeringElement['#id'] == 'vih-event-submit' or $triggeringElement['#id'] == 'vih-event-submit-extra') {
       $form_state->clearErrors();
 
       $addedParticipants = $form_state->get('addedParticipants');
