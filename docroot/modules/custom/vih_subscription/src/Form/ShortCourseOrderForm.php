@@ -184,6 +184,10 @@ class ShortCourseOrderForm extends FormBase {
         $collapse_toggle_class . ' >' . t('Change address or email') .
         '</a><div id="participant-form-collapse" '  . $collapsed_elements_class . ' >',
       );
+      $form['newParticipantContainer']['newParticipantFieldset']['newsletter'] = array(
+        '#type' => 'checkbox',
+        '#title' => $this->t('Get updates from the school'),
+      );
       $form['newParticipantContainer']['newParticipantFieldset']['address'] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Address'),
@@ -232,17 +236,14 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('Zipcode'),
         '#required' => TRUE,
         '#prefix' => '<div class="col-xs-5">',
-        '#suffix' => '</div></div></div>',
+        '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['comment'] = array(
         '#type' => 'textarea',
         '#title' => $this->t('Comment'),
         '#placeholder' => $this->t('Comment'),
         '#rows' => 3,
-      );
-      $form['newParticipantContainer']['newParticipantFieldset']['newsletter'] = array(
-        '#type' => 'checkbox',
-        '#title' => $this->t('Get updates from the school'),
+        '#suffix' => '</div>',
       );
 
       //START AVAILABLE OPTIONS CONTAINER //
@@ -543,6 +544,7 @@ class ShortCourseOrderForm extends FormBase {
     }
     if (!empty($main_participant)) {
       $userInput['newParticipantContainer']['newParticipantFieldset']['email'] = $main_participant['email'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'] = $main_participant['newsletter'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['address'] = $main_participant['address'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseNumber'] = $main_participant['house']['houseNumber'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseLetter'] = $main_participant['house']['houseLetter'];
@@ -550,6 +552,7 @@ class ShortCourseOrderForm extends FormBase {
       $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $main_participant['city'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $main_participant['zip'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'] = $main_participant['municipality'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $main_participant['comment'];
     }
 
     $form_state->setUserInput($userInput);
