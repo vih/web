@@ -274,12 +274,6 @@ class LongCourseOrderForm extends FormBase {
       '#placeholder' => $this->t('Floor'),
       //'#required' => TRUE,
     );
-    $form['adultDataRight']['adultMunicipality'] = array(
-      '#type' => 'textfield',
-      '#title' => $this->t('Municipality'),
-      '#placeholder' => $this->t('Municipality'),
-      '#required' => TRUE,
-    );
     $form['adultDataRight']['adultCity'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('City'),
@@ -455,7 +449,6 @@ class LongCourseOrderForm extends FormBase {
           $form_state->getValue('adultHouseFloor')
         )),
         'field_vih_lco_adult_city' => $form_state->getValue('adultCity'),
-        'field_vih_lco_adult_municipality' => $form_state->getValue('adultMunicipality'),
         'field_vih_lco_adult_zip' => $form_state->getValue('adultZip'),
         'field_vih_lco_adult_newsletter' => $form_state->getValue('adultNewsletter'),
       ));
@@ -506,7 +499,6 @@ class LongCourseOrderForm extends FormBase {
         $form_state->getValue('adultHouseFloor')
       )));
       $this->courseOrder->set('field_vih_lco_adult_city', $form_state->getValue('adultCity'));
-      $this->courseOrder->set('field_vih_lco_adult_municipality', $form_state->getValue('adultMunicipality'));
       $this->courseOrder->set('field_vih_lco_adult_zip', $form_state->getValue('adultZip'));
     }
 
@@ -587,7 +579,6 @@ class LongCourseOrderForm extends FormBase {
     $form['adultDataRight']['adultHouse']['adultHouseLetter']['#default_value'] = $adult_address_parts[2];
     $form['adultDataRight']['adultHouse']['adultHouseFloor']['#default_value'] = $adult_address_parts[3];
     $form['adultDataRight']['adultCity']['#default_value'] = $courseOrder->field_vih_lco_adult_city->value;
-    $form['adultDataRight']['adultMunicipality']['#default_value'] = $courseOrder->field_vih_lco_adult_municipality->value;
     $form['adultDataRight']['adultZip']['#default_value'] = $courseOrder->field_vih_lco_adult_zip->value;
 
     $form['message']['#default_value'] = $courseOrder->field_vih_lco_message->value;

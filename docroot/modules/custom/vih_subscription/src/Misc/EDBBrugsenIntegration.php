@@ -69,7 +69,6 @@ class EDBBrugsenIntegration {
       $registration['Voksen.Lokalby'] = $longCourseOrder->get('field_vih_lco_adult_city')->value;
       $registration['Voksen.Postnr'] = $longCourseOrder->get('field_vih_lco_adult_zip')->value;
       $registration['Voksen.Bynavn'] = $longCourseOrder->get('field_vih_lco_adult_city')->value;
-      $registration['Voksen.Kommune'] = $longCourseOrder->get('field_vih_lco_adult_municipality')->value;
       $registration['Voksen.Fastnet']  = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
       $registration['Voksen.Mobil'] = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
       $registration['Voksen.Email'] = $longCourseOrder->get('field_vih_lco_adult_email')->value;
