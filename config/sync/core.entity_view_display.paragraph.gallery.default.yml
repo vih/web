@@ -5,18 +5,39 @@ dependencies:
   config:
     - field.field.paragraph.gallery.field_vih_background_color
     - field.field.paragraph.gallery.field_vih_background_img
+    - field.field.paragraph.gallery.field_vih_gallery_images
     - field.field.paragraph.gallery.field_vih_heading
     - field.field.paragraph.gallery.field_vih_images
     - field.field.paragraph.gallery.field_vih_link
+    - image.style.gallery_thumbnail
     - paragraphs.paragraphs_type.gallery
   module:
     - link
+    - media
     - photoswipe
 id: paragraph.gallery.default
 targetEntityType: paragraph
 bundle: gallery
 mode: default
 content:
+  field_test_media_pictures:
+    weight: 4
+    label: above
+    settings:
+      view_mode: photoswipe
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_vih_gallery_images:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: gallery_thumbnail
+      image_link: ''
+    third_party_settings: {  }
+    type: media_thumbnail
+    region: content
   field_vih_heading:
     weight: 0
     label: hidden
@@ -37,7 +58,7 @@ content:
       photoswipe_view_mode: default
     third_party_settings: {  }
   field_vih_link:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: null

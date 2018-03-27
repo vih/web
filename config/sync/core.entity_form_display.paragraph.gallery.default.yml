@@ -7,6 +7,7 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.paragraph.gallery.field_vih_background_color
     - field.field.paragraph.gallery.field_vih_background_img
+    - field.field.paragraph.gallery.field_vih_gallery_images
     - field.field.paragraph.gallery.field_vih_heading
     - field.field.paragraph.gallery.field_vih_images
     - field.field.paragraph.gallery.field_vih_link
@@ -58,6 +59,20 @@ content:
       open: true
     region: content
     third_party_settings: {  }
+  field_vih_gallery_images:
+    type: entity_browser_entity_reference
+    weight: 2
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      open: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+    region: content
+    third_party_settings: {  }
   field_vih_heading:
     weight: 0
     settings:
@@ -68,15 +83,15 @@ content:
     region: content
   field_vih_images:
     type: entity_browser_file
-    weight: 2
+    weight: 1
     settings:
       entity_browser: image_browser
-      field_widget_edit: true
       field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
       selection_mode: selection_append
+      preview_image_style: thumbnail
+      field_widget_edit: true
+      open: false
+      view_mode: default
     region: content
     third_party_settings: {  }
   field_vih_link:
@@ -87,6 +102,11 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

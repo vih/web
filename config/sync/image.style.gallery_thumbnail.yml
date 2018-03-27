@@ -3,20 +3,22 @@ langcode: da
 status: true
 dependencies:
   module:
-    - crop
+    - focal_point
 name: gallery_thumbnail
 label: 'Galleri - thumbnail'
 effects:
   a05a564b-142e-4d70-ba9b-ca7a54687c8e:
     uuid: a05a564b-142e-4d70-ba9b-ca7a54687c8e
     id: image_scale_and_crop
+    weight: -8
+    data:
+      width: 220
+      height: 150
+  d81807ed-ed7a-42a7-af19-aed401de9af7:
+    uuid: d81807ed-ed7a-42a7-af19-aed401de9af7
+    id: focal_point_scale_and_crop
     weight: -9
     data:
       width: 220
       height: 150
-  8146976c-e8b6-40d1-ba21-4c307534328d:
-    uuid: 8146976c-e8b6-40d1-ba21-4c307534328d
-    id: crop_crop
-    weight: -10
-    data:
-      crop_type: freeform
+      crop_type: focal_point
