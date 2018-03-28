@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "391275669888e5d23c6219b93b0da19b",
+    "content-hash": "a72ca57b3fd0ff79e0e1e23c276b4360",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -4512,17 +4512,17 @@
         },
         {
             "name": "drupal/photoswipe",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/photoswipe",
-                "reference": "8.x-1.0-beta3"
+                "reference": "8.x-1.0-beta4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/photoswipe-8.x-1.0-beta3.zip",
-                "reference": "8.x-1.0-beta3",
-                "shasum": "bf74513d32b9dbf07670b7a3334791bf53a09e1a"
+                "url": "https://ftp.drupal.org/files/projects/photoswipe-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "4c2e67960c492cdee4772cafc61ffff79a191aad"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -4533,17 +4533,21 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta3",
-                    "datestamp": "1477156441",
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1521800284",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "2921487 - Load PhotoSwipe on all non-admin pages": "https://www.drupal.org/files/issues/edit_load_photoswipe_on-2921487-2.patch",
+                    "2894797 - Multiple galleries: opens the wrong image": "https://www.drupal.org/files/issues/fix-image-index-2894797.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -4553,6 +4557,10 @@
                 {
                     "name": "julou",
                     "homepage": "https://www.drupal.org/user/273952"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
                 }
             ],
             "description": "Javascript-based photo gallery display for your Drupal website (very sleek with mobile browsers).",
