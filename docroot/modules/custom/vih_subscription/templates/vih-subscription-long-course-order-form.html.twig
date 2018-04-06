@@ -44,7 +44,7 @@
                                                    href="#collapse-{{ periodDelta }}-{{ slotDelta }}"
                                                    aria-expanded="{% if open_collapsible %}true{% else %}false{% endif %}"
                                                    aria-controls="collapse-{{ periodDelta }}-{{ slotDelta }}">
-                                                    {{ courseSlot['title'] }}
+                                                   <span {% if courseSlot['mandatory'] %}class="form-required"{% endif %}>{{ courseSlot['title'] }}</span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -52,7 +52,7 @@
 
                                         <!-- Begin - body -->
                                         <div id="collapse-{{ periodDelta }}-{{ slotDelta }}"
-                                             class="panel-collapse collapse {% if open_collapsible %}in{% endif %}" role="tabpanel"
+                                             class="panel-collapse collapse {% if open_collapsible or courseSlot['open'] %}in{% endif %}" role="tabpanel"
                                              aria-labelledby="heading-{{ periodDelta }}-{{ slotDelta }}">
 
                                             <div class="panel-body">

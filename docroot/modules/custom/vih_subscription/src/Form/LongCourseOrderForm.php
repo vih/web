@@ -66,6 +66,8 @@ class LongCourseOrderForm extends FormBase {
         //courseSlot render helping array
         $form['#coursePeriods'][$periodDelta]['courseSlots'][$slotDelta] = array(
           'title' => $courseSlot->field_vih_cs_title->value,
+          'mandatory' => $courseSlot->field_vih_cs_mandatory->value,
+          'open' => FALSE,
           'availableClasses' => array(
             'cid' => $availableClassesCid
           )
@@ -348,6 +350,7 @@ class LongCourseOrderForm extends FormBase {
 
         if (!is_numeric($radioValue) && $courseSlot->field_vih_cs_mandatory->value) {
           $form_state->setErrorByName($radioKey, $this->t('Please make a selection in %slotName.', array('%slotName' => $courseSlot->field_vih_cs_title->value)));
+          $form['#coursePeriods'][$coursePeriodDelta]['courseSlots'][$courseSlotDelta]['open'] = TRUE;
         }
       }
     }
