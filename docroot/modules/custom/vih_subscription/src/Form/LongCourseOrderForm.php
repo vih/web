@@ -60,14 +60,17 @@ class LongCourseOrderForm extends FormBase {
       );
 
       foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $slotDelta => $courseSlot) {
+        // Do not add a mandatory slots to form. We will add them on form submitting.
+        if (TRUE == $courseSlot->field_vih_cs_mandatory->value) {
+          continue;
+        }
+
         //saving component id for future references
         $availableClassesCid = "course-period-$periodDelta-courseSlot-$slotDelta-availableClasses";
 
         //courseSlot render helping array
         $form['#coursePeriods'][$periodDelta]['courseSlots'][$slotDelta] = array(
           'title' => $courseSlot->field_vih_cs_title->value,
-          'mandatory' => $courseSlot->field_vih_cs_mandatory->value,
-          'open' => FALSE,
           'availableClasses' => array(
             'cid' => $availableClassesCid
           )
@@ -350,7 +353,6 @@ class LongCourseOrderForm extends FormBase {
 
         if (!is_numeric($radioValue) && $courseSlot->field_vih_cs_mandatory->value) {
           $form_state->setErrorByName($radioKey, $this->t('Please make a selection in %slotName.', array('%slotName' => $courseSlot->field_vih_cs_title->value)));
-          $form['#coursePeriods'][$coursePeriodDelta]['courseSlots'][$courseSlotDelta]['open'] = TRUE;
         }
       }
     }
@@ -361,9 +363,23 @@ class LongCourseOrderForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $orderedCoursePeriods = array();
+    // Adding mandatory slots to the selected slots
+    $mandatory_slots = array();
+    foreach ($this->course->field_vih_course_periods->referencedEntities() as $periodDelta => $coursePeriod) {
+      foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $slotDelta => $courseSlot) {
+        if (TRUE == $courseSlot->field_vih_cs_mandatory->value) {
+          $mandatory_slots["course-period-$periodDelta-courseSlot-$slotDelta-availableClasses"] = $courseSlot->field_vih_cs_classes->referencedEntities()[0]->id();
+        }
+      }
+    }
+
+    $form_state_values = $form_state->getValues();
+    $form_state_values_with_mandatory = array_merge($mandatory_slots, $form_state_values);
+    ksort($form_state_values_with_mandatory);
 
     //going through the selected classes
-    foreach ($form_state->getValues() as $radioKey => $radioValue) {
+    foreach ($form_state_values_with_mandatory as $radioKey => $radioValue) {
+
       if (preg_match('/^course-period-(\d)-courseSlot-(\d)-availableClasses$/', $radioKey, $matches)) {
         $coursePeriodDelta = $matches[1];
         $coursePeriods = $this->course->field_vih_course_periods->referencedEntities();
