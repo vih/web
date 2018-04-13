@@ -11,7 +11,6 @@ dependencies:
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_email
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_first_name
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_last_name
-    - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_municipality
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_newsletter
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_ordered_options
     - field.field.paragraph.vih_ordered_course_person.field_vih_ocp_zip
@@ -81,14 +80,6 @@ content:
     region: content
   field_vih_ocp_last_name:
     weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_vih_ocp_municipality:
-    weight: 8
     settings:
       size: 60
       placeholder: ''

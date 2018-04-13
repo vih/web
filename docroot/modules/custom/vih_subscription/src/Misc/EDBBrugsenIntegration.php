@@ -102,7 +102,6 @@ class EDBBrugsenIntegration {
       $registration['Elev.Lokalby'] = $order_person->field_vih_ocp_city->value;
       $registration['Elev.Postnr'] = $order_person->field_vih_ocp_zip->value;
       $registration['Elev.Bynavn'] = $order_person->field_vih_ocp_city->value;
-      $registration['Elev.Kommune'] = $order_person->field_vih_ocp_municipality->value;
 
       //using only Booking number/Kartotek from default values
       $defaultValues = $this->getDefaultRegistrationValues();

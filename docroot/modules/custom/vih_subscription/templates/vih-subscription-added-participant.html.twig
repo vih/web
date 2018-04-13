@@ -42,11 +42,6 @@
                 {{ addedParticipant['city'] }}
               </div>
             {% endif %}
-            {% if addedParticipant['municipality'] %}
-              <div>
-                {{ "Municipality"|t }}: {{ addedParticipant['municipality'] }}
-              </div>
-            {% endif %}
             <ul>
                 {% for addedParticipantOption in addedParticipant['orderedOptions'] %}
                     {% if addedParticipantOption['option']['name'] %}

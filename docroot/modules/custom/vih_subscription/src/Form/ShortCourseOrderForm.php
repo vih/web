@@ -222,21 +222,11 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('City'),
         '#required' => TRUE,
       );
-      $form['newParticipantContainer']['newParticipantFieldset']['municipality'] = array(
-        '#type' => 'textfield',
-        '#title' => $this->t('Municipality'),
-        '#placeholder' => $this->t('Municipality'),
-        '#required' => TRUE,
-        '#prefix' => '<div class="row"><div class="col-xs-7">',
-        '#suffix' => '</div>',
-      );
       $form['newParticipantContainer']['newParticipantFieldset']['zip'] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Zipcode'),
         '#placeholder' => $this->t('Zipcode'),
         '#required' => TRUE,
-        '#prefix' => '<div class="col-xs-5">',
-        '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['comment'] = array(
         '#type' => 'textarea',
@@ -482,7 +472,6 @@ class ShortCourseOrderForm extends FormBase {
     $participant['house']['houseFloor'] = $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'];
     $participant['city'] = $userInput['newParticipantContainer']['newParticipantFieldset']['city'];
     $participant['zip'] = $userInput['newParticipantContainer']['newParticipantFieldset']['zip'];
-    $participant['municipality'] = $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'];
     $participant['newsletter'] = $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'];
     $participant['comment'] = $userInput['newParticipantContainer']['newParticipantFieldset']['comment'];
 
@@ -551,7 +540,6 @@ class ShortCourseOrderForm extends FormBase {
       $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = $main_participant['house']['houseFloor'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $main_participant['city'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $main_participant['zip'];
-      $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'] = $main_participant['municipality'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $main_participant['comment'];
     }
 
@@ -589,7 +577,6 @@ class ShortCourseOrderForm extends FormBase {
     $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = $participantToEdit['house']['houseFloor'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $participantToEdit['city'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $participantToEdit['zip'];
-    $userInput['newParticipantContainer']['newParticipantFieldset']['municipality'] = $participantToEdit['municipality'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'] = $participantToEdit['newsletter'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $participantToEdit['comment'];
 
@@ -786,7 +773,6 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_address' => $address,
           'field_vih_ocp_city' => $addedParticipant['city'],
           'field_vih_ocp_zip' => $addedParticipant['zip'],
-          'field_vih_ocp_municipality' => $addedParticipant['municipality'],
           'field_vih_ocp_newsletter' => $addedParticipant['newsletter'],
           'field_vih_ocp_comment' => $addedParticipant['comment'],
           'field_vih_ocp_birthdate' => $birthdate,
@@ -930,7 +916,6 @@ class ShortCourseOrderForm extends FormBase {
       $participant['house']['houseFloor'] = $address_parts[3];
       $participant['city'] = $subscribedPerson->field_vih_ocp_city->value;
       $participant['zip'] = $subscribedPerson->field_vih_ocp_zip->value;
-      $participant['municipality'] = $subscribedPerson->field_vih_ocp_municipality->value;
       $participant['newsletter'] = $subscribedPerson->field_vih_ocp_newsletter->value;
       $participant['comment'] = $subscribedPerson->field_vih_ocp_comment->value;
 
