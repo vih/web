@@ -12,10 +12,18 @@ dependencies:
     - field.field.node.page.field_vih_top_banner
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
+    - image.style.large
     - node.type.page
   module:
-    - text
+    - media
+    - panelizer
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 _core:
   default_config_hash: rN2zrScZAJ9xB16hm_Deb9QJKy6JXnn0PdI2n5Z3KRs
 id: node.page.teaser
@@ -23,26 +31,25 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
-  body:
+  field_vih_top_banner:
+    type: media_thumbnail
+    weight: 0
+    region: content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 100
     settings:
-      trim_length: 600
+      image_style: large
+      image_link: ''
     third_party_settings: {  }
-    region: content
-  links:
-    weight: 101
-    region: content
   workbench_moderation_control:
     weight: -20
     region: content
 hidden:
+  body: true
   field_metatag: true
   field_vih_course_heading: true
   field_vih_course_subheading: true
   field_vih_paragraphs: true
-  field_vih_top_banner: true
   langcode: true
+  links: true
   panelizer: true
   scheduled_update: true

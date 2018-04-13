@@ -19,6 +19,7 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_content_grid
     - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
@@ -46,6 +47,7 @@ settings:
       vih_teacher_class_description: vih_teacher_class_description
       article: article
       event_list: event_list
+      vih_content_grid: vih_content_grid
       file: file
       social_media_embed: social_media_embed
       long_course_list_: long_course_list_
@@ -66,9 +68,6 @@ settings:
       list_of_news_teasers:
         enabled: true
         weight: 15
-      page_content:
-        weight: 16
-        enabled: false
       video:
         enabled: true
         weight: 17
@@ -99,6 +98,9 @@ settings:
       event_list:
         enabled: true
         weight: 26
+      vih_content_grid:
+        enabled: true
+        weight: 27
       file:
         enabled: true
         weight: 27
@@ -111,9 +113,6 @@ settings:
       employee:
         enabled: true
         weight: 30
-      news_list:
-        weight: 30
-        enabled: false
       gallery:
         enabled: true
         weight: 31

@@ -1,0 +1,9 @@
+uuid: 76eba55f-8552-4e06-ad97-887cb6c1a562
+langcode: da
+status: true
+dependencies: {  }
+id: vih_content_grid
+label: 'Content grid'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

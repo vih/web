@@ -1,0 +1,36 @@
+uuid: 111d0431-e7b5-41da-9f6d-b551ad040b40
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_content_grid.field_vih_cg_node_ref
+    - field.field.paragraph.vih_content_grid.field_vih_heading
+    - paragraphs.paragraphs_type.vih_content_grid
+  module:
+    - workbench_moderation
+id: paragraph.vih_content_grid.default
+targetEntityType: paragraph
+bundle: vih_content_grid
+mode: default
+content:
+  field_vih_cg_node_ref:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_vih_heading:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

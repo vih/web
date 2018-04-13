@@ -19,6 +19,7 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_content_grid
     - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_webform
   module:
@@ -39,6 +40,7 @@ settings:
     negate: 0
     target_bundles:
       1_column_action_centered: 1_column_action_centered
+      vih_content_grid: vih_content_grid
       article: article
       class_packages: class_packages
       employee: employee
@@ -58,6 +60,9 @@ settings:
       1_column_action_centered:
         enabled: true
         weight: 26
+      vih_content_grid:
+        enabled: true
+        weight: 27
       article:
         enabled: true
         weight: 27
