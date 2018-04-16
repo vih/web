@@ -24,6 +24,8 @@
 
   .boxy__body {
     display: flex;
+
+    padding: 0;
   }
 
   .boxy__image {
@@ -37,8 +39,6 @@
       max-width: 150px;
     }
   }
-
-  .boxy__content {}
 }
 
 // --------------------------------------------------
@@ -62,7 +62,15 @@
 @media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {}
+@media #{$breakpoint-desktop-and-up} {
+
+  .boxy--my-course {
+
+    .boxy__content {
+      padding-right: 100px;
+    }
+  }
+}
 
 // Desktop - only
 @media #{$breakpoint-desktop-only} {}
