@@ -1,0 +1,26 @@
+uuid: c8472477-47e3-4aa6-a2d3-00345984767a
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.long_course_list_contain_class.field_vih_heading
+    - paragraphs.paragraphs_type.long_course_list_contain_class
+  module:
+    - workbench_moderation
+id: paragraph.long_course_list_contain_class.default
+targetEntityType: paragraph
+bundle: long_course_list_contain_class
+mode: default
+content:
+  field_vih_heading:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

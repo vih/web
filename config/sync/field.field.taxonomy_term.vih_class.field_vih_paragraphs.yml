@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
+    - paragraphs.paragraphs_type.long_course_list_contain_class
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.social_media_embed
     - paragraphs.paragraphs_type.user_quote
@@ -41,11 +42,11 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       class_packages: class_packages
-      article: article
       event_list: event_list
+      article: article
       file: file
-      social_media_embed: social_media_embed
       list_of_news_teasers: list_of_news_teasers
+      social_media_embed: social_media_embed
       long_course_list_: long_course_list_
       employee: employee
       gallery: gallery
@@ -53,6 +54,7 @@ settings:
       user_quote: user_quote
       video: video
       vih_class_groups_accordion: vih_class_groups_accordion
+      long_course_list_contain_class: long_course_list_contain_class
       vih_single_class_group: vih_single_class_group
       vih_teacher_class_description: vih_teacher_class_description
       vih_webform: vih_webform
@@ -63,19 +65,19 @@ settings:
       class_packages:
         enabled: true
         weight: 25
-      article:
+      event_list:
         enabled: true
         weight: 26
-      event_list:
+      article:
         enabled: true
         weight: 26
       file:
         enabled: true
         weight: 27
-      social_media_embed:
+      list_of_news_teasers:
         enabled: true
         weight: 28
-      list_of_news_teasers:
+      social_media_embed:
         enabled: true
         weight: 28
       long_course_list_:
@@ -84,15 +86,9 @@ settings:
       employee:
         enabled: true
         weight: 30
-      news_list:
-        weight: 30
-        enabled: false
       gallery:
         enabled: true
         weight: 31
-      page_content:
-        weight: 31
-        enabled: false
       short_course_list_:
         enabled: true
         weight: 32
@@ -108,6 +104,9 @@ settings:
       vih_course_slot:
         weight: 36
         enabled: false
+      long_course_list_contain_class:
+        enabled: true
+        weight: 37
       vih_option:
         weight: 37
         enabled: false
@@ -125,6 +124,9 @@ settings:
         enabled: false
       vih_ordered_event_person:
         weight: 42
+        enabled: false
+      vih_content_grid:
+        weight: 43
         enabled: false
       vih_ordered_option:
         weight: 43

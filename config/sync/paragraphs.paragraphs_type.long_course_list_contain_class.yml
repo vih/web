@@ -1,0 +1,9 @@
+uuid: 7f2000e9-323c-4a64-9c1f-24ab5863ef33
+langcode: da
+status: true
+dependencies: {  }
+id: long_course_list_contain_class
+label: 'Long course list (contain class)'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
