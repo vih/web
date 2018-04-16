@@ -254,12 +254,15 @@ function site_preprocess_node(array &$variables) {
             }
 
             if ($travel) {
-              $variables['content']['travel_classes'][] = \Drupal::entityTypeManager()
-                ->getViewBuilder('taxonomy_term')
-                ->view($class, 'teaser');
-
               if ($mandatory) {
+                $variables['content']['travel_classes_mandatory'][$class->id()][] = \Drupal::entityTypeManager()
+                  ->getViewBuilder('taxonomy_term')
+                  ->view($class, 'vih_teaser_modal');
                 $course_travel_price += $class->field_vih_class_price_addition->value;
+              } else {
+                $variables['content']['travel_classes_optional'][$class->id()][] = \Drupal::entityTypeManager()
+                  ->getViewBuilder('taxonomy_term')
+                  ->view($class, 'vih_teaser_modal');
               }
             }
           }

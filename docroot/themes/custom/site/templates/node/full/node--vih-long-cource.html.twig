@@ -99,41 +99,60 @@ view_mode ? view_mode|clean_class,
                             <div class="col-sm-6">
 
                                 {# Begin - travel #}
-                                {% if content.travel_classes %}
-                                    <div class="partial partial--travel">
-                                        <div class="partial__heading">
-                                            <h3 class="partial__heading__title heading-h4">
-                                                {{ 'Get travelling' | trans }}
-                                            </h3>
-                                        </div>
-                                        <div class="partial__subheading">
-                                            <h3 class="partial__subheading__title heading-h5">
-                                                {{ 'Tailor your stay across course packages' | trans }}
-                                            </h3>
-                                        </div>
-                                        <div class="partial__body">
-                                            <div class="row">
-
-                                                {% for travel_class in content.travel_classes %}
-                                                    <div class="col-sm-6">
-                                                        {{ travel_class }}
-                                                    </div>
-                                                {% endfor %}
-
-                                            </div>
-                                        </div>
+                                {% if content.travel_classes_mandatory or content.travel_classes_optional %}
+                                  <div class="partial partial--travel">
+                                    <div class="partial__heading">
+                                      <h3 class="partial__heading__title heading-h4">
+                                        {{ 'Get travelling' | trans }}
+                                      </h3>
                                     </div>
+                                    {% if content.travel_classes_mandatory %}
+                                      <div class="partial__subheading">
+                                        <h3 class="partial__subheading__title heading-h5">
+                                          {{ 'Common trips (INCLUDED IN COURSE)' | trans }}
+                                        </h3>
+                                      </div>
+                                      <div class="partial__body">
+                                        <div class="row">
+
+                                          {% for travel_class in content.travel_classes_mandatory %}
+                                            <div class="col-sm-12">
+                                              {{ travel_class }}
+                                            </div>
+                                          {% endfor %}
+
+                                        </div>
+                                      </div>
+                                    {% endif %}
+                                    {% if content.travel_classes_optional %}
+                                      <div class="partial__subheading">
+                                        <h3 class="partial__subheading__title heading-h5">
+                                          {{ 'Choose between' | trans }}
+                                        </h3>
+                                      </div>
+                                      <div class="partial__body">
+                                        <div class="row">
+
+                                          {% for travel_class in content.travel_classes_optional %}
+                                            <div class="col-md-4 col-sm-6 show-additional-price">
+                                              {{ travel_class }}
+                                            </div>
+                                          {% endfor %}
+
+                                        </div>
+                                      </div>
+                                    {% endif %}
                                 {% endif %}
                                 {# End - travel #}
 
                                 <!-- Begin - class packages -->
                                 <div class="boxy boxy--class-packages">
                                     <div class="boxy__heading">
-                                        <h3 class="boxy__heading__title heading-h4">{{ 'Course packages' | trans }}</h3>
+                                        <h3 class="boxy__heading__title heading-h4">{{ 'Subjects' | trans }}</h3>
                                     </div>
-                                    <div class="boxy__subheading">
-                                        <h4 class="boxy__subheading__title heading-h5">{{ 'Tailor your stay across course packages' | trans }}</h4>
-                                    </div>
+                                    {#<div class="boxy__subheading">#}
+                                        {#<h4 class="boxy__subheading__title heading-h5">{{ 'Tailor your stay across course packages' | trans }}</h4>#}
+                                    {#</div>#}
                                     <div class="boxy__body">
 
                                         <!-- Begin - show all modal -->
@@ -191,7 +210,7 @@ view_mode ? view_mode|clean_class,
 
                                             <div class="panel-group__heading">
                                                 <h4 class="panel-group__heading__title">
-                                                    {{ 'Course packages' | trans }}
+                                                    {{ 'Mix and match you subjects' | trans }}
                                                 </h4>
                                             </div>
 
@@ -264,19 +283,21 @@ view_mode ? view_mode|clean_class,
                                                 </div>
                                             {% endfor %}
 
+                                            {# All subjects button #}
+                                            <div class="panel panel-default panel-type--color-green">
+                                              <!-- Begin - heading -->
+                                              <div class="panel-heading">
+                                                <h4 class="panel-title heading-h5">
+                                                  <a role="button" data-toggle="modal" data-target="#all-courses" data-backdrop="static">
+                                                    {{ 'All subjects' | trans }}
+                                                  </a>
+                                                </h4>
+                                              </div>
+                                              <!-- End - heading -->
+                                            </div>
+                                            {# End - All subjects button #}
                                         </div>
                                         <!-- End - panels -->
-
-                                    </div>
-                                    <div class="boxy__footer">
-
-                                        <!-- Begin - action -->
-                                        <div class="text-right">
-                                            <a role="button" class="btn btn-default" data-toggle="modal" data-target="#all-courses" data-backdrop="static">
-                                                {{ 'Show all subjects' | trans }}
-                                            </a>
-                                        </div>
-                                        <!-- End - action -->
 
                                     </div>
                                 </div>
@@ -293,7 +314,7 @@ view_mode ? view_mode|clean_class,
                         <div class="partial__body">
                             <a href="{{ url('vih_subscription.long_course_order_create', {'course': node.id}) }}"
                                class="btn btn-primary">
-                                {{ "Join course and choose your subjects" | trans }}
+                                {{ "Sign up and choose your subjects" | trans }}
                             </a>
                         </div>
                     </div>

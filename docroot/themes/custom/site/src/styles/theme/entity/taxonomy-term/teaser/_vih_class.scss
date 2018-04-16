@@ -53,7 +53,27 @@
       align-items: center;
       min-height: 107px;
     }*/
+
 }
+
+.vih_class.vih_teaser_modal {
+  // Hiding the price display on every teaser view.
+  .field--name-field-vih-class-price-addition {
+    @extend .heading-h6;
+    margin: 0;
+    padding: 0;
+    display: none;
+  }
+}
+// Showing the price only if we have a certain flag.
+.show-additional-price .vih_class.vih_teaser_modal .field--name-field-vih-class-price-addition {
+  display: block;
+  &:before {
+    content: '+';
+  }
+}
+
+
 article.vih_class {
   & .field.field--name-field-class-package-paragraph.field--type-entity-reference-revisions {
     & .field__items {

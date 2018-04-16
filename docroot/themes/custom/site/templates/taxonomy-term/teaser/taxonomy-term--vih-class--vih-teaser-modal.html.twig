@@ -1,0 +1,43 @@
+{# Begin - image #}
+<a role="button" data-toggle="modal" data-target="#class-teaser-modal-{{ term.id }}" {{ attributes.addClass('element-wrapper-link', 'entity-teaser', 'entity-teaser--class') }}
+   style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
+    <div class="entity-teaser__inner">
+
+        {# Begin - overlay #}
+        <div class="entity-teaser__image__overlay entity-teaser__image__overlay--{{ term.field_vih_class_color.value }}">
+            {{ name }}
+            {{ content.field_vih_class_price_addition }}
+        </div>
+        {# End - overlay #}
+
+    </div>
+</a>
+{# Begin - image #}
+
+{# Begin - modal #}
+<div class="modal fade modal-static" id="class-teaser-modal-{{ term.id }}" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      {# Begin - header #}
+      {% if term.field_vih_class_image.value %}
+        <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal')}});">
+          <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+          <h3 class="modal-title heading-h1">{{ name }}</h3>
+        </div>
+      {% endif %}
+      {# End - header #}
+
+      {# Begin - body #}
+      <div class="modal-body">
+        {{ content.description }}
+      </div>
+      {# End - body #}
+
+    </div>
+  </div>
+</div>
+{# End - modal #}

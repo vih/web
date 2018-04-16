@@ -1,0 +1,14 @@
+uuid: aefc6568-6c98-4c50-b663-37589797be5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: 'teaser that meant to be opening in modal'
+id: taxonomy_term.vih_teaser_modal
+label: 'Teaser modal'
+targetEntityType: taxonomy_term
+cache: true

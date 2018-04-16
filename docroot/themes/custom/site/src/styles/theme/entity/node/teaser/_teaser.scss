@@ -107,6 +107,8 @@ $entity-teaser-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
     padding: 0;
 
     color: inherit;
+
+    word-break: break-all;
   }
 
   .heading-h1,
