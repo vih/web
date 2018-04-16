@@ -92,7 +92,11 @@ view_mode ? view_mode|clean_class,
                                 {# End - period #}
 
                                 {# Begin - body #}
-                                {{ content.body }}
+                                <div class="partial">
+                                    <div class="partial__body">
+                                        {{ content.body }}
+                                    </div>
+                                </div>
                                 {# End - body #}
 
                             </div>
