@@ -614,6 +614,8 @@ display:
         filter_groups: false
         relationships: false
         pager: false
+        group_by: false
+        query: false
       display_description: ''
       arguments: {  }
       filters:
@@ -637,6 +639,9 @@ display:
           admin_label: ''
           operator: in
           value:
+            min: ''
+            max: ''
+            value: ''
             vih_long_cource: vih_long_cource
           group: 1
           exposed: false
@@ -653,6 +658,7 @@ display:
             remember_roles:
               authenticated: authenticated
             reduce: false
+            argument: null
           is_grouped: false
           group_info:
             label: ''
@@ -727,6 +733,15 @@ display:
         options:
           items_per_page: 25
           offset: 0
+      group_by: true
+      query:
+        type: views_query
+        options:
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
     cache_metadata:
       max-age: -1
       contexts:
