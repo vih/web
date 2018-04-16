@@ -1,0 +1,11 @@
+$slinky-menu-transition-time: $transition-time !default;
+
+$slinky-menu-header-font-family: $headings-font-family !default;
+$slinky-menu-header-font-size: $font-size-h4 !default;
+$slinky-menu-header-font-weight: $headings-font-weight-bold !default;
+
+$slinky-menu-back-unicode: '\276e' !default; // '\276e'
+$slinky-menu-next-unicode: '\002B' !default; // '\276f'
+
+$slinky-menu-link-inner-top-bottom-padding: 10px !default;
+$slinky-menu-link-hover-background-color: rgba(0, 0, 0, .1) !default;

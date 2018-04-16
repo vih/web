@@ -30,8 +30,12 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
 // Button
 .btn {
+  display: inline-block;
+
   font-weight: $font-weight-bold;
   text-transform: uppercase;
+
+  max-width: 100%;
 
   &.btn-primary,
   &.btn-secondary,

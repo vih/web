@@ -5,6 +5,16 @@
   // Enable layout
   layout.init();
 
+  // Slinky
+  $('.slinky-menu')
+      .find('ul, li, a')
+      .removeClass();
+
+  $('.region-mobile-header-navigation .slinky-menu').slinky({
+    title: true,
+    label: ''
+  });
+
   // Notify
   var $notifications = $('.notify');
   if ($notifications.length) {
@@ -98,8 +108,6 @@
   // Toggler
   $('[data-toggler]').on('click', function(event) {
     event.preventDefault();
-
-    console.log('Whats up');
 
     var $element = $(this),
         target = $element.attr('data-toggler'),

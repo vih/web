@@ -124,7 +124,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -339,7 +339,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"boxy boxy--my-course\">\n  <div class=\"boxy__heading\">\n    <h3 class=\"boxy__heading__title heading-h5\">{{ name_1 }}</h3>\n  </div>\n  <div class=\"boxy__body\">\n    <div class=\"boxy__image\">\n      {{ field_vih_photo }}\n    </div>\n    <div class=\"boxy__content\">\n      <h5>{{ field_vih_heading }}</h5>\n      {{ field_vih_description }}\n    </div>\n  </div>\n</div>"
+            text: "    <a href=\"#\" class=\"element-wrapper-link\">\n        <div class=\"boxy boxy--my-course\">\n            <div class=\"boxy__body\">\n                <div class=\"row row--equal-height-columns\">\n                    <div class=\"col-xs-12 col-sm-4 col-md-3\">\n                        <div class=\"photo\">\n                            {{ field_vih_photo }}\n\n                            <div class=\"photo__overlay\">\n                                <div class=\"photo__overlay__text\">\n                                    {{ name_1 }}\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-8 col-md-9\">\n                        <div class=\"boxy__content\">\n                            <h3>{{ field_vih_heading }}</h3>\n\n                            {{ field_vih_description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </a>"
             make_link: false
             path: ''
             absolute: false

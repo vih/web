@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | My course
+// | Slinky menu
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .boxy--my-course
+// | - .slinky-menu
 // |
 
 // --------------------------------------------------
@@ -14,29 +14,31 @@
 // Mixins
 // --------------------------------------------------
 
-@mixin boxy--my-course-mixin() {}
+@mixin slinky-menu-mixin() {}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.boxy--my-course {
+.slinky-menu {
+  color: #fff;
 
-  .boxy__body {
-    display: flex;
-
-    padding: 0;
+  a {
+    color: #fff;
   }
 
-  .boxy__image {
-    padding-right: floor( ( $grid-gutter-width / 2) );
+  li {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+  }
 
-    margin-top: 0 - $boxy-body-spacing-top-bottom;
-    margin-bottom: 0 - $boxy-body-spacing-top-bottom;
-    margin-left: 0 - $boxy-spacing-left-right;
+  .back {
+    top: 10px;
+  }
 
-    img {
-      max-width: 150px;
+  .header {
+
+    h1, h2, h3, h4, h5, h6 {
+      color: #fff;
     }
   }
 }
@@ -62,15 +64,7 @@
 @media #{$breakpoint-tablet-only} {}
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-
-  .boxy--my-course {
-
-    .boxy__content {
-      padding-right: 100px;
-    }
-  }
-}
+@media #{$breakpoint-desktop-and-up} {}
 
 // Desktop - only
 @media #{$breakpoint-desktop-only} {}

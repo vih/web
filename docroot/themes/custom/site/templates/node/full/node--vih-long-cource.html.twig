@@ -92,7 +92,11 @@ view_mode ? view_mode|clean_class,
                                 {# End - period #}
 
                                 {# Begin - body #}
-                                {{ content.body }}
+                                <div class="partial">
+                                    <div class="partial__body">
+                                        {{ content.body }}
+                                    </div>
+                                </div>
                                 {# End - body #}
 
                             </div>
@@ -164,13 +168,16 @@ view_mode ? view_mode|clean_class,
                                                         <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
+
                                                     </div>
 
                                                     {# Begin - body #}
                                                     <div class="modal-body">
-                                                        {% for period_id, period_content in content.periods %}
+                                                        <h2>{{ 'All subjects' | trans }}</h2>
+                                                        <br>
 
-                                                            <h2>{{ period_content.title }}</h2>
+                                                        {% for period_id, period_content in content.periods %}
+                                                            <h4>{{ period_content.title }}</h4>
 
                                                             {% for period_class_package_id, period_class_package in period_content.classes_packages %}
                                                                 <!-- Begin - class packages -->
