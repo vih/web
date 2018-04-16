@@ -45,9 +45,11 @@
 
 <nav id="navbar-collapse-menu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
     {#<div class="navbar-collapse">#}
-    {% block content %}
-    {{ content }}
-    {% endblock %}
+    <nav class="slinky-menu">
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+    </nav>
     {#</div>#}
 </nav>
 

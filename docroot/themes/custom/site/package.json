@@ -22,7 +22,9 @@
     "responsive-utilities": "^1.0.2",
     "sectioned": "^1.0.7",
     "typography-breakpoints-justification": "^1.0.0",
-    "typography-helper": "^1.0.5"
+    "typography-helper": "^1.0.5",
+    "jquery-slinky": "^3.0.0",
+    "slinky-bootstrap-theme": "^1.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -32,14 +34,14 @@
     "cross-env": "^5.1.3",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-bless": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.2.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-modernizr": "^2.0.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.1",
     "run-sequence": "^2.2.1"
   }

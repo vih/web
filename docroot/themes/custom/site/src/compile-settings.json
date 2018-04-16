@@ -10,6 +10,7 @@
     "node_modules/bootstrap-sass/assets/javascripts/bootstrap/popover.js",
     "node_modules/bootstrap-sass/assets/javascripts/bootstrap/modal.js",
     "node_modules/js-cookie/src/js.cookie.js",
+    "node_modules/jquery-slinky/dist/jquery.slinky.js",
     "src/javascripts/layout.js",
     "src/javascripts/app.js"
   ],
