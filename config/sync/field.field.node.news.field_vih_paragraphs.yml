@@ -20,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_content_grid
+    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_reference_revisions
@@ -53,6 +54,7 @@ settings:
       user_quote: user_quote
       video: video
       vih_class_groups_accordion: vih_class_groups_accordion
+      vih_single_class_group: vih_single_class_group
       vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
@@ -125,8 +127,8 @@ settings:
         weight: 47
         enabled: false
       vih_single_class_group:
+        enabled: true
         weight: 48
-        enabled: false
       vih_teacher_class_description:
         weight: 49
         enabled: false
