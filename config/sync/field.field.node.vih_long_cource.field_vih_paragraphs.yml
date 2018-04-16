@@ -20,7 +20,6 @@ dependencies:
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_content_grid
-    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
   module:
@@ -56,7 +55,6 @@ settings:
       short_course_list_: short_course_list_
       user_quote: user_quote
       vih_class_groups_accordion: vih_class_groups_accordion
-      vih_single_class_group: vih_single_class_group
       vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
@@ -132,8 +130,8 @@ settings:
         weight: 42
         enabled: false
       vih_single_class_group:
-        enabled: true
         weight: 44
+        enabled: false
       vih_webform:
         enabled: true
         weight: 46

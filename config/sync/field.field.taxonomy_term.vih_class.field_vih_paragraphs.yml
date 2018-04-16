@@ -13,13 +13,11 @@ dependencies:
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
-    - paragraphs.paragraphs_type.long_course_list_contain_class
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.social_media_embed
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
-    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
     - taxonomy.vocabulary.vih_class
@@ -42,8 +40,8 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       class_packages: class_packages
-      event_list: event_list
       article: article
+      event_list: event_list
       file: file
       list_of_news_teasers: list_of_news_teasers
       social_media_embed: social_media_embed
@@ -54,8 +52,6 @@ settings:
       user_quote: user_quote
       video: video
       vih_class_groups_accordion: vih_class_groups_accordion
-      long_course_list_contain_class: long_course_list_contain_class
-      vih_single_class_group: vih_single_class_group
       vih_teacher_class_description: vih_teacher_class_description
       vih_webform: vih_webform
     target_bundles_drag_drop:
@@ -65,10 +61,10 @@ settings:
       class_packages:
         enabled: true
         weight: 25
-      event_list:
+      article:
         enabled: true
         weight: 26
-      article:
+      event_list:
         enabled: true
         weight: 26
       file:
@@ -104,9 +100,6 @@ settings:
       vih_course_slot:
         weight: 36
         enabled: false
-      long_course_list_contain_class:
-        enabled: true
-        weight: 37
       vih_option:
         weight: 37
         enabled: false
@@ -119,21 +112,21 @@ settings:
       vih_ordered_course_person:
         weight: 40
         enabled: false
+      vih_content_grid:
+        weight: 41
+        enabled: false
       vih_ordered_course_slot:
         weight: 41
         enabled: false
       vih_ordered_event_person:
         weight: 42
         enabled: false
-      vih_content_grid:
-        weight: 43
-        enabled: false
       vih_ordered_option:
         weight: 43
         enabled: false
       vih_single_class_group:
-        enabled: true
         weight: 44
+        enabled: false
       vih_teacher_class_description:
         enabled: true
         weight: 45
