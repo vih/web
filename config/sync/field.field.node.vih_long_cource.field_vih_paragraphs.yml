@@ -20,7 +20,6 @@ dependencies:
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_content_grid
-    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
   module:
@@ -45,10 +44,10 @@ settings:
       list_of_news_teasers: list_of_news_teasers
       video: video
       vih_teacher_class_description: vih_teacher_class_description
-      article: article
       event_list: event_list
-      vih_content_grid: vih_content_grid
+      article: article
       file: file
+      vih_content_grid: vih_content_grid
       social_media_embed: social_media_embed
       long_course_list_: long_course_list_
       employee: employee
@@ -56,7 +55,6 @@ settings:
       short_course_list_: short_course_list_
       user_quote: user_quote
       vih_class_groups_accordion: vih_class_groups_accordion
-      vih_single_class_group: vih_single_class_group
       vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
@@ -92,16 +90,16 @@ settings:
       vih_teacher_class_description:
         enabled: true
         weight: 24
-      article:
-        enabled: true
-        weight: 26
       event_list:
         enabled: true
         weight: 26
-      vih_content_grid:
+      article:
+        enabled: true
+        weight: 26
+      file:
         enabled: true
         weight: 27
-      file:
+      vih_content_grid:
         enabled: true
         weight: 27
       social_media_embed:
@@ -125,6 +123,9 @@ settings:
       vih_class_groups_accordion:
         enabled: true
         weight: 35
+      long_course_list_contain_class:
+        weight: 37
+        enabled: false
       vih_ordered_course_person:
         weight: 40
         enabled: false
@@ -132,8 +133,8 @@ settings:
         weight: 42
         enabled: false
       vih_single_class_group:
-        enabled: true
         weight: 44
+        enabled: false
       vih_webform:
         enabled: true
         weight: 46
