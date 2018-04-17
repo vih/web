@@ -43,6 +43,8 @@ $modal-margin: 70px;
 
   padding-bottom: (1px * $modal-header-angle-height);
 
+  margin-bottom: 50px;
+
   min-height: 400px;
 
   border: 0;
@@ -76,14 +78,24 @@ $modal-margin: 70px;
   }
 
   &.modal-header--no-image {
+    margin-bottom: 0;
+
     min-height: auto;
   }
 }
+
 .modal-title {
   color: #fff;
 
   margin: 0;
   padding: 0;
+}
+
+.modal-body {
+
+  h2 {
+    margin-top: 0;
+  }
 }
 
 // Admin fix
@@ -119,7 +131,7 @@ $modal-margin: 70px;
     }
   }
   & .modal-body{
-    padding-top: 0px;
+    padding-top: 0;
     margin-top: $modal-margin;
   }
 }
@@ -147,9 +159,7 @@ $modal-margin: 70px;
 @media #{$breakpoint-desktop-and-up} {
 
   .modal-body {
-    padding-top: $modal-margin;
-    padding-left: $modal-margin;
-    padding-right: $modal-margin;
+    padding: 20px 70px 70px 70px;
   }
 
   .modal.terms-and-conditions{
