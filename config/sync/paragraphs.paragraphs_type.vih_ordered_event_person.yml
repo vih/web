@@ -5,5 +5,5 @@ dependencies: {  }
 id: vih_ordered_event_person
 label: 'Ordered Event person'
 icon_uuid: null
-description: ''
+description: 'Teknisk paragraph - bruges til håndtering af ordrer'
 behavior_plugins: {  }

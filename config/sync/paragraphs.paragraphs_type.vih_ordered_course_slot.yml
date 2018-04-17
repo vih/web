@@ -5,5 +5,5 @@ dependencies: {  }
 id: vih_ordered_course_slot
 label: 'Ordered Course Slot'
 icon_uuid: null
-description: null
+description: 'Teknisk paragraph - bruges til håndtering af ordrer'
 behavior_plugins: {  }

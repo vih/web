@@ -5,5 +5,5 @@ dependencies: {  }
 id: vih_ordered_course_person
 label: 'Ordered Course Person'
 icon_uuid: null
-description: ''
+description: 'Teknisk paragraph - bruges til håndtering af ordrer'
 behavior_plugins: {  }
