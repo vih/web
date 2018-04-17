@@ -59,12 +59,15 @@ class LongCourseOrderForm extends FormBase {
         'courseSlots' => array(),
       );
 
-      foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $slotDelta => $courseSlot) {
-        // Do not add a mandatory slots to form. We will add them on form submitting.
-        if (TRUE == $courseSlot->field_vih_cs_mandatory->value) {
-          continue;
+      $notMandatoryCourseSlots = array();
+      foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $courseSlot) {
+        // Adding only not mandatory course slots.
+        if (!$courseSlot->field_vih_cs_mandatory->value) {
+          $notMandatoryCourseSlots[] = $courseSlot;
         }
+      }
 
+      foreach ($notMandatoryCourseSlots as $slotDelta => $courseSlot) {
         //saving component id for future references
         $availableClassesCid = "course-period-$periodDelta-courseSlot-$slotDelta-availableClasses";
 
@@ -363,23 +366,9 @@ class LongCourseOrderForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $orderedCoursePeriods = array();
-    // Adding mandatory slots to the selected slots
-    $mandatory_slots = array();
-    foreach ($this->course->field_vih_course_periods->referencedEntities() as $periodDelta => $coursePeriod) {
-      foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $slotDelta => $courseSlot) {
-        if (TRUE == $courseSlot->field_vih_cs_mandatory->value) {
-          $mandatory_slots["course-period-$periodDelta-courseSlot-$slotDelta-availableClasses"] = $courseSlot->field_vih_cs_classes->referencedEntities()[0]->id();
-        }
-      }
-    }
 
-    $form_state_values = $form_state->getValues();
-    $form_state_values_with_mandatory = array_merge($mandatory_slots, $form_state_values);
-    ksort($form_state_values_with_mandatory);
-
-    //going through the selected classes
-    foreach ($form_state_values_with_mandatory as $radioKey => $radioValue) {
-
+    // Going through the selected classes.
+    foreach ($form_state->getValues() as $radioKey => $radioValue) {
       if (preg_match('/^course-period-(\d)-courseSlot-(\d)-availableClasses$/', $radioKey, $matches)) {
         $coursePeriodDelta = $matches[1];
         $coursePeriods = $this->course->field_vih_course_periods->referencedEntities();
@@ -424,6 +413,55 @@ class LongCourseOrderForm extends FormBase {
         }
       }
     }
+
+    // Adding classes from the mandatory slots START.
+    foreach ($this->course->field_vih_course_periods->referencedEntities() as $periodDelta => $coursePeriod) {
+      foreach ($coursePeriod->field_vih_cp_course_slots->referencedEntities() as $slotDelta => $courseSlot) {
+        if ($courseSlot->field_vih_cs_mandatory->value) {
+          // Adding all classes from the slot.
+          $orderedCourseSlotClasses = array();
+          foreach ($courseSlot->field_vih_cs_classes->referencedEntities() as $class) {
+            $orderedCourseSlotClasses[] = $class->id();
+          }
+
+          // Creating an orderedCourseSlot containing all classes.
+          $orderedCourseSlot = Paragraph::create([
+            'type' => 'vih_ordered_course_slot',
+            'field_vih_ocs_title' => $courseSlot->field_vih_cs_title->value . ' - mandatory',
+            'field_vih_ocs_class' => $orderedCourseSlotClasses,
+          ]);
+          $orderedCourseSlot->isNew();
+          $orderedCourseSlot->save();
+
+          $orderedCoursePeriod = NULL;
+          if (isset($orderedCoursePeriods[$coursePeriod->id()]) && $orderedCoursePeriod = $orderedCoursePeriods[$coursePeriod->id()]) {
+            $existingOrderedCourseSlots = $orderedCoursePeriod->get('field_vih_ocp_order_course_slots')->getValue();
+
+            $existingOrderedCourseSlots[] = array(
+              'target_id' => $orderedCourseSlot->id(),
+              'target_revision_id' => $orderedCourseSlot->getRevisionId()
+            );
+
+            $orderedCoursePeriod->set('field_vih_ocp_order_course_slots', $existingOrderedCourseSlots);
+            $orderedCoursePeriod->save();
+            $orderedCoursePeriods[$coursePeriod->id()] = $orderedCoursePeriod;
+          } else {
+            $orderedCoursePeriod = Paragraph::create([
+              'type' => 'vih_ordered_course_period',
+              'field_vih_ocp_course_period' => $coursePeriod->id(),
+              'field_vih_ocp_order_course_slots' => array(
+                'target_id' => $orderedCourseSlot->id(),
+                'target_revision_id' => $orderedCourseSlot->getRevisionId()
+              ),
+            ]);
+            $orderedCoursePeriod->isNew();
+            $orderedCoursePeriod->save();
+            $orderedCoursePeriods[$coursePeriod->id()] = $orderedCoursePeriod;
+          }
+        }
+      }
+    }
+    // Adding classes from the mandatory slots END.
 
     //checking if we need to create a new order or edit the existing
     if ($this->courseOrder == NULL) {
@@ -472,14 +510,26 @@ class LongCourseOrderForm extends FormBase {
         'field_vih_lco_adult_newsletter' => $form_state->getValue('adultNewsletter'),
       ));
     } else {
-      //removing old ordered course periods
+      // Removing old ordered course periods START.
       $orderedCoursePeriodsIds = $this->courseOrder->get('field_vih_lco_order_course_perio')->getValue();
       foreach ($orderedCoursePeriodsIds as $orderedCoursePeriodId) {
         $orderedCoursePeriodToDelete = Paragraph::load($orderedCoursePeriodId['target_id']);
         if ($orderedCoursePeriodToDelete) {
+          // Removing old ordered course slots START.
+          $orderedCourseSlotsIds = $orderedCoursePeriodToDelete->get('field_vih_ocp_order_course_slots')->getValue();
+          foreach ($orderedCourseSlotsIds as $orderedCourseSlotId) {
+            $orderedCourseSlotToDelete = Paragraph::load($orderedCourseSlotId['target_id']);
+            if ($orderedCourseSlotToDelete) {
+              $orderedCourseSlotToDelete->delete();
+            }
+          }
+          // Removing old ordered course slots END.
+
           $orderedCoursePeriodToDelete->delete();
         }
       }
+      // Removing old ordered course periods START.
+
       //adding new ordered course periods
       $this->courseOrder->set('field_vih_lco_order_course_perio', array_values($orderedCoursePeriods));//resetting the keys
 
@@ -546,12 +596,16 @@ class LongCourseOrderForm extends FormBase {
       $coursePeriodSlots = $coursePeriod->get('field_vih_ocp_order_course_slots')->getValue();
       foreach ($coursePeriodSlots as $courseSlotDelta => $courseSlotId) {
         $courseSlot = Paragraph::load($courseSlotId['target_id']);
+
         $availableClassesCid = "course-period-$periodDelta-courseSlot-$courseSlotDelta-availableClasses";
 
         $classId = $courseSlot->get('field_vih_ocs_class')->getValue();
+
         if (is_array($classId)) {
           $classId = array_pop($classId);
-          $form[$availableClassesCid]['#default_value'] = $classId['target_id'];
+          if ($classId && isset($form[$availableClassesCid])) {
+            $form[$availableClassesCid]['#default_value'] = $classId['target_id'];
+          }
         }
       }
     }
