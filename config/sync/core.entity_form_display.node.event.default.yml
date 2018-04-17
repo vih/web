@@ -212,7 +212,7 @@ content:
       autocollapse: all
       add_mode: modal
       form_display_mode: default
-      default_paragraph_type: 1_column_action_centered
+      default_paragraph_type: _none
     third_party_settings: {  }
     type: paragraphs
     region: content

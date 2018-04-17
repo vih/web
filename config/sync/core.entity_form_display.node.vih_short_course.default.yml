@@ -169,7 +169,7 @@ content:
       autocollapse: all
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: vih_webform
+      default_paragraph_type: _none
     third_party_settings: {  }
     type: paragraphs
     region: content
@@ -203,7 +203,7 @@ content:
       autocollapse: all
       add_mode: modal
       form_display_mode: default
-      default_paragraph_type: vih_option_group
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_vih_sc_persons_limit:
