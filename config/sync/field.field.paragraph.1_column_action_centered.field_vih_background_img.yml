@@ -10,7 +10,7 @@ id: paragraph.1_column_action_centered.field_vih_background_img
 field_name: field_vih_background_img
 entity_type: paragraph
 bundle: 1_column_action_centered
-label: 'Background image'
+label: 'Baggrundsbillede'
 description: ''
 required: false
 translatable: false

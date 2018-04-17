@@ -10,7 +10,7 @@ id: paragraph.user_quote.field_vih_background_img
 field_name: field_vih_background_img
 entity_type: paragraph
 bundle: user_quote
-label: 'Background image'
+label: 'Baggrundsbillede'
 description: ''
 required: false
 translatable: false
