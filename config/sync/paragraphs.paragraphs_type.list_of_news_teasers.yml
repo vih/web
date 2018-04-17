@@ -5,5 +5,5 @@ dependencies: {  }
 id: list_of_news_teasers
 label: 'Liste af nyhedsteasere'
 icon_uuid: null
-description: null
+description: 'Viser nyhedsteasere udfra tags'
 behavior_plugins: {  }

@@ -5,5 +5,5 @@ dependencies: {  }
 id: long_course_list_
 label: 'Liste af lange kurser'
 icon_uuid: null
-description: ''
+description: 'Viser en liste af lange kurser'
 behavior_plugins: {  }

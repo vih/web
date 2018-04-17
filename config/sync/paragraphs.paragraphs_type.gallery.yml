@@ -5,5 +5,5 @@ dependencies: {  }
 id: gallery
 label: Galleri
 icon_uuid: null
-description: ''
+description: 'Laver et galleri med thumbnails der kan klikkes på'
 behavior_plugins: {  }

@@ -5,5 +5,5 @@ dependencies: {  }
 id: video
 label: Video
 icon_uuid: null
-description: null
+description: 'Afsnit med mulighed for visning af video'
 behavior_plugins: {  }

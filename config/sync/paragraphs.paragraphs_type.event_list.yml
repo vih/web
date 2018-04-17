@@ -5,5 +5,5 @@ dependencies: {  }
 id: event_list
 label: 'Liste af events'
 icon_uuid: null
-description: ''
+description: 'Viser en liste af nyhedsteasere'
 behavior_plugins: {  }

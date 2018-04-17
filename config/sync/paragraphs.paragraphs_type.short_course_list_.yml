@@ -5,5 +5,5 @@ dependencies: {  }
 id: short_course_list_
 label: 'Liste af korte kurser'
 icon_uuid: null
-description: ''
+description: 'Viser en liste af korte kurser'
 behavior_plugins: {  }

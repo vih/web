@@ -5,5 +5,5 @@ dependencies: {  }
 id: 1_column_action_centered
 label: Hero
 icon_uuid: null
-description: null
+description: 'Afsnit med mulighed for baggrundsbillede, baggrundsfarve, titel, brødtekst og link'
 behavior_plugins: {  }
