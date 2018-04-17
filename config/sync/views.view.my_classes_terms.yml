@@ -73,6 +73,70 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '/taxonomy/term/{{ tid__value }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_unformatted
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
         name_1:
           id: name_1
           table: taxonomy_term_field_data
@@ -339,7 +403,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "    <a href=\"#\" class=\"element-wrapper-link\">\n        <div class=\"boxy boxy--my-course\">\n            <div class=\"boxy__body\">\n                <div class=\"row row--equal-height-columns\">\n                    <div class=\"col-xs-12 col-sm-4 col-md-3\">\n                        <div class=\"photo\">\n                            {{ field_vih_photo }}\n\n                            <div class=\"photo__overlay\">\n                                <div class=\"photo__overlay__text\">\n                                    {{ name_1 }}\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-8 col-md-9\">\n                        <div class=\"boxy__content\">\n                            <h3>{{ field_vih_heading }}</h3>\n\n                            {{ field_vih_description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </a>"
+            text: "    <a href=\"{{ tid }}\" class=\"element-wrapper-link\">\n        <div class=\"boxy boxy--my-course\">\n            <div class=\"boxy__body\">\n                <div class=\"row row--equal-height-columns\">\n                    <div class=\"col-xs-12 col-sm-4 col-md-3\">\n                        <div class=\"photo\">\n                            {{ field_vih_photo }}\n\n                            <div class=\"photo__overlay\">\n                                <div class=\"photo__overlay__text\">\n                                    {{ name_1 }}\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-8 col-md-9\">\n                        <div class=\"boxy__content\">\n                            <h3>{{ field_vih_heading }}</h3>\n\n                            {{ field_vih_description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </a>"
             make_link: false
             path: ''
             absolute: false
@@ -441,6 +505,15 @@ display:
           group_type: group
           admin_label: 'field_vih_user: User'
           required: true
+          plugin_id: standard
+        field_vih_paragraphs_1:
+          id: field_vih_paragraphs_1
+          table: taxonomy_term__field_vih_paragraphs
+          field: field_vih_paragraphs
+          relationship: none
+          group_type: group
+          admin_label: 'field_vih_paragraphs: Paragraph'
+          required: false
           plugin_id: standard
       arguments:
         uid:

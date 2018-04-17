@@ -1,0 +1,36 @@
+uuid: 5b45689d-26a6-4197-8dd1-52721843757a
+langcode: da
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: terms
+label: Termer
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parent:url]/[term:name]'
+selection_criteria:
+  90a8b572-8678-403c-8f7e-82708db22e01:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      vih_class: vih_class
+      vih_class_package: vih_class_package
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 90a8b572-8678-403c-8f7e-82708db22e01
+  6c732542-8b47-495e-b641-2dae21082aa8:
+    id: language
+    langcodes:
+      da: da
+      en: en
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: 6c732542-8b47-495e-b641-2dae21082aa8
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Sprog

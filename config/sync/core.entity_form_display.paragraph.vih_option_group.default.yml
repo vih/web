@@ -34,6 +34,9 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  translation:
+    weight: 10
+    region: content
 hidden:
   created: true
   status: true
