@@ -5,5 +5,5 @@ dependencies: {  }
 id: vih_teacher_class_description
 label: 'Lærerbeskrivelse af fag'
 icon_uuid: null
-description: ''
+description: 'En undervisers beskrivelse af et fag'
 behavior_plugins: {  }

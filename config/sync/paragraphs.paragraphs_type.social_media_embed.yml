@@ -5,5 +5,5 @@ dependencies: {  }
 id: social_media_embed
 label: 'Sociale medier'
 icon_uuid: null
-description: ''
+description: 'Embed af eks. Instagram billeder, Facebook opslag og Twitter tweets'
 behavior_plugins: {  }

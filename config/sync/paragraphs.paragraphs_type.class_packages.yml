@@ -5,5 +5,5 @@ dependencies: {  }
 id: class_packages
 label: Fagpakker
 icon_uuid: null
-description: ''
+description: 'Viser udvalgte fagpakker'
 behavior_plugins: {  }

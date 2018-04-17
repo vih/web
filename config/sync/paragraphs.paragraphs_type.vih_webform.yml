@@ -5,5 +5,5 @@ dependencies: {  }
 id: vih_webform
 label: Webform
 icon_uuid: null
-description: ''
+description: 'Indlejr en formular'
 behavior_plugins: {  }

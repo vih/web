@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: vih_single_class_group
-label: 'VIH Single class group'
+label: 'Fag gruppe'
 icon_uuid: null
-description: 'a class groups that can be used in paragraph of type VIH Class Groups (accordion)'
+description: 'Bruges sammen med afsnittet "Gruppering af fag"'
 behavior_plugins: {  }

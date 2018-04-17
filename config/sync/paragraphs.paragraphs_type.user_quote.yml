@@ -5,5 +5,5 @@ dependencies: {  }
 id: user_quote
 label: Udtalelse
 icon_uuid: null
-description: 'Publicér en udtalelse'
+description: 'Publicér en udtalelse fra gæster'
 behavior_plugins: {  }

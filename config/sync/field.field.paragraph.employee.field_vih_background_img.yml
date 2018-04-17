@@ -10,7 +10,7 @@ id: paragraph.employee.field_vih_background_img
 field_name: field_vih_background_img
 entity_type: paragraph
 bundle: employee
-label: 'Baggrundsbillede'
+label: Baggrundsbillede
 description: ''
 required: false
 translatable: false

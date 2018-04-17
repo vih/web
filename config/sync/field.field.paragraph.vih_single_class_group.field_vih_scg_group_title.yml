@@ -9,7 +9,7 @@ id: paragraph.vih_single_class_group.field_vih_scg_group_title
 field_name: field_vih_scg_group_title
 entity_type: paragraph
 bundle: vih_single_class_group
-label: 'Group name'
+label: 'Gruppe navn'
 description: ''
 required: false
 translatable: true

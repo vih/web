@@ -5,5 +5,5 @@ dependencies: {  }
 id: file
 label: Fil
 icon_uuid: null
-description: ''
+description: 'Vis en liste af filer til download. Eks. .pdf filer'
 behavior_plugins: {  }

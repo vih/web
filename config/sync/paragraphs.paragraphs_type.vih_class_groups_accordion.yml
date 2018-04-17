@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: vih_class_groups_accordion
-label: 'VIH Class groups (accordion)'
+label: 'Gruppering af fag'
 icon_uuid: null
-description: ''
+description: 'Vis forskellige fag, grupperet'
 behavior_plugins: {  }

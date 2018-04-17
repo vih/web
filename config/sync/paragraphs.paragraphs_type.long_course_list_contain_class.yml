@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: long_course_list_contain_class
-label: 'Long course list (contain class)'
+label: 'Liste af lange kurser inkl. fag'
 icon_uuid: null
-description: ''
+description: 'Viser en liste af lange kurser m. fag'
 behavior_plugins: {  }
