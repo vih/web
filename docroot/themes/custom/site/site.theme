@@ -170,6 +170,11 @@ function site_preprocess_node(array &$variables) {
     $variables['content']['is_active'] = ($node->field_vih_course_status->value == 'active');
     $variables['content']['is_closed'] = ($node->field_vih_course_status->value == 'closed');
 
+    $config = \Drupal::config(\Drupal\vih_subscription\Form\LongCourseSubscriptionSettingsForm::$configName);
+    if (!empty($enquire_price_page_international = $config->get('vih_subscription_long_course_subscription_enquire_price_page_international'))) {
+      $variables['content']['enquire_prices_page_international'] = $enquire_price_page_international;
+    }
+
     //preloading travel classes
     $course_travel_price = 0;
     $start_course_date = '';

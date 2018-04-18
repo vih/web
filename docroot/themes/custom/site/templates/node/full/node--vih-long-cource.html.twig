@@ -340,6 +340,19 @@ view_mode ? view_mode|clean_class,
                 {% endif %}
                 {# End - teacher #}
 
+                {# Begin - enquire button #}
+                {% if content.is_active and content.can_be_subscribed and content.enquire_prices_page_international%}
+                  <div class="partial partial--action-button partial--action-button--enquire-prices">
+                    <div class="partial__body">
+                      <a href="{{ url('entity.node.canonical', {'node': content.enquire_prices_page_international}) }}"
+                         class="btn btn-secondary">
+                        {{ "Enquire for prices" | trans }}
+                      </a>
+                    </div>
+                  </div>
+                {% endif %}
+                {# End - enquire button #}
+
                 {# Begin - price #}
                 <div class="partial partial--price-table">
                     <div class="partial__heading">

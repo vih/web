@@ -41,6 +41,20 @@
       font-weight: bold;
     }
   }
+
+  &.lang-en {
+    .partial--price-table {
+      // Hiding presentation.
+      display: none;
+    }
+  }
+
+  &.lang-da {
+    .partial--action-button--enquire-prices {
+      // Hiding presentation.
+      display: none;
+    }
+  }
 }
 
 // --------------------------------------------------
