@@ -384,12 +384,20 @@ function site_preprocess_paragraph__short_course_list_(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced', $contextual_filter);
+    if (!empty(views_get_view_result('short_courses', 'embed_list_advanced', $contextual_filter))) {
+      // Result not empty, unsetting the empty message.
+      unset($variables['content']['field_vih_empty_message']);
+      $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced', $contextual_filter);
+    }
   }
 
   // Display another display on the view
   else {
-    $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced_future');
+    if (!empty(views_get_view_result('short_courses', 'embed_list_advanced_future'))) {
+      // Result not empty, unsetting the empty message.
+      unset($variables['content']['field_vih_empty_message']);
+      $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced_future');
+    }
   }
 }
 
@@ -408,12 +416,21 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced', $contextual_filter);
+    if (!empty(views_get_view_result('long_courses', 'embed_list_advanced', $contextual_filter))) {
+      // Result not empty, unsetting the empty message.
+      unset($variables['content']['field_vih_empty_message']);
+      $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced', $contextual_filter);
+    }
   }
 
   // Display another display on the view
   else {
-    $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_future');
+    if (!empty(views_get_view_result('long_courses', 'embed_list_advanced_future'))) {
+      // Result not empty, unsetting the empty message.
+      unset($variables['content']['field_vih_empty_message']);
+      $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_future');
+    }
+
   }
 }
 
@@ -422,7 +439,11 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
  */
 function site_preprocess_paragraph__long_course_list_contain_class(&$variables) {
   $taxonomy_term_tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
-  $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid);
+  if (!empty(views_get_view_result('long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid))) {
+    // Result not empty, unsetting the empty message.
+    unset($variables['content']['field_vih_empty_message']);
+    $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid);
+  }
 }
 
 /**
@@ -437,15 +458,22 @@ function site_preprocess_paragraph__event_list(&$variables) {
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
     }
-
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('events', 'embed_list_advanced', $contextual_filter);
+    if (!empty(views_get_view_result('events', 'embed_list_advanced', $contextual_filter))) {
+      // Result not empty, unsetting the empty message.
+      unset($variables['content']['field_vih_empty_message']);
+      $variables['content']['embedded_view'] = views_embed_view('events', 'embed_list_advanced', $contextual_filter);
+    }
   }
 
   // Display another display on the view
   else {
-    $variables['content']['embedded_view'] = views_embed_view('events', 'embed_list_advanced_future');
+    if (!empty(views_get_view_result('events', 'embed_list_advanced_future'))) {
+      // Result not empty, unsetting the empty message.
+      unset($variables['content']['field_vih_empty_message']);
+      $variables['content']['embedded_view'] = views_embed_view('events', 'embed_list_advanced_future');
+    }
   }
 }
 

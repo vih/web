@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.long_course_list_contain_class.field_vih_empty_message
     - field.field.paragraph.long_course_list_contain_class.field_vih_heading
     - paragraphs.paragraphs_type.long_course_list_contain_class
 id: paragraph.long_course_list_contain_class.default
@@ -10,6 +11,13 @@ targetEntityType: paragraph
 bundle: long_course_list_contain_class
 mode: default
 content:
+  field_vih_empty_message:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_vih_heading:
     weight: 0
     label: hidden

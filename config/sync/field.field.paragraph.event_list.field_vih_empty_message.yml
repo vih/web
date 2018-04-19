@@ -1,0 +1,19 @@
+uuid: a479b14a-f8fd-46dd-a25c-0a9f6e215237
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_empty_message
+    - paragraphs.paragraphs_type.event_list
+id: paragraph.event_list.field_vih_empty_message
+field_name: field_vih_empty_message
+entity_type: paragraph
+bundle: event_list
+label: 'Tøm tekst'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

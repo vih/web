@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.long_course_list_.field_vih_background_color
     - field.field.paragraph.long_course_list_.field_vih_background_img
     - field.field.paragraph.long_course_list_.field_vih_course_id
+    - field.field.paragraph.long_course_list_.field_vih_empty_message
     - field.field.paragraph.long_course_list_.field_vih_heading
     - field.field.paragraph.long_course_list_.field_vih_link
     - paragraphs.paragraphs_type.long_course_list_
@@ -23,6 +24,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_vih_empty_message:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_vih_heading:
     weight: 0
