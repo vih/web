@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a72ca57b3fd0ff79e0e1e23c276b4360",
+    "content-hash": "29369f2d748c917c641f54de78593aea",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -1679,16 +1679,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.4.5",
+            "version": "8.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "44a857df6f7ffd063cffed9a41767cdc50dd7474"
+                "reference": "07c7a7fa28a5a2940e721d1a35a05199ad8e3ec9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/44a857df6f7ffd063cffed9a41767cdc50dd7474",
-                "reference": "44a857df6f7ffd063cffed9a41767cdc50dd7474",
+                "url": "https://api.github.com/repos/drupal/core/zipball/07c7a7fa28a5a2940e721d1a35a05199ad8e3ec9",
+                "reference": "07c7a7fa28a5a2940e721d1a35a05199ad8e3ec9",
                 "shasum": ""
             },
             "require": {
@@ -1845,6 +1845,7 @@
             "extra": {
                 "patches_applied": {
                     "2868294 - Call to a member function getThirdPartySetting() on null in ContentTranslationManager": "https://www.drupal.org/files/issues/2868294-12.patch",
+                    "2449895 - Imported PO files have no public URL but have a link at admin/content/files": "https://www.drupal.org/files/issues/2449895-20.patch",
                     "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/1356276-408--8.4.4.patch",
                     "2880374 - Experimental modules should not have warnings after being installed": "https://www.drupal.org/files/issues/2880374-remove-experimental-warnings-6.patch",
                     "2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
@@ -1876,7 +1877,7 @@
                 "GPL-2.0+"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-02-20T21:35:13+00:00"
+            "time": "2018-04-18T17:19:54+00:00"
         },
         {
             "name": "drupal/crop",
