@@ -48,7 +48,8 @@ class BellcomQuickpayClient {
     try {
       // Create payment
       $payment_form = array(
-        'order_id' => (($this->testMode) ? 'test-' : '') . $subject->id() . '-' . ($order->id()),
+        // Generating unique order ID.
+        'order_id' => (($this->testMode) ? 'test-' : 'order-') . $subject->id() . '-' . ($order->id()) . '-' . substr(time(), -5),
         'currency' => $this->defaultCurrency,
         'variables' => $variables
       );
