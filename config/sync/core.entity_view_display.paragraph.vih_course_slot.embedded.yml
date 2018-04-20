@@ -1,0 +1,29 @@
+uuid: fef58927-a500-47e6-abbf-b8009d3e8658
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.embedded
+    - field.field.paragraph.vih_course_slot.field_vih_cs_classes
+    - field.field.paragraph.vih_course_slot.field_vih_cs_mandatory
+    - field.field.paragraph.vih_course_slot.field_vih_cs_title
+    - field.field.paragraph.vih_course_slot.field_vih_cs_travel
+    - paragraphs.paragraphs_type.vih_course_slot
+id: paragraph.vih_course_slot.embedded
+targetEntityType: paragraph
+bundle: vih_course_slot
+mode: embedded
+content:
+  field_vih_cs_classes:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: list_advanced
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_vih_cs_mandatory: true
+  field_vih_cs_title: true
+  field_vih_cs_travel: true

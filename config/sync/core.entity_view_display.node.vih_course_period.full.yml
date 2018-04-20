@@ -1,0 +1,43 @@
+uuid: 0d12bb4c-cc6b-4e52-8552-13a962326e3f
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.vih_course_period.body
+    - field.field.node.vih_course_period.field_vih_cp_course_slots
+    - field.field.node.vih_course_period.field_vih_cp_end_date
+    - field.field.node.vih_course_period.field_vih_cp_start_date
+    - field.field.node.vih_course_period.scheduled_update
+    - node.type.vih_course_period
+  module:
+    - entity_reference_revisions
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.vih_course_period.full
+targetEntityType: node
+bundle: vih_course_period
+mode: full
+content:
+  field_vih_cp_course_slots:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_vih_cp_end_date: true
+  field_vih_cp_start_date: true
+  langcode: true
+  links: true
+  scheduled_update: true

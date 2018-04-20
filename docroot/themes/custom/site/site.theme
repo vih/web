@@ -219,7 +219,6 @@ function site_preprocess_node(array &$variables) {
 
           foreach ($slot->field_vih_cs_classes->referencedEntities() as $class) {
             foreach ($class->field_vih_class_class_packages->referencedEntities() as $class_package) {
-
               // For the list
               if (!isset($variables['content']['classes_packages']) || empty($variables['content']['classes_packages'][$class_package->id()])) {
                 $variables['content']['classes_packages'][$class_package->id()] = [
@@ -284,6 +283,13 @@ function site_preprocess_node(array &$variables) {
 
     if ($end_course_date) {
       $variables['content']['course_period_end'] = strtotime($end_course_date);
+    }
+  } elseif ($node->getType() === 'vih_course_period') {
+    foreach ($node->field_vih_cp_course_slots->referencedEntities() as $slot) {
+      $variables['content']['#course_slots'][$slot->id()] = [
+        'id' => $slot->id(),
+        'name' => $slot->field_vih_cs_title->value
+      ];
     }
   }
 }

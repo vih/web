@@ -175,34 +175,7 @@ view_mode ? view_mode|clean_class,
                                                         <h2>{{ 'All subjects' | trans }}</h2>
                                                         <br>
 
-                                                        {% for period_id, period_content in content.periods %}
-                                                            <h4>{{ period_content.title }}</h4>
-
-                                                            {% for period_class_package_id, period_class_package in period_content.classes_packages %}
-                                                                <!-- Begin - class packages -->
-                                                                <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
-                                                                    <div class="boxy__body">
-
-                                                                        <!-- Begin - panels -->
-                                                                        <div class="panel-group">
-
-                                                                            <div class="panel-group__heading">
-                                                                                <h4 class="panel-group__heading__title">
-                                                                                    {{ period_class_package.name }}
-                                                                                </h4>
-                                                                            </div>
-
-                                                                            {{ period_class_package.term }}
-
-                                                                        </div>
-                                                                        <!-- End - panels -->
-
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End - class packages -->
-                                                            {% endfor %}
-
-                                                        {% endfor %}
+                                                        {{ content.field_vih_course_periods }}
                                                     </div>
                                                     {# End - body #}
 
@@ -404,6 +377,7 @@ view_mode ? view_mode|clean_class,
                 {# End - price #}
 
             </div>
+          </div>
         </div>
     </section>
     <!-- End - content -->

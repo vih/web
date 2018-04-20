@@ -133,4 +133,8 @@
     $target.addClass('active');
   });
 
+  $(".toggler").each(function (index) {
+      $(this).find('.toggler__button').first().trigger('click');
+  });
+
 })(jQuery);

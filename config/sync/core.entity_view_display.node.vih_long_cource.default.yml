@@ -273,6 +273,15 @@ content:
       image_link: ''
     third_party_settings: {  }
     region: content
+  field_vih_course_periods:
+    type: entity_reference_entity_view
+    weight: 15
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
   field_vih_course_persons_limit:
     type: number_integer
     weight: 12
@@ -362,5 +371,4 @@ content:
     type: entity_reference_label
     region: content
 hidden:
-  field_vih_course_periods: true
   langcode: true
