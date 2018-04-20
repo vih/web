@@ -244,13 +244,8 @@ function site_preprocess_node(array &$variables) {
               }
 
               if ($slot->field_vih_cs_title->value) {
-                $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = $slot->field_vih_cs_title->value;
                 $variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['name'] = $slot->field_vih_cs_title->value;
               }
-
-              $variables['content']['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
-                ->getViewBuilder('taxonomy_term')
-                ->view($class, 'list_advanced');
 
               $variables['content']['periods'][$period->id()]['classes_packages'][$class_package->id()]['term']['#slots'][$slot->id()]['classes'][$class->id()] = \Drupal::entityTypeManager()
                 ->getViewBuilder('taxonomy_term')

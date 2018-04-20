@@ -195,71 +195,79 @@ view_mode ? view_mode|clean_class,
 
                                             {% for class_package_id, class_package in content.classes_packages %}
 
-                                                <div class="panel panel-default panel-type--{{ class_package.term['#taxonomy_term'].field_vih_class_package_color.value }}">
+                                              <div class="panel panel-default panel-type--{{ class_package.term['#taxonomy_term'].field_vih_class_package_color.value }}">
 
-                                                    <!-- Begin - heading -->
-                                                    <div class="panel-heading" id="heading-{{ class_package_id }}">
-                                                        <h4 class="panel-title heading-h5">
-                                                            <a role="button" data-toggle="modal" data-target="#class-modal-cp-{{ class_package_id }}" data-backdrop="static">
-                                                                {{ class_package.name }} {{ class_package.period_name }}
-                                                            </a>
-                                                        </h4>
-                                                    </div>
-                                                    <!-- End - heading -->
-
-                                                    <!-- Begin - modal -->
-                                                    <div class="modal fade modal-static" id="class-modal-cp-{{ class_package_id }}" tabindex="-1" role="dialog">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-
-                                                                {% if file_url(class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri) %}
-                                                                    {# Begin - header #}
-                                                                    <div class="modal-header" style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
-                                                                        <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
-                                                                            <span aria-hidden="true">&times;</span>
-                                                                        </button>
-
-                                                                        <h3 class="modal-title heading-h1">
-                                                                            {{ class_package.name }}
-                                                                        </h3>
-                                                                    </div>
-                                                                    {# End - header #}
-                                                                {% endif %}
-
-                                                                {# Begin - body #}
-                                                                <div class="modal-body">
-
-                                                                    <!-- Begin - class packages -->
-                                                                    <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
-                                                                        <div class="boxy__body">
-
-                                                                            <!-- Begin - panels -->
-                                                                            <div class="panel-group" role="tablist">
-
-                                                                                <div class="panel-group__heading">
-                                                                                    <h4 class="panel-group__heading__title">
-                                                                                        {{ content.periods[class_package.period_id].title }}
-                                                                                    </h4>
-                                                                                </div>
-
-                                                                                {{ class_package.term }}
-
-                                                                            </div>
-                                                                            <!-- End - panels -->
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- End - class packages -->
-
-                                                                </div>
-                                                                {# End - body #}
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End - modal -->
-
+                                                <!-- Begin - heading -->
+                                                <div class="panel-heading" id="heading-{{ class_package_id }}">
+                                                  <h4 class="panel-title heading-h5">
+                                                    <a role="button" data-toggle="modal"
+                                                       data-target="#class-modal-cp-{{ class_package_id }}"
+                                                       data-backdrop="static">
+                                                      {{ class_package.name }} {{ class_package.period_name }}
+                                                    </a>
+                                                  </h4>
                                                 </div>
+                                                <!-- End - heading -->
+
+                                                <!-- Begin - modal -->
+                                                <div class="modal fade modal-static"
+                                                     id="class-modal-cp-{{ class_package_id }}" tabindex="-1"
+                                                     role="dialog">
+                                                  <div class="modal-dialog modal-lg" role="document">
+                                                    <div class="modal-content">
+
+                                                      {% if file_url(class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri) %}
+                                                        {# Begin - header #}
+                                                        <div class="modal-header"
+                                                             style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
+                                                          <button type="button" class="close modal-close--this-modal-only"
+                                                                  aria-label="{{ 'Close' | trans }}">
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
+
+                                                          <h3 class="modal-title heading-h1">
+                                                            {{ class_package.name }}
+                                                          </h3>
+                                                        </div>
+                                                        {# End - header #}
+                                                      {% endif %}
+
+                                                      {# Begin - body #}
+                                                      <div class="modal-body">
+
+                                                        <!-- Begin - class packages -->
+                                                        {% for period in content.periods %}
+                                                          {% if period.classes_packages[class_package.id].id %}
+                                                            <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
+                                                              <div class="boxy__body">
+
+                                                                <!-- Begin - panels -->
+                                                                <div class="panel-group" role="tablist">
+                                                                    <div class="panel-group__heading">
+                                                                      <h4 class="panel-group__heading__title">
+                                                                        {{ period.title }}
+                                                                      </h4>
+                                                                    </div>
+
+                                                                    {{ period.classes_packages[class_package.id].term }}
+                                                                </div>
+                                                                <!-- End - panels -->
+
+                                                              </div>
+                                                            </div>
+                                                          {% endif %}
+                                                        {% endfor %}
+                                                        <!-- End - class packages -->
+
+                                                      </div>
+                                                      {# End - body #}
+
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <!-- End - modal -->
+
+                                              </div>
                                             {% endfor %}
 
                                             {# All subjects button #}
