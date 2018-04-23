@@ -12,3 +12,10 @@ vih-subscription-terms-and-conditions-modal:
   dependencies:
     - core/jquery
     - core/drupalSettings
+vih-subscription-suboptions-container:
+  version: 1.x
+  js:
+    js/vih_subscription_suboptions_container.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

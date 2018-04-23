@@ -50,6 +50,8 @@ class ShortCourseOrderForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, NodeInterface $course = NULL, NodeInterface $order = NULL, $checksum = NULL) {
     $form['#attached']['library'][] = 'vih_subscription/vih-subscription-terms-and-conditions-modal';
+    $form['#attached']['library'][] = 'vih_subscription/vih-subscription-suboptions-container';
+
     //START VARIABLES INIT //
     $this->course = $course;
     $this->price = $course->field_vih_sc_price->value;
@@ -263,7 +265,11 @@ class ShortCourseOrderForm extends FormBase {
                   ':input[name="availableOptionsContainer[optionGroups][' . $optionGroupDelta . '][option]"]' => array('value' => $optionDelta),
                 ),
               ),
-              '#attributes' => array('class' => array('vih-suboptions-container')),
+              '#attributes' => array(
+                'class' => array('vih-suboptions-container'),
+                'data-option-group-delta' => $optionGroupDelta,
+                'data-option-delta' => $optionDelta,
+              ),
             );
 
             $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['options'][$optionDelta]['suboptions-container']['suboption'] = array(
@@ -591,7 +597,7 @@ class ShortCourseOrderForm extends FormBase {
       $userInput['availableOptionsContainer']['optionGroups'][$optionGroupDelta] = [
         'option' => $optionDelta,
         'options' => [
-          0 => [
+          $optionDelta => [
             'suboptions-container' => [
               'suboption' => $subOptionDelta
             ]
@@ -660,6 +666,9 @@ class ShortCourseOrderForm extends FormBase {
     
     //show participant form collapse switch
     $response->addCommand(new InvokeCommand('#participant-form-collapse-switch', 'removeClass', ['hidden']));
+
+    //move suboptions containers to the right places in DOM
+    $response->addCommand(new InvokeCommand(NULL, 'moveSuboptionsContainer'));
     
     //Enable submit button and show extra submit button if participants added
     if (!empty($form['addedParticipantsContainer']['#addedParticipants'])) {
