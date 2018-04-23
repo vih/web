@@ -103,6 +103,13 @@
         $modal = $element.parents('.modal').first();
 
     $modal.modal('hide');
+
+    $modal.on('hidden.bs.modal', function(event) {
+
+      if ( ! $('body').hasClass('modal-open')) {
+        $('body').addClass('modal-open');
+      }
+    });
   });
 
   // Toggler
@@ -116,10 +123,6 @@
         $all_toggle_buttons = $parent.find('[data-toggler]'),
         $toggle_button = $parent.find('[data-toggler="' + target + '"]'),
         $all_content = $parent.find('.toggler__content');
-
-    console.log('Parent: ', $parent);
-    console.log('Target: ', $target);
-    console.log('All content: ', $all_content);
 
     // Remove all active togglers
     $all_toggle_buttons
