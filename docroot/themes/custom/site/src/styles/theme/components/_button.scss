@@ -136,6 +136,9 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
     html[lang="da"] & {
       content: "Vælg";
     }
+    html[lang="en"] & {
+      content: "Select";
+    }
   }
 
   &.active {
@@ -150,6 +153,9 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
       html[lang="da"] & {
         content: "Valgt";
+      }
+      html[lang="en"] & {
+        content: "Selected";
       }
     }
   }
