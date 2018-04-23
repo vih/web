@@ -249,7 +249,13 @@ view_mode ? view_mode|clean_class,
                                                                       </h4>
                                                                     </div>
 
-                                                                    {{ period.classes_packages[class_package.id].term }}
+                                                                    {#
+                                                                    Because of page internal caching we cannot use the normal entity rendered view,
+                                                                    since the entity view will be cached the first time used and rest occurences will look identical (even though they are not).
+                                                                    Instead we are manually including the right template with the variable 'elements' being set.
+                                                                    #}
+                                                                    {% set elements = period.classes_packages[class_package.id].term %}
+                                                                    {% include 'taxonomy-term--vih-class-package--vih-class-package-accordion.html.twig' %}
                                                                 </div>
                                                                 <!-- End - panels -->
 

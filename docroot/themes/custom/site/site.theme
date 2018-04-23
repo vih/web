@@ -237,9 +237,10 @@ function site_preprocess_node(array &$variables) {
                   'period_id' => $period->id(),
                   'id' => $class_package->id(),
                   'name' => $class_package->getName(),
-                  'term' => \Drupal::entityTypeManager()
-                    ->getViewBuilder('taxonomy_term')
-                    ->view($class_package, 'vih_class_package_accordion'),
+                  'term' => array()
+//                  'term' => \Drupal::entityTypeManager()
+//                    ->getViewBuilder('taxonomy_term')
+//                    ->view($class_package, 'vih_class_package_accordion'),
                 ];
               }
 
