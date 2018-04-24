@@ -98,28 +98,6 @@
     );
   }
 
-  $('.modal-close--this-modal-only').on('click', function(event) {
-    var $element = $(this),
-        $modal = $element.parents('.modal').first();
-
-    $modal.modal('hide');
-  });
-
-  // Use multiple modals (https://stackoverflow.com/questions/19305821/multiple-modals-overlay)
-  $(document).on('show.bs.modal', '.modal', function () {
-    var zIndex = 1040 + (10 * $('.modal:visible').length);
-
-    $(this).css('z-index', zIndex);
-
-    setTimeout(function() {
-      $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-    }, 0);
-  });
-
-  $(document).on('hidden.bs.modal', '.modal', function () {
-    $('.modal:visible').length && $(document.body).addClass('modal-open');
-  });
-
   // Toggler
   $('[data-toggler]').on('click', function(event) {
     event.preventDefault();
@@ -147,5 +125,31 @@
   $(".toggler").each(function (index) {
       $(this).find('.toggler__button').first().trigger('click');
   });
+
+  // Use multiple modals (http://jsfiddle.net/likhi1/wtj6nacd/)
+  $('#openBtn').click(function() {
+    $('#myModal').modal({
+      show: true
+    })
+  });
+
+  $(document).on({
+    'show.bs.modal': function () {
+      var zIndex = 1040 + (10 * $('.modal:visible').length);
+      $(this).css('z-index', zIndex);
+      setTimeout(function () {
+        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+      }, 0);
+    },
+    'hidden.bs.modal': function () {
+      if ($('.modal:visible').length > 0) {
+        // restore the modal-open class to the body element, so that scrolling
+        // works properly after de-stacking a modal.
+        setTimeout(function () {
+          $(document.body).addClass('modal-open');
+        }, 0);
+      }
+    }
+  }, '.modal');
 
 })(jQuery);

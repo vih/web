@@ -167,7 +167,7 @@
 
                                                         <div class="modal-header modal-header--no-image" style="">
                                                             <button type="button"
-                                                                    class="close modal-close--this-modal-only"
+                                                                    class="close"
                                                                     aria-label="{{ 'Close' | trans }}">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -224,7 +224,7 @@
                                                                         <div class="modal-header"
                                                                              style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
                                                                             <button type="button"
-                                                                                    class="close modal-close--this-modal-only"
+                                                                                    class="close"
                                                                                     aria-label="{{ 'Close' | trans }}">
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </button>
@@ -260,6 +260,7 @@
                                                                                             Instead we are manually including the right template with the variable 'elements' being set.
                                                                                             #}
                                                                                             {% set elements = period.classes_packages[class_package.id].term %}
+                                                                                            {% set type = 'single' %}
                                                                                             {% include 'taxonomy-term--vih-class-package--vih-class-package-accordion.html.twig' %}
                                                                                         </div>
                                                                                         <!-- End - panels -->
