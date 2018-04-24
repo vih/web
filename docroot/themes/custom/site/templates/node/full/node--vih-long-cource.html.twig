@@ -154,9 +154,6 @@
                                         <div class="boxy__heading">
                                             <h3 class="boxy__heading__title heading-h4">{{ 'Subjects' | trans }}</h3>
                                         </div>
-                                        {#<div class="boxy__subheading">#}
-                                        {#<h4 class="boxy__subheading__title heading-h5">{{ 'Tailor your stay across course packages' | trans }}</h4>#}
-                                        {#</div>#}
                                         <div class="boxy__body">
 
                                             <!-- Begin - show all modal -->
@@ -165,7 +162,7 @@
                                                 <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content">
 
-                                                        <div class="modal-header modal-header--no-image" style="">
+                                                        <div class="modal-header">
                                                             <button type="button"
                                                                     class="close"
                                                                     data-dismiss="modal"
@@ -177,6 +174,7 @@
                                                         {# Begin - body #}
                                                         <div class="modal-body">
                                                             <h2>{{ 'All subjects' | trans }}</h2>
+
                                                             <br>
 
                                                             {{ content.field_vih_course_periods }}

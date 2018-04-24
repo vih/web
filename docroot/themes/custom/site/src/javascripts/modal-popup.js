@@ -32,13 +32,13 @@ var modalPopUp = (function ($) {
       $("#block-popup-cta").delay(10000).fadeIn(300);
 
       //Close div
-      $(".close").click(function () {
+      $("#block-popup-cta .close").click(function () {
         $("#block-popup-cta").hide();
       });
     }
   }
 
-  $(".close").click(function () {
+  $("#block-popup-cta .close").click(function () {
     $.cookie('no_thanks', 'true', {
       expires: 36500, path: '/'
     });

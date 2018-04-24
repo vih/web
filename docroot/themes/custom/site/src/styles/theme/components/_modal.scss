@@ -135,6 +135,26 @@ $modal-margin: 70px;
     margin-top: $modal-margin;
   }
 }
+
+.modal#all-courses{
+  & .modal-header{
+    min-height: unset;
+    padding-bottom: unset;
+    content: '';
+    &::after{
+      display: none;
+      content: '';
+    }
+    & .modal-title{
+      display: none;
+    }
+  }
+  & .modal-body{
+    padding-top: 0;
+    margin-top: $modal-margin;
+  }
+}
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------

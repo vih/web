@@ -2,6 +2,8 @@
 (function ($) {
   'use strict';
 
+  // Flatten structure of modals, so they are not nested.
+  // Ex. .modal > .modal > .modal
   var $modals = $('.modal');
   $('body').append($modals);
 
@@ -130,12 +132,6 @@
   });
 
   // Use multiple modals (http://jsfiddle.net/likhi1/wtj6nacd/)
-  $('#openBtn').click(function() {
-    $('#myModal').modal({
-      show: true
-    })
-  });
-
   $(document).on({
     'show.bs.modal': function () {
       var zIndex = 1040 + (10 * $('.modal:visible').length);
