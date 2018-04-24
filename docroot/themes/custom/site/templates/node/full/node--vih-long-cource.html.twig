@@ -160,7 +160,7 @@
                                         <div class="boxy__body">
 
                                             <!-- Begin - show all modal -->
-                                            <div class="modal fade modal-static" id="all-courses" tabindex="-1"
+                                            <div class="modal fade" id="all-courses" tabindex="-1"
                                                  role="dialog">
                                                 <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content">
@@ -168,6 +168,7 @@
                                                         <div class="modal-header modal-header--no-image" style="">
                                                             <button type="button"
                                                                     class="close"
+                                                                    data-dismiss="modal"
                                                                     aria-label="{{ 'Close' | trans }}">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -213,7 +214,7 @@
                                                         <!-- End - heading -->
 
                                                         <!-- Begin - modal -->
-                                                        <div class="modal fade modal-static"
+                                                        <div class="modal fade"
                                                              id="class-modal-cp-{{ class_package_id }}" tabindex="-1"
                                                              role="dialog">
                                                             <div class="modal-dialog modal-lg" role="document">
@@ -225,6 +226,7 @@
                                                                              style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
                                                                             <button type="button"
                                                                                     class="close"
+                                                                                    data-dismiss="modal"
                                                                                     aria-label="{{ 'Close' | trans }}">
                                                                                 <span aria-hidden="true">&times;</span>
                                                                             </button>

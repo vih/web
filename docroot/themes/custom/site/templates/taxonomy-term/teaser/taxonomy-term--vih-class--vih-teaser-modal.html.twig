@@ -15,14 +15,14 @@
 {# Begin - image #}
 
 {# Begin - modal #}
-<div class="modal fade modal-static" id="class-teaser-modal-{{ term.id }}" tabindex="-1" role="dialog">
+<div class="modal fade" id="class-teaser-modal-{{ term.id }}" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
 
       {# Begin - header #}
       {% if term.field_vih_class_image.value %}
         <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal')}});">
-          <button type="button" class="close" aria-label="{{ 'Close' | trans }}">
+          <button type="button" class="close" data-dismiss="modal"  aria-label="{{ 'Close' | trans }}">
             <span aria-hidden="true">&times;</span>
           </button>
 
