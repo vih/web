@@ -2,6 +2,9 @@
 (function ($) {
   'use strict';
 
+  var $modals = $('.modal');
+  $('body').append($modals);
+
   // Enable layout
   layout.init();
 
