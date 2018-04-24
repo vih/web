@@ -103,13 +103,21 @@
         $modal = $element.parents('.modal').first();
 
     $modal.modal('hide');
+  });
 
-    $modal.on('hidden.bs.modal', function(event) {
+  // Use multiple modals (https://stackoverflow.com/questions/19305821/multiple-modals-overlay)
+  $(document).on('show.bs.modal', '.modal', function () {
+    var zIndex = 1040 + (10 * $('.modal:visible').length);
 
-      if ( ! $('body').hasClass('modal-open')) {
-        $('body').addClass('modal-open');
-      }
-    });
+    $(this).css('z-index', zIndex);
+
+    setTimeout(function() {
+      $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+    }, 0);
+  });
+
+  $(document).on('hidden.bs.modal', '.modal', function () {
+    $('.modal:visible').length && $(document.body).addClass('modal-open');
   });
 
   // Toggler
