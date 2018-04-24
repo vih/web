@@ -140,6 +140,10 @@
 // Variants
 // --------------------------------------------------
 
+.panel-type--color-black {
+  @include panel-type-mixin(#000);
+}
+
 .panel-type--color-blue {
   @include panel-type-mixin($brand-primary);
 }
