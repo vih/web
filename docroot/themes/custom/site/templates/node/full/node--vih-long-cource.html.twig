@@ -1,10 +1,10 @@
 {% set classes = [
-node.bundle|clean_class,
-node.isPromoted() ? 'is-promoted',
-node.isSticky() ? 'is-sticky',
-not node.isPublished() ? 'is-unpublished',
-view_mode ? view_mode|clean_class,
-'clearfix',
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
@@ -104,294 +104,302 @@ view_mode ? view_mode|clean_class,
 
                                 {# Begin - travel #}
                                 {% if content.travel_classes_mandatory or content.travel_classes_optional %}
-                                  <div class="partial partial--travel">
+                                <div class="partial partial--travel">
                                     <div class="partial__heading">
-                                      <h3 class="partial__heading__title heading-h4">
-                                        {{ 'Get travelling' | trans }}
-                                      </h3>
+                                        <h3 class="partial__heading__title heading-h4">
+                                            {{ 'Get travelling' | trans }}
+                                        </h3>
                                     </div>
                                     {% if content.travel_classes_mandatory %}
-                                      <div class="partial__subheading">
-                                        <h3 class="partial__subheading__title heading-h5">
-                                          {{ 'Common trips (INCLUDED IN COURSE)' | trans }}
-                                        </h3>
-                                      </div>
-                                      <div class="partial__body">
-                                        <div class="row">
-
-                                          {% for travel_class in content.travel_classes_mandatory %}
-                                            <div class="col-sm-12">
-                                              {{ travel_class }}
-                                            </div>
-                                          {% endfor %}
-
+                                        <div class="partial__subheading">
+                                            <h3 class="partial__subheading__title heading-h5">
+                                                {{ 'Common trips (INCLUDED IN COURSE)' | trans }}
+                                            </h3>
                                         </div>
-                                      </div>
+                                        <div class="partial__body">
+                                            <div class="row">
+
+                                                {% for travel_class in content.travel_classes_mandatory %}
+                                                    <div class="col-sm-12">
+                                                        {{ travel_class }}
+                                                    </div>
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
                                     {% endif %}
                                     {% if content.travel_classes_optional %}
-                                      <div class="partial__subheading">
-                                        <h3 class="partial__subheading__title heading-h5">
-                                          {{ 'Choose between' | trans }}
-                                        </h3>
-                                      </div>
-                                      <div class="partial__body">
-                                        <div class="row">
-
-                                          {% for travel_class in content.travel_classes_optional %}
-                                            <div class="col-md-4 col-sm-6 show-additional-price">
-                                              {{ travel_class }}
-                                            </div>
-                                          {% endfor %}
-
+                                        <div class="partial__subheading">
+                                            <h3 class="partial__subheading__title heading-h5">
+                                                {{ 'Choose between' | trans }}
+                                            </h3>
                                         </div>
-                                      </div>
+                                        <div class="partial__body">
+                                            <div class="row">
+
+                                                {% for travel_class in content.travel_classes_optional %}
+                                                    <div class="col-md-4 col-sm-6 show-additional-price">
+                                                        {{ travel_class }}
+                                                    </div>
+                                                {% endfor %}
+
+                                            </div>
+                                        </div>
                                     {% endif %}
-                                {% endif %}
-                                {# End - travel #}
+                                    {% endif %}
+                                    {# End - travel #}
 
-                                <!-- Begin - class packages -->
-                                <div class="boxy boxy--class-packages">
-                                    <div class="boxy__heading">
-                                        <h3 class="boxy__heading__title heading-h4">{{ 'Subjects' | trans }}</h3>
-                                    </div>
-                                    {#<div class="boxy__subheading">#}
-                                        {#<h4 class="boxy__subheading__title heading-h5">{{ 'Tailor your stay across course packages' | trans }}</h4>#}
-                                    {#</div>#}
-                                    <div class="boxy__body">
-
-                                        <!-- Begin - show all modal -->
-                                        <div class="modal fade modal-static" id="all-courses" tabindex="-1" role="dialog">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                                <div class="modal-content">
-
-                                                    <div class="modal-header modal-header--no-image" style="">
-                                                        <button type="button" class="close modal-close--this-modal-only" aria-label="{{ 'Close' | trans }}">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-
-                                                    {# Begin - body #}
-                                                    <div class="modal-body">
-                                                        <h2>{{ 'All subjects' | trans }}</h2>
-                                                        <br>
-
-                                                        {{ content.field_vih_course_periods }}
-                                                    </div>
-                                                    {# End - body #}
-
-                                                </div>
-                                            </div>
+                                    <!-- Begin - class packages -->
+                                    <div class="boxy boxy--class-packages">
+                                        <div class="boxy__heading">
+                                            <h3 class="boxy__heading__title heading-h4">{{ 'Subjects' | trans }}</h3>
                                         </div>
-                                        <!-- End - show all modal -->
+                                        {#<div class="boxy__subheading">#}
+                                        {#<h4 class="boxy__subheading__title heading-h5">{{ 'Tailor your stay across course packages' | trans }}</h4>#}
+                                        {#</div>#}
+                                        <div class="boxy__body">
 
-                                        <!-- Begin - panels -->
-                                        <div class="panel-group" id="accordion" role="tablist">
-
-                                            <div class="panel-group__heading">
-                                                <h4 class="panel-group__heading__title">
-                                                    {{ 'Mix and match you subjects' | trans }}
-                                                </h4>
-                                            </div>
-
-                                            {% for class_package_id, class_package in content.classes_packages %}
-
-                                              <div class="panel panel-default panel-type--{{ class_package.term['#taxonomy_term'].field_vih_class_package_color.value }}">
-
-                                                <!-- Begin - heading -->
-                                                <div class="panel-heading" id="heading-{{ class_package_id }}">
-                                                  <h4 class="panel-title heading-h5">
-                                                    <a role="button" data-toggle="modal"
-                                                       data-target="#class-modal-cp-{{ class_package_id }}"
-                                                       data-backdrop="static">
-                                                      {{ class_package.name }} {{ class_package.period_name }}
-                                                    </a>
-                                                  </h4>
-                                                </div>
-                                                <!-- End - heading -->
-
-                                                <!-- Begin - modal -->
-                                                <div class="modal fade modal-static"
-                                                     id="class-modal-cp-{{ class_package_id }}" tabindex="-1"
-                                                     role="dialog">
-                                                  <div class="modal-dialog modal-lg" role="document">
+                                            <!-- Begin - show all modal -->
+                                            <div class="modal fade modal-static" id="all-courses" tabindex="-1"
+                                                 role="dialog">
+                                                <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content">
 
-                                                      {% if file_url(class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri) %}
-                                                        {# Begin - header #}
-                                                        <div class="modal-header"
-                                                             style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
-                                                          <button type="button" class="close modal-close--this-modal-only"
-                                                                  aria-label="{{ 'Close' | trans }}">
-                                                            <span aria-hidden="true">&times;</span>
-                                                          </button>
-
-                                                          <h3 class="modal-title heading-h1">
-                                                            {{ class_package.name }}
-                                                          </h3>
+                                                        <div class="modal-header modal-header--no-image" style="">
+                                                            <button type="button"
+                                                                    class="close modal-close--this-modal-only"
+                                                                    aria-label="{{ 'Close' | trans }}">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
                                                         </div>
-                                                        {# End - header #}
-                                                      {% endif %}
 
-                                                      {# Begin - body #}
-                                                      <div class="modal-body">
+                                                        {# Begin - body #}
+                                                        <div class="modal-body">
+                                                            <h2>{{ 'All subjects' | trans }}</h2>
+                                                            <br>
 
-                                                        <!-- Begin - class packages -->
-                                                        {% for period in content.periods %}
-                                                          {% if period.classes_packages[class_package.id].id %}
-                                                            <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
-                                                              <div class="boxy__body">
-
-                                                                <!-- Begin - panels -->
-                                                                <div class="panel-group" role="tablist">
-                                                                    <div class="panel-group__heading">
-                                                                      <h4 class="panel-group__heading__title">
-                                                                        {{ period.title }}
-                                                                      </h4>
-                                                                    </div>
-
-                                                                    {#
-                                                                    Because of page internal caching we cannot use the normal entity rendered view,
-                                                                    since the entity view will be cached the first time used and rest occurences will look identical (even though they are not).
-                                                                    Instead we are manually including the right template with the variable 'elements' being set.
-                                                                    #}
-                                                                    {% set elements = period.classes_packages[class_package.id].term %}
-                                                                    {% include 'taxonomy-term--vih-class-package--vih-class-package-accordion.html.twig' %}
-                                                                </div>
-                                                                <!-- End - panels -->
-
-                                                              </div>
-                                                            </div>
-                                                          {% endif %}
-                                                        {% endfor %}
-                                                        <!-- End - class packages -->
-
-                                                      </div>
-                                                      {# End - body #}
+                                                            {{ content.field_vih_course_periods }}
+                                                        </div>
+                                                        {# End - body #}
 
                                                     </div>
-                                                  </div>
                                                 </div>
-                                                <!-- End - modal -->
-
-                                              </div>
-                                            {% endfor %}
-
-                                            {# All subjects button #}
-                                            <div class="panel panel-default panel-type--color-green">
-                                              <!-- Begin - heading -->
-                                              <div class="panel-heading">
-                                                <h4 class="panel-title heading-h5">
-                                                  <a role="button" data-toggle="modal" data-target="#all-courses" data-backdrop="static">
-                                                    {{ 'All subjects' | trans }}
-                                                  </a>
-                                                </h4>
-                                              </div>
-                                              <!-- End - heading -->
                                             </div>
-                                            {# End - All subjects button #}
+                                            <!-- End - show all modal -->
+
+                                            <!-- Begin - panels -->
+                                            <div class="panel-group" id="accordion" role="tablist">
+
+                                                <div class="panel-group__heading">
+                                                    <h4 class="panel-group__heading__title">
+                                                        {{ 'Mix and match you subjects' | trans }}
+                                                    </h4>
+                                                </div>
+
+                                                {% for class_package_id, class_package in content.classes_packages %}
+
+                                                    <div class="panel panel-default panel-type--{{ class_package.term['#taxonomy_term'].field_vih_class_package_color.value }}">
+
+                                                        <!-- Begin - heading -->
+                                                        <div class="panel-heading" id="heading-{{ class_package_id }}">
+                                                            <h4 class="panel-title heading-h5">
+                                                                <a role="button" data-toggle="modal"
+                                                                   data-target="#class-modal-cp-{{ class_package_id }}"
+                                                                   data-backdrop="static">
+                                                                    {{ class_package.name }} {{ class_package.period_name }}
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                        <!-- End - heading -->
+
+                                                        <!-- Begin - modal -->
+                                                        <div class="modal fade modal-static"
+                                                             id="class-modal-cp-{{ class_package_id }}" tabindex="-1"
+                                                             role="dialog">
+                                                            <div class="modal-dialog modal-lg" role="document">
+                                                                <div class="modal-content">
+
+                                                                    {% if file_url(class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri) %}
+                                                                        {# Begin - header #}
+                                                                        <div class="modal-header"
+                                                                             style="background-image: url('{{ class_package.term['#taxonomy_term'].field_vih_cp_image.entity.fileuri | image_style('modal') }}');">
+                                                                            <button type="button"
+                                                                                    class="close modal-close--this-modal-only"
+                                                                                    aria-label="{{ 'Close' | trans }}">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+
+                                                                            <h3 class="modal-title heading-h1">
+                                                                                {{ class_package.name }}
+                                                                            </h3>
+                                                                        </div>
+                                                                        {# End - header #}
+                                                                    {% endif %}
+
+                                                                    {# Begin - body #}
+                                                                    <div class="modal-body">
+
+                                                                        <!-- Begin - class packages -->
+                                                                        {% for period in content.periods %}
+                                                                            {% if period.classes_packages[class_package.id].id %}
+                                                                                <div class="boxy boxy--class-packages boxy--class-packages--list-advanced">
+                                                                                    <div class="boxy__body">
+
+                                                                                        <!-- Begin - panels -->
+                                                                                        <div class="panel-group"
+                                                                                             role="tablist">
+                                                                                            <div class="panel-group__heading">
+                                                                                                <h4 class="panel-group__heading__title">
+                                                                                                    {{ period.title }}
+                                                                                                </h4>
+                                                                                            </div>
+
+                                                                                            {#
+                                                                                            Because of page internal caching we cannot use the normal entity rendered view,
+                                                                                            since the entity view will be cached the first time used and rest occurences will look identical (even though they are not).
+                                                                                            Instead we are manually including the right template with the variable 'elements' being set.
+                                                                                            #}
+                                                                                            {% set elements = period.classes_packages[class_package.id].term %}
+                                                                                            {% include 'taxonomy-term--vih-class-package--vih-class-package-accordion.html.twig' %}
+                                                                                        </div>
+                                                                                        <!-- End - panels -->
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                        <!-- End - class packages -->
+
+                                                                    </div>
+                                                                    {# End - body #}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- End - modal -->
+
+                                                    </div>
+                                                {% endfor %}
+
+                                                {# All subjects button #}
+                                                <div class="panel panel-default panel-type--color-green">
+
+                                                    <!-- Begin - heading -->
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title heading-h5">
+                                                            <a role="button" data-toggle="modal"
+                                                               data-target="#all-courses" data-backdrop="static">
+                                                                {{ 'All subjects' | trans }}
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <!-- End - heading -->
+
+                                                </div>
+                                                {# End - All subjects button #}
+                                            </div>
+                                            <!-- End - panels -->
+
                                         </div>
-                                        <!-- End - panels -->
-
                                     </div>
-                                </div>
-                                <!-- End - class packages -->
+                                    <!-- End - class packages -->
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {# Begin - action button #}
-                {% if content.is_active and content.can_be_subscribed %}
-                    <div class="partial partial--action-button">
-                        <div class="partial__body">
-                            <a href="{{ url('vih_subscription.long_course_order_create', {'course': node.id}) }}"
-                               class="btn btn-primary">
-                                {{ "Sign up and choose your subjects" | trans }}
-                            </a>
+                    {# Begin - action button #}
+                    {% if content.is_active and content.can_be_subscribed %}
+                        <div class="partial partial--action-button">
+                            <div class="partial__body">
+                                <a href="{{ url('vih_subscription.long_course_order_create', {'course': node.id}) }}"
+                                   class="btn btn-primary">
+                                    {{ "Sign up and choose your subjects" | trans }}
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                {% endif %}
-                {# End - action button #}
+                    {% endif %}
+                    {# End - action button #}
 
-                {# Begin - teacher #}
-                {% if node.field_vih_cource_contact_person.value %}
-                    <div class="partial partial--teacher">
+                    {# Begin - teacher #}
+                    {% if node.field_vih_cource_contact_person.value %}
+                        <div class="partial partial--teacher">
+                            <div class="partial__heading">
+                                <h2 class="partial__heading__title heading-h4">{{ 'Do you have any questions about this course?' | trans }}</h2>
+                            </div>
+                            <div class="partial__body">
+                                {{ content.field_vih_cource_contact_person }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - teacher #}
+
+                    {# Begin - enquire button #}
+                    {% if content.is_active and content.can_be_subscribed and content.enquire_prices_page_international %}
+                        <div class="partial partial--action-button partial--action-button--enquire-prices">
+                            <div class="partial__body">
+                                <a href="{{ url('entity.node.canonical', {'node': content.enquire_prices_page_international}) }}"
+                                   class="btn btn-secondary">
+                                    {{ "Enquire for prices" | trans }}
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {# End - enquire button #}
+
+                    {# Begin - price #}
+                    <div class="partial partial--price-table">
                         <div class="partial__heading">
-                            <h2 class="partial__heading__title heading-h4">{{ 'Do you have any questions about this course?' | trans }}</h2>
+                            <h2 class="partial__heading__title heading-h4">{{ 'Price overview' | trans }}</h2>
                         </div>
                         <div class="partial__body">
-                            {{ content.field_vih_cource_contact_person }}
-                        </div>
-                    </div>
-                {% endif %}
-                {# End - teacher #}
 
-                {# Begin - enquire button #}
-                {% if content.is_active and content.can_be_subscribed and content.enquire_prices_page_international%}
-                  <div class="partial partial--action-button partial--action-button--enquire-prices">
-                    <div class="partial__body">
-                      <a href="{{ url('entity.node.canonical', {'node': content.enquire_prices_page_international}) }}"
-                         class="btn btn-secondary">
-                        {{ "Enquire for prices" | trans }}
-                      </a>
-                    </div>
-                  </div>
-                {% endif %}
-                {# End - enquire button #}
-
-                {# Begin - price #}
-                <div class="partial partial--price-table">
-                    <div class="partial__heading">
-                        <h2 class="partial__heading__title heading-h4">{{ 'Price overview' | trans }}</h2>
-                    </div>
-                    <div class="partial__body">
-
-                        <div class="vih-price-box">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="price-table col-sm-12 col-md-3">
-                                        <div class="table-heading">
-                                            {{ "Material fee"|trans }}
+                            <div class="vih-price-box">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="price-table col-sm-12 col-md-3">
+                                            <div class="table-heading">
+                                                {{ "Material fee"|trans }}
+                                            </div>
+                                            <div class="table-cell">
+                                                {{ content.field_vih_course_price }}
+                                            </div>
                                         </div>
-                                        <div class="table-cell">
-                                            {{ content.field_vih_course_price }}
+                                        <div class="price-table col-sm-12 col-md-3">
+                                            <div class="table-heading">
+                                                {{ "Signup fee"|trans }}
+                                            </div>
+                                            <div class="table-cell">
+                                                {{ content.field_vih_course_subsc_price }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="price-table col-sm-12 col-md-3">
-                                        <div class="table-heading">
-                                            {{ "Signup fee"|trans }}
+                                        <div class="price-table col-sm-12 col-md-3">
+                                            <div class="table-heading">
+                                                {{ "Weekly payment"|trans }}
+                                            </div>
+                                            <div class="table-cell">
+                                                {{ content.field_vih_course_week_price }}
+                                            </div>
                                         </div>
-                                        <div class="table-cell">
-                                            {{ content.field_vih_course_subsc_price }}
+                                        <div class="price-table col-sm-12 col-md-3">
+                                            <div class="table-heading">
+                                                {{ "Travel payment"|trans }}
+                                            </div>
+                                            <div class="table-cell">
+                                                DKK {{ content.travel_price|number_format(2, ',', '.') }}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="price-table col-sm-12 col-md-3">
-                                        <div class="table-heading">
-                                            {{ "Weekly payment"|trans }}
-                                        </div>
-                                        <div class="table-cell">
-                                            {{ content.field_vih_course_week_price }}
-                                        </div>
-                                    </div>
-                                    <div class="price-table col-sm-12 col-md-3">
-                                      <div class="table-heading">
-                                        {{ "Travel payment"|trans }}
-                                      </div>
-                                      <div class="table-cell">
-                                        DKK {{ content.travel_price|number_format(2, ',', '.') }}
-                                      </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
-                {# End - price #}
+                    {# End - price #}
 
+                </div>
             </div>
-          </div>
         </div>
     </section>
     <!-- End - content -->
