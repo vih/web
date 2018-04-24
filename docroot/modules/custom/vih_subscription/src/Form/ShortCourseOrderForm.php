@@ -230,6 +230,13 @@ class ShortCourseOrderForm extends FormBase {
         '#placeholder' => $this->t('Zipcode'),
         '#required' => TRUE,
       );
+      $form['newParticipantContainer']['newParticipantFieldset']['country'] = array(
+        '#type' => 'select',
+        '#title' => $this->t('Country'),
+        '#options' => CourseOrderOptionsList::getNationalityList(),
+        '#default_value' => 'DK',
+        '#required' => TRUE,
+      );
       $form['newParticipantContainer']['newParticipantFieldset']['comment'] = array(
         '#type' => 'textarea',
         '#title' => $this->t('Comment'),
@@ -478,6 +485,7 @@ class ShortCourseOrderForm extends FormBase {
     $participant['house']['houseFloor'] = $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'];
     $participant['city'] = $userInput['newParticipantContainer']['newParticipantFieldset']['city'];
     $participant['zip'] = $userInput['newParticipantContainer']['newParticipantFieldset']['zip'];
+    $participant['country'] = $userInput['newParticipantContainer']['newParticipantFieldset']['country'];
     $participant['newsletter'] = $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'];
     $participant['comment'] = $userInput['newParticipantContainer']['newParticipantFieldset']['comment'];
 
@@ -546,6 +554,7 @@ class ShortCourseOrderForm extends FormBase {
       $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = $main_participant['house']['houseFloor'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $main_participant['city'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $main_participant['zip'];
+      $userInput['newParticipantContainer']['newParticipantFieldset']['country'] = $main_participant['country'];
       $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $main_participant['comment'];
     }
 
@@ -583,6 +592,7 @@ class ShortCourseOrderForm extends FormBase {
     $userInput['newParticipantContainer']['newParticipantFieldset']['house']['houseFloor'] = $participantToEdit['house']['houseFloor'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['city'] = $participantToEdit['city'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['zip'] = $participantToEdit['zip'];
+    $userInput['newParticipantContainer']['newParticipantFieldset']['country'] = $participantToEdit['country'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['newsletter'] = $participantToEdit['newsletter'];
     $userInput['newParticipantContainer']['newParticipantFieldset']['comment'] = $participantToEdit['comment'];
 
@@ -782,6 +792,7 @@ class ShortCourseOrderForm extends FormBase {
           'field_vih_ocp_address' => $address,
           'field_vih_ocp_city' => $addedParticipant['city'],
           'field_vih_ocp_zip' => $addedParticipant['zip'],
+          'field_vih_ocp_country' => $addedParticipant['country'],
           'field_vih_ocp_newsletter' => $addedParticipant['newsletter'],
           'field_vih_ocp_comment' => $addedParticipant['comment'],
           'field_vih_ocp_birthdate' => $birthdate,
@@ -925,6 +936,7 @@ class ShortCourseOrderForm extends FormBase {
       $participant['house']['houseFloor'] = $address_parts[3];
       $participant['city'] = $subscribedPerson->field_vih_ocp_city->value;
       $participant['zip'] = $subscribedPerson->field_vih_ocp_zip->value;
+      $participant['country'] = $subscribedPerson->field_vih_ocp_country->value;
       $participant['newsletter'] = $subscribedPerson->field_vih_ocp_newsletter->value;
       $participant['comment'] = $subscribedPerson->field_vih_ocp_comment->value;
 

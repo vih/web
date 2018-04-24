@@ -8,6 +8,7 @@
 namespace Drupal\vih_subscription\Misc;
 
 use Drupal\node\NodeInterface;
+use Drupal\vih_subscription\Form\CourseOrderOptionsList;
 use EDBBrugs\Client;
 use EDBBrugs\Credentials;
 use EDBBrugs\RegistrationRepository;
@@ -59,7 +60,7 @@ class EDBBrugsenIntegration {
       $registration['Elev.Fastnet']  = $longCourseOrder->get('field_vih_lco_telefon')->value;
       $registration['Elev.Mobil'] = $longCourseOrder->get('field_vih_lco_telefon')->value;
       $registration['Elev.Email'] = $longCourseOrder->get('field_vih_lco_email')->value;
-      $registration['Elev.Land'] = (string) $longCourseOrder->get('field_vih_lco_nationality')->value;
+      $registration['Elev.Land'] = CourseOrderOptionsList::getNationalityList($longCourseOrder->get('field_vih_lco_nationality')->value);
       $registration['Elev.Notat'] = $longCourseOrder->get('field_vih_lco_message')->value;
 
       // adult = voksen information
@@ -72,7 +73,7 @@ class EDBBrugsenIntegration {
       $registration['Voksen.Fastnet']  = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
       $registration['Voksen.Mobil'] = $longCourseOrder->get('field_vih_lco_adult_telefon')->value;
       $registration['Voksen.Email'] = $longCourseOrder->get('field_vih_lco_adult_email')->value;
-      $registration['Voksen.Land'] = (string) $longCourseOrder->get('field_vih_lco_adult_nationality')->value;
+      $registration['Voksen.Land'] = CourseOrderOptionsList::getNationalityList($longCourseOrder->get('field_vih_lco_adult_nationality')->value);
 
       $registration += $this->getDefaultRegistrationValues();
     } elseif ($longCourseOrder->getType() == 'vih_short_course_order') {
@@ -102,6 +103,7 @@ class EDBBrugsenIntegration {
       $registration['Elev.Lokalby'] = $order_person->field_vih_ocp_city->value;
       $registration['Elev.Postnr'] = $order_person->field_vih_ocp_zip->value;
       $registration['Elev.Bynavn'] = $order_person->field_vih_ocp_city->value;
+      $registration['Elev.Land'] = CourseOrderOptionsList::getNationalityList($order_person->field_vih_ocp_country->value);
 
       //using only Booking number/Kartotek from default values
       $defaultValues = $this->getDefaultRegistrationValues();
