@@ -208,9 +208,9 @@ class LongCourseOrderForm extends FormBase {
       '#required' => TRUE,
     );
     $form['personalDataRight']['foundFrom'] = array(
-      '#type' => 'select',
+      '#type' => 'textfield',
       '#title' => $this->t('How did you find us?'),
-      '#options' => CourseOrderOptionsList::getFoundFromList(),
+      '#placeholder' => $this->t('How did you find us?'),
       '#required' => TRUE,
     );
 
@@ -489,7 +489,7 @@ class LongCourseOrderForm extends FormBase {
         'field_vih_lco_zip' => $form_state->getValue('zip'),
         'field_vih_lco_education' => CourseOrderOptionsList::getEducationList($form_state->getValue('education')),
         'field_vih_lco_payment' => CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')),
-        'field_vih_lco_found_from' => CourseOrderOptionsList::getFoundFromList($form_state->getValue('foundFrom')),
+        'field_vih_lco_found_from' => $form_state->getValue('foundFrom'),
         'field_vih_lco_message' => $form_state->getValue('message'),
         'field_vih_lco_course' => $this->course->id(),
         'field_vih_lco_order_course_perio' => array_values($orderedCoursePeriods), //resetting the keys
@@ -552,7 +552,7 @@ class LongCourseOrderForm extends FormBase {
       $this->courseOrder->set('field_vih_lco_zip', $form_state->getValue('zip'));
       $this->courseOrder->set('field_vih_lco_education', CourseOrderOptionsList::getEducationList($form_state->getValue('education')));
       $this->courseOrder->set('field_vih_lco_payment', CourseOrderOptionsList::getPaymentList($form_state->getValue('payment')));
-      $this->courseOrder->set('field_vih_lco_found_from', CourseOrderOptionsList::getFoundFromList($form_state->getValue('foundFrom')));
+      $this->courseOrder->set('field_vih_lco_found_from', $form_state->getValue('foundFrom'));
       $this->courseOrder->set('field_vih_lco_message', $form_state->getValue('message'));
 
       //adult information
@@ -633,7 +633,7 @@ class LongCourseOrderForm extends FormBase {
     $form['personalDataRight']['municipality']['#default_value'] = $courseOrder->field_vih_lco_municipality->value;
     $form['personalDataRight']['zip']['#default_value'] = $courseOrder->field_vih_lco_zip->value;
     $form['personalDataRight']['education']['#default_value'] = array_search($courseOrder->field_vih_lco_education->value, CourseOrderOptionsList::getEducationList());
-    $form['personalDataRight']['foundFrom']['#default_value'] = array_search($courseOrder->field_vih_lco_found_from->value, CourseOrderOptionsList::getFoundFromList());
+    $form['personalDataRight']['foundFrom']['#default_value'] = $courseOrder->field_vih_lco_found_from->value;
 
     //adult information left
     $form['adultDataLeft']['adultFirstName']['#default_value'] = $courseOrder->field_vih_lco_adult_first_name->value;

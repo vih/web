@@ -69,24 +69,4 @@ class CourseOrderOptionsList {
     return $list;
   }
 
-  /**
-   * Returns list of where customer found from about the service
-   * if key is used then the values for that key is returned.
-   *
-   * @param $key
-   * @return array
-   */
-  public static function getFoundFromList($key = null) {
-    $list = array(
-      '1' => \Drupal::translation()->translate('One'),
-      '2.1' => \Drupal::translation()->translate('Two point one'),
-      '2.2' => \Drupal::translation()->translate('Two point two'),
-      '3' => \Drupal::translation()->translate('Three'),
-    );
-    if ($key) {
-      return $list[$key];
-    }
-    return $list;
-  }
-
-} 
+}
