@@ -1,6 +1,6 @@
-@import url('stylesheet-blessed1.css?z=341');
+@import url('stylesheet-blessed1.css?z=376');
 
-@import url('stylesheet-blessed2.css?z=341');
+@import url('stylesheet-blessed2.css?z=376');
 
 .btn.btn-primary .icon,
 .banner .field--name-field-vih-link a .icon,
@@ -718,7 +718,7 @@
   -ms-flex-align: center;
   align-items: center;
   width: 45px;
-  content: "";
+  content: \e5c8;
   color: #fff;
   font-size: 30px;
 }
@@ -5420,7 +5420,7 @@ article.vih_class_package .field.field--name-field-class-package-paragraph.field
 .course-periods-accordion .panel .class-selection .btn-radio-select.active:after {
   position: absolute;
   right: 0;
-  content: "";
+  content: \e853;
 }
 
 .course-periods-accordion .panel .class-selection .btn-radio-select .form-type-radio label {

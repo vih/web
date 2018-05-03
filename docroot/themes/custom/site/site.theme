@@ -1,9 +1,5 @@
 <?php
-
-/**
- * @file
- * Functions to support theming in the site theme.
- */
+include( dirname(__FILE__) . '/include/settings.inc');
 
 use Drupal\image\Entity\ImageStyle;
 use Drupal\user\Entity\User;
@@ -25,6 +21,10 @@ function site_preprocess_page(array &$variables) {
   if ($tid) {
     $variables['term'] = \Drupal\taxonomy\Entity\Term::load($tid);
   }
+
+  // Theme settings
+  $variables['theme_settings']['copyright_interval'] = '';
+  $variables['theme_settings'] = _site_collect_theme_settings();
 }
 
 /**

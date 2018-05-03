@@ -53,9 +53,103 @@
                         <div class="col-xs-12 col-sm-4">
                             <div class="layout__footer-bottom-social">
                                 <ul class="list-inline pull-right">
-                                    <li><a href="#"><span class="icon icon-instagram"></span></a></li>
-                                    <li><a href="#"><span class="icon icon-twitter"></span></a></li>
-                                    <li><a href="#"><span class="icon icon-facebook"></span></a></li>
+
+                                    {% if theme_settings.social.facebook.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.facebook.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.facebook.tooltip }}">
+                                                <span class="icon icon-facebook"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.twitter.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.twitter.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.twitter.tooltip }}">
+                                                <span class="icon icon-twitter"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.googleplus.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.googleplus.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.googleplus.tooltip }}">
+                                                <span class="icon icon-google-plus"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.linkedin.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.linkedin.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.linkedin.tooltip }}">
+                                                <span class="icon icon-linkedin"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.pinterest.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.pinterest.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.pinterest.tooltip }}">
+                                                <span class="icon icon-pinterest"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.instagram.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.instagram.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.instagram.tooltip }}">
+                                                <span class="icon icon-instagram"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.youtube.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.youtube.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.youtube.tooltip }}">
+                                                <span class="icon icon-youtube"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if theme_settings.social.vimeo.active %}
+                                        <li>
+                                            <a href="{{ theme_settings.social.vimeo.url }}"
+                                               target="_blank"
+                                               data-toggle="tooltip"
+                                               data-placement="top"
+                                               title="{{ theme_settings.social.vimeo.tooltip }}">
+                                                <span class="icon icon-vimeo"></span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
                                 </ul>
                             </div>
                         </div>

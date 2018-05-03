@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('#{$icomoon-font-path}/icomoon.eot?bkgt5i');
-  src:  url('#{$icomoon-font-path}/icomoon.eot?bkgt5i#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/icomoon.ttf?bkgt5i') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.woff?bkgt5i') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.svg?bkgt5i#icomoon') format('svg');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?tn9pyh');
+  src:  url('#{$icomoon-font-path}/icomoon.eot?tn9pyh#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/icomoon.ttf?tn9pyh') format('truetype'),
+    url('#{$icomoon-font-path}/icomoon.woff?tn9pyh') format('woff'),
+    url('#{$icomoon-font-path}/icomoon.svg?tn9pyh#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,89 +26,118 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+.icon-youtube {
+  &:before {
+    content: unicode($icon-youtube); 
+  }
+}
+.icon-vimeo {
+  &:before {
+    content: unicode($icon-vimeo); 
+  }
+}
 .icon-bookmark-o {
   &:before {
-    content: $icon-bookmark-o;
+    content: unicode($icon-bookmark-o); 
   }
 }
 .icon-twitter {
   &:before {
-    content: $icon-twitter;
+    content: unicode($icon-twitter); 
   }
 }
 .icon-facebook {
   &:before {
-    content: $icon-facebook;
+    content: unicode($icon-facebook); 
   }
 }
 .icon-angle-left {
   &:before {
-    content: $icon-angle-left;
+    content: unicode($icon-angle-left); 
   }
 }
 .icon-angle-right {
   &:before {
-    content: $icon-angle-right;
+    content: unicode($icon-angle-right); 
   }
 }
 .icon-angle-up {
   &:before {
-    content: $icon-angle-up;
+    content: unicode($icon-angle-up); 
   }
 }
 .icon-angle-down {
   &:before {
-    content: $icon-angle-down;
+    content: unicode($icon-angle-down); 
   }
 }
 .icon-instagram {
   &:before {
-    content: $icon-instagram;
+    content: unicode($icon-instagram); 
   }
 }
 .icon-time {
   &:before {
-    content: $icon-time;
+    content: unicode($icon-time); 
   }
 }
 .icon-account-circle {
   &:before {
-    content: $icon-account-circle;
+    content: unicode($icon-account-circle); 
   }
 }
 .icon-arrow-right {
   &:before {
-    content: $icon-arrow-right;
+    content: unicode($icon-arrow-right); 
   }
 }
 .icon-phone {
   &:before {
-    content: $icon-phone;
+    content: unicode($icon-phone); 
   }
 }
 .icon-home {
   &:before {
-    content: $icon-home;
+    content: unicode($icon-home); 
   }
 }
 .icon-info-circle {
   &:before {
-    content: $icon-info-circle;
+    content: unicode($icon-info-circle); 
   }
 }
 .icon-mail {
   &:before {
-    content: $icon-mail;
+    content: unicode($icon-mail); 
   }
 }
 .icon-portrait {
   &:before {
-    content: $icon-portrait;
+    content: unicode($icon-portrait); 
   }
 }
 .icon-search {
   &:before {
-    content: $icon-search;
+    content: unicode($icon-search); 
+  }
+}
+.icon-google-plus {
+  &:before {
+    content: unicode($icon-google-plus); 
+  }
+}
+.icon-linkedin {
+  &:before {
+    content: unicode($icon-linkedin); 
+  }
+}
+.icon-pinterest {
+  &:before {
+    content: unicode($icon-pinterest); 
   }
 }
 
