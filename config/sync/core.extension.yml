@@ -84,6 +84,7 @@ module:
   path: 0
   photoswipe: 0
   rdf: 0
+  recreate_block_content: 0
   scheduled_updates: 0
   schema_metatag: 0
   search: 0
