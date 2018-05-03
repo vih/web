@@ -17,19 +17,19 @@
 
         <!-- Begin - contact information -->
         <aside class="layout-header-contact-information">
-            <a href="tel:004575820811"><span class="icon icon-phone"></span> +45 7582 0811</a> <span>Mandag - fredag <strong>08:00 - 15:00</strong></span>
+            <a href="tel:{{ theme_settings.contact_information.phone_system }}"><span class="icon icon-phone"></span> {{ theme_settings.contact_information.phone_readable }}</a> <span>{{ theme_settings.contact_information.working_hours }}</span>
         </aside>
         <!-- End - contact information -->
 
         <!-- Begin - tour -->
         <aside class="layout-header-tour">
-            <a href="/rundvisning"><span class="icon icon-bookmark-o"></span> Rundvisning</a> <span><strong>Det er gratis</strong></span>
+            <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.tour_url }) }}"><span class="icon icon-bookmark-o"></span> {{ 'Tour' | trans }}</a> <span><strong>{{ 'It\'s free' | trans }}</strong></span>
         </aside>
         <!-- End - tour -->
 
         <!-- Begin - contact -->
         <aside class="layout-header-contact">
-            <a href="/kontakt"><span class="icon icon-portrait"></span> Kontakt</a>
+            <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.contact_url }) }}"><span class="icon icon-portrait"></span> {{ 'Contact' | trans }}</a>
         </aside>
         <!-- End - contact -->
 

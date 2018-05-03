@@ -8,6 +8,21 @@
 function _site_collect_theme_settings() {
   $settings = [];
 
+  // Header bar
+  $settings['header_bar']['tour_url'] = theme_get_setting('tour_url');
+  $settings['header_bar']['contact_url'] = theme_get_setting('contact_url');
+
+  // Contact information
+  $settings['contact_information']['business_owner_name'] = theme_get_setting('business_owner_name');
+  $settings['contact_information']['business_startup_year'] = theme_get_setting('business_startup_year');
+  $settings['contact_information']['address'] = theme_get_setting('address');
+  $settings['contact_information']['zipcode'] = theme_get_setting('zipcode');
+  $settings['contact_information']['city'] = theme_get_setting('city');
+  $settings['contact_information']['phone_system'] = theme_get_setting('phone_system');
+  $settings['contact_information']['phone_readable'] = theme_get_setting('phone_readable');
+  $settings['contact_information']['email'] = theme_get_setting('email');
+  $settings['contact_information']['working_hours'] = theme_get_setting('working_hours');
+
   // Social
   $settings['social']['facebook']['active'] = theme_get_setting('facebook');
   $settings['social']['facebook']['url'] = theme_get_setting('facebook_url');

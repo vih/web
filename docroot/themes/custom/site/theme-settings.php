@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\node\Entity\Node;
+
 function site_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
@@ -13,7 +15,101 @@ function site_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStat
     '#weight' => -10,
   ];
 
-  // Fieldset
+  // Contact URL
+  $form['header_bar'] = [
+    '#type' => 'details',
+    '#title' => t('Header - bar'),
+    '#group' => 'bellcom',
+  ];
+  $form['header_bar']['contact_url'] = [
+    '#type' => 'entity_autocomplete',
+    '#target_type' => 'node',
+    '#selection_settings' => ['target_bundles' => ['page', 'news', 'event']],
+    '#title' => t('Contact URL'),
+    '#default_value' => !empty(theme_get_setting('contact_url'))? Node::load(theme_get_setting('contact_url')) : NULL,
+  ];
+  $form['header_bar']['tour_url'] = [
+    '#type' => 'entity_autocomplete',
+    '#target_type' => 'node',
+    '#selection_settings' => ['target_bundles' => ['page', 'news', 'event']],
+    '#title' => t('Tour URL'),
+    '#default_value' => !empty(theme_get_setting('tour_url'))? Node::load(theme_get_setting('tour_url')) : NULL,
+  ];
+
+  // Contact information
+  $form['contact_information'] = [
+    '#type' => 'details',
+    '#title' => t('Kontaktinformation'),
+    '#group' => 'bellcom',
+  ];
+
+  // Business owner name
+  $form['contact_information']['business_owner_name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Navn'),
+    '#default_value' => theme_get_setting('business_owner_name'),
+  ];
+
+  // Business startup year
+  $form['contact_information']['business_startup_year'] = [
+    '#type' => 'textfield',
+    '#title' => t('Opstartsår'),
+    '#description' => t('Det årstal der vises i copyright. <br>Eks. Copyright <strong><u>2011</u></strong> - ' . date('Y')),
+    '#default_value' => theme_get_setting('business_startup_year'),
+  ];
+
+  // Address
+  $form['contact_information']['address'] = [
+    '#type' => 'textfield',
+    '#title' => t('Adresse'),
+    '#default_value' => theme_get_setting('address'),
+  ];
+
+  // Zipcode
+  $form['contact_information']['zipcode'] = [
+    '#type' => 'textfield',
+    '#title' => t('Post nr.'),
+    '#default_value' => theme_get_setting('zipcode'),
+  ];
+
+  // City
+  $form['contact_information']['city'] = [
+    '#type' => 'textfield',
+    '#title' => t('By'),
+    '#default_value' => theme_get_setting('city'),
+  ];
+
+  // Phone number
+  $form['contact_information']['phone_system'] = [
+    '#type' => 'textfield',
+    '#title' => t('Telefon'),
+    '#description' => t('HUSK: uden mellemrum og inkl. +45 f.eks.: +4570260085'),
+    '#default_value' => theme_get_setting('phone_system'),
+  ];
+
+  // Phone number - readable
+  $form['contact_information']['phone_readable'] = [
+    '#type' => 'textfield',
+    '#title' => t('Vist telefon nummer'),
+    '#description' => t('Telefonnummeret vist (brug evt. mellemrum så det er let læseligt)'),
+    '#default_value' => theme_get_setting('phone_readable'),
+  ];
+
+  // E-mail address
+  $form['contact_information']['email'] = [
+    '#type' => 'textfield',
+    '#title' => t('E-mail'),
+    '#default_value' => theme_get_setting('email'),
+  ];
+
+  // Working hours
+  $form['contact_information']['working_hours'] = [
+    '#type' => 'textfield',
+    '#title' => t('Åbningstid eller anden info'),
+    '#default_value' => theme_get_setting('working_hours'),
+  ];
+
+  // Social
   $form['social'] = [
     '#type' => 'details',
     '#title' => t('Sociale tjenester'),
