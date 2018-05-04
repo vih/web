@@ -105,6 +105,8 @@ $breakpoint-mobile-to-tablet: "screen and (max-width: #{$screen-sm-max})";
   .layout__header-row--bottom {
     @include layout-header-row-height(67px, 67px, 67px);
 
+    background-color: $body-bg;
+
     border-bottom: 1px solid $border-color;
 
     .layout-navigation {
