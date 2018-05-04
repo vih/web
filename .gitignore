@@ -8,6 +8,8 @@
 /docroot/themes/contrib
 /docroot/sites/default/files
 /docroot/sites/vejle_ih.dd
+/docroot/libraries/cropper
+/docroot/libraries/dropzone
 
 # Ignore Composer-managed dependencies.
 vendor/
