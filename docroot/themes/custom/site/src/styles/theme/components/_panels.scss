@@ -86,7 +86,7 @@
 
       margin-top: -10px;
 
-      content: $icon-info-circle;
+      content: unicode($icon-info-circle);
     }
     &[aria-expanded=false]:after {
       content: "+";
