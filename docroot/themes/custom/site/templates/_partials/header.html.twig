@@ -21,17 +21,21 @@
         </aside>
         <!-- End - contact information -->
 
-        <!-- Begin - tour -->
-        <aside class="layout-header-tour">
-            <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.tour_url }) }}"><span class="icon icon-bookmark-o"></span> {{ 'Tour' | trans }}</a> <span><strong>{{ 'It\'s free' | trans }}</strong></span>
-        </aside>
-        <!-- End - tour -->
+        {% if theme_settings.header_bar.tour_url %}
+            <!-- Begin - tour -->
+            <aside class="layout-header-tour">
+                <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.tour_url }) }}"><span class="icon icon-bookmark-o"></span> {{ 'Tour' | trans }}</a> <span><strong>{{ 'It\'s free' | trans }}</strong></span>
+            </aside>
+            <!-- End - tour -->
+        {% endif %}
 
-        <!-- Begin - contact -->
-        <aside class="layout-header-contact">
-            <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.contact_url }) }}"><span class="icon icon-portrait"></span> {{ 'Contact' | trans }}</a>
-        </aside>
-        <!-- End - contact -->
+        {% if theme_settings.header_bar.contact_url %}
+            <!-- Begin - contact -->
+            <aside class="layout-header-contact">
+                <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.contact_url }) }}"><span class="icon icon-portrait"></span> {{ 'Contact' | trans }}</a>
+            </aside>
+            <!-- End - contact -->
+        {% endif %}
 
         <!-- Begin - spacer -->
         <!-- Add spacer, to align navigation to the right -->

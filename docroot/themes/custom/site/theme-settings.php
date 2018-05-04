@@ -2,7 +2,10 @@
 
 use Drupal\node\Entity\Node;
 
-function site_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state) {
+function site_form_system_theme_settings_alter(
+  &$form,
+  Drupal\Core\Form\FormStateInterface $form_state
+) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -26,14 +29,14 @@ function site_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStat
     '#target_type' => 'node',
     '#selection_settings' => ['target_bundles' => ['page', 'news', 'event']],
     '#title' => t('Contact URL'),
-    '#default_value' => !empty(theme_get_setting('contact_url'))? Node::load(theme_get_setting('contact_url')) : NULL,
+    '#default_value' => !empty(theme_get_setting('contact_url')) ? Node::load(theme_get_setting('contact_url')) : NULL,
   ];
   $form['header_bar']['tour_url'] = [
     '#type' => 'entity_autocomplete',
     '#target_type' => 'node',
     '#selection_settings' => ['target_bundles' => ['page', 'news', 'event']],
     '#title' => t('Tour URL'),
-    '#default_value' => !empty(theme_get_setting('tour_url'))? Node::load(theme_get_setting('tour_url')) : NULL,
+    '#default_value' => !empty(theme_get_setting('tour_url')) ? Node::load(theme_get_setting('tour_url')) : NULL,
   ];
 
   // Contact information
