@@ -69,7 +69,7 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
       width: $button-icon-wrapper-width;
 
-      content: $icon-arrow-right;
+      content: unicode($icon-arrow-right);
 
       color: #fff;
 
