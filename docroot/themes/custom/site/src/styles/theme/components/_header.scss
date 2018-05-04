@@ -120,7 +120,7 @@ $breakpoint-mobile-to-tablet: "screen and (max-width: #{$screen-sm-max})";
             display: inline-block;
             font-size: $font-size-large;
             color: $headings-color;
-            content: $icon-angle-down;
+            content: unicode($icon-angle-down);
             margin-left: 6px;
           }
         }
@@ -148,7 +148,7 @@ $breakpoint-mobile-to-tablet: "screen and (max-width: #{$screen-sm-max})";
           display: inline-block;
           font-size: $font-size-large;
           color: $headings-color;
-          content: $icon-angle-down;
+          content: unicode($icon-angle-down);
           margin-left: 6px;
         }
       }

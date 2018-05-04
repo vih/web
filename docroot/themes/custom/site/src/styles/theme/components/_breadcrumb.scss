@@ -53,7 +53,7 @@ $breadcrumb-active-background-color: $brand-primary;
           @extend .icon;
           display: inline-block;
 
-          content: $icon-home;
+          content: unicode($icon-home);
 
           font-size: $font-size-base;
           color: inherit;
