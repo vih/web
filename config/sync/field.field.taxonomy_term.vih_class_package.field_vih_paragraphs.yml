@@ -18,7 +18,6 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
-    - paragraphs.paragraphs_type.vih_single_class_group
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
     - taxonomy.vocabulary.vih_class_package
@@ -53,7 +52,6 @@ settings:
       user_quote: user_quote
       video: video
       vih_class_groups_accordion: vih_class_groups_accordion
-      vih_single_class_group: vih_single_class_group
       vih_teacher_class_description: vih_teacher_class_description
       vih_webform: vih_webform
     target_bundles_drag_drop:
@@ -90,6 +88,9 @@ settings:
       social_media_embed:
         enabled: true
         weight: 36
+      long_course_list_contain_class:
+        weight: 37
+        enabled: false
       user_quote:
         enabled: true
         weight: 37
@@ -108,6 +109,9 @@ settings:
       vih_option_group:
         weight: 42
         enabled: false
+      vih_content_grid:
+        weight: 43
+        enabled: false
       vih_ordered_course_period:
         weight: 43
         enabled: false
@@ -124,8 +128,8 @@ settings:
         weight: 47
         enabled: false
       vih_single_class_group:
-        enabled: true
         weight: 48
+        enabled: false
       vih_teacher_class_description:
         enabled: true
         weight: 49

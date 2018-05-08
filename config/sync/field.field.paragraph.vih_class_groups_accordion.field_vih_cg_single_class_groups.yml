@@ -12,7 +12,7 @@ id: paragraph.vih_class_groups_accordion.field_vih_cg_single_class_groups
 field_name: field_vih_cg_single_class_groups
 entity_type: paragraph
 bundle: vih_class_groups_accordion
-label: 'Single Class Groups'
+label: 'Fag gruppe'
 description: ''
 required: false
 translatable: false
@@ -31,16 +31,13 @@ settings:
       1_column_action_centered:
         weight: 27
         enabled: false
-      class:
-        weight: 28
-        enabled: false
-      class_package:
+      article:
         weight: 29
         enabled: false
-      class_package_accordion:
-        weight: 30
-        enabled: false
       class_packages:
+        weight: 31
+        enabled: false
+      employee:
         weight: 31
         enabled: false
       event_list:
@@ -49,20 +46,23 @@ settings:
       file:
         weight: 33
         enabled: false
+      gallery:
+        weight: 34
+        enabled: false
       list_of_news_teasers:
         weight: 34
         enabled: false
       long_course_list_:
         weight: 35
         enabled: false
-      news_list:
-        weight: 36
-        enabled: false
-      page_content:
+      long_course_list_contain_class:
         weight: 37
         enabled: false
       short_course_list_:
         weight: 38
+        enabled: false
+      social_media_embed:
+        weight: 39
         enabled: false
       user_quote:
         weight: 39
@@ -75,6 +75,9 @@ settings:
         enabled: false
       vih_course_slot:
         weight: 42
+        enabled: false
+      vih_content_grid:
+        weight: 43
         enabled: false
       vih_option:
         weight: 43
@@ -99,5 +102,8 @@ settings:
         enabled: false
       vih_teacher_class_description:
         weight: 50
+        enabled: false
+      vih_webform:
+        weight: 54
         enabled: false
 field_type: entity_reference_revisions
