@@ -1,10 +1,10 @@
 {% set classes = [
-node.bundle|clean_class,
-node.isPromoted() ? 'is-promoted',
-node.isSticky() ? 'is-sticky',
-not node.isPublished() ? 'is-unpublished',
-view_mode ? view_mode|clean_class,
-'clearfix',
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
 ] %}
 
 <article{{ attributes.addClass(classes) }}>
@@ -13,6 +13,15 @@ view_mode ? view_mode|clean_class,
     <section{{ content_attributes.addClass('sectioned', 'sectioned--content') }}>
         <div class="sectioned__inner">
             <div class="container">
+
+                {% if not node.field_vih_top_banner.value %}
+                    <!-- Begin - heading -->
+                    <div class="sectioned__heading">
+                        <h2 class="sectioned__heading__title">{{ label }}</h2>
+                    </div>
+                    <!-- End - heading -->
+                {% endif %}
+
                 {{ content.body }}
             </div>
         </div>
