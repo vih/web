@@ -432,7 +432,6 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
       unset($variables['content']['field_vih_empty_message']);
       $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_future');
     }
-
   }
 }
 
@@ -635,8 +634,12 @@ function site_preprocess_user(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['view_my_classes_nodes'] = views_embed_view('my_classes_nodes', 'embedded_embedded', $contextual_filter);
-    $variables['content']['view_my_classes_terms'] = views_embed_view('my_classes_terms', 'embedded_embedded', $contextual_filter);
+    if (!empty(views_get_view_result('my_classes_nodes', 'embedded_embedded', $contextual_filter))) {
+      $variables['content']['view_my_classes_nodes'] = views_embed_view('my_classes_nodes', 'embedded_embedded', $contextual_filter);
+    }
+    if (!empty(views_get_view_result('my_classes_terms', 'embedded_embedded', $contextual_filter))) {
+      $variables['content']['view_my_classes_terms'] = views_embed_view('my_classes_terms', 'embedded_embedded', $contextual_filter);
+    }
   }
 }
 

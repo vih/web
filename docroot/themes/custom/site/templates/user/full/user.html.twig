@@ -48,23 +48,25 @@
 
                 </div>
 
-                <div class="row">
-                    <div class="col-xs-12">
+                {% if(content.view_my_classes_nodes or content.view_my_classes_terms) %}
+                    <div class="row">
+                        <div class="col-xs-12">
 
-                        <div class="partial">
-                            <div class="partial__heading">
-                                <h3 class="partial__heading__title">
-                                    {{ 'Classes' | trans }}
-                                </h3>
+                            <div class="partial">
+                                <div class="partial__heading">
+                                    <h3 class="partial__heading__title">
+                                        {{ 'Classes' | trans }}
+                                    </h3>
+                                </div>
+                                <div class="partial__body">
+                                    {{ content.view_my_classes_nodes }}
+                                    {{ content.view_my_classes_terms }}
+                                </div>
                             </div>
-                            <div class="partial__body">
-                                {{ content.view_my_classes_nodes }}
-                                {{ content.view_my_classes_terms }}
-                            </div>
+
                         </div>
-
                     </div>
-                </div>
+                {% endif %}
 
             </div>
         </div>
