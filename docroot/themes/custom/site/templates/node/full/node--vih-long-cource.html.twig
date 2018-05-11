@@ -383,14 +383,16 @@
                                                 {{ content.field_vih_course_week_price }}
                                             </div>
                                         </div>
-                                        <div class="price-table col-sm-12 col-md-3">
-                                            <div class="table-heading">
-                                                {{ "Travel payment"|trans }}
-                                            </div>
-                                            <div class="table-cell">
-                                                DKK {{ content.travel_price|number_format(2, ',', '.') }}
-                                            </div>
-                                        </div>
+                                      {% if content.travel_price > 0 %}                              
+                                          <div class="price-table col-sm-12 col-md-3">
+                                              <div class="table-heading">
+                                                  {{ "Travel payment"|trans }}
+                                              </div>
+                                              <div class="table-cell">
+                                                  DKK {{ content.travel_price|number_format(2, ',', '.') }}
+                                              </div>
+                                          </div>
+                                      {% endif %}
                                     </div>
                                 </div>
                             </div>
