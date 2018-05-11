@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "599ffa20d7b47a110652893df1f02c5e",
+    "content-hash": "ece3c671e2f744da101c3d67eb092f06",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -3471,17 +3471,17 @@
         },
         {
             "name": "drupal/mailchimp",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/mailchimp",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mailchimp-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "c70c4af9dd6abd8929a00b213f98c292981abbb6"
+                "url": "https://ftp.drupal.org/files/projects/mailchimp-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "38ad45cedd660e0504643d338d22c41339d711d2"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -3496,8 +3496,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1514410985",
+                    "version": "8.x-1.6",
+                    "datestamp": "1519758784",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5698,6 +5698,87 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/webform",
                 "issues": "https://drupal.org/project/issues/webform"
+            }
+        },
+        {
+            "name": "drupal/webform_mailchimp",
+            "version": "5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/webform_mailchimp",
+                "reference": "8.x-5.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/webform_mailchimp-8.x-5.3.zip",
+                "reference": "8.x-5.3",
+                "shasum": "b4d04ba28a0733f7e86f996c3778a0d0ba9a2daf"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/mailchimp": "*",
+                "drupal/webform": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-5.x": "5.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-5.3",
+                    "datestamp": "1505251744",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "Todd Zebert",
+                    "homepage": "https://www.drupal.org/user/762250"
+                },
+                {
+                    "name": "blackdog",
+                    "homepage": "https://www.drupal.org/user/110169"
+                },
+                {
+                    "name": "das-peter",
+                    "homepage": "https://www.drupal.org/user/762870"
+                },
+                {
+                    "name": "grisendo",
+                    "homepage": "https://www.drupal.org/user/848238"
+                },
+                {
+                    "name": "hanoii",
+                    "homepage": "https://www.drupal.org/user/23157"
+                },
+                {
+                    "name": "levelos",
+                    "homepage": "https://www.drupal.org/user/54135"
+                },
+                {
+                    "name": "mbovan",
+                    "homepage": "https://www.drupal.org/user/3149657"
+                },
+                {
+                    "name": "miro_dietiker",
+                    "homepage": "https://www.drupal.org/user/227761"
+                }
+            ],
+            "description": "Allows to send Webform submissions to MailChimp lists.",
+            "homepage": "https://www.drupal.org/project/webform_mailchimp",
+            "support": {
+                "source": "http://cgit.drupalcode.org/webform_mailchimp"
             }
         },
         {
