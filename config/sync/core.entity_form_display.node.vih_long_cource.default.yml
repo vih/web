@@ -52,9 +52,8 @@ third_party_settings:
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
-        - field_vih_paragraphs
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tab
       format_settings:
         id: ''
@@ -216,7 +215,7 @@ content:
     region: content
   field_vih_paragraphs:
     type: paragraphs
-    weight: 8
+    weight: 2
     region: content
     settings:
       title: Paragraph

@@ -27,11 +27,9 @@ third_party_settings:
   field_group:
     group_class_package_details:
       children:
-        - name
-        - description
-        - field_short_description
         - field_vih_link_taxo
         - field_vih_cp_image
+        - field_short_description
         - field_vih_class_package_color
       parent_name: ''
       weight: 3
@@ -46,12 +44,11 @@ third_party_settings:
       region: content
     group_misc:
       children:
-        - field_metatag
         - langcode
         - path
         - translation
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -63,11 +60,12 @@ third_party_settings:
       region: content
     group_content:
       children:
+        - name
         - field_vih_heading
         - field_vih_subheading
-        - field_vih_paragraphs
+        - description
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tab
       format_settings:
         id: ''
@@ -77,6 +75,20 @@ third_party_settings:
         required_fields: true
       label: Indhold
       region: content
+    group_top_banner:
+      children:
+        - field_vih_top_banner
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Top banner'
+      region: content
 id: taxonomy_term.vih_class_package.default
 targetEntityType: taxonomy_term
 bundle: vih_class_package
@@ -84,20 +96,20 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 14
+    weight: 17
     settings:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
     region: content
   field_metatag:
-    weight: 18
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   field_short_description:
-    weight: 15
+    weight: 18
     settings:
       rows: 5
       placeholder: ''
@@ -105,7 +117,7 @@ content:
     type: string_textarea
     region: content
   field_vih_class_package_color:
-    weight: 18
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -124,7 +136,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_heading:
-    weight: 11
+    weight: 14
     settings:
       size: 60
       placeholder: ''
@@ -140,7 +152,7 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_vih_paragraphs:
-    weight: 14
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -154,7 +166,7 @@ content:
     type: paragraphs
     region: content
   field_vih_subheading:
-    weight: 13
+    weight: 15
     settings:
       size: 60
       placeholder: ''

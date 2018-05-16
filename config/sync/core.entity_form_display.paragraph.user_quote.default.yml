@@ -26,7 +26,7 @@ third_party_settings:
         - field_vih_background_img
         - field_vih_background_color
       parent_name: ''
-      weight: 6
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -43,21 +43,21 @@ mode: default
 content:
   field_vih_author:
     type: string_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_vih_background_color:
-    weight: 10
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_background_img:
     type: entity_browser_entity_reference
-    weight: 9
+    weight: 5
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -78,7 +78,7 @@ content:
     type: string_textfield
     region: content
   field_vih_link:
-    weight: 5
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -87,7 +87,7 @@ content:
     region: content
   field_vih_person_photo:
     type: entity_browser_file
-    weight: 4
+    weight: 3
     settings:
       entity_browser: image_browser
       field_widget_edit: true
@@ -100,7 +100,7 @@ content:
     third_party_settings: {  }
   field_vih_text:
     type: text_textarea
-    weight: 3
+    weight: 1
     region: content
     settings:
       rows: 5
@@ -109,4 +109,5 @@ content:
 hidden:
   created: true
   status: true
+  translation: true
   uid: true

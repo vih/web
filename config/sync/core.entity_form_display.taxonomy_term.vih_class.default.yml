@@ -28,11 +28,12 @@ third_party_settings:
   field_group:
     group_content:
       children:
+        - name
         - field_vih_heading
         - field_vih_subheading
-        - field_vih_paragraphs
+        - description
       parent_name: ''
-      weight: 3
+      weight: 1
       format_type: tab
       format_settings:
         id: ''
@@ -45,15 +46,11 @@ third_party_settings:
     group_class_details:
       children:
         - field_vih_class_image
-        - name
         - field_short_description
-        - description
         - field_vih_class_color
-        - field_vih_class_material_price
-        - field_vih_class_price_addition
         - field_vih_class_class_packages
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         label: 'Fag detaljer'
@@ -66,12 +63,11 @@ third_party_settings:
       region: content
     group_misc:
       children:
-        - field_metatag
         - langcode
         - translation
         - path
       parent_name: ''
-      weight: 4
+      weight: 6
       format_type: tab
       format_settings:
         id: ''
@@ -81,6 +77,35 @@ third_party_settings:
         required_fields: true
       label: Andet
       region: content
+    group_top_banner:
+      children:
+        - field_vih_top_banner
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Top banner'
+      region: content
+    group_prices:
+      children:
+        - field_vih_class_material_price
+        - field_vih_class_price_addition
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Prices
+      region: content
 id: taxonomy_term.vih_class.default
 targetEntityType: taxonomy_term
 bundle: vih_class
@@ -88,14 +113,14 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 7
+    weight: 8
     settings:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
     region: content
   field_metatag:
-    weight: 18
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -151,7 +176,7 @@ content:
     type: number
     region: content
   field_vih_heading:
-    weight: 16
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -160,7 +185,7 @@ content:
     region: content
   field_vih_paragraphs:
     type: paragraphs
-    weight: 19
+    weight: 2
     region: content
     settings:
       title: Paragraph
@@ -174,7 +199,7 @@ content:
     third_party_settings: {  }
   field_vih_subheading:
     type: string_textfield
-    weight: 18
+    weight: 7
     region: content
     settings:
       size: 60

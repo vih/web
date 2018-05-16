@@ -7,9 +7,8 @@ dependencies:
     - field.field.media.document.field_media_in_library
     - media.type.document
   module:
-    - content_moderation
     - file
-    - path
+    - workbench_moderation
 _core:
   default_config_hash: xFJUl0MccoGPEv1eb_I_XnxzjqvZ8M5HA1G3PBtv9IE
 id: media.document.default
@@ -33,7 +32,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
@@ -46,19 +45,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    settings:
-      display_label: true
-    weight: 100
-    region: content
-    third_party_settings: {  }
 hidden:
   created: true
+  path: true
+  status: true
   uid: true

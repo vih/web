@@ -53,16 +53,16 @@ third_party_settings:
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
-        - field_vih_paragraphs
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
+        label: Indhold
+        formatter: open
         description: ''
         required_fields: true
+        id: ''
+        classes: ''
       label: Indhold
       region: content
     group_misc:
@@ -160,7 +160,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_paragraphs:
-    weight: 9
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs

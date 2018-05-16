@@ -45,7 +45,7 @@ third_party_settings:
         - field_vih_course_subheading
         - body
       parent_name: ''
-      weight: 3
+      weight: 1
       format_type: tab
       format_settings:
         label: Indhold
@@ -61,14 +61,14 @@ third_party_settings:
         - field_metatag
         - uid
         - created
-        - langcode
         - promote
         - sticky
         - path
-        - translation
         - scheduled_update
+        - langcode
+        - translation
       parent_name: ''
-      weight: 5
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -123,7 +123,7 @@ content:
     type: string_textfield
     region: content
   field_vih_paragraphs:
-    weight: 4
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -152,14 +152,14 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 14
+    weight: 18
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 17
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -167,27 +167,27 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 14
     third_party_settings: {  }
     region: content
   scheduled_update:
     type: inline_entity_form_complex
-    weight: 19
+    weight: 17
+    region: content
     settings:
-      override_labels: false
+      form_mode: default
       label_singular: ''
       label_plural: ''
       allow_new: true
-      allow_existing: false
       match_operator: CONTAINS
-      form_mode: default
+      override_labels: false
+      allow_existing: false
     third_party_settings: {  }
-    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 15
     third_party_settings: {  }
     region: content
   title:
@@ -199,7 +199,7 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
