@@ -17,9 +17,14 @@ function site_preprocess_html(&$variables) {
  */
 function site_preprocess_page(array &$variables) {
   $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+  $uid = \Drupal::routeMatch()->getRawParameter('user');
 
   if ($tid) {
     $variables['term'] = \Drupal\taxonomy\Entity\Term::load($tid);
+  }
+
+  if ($uid) {
+    $variables['user_displayed'] = User::load($uid);
   }
 
   // Theme settings

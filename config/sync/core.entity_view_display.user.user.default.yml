@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_vih_top_banner
+    - field.field.user.user.field_vih_top_banner_text
     - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
@@ -14,7 +15,6 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_qualifications
-    - field.field.user.user.field_vih_user_title
     - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
@@ -39,8 +39,17 @@ content:
     label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
+    region: content
+  field_vih_top_banner_text:
+    weight: 13
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_vih_user_descr:
     weight: 4
@@ -113,14 +122,6 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_vih_user_title:
-    type: string
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
   field_vih_user_birthday: true
   field_vih_user_type_id: true

@@ -15,7 +15,6 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_qualifications
-    - field.field.user.user.field_vih_user_title
     - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
@@ -87,7 +86,6 @@ hidden:
   field_vih_user_descr: true
   field_vih_user_paragraphs: true
   field_vih_user_qualifications: true
-  field_vih_user_title: true
   field_vih_user_type_id: true
   langcode: true
   member_for: true

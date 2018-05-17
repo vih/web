@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.media_browser
     - field.field.user.user.field_vih_top_banner
+    - field.field.user.user.field_vih_top_banner_text
     - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
@@ -15,7 +16,6 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_qualifications
-    - field.field.user.user.field_vih_user_title
     - field.field.user.user.field_vih_user_type_id
     - image.style.thumbnail
   module:
@@ -54,7 +54,7 @@ third_party_settings:
         - field_vih_user_qualifications
         - field_vih_user_paragraphs
       parent_name: ''
-      weight: 2
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -66,8 +66,8 @@ third_party_settings:
       region: content
     group_banner:
       children:
+        - field_vih_top_banner_text
         - field_vih_top_banner
-        - field_vih_user_title
       parent_name: ''
       weight: 0
       format_type: tab
@@ -88,7 +88,7 @@ third_party_settings:
         - translation
         - path
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -104,7 +104,7 @@ third_party_settings:
         - field_vih_user_phone
         - field_vih_user_email
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -131,7 +131,7 @@ content:
     third_party_settings: {  }
   field_vih_top_banner:
     type: entity_browser_entity_reference
-    weight: 1
+    weight: 3
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -143,6 +143,14 @@ content:
       open: true
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_user_birthday:
     type: datetime_default
     weight: 5
@@ -227,14 +235,6 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_vih_user_title:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_vih_user_type_id:
     type: entity_reference_autocomplete
     weight: 21

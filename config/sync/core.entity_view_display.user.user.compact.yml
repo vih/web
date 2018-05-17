@@ -15,7 +15,6 @@ dependencies:
     - field.field.user.user.field_vih_user_phone
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_qualifications
-    - field.field.user.user.field_vih_user_title
     - field.field.user.user.field_vih_user_type_id
     - image.style.vih_person_teaser
   module:
@@ -73,14 +72,6 @@ content:
     settings:
       image_style: vih_person_teaser
       image_link: ''
-    third_party_settings: {  }
-    region: content
-  field_vih_user_title:
-    type: string
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
     third_party_settings: {  }
     region: content
 hidden:
