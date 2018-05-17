@@ -1,0 +1,7 @@
+vies_application.application_form:
+  path: '/ansogning'
+  defaults:
+    _form: '\Drupal\vies_application\Form\ApplicationForm'
+    _title: 'Application'
+  requirements:
+    _access: 'TRUE'
