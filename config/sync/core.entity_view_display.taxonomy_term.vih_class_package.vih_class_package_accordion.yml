@@ -9,7 +9,6 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
-    - field.field.taxonomy_term.vih_class_package.field_vih_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner
@@ -19,7 +18,6 @@ dependencies:
     - image
     - panelizer
     - text
-    - url_embed
 third_party_settings:
   panelizer:
     enable: false
@@ -48,13 +46,6 @@ content:
       image_link: ''
     third_party_settings: {  }
     region: content
-  field_vih_link_taxo:
-    type: url_embed
-    weight: 4
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_metatag: true
   field_short_description: true

@@ -8,14 +8,12 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
     - field.field.taxonomy_term.vih_class_package.field_vih_heading
-    - field.field.taxonomy_term.vih_class_package.field_vih_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_reference_revisions
-    - link
     - metatag
     - panelizer
     - text
@@ -59,18 +57,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_vih_link_taxo:
-    type: link
-    weight: 5
-    region: content
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
   field_vih_paragraphs:
     weight: 6
     label: hidden
