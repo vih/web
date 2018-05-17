@@ -1,0 +1,21 @@
+uuid: 2e1cbfa5-ebf1-4eaf-88b5-d45006108176
+langcode: da
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_vih_top_banner_text
+field_name: field_vih_top_banner_text
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

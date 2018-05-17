@@ -9,10 +9,10 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_short_description
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
-    - field.field.taxonomy_term.vih_class_package.field_vih_heading
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner
+    - field.field.taxonomy_term.vih_class_package.field_vih_top_banner_text
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
@@ -25,7 +25,6 @@ third_party_settings:
   field_group:
     group_class_package_details:
       children:
-        - field_vih_link_taxo
         - field_vih_cp_image
         - field_short_description
         - field_vih_class_package_color
@@ -75,6 +74,7 @@ third_party_settings:
       region: content
     group_top_banner:
       children:
+        - field_vih_top_banner_text
         - field_vih_top_banner
       parent_name: ''
       weight: 0
@@ -133,14 +133,6 @@ content:
       view_mode: default
     third_party_settings: {  }
     region: content
-  field_vih_heading:
-    weight: 14
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_vih_paragraphs:
     weight: 2
     settings:
@@ -165,7 +157,7 @@ content:
     region: content
   field_vih_top_banner:
     type: entity_browser_entity_reference
-    weight: 1
+    weight: 3
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -177,6 +169,14 @@ content:
       open: true
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 19

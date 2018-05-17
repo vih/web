@@ -51,8 +51,8 @@
                                         <h1 class="banner__heading__title">{{ node.title.value }}</h1>
                                     {% elseif user_displayed.field_vih_top_banner_text.value %}
                                         <h1 class="banner__heading__title">{{ user_displayed.field_vih_top_banner_text.value }}</h1>
-                                    {% elseif term.name.value %}
-                                        <h1 class="banner__heading__title">{{ term.name.value }}</h1>
+                                    {% elseif term.field_vih_top_banner_text.value %}
+                                        <h1 class="banner__heading__title">{{ term.field_vih_top_banner_text.value }}</h1>
                                     {% elseif page['#title'] %}
                                         <h1 class="banner__heading__title">{{ page['#title'] }}</h1>
                                     {% endif %}
