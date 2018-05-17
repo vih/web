@@ -14,7 +14,6 @@ dependencies:
     - node.type.news
   module:
     - panelizer
-    - paragraphs
     - text
     - user
 third_party_settings:
@@ -36,17 +35,11 @@ content:
       trim_length: 100
     third_party_settings: {  }
     region: content
-  field_vih_paragraphs:
-    type: paragraph_summary
-    weight: 6
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   field_metatag: true
   field_vih_image: true
   field_vih_news_tags: true
+  field_vih_paragraphs: true
   field_vih_top_banner: true
   langcode: true
   links: true

@@ -1,16 +1,16 @@
-uuid: ce843411-b4f6-4850-8d8c-2745ce37417a
+uuid: 1634401d-3e8e-442c-ab03-17a5838c190e
 langcode: da
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_vih_link
-    - paragraphs.paragraphs_type.1_column_action_centered
+    - paragraphs.paragraphs_type.vih_content_grid
   module:
     - link
-id: paragraph.1_column_action_centered.field_vih_link
+id: paragraph.vih_content_grid.field_vih_link
 field_name: field_vih_link
 entity_type: paragraph
-bundle: 1_column_action_centered
+bundle: vih_content_grid
 label: Link
 description: ''
 required: false

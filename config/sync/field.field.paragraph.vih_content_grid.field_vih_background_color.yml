@@ -1,0 +1,23 @@
+uuid: 512fbc0e-cc8d-432a-b162-aa391042118e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_color
+    - paragraphs.paragraphs_type.vih_content_grid
+  module:
+    - options
+id: paragraph.vih_content_grid.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+bundle: vih_content_grid
+label: Baggrundsfarve
+description: 'Vælg hvilken baggrundsfarve denne sektion skal have.'
+required: true
+translatable: true
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string
