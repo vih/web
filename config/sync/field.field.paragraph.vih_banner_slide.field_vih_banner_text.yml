@@ -1,0 +1,19 @@
+uuid: 0bc036f2-6968-446f-8553-c1e671f036e7
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_banner_text
+    - paragraphs.paragraphs_type.vih_banner_slide
+id: paragraph.vih_banner_slide.field_vih_banner_text
+field_name: field_vih_banner_text
+entity_type: paragraph
+bundle: vih_banner_slide
+label: 'Tekst på banner'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,36 +4,22 @@ status: true
 dependencies:
   config:
     - block_content.type.banner
-    - field.field.block_content.banner.field_vih_image
-    - field.field.block_content.banner.field_vih_link
-    - image.style.banner
+    - field.field.block_content.banner.field_vih_banner_slides
   module:
-    - image
-    - link
+    - entity_reference_revisions
 id: block_content.banner.default
 targetEntityType: block_content
 bundle: banner
 mode: default
 content:
-  field_vih_image:
-    type: image_url
-    weight: 1
-    region: content
+  field_vih_banner_slides:
+    type: entity_reference_revisions_entity_view
+    weight: 3
     label: hidden
     settings:
-      image_style: banner
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-  field_vih_link:
-    weight: 2
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
     region: content
 hidden:
   langcode: true

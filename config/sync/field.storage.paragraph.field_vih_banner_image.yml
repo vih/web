@@ -1,23 +1,23 @@
-uuid: cb542e00-e839-45b1-a58b-3ce4e3578e7a
+uuid: 613be8b5-f4ac-4d95-9c0a-53d8570fed4a
 langcode: da
 status: true
 dependencies:
   module:
-    - block_content
     - file
     - image
-id: block_content.field_vih_image
-field_name: field_vih_image
-entity_type: block_content
+    - paragraphs
+id: paragraph.field_vih_banner_image
+field_name: field_vih_banner_image
+entity_type: paragraph
 type: image
 settings:
   uri_scheme: public
   default_image:
-    uuid: null
+    uuid: ''
     alt: ''
     title: ''
-    width: 1275
-    height: 850
+    width: null
+    height: null
   target_type: file
   display_field: false
   display_default: false

@@ -1,0 +1,23 @@
+uuid: ef8a6bb0-604e-469a-9e03-4693e97a9b95
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_link
+    - paragraphs.paragraphs_type.vih_banner_slide
+  module:
+    - link
+id: paragraph.vih_banner_slide.field_vih_link
+field_name: field_vih_link
+entity_type: paragraph
+bundle: vih_banner_slide
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

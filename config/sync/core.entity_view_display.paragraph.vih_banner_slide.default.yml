@@ -1,0 +1,48 @@
+uuid: 76462ad0-92d9-44aa-924a-dc18d9edca80
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_banner_slide.field_vih_banner_image
+    - field.field.paragraph.vih_banner_slide.field_vih_banner_text
+    - field.field.paragraph.vih_banner_slide.field_vih_link
+    - image.style.banner
+    - paragraphs.paragraphs_type.vih_banner_slide
+  module:
+    - image
+    - link
+id: paragraph.vih_banner_slide.default
+targetEntityType: paragraph
+bundle: vih_banner_slide
+mode: default
+content:
+  field_vih_banner_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: banner
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_vih_banner_text:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

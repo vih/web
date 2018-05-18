@@ -1,0 +1,24 @@
+uuid: 4b4baa4f-8238-4f1a-a636-ce5843b6841e
+langcode: da
+status: true
+dependencies:
+  config:
+    - views.view.banner_slideshow
+  module:
+    - views
+  theme:
+    - site
+id: views_block__banner_slideshow_block_1
+theme: site
+region: banner
+weight: 0
+provider: null
+plugin: 'views_block:banner_slideshow-block_1'
+settings:
+  id: 'views_block:banner_slideshow-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

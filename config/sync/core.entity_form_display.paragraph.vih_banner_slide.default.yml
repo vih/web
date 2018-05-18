@@ -1,0 +1,52 @@
+uuid: 9130b9c5-6cdd-49b3-8182-30e16bd9b3e1
+langcode: da
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.vih_banner_slide.field_vih_banner_image
+    - field.field.paragraph.vih_banner_slide.field_vih_banner_text
+    - field.field.paragraph.vih_banner_slide.field_vih_link
+    - paragraphs.paragraphs_type.vih_banner_slide
+  module:
+    - entity_browser
+    - link
+    - workbench_moderation
+id: paragraph.vih_banner_slide.default
+targetEntityType: paragraph
+bundle: vih_banner_slide
+mode: default
+content:
+  field_vih_banner_image:
+    type: entity_browser_file
+    weight: 0
+    settings:
+      entity_browser: image_browser
+      field_widget_edit: true
+      field_widget_remove: true
+      view_mode: default
+      preview_image_style: thumbnail
+      open: true
+      selection_mode: selection_append
+    region: content
+    third_party_settings: {  }
+  field_vih_banner_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true
