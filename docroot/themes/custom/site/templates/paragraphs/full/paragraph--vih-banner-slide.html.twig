@@ -1,0 +1,31 @@
+<div class="banner banner--large" style="background-image: url({{ content.field_vih_banner_image[0]['#markup'] }})">
+
+    <!-- Begin - logo -->
+    <div class="banner__logo">
+        <svg width='100%' height='100%' viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="107 0, 0 100, 100 100" fill="rgba(0, 188, 255, 0.85)" id="svgoverlay" />
+        </svg>
+
+        <div class="banner__logo__image"></div>
+    </div>
+    <!-- End - logo -->
+
+    <div class="banner__inner">
+        <div class="container">
+
+            {% if paragraph.field_vih_banner_text.value %}
+            <div class="banner__heading">
+                <h1 class="banner__heading__title">{{ paragraph.field_vih_banner_text.value }}</h1>
+            </div>
+            {% endif %}
+
+            <div class="banner__body">
+
+                {# Begin - link #}
+                {{ content.field_vih_link }}
+                {# End - link #}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -342,6 +342,14 @@ function site_preprocess_paragraph(&$variables) {
 
 /**
  * Implements hook_preprocess_hook().
+ * For banner slide.
+ */
+function site_preprocess_paragraph__vih_banner_slide(&$variables) {
+  $paragraph = $variables['paragraph'];
+}
+
+/**
+ * Implements hook_preprocess_hook().
  */
 function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
   $paragraph = $variables['paragraph'];

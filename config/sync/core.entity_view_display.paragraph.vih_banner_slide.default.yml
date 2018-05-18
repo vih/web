@@ -21,9 +21,8 @@ content:
     label: hidden
     settings:
       image_style: banner
-      image_link: ''
     third_party_settings: {  }
-    type: image
+    type: image_url
     region: content
   field_vih_banner_text:
     weight: 1

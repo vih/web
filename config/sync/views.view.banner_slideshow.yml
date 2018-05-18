@@ -69,9 +69,9 @@ display:
           slideSpeed: '200'
           paginationSpeed: '800'
           rewindSpeed: '1000'
-          autoPlay: 0
+          autoPlay: 1
           stopOnHover: 0
-          navigation: 1
+          navigation: 0
           prevText: forrige
           nextText: næste
           rewindNav: 1
@@ -85,6 +85,11 @@ display:
           transitionStyle: fade
       row:
         type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
         field_vih_banner_slides:
           id: field_vih_banner_slides
@@ -129,7 +134,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -140,7 +145,7 @@ display:
             view_mode: default
           group_column: ''
           group_columns: {  }
-          group_rows: true
+          group_rows: false
           delta_limit: 0
           delta_offset: 0
           delta_reversed: false
