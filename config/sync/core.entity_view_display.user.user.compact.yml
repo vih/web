@@ -77,6 +77,7 @@ content:
 hidden:
   field_banner: true
   field_vih_top_banner: true
+  field_vih_top_banner_text: true
   field_vih_user_birthday: true
   field_vih_user_email: true
   field_vih_user_job_title: true
