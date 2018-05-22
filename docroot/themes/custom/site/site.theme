@@ -640,6 +640,7 @@ function site_preprocess_user(&$variables) {
   $view_mode = $variables['elements']['#view_mode'];
   $variables['attributes']['class'][] = 'user';
   $variables['attributes']['class'][] = $variables['elements']['#view_mode'];
+  $variables['url'] = $user->toUrl();
 
   if ($view_mode === 'full') {
     $ids = [];
