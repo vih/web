@@ -26,7 +26,6 @@
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "^1.6",
         "drupal/bootstrap": "3.11",
-        "drupal/devel": "^1.2",
         "drupal/paragraphs": "1.x-dev",
         "drupal/linkit": "^4.0",
         "acquia/lightning": "~2.2.6",

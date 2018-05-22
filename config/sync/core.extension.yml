@@ -23,7 +23,6 @@ module:
   datetime: 0
   datetime_tweaks: 0
   dblog: 0
-  devel: 0
   editor: 0
   embed: 0
   entity: 0
@@ -45,7 +44,6 @@ module:
   image: 0
   image_widget_crop: 0
   inline_entity_form: 0
-  kint: 0
   language: 0
   layout_discovery: 0
   lightning: 0
