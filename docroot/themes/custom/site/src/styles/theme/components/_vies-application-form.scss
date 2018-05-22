@@ -1,0 +1,27 @@
+// |--------------------------------------------------------------------------
+// |
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - #application-form
+// |
+
+#application-form {
+  #coursePeriods {
+    .boxy {
+      margin-bottom: 0;
+    }
+  }
+
+  #questions {
+    .panel-title {
+      padding: 14px 15px;
+    }
+
+    .panel {
+      h5 {
+        margin-top: 0;
+      }
+    }
+  }
+}
