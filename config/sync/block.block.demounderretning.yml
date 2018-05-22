@@ -16,7 +16,7 @@ provider: null
 plugin: 'block_content:64d2939b-865e-4f01-bfc7-31b6392fd55f'
 settings:
   id: 'block_content:64d2939b-865e-4f01-bfc7-31b6392fd55f'
-  label: 'Demo underretning'
+  label: 'Highlighted Feature Bottom'
   provider: block_content
   label_display: visible
   status: true
