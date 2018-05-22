@@ -48,7 +48,7 @@ phone_readable: '+45 7582 0811'
 email: kontor@vih.dk
 working_hours: 8.00-15.00
 facebook: 1
-facebook_url: 'http://twitter.com/vihdk'
+facebook_url: 'https://www.facebook.com/vihdk/'
 facebook_tooltip: ''
 twitter: 1
 twitter_url: 'http://twitter.com/vihdk'
@@ -57,7 +57,7 @@ googleplus: 0
 googleplus_url: ''
 googleplus_tooltip: ''
 instagram: 1
-instagram_url: 'http://twitter.com/vihdk'
+instagram_url: 'http://instagram.com/vihdk'
 instagram_tooltip: ''
 linkedin: 0
 linkedin_url: ''
