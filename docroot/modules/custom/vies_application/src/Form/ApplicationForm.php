@@ -27,9 +27,6 @@ class ApplicationForm extends FormBase {
     $form['#attached']['library'][] = 'vih_subscription/vih-subscription-terms-and-conditions-modal';
     $form['#theme'] = 'vies_application_form';
 
-    // Get form state storage.
-    $storage = $form_state->getStorage();
-
     $nids = \Drupal::entityQuery('node')->condition('type', 'vih_long_cource')->execute();
     $options = [];
     foreach (Node::loadMultiple($nids) as $node) {
@@ -54,6 +51,7 @@ class ApplicationForm extends FormBase {
     ];
     $nid = $default_value;
 
+    // Empty wrapper for periords.
     $form['periodsWrapper'] = [
       '#type' => 'container',
       '#attributes' => ['id' => 'availablePeriods'],
@@ -63,10 +61,11 @@ class ApplicationForm extends FormBase {
       return $form;
     }
 
-    if (isset($storage['course']) && $storage['course'] != $nid) {
+    // Reset form when course has been changed.
+    if ($form_state->get('course') != $nid) {
       $this->removeInputValue('periods', $form_state);
     }
-    $storage['course'] = $nid;
+    $form_state->set('course', $nid);
     $course = Node::load($nid);
     $periods = $course->field_vih_course_periods->referencedEntities();
     $options = [];
@@ -91,11 +90,11 @@ class ApplicationForm extends FormBase {
       ],
     ];
 
-
     $form['periodsWrapper']['coursePeriods'] = [
       '#type' => 'container',
       '#theme' => 'vies_application_periods',
       '#attributes' => ['id' => 'coursePeriods'],
+      // Empty wrapper for questions.
       'questions' => [
         '#type' => 'container',
         '#attributes' => ['id' => 'questions'],
@@ -106,21 +105,21 @@ class ApplicationForm extends FormBase {
     $nid = $periods_default_value;
     $reset_periods = FALSE;
     if (!empty($nid)) {
-      if (isset($storage['period']) && $storage['period'] != $nid) {
+      if ($form_state->get('period') != $nid) {
         $reset_periods = TRUE;
       }
-      $storage['period'] = $nid;
+      $form_state->set('period', $nid);
       $course_period = Node::load($nid);
       $period_delta = 0;
       // Composing available classes selection per CourseSlot for each
       // CoursePeriod.
       // CoursePeriods render helping array.
-      $form['periodsWrapper']['coursePeriods']['#coursePeriods'][$period_delta] = array(
+      $form['periodsWrapper']['coursePeriods']['#coursePeriods'][$period_delta] = [
         'title' => $course_period->getTitle(),
-        'courseSlots' => array(),
-      );
+        'courseSlots' => [],
+      ];
 
-      $not_mandatory_course_slots = array();
+      $not_mandatory_course_slots = [];
       foreach ($course_period->field_vih_cp_course_slots->referencedEntities() as $course_slot) {
         // Adding only not mandatory course slots.
         if (!$course_slot->field_vih_cs_mandatory->value) {
@@ -138,16 +137,16 @@ class ApplicationForm extends FormBase {
         }
 
         // CourseSlot render helping array.
-        $form['periodsWrapper']['coursePeriods']['#coursePeriods'][$period_delta]['courseSlots'][$slot_delta] = array(
+        $form['periodsWrapper']['coursePeriods']['#coursePeriods'][$period_delta]['courseSlots'][$slot_delta] = [
           'title' => $course_slot->field_vih_cs_title->value,
-          'availableClasses' => array(
+          'availableClasses' => [
             'cid' => $available_classes_cid,
-          ),
-        );
+          ],
+        ];
 
         // Creating real input-ready fields.
-        $radios_options = array();
-        $classes_radio_selections = array();
+        $radios_options = [];
+        $classes_radio_selections = [];
         foreach ($course_slot->field_vih_cs_classes->referencedEntities() as $class) {
           // Title is being handled in css depending on button
           // state and active language: see _radio-selection/_vih-class.scss
@@ -168,6 +167,7 @@ class ApplicationForm extends FormBase {
         ];
       }
 
+      // Load questions from classes terms.
       $values = $form_state->getValues();
       $pattern = '/^course-period-(\d)-courseSlot-(\d)-availableClasses$/';
       foreach (preg_grep($pattern, array_keys($values)) as $radio_key) {
@@ -186,21 +186,21 @@ class ApplicationForm extends FormBase {
         }
         if (!empty($questions)) {
           $form['periodsWrapper']['coursePeriods']['questions'][$class->id()] = array_merge([
-            '#type' => 'details',
-            '#open' => TRUE,
-            '#title' => $class->getName(),
+            '#type' => 'container',
+            '#theme' => 'vies_application_questions',
+            '#title' => $this->t('@class_name questions', ['@class_name' => $class->getName()]),
           ], $questions);
         }
       }
     }
 
-    // Set form_state storage.
-    $form_state->setStorage($storage);
+    $this->buildApplicationFormElements($form, $form_state);
 
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
     ];
+    $form_state->setCached(FALSE);
 
     return $form;
   }
@@ -245,6 +245,40 @@ class ApplicationForm extends FormBase {
   }
 
   /**
+   * Callback for selects and returns the container with the parents in it.
+   */
+  public function addmoreParentCallback(array &$form, FormStateInterface $form_state) {
+    return $form['parentsWrapper']['parents'];
+  }
+
+  /**
+   * Submit handler for the "add-one-more" button.
+   *
+   * Increments the max counter and causes a rebuild.
+   */
+  public function addOneParent(array &$form, FormStateInterface $form_state) {
+    $parents_field = $form_state->get('num_parents');
+    $add_button = $parents_field + 1;
+    $form_state->set('num_parents', $add_button);
+    $form_state->setRebuild();
+  }
+
+  /**
+   * Submit handler for the "remove one" button.
+   *
+   * Decrements the max counter and causes a form rebuild.
+   */
+  public function removeParentCallback(array &$form, FormStateInterface $form_state) {
+    $parents_field = $form_state->get('num_parents');
+    if ($parents_field > 1) {
+      $remove_button = $parents_field - 1;
+      $form_state->set('num_parents', $remove_button);
+    }
+    $form_state->setRebuild();
+  }
+
+
+  /**
    * Helper function to remove value from user input.
    *
    * @param string $key
@@ -261,4 +295,229 @@ class ApplicationForm extends FormBase {
     $form_state->unsetValue($key);
   }
 
+  /**
+   * Helper function to build application form elements.
+   *
+   * @param array $form
+   *   The form array.
+   * @param FormStateInterface $form_state
+   *   Form state object.
+   */
+  private function buildApplicationFormElements(array &$form, FormStateInterface $form_state) {
+    // Personal data - left side.
+    $form['personalDataWrapper'] = [
+      '#type' => 'container',
+      '#title' => $this->t('About you'),
+      '#theme' => 'vies_application_section',
+    ];
+    $personal_data = $this->getPersonalDataForm();
+    $personal_data['left']['sex'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Sex'),
+      '#options' => [
+        'm' => $this->t('Male'),
+        'f' => $this->t('Female'),
+      ],
+      '#empty_label' => 'None',
+      '#required' => TRUE,
+    ];
+
+    $form['personalDataWrapper']['data'] = $personal_data;
+
+    $about_school = [
+      'schoolFrom' => [
+        '#type' => 'textarea',
+        '#title' => $this->t('What school are you from?'),
+        '#wrapper_attributes' => ['class' => ['col-md-12']],
+      ],
+      'schoolHowItsGoing' => [
+        '#type' => 'textarea',
+        '#title' => $this->t('How are you going to school?'),
+        '#wrapper_attributes' => ['class' => ['col-md-12']],
+      ],
+      'schoolSubjects' => [
+        '#type' => 'textarea',
+        '#title' => $this->t('What subjects do you like and why?'),
+        '#wrapper_attributes' => ['class' => ['col-md-12']],
+      ]
+    ];
+    $form['aboutSchool'] = [
+      '#type' => 'container',
+      '#title' => $this->t('About to go to school'),
+      '#theme' => 'vies_application_section',
+      'questions' => $about_school,
+    ];
+
+    $form['parentsWrapper'] = [
+      '#type' => 'container',
+      '#title' => $this->t('Parents'),
+      '#theme' => 'vies_application_section',
+    ];
+
+    // Gather the number of parents in the form already.
+    $num_parents = $form_state->get('num_parents');
+    // We have to ensure that there is at least one name field.
+    if ($num_parents === NULL) {
+      $form_state->set('num_parents', 1);
+      $num_parents = 1;
+    }
+
+    $form['parentsWrapper']['#tree'] = TRUE;
+    $form['parentsWrapper']['parents'] = [
+      '#type' => 'container',
+      '#prefix' => '<div id="parents-wrapper">',
+      '#suffix' => '</div>',
+    ];
+
+    for ($i = 0; $i < $num_parents; $i++) {
+      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm($i == 0) +
+      ['#attributes' => ['class' => ['clearfix']]];
+    }
+
+    $form['parentsWrapper']['parents']['actions'] = [
+      '#type' => 'actions',
+      '#attributes' => ['class' => ['col-md-12']],
+    ];
+    $form['parentsWrapper']['parents']['actions']['add_parent'] = [
+      '#type' => 'submit',
+      '#value' => t('Add parent'),
+      '#submit' => ['::addOneParent'],
+      '#ajax' => [
+        'callback' => '::addmoreParentCallback',
+        'wrapper' => 'parents-wrapper',
+      ],
+    ];
+    // If there is more than one parent, add the remove button.
+    if ($num_parents > 1) {
+      $form['parentsWrapper']['parents']['actions']['remove_parent'] = [
+        '#type' => 'submit',
+        '#value' => t('Remove parent'),
+        '#submit' => ['::removeParentCallback'],
+        '#ajax' => [
+          'callback' => '::addmoreParentCallback',
+          'wrapper' => 'parents-wrapper',
+        ],
+      ];
+    }
+
+    $after_school = [
+      'afterSchoolExpectation' => [
+        '#type' => 'textarea',
+        '#title' => $this->t('What do you expect from a year after school?'),
+        '#wrapper_attributes' => ['class' => ['col-md-12']],
+      ],
+      'afterSchoolHeardFrom' => [
+        '#type' => 'textarea',
+        '#title' => $this->t('Where have you heard of Vejle Idrætsefterskole?'),
+        '#wrapper_attributes' => ['class' => ['col-md-12']],
+      ],
+      'afterSchoolComment' => [
+        '#type' => 'textarea',
+        '#title' => $this->t('Comment'),
+        '#wrapper_attributes' => ['class' => ['col-md-12']],
+      ]
+    ];
+    $form['afterSchool'] = [
+      '#type' => 'container',
+      '#title' => $this->t('You in efteskole'),
+      '#theme' => 'vies_application_section',
+      'questions' => $after_school,
+    ];
+
+  }
+
+  /**
+   * Helper function to build personal form elements.
+   */
+  private function getPersonalDataForm($required = TRUE) {
+    $personal_data = [
+      '#type' => 'container',
+      '#theme' => 'vies_application_personal_data',
+    ];
+    $personal_data['left'] = [
+      '#type' => 'container',
+    ];
+    $personal_data['left']['firstName'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Firstname'),
+      '#placeholder' => $this->t('Firstname'),
+      '#required' => $required,
+    ];
+    $personal_data['left']['lastName'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Lastname'),
+      '#placeholder' => $this->t('Lastname'),
+      '#required' => $required,
+    ];
+    $personal_data['left']['cpr'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('CPR'),
+      '#placeholder' => $this->t('CPR'),
+      '#required' => $required,
+    ];
+    $personal_data['left']['telefon'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Phone'),
+      '#placeholder' => $this->t('Phone'),
+      '#required' => $required,
+    ];
+    $personal_data['left']['email'] = [
+      '#type' => 'email',
+      '#title' => $this->t('E-mail address'),
+      '#placeholder' => $this->t('E-mail address'),
+      '#required' => $required,
+    ];
+    $personal_data['left']['newsletter'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Get updates from the school'),
+      '#weight' => 100,
+    ];
+
+    // Personal data - right side.
+    $personal_data['right'] = [
+      '#type' => 'container',
+    ];
+    $personal_data['right']['address'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Address'),
+      '#placeholder' => $this->t('Address'),
+      '#required' => $required,
+    ];
+    $personal_data['right']['house']['houseNumber'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('House no.'),
+      '#placeholder' => $this->t('House no.'),
+      '#required' => $required,
+    ];
+    $personal_data['right']['house']['houseLetter'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('House letter'),
+      '#placeholder' => $this->t('House letter'),
+    ];
+    $personal_data['right']['house']['houseFloor'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Floor'),
+      '#placeholder' => $this->t('Floor'),
+    ];
+    $personal_data['right']['city'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('City'),
+      '#placeholder' => $this->t('City'),
+      '#required' => $required,
+    ];
+    $personal_data['right']['municipality'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Municipality'),
+      '#placeholder' => $this->t('Municipality'),
+      '#required' => $required,
+    ];
+    $personal_data['right']['zip'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Zipcode'),
+      '#placeholder' => $this->t('Zipcode'),
+      '#required' => $required,
+    ];
+
+    return $personal_data;
+  }
 }

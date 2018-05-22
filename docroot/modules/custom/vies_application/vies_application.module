@@ -34,5 +34,14 @@ function vies_application_theme() {
     'vies_application_periods' => [
       'render element' => 'form',
     ],
+    'vies_application_personal_data' => [
+      'render element' => 'form',
+    ],
+    'vies_application_section' => [
+      'render element' => 'form',
+    ],
+    'vies_application_questions' => [
+      'render element' => 'form',
+    ],
   ];
 }

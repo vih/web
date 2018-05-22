@@ -1,0 +1,21 @@
+<div class="col-md-6">
+  {{ form['left'] }}
+</div>
+
+<div class="col-md-6">
+  {{ form['right']['address'] }}
+
+  <div class="row">
+    <div class="col-xs-4">
+      {{ form['right']['house']['houseNumber'] }}
+    </div>
+    <div class="col-xs-4">
+      {{ form['right']['house']['houseLetter'] }}
+    </div>
+    <div class="col-xs-4">
+      {{ form['right']['house']['houseFloor'] }}
+    </div>
+  </div>
+
+  {{ form['right']|without('address','house') }}
+</div>
