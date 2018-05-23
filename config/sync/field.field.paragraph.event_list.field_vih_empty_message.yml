@@ -9,7 +9,7 @@ id: paragraph.event_list.field_vih_empty_message
 field_name: field_vih_empty_message
 entity_type: paragraph
 bundle: event_list
-label: 'Tøm tekst'
+label: 'Tom tekst'
 description: ''
 required: false
 translatable: true
