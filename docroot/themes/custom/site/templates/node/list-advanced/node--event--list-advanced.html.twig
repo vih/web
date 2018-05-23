@@ -13,7 +13,8 @@ set classes = [
 
     {# Begin - image #}
     {% if node.field_vih_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ node.field_vih_image.entity.fileuri | image_style(content.field_vih_image[0]['#image_style']) }});">
+
+        <div class="entity-list-advanced__image" style="background-image: url({{ node.field_vih_image.entity.image.entity.fileuri | image_style('list_advanced') }});">
 
             {# Begin - period #}
             {% if content.field_vih_event_start_date and content.field_vih_event_end_date %}

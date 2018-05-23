@@ -10,10 +10,8 @@ dependencies:
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
     - field.field.paragraph.vih_teacher_class_description.field_vih_photo
     - field.field.paragraph.vih_teacher_class_description.field_vih_user
-    - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
-    - image
     - text
     - user
 id: paragraph.vih_teacher_class_description.embedded
@@ -29,13 +27,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vih_photo:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: above
     settings:
-      image_style: vih_person_teaser
-      image_link: ''
+      view_mode: vih_person_teaser_
+      link: false
     third_party_settings: {  }
   field_vih_user:
     type: author

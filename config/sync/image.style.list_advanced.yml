@@ -1,14 +1,24 @@
 uuid: b374a796-164b-4e9f-a769-17814c793f2c
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: list_advanced
 label: 'List - advanced'
 effects:
   92816ab2-d53d-42d6-b107-0c4f9680a98c:
     uuid: 92816ab2-d53d-42d6-b107-0c4f9680a98c
     id: image_scale_and_crop
-    weight: 1
+    weight: -9
     data:
       width: 350
       height: 175
+  3306eb5a-94f0-4fb4-9e76-d2bc98c24395:
+    uuid: 3306eb5a-94f0-4fb4-9e76-d2bc98c24395
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 350
+      height: 175
+      crop_type: focal_point

@@ -1,0 +1,14 @@
+uuid: 54920787-cf83-4771-871c-2e3c3159617f
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_class_teaser
+label: 'VIH Class teaser'
+targetEntityType: media
+cache: true

@@ -20,10 +20,8 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_paragraphs
     - field.field.node.vih_long_cource.field_vih_top_banner
     - field.field.node.vih_long_cource.scheduled_update
-    - image.style.vih_general_teaser_image
     - node.type.vih_long_cource
   module:
-    - image
     - panelizer
     - user
 third_party_settings:
@@ -45,13 +43,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vih_course_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: vih_general_teaser_image
-      image_link: ''
+      view_mode: vih_general_teaser_image
+      link: false
     third_party_settings: {  }
 hidden:
   body: true

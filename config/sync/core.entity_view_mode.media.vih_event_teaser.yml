@@ -1,0 +1,14 @@
+uuid: b6e64714-b5a4-4bc2-ad75-3555d744ff63
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_event_teaser
+label: 'VIH Event teaser'
+targetEntityType: media
+cache: true

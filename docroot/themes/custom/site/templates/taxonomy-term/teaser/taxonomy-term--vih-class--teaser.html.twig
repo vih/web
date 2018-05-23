@@ -1,4 +1,4 @@
-<a href="{{ url }}" {{ attributes.addClass('element-wrapper-link', 'entity-teaser', 'entity-teaser--class') }} style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
+<a href="{{ url }}" {{ attributes.addClass('element-wrapper-link', 'entity-teaser', 'entity-teaser--class') }} style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('vih_class_teaser_large') }});">
     <div class="entity-teaser__inner">
 
         {# Begin - overlay #}

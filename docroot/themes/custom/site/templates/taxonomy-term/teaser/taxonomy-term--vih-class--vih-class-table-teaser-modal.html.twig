@@ -4,7 +4,7 @@
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
+        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('vih_class_teaser') }});">
 
             {# Begin - period #}
             {% if content.course_period_start and content.course_period_end %}
@@ -46,7 +46,7 @@
             <div class="modal-content">
 
                 {# Begin - header #}
-                <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal') }})">
+                <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('modal') }})">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
                         <span aria-hidden="true">&times;</span>
                     </button>

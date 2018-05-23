@@ -1,0 +1,14 @@
+uuid: 924a490d-b3b9-4bf5-be35-9819d4824e4c
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_person_teaser_
+label: 'VIH Person Teaser '
+targetEntityType: media
+cache: true

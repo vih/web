@@ -10,10 +10,8 @@ dependencies:
     - field.field.paragraph.user_quote.field_vih_link
     - field.field.paragraph.user_quote.field_vih_person_photo
     - field.field.paragraph.user_quote.field_vih_text
-    - image.style.vih_person_teaser
     - paragraphs.paragraphs_type.user_quote
   module:
-    - image
     - link
     - text
 id: paragraph.user_quote.default
@@ -50,14 +48,14 @@ content:
     type: link
     region: content
   field_vih_person_photo:
-    type: image
     weight: 1
-    region: content
     label: hidden
     settings:
-      image_style: vih_person_teaser
-      image_link: ''
+      view_mode: vih_person_teaser_
+      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_vih_text:
     type: text_default
     weight: 2

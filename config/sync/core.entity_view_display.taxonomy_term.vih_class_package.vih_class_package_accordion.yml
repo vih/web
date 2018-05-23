@@ -12,10 +12,8 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner_text
-    - image.style.vih_class_package_accordion
     - taxonomy.vocabulary.vih_class_package
   module:
-    - image
     - panelizer
     - text
 third_party_settings:
@@ -38,14 +36,14 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_cp_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
+    region: content
     label: hidden
     settings:
-      image_style: vih_class_package_accordion
-      image_link: ''
+      view_mode: vih_class_package_accordion
+      link: false
     third_party_settings: {  }
-    region: content
 hidden:
   field_metatag: true
   field_short_description: true

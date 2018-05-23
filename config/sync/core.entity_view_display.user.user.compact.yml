@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_vih_top_banner
+    - field.field.user.user.field_vih_top_banner_text
     - field.field.user.user.field_vih_user_birthday
     - field.field.user.user.field_vih_user_descr
     - field.field.user.user.field_vih_user_email
@@ -16,9 +17,7 @@ dependencies:
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_qualifications
     - field.field.user.user.field_vih_user_type_id
-    - image.style.vih_person_teaser
   module:
-    - image
     - panelizer
     - text
     - user
@@ -35,7 +34,7 @@ mode: compact
 content:
   field_vih_user_descr:
     type: text_trimmed
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       trim_length: 150
@@ -43,7 +42,7 @@ content:
     region: content
   field_vih_user_name_first:
     type: string
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings:
@@ -51,7 +50,7 @@ content:
     third_party_settings: {  }
   field_vih_user_name_last:
     type: string
-    weight: 3
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -59,21 +58,21 @@ content:
     third_party_settings: {  }
   field_vih_user_phone:
     type: string
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     region: content
   field_vih_user_photo:
-    type: image
-    weight: 1
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
     label: hidden
     settings:
-      image_style: vih_person_teaser
-      image_link: ''
+      view_mode: vih_person_teaser_
+      link: false
     third_party_settings: {  }
-    region: content
 hidden:
   field_banner: true
   field_vih_top_banner: true

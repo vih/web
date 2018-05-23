@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_media_in_library
     - field.field.media.image.image
+    - image.style.vih_class_teaser_large
     - media.type.image
   module:
     - image
@@ -20,7 +21,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: vih_class_teaser_large
       image_link: ''
     third_party_settings: {  }
     region: content

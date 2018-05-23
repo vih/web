@@ -18,11 +18,9 @@ dependencies:
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
-    - image.style.vih_event_teaser
     - node.type.event
   module:
     - datetime
-    - image
     - panelizer
     - text
     - user
@@ -40,20 +38,11 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_vih_event_end_date:
-    type: datetime_default
-    weight: 4
-    region: content
-    label: hidden
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-  field_vih_event_start_date:
     type: datetime_default
     weight: 3
     region: content
@@ -62,14 +51,23 @@ content:
       format_type: medium
       timezone_override: ''
     third_party_settings: {  }
-  field_vih_image:
-    type: image
-    weight: 1
+  field_vih_event_start_date:
+    type: datetime_default
+    weight: 2
     region: content
     label: hidden
     settings:
-      image_style: vih_event_teaser
-      image_link: ''
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_vih_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: vih_event_teaser
+      link: false
     third_party_settings: {  }
 hidden:
   field_metatag: true

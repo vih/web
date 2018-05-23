@@ -1,19 +1,11 @@
-uuid: 72683d54-69c0-4c30-a676-16233afa0b7b
+uuid: 65b3f6b7-59b4-4f6b-b05c-c3ef5b9bc5a4
 langcode: da
 status: true
 dependencies:
   config:
     - field.storage.node.field_vih_course_image
+    - media.type.image
     - node.type.vih_long_cource
-  module:
-    - content_translation
-    - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 id: node.vih_long_cource.field_vih_course_image
 field_name: field_vih_course_image
 entity_type: node
@@ -25,21 +17,12 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
-  max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
-  alt_field: true
-  alt_field_required: true
-  title_field: false
-  title_field_required: false
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  handler: 'default:file'
-  handler_settings: {  }
-field_type: image
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

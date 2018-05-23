@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.embedded_teaser_list
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_metatag
+    - field.field.node.vih_long_cource.field_short_description
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -19,11 +20,9 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_paragraphs
     - field.field.node.vih_long_cource.field_vih_top_banner
     - field.field.node.vih_long_cource.scheduled_update
-    - image.style.banner_small
     - node.type.vih_long_cource
   module:
     - entity_reference_revisions
-    - image
     - metatag
     - options
     - panelizer
@@ -266,14 +265,14 @@ content:
     type: string
     region: content
   field_vih_course_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 8
+    region: content
     label: hidden
     settings:
-      image_style: banner_small
-      image_link: ''
+      view_mode: vih_banner_smal
+      link: false
     third_party_settings: {  }
-    region: content
   field_vih_course_periods:
     type: entity_reference_label
     weight: 15
@@ -371,4 +370,5 @@ content:
     type: entity_reference_label
     region: content
 hidden:
+  field_short_description: true
   langcode: true

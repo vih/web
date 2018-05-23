@@ -19,11 +19,9 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.field_vih_top_banner
     - field.field.node.vih_short_course.scheduled_update
-    - image.style.list_advanced
     - node.type.vih_short_course
   module:
     - datetime
-    - image
     - panelizer
     - text
     - user
@@ -56,14 +54,14 @@ content:
     type: datetime_default
     region: content
   field_vih_sc_image:
+    type: entity_reference_entity_view
     weight: 0
+    region: content
     label: hidden
     settings:
-      image_style: list_advanced
-      image_link: ''
+      view_mode: vih_list_advanced
+      link: false
     third_party_settings: {  }
-    type: image
-    region: content
   field_vih_sc_start_date:
     weight: 2
     label: hidden

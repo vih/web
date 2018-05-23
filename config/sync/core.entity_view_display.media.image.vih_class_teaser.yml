@@ -1,0 +1,35 @@
+uuid: 189ab2df-8866-4acd-96ef-22080be608d5
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.vih_class_teaser
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - image.style.vih_class_teaser
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: VLDxfMVPTkd2xvOjFMCh3kWmaOYnd03zggFXuUXQVEY
+id: media.image.vih_class_teaser
+targetEntityType: media
+bundle: image
+mode: vih_class_teaser
+content:
+  image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: vih_class_teaser
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -9,10 +9,8 @@ dependencies:
     - field.field.paragraph.vih_teacher_class_description.field_vih_heading
     - field.field.paragraph.vih_teacher_class_description.field_vih_photo
     - field.field.paragraph.vih_teacher_class_description.field_vih_user
-    - image.style.medium
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
-    - image
     - text
 id: paragraph.vih_teacher_class_description.default
 targetEntityType: paragraph
@@ -35,14 +33,14 @@ content:
     type: string
     region: content
   field_vih_photo:
-    type: image
     weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
+      view_mode: medium
+      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
 hidden:
   field_vih_background_color: true
   field_vih_background_img: true
