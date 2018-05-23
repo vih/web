@@ -17,7 +17,7 @@
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
+        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
             <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
                 {{ name }}
             </div>
