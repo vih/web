@@ -38,7 +38,11 @@
         <h4{{ title_attributes }}>
           {{ label }}
         </h4>
-        {{ content.body }}
+
+        {# Begin - short description #}
+        {{ content.field_short_description }}
+        {# End - short description #}
+
       </div>
       <div class="teaser-button">
         <button class="btn btn-default" hreflang="da">Læs mere</button>
