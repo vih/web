@@ -27,11 +27,56 @@
                 </div>
               {% endif %}
 
-              {% if page.footer_top_fourth %}
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  {{ page.footer_top_fourth }}
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="partial">
+                  <div class="partial__heading">
+                    <h2 class="partial__heading__title">
+                      {{ 'Contact information' | trans }}
+                    </h2>
+                  </div>
+                  <div class="partial__body">
+
+                    <ul class="list-unstyled">
+
+                      {% if theme_settings.contact_information.business_owner_name %}
+                        <li>
+                          {{ theme_settings.contact_information.business_owner_name }}
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.address %}
+                        <li>
+                          {{ theme_settings.contact_information.address }}
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.zipcode and theme_settings.contact_information.city %}
+                        <li>
+                          {{ theme_settings.contact_information.zipcode }} {{ theme_settings.contact_information.city }}
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.phone_system and theme_settings.contact_information.phone_readable %}
+                        <li>
+                          <a href="tel:{{ theme_settings.contact_information.phone_system }}">
+                            {{ theme_settings.contact_information.phone_readable }}
+                          </a>
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.email %}
+                        <li>
+                          <a href="mailto: {{ theme_settings.contact_information.email }}">
+                            {{ theme_settings.contact_information.email }}
+                          </a>
+                        </li>
+                      {% endif %}
+
+                    </ul>
+
+                  </div>
                 </div>
-              {% endif %}
+              </div>
 
             </div>
           </div>
