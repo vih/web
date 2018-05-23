@@ -58,7 +58,8 @@
 
                       {% if theme_settings.contact_information.phone_system and theme_settings.contact_information.phone_readable %}
                         <li>
-                          <a href="tel:{{ theme_settings.contact_information.phone_system }}">
+                          <a
+                            href="tel:{{ theme_settings.contact_information.phone_system }}">
                             {{ theme_settings.contact_information.phone_readable }}
                           </a>
                         </li>
@@ -66,7 +67,8 @@
 
                       {% if theme_settings.contact_information.email %}
                         <li>
-                          <a href="mailto: {{ theme_settings.contact_information.email }}">
+                          <a
+                            href="mailto: {{ theme_settings.contact_information.email }}">
                             {{ theme_settings.contact_information.email }}
                           </a>
                         </li>
@@ -92,7 +94,17 @@
           <div class="row">
             <div class="col-xs-12 col-sm-8">
               <div class="layout__footer-bottom-copyright">
-                <p>{{ '© 2011-2018, Vejle Idrætshøjskole. All rights reserved' | trans }}</p>
+                <p>
+
+                  {% if theme_settings.contact_information.business_owner_name %}
+                    {% if theme_settings.contact_information.business_startup_year %}
+                      &copy; {{ theme_settings.contact_information.business_startup_year }}-{{ 'now'| date('Y') }}, {{ theme_settings.contact_information.business_owner_name }}. {{ 'All rights reserved' | trans }}
+                    {% else %}
+                      &copy; {{ 'now'| date('Y') }}, {{ theme_settings.contact_information.business_owner_name }}. {{ 'All rights reserved' | trans }}
+                    {% endif %}
+                  {% endif %}
+
+                </p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-4">
@@ -100,8 +112,8 @@
                 <ul class="list-inline pull-right">
 
                   {% if theme_settings.social.facebook.active %}
-                    <li>
-                      <a href="{{ theme_settings.social.facebook.url }}"
+                  <li>
+                    <a href="{{ theme_settings.social.facebook.url }}"
                          target="_blank"
                          data-toggle="tooltip"
                          data-placement="top"
