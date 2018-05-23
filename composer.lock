@@ -5676,17 +5676,17 @@
         },
         {
             "name": "drupal/webform_mailchimp",
-            "version": "5.3.0",
+            "version": "5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/webform_mailchimp",
-                "reference": "8.x-5.3"
+                "reference": "8.x-5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/webform_mailchimp-8.x-5.3.zip",
-                "reference": "8.x-5.3",
-                "shasum": "b4d04ba28a0733f7e86f996c3778a0d0ba9a2daf"
+                "url": "https://ftp.drupal.org/files/projects/webform_mailchimp-8.x-5.4.zip",
+                "reference": "8.x-5.4",
+                "shasum": "ef952b0a2e385a3e1479ac363924f8ce6f4724f1"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -5699,8 +5699,8 @@
                     "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-5.3",
-                    "datestamp": "1505251744",
+                    "version": "8.x-5.4",
+                    "datestamp": "1526051285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
