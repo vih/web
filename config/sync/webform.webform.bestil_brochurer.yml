@@ -1,0 +1,198 @@
+uuid: e5535baf-1511-4faa-a592-b2fee9a54c83
+langcode: da
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 2
+template: false
+id: bestil_brochurer
+title: 'Bestil brochurer'
+description: 'Used to order brochures for the long stays'
+category: ''
+elements: "mine_kontaktoplysninger:\n  '#type': fieldset\n  '#title': 'Mine kontaktoplysninger'\n  navn:\n    '#type': textfield\n    '#title': Navn\n  adresse:\n    '#type': webform_address\n    '#title': Adresse\n    '#address_2__access': false\n    '#state_province__access': false\n  telefon:\n    '#type': tel\n    '#title': Telefon\n    '#international': true\n    '#international_initial_country': DK\n  e_mail:\n    '#type': email\n    '#title': E-mail\nmine_informationer:\n  '#type': fieldset\n  '#title': 'Mine informationer'\n  brochurer:\n    '#type': checkboxes\n    '#title': Interesser\n    '#options':\n      'Lange ophold': 'Lange ophold'\n      'Politiforberedende linje': 'Politiforberedende linje'\n      Sportsjournalistlinje: Sportsjournalistlinje\n  version:\n    '#type': checkboxes\n    '#title': Version\n    '#options':\n      'Digital version - PDF på e-mail': 'Digital version - PDF på e-mail'\n      'Papirversion i postkassen': 'Papirversion i postkassen'\n  hvordan_horte_du_forste_gang_om_vih_:\n    '#type': textfield\n    '#title': 'Hvordan hørte du første gang om VIH?'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Få brochurer og læs endnu mere om højskolen'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    label: Email
+    handler_id: email
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: henriette@vih.dk
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: '[webform_submission:values:e_mail:raw]'
+      from_options: {  }
+      from_name: '[webform_submission:values:navn:raw]'
+      subject: Brochurebestilling
+      body: "Submitted on [webform_submission:created]<br />\n<br />\n[webform_submission:values]"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+  email_1:
+    id: email
+    label: Email
+    handler_id: email_1
+    status: true
+    conditions:
+      enabled:
+        ':input[name="version[Digital version - PDF på e-mail]"]':
+          checked: true
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:e_mail:raw]'
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: henriette@vih.dk
+      from_options: {  }
+      from_name: 'Henriette Madsen - VIH'
+      subject: Brochurebestilling
+      body: "Submitted on [webform_submission:created]<br />\n<br />\n[webform_submission:values]"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      html: true
+      attachments: false
+      twig: false
+      debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
