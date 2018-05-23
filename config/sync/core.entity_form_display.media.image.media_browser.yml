@@ -9,10 +9,9 @@ dependencies:
     - image.style.medium
     - media.type.image
   module:
-    - content_moderation
     - image_widget_crop
     - lightning_media
-    - path
+    - workbench_moderation
 _core:
   default_config_hash: iVmRBD7y3Gmddt29sSx9DwwH6Q4UaROqMu7FLyy_bvQ
 id: media.image.media_browser
@@ -22,7 +21,7 @@ mode: media_browser
 content:
   field_media_in_library:
     type: boolean_checkbox
-    weight: 4
+    weight: 3
     settings:
       display_label: true
     third_party_settings: {  }
@@ -46,32 +45,27 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     region: content
-  path:
-    type: path
-    weight: 30
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 4
     region: content
     third_party_settings: {  }
 hidden:
   created: true
+  path: true
   uid: true
