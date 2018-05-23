@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_metatag
+    - field.field.node.vih_long_cource.field_short_description
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -246,6 +247,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_short_description:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_vih_cource_contact_person:
     weight: 7
