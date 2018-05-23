@@ -17,13 +17,25 @@
         <td class="teacher-contact-info hidden-xs">
           <h5>{{ "Contact information"|trans }}:</h5>
 
-          <span class="teacher-phone">
+          {# Begin - phone #}
+          {% if user.field_vih_user_phone.value %}
+            <span class="teacher-phone">
             <span
               class="icon icon-phone"></span> {{ content.field_vih_user_phone }}
-          </span>
+              </span>
+          {% endif %}
+          {# End - phone #}
+
           <br>
-          <span class="teacher-mail"><span
-              class="icon icon-mail"></span> {{ user.email }}</span>
+
+          {# Begin - email #}
+          {% if user.email.value %}
+            <span class="teacher-mail">
+              <span class="icon icon-mail"></span> {{ user.email }}
+            </span>
+          {% endif %}
+          {# End - email #}
+
         </td>
       </tr>
       <tr class="visible-xs">
