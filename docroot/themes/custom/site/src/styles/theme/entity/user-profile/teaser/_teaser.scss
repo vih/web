@@ -124,6 +124,13 @@
 
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {
+
+  .user.compact {
+
+    .teacher-contact-info {
+      min-width: 220px;
+    }
+  }
 }
 
 // Tablet - only
@@ -131,8 +138,7 @@
 }
 
 // Desktop - and up
-@media #{$breakpoint-desktop-and-up} {
-}
+@media #{$breakpoint-desktop-and-up} {}
 
 // Desktop - only
 @media #{$breakpoint-desktop-only} {
