@@ -550,6 +550,19 @@ display:
             label: ''
           granularity: second
           plugin_id: datetime
+        field_vih_cp_end_date_value:
+          id: field_vih_cp_end_date_value
+          table: node__field_vih_cp_end_date
+          field: field_vih_cp_end_date_value
+          relationship: field_vih_course_periods
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
       header: {  }
       footer: {  }
       empty: {  }
