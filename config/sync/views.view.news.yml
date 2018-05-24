@@ -346,10 +346,10 @@ display:
       empty: {  }
       relationships: {  }
       arguments:
-        field_news_tags_target_id:
-          id: field_news_tags_target_id
-          table: node__field_news_tags
-          field: field_news_tags_target_id
+        field_vih_news_tags_target_id:
+          id: field_vih_news_tags_target_id
+          table: node__field_vih_news_tags
+          field: field_vih_news_tags_target_id
           relationship: none
           group_type: group
           admin_label: ''
