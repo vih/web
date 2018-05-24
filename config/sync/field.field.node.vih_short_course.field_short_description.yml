@@ -1,0 +1,19 @@
+uuid: bdc5ef8b-e3fc-407d-bcb5-afd635e5dc8d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_description
+    - node.type.vih_short_course
+id: node.vih_short_course.field_short_description
+field_name: field_short_description
+entity_type: node
+bundle: vih_short_course
+label: 'Forkortet beskrivelse'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

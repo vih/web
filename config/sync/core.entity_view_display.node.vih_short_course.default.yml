@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_metatag
+    - field.field.node.vih_short_course.field_short_description
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
@@ -53,6 +54,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_short_description:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_vih_course_heading:
     weight: 10
