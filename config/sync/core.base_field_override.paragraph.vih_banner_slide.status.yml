@@ -1,0 +1,22 @@
+uuid: ea43739e-8386-4651-95e5-8509fd301653
+langcode: da
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_banner_slide
+id: paragraph.vih_banner_slide.status
+field_name: status
+entity_type: paragraph
+bundle: vih_banner_slide
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

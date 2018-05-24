@@ -1,0 +1,22 @@
+uuid: 56a348b0-1d32-4a85-aaaa-61a8f4cce34d
+langcode: da
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_content_grid
+id: paragraph.vih_content_grid.status
+field_name: status
+entity_type: paragraph
+bundle: vih_content_grid
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
