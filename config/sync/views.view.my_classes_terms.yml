@@ -6,7 +6,6 @@ dependencies:
     - field.storage.paragraph.field_vih_description
     - field.storage.paragraph.field_vih_heading
     - field.storage.paragraph.field_vih_photo
-    - image.style.medium
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
     - image
@@ -40,7 +39,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
