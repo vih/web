@@ -19,11 +19,9 @@ dependencies:
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
-    - image.style.vih_event_teaser
     - node.type.event
   module:
     - datetime
-    - image
     - panelizer
     - user
 third_party_settings:
@@ -63,13 +61,13 @@ content:
       timezone_override: ''
     third_party_settings: {  }
   field_vih_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: vih_event_teaser
-      image_link: ''
+      view_mode: vih_event_teaser
+      link: false
     third_party_settings: {  }
 hidden:
   body: true

@@ -1,27 +1,17 @@
-uuid: 63e2c3ee-6588-4d10-b7fa-203843bbb0d5
+uuid: 71e5160c-0f77-46f9-808c-b867f6be45a7
 langcode: da
 status: true
 dependencies:
   module:
-    - file
-    - image
+    - media
     - taxonomy
 id: taxonomy_term.field_vih_class_image
 field_name: field_vih_class_image
 entity_type: taxonomy_term
-type: image
+type: entity_reference
 settings:
-  uri_scheme: public
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  target_type: file
-  display_field: false
-  display_default: false
-module: image
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,25 @@
+uuid: 07a265de-a3c6-4a5d-ad39-a3e539cf94d5
+langcode: da
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:d63076f5-44b5-4794-8ee2-ecf377288021'
+  module:
+    - block_content
+  theme:
+    - site
+id: sidefodkontaktinformation
+theme: site
+region: drawer_left
+weight: 0
+provider: null
+plugin: 'block_content:d63076f5-44b5-4794-8ee2-ecf377288021'
+settings:
+  id: 'block_content:d63076f5-44b5-4794-8ee2-ecf377288021'
+  label: Kontaktinformation
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

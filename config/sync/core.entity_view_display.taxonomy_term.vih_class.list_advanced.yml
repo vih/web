@@ -15,10 +15,8 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
     - field.field.taxonomy_term.vih_class.field_vih_top_banner
-    - image.style.list_advanced
     - taxonomy.vocabulary.vih_class
   module:
-    - image
     - panelizer
     - text
 third_party_settings:
@@ -47,13 +45,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vih_class_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: list_advanced
-      image_link: ''
+      view_mode: vih_list_advanced
+      link: false
     third_party_settings: {  }
 hidden:
   field_metatag: true

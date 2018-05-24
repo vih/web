@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.node.event.body
     - field.field.node.event.field_metatag
     - field.field.node.event.field_short_description
@@ -113,7 +113,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 11
+    weight: 29
     settings:
       rows: 9
       summary_rows: 3
@@ -150,7 +150,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_course_heading:
-    weight: 9
+    weight: 27
     settings:
       size: 60
       placeholder: ''
@@ -158,7 +158,7 @@ content:
     type: string_textfield
     region: content
   field_vih_course_subheading:
-    weight: 10
+    weight: 28
     settings:
       size: 60
       placeholder: ''
@@ -198,16 +198,17 @@ content:
     type: options_select
     region: content
   field_vih_image:
-    type: entity_browser_file
-    weight: 8
+    type: entity_browser_entity_reference
+    weight: 30
     settings:
-      entity_browser: image_browser
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
       selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
     region: content
     third_party_settings: {  }
   field_vih_paragraphs:
@@ -228,14 +229,14 @@ content:
     type: entity_browser_entity_reference
     weight: 2
     settings:
-      entity_browser: image_browser
+      entity_browser: media_browser
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
-      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
+      open: true
     region: content
     third_party_settings: {  }
   langcode:

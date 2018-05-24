@@ -1,0 +1,14 @@
+uuid: bb168b99-ca84-48b6-ac93-26bd18f0d288
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_class_packages_frontpage
+label: 'VIH Class Packages (Frontpage)'
+targetEntityType: media
+cache: true

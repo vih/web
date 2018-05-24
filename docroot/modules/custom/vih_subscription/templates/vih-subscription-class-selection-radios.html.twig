@@ -24,7 +24,7 @@
                     <div class="modal-content">
 
                         {# Begin - header #}
-                        <div class="modal-header" style="background-image: url('{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].field_vih_class_image.entity.fileuri | image_style('modal') }}');">
+                        <div class="modal-header" style="background-image: url('{{ radios['#classes']['radio_selection'][delta]['#taxonomy_term'].field_vih_class_image.entity.image.entity.fileuri | image_style('modal') }}');">
                             <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
                                 <span aria-hidden="true">&times;</span>
                             </button>

@@ -10,11 +10,9 @@ dependencies:
     - field.field.node.news.field_vih_paragraphs
     - field.field.node.news.field_vih_top_banner
     - field.field.node.news.scheduled_update
-    - image.style.banner_small
     - node.type.news
   module:
     - entity_reference_revisions
-    - image
     - metatag
     - panelizer
     - text
@@ -48,10 +46,10 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: banner_small
-      image_link: ''
+      view_mode: vih_banner_smal
+      link: false
     third_party_settings: {  }
-    type: image
+    type: entity_reference_entity_view
     region: content
   field_vih_news_tags:
     type: entity_reference_label

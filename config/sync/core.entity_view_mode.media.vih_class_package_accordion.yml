@@ -1,0 +1,14 @@
+uuid: b41865e6-3259-4c10-b9b3-9094479ebb1b
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_class_package_accordion
+label: 'VIH Class package accordion'
+targetEntityType: media
+cache: true

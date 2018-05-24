@@ -29,13 +29,13 @@ mode: default
 content:
   description:
     type: text_default
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
   field_vih_paragraphs:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       view_mode: default
@@ -44,7 +44,7 @@ content:
     type: entity_reference_revisions_entity_view
     region: content
   field_vih_subheading:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
@@ -52,7 +52,7 @@ content:
     type: string
     region: content
   field_vih_top_banner:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link: true
@@ -61,7 +61,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_vih_top_banner_text:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false

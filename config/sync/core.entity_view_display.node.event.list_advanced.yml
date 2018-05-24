@@ -19,11 +19,9 @@ dependencies:
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
-    - image.style.list_advanced
     - node.type.event
   module:
     - datetime
-    - image
     - panelizer
     - user
 third_party_settings:
@@ -71,13 +69,13 @@ content:
       format_type: vih_medium_date_short_month
     third_party_settings: {  }
   field_vih_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 1
     region: content
     label: hidden
     settings:
-      image_style: list_advanced
-      image_link: ''
+      view_mode: vih_list_advanced
+      link: false
     third_party_settings: {  }
 hidden:
   body: true
