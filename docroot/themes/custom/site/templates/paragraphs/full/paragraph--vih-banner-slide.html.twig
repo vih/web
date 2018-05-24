@@ -1,4 +1,4 @@
-<div class="banner banner--large" style="background-image: url({{ content.field_vih_banner_image[0]['#markup'] }})">
+<div class="banner banner--large" style="background-image: url({{ paragraph.field_vih_banner_image.entity.image.entity.fileuri | image_style('banner') }})">
 
     <!-- Begin - logo -->
     <div class="banner__logo">

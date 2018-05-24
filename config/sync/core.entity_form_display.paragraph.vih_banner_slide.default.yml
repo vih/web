@@ -3,13 +3,11 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - field.field.paragraph.vih_banner_slide.field_vih_banner_image
     - field.field.paragraph.vih_banner_slide.field_vih_banner_text
     - field.field.paragraph.vih_banner_slide.field_vih_link
     - paragraphs.paragraphs_type.vih_banner_slide
   module:
-    - entity_browser
     - link
     - workbench_moderation
 id: paragraph.vih_banner_slide.default
@@ -18,16 +16,17 @@ bundle: vih_banner_slide
 mode: default
 content:
   field_vih_banner_image:
-    type: entity_browser_file
-    weight: 0
+    type: entity_browser_entity_reference
+    weight: 6
     settings:
-      entity_browser: image_browser
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
-      view_mode: default
-      preview_image_style: thumbnail
-      open: true
       selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
     region: content
     third_party_settings: {  }
   field_vih_banner_text:

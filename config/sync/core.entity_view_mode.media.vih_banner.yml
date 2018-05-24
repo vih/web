@@ -1,0 +1,14 @@
+uuid: 8ed801d9-cfbe-4130-8b61-b02668cc3da9
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_banner
+label: 'VIH Banner'
+targetEntityType: media
+cache: true
