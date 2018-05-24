@@ -12,8 +12,8 @@ entity_type: user
 bundle: user
 label: 'Tekst på banner'
 description: ''
-required: true
-translatable: false
+required: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
