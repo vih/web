@@ -1,50 +1,52 @@
-{%
-set classes = [
-    node.bundle|clean_class,
-    node.isPromoted() ? 'is-promoted',
-    node.isSticky() ? 'is-sticky',
-    not node.isPublished() ? 'is-unpublished',
-    view_mode ? view_mode|clean_class,
-    'clearfix',
-]
-%}
+{% set classes = [
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'clearfix',
+] %}
 
-<a href="{{ url }}" class="element-wrapper-link entity-list-advanced entity-list-advanced--event">
+<a href="{{ url }}"
+   class="element-wrapper-link entity-list-advanced entity-list-advanced--event">
 
-    {# Begin - image #}
-    {% if node.field_vih_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ node.field_vih_image.entity.fileuri | image_style(content.field_vih_image[0]['#image_style']) }});">
+  {# Begin - image #}
+  {% if node.field_vih_image.value %}
+    <div class="entity-list-advanced__image"
+         style="background-image: url({{ node.field_vih_image.entity.fileuri | image_style(content.field_vih_image[0]['#image_style']) }});">
 
-            {# Begin - period #}
-            {% if content.field_vih_event_start_date and content.field_vih_event_end_date %}
-                <div class="entity-list-advanced__image__overlay">
-                    {{ content.field_vih_event_start_date }} - {{ content.field_vih_event_end_date }}
-                </div>
-            {% endif %}
-            {# End - period #}
-
+      {# Begin - period #}
+      {% if content.field_vih_event_start_date and content.field_vih_event_end_date %}
+        <div class="entity-list-advanced__image__overlay">
+          {{ content.field_vih_event_start_date }}
+          - {{ content.field_vih_event_end_date }}
         </div>
-    {% endif %}
-    {# End - image #}
-
-    <!-- Begin - body -->
-    <div class="entity-list-advanced__body">
-
-        <div class="entity-list-advanced__heading">
-            <h2 class="entity-list-advanced__heading__title heading-h4">{{ label }}</h2>
-        </div>
-
-        {# Begin - body #}
-        {{ content.body }}
-        {# End - body #}
+      {% endif %}
+      {# End - period #}
 
     </div>
-    <!-- End - body -->
+  {% endif %}
+  {# End - image #}
 
-    <!-- Begin - action -->
-    <div class="entity-list-advanced__action">
-        <button class="btn btn-default">{{ 'Read more' | trans }}</button>
+  <!-- Begin - body -->
+  <div class="entity-list-advanced__body">
+
+    <div class="entity-list-advanced__heading">
+      <h2
+        class="entity-list-advanced__heading__title heading-h4">{{ label }}</h2>
     </div>
-    <!-- End - action -->
+
+    {# Begin - short description #}
+    {{ content.field_short_description }}
+    {# End - short description #}
+
+  </div>
+  <!-- End - body -->
+
+  <!-- Begin - action -->
+  <div class="entity-list-advanced__action">
+    <button class="btn btn-default">{{ 'Read more' | trans }}</button>
+  </div>
+  <!-- End - action -->
 
 </a>

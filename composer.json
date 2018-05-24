@@ -57,7 +57,9 @@
         "drupal/recreate_block_content": "^2.0",
         "drupal/webform_mailchimp": "^5.3",
         "drupal/owlcarousel": "^1.0@alpha",
-        "drupal/menu_multilingual": "^1.0@alpha"
+        "drupal/menu_multilingual": "^1.0@alpha",
+        "drupal/easy_breadcrumb": "^1.8",
+        "drupal/block_scheduler": "^1.0"
     },
     "repositories": [
         {

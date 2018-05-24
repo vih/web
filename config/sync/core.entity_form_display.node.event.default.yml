@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.image_browser
     - field.field.node.event.body
     - field.field.node.event.field_metatag
+    - field.field.node.event.field_short_description
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -52,6 +53,7 @@ third_party_settings:
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
+        - field_short_description
       parent_name: ''
       weight: 1
       format_type: tab
@@ -130,6 +132,14 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_short_description:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_vih_cource_contact_person:
     weight: 8
     settings:
@@ -157,7 +167,7 @@ content:
     region: content
   field_vih_event_end_date:
     type: datetime_default
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -170,14 +180,14 @@ content:
     region: content
   field_vih_event_price:
     type: number
-    weight: 6
+    weight: 7
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_vih_event_start_date:
     type: datetime_default
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }

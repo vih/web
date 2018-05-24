@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
     - field.field.node.event.field_metatag
+    - field.field.node.event.field_short_description
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -21,7 +22,6 @@ dependencies:
     - node.type.event
   module:
     - panelizer
-    - text
     - user
 third_party_settings:
   panelizer:
@@ -34,20 +34,20 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
+  field_short_description:
+    type: basic_string
+    weight: 1
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
+  body: true
   field_metatag: true
   field_vih_cource_contact_person: true
   field_vih_course_heading: true

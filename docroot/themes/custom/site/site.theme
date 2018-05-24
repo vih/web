@@ -360,10 +360,14 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
     }
-  }
-  $contextual_filter = implode('+', $ids);
 
-  $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list', $contextual_filter);
+    $contextual_filter = implode('+', $ids);
+
+    $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list', $contextual_filter);
+  }
+  else {
+    $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list');
+  }
 }
 
 /**
@@ -378,10 +382,15 @@ function site_preprocess_paragraph__employee(&$variables) {
     foreach($fields as $field) {
       $ids[] = $field['target_id'];
     }
-  }
-  $contextual_filter = implode('+', $ids);
 
-  $variables['content']['embedded_view'] = views_embed_view('employees', 'embed_teaser', $contextual_filter);
+    $contextual_filter = implode('+', $ids);
+
+    $variables['content']['embedded_view'] = views_embed_view('employees', 'embed_teaser', $contextual_filter);
+  }
+  else {
+    $variables['content']['embedded_view'] = views_embed_view('employees', 'embed_teaser');
+  }
+
 }
 
 /**
