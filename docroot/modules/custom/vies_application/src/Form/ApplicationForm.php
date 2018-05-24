@@ -231,6 +231,27 @@ class ApplicationForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
+
+    $values = $form_state->getValues();
+    $course = Node::load($values['course']);
+
+    // Going through the selected options.
+    $pattern = '/^course-period-(\d)-courseSlot-(\d)-availableClasses$/';
+    foreach (preg_grep($pattern, array_keys($values)) as $radio_key) {
+
+      preg_match($pattern, $radio_key, $matches);
+      $course_period_delta = $matches[1];
+      $course_periods = $course->field_vih_course_periods->referencedEntities();
+      $course_period = $course_periods[$course_period_delta];
+
+      $course_slot_delta = $matches[2];
+      $course_slots = $course_period->field_vih_cp_course_slots->referencedEntities();
+      $course_slot = $course_slots[$course_slot_delta];
+
+      if (!is_numeric($values[$radio_key])) {
+        $form_state->setErrorByName($radio_key, $this->t('Please make a selection in %slotName.', array('%slotName' => $course_slot->field_vih_cs_title->value)));
+      }
+    }
   }
 
   /**
@@ -370,7 +391,7 @@ class ApplicationForm extends FormBase {
     ];
 
     for ($i = 0; $i < $num_parents; $i++) {
-      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm() +
+      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm($i == 0) +
       ['#attributes' => ['class' => ['clearfix']]];
     }
 
@@ -429,7 +450,7 @@ class ApplicationForm extends FormBase {
   /**
    * Helper function to build personal form elements.
    */
-  private function getPersonalDataForm($required = FALSE) {
+  private function getPersonalDataForm($required = TRUE) {
     $personal_data = [
       '#type' => 'container',
       '#theme' => 'vies_application_personal_data',
