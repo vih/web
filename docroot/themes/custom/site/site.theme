@@ -679,3 +679,21 @@ function site_bootstrap_colorize_text_alter(&$texts) {
   $texts['contains'][t('Add')->render()] = 'success';
   $texts['contains'][t('Continue')->render()] = 'success';
 }
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function site_views_pre_render(\Drupal\views\ViewExecutable $view) {
+
+  // We need to remove duplicates from long_courses/embed_list_advanced_future view.
+  if ($view->id() == "long_courses" && $view->current_display == 'embed_list_advanced_future') {
+    $node_id = [];
+    foreach($view->result as $key => $value){
+      if(in_array($value->_entity->id(), $node_id)){
+        unset($view->result[$key]);
+      } else {
+        $node_id[] = $value->_entity->id();
+      }
+    }
+  }
+}
