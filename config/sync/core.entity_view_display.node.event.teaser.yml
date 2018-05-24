@@ -56,6 +56,7 @@ hidden:
   field_vih_event_price: true
   field_vih_event_start_date: true
   field_vih_event_status: true
+  field_vih_image: true
   field_vih_paragraphs: true
   field_vih_top_banner: true
   langcode: true

@@ -1,6 +1,6 @@
 uuid: 24ab5eb7-a7d8-4a6e-857d-4d21bbb8387f
 langcode: da
-status: false
+status: true
 dependencies:
   config:
     - field.storage.paragraph.field_vih_description

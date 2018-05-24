@@ -1,6 +1,6 @@
 uuid: 5e2a2b8e-1fab-49c8-8383-bcd72baf2e1a
 langcode: da
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.list_advanced
