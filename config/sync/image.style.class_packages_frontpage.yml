@@ -1,14 +1,24 @@
 uuid: 84790c73-d319-479d-9288-d0562ff92d00
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: class_packages_frontpage
 label: 'Class Packages (Frontpage)'
 effects:
   b27b9822-9e9d-4413-94b4-00d1b669e956:
     uuid: b27b9822-9e9d-4413-94b4-00d1b669e956
     id: image_scale_and_crop
-    weight: 1
+    weight: -9
     data:
       width: 290
       height: 350
+  473e2e32-c9fc-4067-ae74-5e4373678073:
+    uuid: 473e2e32-c9fc-4067-ae74-5e4373678073
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 290
+      height: 350
+      crop_type: focal_point

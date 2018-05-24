@@ -1,19 +1,11 @@
-uuid: 1d6b7c61-30ef-46d0-b378-4da861687b7c
+uuid: e6bd556e-227f-4370-9d78-16a3fbabb38a
 langcode: da
 status: true
 dependencies:
   config:
     - field.storage.node.field_vih_sc_image
+    - media.type.image
     - node.type.vih_short_course
-  module:
-    - content_translation
-    - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 id: node.vih_short_course.field_vih_sc_image
 field_name: field_vih_sc_image
 entity_type: node
@@ -21,25 +13,16 @@ bundle: vih_short_course
 label: Billede
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
-  max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
-  alt_field: true
-  alt_field_required: true
-  title_field: false
-  title_field_required: false
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  handler: 'default:file'
-  handler_settings: {  }
-field_type: image
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

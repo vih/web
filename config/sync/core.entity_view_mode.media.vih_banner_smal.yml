@@ -1,0 +1,14 @@
+uuid: ab1e738b-a96b-42c7-b252-41712f0443a7
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_banner_smal
+label: 'VIH Banner - smal'
+targetEntityType: media
+cache: true

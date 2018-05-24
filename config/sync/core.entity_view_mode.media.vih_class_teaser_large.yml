@@ -1,0 +1,14 @@
+uuid: 5758be23-12ee-4d63-befc-ca519ec30e64
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_class_teaser_large
+label: 'VIH Class teaser large'
+targetEntityType: media
+cache: true

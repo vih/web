@@ -1,27 +1,17 @@
-uuid: a8b3f2ff-dff2-499b-8f7b-1ae98e48269a
+uuid: ca4ba774-89c6-452f-8c56-90dd69be8000
 langcode: da
 status: true
 dependencies:
   module:
-    - file
-    - image
+    - media
     - paragraphs
 id: paragraph.field_vih_person_photo
 field_name: field_vih_person_photo
 entity_type: paragraph
-type: image
+type: entity_reference
 settings:
-  uri_scheme: public
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  target_type: file
-  display_field: false
-  display_default: false
-module: image
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

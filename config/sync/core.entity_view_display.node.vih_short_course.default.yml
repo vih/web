@@ -19,12 +19,10 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.field_vih_top_banner
     - field.field.node.vih_short_course.scheduled_update
-    - image.style.banner_small
     - node.type.vih_short_course
   module:
     - datetime
     - entity_reference_revisions
-    - image
     - metatag
     - options
     - panelizer
@@ -109,10 +107,10 @@ content:
     weight: 5
     label: hidden
     settings:
-      image_style: banner_small
-      image_link: ''
+      view_mode: vih_banner_smal
+      link: false
     third_party_settings: {  }
-    type: image
+    type: entity_reference_entity_view
     region: content
   field_vih_sc_option_groups:
     type: entity_reference_revisions_entity_view

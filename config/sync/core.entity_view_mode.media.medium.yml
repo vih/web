@@ -1,0 +1,14 @@
+uuid: 0387e68c-8bea-4603-8ce7-8ad52c724ff2
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.medium
+label: Medium
+targetEntityType: media
+cache: true

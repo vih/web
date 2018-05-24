@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.event.field_vih_event_price
     - field.field.node.event.field_vih_event_start_date
     - field.field.node.event.field_vih_event_status
-    - field.field.node.event.field_vih_image
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update

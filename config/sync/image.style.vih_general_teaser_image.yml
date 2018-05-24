@@ -1,14 +1,24 @@
 uuid: ea2d6b59-6f2e-4fac-9fea-79f774eaa806
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - focal_point
 name: vih_general_teaser_image
 label: 'VIH General teaser image (400x200)'
 effects:
   c54f2491-67ca-4de4-9428-f7a82f57de83:
     uuid: c54f2491-67ca-4de4-9428-f7a82f57de83
     id: image_scale_and_crop
-    weight: 1
+    weight: -9
     data:
       width: 400
       height: 200
+  c86a8d95-0c07-40fb-8ed4-2982d0582bc9:
+    uuid: c86a8d95-0c07-40fb-8ed4-2982d0582bc9
+    id: focal_point_scale_and_crop
+    weight: -10
+    data:
+      width: 400
+      height: 200
+      crop_type: focal_point
