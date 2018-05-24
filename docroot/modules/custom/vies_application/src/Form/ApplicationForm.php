@@ -6,6 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\vies_application\ApplicationHandler;
 
 /**
  * Class ApplicationForm.
@@ -63,7 +64,7 @@ class ApplicationForm extends FormBase {
 
     // Reset form when course has been changed.
     if ($form_state->get('course') != $nid) {
-      $this->removeInputValue('periods', $form_state);
+      $this->removeInputValue('period', $form_state);
     }
     $form_state->set('course', $nid);
     $course = Node::load($nid);
@@ -73,11 +74,11 @@ class ApplicationForm extends FormBase {
       $options[$period->id()] = $period->getTitle();
     }
 
-    $periods_default_value = $form_state->getValue('periods');
+    $periods_default_value = $form_state->getValue('period');
     if (empty($periods_default_value)) {
       $periods_default_value = empty($options) ? NULL : key($options);
     }
-    $form['periodsWrapper']['periods'] = [
+    $form['periodsWrapper']['period'] = [
       '#type' => 'select',
       '#title' => $this->t('Year'),
       '#options' => $options,
@@ -185,11 +186,11 @@ class ApplicationForm extends FormBase {
           ];
         }
         if (!empty($questions)) {
-          $form['periodsWrapper']['coursePeriods']['questions'][$class->id()] = array_merge([
+          $form['periodsWrapper']['coursePeriods']['questions'][$class->id()] = [
             '#type' => 'container',
             '#theme' => 'vies_application_questions',
             '#title' => $this->t('@class_name questions', ['@class_name' => $class->getName()]),
-          ], $questions);
+          ] + $questions;
         }
       }
     }
@@ -258,11 +259,17 @@ class ApplicationForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Display result.
-    foreach ($form_state->getValues() as $key => $value) {
-      drupal_set_message($key . ': ' . $value);
+    $values = $form_state->getValues();
+    foreach ($values['parents'] as $key => &$parent) {
+      $parent = $parent['left'] + $parent['right'];
     }
 
+    $application = new ApplicationHandler($values);
+    if ($application->process()) {
+      $form_state->setRedirect('vies_application.application_form_success');
+    }
+
+    $form_state->setRedirect('vies_application.application_form_error');
   }
 
   /**
@@ -297,7 +304,6 @@ class ApplicationForm extends FormBase {
     }
     $form_state->setRebuild();
   }
-
 
   /**
    * Helper function to remove value from user input.
@@ -345,23 +351,16 @@ class ApplicationForm extends FormBase {
 
     $form['personalDataWrapper']['data'] = $personal_data;
 
-    $about_school = [
-      'schoolFrom' => [
+    $about_school_questions = ApplicationHandler::$aboutSchool;
+    $after_school = [];
+    foreach ($about_school_questions as $key => $question) {
+      $about_school[$key] = [
         '#type' => 'textarea',
-        '#title' => $this->t('What school are you from?'),
+        '#title' => $this->t($question),
         '#wrapper_attributes' => ['class' => ['col-md-12']],
-      ],
-      'schoolHowItsGoing' => [
-        '#type' => 'textarea',
-        '#title' => $this->t('How are you going to school?'),
-        '#wrapper_attributes' => ['class' => ['col-md-12']],
-      ],
-      'schoolSubjects' => [
-        '#type' => 'textarea',
-        '#title' => $this->t('What subjects do you like and why?'),
-        '#wrapper_attributes' => ['class' => ['col-md-12']],
-      ]
-    ];
+      ];
+    }
+
     $form['aboutSchool'] = [
       '#type' => 'container',
       '#title' => $this->t('About to go to school'),
@@ -421,23 +420,16 @@ class ApplicationForm extends FormBase {
       ];
     }
 
-    $after_school = [
-      'afterSchoolExpectation' => [
+    $after_school_questions = ApplicationHandler::$afterSchool;
+    $after_school = [];
+    foreach ($after_school_questions as $key => $question) {
+      $after_school[$key] = [
         '#type' => 'textarea',
-        '#title' => $this->t('What do you expect from a year after school?'),
+        '#title' => $this->t($question),
         '#wrapper_attributes' => ['class' => ['col-md-12']],
-      ],
-      'afterSchoolHeardFrom' => [
-        '#type' => 'textarea',
-        '#title' => $this->t('Where have you heard of Vejle Idrætsefterskole?'),
-        '#wrapper_attributes' => ['class' => ['col-md-12']],
-      ],
-      'afterSchoolComment' => [
-        '#type' => 'textarea',
-        '#title' => $this->t('Comment'),
-        '#wrapper_attributes' => ['class' => ['col-md-12']],
-      ]
-    ];
+      ];
+    }
+
     $form['afterSchool'] = [
       '#type' => 'container',
       '#title' => $this->t('You in efteskole'),
@@ -541,4 +533,5 @@ class ApplicationForm extends FormBase {
 
     return $personal_data;
   }
+
 }

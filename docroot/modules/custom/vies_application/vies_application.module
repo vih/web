@@ -43,5 +43,11 @@ function vies_application_theme() {
     'vies_application_questions' => [
       'render element' => 'form',
     ],
+    'vies_application_submit_message' => [
+      'variables' => [
+        'title' => NULL,
+        'message' => NULL,
+      ],
+    ],
   ];
 }

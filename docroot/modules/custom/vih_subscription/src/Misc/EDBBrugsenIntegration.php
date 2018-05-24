@@ -143,7 +143,7 @@ class EDBBrugsenIntegration {
    * Provides default values for registration array
    * @return array
    */
-  private function getDefaultRegistrationValues() {
+  protected function getDefaultRegistrationValues() {
     return array(
       'Kartotek' => $this->book_number,
       'Kursus' => 'Vinterkursus 18/19',

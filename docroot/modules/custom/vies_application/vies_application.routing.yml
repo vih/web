@@ -5,3 +5,19 @@ vies_application.application_form:
     _title: 'Application'
   requirements:
     _access: 'TRUE'
+
+vies_application.application_form_success:
+  path: '/ansogning/success'
+  defaults:
+    _controller: '\Drupal\vies_application\Controller\ApplicationController::success'
+    _title: 'Application has been submitted'
+  requirements:
+    _access: 'TRUE'
+
+vies_application.application_form_error:
+  path: '/ansogning/error'
+  defaults:
+    _controller: '\Drupal\vies_application\Controller\ApplicationController::error'
+    _title: 'Application submission failed'
+  requirements:
+    _access: 'TRUE'

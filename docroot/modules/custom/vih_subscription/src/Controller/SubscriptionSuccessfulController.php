@@ -73,6 +73,23 @@ class SubscriptionSuccessfulController extends ControllerBase {
    * @param NodeInterface $order
    */
   private function registerOrder(NodeInterface $subject, NodeInterface $order) {
+    //EDBBrugsen Integration
+    $edbBrugsenConfig = \Drupal::configFactory()->getEditable(EdbbrugsenSettingsForm::$configName);
+    if ($edbBrugsenConfig->get('active')) {
+      $username = $edbBrugsenConfig->get('username');
+      $password = $edbBrugsenConfig->get('password');
+      $school_code = $edbBrugsenConfig->get('school_code');
+      $book_number = $edbBrugsenConfig->get('book_number');
+
+      $studentCpr = $order->field_vih_lco_cpr->value;
+
+      $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
+      $registration = $edbBrugsenIntegration->convertLongCourseToRegistration($order);
+      $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
+      $edbBrugsenIntegration->addRegistration($registration);
+    }
+
+
     //Send email
     $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
     $message = array();
@@ -172,7 +189,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $book_number = $edbBrugsenConfig->get('book_number');
 
         $studentCpr = $order->field_vih_lco_cpr->value;
-        
+
         $edbBrugsenIntegration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
         $registration = $edbBrugsenIntegration->convertLongCourseToRegistration($order);
         $registration = $edbBrugsenIntegration->addStudentCprNr($registration, $studentCpr);
