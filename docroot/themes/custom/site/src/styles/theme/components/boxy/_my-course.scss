@@ -28,8 +28,16 @@
     padding: 0;
   }
 
+  .boxy__content {
+    padding: $boxy-body-spacing-top-bottom $boxy-body-spacing-top-bottom;
+
+    h1, h2, h3, h4, h5 {
+      margin-top: 0;
+    }
+  }
+
   .boxy__image {
-    padding-right: floor( ( $grid-gutter-width / 2) );
+    padding-right: 0;
 
     margin-top: 0 - $boxy-body-spacing-top-bottom;
     margin-bottom: 0 - $boxy-body-spacing-top-bottom;
@@ -56,7 +64,21 @@
 @media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {}
+@media #{$breakpoint-tablet-and-up} {
+
+  .boxy--my-course {
+
+    .boxy__content {
+      display: flex;
+
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+
+      padding: 0;
+    }
+  }
+}
 
 // Tablet - only
 @media #{$breakpoint-tablet-only} {}
