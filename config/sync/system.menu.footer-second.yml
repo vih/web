@@ -3,6 +3,6 @@ langcode: da
 status: true
 dependencies: {  }
 id: footer-second
-label: 'Sidefod - anden'
-description: ''
+label: 'Sidefod - shortcuts'
+description: 'Placeres i footer - third'
 locked: false

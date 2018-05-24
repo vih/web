@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:notify:64d2939b-865e-4f01-bfc7-31b6392fd55f'
   module:
     - block_content
+    - block_scheduler
   theme:
     - site
 id: demounderretning
@@ -22,4 +23,10 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  expiry:
+    id: expiry
+    start: ''
+    end: 1530738000
+    negate: false
+    context_mapping: {  }
