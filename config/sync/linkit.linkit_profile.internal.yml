@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - node
+    - taxonomy
 id: internal
 label: Intern
 description: ''
@@ -24,3 +25,12 @@ matchers:
         vih_short_course: vih_short_course
       group_by_bundle: false
       include_unpublished: false
+  9859665a-78e6-4a31-b6b1-ad018bdbb00b:
+    uuid: 9859665a-78e6-4a31-b6b1-ad018bdbb00b
+    id: 'entity:taxonomy_term'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles:
+        vih_class: vih_class
+      group_by_bundle: false
