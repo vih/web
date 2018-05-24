@@ -248,7 +248,7 @@ class ApplicationForm extends FormBase {
    * Callback for selects and returns the container with the parents in it.
    */
   public function addmoreParentCallback(array &$form, FormStateInterface $form_state) {
-    return $form['parentsWrapper']['parents'];
+    return $form['parentsWrapper'];
   }
 
   /**
@@ -352,6 +352,8 @@ class ApplicationForm extends FormBase {
       '#type' => 'container',
       '#title' => $this->t('Parents'),
       '#theme' => 'vies_application_section',
+      '#prefix' => '<div id="parents-wrapper">',
+      '#suffix' => '</div>',
     ];
 
     // Gather the number of parents in the form already.
@@ -362,23 +364,21 @@ class ApplicationForm extends FormBase {
       $num_parents = 1;
     }
 
-    $form['parentsWrapper']['#tree'] = TRUE;
     $form['parentsWrapper']['parents'] = [
       '#type' => 'container',
-      '#prefix' => '<div id="parents-wrapper">',
-      '#suffix' => '</div>',
+      '#tree' => TRUE,
     ];
 
     for ($i = 0; $i < $num_parents; $i++) {
-      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm($i == 0) +
+      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm() +
       ['#attributes' => ['class' => ['clearfix']]];
     }
 
-    $form['parentsWrapper']['parents']['actions'] = [
+    $form['parentsWrapper']['actions'] = [
       '#type' => 'actions',
       '#attributes' => ['class' => ['col-md-12']],
     ];
-    $form['parentsWrapper']['parents']['actions']['add_parent'] = [
+    $form['parentsWrapper']['actions']['add_parent'] = [
       '#type' => 'submit',
       '#value' => t('Add parent'),
       '#submit' => ['::addOneParent'],
@@ -389,7 +389,7 @@ class ApplicationForm extends FormBase {
     ];
     // If there is more than one parent, add the remove button.
     if ($num_parents > 1) {
-      $form['parentsWrapper']['parents']['actions']['remove_parent'] = [
+      $form['parentsWrapper']['actions']['remove_parent'] = [
         '#type' => 'submit',
         '#value' => t('Remove parent'),
         '#submit' => ['::removeParentCallback'],
@@ -429,7 +429,7 @@ class ApplicationForm extends FormBase {
   /**
    * Helper function to build personal form elements.
    */
-  private function getPersonalDataForm($required = TRUE) {
+  private function getPersonalDataForm($required = FALSE) {
     $personal_data = [
       '#type' => 'container',
       '#theme' => 'vies_application_personal_data',
@@ -483,18 +483,18 @@ class ApplicationForm extends FormBase {
       '#placeholder' => $this->t('Address'),
       '#required' => $required,
     ];
-    $personal_data['right']['house']['houseNumber'] = [
+    $personal_data['right']['houseNumber'] = [
       '#type' => 'textfield',
       '#title' => $this->t('House no.'),
       '#placeholder' => $this->t('House no.'),
       '#required' => $required,
     ];
-    $personal_data['right']['house']['houseLetter'] = [
+    $personal_data['right']['houseLetter'] = [
       '#type' => 'textfield',
       '#title' => $this->t('House letter'),
       '#placeholder' => $this->t('House letter'),
     ];
-    $personal_data['right']['house']['houseFloor'] = [
+    $personal_data['right']['houseFloor'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Floor'),
       '#placeholder' => $this->t('Floor'),

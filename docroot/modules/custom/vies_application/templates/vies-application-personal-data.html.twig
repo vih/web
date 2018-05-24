@@ -7,15 +7,15 @@
 
   <div class="row">
     <div class="col-xs-4">
-      {{ form['right']['house']['houseNumber'] }}
+      {{ form['right']['houseNumber'] }}
     </div>
     <div class="col-xs-4">
-      {{ form['right']['house']['houseLetter'] }}
+      {{ form['right']['houseLetter'] }}
     </div>
     <div class="col-xs-4">
-      {{ form['right']['house']['houseFloor'] }}
+      {{ form['right']['houseFloor'] }}
     </div>
   </div>
 
-  {{ form['right']|without('address','house') }}
+  {{ form['right']|without('address','houseNumber','houseLetter', 'houseFloor') }}
 </div>
