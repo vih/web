@@ -1,0 +1,19 @@
+uuid: 14407b51-8118-4697-abf1-e8e8c86309be
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_city
+    - node.type.vies_application_form
+id: node.vies_application_form.field_vih_lco_city
+field_name: field_vih_lco_city
+entity_type: node
+bundle: vies_application_form
+label: City
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

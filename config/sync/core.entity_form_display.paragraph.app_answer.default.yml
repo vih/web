@@ -1,0 +1,35 @@
+uuid: 255adf22-97b8-4a30-ac8f-3ba727c78b5e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.app_answer.field_answer
+    - field.field.paragraph.app_answer.field_question
+    - paragraphs.paragraphs_type.app_answer
+  module:
+    - workbench_moderation
+id: paragraph.app_answer.default
+targetEntityType: paragraph
+bundle: app_answer
+mode: default
+content:
+  field_answer:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_question:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

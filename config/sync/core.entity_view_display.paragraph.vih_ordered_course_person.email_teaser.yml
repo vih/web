@@ -63,6 +63,7 @@ hidden:
   field_vih_ocp_birthdate: true
   field_vih_ocp_city: true
   field_vih_ocp_comment: true
+  field_vih_ocp_country: true
   field_vih_ocp_municipality: true
   field_vih_ocp_newsletter: true
   field_vih_ocp_zip: true

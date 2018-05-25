@@ -1,0 +1,9 @@
+uuid: e92cd377-62c8-46d6-8829-8883e96b7254
+langcode: da
+status: true
+dependencies: {  }
+id: app_answer
+label: 'Application answer'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

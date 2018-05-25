@@ -46,6 +46,9 @@ content:
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
+  translation:
+    weight: 10
+    region: content
 hidden:
   created: true
   status: true

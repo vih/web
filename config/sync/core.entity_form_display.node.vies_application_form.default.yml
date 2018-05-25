@@ -1,0 +1,198 @@
+uuid: 010525c2-f17d-4e8d-a577-4001d631b26c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.node.vies_application_form.field_vies_about_school
+    - field.field.node.vies_application_form.field_vies_afterschool
+    - field.field.node.vies_application_form.field_vies_class
+    - field.field.node.vies_application_form.field_vies_class_questions
+    - field.field.node.vies_application_form.field_vies_parents
+    - field.field.node.vies_application_form.field_vies_period
+    - field.field.node.vies_application_form.field_vies_sex
+    - field.field.node.vies_application_form.field_vih_lco_address
+    - field.field.node.vies_application_form.field_vih_lco_city
+    - field.field.node.vies_application_form.field_vih_lco_course
+    - field.field.node.vies_application_form.field_vih_lco_email
+    - field.field.node.vies_application_form.field_vih_lco_first_name
+    - field.field.node.vies_application_form.field_vih_lco_last_name
+    - field.field.node.vies_application_form.field_vih_lco_municipality
+    - field.field.node.vies_application_form.field_vih_lco_newsletter
+    - field.field.node.vies_application_form.field_vih_lco_telefon
+    - field.field.node.vies_application_form.field_vih_lco_zip
+    - node.type.vies_application_form
+  module:
+    - inline_entity_form
+    - workbench_moderation
+id: node.vies_application_form.default
+targetEntityType: node
+bundle: vies_application_form
+mode: default
+content:
+  field_vies_about_school:
+    weight: 14
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_vies_afterschool:
+    weight: 16
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      override_labels: false
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_vies_class:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_vies_class_questions:
+    weight: 3
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_vies_parents:
+    weight: 15
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_vies_period:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_vies_sex:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_address:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_city:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_course:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_vih_lco_email:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_first_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_last_name:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_municipality:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_newsletter:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_vih_lco_telefon:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vih_lco_zip:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

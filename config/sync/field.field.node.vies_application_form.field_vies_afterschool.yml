@@ -1,0 +1,113 @@
+uuid: c3d87c1c-969d-43d7-8a04-b4ba28ff5af0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vies_afterschool
+    - node.type.vies_application_form
+    - paragraphs.paragraphs_type.app_answer
+id: node.vies_application_form.field_vies_afterschool
+field_name: field_vies_afterschool
+entity_type: node
+bundle: vies_application_form
+label: 'You in efteskole'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      app_answer: app_answer
+    target_bundles_drag_drop:
+      app_answer:
+        enabled: true
+        weight: 30
+      1_column_action_centered:
+        weight: 31
+        enabled: false
+      article:
+        weight: 32
+        enabled: false
+      class_packages:
+        weight: 33
+        enabled: false
+      employee:
+        weight: 34
+        enabled: false
+      event_list:
+        weight: 35
+        enabled: false
+      file:
+        weight: 36
+        enabled: false
+      gallery:
+        weight: 37
+        enabled: false
+      list_of_news_teasers:
+        weight: 38
+        enabled: false
+      long_course_list_:
+        weight: 39
+        enabled: false
+      long_course_list_contain_class:
+        weight: 40
+        enabled: false
+      parent:
+        weight: 41
+        enabled: false
+      short_course_list_:
+        weight: 42
+        enabled: false
+      social_media_embed:
+        weight: 43
+        enabled: false
+      user_quote:
+        weight: 44
+        enabled: false
+      video:
+        weight: 45
+        enabled: false
+      vih_class_groups_accordion:
+        weight: 46
+        enabled: false
+      vih_content_grid:
+        weight: 47
+        enabled: false
+      vih_course_slot:
+        weight: 48
+        enabled: false
+      vih_option:
+        weight: 49
+        enabled: false
+      vih_option_group:
+        weight: 50
+        enabled: false
+      vih_ordered_course_period:
+        weight: 51
+        enabled: false
+      vih_ordered_course_person:
+        weight: 52
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 53
+        enabled: false
+      vih_ordered_event_person:
+        weight: 54
+        enabled: false
+      vih_ordered_option:
+        weight: 55
+        enabled: false
+      vih_single_class_group:
+        weight: 56
+        enabled: false
+      vih_teacher_class_description:
+        weight: 57
+        enabled: false
+      vih_webform:
+        weight: 58
+        enabled: false
+field_type: entity_reference

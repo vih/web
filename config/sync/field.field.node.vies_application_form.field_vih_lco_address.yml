@@ -1,0 +1,19 @@
+uuid: f6776f4c-c489-46b7-89ee-252c374a0957
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_address
+    - node.type.vies_application_form
+id: node.vies_application_form.field_vih_lco_address
+field_name: field_vih_lco_address
+entity_type: node
+bundle: vies_application_form
+label: Address
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

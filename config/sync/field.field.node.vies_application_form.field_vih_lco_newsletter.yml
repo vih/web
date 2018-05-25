@@ -1,0 +1,23 @@
+uuid: 98304797-c2db-4994-896d-2e2769a2e411
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_lco_newsletter
+    - node.type.vies_application_form
+id: node.vies_application_form.field_vih_lco_newsletter
+field_name: field_vih_lco_newsletter
+entity_type: node
+bundle: vies_application_form
+label: Newsletter
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

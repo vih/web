@@ -1,0 +1,19 @@
+uuid: 0a09b0a7-ff78-4303-82f4-0a47ec35325e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parent_address
+    - paragraphs.paragraphs_type.parent
+id: paragraph.parent.field_parent_address
+field_name: field_parent_address
+entity_type: paragraph
+bundle: parent
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

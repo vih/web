@@ -1,0 +1,19 @@
+uuid: 6c188bb8-add4-4082-b496-87046a3c4e02
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parent_telefon
+    - paragraphs.paragraphs_type.parent
+id: paragraph.parent.field_parent_telefon
+field_name: field_parent_telefon
+entity_type: paragraph
+bundle: parent
+label: Telefon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
