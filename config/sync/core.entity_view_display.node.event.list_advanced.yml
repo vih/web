@@ -57,7 +57,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: vih_medium_date_short_month
+      format_type: html_datetime
     third_party_settings: {  }
   field_vih_event_start_date:
     type: datetime_default
@@ -66,7 +66,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: vih_medium_date_short_month
+      format_type: html_datetime
     third_party_settings: {  }
   field_vih_image:
     type: entity_reference_entity_view
