@@ -4,6 +4,7 @@ include( dirname(__FILE__) . '/include/settings.inc');
 use Drupal\image\Entity\ImageStyle;
 use Drupal\user\Entity\User;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
@@ -151,6 +152,13 @@ function site_preprocess_node(array &$variables) {
     $variables['content']['can_be_subscribed'] = \Drupal\vih_subscription\Misc\VihSubscriptionUtils::acceptsMoreSubscriptions($node);
     $variables['content']['is_active'] = ($node->field_vih_event_status->value == 'active');
     $variables['content']['is_closed'] = ($node->field_vih_event_status->value == 'closed');
+   
+    if($node->field_vih_event_start_date->date->format('Y-m-d') == $node->field_vih_event_end_date->date->format('Y-m-d')){
+      $start_end_str = $node->field_vih_event_start_date->date->format('d M Y') . ' ' . $node->field_vih_event_start_date->date->format('H:i') . ' - ' . $node->field_vih_event_end_date->date->format('H:i');
+    } else {
+      $start_end_str = $node->field_vih_event_start_date->date->format('d M Y H:i') . ' - ' . $node->field_vih_event_end_date->date->format('d M Y H:i');
+    }
+    $variables['content']['start_end_str'] = $start_end_str;
   }
 
 // Orders

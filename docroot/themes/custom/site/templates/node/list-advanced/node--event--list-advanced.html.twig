@@ -18,8 +18,7 @@
       {# Begin - period #}
       {% if content.field_vih_event_start_date and content.field_vih_event_end_date %}
         <div class="entity-list-advanced__image__overlay">
-          {{ content.field_vih_event_start_date }}
-          - {{ content.field_vih_event_end_date }}
+         {{ content.start_end_str }}
         </div>
       {% endif %}
       {# End - period #}
