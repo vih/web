@@ -92,6 +92,7 @@ module:
   rdf: 0
   recreate_block_content: 0
   scheduled_updates: 0
+  schema_article: 0
   schema_metatag: 0
   search: 0
   search_api: 0
