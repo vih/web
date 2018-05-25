@@ -21,6 +21,12 @@
 // Styling
 // --------------------------------------------------
 
+table {
+  @extend .table;
+  @extend .table-hover;
+  @extend .table-striped;
+}
+
 // Remove body margin (taken from the overrides of Bootstrap theme)
 body {
   margin-top: 0;

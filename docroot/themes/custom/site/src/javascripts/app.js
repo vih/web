@@ -20,6 +20,10 @@
     label: ''
   });
 
+  // Table
+  $('.layout__content').find('table')
+      .addClass('table table-striped table-hover');
+
   // Notify
   var $notifications = $('.notify');
   if ($notifications.length) {
