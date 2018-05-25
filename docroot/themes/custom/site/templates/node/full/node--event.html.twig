@@ -86,12 +86,18 @@ view_mode ? view_mode|clean_class,
                                                 </div>
 
                                                 <div class="time-period__list">
-                                                    <div class="time-period__list__item">
-                                                        {{ content.field_vih_event_start_date }}
-                                                    </div>
-                                                    <div class="time-period__list__item">
-                                                        {{ content.field_vih_event_end_date }}
-                                                    </div>
+                                                    {% if content.one_day %}
+                                                        <div class="time-period__list__item">
+                                                            {{ content.start_date_str }} - {{ content.end_date_str }}
+                                                        </div>
+                                                    {% else %}
+                                                        <div class="time-period__list__item">
+                                                            {{ content.start_date_str }}
+                                                        </div>
+                                                        <div class="time-period__list__item">
+                                                            {{ content.end_date_str }}
+                                                        </div>
+                                                    {% endif %}
                                                 </div>
                                             </div>
                                         </div>
