@@ -164,7 +164,7 @@ img {
 
   .row--equal-height-columns {
 
-    &:not(.view),
+    &,
     > .view-content {
       display: flex;
 
