@@ -50,7 +50,7 @@
   }
 
   .field {
-    margin-bottom: 0;
+    margin-bottom: 0 !important; // Overriding field margin from _user.scss
   }
 }
 
