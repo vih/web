@@ -1,19 +1,18 @@
-uuid: f8b2e6b6-95c8-48c4-9973-4c714deb910e
+uuid: 26ef04ba-1209-4057-b6bd-9fd3b15dff7c
 langcode: da
 status: true
 dependencies:
   config:
     - block_content.type.notify
-    - field.storage.block_content.field_vih_heading
-id: block_content.notify.field_vih_heading
-field_name: field_vih_heading
+id: block_content.notify.metatag
+field_name: metatag
 entity_type: block_content
 bundle: notify
-label: Overskrift
-description: ''
+label: Metatags
+description: 'The metatags for the entity.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string
+field_type: map
