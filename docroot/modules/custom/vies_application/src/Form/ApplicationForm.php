@@ -267,6 +267,7 @@ class ApplicationForm extends FormBase {
     $application = new ApplicationHandler($values);
     if ($application->process()) {
       $form_state->setRedirect('vies_application.application_form_success');
+      return;
     }
 
     $form_state->setRedirect('vies_application.application_form_error');
