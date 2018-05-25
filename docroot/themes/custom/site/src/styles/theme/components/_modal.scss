@@ -31,6 +31,10 @@ $modal-margin: 70px;
 
 .modal {
   background-color: rgba($modal-backdrop-bg, $modal-backdrop-opacity);
+
+  .modal-content {
+    overflow-x: scroll;
+  }
 }
 
 .modal-header {
