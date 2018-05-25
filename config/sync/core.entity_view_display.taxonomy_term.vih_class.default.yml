@@ -10,7 +10,6 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - field.field.taxonomy_term.vih_class.field_vih_heading
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
     - field.field.taxonomy_term.vih_class.field_vih_top_banner
@@ -67,14 +66,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
-    region: content
-  field_vih_heading:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_vih_paragraphs:
     type: entity_reference_revisions_entity_view
