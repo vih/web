@@ -39,7 +39,7 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
   white-space: normal;
 
-  &.btn-default,
+  &.btn-white,
   &.btn-primary,
   &.btn-secondary,
   &.btn-info,
@@ -168,8 +168,8 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
 .btn {
 
-  // Default
-  &.btn-default {
+  // White
+  &.btn-white {
 
     &:before {
       color: $btn-primary-color;
