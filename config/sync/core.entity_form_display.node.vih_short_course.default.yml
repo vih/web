@@ -90,7 +90,6 @@ third_party_settings:
       region: content
     group_course_details:
       children:
-        - field_vih_sc_image
         - field_vih_sc_status
         - field_vih_sc_start_date
         - field_vih_sc_end_date
@@ -98,6 +97,7 @@ third_party_settings:
         - field_vih_sc_option_groups
         - field_vih_cs_contact_person
         - field_vih_sc_persons_limit
+        - field_vih_sc_image
       parent_name: ''
       weight: 3
       format_type: tab
@@ -250,10 +250,10 @@ content:
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
   langcode:

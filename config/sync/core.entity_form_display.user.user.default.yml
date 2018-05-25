@@ -29,11 +29,11 @@ third_party_settings:
   field_group:
     group_user:
       children:
-        - field_vih_user_photo
         - field_vih_user_job_title
         - field_vih_user_name_first
         - field_vih_user_name_last
         - field_vih_user_type_id
+        - field_vih_user_photo
       parent_name: ''
       weight: 1
       format_type: tab
@@ -135,10 +135,10 @@ content:
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
   field_vih_top_banner_text:

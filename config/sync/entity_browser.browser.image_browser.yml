@@ -2,17 +2,19 @@ uuid: 65870dda-db81-420d-919b-cee451ba273c
 langcode: da
 status: true
 dependencies:
+  config:
+    - views.view.media
   module:
     - lightning_media
     - views
 _core:
   default_config_hash: xipKT5leVqIkooIB1BdbwmJTd9VbDhbdTGU0iIRskA4
 name: image_browser
-label: Billedvælger
+label: 'Image Browser'
 display: modal
 display_configuration:
-  width: '650'
-  height: '500'
+  width: ''
+  height: '640'
   link_text: 'Select Image(s)'
   auto_open: false
 selection_display: no_display
@@ -24,7 +26,7 @@ widgets:
     settings:
       submit_text: Select
       form_mode: media_browser
-      return_file: true
+      return_file: false
     uuid: 44d52e51-9627-43b5-a637-3b0462041d1c
     weight: -9
     label: Upload
@@ -37,5 +39,5 @@ widgets:
       auto_select: false
     uuid: 58383135-0f34-4a4a-85fc-5cf9b5de2fdd
     weight: -10
-    label: Bibliotek
+    label: Library
     id: view

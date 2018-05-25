@@ -66,7 +66,6 @@ third_party_settings:
       region: content
     group_course_details:
       children:
-        - field_vih_course_image
         - field_vih_course_status
         - field_vih_course_periods
         - field_vih_course_persons_limit
@@ -74,6 +73,7 @@ third_party_settings:
         - field_vih_course_subsc_price
         - field_vih_course_price
         - field_vih_cource_contact_person
+        - field_vih_course_image
       parent_name: ''
       weight: 3
       format_type: tab
@@ -245,10 +245,10 @@ content:
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
   langcode:

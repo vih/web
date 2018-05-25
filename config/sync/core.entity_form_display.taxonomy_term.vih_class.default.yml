@@ -44,10 +44,10 @@ third_party_settings:
       region: content
     group_class_details:
       children:
-        - field_vih_class_image
         - field_short_description
         - field_vih_class_color
         - field_vih_class_class_packages
+        - field_vih_class_image
       parent_name: ''
       weight: 3
       format_type: tab
@@ -213,10 +213,10 @@ content:
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
   langcode:
