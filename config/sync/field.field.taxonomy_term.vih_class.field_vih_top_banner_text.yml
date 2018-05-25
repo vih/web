@@ -1,15 +1,15 @@
-uuid: bf731c64-6137-4f59-a0c7-c15cca736251
+uuid: 61b5eab6-295c-4abd-a03d-350f07c3002a
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_vih_heading
+    - field.storage.taxonomy_term.field_vih_top_banner_text
     - taxonomy.vocabulary.vih_class
-id: taxonomy_term.vih_class.field_vih_heading
-field_name: field_vih_heading
+id: taxonomy_term.vih_class.field_vih_top_banner_text
+field_name: field_vih_top_banner_text
 entity_type: taxonomy_term
 bundle: vih_class
-label: Overskrift
+label: 'Tekst på banner'
 description: ''
 required: false
 translatable: true

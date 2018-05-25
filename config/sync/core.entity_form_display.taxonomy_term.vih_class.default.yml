@@ -11,10 +11,10 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - field.field.taxonomy_term.vih_class.field_vih_heading
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
     - field.field.taxonomy_term.vih_class.field_vih_top_banner
+    - field.field.taxonomy_term.vih_class.field_vih_top_banner_text
     - taxonomy.vocabulary.vih_class
   module:
     - entity_browser
@@ -28,7 +28,6 @@ third_party_settings:
     group_content:
       children:
         - name
-        - field_vih_heading
         - field_vih_subheading
         - description
       parent_name: ''
@@ -78,6 +77,7 @@ third_party_settings:
       region: content
     group_top_banner:
       children:
+        - field_vih_top_banner_text
         - field_vih_top_banner
       parent_name: ''
       weight: 0
@@ -133,7 +133,7 @@ content:
     type: string_textarea
     region: content
   field_vih_class_class_packages:
-    weight: 11
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60
@@ -149,7 +149,7 @@ content:
     region: content
   field_vih_class_image:
     type: entity_browser_entity_reference
-    weight: 22
+    weight: 10
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -175,14 +175,6 @@ content:
     third_party_settings: {  }
     type: number
     region: content
-  field_vih_heading:
-    weight: 6
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_vih_paragraphs:
     type: paragraphs
     weight: 2
@@ -207,7 +199,7 @@ content:
     third_party_settings: {  }
   field_vih_top_banner:
     type: entity_browser_entity_reference
-    weight: 1
+    weight: 8
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -219,6 +211,14 @@ content:
         view_mode: thumbnail
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 19
