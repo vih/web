@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
+    - entity_browser.browser.media_browser
     - field.field.taxonomy_term.vih_class_package.field_metatag
     - field.field.taxonomy_term.vih_class_package.field_short_description
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
@@ -158,7 +158,7 @@ content:
     type: entity_browser_entity_reference
     weight: 3
     settings:
-      entity_browser: image_browser
+      entity_browser: media_browser
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
