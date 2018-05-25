@@ -1,26 +1,86 @@
-<a href="{{ tid }}" class="element-wrapper-link">
-  <div class="boxy boxy--my-course">
-    <div class="boxy__body">
-      <div class="row row--equal-height-columns">
-        <div class="col-xs-12 col-sm-4 col-md-3">
-          <div class="photo">
-            {{ field_vih_photo }}
-
-            <div class="photo__overlay">
-              <div class="photo__overlay__text">
-                {{ name_1 }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-9">
-          <div class="boxy__content">
-            <h3>{{ field_vih_heading }}</h3>
-
-            {{ field_vih_description }}
-          </div>
-        </div>
-      </div>
+<header class="layout__header layout__header-mobile visible-xs visible-sm">
+    <div class=" layout__header-row layout__header-row--bottom">
+        {% if page.mobile_header_navigation %}
+            {{ page.mobile_header_navigation }}
+        {% endif %}
     </div>
-  </div>
-</a>
+</header>
+
+<header id="main-menu" class="layout__header">
+
+    <!-- Begin - logo -->
+    <a class="layout__header-logo hidden-xs hidden-sm" href="{{ url('<front>') }}"></a>
+    <!-- End - logo -->
+
+    <!-- Begin - black bar -->
+    <div class="layout__header-row layout__header-row--top hidden-xs hidden-sm">
+
+        {% if theme_settings.contact_information.phone_system and theme_settings.contact_information.phone_readable and theme_settings.contact_information.working_hours %}
+            <!-- Begin - contact information -->
+            <aside class="layout-header-contact-information">
+                <a href="tel:{{ theme_settings.contact_information.phone_system }}"><span
+                            class="icon icon-phone"></span> {{ theme_settings.contact_information.phone_readable }}</a>
+                <span>{{ theme_settings.contact_information.working_hours }}</span>
+            </aside>
+            <!-- End - contact information -->
+        {% endif %}
+
+        {% if theme_settings.header_bar.tour_url %}
+            <!-- Begin - tour -->
+            <aside class="layout-header-tour">
+                <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.tour_url }) }}"><span
+                            class="icon icon-bookmark-o"></span> {{ 'Guided tour' | trans }}</a>
+                <span><strong>{{ 'get your own impression' | trans }}</strong></span>
+            </aside>
+            <!-- End - tour -->
+        {% endif %}
+
+        {% if theme_settings.header_bar.contact_url %}
+            <!-- Begin - contact -->
+            <aside class="layout-header-contact">
+                <a href="{{ path('entity.node.canonical', {'node': theme_settings.header_bar.contact_url }) }}"><span
+                            class="icon icon-portrait"></span> {{ 'Contact' | trans }}</a>
+            </aside>
+            <!-- End - contact -->
+        {% endif %}
+
+        <!-- Begin - spacer -->
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="layout-spacer"></div>
+        <!-- End - spacer -->
+
+        <!-- Begin - black bar - right -->
+        {% if page.header_black_bar_right %}
+            {% block header_black_bar_right %}
+                <aside class="layout-header-language-selection">
+                    {{ page.header_black_bar_right }}
+                </aside>
+            {% endblock %}
+        {% endif %}
+        <!-- End - black bar - right -->
+
+    </div>
+    <!-- End - black bar -->
+
+    <div class="layout__header-row layout__header-row--bottom">
+        <div class="nav-button">
+            <button id="toggle_mobile_menu" type="button" class="navbar-toggle pull-left" data-toggle="offcanvas"
+                    data-target="#navbar-collapse-menu" data-canvas="body">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar long"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar long"></span>
+            </button>
+
+        </div>
+
+        {% if page.header_navigation %}
+            {{ page.header_navigation }}
+        {% endif %}
+
+        <div class="logo-wrapper-mobile">
+            <a href="/"><img src="{{ base_path ~ directory }}/dist/images/vih_logo_white.svg"></a>
+        </div>
+
+    </div>
+</header>
