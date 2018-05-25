@@ -5,6 +5,7 @@ namespace Drupal\vies_application;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Url;
 use Drupal\vih_subscription\Form\EdbbrugsenSettingsForm;
 use Drupal\vih_subscription\Form\NotificationsSettingsForm;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
@@ -333,13 +334,13 @@ class ApplicationHandler {
       $course_date[] .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "long");
     }
 
-    $course = Node::load($this->data['course']);
+    $application_url = Url::fromRoute('vies_application.application_form')->setAbsolute()->toString();
     $replacement = [
       $this->data['courseTitle'],
       $this->application->field_vih_lco_first_name->value . ' ' .
       $this->application->field_vih_lco_last_name->value,
       !empty($course_date) ? mb_strtolower(implode(' - ', $course_date)) : '',
-      '<a href="' . $course->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $course->toUrl()->setAbsolute()->toString() . '</a>',
+      '<a href="' . $application_url . '"target=_blank >' . $application_url . '</a>',
       $application_rendered,
     ];
 

@@ -47,6 +47,7 @@ function vies_application_theme() {
       'variables' => [
         'title' => NULL,
         'message' => NULL,
+        'backlink' => NULL,
       ],
     ],
   ];
