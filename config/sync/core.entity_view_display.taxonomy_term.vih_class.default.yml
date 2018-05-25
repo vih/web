@@ -13,6 +13,7 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
     - field.field.taxonomy_term.vih_class.field_vih_top_banner
+    - field.field.taxonomy_term.vih_class.field_vih_top_banner_text
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
@@ -91,6 +92,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_vih_top_banner_text:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   field_metatag: true
