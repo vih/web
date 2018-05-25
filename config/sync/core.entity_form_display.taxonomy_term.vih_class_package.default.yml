@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
+    - entity_browser.browser.image_browser
     - field.field.taxonomy_term.vih_class_package.field_metatag
     - field.field.taxonomy_term.vih_class_package.field_short_description
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
@@ -24,9 +24,9 @@ third_party_settings:
   field_group:
     group_class_package_details:
       children:
-        - field_vih_cp_image
         - field_short_description
         - field_vih_class_package_color
+        - field_vih_cp_image
       parent_name: ''
       weight: 3
       format_type: tab
@@ -57,7 +57,6 @@ third_party_settings:
     group_content:
       children:
         - name
-        - field_vih_heading
         - field_vih_subheading
         - description
       parent_name: ''
@@ -123,14 +122,14 @@ content:
     type: entity_browser_entity_reference
     weight: 22
     settings:
-      entity_browser: media_browser
+      entity_browser: image_browser
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
   field_vih_paragraphs:
@@ -159,14 +158,14 @@ content:
     type: entity_browser_entity_reference
     weight: 3
     settings:
-      entity_browser: media_browser
+      entity_browser: image_browser
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
   field_vih_top_banner_text:
