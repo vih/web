@@ -8,7 +8,6 @@ dependencies:
     - field.storage.paragraph.field_vih_photo
     - paragraphs.paragraphs_type.vih_teacher_class_description
   module:
-    - image
     - paragraphs
     - taxonomy
     - text
@@ -376,10 +375,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: image
+          type: entity_reference_entity_view
           settings:
-            image_style: medium
-            image_link: ''
+            view_mode: medium
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -402,7 +400,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "    <a href=\"{{ tid }}\" class=\"element-wrapper-link\">\n        <div class=\"boxy boxy--my-course\">\n            <div class=\"boxy__body\">\n                <div class=\"row row--equal-height-columns\">\n                    <div class=\"col-xs-12 col-sm-4 col-md-3\">\n                        <div class=\"photo\">\n                            {{ field_vih_photo }}\n\n                            <div class=\"photo__overlay\">\n                                <div class=\"photo__overlay__text\">\n                                    {{ name_1 }}\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-8 col-md-9\">\n                        <div class=\"boxy__body\">\n                            <h3>{{ field_vih_heading }}</h3>\n\n                            {{ field_vih_description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </a>"
+            text: "    <a href=\"{{ tid }}\" class=\"element-wrapper-link\">\n        <div class=\"boxy boxy--my-course\">\n            <div class=\"boxy__body\">\n                <div class=\"row row--equal-height-columns\">\n                    <div class=\"col-xs-12 col-sm-4 col-md-3\">\n                        <div class=\"photo\">\n                            {{ field_vih_photo }}\n\n                            <div class=\"photo__overlay\">\n                                <div class=\"photo__overlay__text\">\n                                    {{ name_1 }}\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-xs-12 col-sm-8 col-md-9\">\n                        <div class=\"boxy__content\">\n                            <h3>{{ field_vih_heading }}</h3>\n\n                            {{ field_vih_description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </a>"
             make_link: false
             path: ''
             absolute: false
@@ -504,15 +502,6 @@ display:
           group_type: group
           admin_label: 'field_vih_user: User'
           required: true
-          plugin_id: standard
-        field_vih_paragraphs_1:
-          id: field_vih_paragraphs_1
-          table: taxonomy_term__field_vih_paragraphs
-          field: field_vih_paragraphs
-          relationship: none
-          group_type: group
-          admin_label: 'field_vih_paragraphs: Paragraph'
-          required: false
           plugin_id: standard
       arguments:
         uid:
