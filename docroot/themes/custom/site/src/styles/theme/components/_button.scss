@@ -39,6 +39,7 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
   white-space: normal;
 
+  &.btn-default,
   &.btn-primary,
   &.btn-secondary,
   &.btn-info,
@@ -166,6 +167,19 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 // --------------------------------------------------
 
 .btn {
+
+  // Default
+  &.btn-default {
+
+    &:before {
+      color: $btn-primary-color;
+      background-color: $button-primary-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-primary-icon-background;
+    }
+  }
 
   // Primary
   &.btn-primary {
