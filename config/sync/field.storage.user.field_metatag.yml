@@ -1,0 +1,19 @@
+uuid: 8c4c4e2d-bdb9-4d38-b978-a02c56d40e51
+langcode: da
+status: true
+dependencies:
+  module:
+    - metatag
+    - user
+id: user.field_metatag
+field_name: field_metatag
+entity_type: user
+type: metatag
+settings: {  }
+module: metatag
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

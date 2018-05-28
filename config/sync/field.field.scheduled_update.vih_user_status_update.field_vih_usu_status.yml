@@ -1,0 +1,23 @@
+uuid: db2508ac-9755-4270-a7de-0353f02185cf
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.scheduled_update.field_vih_usu_status
+    - scheduled_updates.scheduled_update_type.vih_user_status_update
+id: scheduled_update.vih_user_status_update.field_vih_usu_status
+field_name: field_vih_usu_status
+entity_type: scheduled_update
+bundle: vih_user_status_update
+label: 'User status after update'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: Inactive
+field_type: boolean

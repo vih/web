@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.media_browser
+    - field.field.user.user.field_metatag
     - field.field.user.user.field_vih_top_banner
     - field.field.user.user.field_vih_top_banner_text
     - field.field.user.user.field_vih_user_birthday
@@ -17,10 +18,13 @@ dependencies:
     - field.field.user.user.field_vih_user_photo
     - field.field.user.user.field_vih_user_qualifications
     - field.field.user.user.field_vih_user_type_id
+    - field.field.user.user.vih_user_status
   module:
     - datetime
     - entity_browser
     - field_group
+    - inline_entity_form
+    - metatag
     - paragraphs
     - path
     - text
@@ -52,7 +56,7 @@ third_party_settings:
         - field_vih_user_qualifications
         - field_vih_user_paragraphs
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: tab
       format_settings:
         id: ''
@@ -86,7 +90,7 @@ third_party_settings:
         - translation
         - path
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -102,7 +106,7 @@ third_party_settings:
         - field_vih_user_phone
         - field_vih_user_email
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -127,6 +131,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_metatag:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
   field_vih_top_banner:
     type: entity_browser_entity_reference
     weight: 3
@@ -271,5 +281,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  vih_user_status:
+    type: inline_entity_form_complex
+    weight: 6
+    settings:
+      override_labels: true
+      label_singular: 'User status'
+      label_plural: 'User statuss'
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+      form_mode: default
+    third_party_settings: {  }
+    region: content
 hidden:
   timezone: true

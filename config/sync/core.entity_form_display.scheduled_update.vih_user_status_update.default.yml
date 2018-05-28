@@ -1,0 +1,25 @@
+uuid: 64577193-3492-4bbf-8ec7-c77e32a83862
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.scheduled_update.vih_user_status_update.field_vih_usu_status
+    - scheduled_updates.scheduled_update_type.vih_user_status_update
+id: scheduled_update.vih_user_status_update.default
+targetEntityType: scheduled_update
+bundle: vih_user_status_update
+mode: default
+content:
+  field_vih_usu_status:
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  update_timestamp:
+    type: datetime_timestamp
+    weight: -9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

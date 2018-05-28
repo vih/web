@@ -1,0 +1,29 @@
+uuid: b1d8d9b3-d9e7-4fa5-93a5-ce430e97f68c
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.user.vih_user_status
+    - scheduled_updates.scheduled_update_type.vih_user_status_update
+  module:
+    - user
+id: user.user.vih_user_status
+field_name: vih_user_status
+entity_type: user
+bundle: user
+label: 'User status update'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:scheduled_update'
+  handler_settings:
+    target_bundles:
+      vih_user_status_update: vih_user_status_update
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
