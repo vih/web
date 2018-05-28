@@ -3,7 +3,10 @@ settings:
   css_url: ''
   crop_preview_image_style: crop_thumbnail
   crop_list:
-    banner_small_crop: banner_small_crop
+    focal_point: focal_point
+    freeform: freeform
+    gallery_enlarged: gallery_enlarged
+    square: square
   warn_multiple_usages: true
   show_default_crop: true
   show_crop_area: true

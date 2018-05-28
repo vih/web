@@ -30,13 +30,13 @@ content:
     type: image_widget_crop
     weight: 0
     settings:
+      show_crop_area: true
+      show_default_crop: true
       preview_image_style: medium
+      crop_preview_image_style: crop_thumbnail
       progress_indicator: throbber
       crop_list:
-        - freeform
-      show_crop_area: true
-      crop_preview_image_style: crop_thumbnail
-      show_default_crop: true
+        - focal_point
       warn_multiple_usages: false
     third_party_settings:
       lightning_media:

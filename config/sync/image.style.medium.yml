@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - crop
     - focal_point
 _core:
   default_config_hash: Y9NmnZHQq20ASSyTNA6JnwtWrJJiSajOehGDtmUFdM0
@@ -12,7 +13,7 @@ effects:
   bddf0d06-42f9-4c75-a700-a33cafa25ea0:
     uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0
     id: image_scale
-    weight: -9
+    weight: -8
     data:
       width: 220
       height: 220
@@ -20,8 +21,14 @@ effects:
   d1f0a6e0-0b18-4c47-bb50-2473bc76812d:
     uuid: d1f0a6e0-0b18-4c47-bb50-2473bc76812d
     id: focal_point_scale_and_crop
-    weight: -10
+    weight: -9
     data:
       width: 220
       height: 220
+      crop_type: focal_point
+  98f20a0e-10b2-47f9-90bf-205102696cad:
+    uuid: 98f20a0e-10b2-47f9-90bf-205102696cad
+    id: crop_crop
+    weight: -10
+    data:
       crop_type: focal_point

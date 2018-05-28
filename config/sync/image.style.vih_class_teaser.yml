@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - crop
     - focal_point
 name: vih_class_teaser
 label: 'VIH Class teaser'
@@ -10,15 +11,21 @@ effects:
   e5bcbabc-9036-409f-b5bf-a29fc14cb8d7:
     uuid: e5bcbabc-9036-409f-b5bf-a29fc14cb8d7
     id: image_scale_and_crop
-    weight: -9
+    weight: -8
     data:
       width: 473
       height: 128
   e4c98e43-ed82-46f2-8fa7-8900606b2913:
     uuid: e4c98e43-ed82-46f2-8fa7-8900606b2913
     id: focal_point_scale_and_crop
-    weight: -10
+    weight: -9
     data:
       width: 473
       height: 128
+      crop_type: focal_point
+  28dfdfdc-df80-4b14-a219-2d5e061744bc:
+    uuid: 28dfdfdc-df80-4b14-a219-2d5e061744bc
+    id: crop_crop
+    weight: -10
+    data:
       crop_type: focal_point

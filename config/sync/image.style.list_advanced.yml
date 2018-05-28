@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - crop
     - focal_point
 name: list_advanced
 label: 'List - advanced'
@@ -10,15 +11,21 @@ effects:
   92816ab2-d53d-42d6-b107-0c4f9680a98c:
     uuid: 92816ab2-d53d-42d6-b107-0c4f9680a98c
     id: image_scale_and_crop
-    weight: -9
+    weight: -8
     data:
       width: 350
       height: 175
   3306eb5a-94f0-4fb4-9e76-d2bc98c24395:
     uuid: 3306eb5a-94f0-4fb4-9e76-d2bc98c24395
     id: focal_point_scale_and_crop
-    weight: -10
+    weight: -9
     data:
       width: 350
       height: 175
+      crop_type: focal_point
+  d6502146-1544-4904-b4a3-08be7710f23f:
+    uuid: d6502146-1544-4904-b4a3-08be7710f23f
+    id: crop_crop
+    weight: -10
+    data:
       crop_type: focal_point

@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - crop
     - focal_point
 name: banner
 label: Banner
@@ -10,15 +11,21 @@ effects:
   94ccc0ac-9b3b-453e-8252-3cc6af1150f1:
     uuid: 94ccc0ac-9b3b-453e-8252-3cc6af1150f1
     id: image_scale_and_crop
-    weight: -9
+    weight: -8
     data:
       width: 1920
       height: 900
   d36528aa-2cf3-49e9-892a-928484738959:
     uuid: d36528aa-2cf3-49e9-892a-928484738959
     id: focal_point_scale_and_crop
-    weight: -10
+    weight: -9
     data:
       width: 1920
       height: 900
+      crop_type: focal_point
+  34d16594-bec8-487a-9b7d-0b170d77a17f:
+    uuid: 34d16594-bec8-487a-9b7d-0b170d77a17f
+    id: crop_crop
+    weight: -10
+    data:
       crop_type: focal_point

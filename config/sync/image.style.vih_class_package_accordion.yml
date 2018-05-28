@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   module:
+    - crop
     - focal_point
 name: vih_class_package_accordion
 label: 'VIH Class package accordion (472x212)'
@@ -10,15 +11,21 @@ effects:
   b82bc2fd-5ab2-4ea8-91d8-0dda57f9f203:
     uuid: b82bc2fd-5ab2-4ea8-91d8-0dda57f9f203
     id: image_scale_and_crop
-    weight: -9
+    weight: -8
     data:
       width: 472
       height: 212
   b165ffce-105b-48c6-a393-07e94b15ca43:
     uuid: b165ffce-105b-48c6-a393-07e94b15ca43
     id: focal_point_scale_and_crop
-    weight: -10
+    weight: -9
     data:
       width: 472
       height: 212
+      crop_type: focal_point
+  a4a6433e-8056-492c-983a-7ebad90ee756:
+    uuid: a4a6433e-8056-492c-983a-7ebad90ee756
+    id: crop_crop
+    weight: -10
+    data:
       crop_type: focal_point
