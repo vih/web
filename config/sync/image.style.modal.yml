@@ -4,13 +4,14 @@ status: true
 dependencies:
   module:
     - crop
+    - focal_point
 name: modal
 label: Modal
 effects:
   566814aa-28f6-4e2c-97bf-70a6fea494b1:
     uuid: 566814aa-28f6-4e2c-97bf-70a6fea494b1
     id: image_scale_and_crop
-    weight: -9
+    weight: -8
     data:
       width: 900
       height: 400
@@ -19,4 +20,12 @@ effects:
     id: crop_crop
     weight: -10
     data:
+      crop_type: focal_point
+  4e7abd09-2e0c-472c-bfdf-2d919a220e27:
+    uuid: 4e7abd09-2e0c-472c-bfdf-2d919a220e27
+    id: focal_point_scale_and_crop
+    weight: -9
+    data:
+      width: 900
+      height: 400
       crop_type: focal_point
