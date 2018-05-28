@@ -59,7 +59,8 @@
         "drupal/owlcarousel": "^1.0@alpha",
         "drupal/menu_multilingual": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^1.8",
-        "drupal/block_scheduler": "^1.0"
+        "drupal/block_scheduler": "^1.0",
+        "drupal/eu_cookie_compliance": "^1.0"
     },
     "repositories": [
         {

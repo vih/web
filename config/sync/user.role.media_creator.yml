@@ -13,5 +13,6 @@ permissions:
   - 'access media_browser entity browser pages'
   - 'create media'
   - 'delete media'
+  - 'display eu cookie compliance popup'
   - 'dropzone upload files'
   - 'update media'
