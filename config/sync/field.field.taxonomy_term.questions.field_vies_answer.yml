@@ -1,0 +1,19 @@
+uuid: 77eb1ca3-b6c0-4c65-a3e9-16bb0da0481b
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_vies_answer
+    - taxonomy.vocabulary.questions
+id: taxonomy_term.questions.field_vies_answer
+field_name: field_vies_answer
+entity_type: taxonomy_term
+bundle: questions
+label: Answer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

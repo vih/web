@@ -1,0 +1,40 @@
+uuid: 4604d1cd-5ab9-4aa7-828f-4cea65cecf15
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.questions.field_vies_answer
+    - field.field.taxonomy_term.questions.field_vies_question_type
+    - taxonomy.vocabulary.questions
+  module:
+    - options
+    - text
+id: taxonomy_term.questions.default
+targetEntityType: taxonomy_term
+bundle: questions
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_vies_answer:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vies_question_type:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  langcode: true

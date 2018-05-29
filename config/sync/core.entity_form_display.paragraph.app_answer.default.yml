@@ -14,12 +14,12 @@ bundle: app_answer
 mode: default
 content:
   field_answer:
-    weight: 1
+    weight: 6
     settings:
-      size: 60
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: string_textarea
     region: content
   field_question:
     weight: 0
