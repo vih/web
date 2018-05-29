@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d507534a0511c3b75d644febd7e4627",
+    "content-hash": "ab64f6f2ba92a551e813bb0bfc7d6af1",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -6736,16 +6736,16 @@
         },
         {
             "name": "lsolesen/edbbrugs-php-sdk",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lsolesen/edbbrugs-php-sdk.git",
-                "reference": "2b9053d8d1d86a7f3c0043fb63e2b6486edb1e43"
+                "reference": "ae40e850ccb53faceeaae150318893e5e15afd0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lsolesen/edbbrugs-php-sdk/zipball/2b9053d8d1d86a7f3c0043fb63e2b6486edb1e43",
-                "reference": "2b9053d8d1d86a7f3c0043fb63e2b6486edb1e43",
+                "url": "https://api.github.com/repos/lsolesen/edbbrugs-php-sdk/zipball/ae40e850ccb53faceeaae150318893e5e15afd0c",
+                "reference": "ae40e850ccb53faceeaae150318893e5e15afd0c",
                 "shasum": ""
             },
             "require": {
@@ -6780,7 +6780,7 @@
             "keywords": [
                 "webservice"
             ],
-            "time": "2017-03-24T09:08:58+00:00"
+            "time": "2018-05-29T13:18:13+00:00"
         },
         {
             "name": "masterminds/html5",
