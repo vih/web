@@ -40,7 +40,7 @@ class ApplicationForm extends FormBase {
     }
     $form['course'] = [
       '#type' => 'select',
-      '#title' => $this->t('Recording year'),
+      '#title' => 'Optagelses år',
       '#options' => $options,
       '#empty_label' => 'None',
       '#default_value' => $default_value,
@@ -80,7 +80,7 @@ class ApplicationForm extends FormBase {
     }
     $form['periodsWrapper']['period'] = [
       '#type' => 'select',
-      '#title' => $this->t('Year'),
+      '#title' => 'Årgang',
       '#options' => $options,
       '#empty_label' => 'None',
       '#default_value' => $periods_default_value,
@@ -182,7 +182,7 @@ class ApplicationForm extends FormBase {
           $form['periodsWrapper']['coursePeriods']['questions'][$class->id()] = [
             '#type' => 'container',
             '#theme' => 'vies_application_questions',
-            '#title' => $this->t('@class_name questions', ['@class_name' => $class->getName()]),
+            '#title' => $this->t('@class_name spørgsmål', ['@class_name' => $class->getName()]),
           ] + $questions;
         }
       }
@@ -243,7 +243,7 @@ class ApplicationForm extends FormBase {
       $course_slot = $course_slots[$course_slot_delta];
 
       if (!is_numeric($values[$radio_key])) {
-        $form_state->setErrorByName($radio_key, $this->t('Please make a selection in %slotName.', array('%slotName' => $course_slot->field_vih_cs_title->value)));
+        $form_state->setErrorByName($radio_key, $this->t('Venligst foretag et valg i %slotName.', array('%slotName' => $course_slot->field_vih_cs_title->value)));
       }
     }
   }
@@ -328,16 +328,16 @@ class ApplicationForm extends FormBase {
     // Personal data - left side.
     $form['personalDataWrapper'] = [
       '#type' => 'container',
-      '#title' => $this->t('About you'),
+      '#title' => 'Om dig',
       '#theme' => 'vies_application_section',
     ];
     $personal_data = $this->getPersonalDataForm();
     $personal_data['left']['sex'] = [
       '#type' => 'select',
-      '#title' => $this->t('Sex'),
+      '#title' => 'Køn',
       '#options' => [
-        'm' => $this->t('Male'),
-        'f' => $this->t('Female'),
+        'm' => 'Mand',
+        'f' => 'Kvinde',
       ],
       '#empty_label' => 'None',
       '#required' => TRUE,
@@ -350,21 +350,22 @@ class ApplicationForm extends FormBase {
     foreach ($about_school_questions as $key => $question) {
       $about_school[$key] = [
         '#type' => 'textarea',
-        '#title' => $this->t($question),
+        '#title' => $question,
         '#wrapper_attributes' => ['class' => ['col-md-12']],
+        '#required' => TRUE,
       ];
     }
 
     $form['aboutSchool'] = [
       '#type' => 'container',
-      '#title' => $this->t('About to go to school'),
+      '#title' => 'Om at gå i skole',
       '#theme' => 'vies_application_section',
       'questions' => $about_school,
     ];
 
     $form['parentsWrapper'] = [
       '#type' => 'container',
-      '#title' => $this->t('Parents'),
+      '#title' => 'Forældre',
       '#theme' => 'vies_application_section',
       '#prefix' => '<div id="parents-wrapper">',
       '#suffix' => '</div>',
@@ -394,23 +395,25 @@ class ApplicationForm extends FormBase {
     ];
     $form['parentsWrapper']['actions']['add_parent'] = [
       '#type' => 'submit',
-      '#value' => t('Add parent'),
+      '#value' => 'Tilføj en forældre',
       '#submit' => ['::addOneParent'],
       '#ajax' => [
         'callback' => '::addmoreParentCallback',
         'wrapper' => 'parents-wrapper',
       ],
+      '#attributes' => ['class' => ['btn-success']],
     ];
     // If there is more than one parent, add the remove button.
     if ($num_parents > 1) {
       $form['parentsWrapper']['actions']['remove_parent'] = [
         '#type' => 'submit',
-        '#value' => t('Remove parent'),
+        '#value' => 'Fjern en forældre',
         '#submit' => ['::removeParentCallback'],
         '#ajax' => [
           'callback' => '::addmoreParentCallback',
           'wrapper' => 'parents-wrapper',
         ],
+        '#attributes' => ['class' => ['btn-danger']],
       ];
     }
 
@@ -419,14 +422,14 @@ class ApplicationForm extends FormBase {
     foreach ($after_school_questions as $key => $question) {
       $after_school[$key] = [
         '#type' => 'textarea',
-        '#title' => $this->t($question),
+        '#title' => $question,
         '#wrapper_attributes' => ['class' => ['col-md-12']],
       ];
     }
 
     $form['afterSchool'] = [
       '#type' => 'container',
-      '#title' => $this->t('You in efteskole'),
+      '#title' => 'Dig på efterskole',
       '#theme' => 'vies_application_section',
       'questions' => $after_school,
     ];
@@ -446,37 +449,37 @@ class ApplicationForm extends FormBase {
     ];
     $personal_data['left']['firstName'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Firstname'),
-      '#placeholder' => $this->t('Firstname'),
+      '#title' => 'Navn',
+      '#placeholder' => 'Navn',
       '#required' => $required,
     ];
     $personal_data['left']['lastName'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Lastname'),
-      '#placeholder' => $this->t('Lastname'),
+      '#title' => 'Efternavn',
+      '#placeholder' => 'Efternavn',
       '#required' => $required,
     ];
     $personal_data['left']['cpr'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('CPR'),
-      '#placeholder' => $this->t('CPR'),
+      '#title' => 'CPR',
+      '#placeholder' => 'CPR',
       '#required' => $required,
     ];
     $personal_data['left']['telefon'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Phone'),
-      '#placeholder' => $this->t('Phone'),
+      '#title' => 'Telefon',
+      '#placeholder' => 'Telefon',
       '#required' => $required,
     ];
     $personal_data['left']['email'] = [
       '#type' => 'email',
-      '#title' => $this->t('E-mail address'),
-      '#placeholder' => $this->t('E-mail address'),
+      '#title' => 'E-mail',
+      '#placeholder' => 'E-mail',
       '#required' => $required,
     ];
     $personal_data['left']['newsletter'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Get updates from the school'),
+      '#title' => 'Nyhedsbrev',
       '#weight' => 100,
     ];
 
@@ -486,42 +489,42 @@ class ApplicationForm extends FormBase {
     ];
     $personal_data['right']['address'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Address'),
-      '#placeholder' => $this->t('Address'),
+      '#title' => 'Adresse',
+      '#placeholder' => 'Adresse',
       '#required' => $required,
     ];
     $personal_data['right']['houseNumber'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('House no.'),
-      '#placeholder' => $this->t('House no.'),
+      '#title' => 'Bygning no.',
+      '#placeholder' => 'Bygning no.',
       '#required' => $required,
     ];
     $personal_data['right']['houseLetter'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('House letter'),
-      '#placeholder' => $this->t('House letter'),
+      '#title' => 'Bygning brev',
+      '#placeholder' => 'Bygning brev',
     ];
     $personal_data['right']['houseFloor'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Floor'),
-      '#placeholder' => $this->t('Floor'),
+      '#title' => 'Sal',
+      '#placeholder' => 'Sal',
     ];
     $personal_data['right']['city'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('City'),
-      '#placeholder' => $this->t('City'),
+      '#title' => 'By',
+      '#placeholder' => 'By',
       '#required' => $required,
     ];
     $personal_data['right']['municipality'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Municipality'),
-      '#placeholder' => $this->t('Municipality'),
+      '#title' => 'Kommune',
+      '#placeholder' => 'Kommune',
       '#required' => $required,
     ];
     $personal_data['right']['zip'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Zipcode'),
-      '#placeholder' => $this->t('Zipcode'),
+      '#title' => 'Zipcode',
+      '#placeholder' => 'Zipcode',
       '#required' => $required,
     ];
 

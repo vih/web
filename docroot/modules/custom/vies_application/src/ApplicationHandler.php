@@ -31,18 +31,18 @@ class ApplicationHandler {
    * About school questions.
    */
   public static $aboutSchool = [
-    'schoolFrom'             => 'What school are you from?',
-    'schoolHowItsGoing'      => 'How are you going to school?',
-    'schoolSubjects'         => 'What subjects do you like and why?',
+    'schoolFrom'             => 'Hvilken skole kommer du fra?',
+    'schoolHowItsGoing'      => 'Hvordan har du det med at gå i skole?',
+    'schoolSubjects'         => 'Hvilke fag kan du godt lide og hvorfor?',
   ];
 
   /**
    * After school questions.
    */
   public static $afterSchool = [
-    'afterSchoolExpectation' => 'What do you expect from a year after school?',
-    'afterSchoolHeardFrom'   => 'Where have you heard of Vejle Idrætsefterskole?',
-    'afterSchoolComment'     => 'Comment',
+    'afterSchoolExpectation' => 'Hvad forventer du af et år på efterskole?',
+    'afterSchoolHeardFrom'   => 'Hvor har du hørt om Vejle Idrætsefterskole?',
+    'afterSchoolComment'     => 'Kommentar',
   ];
 
   /**

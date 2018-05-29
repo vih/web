@@ -6,19 +6,7 @@
     class="sectioned sectioned--content" {{ content_attributes.addClass('content') }}>
   <div class="sectioned__inner">
     <div class="container">
-
-      {# Introduction information START #}
-      <div class="partial">
-        <div class="partial__body">
-          <p>
-            {{ "Introduction information first line."|t }}
-          </p>
-        </div>
-      </div>
-      {# Introduction information END #}
-
       {{ form | without('actions') }}
-
       <hr>
       <!-- Begin - form controls -->
       <div class="partial partial--form-controls">
