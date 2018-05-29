@@ -177,14 +177,7 @@ class ApplicationForm extends FormBase {
         }
         $class = Term::load($values[$radio_key]);
         $class_questions = $class->field_questions->referencedEntities();
-        $questions = [];
-        foreach ($class_questions as $class_question) {
-          $questions[$class_question->id()] = [
-            '#type' => 'textfield',
-            '#title' => $class_question->getName(),
-            '#required' => TRUE,
-          ];
-        }
+        $questions = $this->buildApplicationQuestions($class_questions);
         if (!empty($questions)) {
           $form['periodsWrapper']['coursePeriods']['questions'][$class->id()] = [
             '#type' => 'container',
@@ -353,7 +346,7 @@ class ApplicationForm extends FormBase {
     $form['personalDataWrapper']['data'] = $personal_data;
 
     $about_school_questions = ApplicationHandler::$aboutSchool;
-    $after_school = [];
+    $about_school = [];
     foreach ($about_school_questions as $key => $question) {
       $about_school[$key] = [
         '#type' => 'textarea',
@@ -533,6 +526,50 @@ class ApplicationForm extends FormBase {
     ];
 
     return $personal_data;
+  }
+
+  /**
+   * Helper function to build application questions.
+   *
+   * @param array $questions_terms
+   *   The array of question terms .
+   *
+   * @return array $questions
+   *   Array of question form elements.
+   */
+  private function buildApplicationQuestions(array $questions_terms) {
+    $questions = [];
+
+    foreach ($questions_terms as $term) {
+      $type_value = $term->get('field_vies_question_type')->getValue();
+      if (empty($type_value)) {
+        continue;
+      }
+      $type = $type_value[0]['value'];
+      $question = [
+        '#title' => $term->getName(),
+        '#required' => TRUE,
+        '#type' => $type,
+      ];
+
+      switch ($type) {
+        case 'select':
+        case 'checkboxes':
+        case 'radios':
+          $options = [];
+          $question_options = $term->get('field_vies_answer')->getValue();
+          foreach ($question_options as $key => $option) {
+            $options[$key] = $option['value'];
+          }
+          $question['#empty'] = 'None';
+          $question['#options'] = $options;
+          break;
+      }
+
+      $questions[$term->id()] = $question;
+    }
+
+    return $questions;
   }
 
 }

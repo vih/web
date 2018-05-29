@@ -89,13 +89,37 @@ class ApplicationHandler {
     // Classes questions.
     foreach ($this->data['questions'] as $class_tid => $questions) {
       $class_term = Term::load($class_tid);
-      foreach ($questions as $tid => $question) {
+      foreach ($questions as $tid => $answer) {
         $question_term = Term::load($tid);
+        $type_value = $question_term->get('field_vies_question_type')->getValue();
+        if (empty($type_value)) {
+          continue;
+        }
+        $type = $type_value[0]['value'];
+        $question_answers = $question_term->get('field_vies_answer')->getValue();
+
+        switch ($type) {
+          case 'select':
+          case 'radios':
+            $answer = $question_answers[$answer]['value'];
+            break;
+
+          case 'checkboxes':
+            foreach ($answer as $answer_key => $value) {
+              if ($answer[$answer_key] === 0) {
+                unset($answer[$answer_key]);
+                continue;
+              }
+              $answer[$answer_key] = $question_answers[$answer_key]['value'];
+            }
+            $answer = implode("\n", $answer);
+            break;
+        }
         if (!empty($question_term)) {
           $this->data['questions'][$class_tid][$tid] = [
             'class' => $class_term->getName(),
             'question' => $question_term->getName(),
-            'answer' => $question,
+            'answer' => $answer,
           ];
         }
       }
@@ -228,7 +252,7 @@ class ApplicationHandler {
     }
 
     // About school questions.
-    foreach (self::$aboutSchool as $key) {
+    foreach (self::$aboutSchool as $key => $value) {
       $question_data = $this->data[$key];
       if (empty($question_data)) {
         continue;
@@ -245,7 +269,7 @@ class ApplicationHandler {
     }
 
     // After school questions.
-    foreach (self::$afterSchool as $key) {
+    foreach (self::$afterSchool as $key => $value) {
       $question_data = $this->data[$key];
       if (empty($question_data)) {
         continue;
