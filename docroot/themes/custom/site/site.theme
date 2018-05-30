@@ -454,19 +454,19 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    if (!empty(views_get_view_result('long_courses', 'embed_list_advanced', $contextual_filter))) {
+    if (!empty(views_get_view_result('vih_long_courses', 'embed_list_advanced', $contextual_filter))) {
       // Result not empty, unsetting the empty message.
       unset($variables['content']['field_vih_empty_message']);
-      $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced', $contextual_filter);
+      $variables['content']['embedded_view'] = views_embed_view('vih_long_courses', 'embed_list_advanced', $contextual_filter);
     }
   }
 
   // Display another display on the view
   else {
-    if (!empty(views_get_view_result('long_courses', 'embed_list_advanced_future'))) {
+    if (!empty(views_get_view_result('vih_long_courses', 'embed_list_advanced_future'))) {
       // Result not empty, unsetting the empty message.
       unset($variables['content']['field_vih_empty_message']);
-      $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_future');
+      $variables['content']['embedded_view'] = views_embed_view('vih_long_courses', 'embed_list_advanced_future');
     }
   }
 }
@@ -476,10 +476,10 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
  */
 function site_preprocess_paragraph__long_course_list_contain_class(&$variables) {
   $taxonomy_term_tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
-  if (!empty(views_get_view_result('long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid))) {
+  if (!empty(views_get_view_result('vih_long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid))) {
     // Result not empty, unsetting the empty message.
     unset($variables['content']['field_vih_empty_message']);
-    $variables['content']['embedded_view'] = views_embed_view('long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid);
+    $variables['content']['embedded_view'] = views_embed_view('vih_long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid);
   }
 }
 
@@ -708,8 +708,8 @@ function site_bootstrap_colorize_text_alter(&$texts) {
  */
 function site_views_pre_render(\Drupal\views\ViewExecutable $view) {
 
-  // We need to remove duplicates from long_courses/embed_list_advanced_future view.
-  if ($view->id() == "long_courses" && $view->current_display == 'embed_list_advanced_future') {
+  // We need to remove duplicates from vih_long_courses/embed_list_advanced_future view.
+  if ($view->id() == "vih_long_courses" && $view->current_display == 'embed_list_advanced_future') {
     $node_id = [];
     foreach($view->result as $key => $value){
       if(in_array($value->_entity->id(), $node_id)){

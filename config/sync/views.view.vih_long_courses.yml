@@ -14,7 +14,7 @@ dependencies:
     - paragraphs
     - text
     - user
-id: long_courses
+id: vih_long_courses
 label: 'Lange kurser'
 module: views
 description: ''
