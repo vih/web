@@ -13,7 +13,7 @@ dependencies:
     - node
     - text
     - user
-id: events
+id: vih_events
 label: Events
 module: views
 description: ''
