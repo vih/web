@@ -21,7 +21,7 @@
 
       {# Begin - header #}
       {% if term.field_vih_class_image.value %}
-        <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal')}});">
+        <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('modal')}});">
           <button type="button" class="close" data-dismiss="modal"  aria-label="{{ 'Close' | trans }}">
             <span aria-hidden="true">&times;</span>
           </button>
