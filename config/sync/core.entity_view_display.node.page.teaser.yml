@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.field_vih_paragraphs
+    - field.field.node.page.field_vih_small_image
     - field.field.node.page.field_vih_top_banner
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
@@ -31,7 +32,7 @@ targetEntityType: node
 bundle: page
 mode: teaser
 content:
-  field_vih_top_banner:
+  field_vih_small_image:
     type: media_thumbnail
     weight: 0
     region: content
@@ -49,6 +50,7 @@ hidden:
   field_vih_course_heading: true
   field_vih_course_subheading: true
   field_vih_paragraphs: true
+  field_vih_top_banner: true
   langcode: true
   links: true
   panelizer: true

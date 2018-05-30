@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.field_vih_paragraphs
+    - field.field.node.page.field_vih_small_image
     - field.field.node.page.field_vih_top_banner
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
@@ -41,6 +42,7 @@ third_party_settings:
       region: content
     group_content:
       children:
+        - field_vih_small_image
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
@@ -87,7 +89,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 33
     settings:
       rows: 9
       summary_rows: 3
@@ -107,7 +109,7 @@ content:
     type: metatag_firehose
     region: content
   field_vih_course_heading:
-    weight: 2
+    weight: 31
     settings:
       size: 60
       placeholder: ''
@@ -115,7 +117,7 @@ content:
     type: string_textfield
     region: content
   field_vih_course_subheading:
-    weight: 3
+    weight: 32
     settings:
       size: 60
       placeholder: ''
@@ -136,6 +138,20 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
+  field_vih_small_image:
+    type: entity_browser_entity_reference
+    weight: 30
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
   field_vih_top_banner:
     type: entity_browser_entity_reference
     weight: 29
