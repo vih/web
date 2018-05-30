@@ -13,7 +13,7 @@ dependencies:
     - node
     - text
     - user
-id: short_courses
+id: vih_short_courses
 label: 'Korte kurser'
 module: views
 description: ''

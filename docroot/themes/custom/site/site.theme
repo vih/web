@@ -422,19 +422,19 @@ function site_preprocess_paragraph__short_course_list_(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    if (!empty(views_get_view_result('short_courses', 'embed_list_advanced', $contextual_filter))) {
+    if (!empty(views_get_view_result('vih_short_courses', 'embed_list_advanced', $contextual_filter))) {
       // Result not empty, unsetting the empty message.
       unset($variables['content']['field_vih_empty_message']);
-      $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced', $contextual_filter);
+      $variables['content']['embedded_view'] = views_embed_view('vih_short_courses', 'embed_list_advanced', $contextual_filter);
     }
   }
 
   // Display another display on the view
   else {
-    if (!empty(views_get_view_result('short_courses', 'embed_list_advanced_future'))) {
+    if (!empty(views_get_view_result('vih_short_courses', 'embed_list_advanced_future'))) {
       // Result not empty, unsetting the empty message.
       unset($variables['content']['field_vih_empty_message']);
-      $variables['content']['embedded_view'] = views_embed_view('short_courses', 'embed_list_advanced_future');
+      $variables['content']['embedded_view'] = views_embed_view('vih_short_courses', 'embed_list_advanced_future');
     }
   }
 }
