@@ -9,7 +9,7 @@ dependencies:
     - block_content
     - entity_reference_revisions
     - owlcarousel
-id: banner_slideshow
+id: vih_banner_slideshow
 label: 'Banner slideshow'
 module: views
 description: ''
