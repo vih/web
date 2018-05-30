@@ -12,7 +12,7 @@ dependencies:
     - taxonomy
     - text
     - user
-id: my_classes_terms
+id: vih_my_classes_terms
 label: 'Mine fag - termer'
 module: views
 description: ''
