@@ -399,10 +399,10 @@ function site_preprocess_paragraph__employee(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('employees', 'embed_teaser', $contextual_filter);
+    $variables['content']['embedded_view'] = views_embed_view('vih_employees', 'embed_teaser', $contextual_filter);
   }
   else {
-    $variables['content']['embedded_view'] = views_embed_view('employees', 'embed_teaser');
+    $variables['content']['embedded_view'] = views_embed_view('vih_employees', 'embed_teaser');
   }
 
 }
