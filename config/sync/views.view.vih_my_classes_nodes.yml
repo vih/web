@@ -12,7 +12,7 @@ dependencies:
     - paragraphs
     - text
     - user
-id: my_classes_nodes
+id: vih_my_classes_nodes
 label: 'Mine fag - noder'
 module: views
 description: ''

@@ -671,8 +671,8 @@ function site_preprocess_user(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    if (!empty(views_get_view_result('my_classes_nodes', 'embedded_embedded', $contextual_filter))) {
-      $variables['content']['view_my_classes_nodes'] = views_embed_view('my_classes_nodes', 'embedded_embedded', $contextual_filter);
+    if (!empty(views_get_view_result('vih_my_classes_nodes', 'embedded_embedded', $contextual_filter))) {
+      $variables['content']['view_vih_my_classes_nodes'] = views_embed_view('vih_my_classes_nodes', 'embedded_embedded', $contextual_filter);
     }
     if (!empty(views_get_view_result('my_classes_terms', 'embedded_embedded', $contextual_filter))) {
       $variables['content']['view_my_classes_terms'] = views_embed_view('my_classes_terms', 'embedded_embedded', $contextual_filter);
