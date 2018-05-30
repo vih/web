@@ -247,6 +247,10 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
   }
 }
 
+.btn-white {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
+
 .text-right {
 
   .form-actions .btn {
