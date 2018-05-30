@@ -8,7 +8,7 @@ dependencies:
   module:
     - node
     - user
-id: kurser_relateret_til_laere
+id: vih_courses_related_to_learning
 label: 'Kurser relateret til lære'
 module: views
 description: ''
