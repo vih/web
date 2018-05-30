@@ -8,7 +8,7 @@ dependencies:
   module:
     - taxonomy
     - user
-id: class_packages
+id: vih_class_packages
 label: Fagpakker
 module: views
 description: ''

@@ -542,7 +542,7 @@ function site_preprocess_paragraph__class_packages(&$variables) {
   }
   $contextual_filter = implode('+', $class_tids);
 
-  $variables['content']['embedded_view'] = views_embed_view('class_packages', 'embed_teaser', $contextual_filter);
+  $variables['content']['embedded_view'] = views_embed_view('vih_class_packages', 'embed_teaser', $contextual_filter);
 }
 
 function site_preprocess_paragraph__class(&$variables) {
