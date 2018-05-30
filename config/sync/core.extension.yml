@@ -34,7 +34,6 @@ module:
   entity_embed: 0
   entity_reference: 0
   entity_reference_revisions: 0
-  eu_cookie_compliance: 0
   eva: 0
   field: 0
   field_group: 0
@@ -135,6 +134,7 @@ module:
   webform_bootstrap: 1
   content_translation: 10
   views: 10
+  eu_cookie_compliance: 11
   paragraphs: 11
 theme:
   stable: 0
