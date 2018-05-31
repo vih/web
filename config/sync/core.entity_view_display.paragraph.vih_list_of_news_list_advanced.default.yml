@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_background_img
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_heading
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_link
+    - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_number_of_results
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_tags
     - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
   module:
@@ -35,6 +36,15 @@ content:
       target: '0'
     third_party_settings: {  }
     type: link
+    region: content
+  field_vih_number_of_results:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
 hidden:
   field_vih_background_color: true

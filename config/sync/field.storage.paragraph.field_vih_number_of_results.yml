@@ -1,0 +1,20 @@
+uuid: bad1484a-8328-4416-a8e7-45b6f649edcd
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_vih_number_of_results
+field_name: field_vih_number_of_results
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
