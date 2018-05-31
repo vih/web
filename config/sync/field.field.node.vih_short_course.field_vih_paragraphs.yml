@@ -20,6 +20,7 @@ dependencies:
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_content_grid
+    - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
   module:
@@ -44,6 +45,7 @@ settings:
       article: article
       class_packages: class_packages
       employee: employee
+      vih_list_of_news_list_advanced: vih_list_of_news_list_advanced
       event_list: event_list
       file: file
       gallery: gallery
@@ -72,6 +74,9 @@ settings:
       employee:
         enabled: true
         weight: 29
+      vih_list_of_news_list_advanced:
+        enabled: true
+        weight: 30
       event_list:
         enabled: true
         weight: 30
@@ -119,6 +124,9 @@ settings:
         enabled: false
       vih_ordered_course_person:
         weight: 44
+        enabled: false
+      vih_banner_slide:
+        weight: 45
         enabled: false
       vih_ordered_course_slot:
         weight: 45
