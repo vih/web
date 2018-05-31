@@ -10,7 +10,6 @@ dependencies:
     - field.field.paragraph.file.field_vih_file
     - field.field.paragraph.file.field_vih_heading
     - field.field.paragraph.file.field_vih_link
-    - field.field.paragraph.file.file
     - paragraphs.paragraphs_type.file
   module:
     - entity_browser
@@ -97,19 +96,6 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  file:
-    type: entity_browser_file
-    weight: 2
-    region: content
-    settings:
-      entity_browser: media_browser
-      field_widget_remove: true
-      selection_mode: selection_append
-      field_widget_edit: true
-      open: false
-      view_mode: default
-      preview_image_style: thumbnail
-    third_party_settings: {  }
 hidden:
   created: true
   status: true
