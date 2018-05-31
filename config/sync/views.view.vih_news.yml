@@ -10,7 +10,7 @@ dependencies:
     - node
     - text
     - user
-id: news
+id: vih_news
 label: Nyheder
 module: views
 description: ''

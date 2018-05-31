@@ -377,10 +377,10 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list', $contextual_filter);
+    $variables['content']['embedded_view'] = views_embed_view('vih_news', 'embedded_teaser_list', $contextual_filter);
   }
   else {
-    $variables['content']['embedded_view'] = views_embed_view('news', 'embedded_teaser_list');
+    $variables['content']['embedded_view'] = views_embed_view('vh_news', 'embedded_teaser_list');
   }
 }
 
