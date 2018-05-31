@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_background_img
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_heading
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_link
+    - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_number_of_results
     - field.field.paragraph.vih_list_of_news_list_advanced.field_vih_tags
     - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
   module:
@@ -22,7 +23,7 @@ third_party_settings:
         - field_vih_background_img
         - field_vih_background_color
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         label: Udseende
@@ -73,6 +74,13 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
+    region: content
+  field_vih_number_of_results:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
     region: content
   field_vih_tags:
     weight: 1
