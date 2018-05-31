@@ -23,4 +23,6 @@ settings:
   label_display: '0'
   level: 1
   depth: 2
+  only_translated_labels: 1
+  only_translated_content: 0
 visibility: {  }

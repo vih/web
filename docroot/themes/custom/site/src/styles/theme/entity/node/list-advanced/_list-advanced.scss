@@ -121,9 +121,8 @@ $list-advanced-inner-left-right-spacing: floor( ( $grid-gutter-width / 2 ) );
 
   padding: $list-advanced-inner-top-bottom-spacing $list-advanced-inner-left-right-spacing;
 
-  flex-direction: row;
+  flex-shrink: 0;
   align-items: center;
-  justify-content: center;
 
   .btn {
 

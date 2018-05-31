@@ -1,0 +1,50 @@
+uuid: be129f45-2da7-49de-b5d4-ca3f211b0589
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.scheduled_update.vih_user_status_update.field_vih_usu_status
+    - scheduled_updates.scheduled_update_type.vih_user_status_update
+  module:
+    - options
+    - user
+id: scheduled_update.vih_user_status_update.default
+targetEntityType: scheduled_update
+bundle: vih_user_status_update
+mode: default
+content:
+  field_vih_usu_status:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  status:
+    label: inline
+    type: list_default
+    weight: -100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  update_timestamp:
+    label: above
+    type: timestamp
+    weight: 10
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  user_id:
+    label: inline
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

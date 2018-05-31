@@ -1,0 +1,20 @@
+# Danish translation of Webform Mailchimp (8.x-5.3)
+# Copyright (c) 2017 by the Danish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Webform Mailchimp (8.x-5.3)\n"
+"POT-Creation-Date: 2017-09-12 21:45+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Danish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "List"
+msgstr "Vis"
+msgid "Webform"
+msgstr "Webformular"
+msgid "MailChimp"
+msgstr "MailChimp"

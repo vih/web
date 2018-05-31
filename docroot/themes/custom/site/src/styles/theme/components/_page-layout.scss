@@ -54,6 +54,8 @@ html {
 .layout__content {
   padding-top: 0;
   padding-bottom: 0;
+
+  min-height: 100px;
 }
 .layout__wrapper {
   overflow-y: visible;
@@ -146,6 +148,10 @@ html {
 // Tablet - and up
 @media #{$breakpoint-tablet-and-up} {
 
+  .layout__content {
+    min-height: 250px;
+  }
+
   // Page layout
   .layout__content-inner {
     padding-top: $sm-page-layout-content-inner-padding-top;
@@ -158,6 +164,10 @@ html {
 
 // Desktop - and up
 @media #{$breakpoint-desktop-and-up} {
+
+  .layout__content {
+    min-height: 350px;
+  }
 
   // Page layout
   .layout__content-inner {

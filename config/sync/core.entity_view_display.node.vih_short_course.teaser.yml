@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_metatag
+    - field.field.node.vih_short_course.field_short_description
     - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
@@ -19,13 +20,10 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.field_vih_top_banner
     - field.field.node.vih_short_course.scheduled_update
-    - image.style.vih_general_teaser_image
     - node.type.vih_short_course
   module:
     - datetime
-    - image
     - panelizer
-    - text
     - user
 third_party_settings:
   panelizer:
@@ -38,13 +36,12 @@ targetEntityType: node
 bundle: vih_short_course
 mode: teaser
 content:
-  body:
-    type: text_trimmed
+  field_short_description:
+    type: basic_string
     weight: 1
     region: content
     label: hidden
-    settings:
-      trim_length: 150
+    settings: {  }
     third_party_settings: {  }
   field_vih_sc_end_date:
     type: datetime_default
@@ -56,13 +53,13 @@ content:
       format_type: vih_medium_date_short_month
     third_party_settings: {  }
   field_vih_sc_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: vih_general_teaser_image
-      image_link: ''
+      view_mode: vih_general_teaser_image
+      link: false
     third_party_settings: {  }
   field_vih_sc_start_date:
     type: datetime_default
@@ -74,6 +71,7 @@ content:
       format_type: vih_medium_date_short_month
     third_party_settings: {  }
 hidden:
+  body: true
   field_banner: true
   field_metatag: true
   field_vih_course_heading: true

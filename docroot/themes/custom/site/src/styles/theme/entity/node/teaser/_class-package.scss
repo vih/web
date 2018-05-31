@@ -32,7 +32,7 @@ $entity-teaser-class-package-image-min-height: 350px;
   background-size: cover;
 
   .entity-teaser__inner {
-    position: relative;
+    flex-grow: 1;
 
     min-height: $entity-teaser-class-package-image-min-height;
 

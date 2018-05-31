@@ -3,9 +3,14 @@ langcode: da
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vih_content_grid.field_vih_background_color
+    - field.field.paragraph.vih_content_grid.field_vih_background_img
     - field.field.paragraph.vih_content_grid.field_vih_cg_node_ref
     - field.field.paragraph.vih_content_grid.field_vih_heading
+    - field.field.paragraph.vih_content_grid.field_vih_link
     - paragraphs.paragraphs_type.vih_content_grid
+  module:
+    - link
 id: paragraph.vih_content_grid.default
 targetEntityType: paragraph
 bundle: vih_content_grid
@@ -28,4 +33,18 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+  field_vih_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_vih_background_color: true
+  field_vih_background_img: true

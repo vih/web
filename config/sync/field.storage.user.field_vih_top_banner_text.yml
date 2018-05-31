@@ -1,0 +1,21 @@
+uuid: 8177874c-e95d-44b9-86ce-370766d62832
+langcode: da
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_vih_top_banner_text
+field_name: field_vih_top_banner_text
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

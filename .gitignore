@@ -76,3 +76,4 @@ private
 /config/sync/field.storage.node.body.yml
 /config/sync/field.storage.node.panelizer.yml
 bellcom_quickpay_integration.settings.yml
+mailchimp.settings.yml

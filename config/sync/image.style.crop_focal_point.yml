@@ -10,6 +10,6 @@ effects:
   045dd5a1-67d7-4ead-89f5-eb87f85b22c1:
     uuid: 045dd5a1-67d7-4ead-89f5-eb87f85b22c1
     id: crop_crop
-    weight: null
+    weight: -10
     data:
       crop_type: focal_point

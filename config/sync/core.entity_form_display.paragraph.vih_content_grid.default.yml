@@ -3,16 +3,60 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
+    - field.field.paragraph.vih_content_grid.field_vih_background_color
+    - field.field.paragraph.vih_content_grid.field_vih_background_img
     - field.field.paragraph.vih_content_grid.field_vih_cg_node_ref
     - field.field.paragraph.vih_content_grid.field_vih_heading
+    - field.field.paragraph.vih_content_grid.field_vih_link
     - paragraphs.paragraphs_type.vih_content_grid
   module:
+    - entity_browser
+    - field_group
+    - link
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_vih_background_color
+        - field_vih_background_img
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: false
+      label: Udseende
+      region: content
 id: paragraph.vih_content_grid.default
 targetEntityType: paragraph
 bundle: vih_content_grid
 mode: default
 content:
+  field_vih_background_color:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_vih_background_img:
+    type: entity_browser_entity_reference
+    weight: 5
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
   field_vih_cg_node_ref:
     weight: 1
     settings:
@@ -29,6 +73,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_vih_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
 hidden:
   created: true

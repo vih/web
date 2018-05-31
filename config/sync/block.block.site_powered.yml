@@ -11,7 +11,7 @@ _core:
 id: site_powered
 theme: site
 region: drawer_left
-weight: -7
+weight: -8
 provider: null
 plugin: system_powered_by_block
 settings:

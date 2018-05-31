@@ -1,0 +1,9 @@
+uuid: 2f9783b1-d5c6-4d66-9d39-ed4d4f08c26c
+langcode: da
+status: true
+dependencies: {  }
+id: vih_banner_slide
+label: 'Banner - slide'
+icon_uuid: null
+description: 'Et enkeltstående slide til indlejring i et banner'
+behavior_plugins: {  }

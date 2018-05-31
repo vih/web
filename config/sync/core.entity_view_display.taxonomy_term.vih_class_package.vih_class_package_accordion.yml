@@ -8,18 +8,14 @@ dependencies:
     - field.field.taxonomy_term.vih_class_package.field_short_description
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
-    - field.field.taxonomy_term.vih_class_package.field_vih_heading
-    - field.field.taxonomy_term.vih_class_package.field_vih_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner
-    - image.style.vih_class_package_accordion
+    - field.field.taxonomy_term.vih_class_package.field_vih_top_banner_text
     - taxonomy.vocabulary.vih_class_package
   module:
-    - image
     - panelizer
     - text
-    - url_embed
 third_party_settings:
   panelizer:
     enable: false
@@ -40,27 +36,20 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_cp_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
+    region: content
     label: hidden
     settings:
-      image_style: vih_class_package_accordion
-      image_link: ''
-    third_party_settings: {  }
-    region: content
-  field_vih_link_taxo:
-    type: url_embed
-    weight: 4
-    region: content
-    label: above
-    settings: {  }
+      view_mode: vih_class_package_accordion
+      link: false
     third_party_settings: {  }
 hidden:
   field_metatag: true
   field_short_description: true
   field_vih_class_package_color: true
-  field_vih_heading: true
   field_vih_paragraphs: true
   field_vih_subheading: true
   field_vih_top_banner: true
+  field_vih_top_banner_text: true
   langcode: true

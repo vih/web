@@ -11,22 +11,40 @@ dependencies:
     - paragraphs.paragraphs_type.vih_webform
   module:
     - entity_browser
+    - field_group
     - webform
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_vih_background_img
+        - field_vih_background_color
+      parent_name: ''
+      weight: 2
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Appearance
+      region: content
 id: paragraph.vih_webform.default
 targetEntityType: paragraph
 bundle: vih_webform
 mode: default
 content:
   field_vih_background_color:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_background_img:
     type: entity_browser_entity_reference
-    weight: 2
+    weight: 3
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -59,4 +77,5 @@ content:
 hidden:
   created: true
   status: true
+  translation: true
   uid: true

@@ -1,0 +1,112 @@
+uuid: 854b8818-d240-4ff8-bfd0-ca3d3b8003c1
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_vih_banner_slides
+    - paragraphs.paragraphs_type.vih_banner_slide
+  module:
+    - entity_reference_revisions
+id: block_content.banner.field_vih_banner_slides
+field_name: field_vih_banner_slides
+entity_type: block_content
+bundle: banner
+label: 'Banner slides'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      vih_banner_slide: vih_banner_slide
+    target_bundles_drag_drop:
+      vih_banner_slide:
+        enabled: true
+        weight: 29
+      1_column_action_centered:
+        weight: 30
+        enabled: false
+      article:
+        weight: 31
+        enabled: false
+      class_packages:
+        weight: 32
+        enabled: false
+      employee:
+        weight: 33
+        enabled: false
+      event_list:
+        weight: 34
+        enabled: false
+      file:
+        weight: 35
+        enabled: false
+      gallery:
+        weight: 36
+        enabled: false
+      list_of_news_teasers:
+        weight: 37
+        enabled: false
+      long_course_list_:
+        weight: 38
+        enabled: false
+      long_course_list_contain_class:
+        weight: 39
+        enabled: false
+      short_course_list_:
+        weight: 40
+        enabled: false
+      social_media_embed:
+        weight: 41
+        enabled: false
+      user_quote:
+        weight: 42
+        enabled: false
+      video:
+        weight: 43
+        enabled: false
+      vih_class_groups_accordion:
+        weight: 44
+        enabled: false
+      vih_content_grid:
+        weight: 45
+        enabled: false
+      vih_course_slot:
+        weight: 46
+        enabled: false
+      vih_option:
+        weight: 47
+        enabled: false
+      vih_option_group:
+        weight: 48
+        enabled: false
+      vih_ordered_course_period:
+        weight: 49
+        enabled: false
+      vih_ordered_course_person:
+        weight: 50
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 51
+        enabled: false
+      vih_ordered_event_person:
+        weight: 52
+        enabled: false
+      vih_ordered_option:
+        weight: 53
+        enabled: false
+      vih_single_class_group:
+        weight: 54
+        enabled: false
+      vih_teacher_class_description:
+        weight: 55
+        enabled: false
+      vih_webform:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions

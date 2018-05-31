@@ -1,0 +1,14 @@
+uuid: 6bcefa82-6098-4a8e-aefa-70e356a42d43
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_general_teaser_image
+label: 'VIH General teaser image'
+targetEntityType: media
+cache: true

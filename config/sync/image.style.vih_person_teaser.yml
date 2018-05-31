@@ -1,14 +1,31 @@
 uuid: 71a43c30-41e6-44a7-a38e-0d4eb4d4ea23
 langcode: da
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+    - focal_point
 name: vih_person_teaser
 label: 'VIH Person Teaser (242x248)'
 effects:
   3a8ab667-04be-4573-a45c-fa7ccddbde69:
     uuid: 3a8ab667-04be-4573-a45c-fa7ccddbde69
     id: image_scale_and_crop
-    weight: 1
+    weight: -8
     data:
       width: 242
       height: 248
+  a5bc8ee1-85a2-4417-b05d-3862b7e97905:
+    uuid: a5bc8ee1-85a2-4417-b05d-3862b7e97905
+    id: focal_point_scale_and_crop
+    weight: -9
+    data:
+      width: 242
+      height: 248
+      crop_type: focal_point
+  1f877024-1b8c-428a-9f3b-9cfcb2de9ffd:
+    uuid: 1f877024-1b8c-428a-9f3b-9cfcb2de9ffd
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: focal_point

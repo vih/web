@@ -6,8 +6,11 @@ dependencies:
     - field.field.paragraph.list_of_news_teasers.field_vih_background_color
     - field.field.paragraph.list_of_news_teasers.field_vih_background_img
     - field.field.paragraph.list_of_news_teasers.field_vih_heading
+    - field.field.paragraph.list_of_news_teasers.field_vih_link
     - field.field.paragraph.list_of_news_teasers.field_vih_tags
     - paragraphs.paragraphs_type.list_of_news_teasers
+  module:
+    - link
 id: paragraph.list_of_news_teasers.default
 targetEntityType: paragraph
 bundle: list_of_news_teasers
@@ -20,6 +23,18 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_vih_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
     region: content
 hidden:
   field_vih_background_color: true

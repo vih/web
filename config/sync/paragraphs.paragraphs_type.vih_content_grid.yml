@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: vih_content_grid
-label: Faciliteter
+label: 'Grid med indholdssider'
 icon_uuid: null
-description: 'Generer en liste over faciliteter'
+description: 'Generer et grid over indholdssider'
 behavior_plugins: {  }

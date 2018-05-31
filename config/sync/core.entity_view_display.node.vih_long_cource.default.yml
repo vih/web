@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.vih_long_cource.body
     - field.field.node.vih_long_cource.field_metatag
+    - field.field.node.vih_long_cource.field_short_description
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
     - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
@@ -18,11 +19,9 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_paragraphs
     - field.field.node.vih_long_cource.field_vih_top_banner
     - field.field.node.vih_long_cource.scheduled_update
-    - image.style.banner_small
     - node.type.vih_long_cource
   module:
     - entity_reference_revisions
-    - image
     - metatag
     - options
     - panelizer
@@ -247,6 +246,13 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
+  field_short_description:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_vih_cource_contact_person:
     weight: 7
     label: hidden
@@ -265,13 +271,13 @@ content:
     type: string
     region: content
   field_vih_course_image:
-    type: image
     weight: 8
     label: hidden
     settings:
-      image_style: banner_small
-      image_link: ''
+      view_mode: vih_banner_smal
+      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
   field_vih_course_periods:
     type: entity_reference_entity_view

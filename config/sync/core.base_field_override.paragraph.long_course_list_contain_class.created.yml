@@ -1,0 +1,18 @@
+uuid: cb31c662-a24e-4294-a169-9dfd469d1fc0
+langcode: da
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.long_course_list_contain_class
+id: paragraph.long_course_list_contain_class.created
+field_name: created
+entity_type: paragraph
+bundle: long_course_list_contain_class
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

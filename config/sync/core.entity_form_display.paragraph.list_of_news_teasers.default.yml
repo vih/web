@@ -7,11 +7,13 @@ dependencies:
     - field.field.paragraph.list_of_news_teasers.field_vih_background_color
     - field.field.paragraph.list_of_news_teasers.field_vih_background_img
     - field.field.paragraph.list_of_news_teasers.field_vih_heading
+    - field.field.paragraph.list_of_news_teasers.field_vih_link
     - field.field.paragraph.list_of_news_teasers.field_vih_tags
     - paragraphs.paragraphs_type.list_of_news_teasers
   module:
     - entity_browser
     - field_group
+    - link
     - workbench_moderation
 third_party_settings:
   field_group:
@@ -63,9 +65,17 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_vih_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_vih_tags:
     type: options_select
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -75,4 +85,5 @@ content:
 hidden:
   created: true
   status: true
+  translation: true
   uid: true

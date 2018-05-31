@@ -11,14 +11,11 @@ dependencies:
     - field.field.taxonomy_term.vih_class.field_vih_class_image
     - field.field.taxonomy_term.vih_class.field_vih_class_material_price
     - field.field.taxonomy_term.vih_class.field_vih_class_price_addition
-    - field.field.taxonomy_term.vih_class.field_vih_heading
     - field.field.taxonomy_term.vih_class.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class.field_vih_subheading
     - field.field.taxonomy_term.vih_class.field_vih_top_banner
-    - image.style.list_advanced
     - taxonomy.vocabulary.vih_class
   module:
-    - image
     - panelizer
     - text
 third_party_settings:
@@ -47,13 +44,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_vih_class_image:
-    type: image
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: list_advanced
-      image_link: ''
+      view_mode: vih_list_advanced
+      link: false
     third_party_settings: {  }
 hidden:
   field_metatag: true
@@ -61,7 +58,6 @@ hidden:
   field_vih_class_color: true
   field_vih_class_material_price: true
   field_vih_class_price_addition: true
-  field_vih_heading: true
   field_vih_paragraphs: true
   field_vih_subheading: true
   field_vih_top_banner: true

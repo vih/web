@@ -15,27 +15,19 @@ view_mode ? view_mode|clean_class,
                 <div class="partial">
                     <div class="partial__body">
 
-                        {# Begin - headings #}
-                        {% if term.field_vih_heading.value or term.field_vih_subheading.value %}
+                        <!-- Begin - heading -->
+                        <div class="sectioned__heading">
+                            <h2 class="sectioned__heading__title">{{ name }}</h2>
+                        </div>
+                        <!-- End - heading -->
 
-                            {% if term.field_vih_heading.value %}
-                                <!-- Begin - heading -->
-                                <div class="sectioned__heading">
-                                    <h2 class="sectioned__heading__title">{{ content.field_vih_heading.0 }}</h2>
-                                </div>
-                                <!-- End - heading -->
-                            {% endif %}
-
-                            {% if term.field_vih_subheading.value %}
-                                <!-- Begin - subheading -->
-                                <div class="sectioned__subheading">
-                                    <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_subheading.0 }}</h3>
-                                </div>
-                                <!-- End - subheading -->
-                            {% endif %}
-
+                        {% if term.field_vih_subheading.value %}
+                            <!-- Begin - subheading -->
+                            <div class="sectioned__subheading">
+                                <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_subheading.0 }}</h3>
+                            </div>
+                            <!-- End - subheading -->
                         {% endif %}
-                        {# End - headings #}
 
                         {{ content.description }}
 

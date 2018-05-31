@@ -21,6 +21,7 @@
 // --------------------------------------------------
 
 .boxy--my-course {
+  min-height: 130px;
 
   .boxy__body {
     display: flex;
@@ -28,16 +29,28 @@
     padding: 0;
   }
 
+  .boxy__content {
+    padding: $boxy-body-spacing-top-bottom $boxy-body-spacing-top-bottom;
+
+    h1, h2, h3, h4, h5 {
+      margin-top: 0;
+    }
+  }
+
+  .photo {
+    flex-grow: 1;
+  }
+
   .boxy__image {
-    padding-right: floor( ( $grid-gutter-width / 2) );
+    padding-right: 0;
 
     margin-top: 0 - $boxy-body-spacing-top-bottom;
     margin-bottom: 0 - $boxy-body-spacing-top-bottom;
     margin-left: 0 - $boxy-spacing-left-right;
+  }
 
-    img {
-      max-width: 150px;
-    }
+  .field {
+    margin-bottom: 0 !important; // Overriding field margin from _user.scss
   }
 }
 
@@ -56,7 +69,21 @@
 @media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {}
+@media #{$breakpoint-tablet-and-up} {
+
+  .boxy--my-course {
+
+    .boxy__content {
+      display: flex;
+
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+
+      padding-left: 0;
+    }
+  }
+}
 
 // Tablet - only
 @media #{$breakpoint-tablet-only} {}

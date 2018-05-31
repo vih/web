@@ -1,0 +1,131 @@
+uuid: 7735357e-fb2f-4a6e-b49d-5e0ee99fba18
+langcode: da
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 2
+template: false
+id: bestil_rundvisning
+title: 'Bestil rundvisning'
+description: 'Used to order a guided tour for Danish students.'
+category: ''
+elements: "mine_kontaktoplysninger:\n  '#type': fieldset\n  '#title': 'Mine kontaktoplysninger'\n  navn:\n    '#type': textfield\n    '#title': Navn\n  e_mail:\n    '#type': email\n    '#title': E-mail\n  telefon:\n    '#type': tel\n    '#title': Telefon\n    '#international': true\n    '#international_initial_country': DK\nmine_informationer:\n  '#type': fieldset\n  '#title': 'Mine informationer'\n  hvornar_vil_du_gerne_vises_rundt_:\n    '#type': textfield\n    '#title': 'Hvornår vil du gerne vises rundt?'\n    '#description': 'Skriv gerne et par forslag til datoer. Du f&aring;r det bedste indtryk af skolen, hvis du har mulighed for at komme forbi i dagtimerne.'\n  hvornar_er_du_interesseret_i_at_starte_:\n    '#type': textfield\n    '#title': 'Hvornår er du interesseret i at starte?'\n  hvad_er_dine_idraetsinteresser_:\n    '#type': textarea\n    '#title': 'Hvad er dine idrætsinteresser?'\n  har_du_sporgsmal_til_vores_lange_kurser_:\n    '#type': textfield\n    '#title': 'Har du spørgsmål til vores lange kurser?'\n  hvordan_horte_du_forste_gang_om_vih_:\n    '#type': textfield\n    '#title': 'Hvordan hørte du første gang om VIH?'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Book min rundvisning'\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

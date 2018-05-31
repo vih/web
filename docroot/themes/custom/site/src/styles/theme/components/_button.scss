@@ -39,6 +39,7 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
   white-space: normal;
 
+  &.btn-white,
   &.btn-primary,
   &.btn-secondary,
   &.btn-info,
@@ -167,6 +168,19 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
 .btn {
 
+  // White
+  &.btn-white {
+
+    &:before {
+      color: $btn-primary-color;
+      background-color: $button-primary-icon-background;
+    }
+
+    &:after {
+      border-left-color: $button-primary-icon-background;
+    }
+  }
+
   // Primary
   &.btn-primary {
 
@@ -261,6 +275,10 @@ $button-danger-icon-background: lighten($btn-danger-bg, 14%);
       }
     }
   }
+}
+
+.btn-white {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
 .text-right {

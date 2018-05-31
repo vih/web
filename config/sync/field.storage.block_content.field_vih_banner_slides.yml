@@ -1,0 +1,21 @@
+uuid: b1861244-2095-43d9-bc3c-b5994d8bd738
+langcode: da
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+    - paragraphs
+id: block_content.field_vih_banner_slides
+field_name: field_vih_banner_slides
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

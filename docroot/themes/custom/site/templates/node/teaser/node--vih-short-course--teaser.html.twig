@@ -1,65 +1,64 @@
-{%
-set classes = [
-    node.bundle|clean_class,
-    node.isPromoted() ? 'is-promoted',
-    node.isSticky() ? 'is-sticky',
-    not node.isPublished() ? 'is-unpublished',
-    view_mode ? view_mode|clean_class,
-    'clearfix',
-]
-%}
+{% set classes = [
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'clearfix',
+] %}
 
-<a href="{{ url }}" class="element-wrapper-link entity-teaser entity-teaser--short-course">
+<a href="{{ url }}"
+   class="element-wrapper-link entity-teaser entity-teaser--short-course">
 
-    <!-- Begin - image -->
-    <div class="entity-teaser__image">
+  <!-- Begin - image -->
+  <div class="entity-teaser__image">
 
-        {# Begin - image #}
-        {{ content.field_vih_sc_image }}
-        {# End - image #}
+    {# Begin - image #}
+    {{ content.field_vih_sc_image }}
+    {# End - image #}
 
-        {# Begin - period #}
-        {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
-            <div class="entity-teaser__image__overlay">
-                {{ content.field_vih_sc_start_date }} - {{ content.field_vih_sc_end_date }}
-            </div>
-        {% endif %}
-        {# End - period #}
+    {# Begin - period #}
+    {% if content.field_vih_sc_start_date and content.field_vih_sc_end_date %}
+      <div class="entity-teaser__image__overlay">
+        {{ content.field_vih_sc_start_date }}
+        - {{ content.field_vih_sc_end_date }}
+      </div>
+    {% endif %}
+    {# End - period #}
 
+  </div>
+  <!-- End - image -->
+
+  <!-- Begin - body -->
+  <div class="entity-teaser__body">
+
+    <div class="entity-teaser__heading">
+      <h2 class="entity-teaser__heading__title heading-h4">{{ label }}</h2>
     </div>
-    <!-- End - image -->
 
-    <!-- Begin - body -->
-    <div class="entity-teaser__body">
+    {# Begin - short description #}
+    {{ content.field_short_description }}
+    {# End - short description #}
 
-        <div class="entity-teaser__heading">
-            <h2 class="entity-teaser__heading__title heading-h4">{{ label }}</h2>
-        </div>
+  </div>
+  <!-- End - body -->
 
-        {# Begin - body #}
-        {{ content.body }}
-        {# End - body #}
-
-    </div>
-    <!-- End - body -->
-
-    <!-- Begin - action -->
-    <div class="entity-teaser__action">
-        <button class="btn btn-default">{{ 'Read more' | trans }}</button>
-    </div>
-    <!-- End - action -->
+  <!-- Begin - action -->
+  <div class="entity-teaser__action">
+    <button class="btn btn-default">{{ 'Read more' | trans }}</button>
+  </div>
+  <!-- End - action -->
 
 </a>
 
 
-
 <a href="" class="element-wrapper-link">
 
-    <article{{ attributes.addClass(classes) }}>
+  <article{{ attributes.addClass(classes) }}>
 
 
-        <div{{ content_attributes.addClass('content') }}>
-        </div>
+    <div{{ content_attributes.addClass('content') }}>
+    </div>
 
-    </article>
+  </article>
 </a>

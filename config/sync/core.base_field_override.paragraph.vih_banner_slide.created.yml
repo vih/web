@@ -1,0 +1,18 @@
+uuid: b8b7b05e-6a5e-478f-869e-70784d9b1159
+langcode: da
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.vih_banner_slide
+id: paragraph.vih_banner_slide.created
+field_name: created
+entity_type: paragraph
+bundle: vih_banner_slide
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

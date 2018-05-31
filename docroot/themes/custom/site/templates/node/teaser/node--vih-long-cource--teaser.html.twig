@@ -1,51 +1,54 @@
-{%
-set classes = [
-node.bundle|clean_class,
-node.isPromoted() ? 'is-promoted',
-node.isSticky() ? 'is-sticky',
-not node.isPublished() ? 'is-unpublished',
-view_mode ? view_mode|clean_class,
-'clearfix',
-]
-%}
+{% set classes = [
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'clearfix',
+] %}
 
 <a href="{{ url }}" class="element-wrapper-link" rel="bookmark">
-    <article{{ attributes.addClass(classes) }}>
+  <article{{ attributes.addClass(classes) }}>
 
-        {% if display_submitted %}
-            <footer>
-                {{ author_picture }}
-                <div{{ author_attributes.addClass('author') }}>
-                    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-                    {{ metadata }}
-                </div>
-            </footer>
-        {% endif %}
-
-        <div{{ content_attributes.addClass('content') }}>
-                <div class="teaser-image">
-                    {{ content|without("course_period_start", "course_period_end","body") }}
-                    <div class="svg-container-polygon">
-                        <svg version="1.1" viewBox="0 0 400 200"
-                             preserveAspectRatio="xMinYMin meet" class="svg-content-polygon">
-                            <polygon points="0,150 400,100 400,200 0,200" class="color-red" />
-                        </svg>
-                    </div>
-                    <div class="overlay-text">
-                        {{ content.course_period_start|format_date('vih_medium_date_short_month') }} - {{ content.course_period_end|format_date('vih_medium_date_short_month') }}
-                    </div>
-                </div>
-                <div class="teaser-text">
-                    <h4{{ title_attributes }}>
-                        {{ label }}
-                    </h4>
-                    {{ content.body }}
-                </div>
-                <div class="teaser-button">
-                    <button class="btn btn-default" hreflang="da">Læs mere</button>
-                </div>
-
+    {% if display_submitted %}
+      <footer>
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('author') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
         </div>
+      </footer>
+    {% endif %}
 
-    </article>
+    <div{{ content_attributes.addClass('content') }}>
+      <div class="teaser-image">
+        {{ content|without("course_period_start", "course_period_end","body") }}
+        <div class="svg-container-polygon">
+          <svg version="1.1" viewBox="0 0 400 200"
+               preserveAspectRatio="xMinYMin meet" class="svg-content-polygon">
+            <polygon points="0,150 400,100 400,200 0,200" class="color-red"/>
+          </svg>
+        </div>
+        <div class="overlay-text">
+          {{ content.course_period_start|format_date('vih_medium_date_short_month') }}
+          - {{ content.course_period_end|format_date('vih_medium_date_short_month') }}
+        </div>
+      </div>
+      <div class="teaser-text">
+        <h4{{ title_attributes }}>
+          {{ label }}
+        </h4>
+
+        {# Begin - short description #}
+        {{ content.field_short_description }}
+        {# End - short description #}
+
+      </div>
+      <div class="teaser-button">
+        <button class="btn btn-default" hreflang="da">Læs mere</button>
+      </div>
+
+    </div>
+
+  </article>
 </a>

@@ -1,0 +1,8 @@
+vih_subscription_long_course_redirection_page: '24'
+vih_subscription_short_course_redirection_page: '25'
+vih_subscription_event_redirection_page: '26'
+submit: 'Save configuration'
+form_build_id: form-ejodX3pHkH9KMxJeqYC2DuUF6I5BF5ZzeLbJ_E9jWQk
+form_token: Res3RdLvpx9rJd398g8PANx4vDJ7F9KfAFaEmpXmLGA
+form_id: vih_subscription_redirection_pages_settings_form
+op: 'Save configuration'

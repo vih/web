@@ -1,0 +1,28 @@
+uuid: f236f420-eb70-4423-b75a-1dc123f71454
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_img
+    - media.type.image
+    - paragraphs.paragraphs_type.vih_content_grid
+id: paragraph.vih_content_grid.field_vih_background_img
+field_name: field_vih_background_img
+entity_type: paragraph
+bundle: vih_content_grid
+label: Baggrundsbillede
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

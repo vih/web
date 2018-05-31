@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.list_advanced
     - field.field.node.event.body
     - field.field.node.event.field_metatag
+    - field.field.node.event.field_short_description
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -18,13 +19,10 @@ dependencies:
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
-    - image.style.list_advanced
     - node.type.event
   module:
     - datetime
-    - image
     - panelizer
-    - text
     - user
 third_party_settings:
   panelizer:
@@ -37,14 +35,13 @@ targetEntityType: node
 bundle: event
 mode: list_advanced
 content:
-  body:
-    label: hidden
-    type: text_trimmed
-    weight: 3
-    settings:
-      trim_length: 150
-    third_party_settings: {  }
+  field_short_description:
+    type: basic_string
+    weight: 2
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_vih_course_heading:
     weight: 0
     label: hidden
@@ -55,32 +52,33 @@ content:
     region: content
   field_vih_event_end_date:
     type: datetime_default
-    weight: 5
-    region: content
-    label: hidden
-    settings:
-      timezone_override: ''
-      format_type: vih_medium_date_short_month
-    third_party_settings: {  }
-  field_vih_event_start_date:
-    type: datetime_default
     weight: 4
     region: content
     label: hidden
     settings:
       timezone_override: ''
-      format_type: vih_medium_date_short_month
+      format_type: html_datetime
     third_party_settings: {  }
-  field_vih_image:
-    type: image
-    weight: 2
+  field_vih_event_start_date:
+    type: datetime_default
+    weight: 3
     region: content
     label: hidden
     settings:
-      image_style: list_advanced
-      image_link: ''
+      timezone_override: ''
+      format_type: html_datetime
+    third_party_settings: {  }
+  field_vih_image:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: vih_list_advanced
+      link: false
     third_party_settings: {  }
 hidden:
+  body: true
   field_metatag: true
   field_vih_cource_contact_person: true
   field_vih_course_subheading: true

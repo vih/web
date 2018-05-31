@@ -41,6 +41,7 @@ $md-footer-bottom-padding-top-bottom: 55px;
   background-color: $footer-background-color;
 
   .block,
+  .partial,
   nav {
 
     h1,
@@ -58,6 +59,8 @@ $md-footer-bottom-padding-top-bottom: 55px;
     }
   }
 
+  &,
+  li,
   p {
     color: #fff;
   }
@@ -68,6 +71,10 @@ $md-footer-bottom-padding-top-bottom: 55px;
     &:hover {
       color: #fff;
     }
+  }
+
+  .partial__body {
+    margin-top: 0;
   }
 
   .menu,

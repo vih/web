@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.field_vih_paragraphs
+    - field.field.node.page.field_vih_small_image
     - field.field.node.page.field_vih_top_banner
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
@@ -41,11 +42,12 @@ third_party_settings:
       region: content
     group_content:
       children:
+        - field_vih_small_image
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
       parent_name: ''
-      weight: 3
+      weight: 1
       format_type: tab
       format_settings:
         label: Indhold
@@ -61,14 +63,14 @@ third_party_settings:
         - field_metatag
         - uid
         - created
-        - langcode
         - promote
         - sticky
         - path
-        - translation
         - scheduled_update
+        - langcode
+        - translation
       parent_name: ''
-      weight: 5
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -87,7 +89,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 33
     settings:
       rows: 9
       summary_rows: 3
@@ -107,7 +109,7 @@ content:
     type: metatag_firehose
     region: content
   field_vih_course_heading:
-    weight: 2
+    weight: 31
     settings:
       size: 60
       placeholder: ''
@@ -115,7 +117,7 @@ content:
     type: string_textfield
     region: content
   field_vih_course_subheading:
-    weight: 3
+    weight: 32
     settings:
       size: 60
       placeholder: ''
@@ -123,7 +125,7 @@ content:
     type: string_textfield
     region: content
   field_vih_paragraphs:
-    weight: 4
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -136,6 +138,20 @@ content:
     third_party_settings: {  }
     type: paragraphs
     region: content
+  field_vih_small_image:
+    type: entity_browser_entity_reference
+    weight: 30
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
   field_vih_top_banner:
     type: entity_browser_entity_reference
     weight: 29
@@ -152,14 +168,14 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 14
+    weight: 18
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 17
+    weight: 16
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -167,27 +183,27 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 14
     third_party_settings: {  }
     region: content
   scheduled_update:
     type: inline_entity_form_complex
-    weight: 19
+    weight: 17
+    region: content
     settings:
-      override_labels: false
+      form_mode: default
       label_singular: ''
       label_plural: ''
       allow_new: true
-      allow_existing: false
       match_operator: CONTAINS
-      form_mode: default
+      override_labels: false
+      allow_existing: false
     third_party_settings: {  }
-    region: content
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 15
     third_party_settings: {  }
     region: content
   title:
@@ -199,7 +215,7 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }

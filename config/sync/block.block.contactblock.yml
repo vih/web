@@ -12,7 +12,7 @@ dependencies:
 id: contactblock
 theme: site
 region: drawer_left
-weight: -2
+weight: -3
 provider: null
 plugin: contact_block
 settings:

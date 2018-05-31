@@ -83,6 +83,7 @@ $lg-banner-title-font-size: 46px;
 .banner__heading__title {
   @extend h1;
   font-size: $xs-banner-title-font-size;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
 
   color: #fff;
 }
@@ -108,6 +109,31 @@ $lg-banner-title-font-size: 46px;
 
   background: url('../images/banner-logo.png') center center no-repeat;
   background-size: 100%;
+}
+
+.region-banner {
+
+  .form-group:last-child {
+    margin-bottom: 0; // Overriding a way to global override
+  }
+
+  .owl-controls {
+    position: absolute;
+
+    z-index: 1000;
+
+    left: 0;
+    right: 0;
+
+    bottom: $xs-sectioned-skewed-angle-height * 1px;
+
+    .owl-page {
+
+      span {
+        background: #fff;
+      }
+    }
+  }
 }
 
 // --------------------------------------------------
@@ -170,6 +196,13 @@ $lg-banner-title-font-size: 46px;
     width: 140px;
     height: 140px;
   }
+
+  .region-banner {
+
+    .owl-controls {
+      bottom: $sm-sectioned-skewed-angle-height * 1px;
+    }
+  }
 }
 
 // Desktop - and up
@@ -205,6 +238,13 @@ $lg-banner-title-font-size: 46px;
 
     right: 35px;
   }
+
+  .region-banner {
+
+    .owl-controls {
+      bottom: $md-sectioned-skewed-angle-height * 1px;
+    }
+  }
 }
 
 // Large desktop - and up
@@ -236,6 +276,13 @@ $lg-banner-title-font-size: 46px;
     height: 250px;
 
     right: 50px;
+  }
+
+  .region-banner {
+
+    .owl-controls {
+      bottom: $lg-sectioned-skewed-angle-height * 1px;
+    }
   }
 }
 

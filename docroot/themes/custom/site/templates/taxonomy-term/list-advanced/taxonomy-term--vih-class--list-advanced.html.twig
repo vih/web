@@ -17,7 +17,7 @@
 
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
-        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style(content.field_vih_class_image[0]['#image_style']) }});">
+        <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('list_advanced') }});" data-target="#{{ class_modal_id }}" data-backdrop="static">
             <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
                 {{ name }}
             </div>
@@ -50,7 +50,7 @@
 
                 {# Begin - header #}
                 {% if term.field_vih_class_image.value %}
-                    <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.fileuri | image_style('modal')}});">
+                    <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('modal')}});" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
                         <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
                             <span aria-hidden="true">&times;</span>
                         </button>

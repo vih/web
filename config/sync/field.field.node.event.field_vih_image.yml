@@ -1,19 +1,11 @@
-uuid: d0f0063a-cec8-4866-8d3e-3a86688488fd
+uuid: 9a2261c8-48e0-40f7-9f02-98bb2095d81f
 langcode: da
 status: true
 dependencies:
   config:
     - field.storage.node.field_vih_image
+    - media.type.image
     - node.type.event
-  module:
-    - content_translation
-    - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
 id: node.event.field_vih_image
 field_name: field_vih_image
 entity_type: node
@@ -25,21 +17,12 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg'
-  max_filesize: ''
-  max_resolution: ''
-  min_resolution: ''
-  alt_field: true
-  alt_field_required: true
-  title_field: false
-  title_field_required: false
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  handler: 'default:file'
-  handler_settings: {  }
-field_type: image
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

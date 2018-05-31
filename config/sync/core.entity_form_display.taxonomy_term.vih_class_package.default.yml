@@ -3,22 +3,19 @@ langcode: da
 status: true
 dependencies:
   config:
-    - entity_browser.browser.image_browser
     - entity_browser.browser.media_browser
     - field.field.taxonomy_term.vih_class_package.field_metatag
     - field.field.taxonomy_term.vih_class_package.field_short_description
     - field.field.taxonomy_term.vih_class_package.field_vih_class_package_color
     - field.field.taxonomy_term.vih_class_package.field_vih_cp_image
-    - field.field.taxonomy_term.vih_class_package.field_vih_heading
-    - field.field.taxonomy_term.vih_class_package.field_vih_link_taxo
     - field.field.taxonomy_term.vih_class_package.field_vih_paragraphs
     - field.field.taxonomy_term.vih_class_package.field_vih_subheading
     - field.field.taxonomy_term.vih_class_package.field_vih_top_banner
+    - field.field.taxonomy_term.vih_class_package.field_vih_top_banner_text
     - taxonomy.vocabulary.vih_class_package
   module:
     - entity_browser
     - field_group
-    - link
     - metatag
     - paragraphs
     - path
@@ -27,12 +24,9 @@ third_party_settings:
   field_group:
     group_class_package_details:
       children:
-        - name
-        - description
         - field_short_description
-        - field_vih_link_taxo
-        - field_vih_cp_image
         - field_vih_class_package_color
+        - field_vih_cp_image
       parent_name: ''
       weight: 3
       format_type: tab
@@ -46,12 +40,11 @@ third_party_settings:
       region: content
     group_misc:
       children:
-        - field_metatag
         - langcode
         - path
         - translation
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -63,11 +56,11 @@ third_party_settings:
       region: content
     group_content:
       children:
-        - field_vih_heading
+        - name
         - field_vih_subheading
-        - field_vih_paragraphs
+        - description
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: tab
       format_settings:
         id: ''
@@ -77,6 +70,21 @@ third_party_settings:
         required_fields: true
       label: Indhold
       region: content
+    group_top_banner:
+      children:
+        - field_vih_top_banner_text
+        - field_vih_top_banner
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Top banner'
+      region: content
 id: taxonomy_term.vih_class_package.default
 targetEntityType: taxonomy_term
 bundle: vih_class_package
@@ -84,20 +92,20 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 14
+    weight: 17
     settings:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
     region: content
   field_metatag:
-    weight: 18
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   field_short_description:
-    weight: 15
+    weight: 18
     settings:
       rows: 5
       placeholder: ''
@@ -105,42 +113,27 @@ content:
     type: string_textarea
     region: content
   field_vih_class_package_color:
-    weight: 18
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_cp_image:
-    type: entity_browser_file
-    weight: 17
+    type: entity_browser_entity_reference
+    weight: 22
     settings:
       entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
       field_widget_remove: true
       open: true
       selection_mode: selection_append
-      preview_image_style: thumbnail
-      field_widget_edit: true
-      view_mode: default
-    third_party_settings: {  }
+      field_widget_display_settings:
+        view_mode: thumbnail
     region: content
-  field_vih_heading:
-    weight: 11
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_vih_link_taxo:
-    type: link_default
-    weight: 16
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   field_vih_paragraphs:
-    weight: 14
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -154,7 +147,7 @@ content:
     type: paragraphs
     region: content
   field_vih_subheading:
-    weight: 13
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -163,18 +156,26 @@ content:
     region: content
   field_vih_top_banner:
     type: entity_browser_entity_reference
-    weight: 1
+    weight: 3
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
+      open: true
       selection_mode: selection_append
       field_widget_display_settings:
         view_mode: thumbnail
-      open: true
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 19

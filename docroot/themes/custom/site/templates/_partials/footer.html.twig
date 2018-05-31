@@ -1,164 +1,221 @@
 <!-- Begin - footer -->
 <footer class="layout__footer">
-    <div class="layout__footer-inner">
+  <div class="layout__footer-inner">
 
-        {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
-            <!-- Begin - footer top -->
-            <div class="layout__footer-top-outer">
-                <div class="container">
-                    <div class="layout__footer-top-inner">
-                        <div class="row">
+    {% if page.footer_top_first or page.footer_top_second or page.footer_top_third or page.footer_top_fourth %}
+      <!-- Begin - footer top -->
+      <div class="layout__footer-top-outer">
+        <div class="container">
+          <div class="layout__footer-top-inner">
+            <div class="row">
 
-                            {% if page.footer_top_first %}
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    {{ page.footer_top_first }}
-                                </div>
-                            {% endif %}
-
-                            {% if page.footer_top_second %}
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    {{ page.footer_top_second }}
-                                </div>
-                            {% endif %}
-
-                            {% if page.footer_top_third %}
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    {{ page.footer_top_third }}
-                                </div>
-                            {% endif %}
-
-                            {% if page.footer_top_fourth %}
-                                <div class="col-xs-12 col-sm-6 col-md-3">
-                                    {{ page.footer_top_fourth }}
-                                </div>
-                            {% endif %}
-
-                        </div>
-                    </div>
+              {% if page.footer_top_first %}
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                  {{ page.footer_top_first }}
                 </div>
-            </div>
-            <!-- End - footer top -->
-        {% endif %}
+              {% endif %}
 
-        <!-- Begin - footer bottom -->
-        <div class="layout__footer-bottom-outer">
-            <div class="layout__footer-bottom-inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-8">
-                            <div class="layout__footer-bottom-copyright">
-                                <p>{{ '© 2011-2018, Vejle Idrætshøjskole. All rights reserved' | trans }}</p>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="layout__footer-bottom-social">
-                                <ul class="list-inline pull-right">
-
-                                    {% if theme_settings.social.facebook.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.facebook.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.facebook.tooltip | trans }}">
-                                                <span class="icon icon-facebook"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.twitter.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.twitter.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.twitter.tooltip | trans }}">
-                                                <span class="icon icon-twitter"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.googleplus.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.googleplus.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.googleplus.tooltip | trans }}">
-                                                <span class="icon icon-google-plus"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.linkedin.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.linkedin.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.linkedin.tooltip | trans }}">
-                                                <span class="icon icon-linkedin"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.pinterest.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.pinterest.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.pinterest.tooltip | trans }}">
-                                                <span class="icon icon-pinterest"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.instagram.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.instagram.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.instagram.tooltip | trans }}">
-                                                <span class="icon icon-instagram"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.youtube.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.youtube.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.youtube.tooltip | trans }}">
-                                                <span class="icon icon-youtube"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% if theme_settings.social.vimeo.active %}
-                                        <li>
-                                            <a href="{{ theme_settings.social.vimeo.url }}"
-                                               target="_blank"
-                                               data-toggle="tooltip"
-                                               data-placement="top"
-                                               title="{{ theme_settings.social.vimeo.tooltip | trans }}">
-                                                <span class="icon icon-vimeo"></span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+              {% if page.footer_top_second %}
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                  {{ page.footer_top_second }}
                 </div>
+              {% endif %}
+
+              {% if page.footer_top_third %}
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                  {{ page.footer_top_third }}
+                </div>
+              {% endif %}
+
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="partial">
+                  <div class="partial__heading">
+                    <h2 class="partial__heading__title">
+                      {{ 'Contact information' | trans }}
+                    </h2>
+                  </div>
+                  <div class="partial__body">
+
+                    <ul class="list-unstyled">
+
+                      {% if theme_settings.contact_information.business_owner_name %}
+                        <li>
+                          {{ theme_settings.contact_information.business_owner_name }}
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.address %}
+                        <li>
+                          {{ theme_settings.contact_information.address }}
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.zipcode and theme_settings.contact_information.city %}
+                        <li>
+                          {{ theme_settings.contact_information.zipcode }} {{ theme_settings.contact_information.city }}
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.phone_system and theme_settings.contact_information.phone_readable %}
+                        <li>
+                          <a
+                            href="tel:{{ theme_settings.contact_information.phone_system }}">
+                            {{ theme_settings.contact_information.phone_readable }}
+                          </a>
+                        </li>
+                      {% endif %}
+
+                      {% if theme_settings.contact_information.email %}
+                        <li>
+                          <a
+                            href="mailto: {{ theme_settings.contact_information.email }}">
+                            {{ theme_settings.contact_information.email }}
+                          </a>
+                        </li>
+                      {% endif %}
+
+                    </ul>
+
+                  </div>
+                </div>
+              </div>
+
             </div>
+          </div>
         </div>
-        <!-- End - footer bottom -->
+      </div>
+      <!-- End - footer top -->
+    {% endif %}
 
+    <!-- Begin - footer bottom -->
+    <div class="layout__footer-bottom-outer">
+      <div class="layout__footer-bottom-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-8">
+              <div class="layout__footer-bottom-copyright">
+                <p>
+
+                  {% if theme_settings.contact_information.business_owner_name %}
+                    {% if theme_settings.contact_information.business_startup_year %}
+                      &copy; {{ theme_settings.contact_information.business_startup_year }}-{{ 'now'| date('Y') }}, {{ theme_settings.contact_information.business_owner_name }}. {{ 'All rights reserved' | trans }}
+                    {% else %}
+                      &copy; {{ 'now'| date('Y') }}, {{ theme_settings.contact_information.business_owner_name }}. {{ 'All rights reserved' | trans }}
+                    {% endif %}
+                  {% endif %}
+
+                </p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <div class="layout__footer-bottom-social">
+                <ul class="list-inline pull-right">
+
+                  {% if theme_settings.social.facebook.active %}
+                  <li>
+                    <a href="{{ theme_settings.social.facebook.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.facebook.tooltip | trans }}">
+                        <span class="icon icon-facebook"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.twitter.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.twitter.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.twitter.tooltip | trans }}">
+                        <span class="icon icon-twitter"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.googleplus.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.googleplus.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.googleplus.tooltip | trans }}">
+                        <span class="icon icon-google-plus"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.linkedin.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.linkedin.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.linkedin.tooltip | trans }}">
+                        <span class="icon icon-linkedin"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.pinterest.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.pinterest.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.pinterest.tooltip | trans }}">
+                        <span class="icon icon-pinterest"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.instagram.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.instagram.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.instagram.tooltip | trans }}">
+                        <span class="icon icon-instagram"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.youtube.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.youtube.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.youtube.tooltip | trans }}">
+                        <span class="icon icon-youtube"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {% if theme_settings.social.vimeo.active %}
+                    <li>
+                      <a href="{{ theme_settings.social.vimeo.url }}"
+                         target="_blank"
+                         data-toggle="tooltip"
+                         data-placement="top"
+                         title="{{ theme_settings.social.vimeo.tooltip | trans }}">
+                        <span class="icon icon-vimeo"></span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- End - footer bottom -->
+
+  </div>
 </footer>
 <!-- End - footer -->

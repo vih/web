@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_metatag
+    - field.field.node.event.field_short_description
     - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
@@ -17,12 +18,10 @@ dependencies:
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
     - field.field.node.event.scheduled_update
-    - image.style.banner_small
     - node.type.event
   module:
     - datetime
     - entity_reference_revisions
-    - image
     - metatag
     - options
     - panelizer
@@ -52,6 +51,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
+  field_short_description:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_vih_cource_contact_person:
     weight: 8
@@ -124,14 +130,14 @@ content:
     type: list_key
     region: content
   field_vih_image:
-    type: image
     weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: banner_small
-      image_link: ''
+      view_mode: vih_banner_smal
+      link: false
     third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_vih_paragraphs:
     weight: 7
     label: hidden

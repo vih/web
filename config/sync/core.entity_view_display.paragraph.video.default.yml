@@ -19,7 +19,7 @@ bundle: video
 mode: default
 content:
   field_vih_description:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -35,7 +35,7 @@ content:
     region: content
   field_vih_highlighted:
     type: text_default
-    weight: 2
+    weight: 1
     region: content
     label: hidden
     settings: {  }

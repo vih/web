@@ -20,8 +20,8 @@ third_party_settings:
   field_group:
     group_appearance:
       children:
-        - field_vih_background_img
         - field_vih_background_color
+        - field_vih_background_img
       parent_name: ''
       weight: 4
       format_type: tab
@@ -46,7 +46,7 @@ content:
     region: content
   field_vih_background_img:
     type: entity_browser_entity_reference
-    weight: 7
+    weight: 9
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -59,7 +59,7 @@ content:
     region: content
     third_party_settings: {  }
   field_vih_empty_message:
-    weight: 11
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
@@ -68,7 +68,7 @@ content:
     region: content
   field_vih_event_id:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS
@@ -91,10 +91,8 @@ content:
     third_party_settings: {  }
     type: link_default
     region: content
-  translation:
-    weight: 10
-    region: content
 hidden:
   created: true
   status: true
+  translation: true
   uid: true

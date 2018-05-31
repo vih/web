@@ -1,0 +1,34 @@
+uuid: f99f288f-40e3-42d8-b439-9e3bbddb563f
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.vih_banner_smal
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: VLDxfMVPTkd2xvOjFMCh3kWmaOYnd03zggFXuUXQVEY
+id: media.image.vih_banner_smal
+targetEntityType: media
+bundle: image
+mode: vih_banner_smal
+content:
+  image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

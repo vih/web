@@ -22,7 +22,7 @@ third_party_settings:
         - field_vih_background_img
         - field_vih_background_color
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: tab
       format_settings:
         id: ''
@@ -59,7 +59,7 @@ content:
     third_party_settings: {  }
   field_vih_gallery_images:
     type: entity_browser_entity_reference
-    weight: 2
+    weight: 1
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -80,19 +80,15 @@ content:
     type: string_textfield
     region: content
   field_vih_link:
-    weight: 3
+    weight: 2
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
     region: content
-  translation:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   status: true
+  translation: true
   uid: true

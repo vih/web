@@ -1,8 +1,8 @@
-vih_subscription_long_course_terms_and_conditions_page: '106'
-vih_subscription_short_course_terms_and_conditions_page: '105'
-vih_subscription_event_terms_and_conditions_page: '104'
-submit: 'Gem indstillinger'
-form_build_id: form-JOeOGirkcIC2jufjauay75C5pSjbyqQ5bCE6enJwr_8
-form_token: wKD5ejD988iMqW8lJHZ5eUYzw_3aiwIjvOLgHRsOWrQ
+vih_subscription_long_course_terms_and_conditions_page: '20'
+vih_subscription_short_course_terms_and_conditions_page: '21'
+vih_subscription_event_terms_and_conditions_page: '22'
+submit: 'Save configuration'
+form_build_id: form-lDEu0XW7tYLG0tPNhl06afAN19sevE-xFrPvUSXnGjg
+form_token: BtkEny2skdpVO84egxY3kspON7xJwkQ6xF_oV9DpqQM
 form_id: vih_subscription_terms_and_conditions_settings_form
-op: 'Gem indstillinger'
+op: 'Save configuration'

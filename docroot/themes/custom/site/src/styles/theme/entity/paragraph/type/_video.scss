@@ -19,7 +19,7 @@
 
   .field--name-field-vih-heading,
   .field--name-field-vih-description {
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
   }
 
   .field--name-field-vih-description {
@@ -30,6 +30,8 @@
       @extend h4;
 
       margin: 0;
+
+      text-transform: initial;
 
       font-weight: $headings-font-weight-light;
     }

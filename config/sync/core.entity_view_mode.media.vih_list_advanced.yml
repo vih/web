@@ -1,0 +1,14 @@
+uuid: e43c66f7-4588-44da-86a5-0c4d04300370
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.vih_list_advanced
+label: 'VIH List - advanced'
+targetEntityType: media
+cache: true
