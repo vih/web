@@ -1,16 +1,17 @@
-uuid: f2e78e2a-a4db-43c1-9928-a66b7f54ad34
+uuid: 22184386-70ec-446f-94a6-8a6d2218cfdc
 langcode: da
 status: true
 dependencies:
   config:
+    - field.storage.node.field_vih_course_subheading
     - node.type.news
-id: node.news.title
-field_name: title
+id: node.news.field_vih_course_subheading
+field_name: field_vih_course_subheading
 entity_type: node
 bundle: news
-label: Overskrift
+label: Underoverskrift
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

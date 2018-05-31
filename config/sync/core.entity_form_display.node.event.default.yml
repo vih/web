@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.event.field_metatag
     - field.field.node.event.field_short_description
     - field.field.node.event.field_vih_cource_contact_person
-    - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
@@ -18,6 +17,7 @@ dependencies:
     - field.field.node.event.field_vih_image
     - field.field.node.event.field_vih_paragraphs
     - field.field.node.event.field_vih_top_banner
+    - field.field.node.event.field_vih_top_banner_text
     - field.field.node.event.scheduled_update
     - node.type.event
   module:
@@ -34,8 +34,8 @@ third_party_settings:
   field_group:
     group_banner:
       children:
-        - title
         - field_vih_top_banner
+        - field_vih_top_banner_text
       parent_name: ''
       weight: 0
       format_type: tab
@@ -49,9 +49,9 @@ third_party_settings:
       region: content
     group_content:
       children:
-        - field_short_description
-        - field_vih_course_heading
+        - title
         - field_vih_course_subheading
+        - field_short_description
         - body
         - field_vih_image
       parent_name: ''
@@ -113,7 +113,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 29
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
@@ -133,7 +133,7 @@ content:
     type: metatag_firehose
     region: content
   field_short_description:
-    weight: 12
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -149,16 +149,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_vih_course_heading:
-    weight: 27
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_vih_course_subheading:
-    weight: 28
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -199,7 +191,7 @@ content:
     region: content
   field_vih_image:
     type: entity_browser_entity_reference
-    weight: 30
+    weight: 9
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -239,6 +231,14 @@ content:
         view_mode: thumbnail
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 19
@@ -281,7 +281,7 @@ content:
     region: content
   title:
     type: string_textfield
-    weight: 1
+    weight: 5
     settings:
       size: 60
       placeholder: ''

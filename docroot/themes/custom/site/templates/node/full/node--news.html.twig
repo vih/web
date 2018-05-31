@@ -14,12 +14,18 @@
         <div class="sectioned__inner">
             <div class="container">
 
-                {% if not node.field_vih_top_banner.value %}
-                    <!-- Begin - heading -->
-                    <div class="sectioned__heading">
-                        <h2 class="sectioned__heading__title">{{ label }}</h2>
+                <!-- Begin - heading -->
+                <div class="sectioned__heading">
+                    <h2 class="sectioned__heading__title">{{ label }}</h2>
+                </div>
+                <!-- End - heading -->
+
+                {% if node.field_vih_course_subheading.value %}
+                    <!-- Begin - subheading -->
+                    <div class="sectioned__subheading">
+                        <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
                     </div>
-                    <!-- End - heading -->
+                    <!-- End - subheading -->
                 {% endif %}
 
                 {{ content.body }}

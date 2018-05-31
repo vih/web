@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.field.node.page.body
     - field.field.node.page.field_metatag
-    - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.field_vih_paragraphs
     - field.field.node.page.field_vih_small_image
     - field.field.node.page.field_vih_top_banner
+    - field.field.node.page.field_vih_top_banner_text
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
     - node.type.page
@@ -46,14 +46,6 @@ content:
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
-  field_vih_course_heading:
-    weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_vih_course_subheading:
     weight: 4
     label: hidden
@@ -87,6 +79,14 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_vih_top_banner_text:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 1
