@@ -3,6 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.list_advanced
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - node.type.news
@@ -53,7 +54,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 3
+          items_per_page: 20
           offset: 0
       style:
         type: default
@@ -383,6 +384,41 @@ display:
           plugin_id: numeric
       display_extenders: {  }
       css_class: 'row row--equal-height-columns'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.body'
+  embedded_list_advanced_list:
+    display_plugin: embed
+    id: embedded_list_advanced_list
+    display_title: 'Embed - list advanced'
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      defaults:
+        style: false
+        row: false
+        css_class: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: list_advanced
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
