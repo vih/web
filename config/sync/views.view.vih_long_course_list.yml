@@ -13,7 +13,7 @@ dependencies:
     - node
     - text
     - user
-id: long_course_list_
+id: vih_long_course_list
 label: 'Long Course List '
 module: views
 description: ''
