@@ -1,0 +1,30 @@
+uuid: 9f55632e-2e9b-4f44-8256-17ae93962ecb
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_file
+    - media.type.document
+    - media.type.image
+    - paragraphs.paragraphs_type.file
+id: paragraph.file.field_vih_file
+field_name: field_vih_file
+entity_type: paragraph
+bundle: file
+label: Fil
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference

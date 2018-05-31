@@ -1,20 +1,17 @@
-uuid: 51a73557-a87d-4ede-98fa-b8f09b2c70ea
+uuid: 7c3410a9-8846-49f3-9e39-40f2d5974a55
 langcode: da
 status: true
 dependencies:
   module:
-    - file
+    - media
     - paragraphs
-id: paragraph.file
-field_name: file
+id: paragraph.field_vih_file
+field_name: field_vih_file
 entity_type: paragraph
-type: file
+type: entity_reference
 settings:
-  display_field: false
-  display_default: false
-  uri_scheme: public
-  target_type: file
-module: file
+  target_type: media
+module: core
 locked: false
 cardinality: -1
 translatable: true
