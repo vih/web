@@ -43,27 +43,19 @@ view_mode ? view_mode|clean_class,
                         <div class="row">
                             <div class="col-xs-12 col-sm-6">
 
-                                {# Begin - headings #}
-                                {% if content.field_vih_course_heading or content.field_vih_course_subheading %}
+                                <!-- Begin - heading -->
+                                <div class="sectioned__heading">
+                                    <h2 class="sectioned__heading__title">{{ label }}</h2>
+                                </div>
+                                <!-- End - heading -->
 
-                                    {% if content.field_vih_course_heading %}
-                                        <!-- Begin - heading -->
-                                        <div class="sectioned__heading">
-                                            <h2 class="sectioned__heading__title">{{ content.field_vih_course_heading.0 }}</h2>
-                                        </div>
-                                        <!-- End - heading -->
-                                    {% endif %}
-
-                                    {% if content.field_vih_course_subheading %}
-                                        <!-- Begin - subheading -->
-                                        <div class="sectioned__subheading">
-                                            <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
-                                        </div>
-                                        <!-- End - subheading -->
-                                    {% endif %}
-
+                                {% if content.field_vih_course_subheading %}
+                                    <!-- Begin - subheading -->
+                                    <div class="sectioned__subheading">
+                                        <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
+                                    </div>
+                                    <!-- End - subheading -->
                                 {% endif %}
-                                {# End - headings #}
 
                                 {# Begin - body #}
                                 {{ content.body }}

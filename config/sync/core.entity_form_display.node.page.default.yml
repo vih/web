@@ -6,11 +6,11 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.page.body
     - field.field.node.page.field_metatag
-    - field.field.node.page.field_vih_course_heading
     - field.field.node.page.field_vih_course_subheading
     - field.field.node.page.field_vih_paragraphs
     - field.field.node.page.field_vih_small_image
     - field.field.node.page.field_vih_top_banner
+    - field.field.node.page.field_vih_top_banner_text
     - field.field.node.page.panelizer
     - field.field.node.page.scheduled_update
     - node.type.page
@@ -27,8 +27,8 @@ third_party_settings:
   field_group:
     group_banner:
       children:
-        - title
         - field_vih_top_banner
+        - field_vih_top_banner_text
       parent_name: ''
       weight: 0
       format_type: tab
@@ -43,7 +43,7 @@ third_party_settings:
     group_content:
       children:
         - field_vih_small_image
-        - field_vih_course_heading
+        - title
         - field_vih_course_subheading
         - body
       parent_name: ''
@@ -108,14 +108,6 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
-  field_vih_course_heading:
-    weight: 31
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_vih_course_subheading:
     weight: 32
     settings:
@@ -166,6 +158,14 @@ content:
         view_mode: thumbnail
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 18
@@ -208,7 +208,7 @@ content:
     region: content
   title:
     type: string_textfield
-    weight: 28
+    weight: 31
     settings:
       size: 60
       placeholder: ''

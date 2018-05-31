@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.event.field_metatag
     - field.field.node.event.field_short_description
     - field.field.node.event.field_vih_cource_contact_person
-    - field.field.node.event.field_vih_course_heading
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
@@ -73,7 +72,6 @@ hidden:
   body: true
   field_metatag: true
   field_vih_cource_contact_person: true
-  field_vih_course_heading: true
   field_vih_course_subheading: true
   field_vih_event_persons_limit: true
   field_vih_event_price: true

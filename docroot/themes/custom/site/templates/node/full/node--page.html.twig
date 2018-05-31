@@ -10,22 +10,20 @@ view_mode ? view_mode|clean_class,
 <article{{ attributes.addClass(classes) }}>
 
     {# Begin - content #}
-    {% if node.field_vih_course_heading.value or node.content.field_vih_course_subheading.value or node.body.value %}
+    {% if node.content.field_vih_course_subheading.value or node.body.value %}
         <!-- Begin - content -->
         <section class="sectioned sectioned--content">
             <div class="sectioned__inner">
                 <div class="container">
 
                     {# Begin - headings #}
-                    {% if node.field_vih_course_heading.value or node.field_vih_course_subheading.value %}
+                    {% if node.field_vih_course_subheading.value %}
 
-                        {% if node.field_vih_course_heading.value %}
-                            <!-- Begin - heading -->
-                            <div class="sectioned__heading">
-                                <h2 class="sectioned__heading__title">{{ content.field_vih_course_heading.0 }}</h2>
-                            </div>
-                            <!-- End - heading -->
-                        {% endif %}
+                        <!-- Begin - heading -->
+                        <div class="sectioned__heading">
+                            <h2 class="sectioned__heading__title">{{ label }}</h2>
+                        </div>
+                        <!-- End - heading -->
 
                         {% if node.field_vih_course_subheading.value %}
                             <!-- Begin - subheading -->
