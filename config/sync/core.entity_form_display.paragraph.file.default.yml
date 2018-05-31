@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.file.field_vih_background_color
     - field.field.paragraph.file.field_vih_background_img
     - field.field.paragraph.file.field_vih_description
+    - field.field.paragraph.file.field_vih_file
     - field.field.paragraph.file.field_vih_heading
     - field.field.paragraph.file.field_vih_link
     - field.field.paragraph.file.file
@@ -24,7 +25,7 @@ third_party_settings:
         - field_vih_background_img
         - field_vih_background_color
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         id: ''
@@ -67,6 +68,19 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_vih_file:
+    weight: 3
+    settings:
+      entity_browser: media_browser
+      field_widget_display: label
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      open: false
+      field_widget_display_settings: {  }
+    third_party_settings: {  }
+    type: entity_browser_entity_reference
+    region: content
   field_vih_heading:
     weight: 0
     settings:
@@ -76,7 +90,7 @@ content:
     type: string_textfield
     region: content
   field_vih_link:
-    weight: 3
+    weight: 4
     settings:
       placeholder_url: ''
       placeholder_title: ''

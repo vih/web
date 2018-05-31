@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.file.field_vih_background_color
     - field.field.paragraph.file.field_vih_background_img
     - field.field.paragraph.file.field_vih_description
+    - field.field.paragraph.file.field_vih_file
     - field.field.paragraph.file.field_vih_heading
     - field.field.paragraph.file.field_vih_link
     - field.field.paragraph.file.file
@@ -26,6 +27,15 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
+  field_vih_file:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: embedded
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
   field_vih_heading:
     weight: 0
     label: hidden
@@ -35,7 +45,7 @@ content:
     type: string
     region: content
   field_vih_link:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: null
