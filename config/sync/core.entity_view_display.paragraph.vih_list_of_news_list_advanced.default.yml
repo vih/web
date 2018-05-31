@@ -11,53 +11,32 @@ dependencies:
     - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
   module:
     - link
-    - options
 id: paragraph.vih_list_of_news_list_advanced.default
 targetEntityType: paragraph
 bundle: vih_list_of_news_list_advanced
 mode: default
 content:
-  field_vih_background_color:
-    weight: 4
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
-  field_vih_background_img:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_vih_heading:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_vih_link:
-    weight: 0
-    label: above
+    weight: 1
+    label: hidden
     settings:
-      trim_length: 80
+      trim_length: null
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: '0'
     third_party_settings: {  }
     type: link
     region: content
-  field_vih_tags:
-    weight: 2
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-hidden: {  }
+hidden:
+  field_vih_background_color: true
+  field_vih_background_img: true
+  field_vih_tags: true
