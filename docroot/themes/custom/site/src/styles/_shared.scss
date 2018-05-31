@@ -1,5 +1,5 @@
 @import "mixins/loader";
-@import "variables/loader";
+@import "variables/shared/loader";
 @import "vendor";
 
 // Drupal 8 specific overrides (load from Bootstrap theme in themes/contrib/bootstrap)

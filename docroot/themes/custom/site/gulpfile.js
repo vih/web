@@ -34,7 +34,7 @@ gulp.task('build:modernizr', (callback) => {
     runSequence(['build:javascripts', 'build:styles'], 'clean:modernizr', 'process:modernizr', callback);
 });
 gulp.task('build:styles', (callback) => {
-    runSequence('clean:styles', 'process:styles', callback);
+    runSequence('clean:styles', 'process:styles_vih', 'process:styles_vies', callback);
 });
 gulp.task('build:javascripts', (callback) => {
     runSequence('clean:javascripts', 'process:javascripts', callback);
@@ -66,15 +66,25 @@ gulp.task('process:modernizr', () => {
         }))
         .pipe(gulp.dest('dist/javascripts'));
 });
-gulp.task('process:styles', () => {
-    return gulp.src(config.settings.styles)
-        .pipe(sourcemaps.init())
-        .pipe(styles().on('error', swallowError))
-        .pipe(autoprefixer('last 2 version'))
-        .pipe(bless())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/stylesheets'))
-        .pipe(browserSync.stream({match: '**/*.css'}));
+gulp.task('process:styles_vih', () => {
+  return gulp.src(config.settings.styles_vih)
+      .pipe(sourcemaps.init())
+      .pipe(styles().on('error', swallowError))
+      .pipe(autoprefixer('last 2 version'))
+      .pipe(bless())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('dist/stylesheets'))
+      .pipe(browserSync.stream({match: '**/*.css'}));
+});
+gulp.task('process:styles_vies', () => {
+  return gulp.src(config.settings.styles_vies)
+      .pipe(sourcemaps.init())
+      .pipe(styles().on('error', swallowError))
+      .pipe(autoprefixer('last 2 version'))
+      .pipe(bless())
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('dist/stylesheets'))
+      .pipe(browserSync.stream({match: '**/*.css'}));
 });
 gulp.task('process:javascripts', () => {
     return gulp.src(config.settings.javascripts)
