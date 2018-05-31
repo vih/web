@@ -392,7 +392,7 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
 /**
  * Implements hook_preprocess_hook().
  */
-function site_preprocess_paragraph__list_of_news_list_advanced(&$variables) {
+function site_preprocess_paragraph__vih_list_of_news_list_advanced(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
 
