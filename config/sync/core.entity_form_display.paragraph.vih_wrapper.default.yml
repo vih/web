@@ -10,22 +10,40 @@ dependencies:
     - paragraphs.paragraphs_type.vih_wrapper
   module:
     - entity_browser
+    - field_group
     - paragraphs
     - workbench_moderation
+third_party_settings:
+  field_group:
+    group_appearance:
+      children:
+        - field_vih_background_color
+        - field_vih_background_img
+      parent_name: ''
+      weight: 1
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Udseende
+      region: content
 id: paragraph.vih_wrapper.default
 targetEntityType: paragraph
 bundle: vih_wrapper
 mode: default
 content:
   field_vih_background_color:
-    weight: 6
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_vih_background_img:
     type: entity_browser_entity_reference
-    weight: 7
+    weight: 3
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -38,15 +56,17 @@ content:
     region: content
     third_party_settings: {  }
   field_vih_paragraphs:
-    type: entity_reference_paragraphs
-    weight: 8
+    type: paragraphs
+    weight: 0
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      add_mode: modal
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
 hidden:
