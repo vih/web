@@ -503,6 +503,10 @@ function site_preprocess_paragraph__long_course_list_(&$variables) {
  */
 function site_preprocess_paragraph__long_course_list_contain_class(&$variables) {
   $taxonomy_term_tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+  if (empty($taxonomy_term_tid)) {
+    $parent_enitity = $variables['paragraph']->getParentEntity();
+    $taxonomy_term_tid = $parent_enitity->id();
+  }
   if (!empty(views_get_view_result('vih_long_courses', 'embed_list_advanced_contain_class', $taxonomy_term_tid))) {
     // Result not empty, unsetting the empty message.
     unset($variables['content']['field_vih_empty_message']);
