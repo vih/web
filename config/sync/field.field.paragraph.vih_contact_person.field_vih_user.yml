@@ -11,7 +11,7 @@ entity_type: paragraph
 bundle: vih_contact_person
 label: Underviser
 description: 'Vælg den bruger hvorfra der skal udtrækkes data'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
