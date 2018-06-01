@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a26d55c341c9c5d9a13ba5811f4e9533",
+    "content-hash": "76d4174ccaf49ccaf811f8ea3b93bef8",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -2678,7 +2678,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_clone",
-                "reference": "824e8fdacf6648e617a81b3512313447e71e8cac"
+                "reference": "6d0ce053605e9aaf8412927a9b0ea8da7a9a06e5"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2689,8 +2689,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha1+2-dev",
-                    "datestamp": "1507095245",
+                    "version": "8.x-1.0-alpha2+1-dev",
+                    "datestamp": "1523541485",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2699,7 +2699,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2712,7 +2712,7 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_clone"
             },
-            "time": "2017-10-04T11:47:45+00:00"
+            "time": "2018-04-16T08:16:37+00:00"
         },
         {
             "name": "drupal/entity_embed",
@@ -8429,16 +8429,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "bf26aff803a11c5cc8eb7c4878a702c403ec67f1"
+                "reference": "741e7a571836f038de731105f4742ca8a164e43a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/bf26aff803a11c5cc8eb7c4878a702c403ec67f1",
-                "reference": "bf26aff803a11c5cc8eb7c4878a702c403ec67f1",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/741e7a571836f038de731105f4742ca8a164e43a",
+                "reference": "741e7a571836f038de731105f4742ca8a164e43a",
                 "shasum": ""
             },
             "require": {
@@ -8458,7 +8458,8 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.7.x-dev",
-                    "dev-develop": "1.8.x-dev"
+                    "dev-develop": "1.8.x-dev",
+                    "dev-release-2.0": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -8477,7 +8478,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2018-02-26T15:44:50+00:00"
+            "time": "2018-05-29T16:53:08+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -13073,14 +13074,14 @@
         "drupal/examples": 20,
         "drupal/layout_plugin": 15,
         "drupal/page_manager": 10,
-        "drupal/entity_clone": 20,
         "drupal/coffee": 20,
         "drupal/field_group": 20,
         "drupal/url_embed": 20,
         "drupal/focal_point": 10,
         "drupal/owlcarousel": 15,
         "drupal/menu_multilingual": 15,
-        "drupal/eu_cookie_compliance": 20
+        "drupal/eu_cookie_compliance": 20,
+        "drupal/entity_clone": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

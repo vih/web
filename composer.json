@@ -42,7 +42,6 @@
         "drupal/examples": "1.x-dev",
         "drupal/layout_plugin": "^1.0@alpha",
         "drupal/page_manager": "^4.0@beta",
-        "drupal/entity_clone": "1.x-dev",
         "drupal/coffee": "1.x-dev",
         "drupal/field_group": "3.x-dev",
         "drupal/photoswipe": "1.0-beta4",
@@ -60,7 +59,8 @@
         "drupal/menu_multilingual": "^1.0@alpha",
         "drupal/easy_breadcrumb": "^1.8",
         "drupal/block_scheduler": "^1.0",
-        "drupal/eu_cookie_compliance": "1.x-dev"
+        "drupal/eu_cookie_compliance": "1.x-dev",
+        "drupal/entity_clone": "1.x-dev"
     },
     "repositories": [
         {
