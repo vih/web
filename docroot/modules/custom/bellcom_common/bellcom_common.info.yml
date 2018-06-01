@@ -1,6 +1,8 @@
 type: module
-name: Datetime widget tweaks
-description: 'Remove seconds from datetime widget'
+name: Bellcom common functionality module
 package: Vih
 
 core: '8.x'
+dependencies:
+  - link
+  - linkit

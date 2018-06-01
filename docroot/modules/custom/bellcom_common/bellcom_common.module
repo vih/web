@@ -1,21 +1,20 @@
 <?php
 /**
  * @file
- * Datetime tweak module.
- * 
- * Remove seconds from datetime widget
+ * Bellcom common module.
+ *
+ * Module contains common functionality.
  */
 
 /**
- * Implements hook_element_info_alter().
+ * Implements hook_field_widget_form_alter().
  */
-function datetime_tweaks_element_info_alter(array &$types) {
-  $types['datetime']['#process'][] = '_datetime_tweaks_datetime_set_format';
-}
-
-function _datetime_tweaks_datetime_set_format($element) {
-
-  // Remove seconds in browsers that support HTML5 type=date.
-  $element['time']['#attributes']['step'] = 60;
-  return $element;
+function vih_subscription_field_widget_form_alter(&$element, $form_state, $context) {
+  if (!empty($element['uri']['#type'])
+    && $element['uri']['#type'] == 'entity_autocomplete'
+    && in_array('field_vih_banner_slides', $element['#field_parents'])) {
+    $element['uri']['#type'] = 'linkit';
+    $element['uri']['#autocomplete_route_name'] = 'linkit.autocomplete';
+    $element['uri']['#autocomplete_route_parameters'] = ['linkit_profile_id' => 'internal'];
+  }
 }
