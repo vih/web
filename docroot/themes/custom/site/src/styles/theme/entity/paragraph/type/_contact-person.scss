@@ -1,0 +1,124 @@
+// |--------------------------------------------------------------------------
+// | Contact person
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .paragraph--type--vih-contact-person
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@mixin paragraph-type-contact-person-mixin() {}
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.paragraph--type--vih-contact-person {
+
+  .field--name-field-vih-text {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight;
+    line-height: $line-height-base;
+    letter-spacing: initial;
+  }
+
+  table {
+    background-color: #fff;
+
+    td {
+      padding: 20px !important;
+      vertical-align: middle !important;
+
+      &.user-image {
+        position: relative;
+
+        padding: 0;
+        width: 242px;
+        min-height: 248px;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .field--name-field-vih-user-photo {
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .teacher-mail,
+  .teacher-phone {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .teacher-contact-info {
+    color: $headings-color;
+
+    text-transform: uppercase;
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    h5 {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {
+
+  .paragraph--type--vih-contact-person {
+
+    .teacher-contact-info {
+      min-width: 220px;
+    }
+  }
+}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}
