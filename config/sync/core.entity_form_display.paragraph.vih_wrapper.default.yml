@@ -1,0 +1,55 @@
+uuid: 19ebd8b9-2169-4f1b-83e8-a05247362cb5
+langcode: da
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.paragraph.vih_wrapper.field_vih_background_color
+    - field.field.paragraph.vih_wrapper.field_vih_background_img
+    - field.field.paragraph.vih_wrapper.field_vih_paragraphs
+    - paragraphs.paragraphs_type.vih_wrapper
+  module:
+    - entity_browser
+    - paragraphs
+    - workbench_moderation
+id: paragraph.vih_wrapper.default
+targetEntityType: paragraph
+bundle: vih_wrapper
+mode: default
+content:
+  field_vih_background_color:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_vih_background_img:
+    type: entity_browser_entity_reference
+    weight: 7
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
+  field_vih_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

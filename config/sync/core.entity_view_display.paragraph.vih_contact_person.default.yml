@@ -7,9 +7,12 @@ dependencies:
     - field.field.paragraph.vih_contact_person.field_vih_background_img
     - field.field.paragraph.vih_contact_person.field_vih_heading
     - field.field.paragraph.vih_contact_person.field_vih_link
+    - field.field.paragraph.vih_contact_person.field_vih_text
+    - field.field.paragraph.vih_contact_person.field_vih_user
     - paragraphs.paragraphs_type.vih_contact_person
   module:
     - link
+    - text
 id: paragraph.vih_contact_person.default
 targetEntityType: paragraph
 bundle: vih_contact_person
@@ -35,6 +38,14 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_vih_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
 hidden:
   field_vih_background_color: true
   field_vih_background_img: true
+  field_vih_user: true
