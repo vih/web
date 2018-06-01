@@ -30,8 +30,8 @@ vih_subsciption.notifications.settings:
   parent: system.admin_config_vih_subscriptions
   weight: 97
 vih_subsciption.edbbrugsen.settings:
-  title: 'VIH Subscription EDBBrugsen integration settings'
-  description: 'Varisous settings related with EDBBrugsen integration settings'
+  title: 'VIH Subscription KomIT integration settings'
+  description: 'Various settings related to KomIT integration'
   route_name: vih_subscription.admin.edbbrugsen.settings_form
   parent: system.admin_config_vih_subscriptions
   weight: 96
