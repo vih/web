@@ -325,7 +325,7 @@ class LongCourseOrderForm extends FormBase {
 
     $form['#theme'] = 'vih_subscription_long_course_order_form';
 
-    $config = $this->config(TermsAndConditionsSettingsForm::$configName);
+    $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
     if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_long_course_terms_and_conditions_page'))) {
       $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
       $form['terms_and_conditions']['accepted'] = array(
