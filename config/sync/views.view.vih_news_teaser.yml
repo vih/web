@@ -1,9 +1,8 @@
-uuid: 144cc290-705d-44bc-ac29-0998004f3a15
+uuid: 93bac80b-4f63-474f-b504-69d4243f1d65
 langcode: da
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.list_advanced
     - core.entity_view_mode.node.teaser
     - field.storage.node.body
     - node.type.news
@@ -11,8 +10,8 @@ dependencies:
     - node
     - text
     - user
-id: vih_news
-label: Nyheder
+id: vih_news_teaser
+label: 'Nyheder - teasers'
 module: views
 description: ''
 tag: ''
@@ -54,7 +53,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 20
+          items_per_page: 3
           offset: 0
       style:
         type: default
@@ -394,48 +393,14 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-  embedded_list_advanced_list:
+  embedded_list:
     display_plugin: embed
-    id: embedded_list_advanced_list
-    display_title: 'Embed - list advanced'
+    id: embedded_list
+    display_title: Embedded
     position: 1
     display_options:
       display_extenders:
         metatag_display_extender: {  }
-      display_description: ''
-      style:
-        type: default
-        options:
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      defaults:
-        style: false
-        row: false
-        css_class: false
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: list_advanced
-      css_class: ''
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.body'
-  embedded_teaser_list:
-    display_plugin: embed
-    id: embedded_teaser_list
-    display_title: 'Embed - teaser'
-    position: 1
-    display_options:
-      display_extenders: {  }
       display_description: ''
       style:
         type: default

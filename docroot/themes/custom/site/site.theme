@@ -382,10 +382,10 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('vih_news', 'embedded_teaser_list', $contextual_filter);
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_teaser', 'embedded_list', $contextual_filter);
   }
   else {
-    $variables['content']['embedded_view'] = views_embed_view('vih_news', 'embedded_teaser_list');
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_teaser', 'embedded_list');
   }
 }
 
@@ -404,10 +404,10 @@ function site_preprocess_paragraph__vih_list_of_news_list_advanced(&$variables) 
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('vih_news', 'embedded_list_advanced_list', $contextual_filter);
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_list_advanced', 'embedded_list', $contextual_filter);
   }
   else {
-    $variables['content']['embedded_view'] = views_embed_view('vih_news', 'embedded_list_advanced_list');
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_list_advanced', 'embedded_list');
   }
 }
 
