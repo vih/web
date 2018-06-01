@@ -414,6 +414,25 @@ function site_preprocess_paragraph__vih_list_of_news_list_advanced(&$variables) 
 /**
  * Implements hook_preprocess_hook().
  */
+function site_preprocess_paragraph__vih_contact_person(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $teacher_uids = [];
+
+  if ($fields = $paragraph->get('field_vih_user')->getValue()) {
+
+    foreach($fields as $field) {
+      $teacher_uids[] = $field['target_id'];
+    }
+  }
+
+  if (count($teacher_uids)) {
+    $variables['content']['teacher'] = User::load($teacher_uids[0]);
+  }
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
 function site_preprocess_paragraph__employee(&$variables) {
   $paragraph = $variables['paragraph'];
   $ids = [];
@@ -431,7 +450,6 @@ function site_preprocess_paragraph__employee(&$variables) {
   else {
     $variables['content']['embedded_view'] = views_embed_view('vih_employees', 'embed_teaser');
   }
-
 }
 
 /**

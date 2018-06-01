@@ -19,9 +19,11 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_contact_person
     - paragraphs.paragraphs_type.vih_content_grid
     - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
     - paragraphs.paragraphs_type.vih_webform
+    - paragraphs.paragraphs_type.vih_wrapper
   module:
     - entity_reference_revisions
 id: node.news.field_vih_paragraphs
@@ -40,13 +42,14 @@ settings:
     negate: 0
     target_bundles:
       1_column_action_centered: 1_column_action_centered
-      vih_content_grid: vih_content_grid
       article: article
+      vih_content_grid: vih_content_grid
       class_packages: class_packages
       employee: employee
-      vih_list_of_news_list_advanced: vih_list_of_news_list_advanced
       event_list: event_list
+      vih_list_of_news_list_advanced: vih_list_of_news_list_advanced
       file: file
+      vih_wrapper: vih_wrapper
       gallery: gallery
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
@@ -55,15 +58,16 @@ settings:
       user_quote: user_quote
       video: video
       vih_class_groups_accordion: vih_class_groups_accordion
+      vih_contact_person: vih_contact_person
       vih_webform: vih_webform
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
         weight: 26
-      vih_content_grid:
+      article:
         enabled: true
         weight: 27
-      article:
+      vih_content_grid:
         enabled: true
         weight: 27
       class_packages:
@@ -72,15 +76,18 @@ settings:
       employee:
         enabled: true
         weight: 29
-      vih_list_of_news_list_advanced:
+      event_list:
         enabled: true
         weight: 30
-      event_list:
+      vih_list_of_news_list_advanced:
         enabled: true
         weight: 30
       file:
         enabled: true
         weight: 31
+      vih_wrapper:
+        enabled: true
+        weight: 32
       gallery:
         enabled: true
         weight: 32
@@ -123,10 +130,10 @@ settings:
       vih_ordered_course_person:
         weight: 44
         enabled: false
-      vih_banner_slide:
+      vih_ordered_course_slot:
         weight: 45
         enabled: false
-      vih_ordered_course_slot:
+      vih_banner_slide:
         weight: 45
         enabled: false
       vih_ordered_event_person:
@@ -138,6 +145,9 @@ settings:
       vih_single_class_group:
         weight: 48
         enabled: false
+      vih_contact_person:
+        enabled: true
+        weight: 49
       vih_teacher_class_description:
         weight: 49
         enabled: false

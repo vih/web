@@ -1,36 +1,30 @@
-uuid: 128a0c05-12d3-443d-b02c-36d26d230588
+uuid: 5f4f8d38-ae9a-44e3-8c78-75647eedfd74
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_paragraphs
-    - node.type.page
+    - field.storage.paragraph.field_vih_paragraphs
     - paragraphs.paragraphs_type.1_column_action_centered
     - paragraphs.paragraphs_type.article
-    - paragraphs.paragraphs_type.class_packages
     - paragraphs.paragraphs_type.employee
     - paragraphs.paragraphs_type.event_list
     - paragraphs.paragraphs_type.file
     - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.list_of_news_teasers
     - paragraphs.paragraphs_type.long_course_list_
+    - paragraphs.paragraphs_type.long_course_list_contain_class
     - paragraphs.paragraphs_type.short_course_list_
     - paragraphs.paragraphs_type.social_media_embed
     - paragraphs.paragraphs_type.user_quote
-    - paragraphs.paragraphs_type.video
-    - paragraphs.paragraphs_type.vih_class_groups_accordion
     - paragraphs.paragraphs_type.vih_contact_person
-    - paragraphs.paragraphs_type.vih_content_grid
-    - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
     - paragraphs.paragraphs_type.vih_teacher_class_description
-    - paragraphs.paragraphs_type.vih_webform
     - paragraphs.paragraphs_type.vih_wrapper
   module:
     - entity_reference_revisions
-id: node.page.field_vih_paragraphs
+id: paragraph.vih_wrapper.field_vih_paragraphs
 field_name: field_vih_paragraphs
-entity_type: node
-bundle: page
+entity_type: paragraph
+bundle: vih_wrapper
 label: Sektioner
 description: ''
 required: false
@@ -44,116 +38,110 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       article: article
-      vih_content_grid: vih_content_grid
-      class_packages: class_packages
       employee: employee
       event_list: event_list
-      vih_list_of_news_list_advanced: vih_list_of_news_list_advanced
       file: file
-      vih_wrapper: vih_wrapper
       gallery: gallery
       list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
+      long_course_list_contain_class: long_course_list_contain_class
       short_course_list_: short_course_list_
       social_media_embed: social_media_embed
       user_quote: user_quote
-      video: video
-      vih_class_groups_accordion: vih_class_groups_accordion
       vih_contact_person: vih_contact_person
       vih_teacher_class_description: vih_teacher_class_description
-      vih_webform: vih_webform
     target_bundles_drag_drop:
+      vih_wrapper:
+        weight: 32
+        enabled: false
       1_column_action_centered:
         enabled: true
-        weight: 26
+        weight: 33
       article:
         enabled: true
-        weight: 27
-      vih_content_grid:
-        enabled: true
-        weight: 27
+        weight: 34
       class_packages:
-        enabled: true
-        weight: 28
+        weight: 35
+        enabled: false
       employee:
         enabled: true
-        weight: 29
+        weight: 36
       event_list:
         enabled: true
-        weight: 30
-      vih_list_of_news_list_advanced:
-        enabled: true
-        weight: 30
+        weight: 37
       file:
         enabled: true
-        weight: 31
-      vih_wrapper:
-        enabled: true
-        weight: 32
+        weight: 38
       gallery:
         enabled: true
-        weight: 32
+        weight: 39
       list_of_news_teasers:
         enabled: true
-        weight: 33
+        weight: 40
       long_course_list_:
         enabled: true
-        weight: 34
+        weight: 41
+      long_course_list_contain_class:
+        enabled: true
+        weight: 42
       short_course_list_:
         enabled: true
-        weight: 35
+        weight: 43
       social_media_embed:
         enabled: true
-        weight: 36
-      long_course_list_contain_class:
-        weight: 37
-        enabled: false
+        weight: 44
       user_quote:
         enabled: true
-        weight: 37
+        weight: 45
       video:
-        enabled: true
-        weight: 38
-      vih_class_groups_accordion:
-        enabled: true
-        weight: 39
-      vih_course_slot:
-        weight: 40
-        enabled: false
-      vih_option:
-        weight: 41
-        enabled: false
-      vih_option_group:
-        weight: 42
-        enabled: false
-      vih_ordered_course_period:
-        weight: 43
-        enabled: false
-      vih_ordered_course_person:
-        weight: 44
-        enabled: false
-      vih_ordered_course_slot:
-        weight: 45
-        enabled: false
-      vih_banner_slide:
-        weight: 45
-        enabled: false
-      vih_ordered_event_person:
         weight: 46
         enabled: false
-      vih_ordered_option:
+      vih_banner_slide:
         weight: 47
         enabled: false
-      vih_single_class_group:
+      vih_class_groups_accordion:
         weight: 48
         enabled: false
       vih_contact_person:
         enabled: true
         weight: 49
+      vih_content_grid:
+        weight: 50
+        enabled: false
+      vih_course_slot:
+        weight: 51
+        enabled: false
+      vih_list_of_news_list_advanced:
+        weight: 52
+        enabled: false
+      vih_option:
+        weight: 53
+        enabled: false
+      vih_option_group:
+        weight: 54
+        enabled: false
+      vih_ordered_course_period:
+        weight: 55
+        enabled: false
+      vih_ordered_course_person:
+        weight: 56
+        enabled: false
+      vih_ordered_course_slot:
+        weight: 57
+        enabled: false
+      vih_ordered_event_person:
+        weight: 58
+        enabled: false
+      vih_ordered_option:
+        weight: 59
+        enabled: false
+      vih_single_class_group:
+        weight: 60
+        enabled: false
       vih_teacher_class_description:
         enabled: true
-        weight: 49
+        weight: 61
       vih_webform:
-        enabled: true
-        weight: 50
+        weight: 62
+        enabled: false
 field_type: entity_reference_revisions

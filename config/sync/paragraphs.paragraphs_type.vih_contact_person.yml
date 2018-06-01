@@ -1,0 +1,9 @@
+uuid: eca35845-c8fa-4851-bda0-6413dd417925
+langcode: da
+status: true
+dependencies: {  }
+id: vih_contact_person
+label: Kontaktperson
+icon_uuid: null
+description: 'Vis brugerdata med en brugerdefineret tekst'
+behavior_plugins: {  }

@@ -183,7 +183,7 @@
 
                                                 <div class="panel-group__heading">
                                                     <h4 class="panel-group__heading__title">
-                                                        {{ 'Mix and match you subjects' | trans }}
+                                                        {{ 'Mix and match your subjects' | trans }}
                                                     </h4>
                                                 </div>
 
@@ -314,19 +314,6 @@
                         </div>
                     {% endif %}
                     {# End - action button #}
-
-                    {# Begin - teacher #}
-                    {% if node.field_vih_cource_contact_person.value %}
-                        <div class="partial partial--teacher">
-                            <div class="partial__heading">
-                                <h2 class="partial__heading__title heading-h4">{{ 'Do you have any questions about this course?' | trans }}</h2>
-                            </div>
-                            <div class="partial__body">
-                                {{ content.field_vih_cource_contact_person }}
-                            </div>
-                        </div>
-                    {% endif %}
-                    {# End - teacher #}
 
                     {# Begin - enquire button #}
                     {% if content.is_active and content.can_be_subscribed and content.enquire_prices_page_international %}

@@ -1,0 +1,9 @@
+uuid: dfb9e4a3-e366-47c6-a39f-67e2924d0c8c
+langcode: da
+status: true
+dependencies: {  }
+id: vih_wrapper
+label: Wrapper
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

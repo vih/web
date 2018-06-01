@@ -1,0 +1,21 @@
+uuid: 02f9a0b7-ff82-4fbc-98ea-ee3e81c8e122
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_text
+    - paragraphs.paragraphs_type.vih_contact_person
+  module:
+    - text
+id: paragraph.vih_contact_person.field_vih_text
+field_name: field_vih_text
+entity_type: paragraph
+bundle: vih_contact_person
+label: Tekst
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

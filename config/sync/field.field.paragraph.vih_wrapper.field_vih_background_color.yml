@@ -1,0 +1,23 @@
+uuid: f10aff50-ed61-42d4-9fda-aa5b4ebe65d4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_background_color
+    - paragraphs.paragraphs_type.vih_wrapper
+  module:
+    - options
+id: paragraph.vih_wrapper.field_vih_background_color
+field_name: field_vih_background_color
+entity_type: paragraph
+bundle: vih_wrapper
+label: Baggrundsfarve
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: white
+default_value_callback: ''
+settings: {  }
+field_type: list_string
