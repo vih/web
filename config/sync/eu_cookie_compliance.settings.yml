@@ -17,12 +17,12 @@ popup_clicking_confirmation: true
 popup_scrolling_confirmation: false
 popup_delay: 1000
 show_disagree_button: true
-popup_disagree_button_message: 'Give me more info'
+popup_disagree_button_message: 'More info'
 popup_enabled: true
 popup_find_more_button_message: 'More info'
 popup_height: null
 popup_hide_agreed: false
-popup_hide_button_message: Hide
+popup_hide_button_message: Skjul
 popup_info:
   value: "<h2>We use cookies on this site to enhance your user experience</h2>\r\n\r\n<p>By clicking any link on this page you are giving your consent for us to set cookies.</p>\r\n"
   format: rich_text
