@@ -1,4 +1,4 @@
-uuid: 144cc290-705d-44bc-ac29-0998004f3a15
+uuid: 93bac80b-4f63-474f-b504-69d4243f1d65
 langcode: da
 status: true
 dependencies:
@@ -10,8 +10,8 @@ dependencies:
     - node
     - text
     - user
-id: vih_news
-label: Nyheder
+id: vih_news_teaser
+label: 'Nyheder - teasers'
 module: views
 description: ''
 tag: ''
@@ -393,13 +393,14 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.body'
-  embedded_teaser_list:
+  embedded_list:
     display_plugin: embed
-    id: embedded_teaser_list
-    display_title: 'Embed - teaser'
+    id: embedded_list
+    display_title: Embedded
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       display_description: ''
       style:
         type: default

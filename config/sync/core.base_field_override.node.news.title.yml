@@ -8,7 +8,7 @@ id: node.news.title
 field_name: title
 entity_type: node
 bundle: news
-label: 'Tekst på banner'
+label: Overskrift
 description: ''
 required: true
 translatable: true

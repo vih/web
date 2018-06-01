@@ -1,15 +1,15 @@
-uuid: 15d28679-ac5a-48b0-8937-8f5bffc91cba
+uuid: f67a3710-d6fe-4957-a852-b1fc2cfb9781
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_course_heading
+    - field.storage.node.field_vih_top_banner_text
     - node.type.vih_long_cource
-id: node.vih_long_cource.field_vih_course_heading
-field_name: field_vih_course_heading
+id: node.vih_long_cource.field_vih_top_banner_text
+field_name: field_vih_top_banner_text
 entity_type: node
 bundle: vih_long_cource
-label: Overskrift
+label: 'Tekst på banner'
 description: ''
 required: false
 translatable: true

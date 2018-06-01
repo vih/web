@@ -23,7 +23,6 @@
     "sectioned": "^1.0.7",
     "typography-breakpoints-justification": "^1.0.0",
     "typography-helper": "^1.0.5",
-    "jquery-slinky": "^3.0.0",
     "slinky-bootstrap-theme": "^1.0.2"
   },
   "devDependencies": {

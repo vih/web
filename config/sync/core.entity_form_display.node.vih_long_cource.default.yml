@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.vih_long_cource.field_metatag
     - field.field.node.vih_long_cource.field_short_description
     - field.field.node.vih_long_cource.field_vih_cource_contact_person
-    - field.field.node.vih_long_cource.field_vih_course_heading
     - field.field.node.vih_long_cource.field_vih_course_image
     - field.field.node.vih_long_cource.field_vih_course_periods
     - field.field.node.vih_long_cource.field_vih_course_persons_limit
@@ -19,6 +18,7 @@ dependencies:
     - field.field.node.vih_long_cource.field_vih_course_week_price
     - field.field.node.vih_long_cource.field_vih_paragraphs
     - field.field.node.vih_long_cource.field_vih_top_banner
+    - field.field.node.vih_long_cource.field_vih_top_banner_text
     - field.field.node.vih_long_cource.scheduled_update
     - node.type.vih_long_cource
   module:
@@ -34,8 +34,8 @@ third_party_settings:
   field_group:
     group_banner:
       children:
-        - title
         - field_vih_top_banner
+        - field_vih_top_banner_text
       parent_name: ''
       weight: 0
       format_type: tab
@@ -49,7 +49,7 @@ third_party_settings:
       region: content
     group_content:
       children:
-        - field_vih_course_heading
+        - title
         - field_vih_course_subheading
         - body
         - field_short_description
@@ -114,7 +114,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 3
     settings:
       rows: 9
       summary_rows: 3
@@ -134,7 +134,7 @@ content:
     type: metatag_firehose
     region: content
   field_short_description:
-    weight: 7
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -142,7 +142,7 @@ content:
     type: string_textarea
     region: content
   field_vih_cource_contact_person:
-    weight: 11
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
@@ -150,17 +150,9 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_vih_course_heading:
-    weight: 4
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_vih_course_image:
     type: entity_browser_entity_reference
-    weight: 35
+    weight: 13
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -189,7 +181,7 @@ content:
     type: number
     region: content
   field_vih_course_price:
-    weight: 10
+    weight: 11
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -202,7 +194,7 @@ content:
     type: options_select
     region: content
   field_vih_course_subheading:
-    weight: 5
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -210,7 +202,7 @@ content:
     type: string_textfield
     region: content
   field_vih_course_subsc_price:
-    weight: 9
+    weight: 10
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -239,7 +231,7 @@ content:
     third_party_settings: {  }
   field_vih_top_banner:
     type: entity_browser_entity_reference
-    weight: 2
+    weight: 10
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -251,6 +243,14 @@ content:
         view_mode: thumbnail
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 27

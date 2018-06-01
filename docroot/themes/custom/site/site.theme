@@ -4,12 +4,17 @@ include( dirname(__FILE__) . '/include/settings.inc');
 use Drupal\image\Entity\ImageStyle;
 use Drupal\user\Entity\User;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
-use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Implements hook_preprocess_page() for page.html.twig.
  */
 function site_preprocess_html(&$variables) {
+  if (strpos($_SERVER['SERVER_NAME'], 'vies') !== false) {
+    $variables['#attached']['library'][] =  'site/styles_vies';
+  } else {
+    $variables['#attached']['library'][] =  'site/styles_vih';
+  }
+
   $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
 }
 
@@ -377,10 +382,32 @@ function site_preprocess_paragraph__list_of_news_teasers(&$variables) {
 
     $contextual_filter = implode('+', $ids);
 
-    $variables['content']['embedded_view'] = views_embed_view('vih_news', 'embedded_teaser_list', $contextual_filter);
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_teaser', 'embedded_list', $contextual_filter);
   }
   else {
-    $variables['content']['embedded_view'] = views_embed_view('vh_news', 'embedded_teaser_list');
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_teaser', 'embedded_list');
+  }
+}
+
+/**
+ * Implements hook_preprocess_hook().
+ */
+function site_preprocess_paragraph__vih_list_of_news_list_advanced(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $ids = [];
+
+  if ($fields = $paragraph->get('field_vih_tags')->getValue()) {
+
+    foreach($fields as $field) {
+      $ids[] = $field['target_id'];
+    }
+
+    $contextual_filter = implode('+', $ids);
+
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_list_advanced', 'embedded_list', $contextual_filter);
+  }
+  else {
+    $variables['content']['embedded_view'] = views_embed_view('vih_news_list_advanced', 'embedded_list');
   }
 }
 
@@ -718,5 +745,24 @@ function site_views_pre_render(\Drupal\views\ViewExecutable $view) {
         $node_id[] = $value->_entity->id();
       }
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_file_link().
+ */
+function site_preprocess_file_link(&$variables) {
+
+  $file_id = $variables['file']->id();
+  $query = \Drupal::entityQuery('media')
+      ->condition('field_document.entity.fid', $file_id);
+  $media_nids = $query->execute();
+  // If we have a Media for this file we use Media name instead of filename on the link.
+  if (!empty($media_nids)) {
+    $media_nid = array_shift($media_nids);
+    $media = \Drupal::entityTypeManager()->getStorage('media')->load($media_nid);
+    $link = $variables['link'];
+    $link->setText($media->getName());
+    $variables['link'] = $link;
   }
 }

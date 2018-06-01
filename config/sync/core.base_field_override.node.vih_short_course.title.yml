@@ -8,7 +8,7 @@ id: node.vih_short_course.title
 field_name: title
 entity_type: node
 bundle: vih_short_course
-label: 'Tekst på banner'
+label: Overskrift
 description: ''
 required: true
 translatable: true

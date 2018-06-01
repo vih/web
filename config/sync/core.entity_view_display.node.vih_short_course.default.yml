@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_metatag
     - field.field.node.vih_short_course.field_short_description
-    - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_paragraphs
@@ -18,6 +17,7 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_start_date
     - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.field_vih_top_banner
+    - field.field.node.vih_short_course.field_vih_top_banner_text
     - field.field.node.vih_short_course.scheduled_update
     - node.type.vih_short_course
   module:
@@ -59,14 +59,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  field_vih_course_heading:
-    weight: 10
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   field_vih_course_subheading:
     weight: 11
@@ -165,6 +157,14 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_vih_top_banner_text:
+    weight: 17
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   links:
     weight: 0

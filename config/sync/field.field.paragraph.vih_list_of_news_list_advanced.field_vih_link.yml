@@ -1,0 +1,23 @@
+uuid: 92c971dc-1455-4bdd-bb05-0d2a0d8c7095
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_link
+    - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
+  module:
+    - link
+id: paragraph.vih_list_of_news_list_advanced.field_vih_link
+field_name: field_vih_link
+entity_type: paragraph
+bundle: vih_list_of_news_list_advanced
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

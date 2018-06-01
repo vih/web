@@ -1,0 +1,19 @@
+uuid: 23aeb726-2113-4b02-b68c-5ea252af5688
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_top_banner_text
+    - node.type.news
+id: node.news.field_vih_top_banner_text
+field_name: field_vih_top_banner_text
+entity_type: node
+bundle: news
+label: 'Tekst på banner'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
