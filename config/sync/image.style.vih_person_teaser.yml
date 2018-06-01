@@ -6,7 +6,7 @@ dependencies:
     - crop
     - focal_point
 name: vih_person_teaser
-label: 'VIH Person Teaser (242x248)'
+label: 'VIH Person Teaser (300x300)'
 effects:
   3a8ab667-04be-4573-a45c-fa7ccddbde69:
     uuid: 3a8ab667-04be-4573-a45c-fa7ccddbde69
