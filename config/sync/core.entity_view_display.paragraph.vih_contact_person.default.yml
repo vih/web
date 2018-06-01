@@ -1,0 +1,40 @@
+uuid: 9aa3c655-9c3c-4079-99fb-0aa405a41de4
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vih_contact_person.field_vih_background_color
+    - field.field.paragraph.vih_contact_person.field_vih_background_img
+    - field.field.paragraph.vih_contact_person.field_vih_heading
+    - field.field.paragraph.vih_contact_person.field_vih_link
+    - paragraphs.paragraphs_type.vih_contact_person
+  module:
+    - link
+id: paragraph.vih_contact_person.default
+targetEntityType: paragraph
+bundle: vih_contact_person
+mode: default
+content:
+  field_vih_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_vih_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_vih_background_color: true
+  field_vih_background_img: true

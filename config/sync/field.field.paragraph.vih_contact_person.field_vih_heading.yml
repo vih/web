@@ -1,0 +1,19 @@
+uuid: d25c037e-7637-4d07-b700-a953dd4c3232
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_heading
+    - paragraphs.paragraphs_type.vih_contact_person
+id: paragraph.vih_contact_person.field_vih_heading
+field_name: field_vih_heading
+entity_type: paragraph
+bundle: vih_contact_person
+label: Overskrift
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
