@@ -382,6 +382,10 @@ class ShortCourseOrderForm extends FormBase {
 
     //START OTHER GENERAL DATA //
     $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
+
+    $form['#registration_text'] = (\Drupal::languageManager()->getCurrentLanguage()
+        ->getId() === 'en') ? $config->get('vih_subscription_short_course_registration_page_text_en') : $config->get('vih_subscription_short_course_registration_page_text_da');
+
     if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
       $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
       $form['terms_and_conditions'] = array(

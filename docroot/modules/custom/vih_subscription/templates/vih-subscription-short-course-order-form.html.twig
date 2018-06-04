@@ -13,9 +13,7 @@
                     </h2>
                 </div>
                 <div class="partial__body">
-                    <p>
-                        {{ "You can sign up, as many as you'd like. You will add one person at a time in the form below."|t }}
-                    </p>
+                    <p>{{ form['#registration_text'] }}</p>
 
                     <a href="{{ form['#course']['url'] }}" class="btn btn-default">
                         {{ "Back to course" | trans }}
