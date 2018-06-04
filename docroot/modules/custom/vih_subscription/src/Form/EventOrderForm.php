@@ -77,9 +77,15 @@ class EventOrderForm extends FormBase {
     //END VARIABLES INIT //
 
     //START GENERAL DATA //
-    $form['price'] = array(
+    if(!empty($addedParticipants)){
+      $form['price'] = array(
       '#markup' => 'DKK ' . number_format($this->price, 0, ',', '.'),
     );
+    } else {
+      $form['price'] = array(
+        '#markup' => 'DKK ' . '0' ,
+      );
+    }
 
     $form['status_messages'] = [
       '#type' => 'status_messages',
