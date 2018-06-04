@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies: {  }
 id: list_of_news_teasers
-label: 'Liste af nyhedsteasere'
+label: 'Grid med nyhedsteasere'
 icon_uuid: null
-description: 'Viser nyhedsteasere udfra tags'
+description: 'Generer et grid over nyhedsteasere udfra tags'
 behavior_plugins: {  }

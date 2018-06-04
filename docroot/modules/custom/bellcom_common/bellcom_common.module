@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Bellcom common module.
+ *
+ * Module contains common functionality.
+ */
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function vih_subscription_field_widget_form_alter(&$element, $form_state, $context) {
+  if (!empty($element['uri']['#type'])
+    && $element['uri']['#type'] == 'entity_autocomplete'
+    && in_array('field_vih_banner_slides', $element['#field_parents'])) {
+    $element['uri']['#type'] = 'linkit';
+    $element['uri']['#autocomplete_route_name'] = 'linkit.autocomplete';
+    $element['uri']['#autocomplete_route_parameters'] = ['linkit_profile_id' => 'internal'];
+  }
+}

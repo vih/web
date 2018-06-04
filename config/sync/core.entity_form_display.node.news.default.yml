@@ -6,10 +6,12 @@ dependencies:
     - entity_browser.browser.media_browser
     - field.field.node.news.body
     - field.field.node.news.field_metatag
+    - field.field.node.news.field_vih_course_subheading
     - field.field.node.news.field_vih_image
     - field.field.node.news.field_vih_news_tags
     - field.field.node.news.field_vih_paragraphs
     - field.field.node.news.field_vih_top_banner
+    - field.field.node.news.field_vih_top_banner_text
     - field.field.node.news.scheduled_update
     - node.type.news
   module:
@@ -25,8 +27,8 @@ third_party_settings:
   field_group:
     group_banner:
       children:
-        - title
         - field_vih_top_banner
+        - field_vih_top_banner_text
       parent_name: ''
       weight: 0
       format_type: tab
@@ -40,6 +42,8 @@ third_party_settings:
       region: content
     group_content:
       children:
+        - title
+        - field_vih_course_subheading
         - body
         - field_vih_news_tags
         - field_vih_image
@@ -66,7 +70,7 @@ third_party_settings:
         - path
         - scheduled_update
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: tab
       format_settings:
         id: ''
@@ -83,7 +87,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 20
+    weight: 17
     settings:
       rows: 9
       summary_rows: 3
@@ -102,9 +106,17 @@ content:
     third_party_settings: {  }
     type: metatag_firehose
     region: content
+  field_vih_course_subheading:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vih_image:
     type: entity_browser_entity_reference
-    weight: 35
+    weight: 19
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -118,7 +130,7 @@ content:
     third_party_settings: {  }
   field_vih_news_tags:
     type: entity_reference_autocomplete
-    weight: 23
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -153,6 +165,14 @@ content:
         view_mode: thumbnail
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 27

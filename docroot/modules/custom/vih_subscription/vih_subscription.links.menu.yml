@@ -5,33 +5,15 @@ system.admin_config_vih_subscriptions:
   parent: system.admin_config
   description: 'Configure various settings related to VIH subscriptions.'
   weight: -10
-vih_subscription.long_course_subscription.settings:
-  title: 'VIH long course subscription settings'
-  description: 'Settings related to long course subscription'
-  route_name: vih_subscription.admin.long_course_subscription.settings_form
-  parent: system.admin_config_vih_subscriptions
-  weight: 100
-vih_subscription.redirection_pages.settings:
-  title: 'VIH redirection pages settings'
-  description: 'Page redirect after order submitted successfully settings'
-  route_name: vih_subscription.admin.redirection_pages.settings_form
-  parent: system.admin_config_vih_subscriptions
-  weight: 99
-vih_subsciption.terms_and_conditions.settings:
-  title: 'VIH Subscription Terms and Conditions settings'
-  description: 'Orders "terms and conditions" settings'
-  route_name: vih_subscription.admin.terms_and_conditions.settings_form
-  parent: system.admin_config_vih_subscriptions
-  weight: 98
-vih_subsciption.notifications.settings:
-  title: 'VIH Subscription Notification settings'
-  description: 'Provide custom email text for notifications about course/event subscription'
-  route_name: vih_subscription.admin.notifications.settings_form
-  parent: system.admin_config_vih_subscriptions
-  weight: 97
 vih_subsciption.edbbrugsen.settings:
-  title: 'VIH Subscription EDBBrugsen integration settings'
-  description: 'Varisous settings related with EDBBrugsen integration settings'
+  title: 'VIH Subscription KomIT integration settings'
+  description: 'Various settings related to KomIT integration'
   route_name: vih_subscription.admin.edbbrugsen.settings_form
   parent: system.admin_config_vih_subscriptions
   weight: 96
+vih_subsciption.general.settings:
+  title: 'VIH Subscription General settings'
+  description: 'Various settings related to subscription process'
+  route_name: vih_subscription.admin.subscriptions_general.settings_form
+  parent: system.admin_config_vih_subscriptions
+  weight: 97

@@ -1,0 +1,18 @@
+vih_subscription_long_course_terms_and_conditions_page: '20'
+vih_subscription_long_course_redirection_page: '24'
+vih_subscription_long_course_subscription_enquire_price_page_international: '23'
+vih_subscription_long_course_notifications_subject: 'Order of @subject_name'
+vih_subscription_long_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe course will take place on @date, more information available here: @url."
+vih_subscription_short_course_terms_and_conditions_page: '21'
+vih_subscription_short_course_redirection_page: '25'
+vih_subscription_short_course_notifications_subject: 'Order of @subject_name'
+vih_subscription_short_course_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe course will take place on @date, more information available here: @url."
+vih_subscription_event_terms_and_conditions_page: '22'
+vih_subscription_event_redirection_page: '26'
+vih_subscription_event_notifications_subject: 'Order of @subject_name'
+vih_subscription_event_notifications_body: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe event will take place on @date, more information available here: @url."
+submit: 'Save configuration'
+form_build_id: form-g1kqhbVMDGXNkwpKNRvbE_JaSLA2kfWrF_HEPBCJ66I
+form_token: EwNoxDvmQ7AF3u7clhNR1mGc2n6cSIfdJWAykI_4JNg
+form_id: vih_subscription_subscriptons_general_settings_form
+op: 'Save configuration'

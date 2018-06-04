@@ -1,0 +1,23 @@
+uuid: e76a0bb6-5fc2-47ec-a2af-94a00a72f7e6
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_link
+    - paragraphs.paragraphs_type.vih_contact_person
+  module:
+    - link
+id: paragraph.vih_contact_person.field_vih_link
+field_name: field_vih_link
+entity_type: paragraph
+bundle: vih_contact_person
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

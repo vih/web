@@ -111,9 +111,15 @@ class ShortCourseOrderForm extends FormBase {
     //END VARIABLES INIT //
 
     //START GENERAL DATA //
-    $form['price'] = array(
+    if(!empty($addedParticipants)){
+      $form['price'] = array(
       '#markup' => 'DKK ' . number_format($this->price, 0, ',', '.'),
     );
+    } else {
+      $form['price'] = array(
+        '#markup' => 'DKK ' . '0' ,
+      );
+    }
 
     $form['status_messages'] = [
       '#type' => 'status_messages',
@@ -375,7 +381,7 @@ class ShortCourseOrderForm extends FormBase {
     // END added participants container
 
     //START OTHER GENERAL DATA //
-    $config = $this->config(TermsAndConditionsSettingsForm::$configName);
+    $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
     if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
       $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
       $form['terms_and_conditions'] = array(
@@ -712,7 +718,7 @@ class ShortCourseOrderForm extends FormBase {
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['email'], $this->t('Please add, at least, one participant'));
         $form_state->setError($form['newParticipantContainer']['newParticipantFieldset']['cpr'], $this->t('Please add, at least, one participant'));
       }
-      $config = $this->config(TermsAndConditionsSettingsForm::$configName);
+      $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
       if (empty($form_state->getValue('terms_and_conditions')['accepted']) && !empty($config->get('vih_subscription_short_course_terms_and_conditions_page'))) {
         $form_state->setError($form['terms_and_conditions'], $this->t('Before you can proceed you must accept the terms and conditions'));
       }

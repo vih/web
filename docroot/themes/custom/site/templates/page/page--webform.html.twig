@@ -1,0 +1,119 @@
+<!-- Begin - wrapper -->
+<div class="layout__wrapper layout--fixed-header" id="page-html">
+
+    {# Begin - header #}
+    {% include '@site/_partials/header.html.twig' %}
+    {# End - header #}
+
+    <!-- Begin - document -->
+    <main class="layout__document" role="document">
+
+        <!-- Begin - content -->
+        <div class="layout__content">
+
+            {# Begin - notify #}
+            {% if page.notify is defined and page.notify | render | striptags | trim %}
+                {% block notify %}
+                    {{ page.notify }}
+                {% endblock %}
+            {% endif %}
+            {# End - notify #}
+
+            {# Begin - banner #}
+            {% if is_front %}
+
+                {% if page.banner %}
+                    {% block banner %}
+                        {{ page.banner }}
+                    {% endblock %}
+                {% endif %}
+
+            {% else %}
+
+                {% if node.field_vih_top_banner.value or user_displayed.field_vih_top_banner.value or term.field_vih_top_banner.value %}
+
+                    {# Begin - image #}
+                    {% if node.field_vih_top_banner.value %}
+                        {% set banner_background_image = node.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+                    {% elseif user_displayed.field_vih_top_banner.value %}
+                        {% set banner_background_image = user_displayed.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+                    {% elseif term.field_vih_top_banner.value %}
+                        {% set banner_background_image = term.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+                    {% endif %}
+                    {# End - image #}
+
+                    <div class="banner banner--small" style="background-image: url({{ banner_background_image }})">
+                        <div class="banner__inner">
+                            <div class="container">
+                                <div class="banner__heading">
+
+                                    {% if node.field_vih_top_banner_text.value %}
+                                        <h1 class="banner__heading__title">{{ node.field_vih_top_banner_text.value }}</h1>
+                                    {% elseif user_displayed.field_vih_top_banner_text.value %}
+                                        <h1 class="banner__heading__title">{{ user_displayed.field_vih_top_banner_text.value }}</h1>
+                                    {% elseif term.field_vih_top_banner_text.value %}
+                                        <h1 class="banner__heading__title">{{ term.field_vih_top_banner_text.value }}</h1>
+                                    {% elseif page['#title'] %}
+                                        <h1 class="banner__heading__title">{{ page['#title'] | raw }}</h1>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+            {# End - banner #}
+
+            {# Begin - header #}
+            {% if page.header is defined and page.header | render | striptags | trim %}
+                {% block header %}
+                    <section class="sectioned sectioned--header sectioned--small-inner-spacing hidden-xs">
+                        <div class="sectioned__inner">
+                            <div class="container">
+                                {{ page.header }}
+                            </div>
+                        </div>
+                    </section>
+                {% endblock %}
+            {% endif %}
+            {# End - header #}
+
+            <!-- Begin - content -->
+            <div{{ content_attributes.addClass(content_classes) }}>
+                {% block content %}
+                    <!-- Begin - content -->
+                    <a id="main-content"></a>
+
+                    <div class="container">
+                        <h1>{{ page['#title'] | raw }}</h1>
+                    </div>
+
+                    {% if node or user %}
+                        {{ page.content }}
+                    {% else %}
+                        <section class="sectioned sectioned--content">
+                            <div class="sectioned__inner">
+                                <div class="container">
+                                    {{ page.content }}
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                    <!-- End - content -->
+                {% endblock %}
+            </div>
+            <!-- End - content -->
+
+        </div>
+        <!-- End - content -->
+
+        {# Begin - footer #}
+        {% include '@site/_partials/footer.html.twig' %}
+        {# End - footer #}
+
+    </main>
+    <!-- End - document -->
+
+</div>
+<!-- End - wrapper -->

@@ -4,10 +4,19 @@ fonts:
       'https://fonts.googleapis.com/css?family=Open+Sans:400,700': { type: external }
       'https://fonts.googleapis.com/css?family=Lato:300,400,700': { type: external }
 
+styles_vih:
+  css:
+    theme:
+      dist/stylesheets/vih.css: {}
+
+styles_vies:
+  css:
+    theme:
+      dist/stylesheets/vies.css: {}
+
 styles:
   css:
     theme:
-      dist/stylesheets/stylesheet.css: {}
       dist/jasny-bootstrap/css/jasny-bootstrap.min.css: {}
       'https://afeld.github.io/emoji-css/emoji.css': { type: external }
 

@@ -1,0 +1,19 @@
+uuid: d2be07bd-50ae-4779-bc73-1fc3bf2bd6f1
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vih_top_banner_text
+    - node.type.vih_short_course
+id: node.vih_short_course.field_vih_top_banner_text
+field_name: field_vih_top_banner_text
+entity_type: node
+bundle: vih_short_course
+label: 'Tekst på banner'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

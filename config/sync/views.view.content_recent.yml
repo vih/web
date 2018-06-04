@@ -271,7 +271,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No content available.'
+          content: 'Der er intet indhold at vise.'
           plugin_id: text_custom
       relationships:
         uid:

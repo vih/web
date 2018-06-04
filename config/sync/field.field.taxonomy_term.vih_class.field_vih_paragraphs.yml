@@ -19,8 +19,11 @@ dependencies:
     - paragraphs.paragraphs_type.user_quote
     - paragraphs.paragraphs_type.video
     - paragraphs.paragraphs_type.vih_class_groups_accordion
+    - paragraphs.paragraphs_type.vih_contact_person
+    - paragraphs.paragraphs_type.vih_list_of_news_list_advanced
     - paragraphs.paragraphs_type.vih_teacher_class_description
     - paragraphs.paragraphs_type.vih_webform
+    - paragraphs.paragraphs_type.vih_wrapper
     - taxonomy.vocabulary.vih_class
   module:
     - entity_reference_revisions
@@ -41,14 +44,16 @@ settings:
     target_bundles:
       1_column_action_centered: 1_column_action_centered
       class_packages: class_packages
-      event_list: event_list
       article: article
+      event_list: event_list
       file: file
       list_of_news_teasers: list_of_news_teasers
       social_media_embed: social_media_embed
       long_course_list_: long_course_list_
       employee: employee
+      vih_list_of_news_list_advanced: vih_list_of_news_list_advanced
       gallery: gallery
+      vih_wrapper: vih_wrapper
       short_course_list_: short_course_list_
       user_quote: user_quote
       video: video
@@ -56,6 +61,7 @@ settings:
       long_course_list_contain_class: long_course_list_contain_class
       vih_teacher_class_description: vih_teacher_class_description
       vih_webform: vih_webform
+      vih_contact_person: vih_contact_person
     target_bundles_drag_drop:
       1_column_action_centered:
         enabled: true
@@ -63,10 +69,10 @@ settings:
       class_packages:
         enabled: true
         weight: 25
-      event_list:
+      article:
         enabled: true
         weight: 26
-      article:
+      event_list:
         enabled: true
         weight: 26
       file:
@@ -84,9 +90,15 @@ settings:
       employee:
         enabled: true
         weight: 30
+      vih_list_of_news_list_advanced:
+        enabled: true
+        weight: 30
       gallery:
         enabled: true
         weight: 31
+      vih_wrapper:
+        enabled: true
+        weight: 32
       short_course_list_:
         enabled: true
         weight: 32
@@ -135,7 +147,13 @@ settings:
       vih_teacher_class_description:
         enabled: true
         weight: 45
+      vih_banner_slide:
+        weight: 45
+        enabled: false
       vih_webform:
         enabled: true
         weight: 46
+      vih_contact_person:
+        enabled: true
+        weight: 49
 field_type: entity_reference_revisions

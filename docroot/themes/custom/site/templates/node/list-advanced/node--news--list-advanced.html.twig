@@ -1,0 +1,42 @@
+{% set classes = [
+  node.bundle|clean_class,
+  node.isPromoted() ? 'is-promoted',
+  node.isSticky() ? 'is-sticky',
+  not node.isPublished() ? 'is-unpublished',
+  view_mode ? view_mode|clean_class,
+  'clearfix',
+  'element-wrapper-link',
+  'entity-list-advanced',
+  'entity-list-advanced--news'
+] %}
+
+<a href="{{ url }}" {{ attributes.addClass(classes) }}>
+
+  {# Begin - image #}
+  {% if node.field_vih_image.value %}
+    <div class="entity-list-advanced__image"
+         style="background-image: url({{ node.field_vih_image.entity.image.entity.fileuri | image_style('list_advanced') }});">
+      <div class="entity-list-advanced__image__overlay">
+        {{ node.createdTime | date("d-m-Y") }}
+      </div>
+    </div>
+  {% endif %}
+  {# End - image #}
+
+  <!-- Begin - body -->
+  <div class="entity-list-advanced__body">
+
+    <div class="entity-list-advanced__heading">
+      <h2
+        class="entity-list-advanced__heading__title heading-h4">{{ label }}</h2>
+    </div>
+
+    {# Begin - body #}
+    {% set text = content.body|render %}
+    {{ text|striptags }}
+    {# End - body #}
+
+  </div>
+  <!-- End - body -->
+
+</a>

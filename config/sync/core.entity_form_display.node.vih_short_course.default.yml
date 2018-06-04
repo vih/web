@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.vih_short_course.body
     - field.field.node.vih_short_course.field_metatag
     - field.field.node.vih_short_course.field_short_description
-    - field.field.node.vih_short_course.field_vih_course_heading
     - field.field.node.vih_short_course.field_vih_course_subheading
     - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_paragraphs
@@ -19,6 +18,7 @@ dependencies:
     - field.field.node.vih_short_course.field_vih_sc_start_date
     - field.field.node.vih_short_course.field_vih_sc_status
     - field.field.node.vih_short_course.field_vih_top_banner
+    - field.field.node.vih_short_course.field_vih_top_banner_text
     - field.field.node.vih_short_course.scheduled_update
     - node.type.vih_short_course
   module:
@@ -35,8 +35,8 @@ third_party_settings:
   field_group:
     group_banner:
       children:
-        - title
         - field_vih_top_banner
+        - field_vih_top_banner_text
       parent_name: ''
       weight: 0
       format_type: tab
@@ -50,6 +50,7 @@ third_party_settings:
       region: content
     group_content:
       children:
+        - title
         - field_vih_course_heading
         - field_vih_course_subheading
         - body
@@ -116,7 +117,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 7
     settings:
       rows: 9
       summary_rows: 3
@@ -136,14 +137,14 @@ content:
     type: metatag_firehose
     region: content
   field_short_description:
-    weight: 9
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_vih_course_heading:
+  field_vih_course_subheading:
     weight: 6
     settings:
       size: 60
@@ -151,16 +152,8 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_vih_course_subheading:
-    weight: 7
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_vih_cs_contact_person:
-    weight: 12
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
@@ -183,14 +176,14 @@ content:
     type: paragraphs
     region: content
   field_vih_sc_end_date:
-    weight: 9
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_vih_sc_image:
     type: entity_browser_entity_reference
-    weight: 26
+    weight: 14
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -204,7 +197,7 @@ content:
     third_party_settings: {  }
   field_vih_sc_option_groups:
     type: paragraphs
-    weight: 11
+    weight: 10
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -224,14 +217,14 @@ content:
     type: number
     region: content
   field_vih_sc_price:
-    weight: 10
+    weight: 9
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_sc_start_date:
-    weight: 8
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -256,6 +249,14 @@ content:
         view_mode: thumbnail
     region: content
     third_party_settings: {  }
+  field_vih_top_banner_text:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   langcode:
     type: language_select
     weight: 13

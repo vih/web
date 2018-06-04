@@ -39,18 +39,18 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
 
     $form['vih_subscription_edbbrugsen'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('EDBBrugresen integration settings'),
+      '#title' => $this->t('KomIT integration settings'),
     ];
 
     $form['vih_subscription_edbbrugsen']['active'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Activate EDBBrugresen integration'),
+      '#title' => $this->t('Activate KomIT integration'),
       '#default_value' => $config->get('active'),
     ];
 
     $form['vih_subscription_edbbrugsen']['username'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('EDBBrugresen username'),
+      '#title' => $this->t('KomIT username'),
       '#default_value' => $config->get('username'),
       '#states' => [
         'visible'=> [
@@ -61,7 +61,7 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
 
     $form['vih_subscription_edbbrugsen']['password'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('EDBBrugresen password'),
+      '#title' => $this->t('KomIT password'),
       '#default_value' => $config->get('password'),
       '#states' => [
         'visible'=> [
@@ -72,7 +72,7 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
 
     $form['vih_subscription_edbbrugsen']['school_code'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('EDBBrugresen school code'),
+      '#title' => $this->t('KomIT school code'),
       '#default_value' => $config->get('school_code'),
       '#states' => [
         'visible'=> [
@@ -83,7 +83,7 @@ class EdbbrugsenSettingsForm extends ConfigFormBase {
 
     $form['vih_subscription_edbbrugsen']['book_number'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('EDBBrugresen book number'),
+      '#title' => $this->t('KomIT book number'),
       '#default_value' => $config->get('book_number'),
       '#states' => [
         'visible'=> [

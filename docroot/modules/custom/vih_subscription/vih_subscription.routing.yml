@@ -103,47 +103,20 @@ system.admin_config_vih_subscriptions:
     _title: 'System'
   requirements:
     _permission: 'access administration pages'
-vih_subscription.admin.notifications.settings_form:
-  path: '/admin/config/vih_subscription/notifications/settings'
-  defaults:
-    _form: '\Drupal\vih_subscription\Form\NotificationsSettingsForm'
-    _title: 'VIH Subscriptions notifications settings'
-  requirements:
-    _permission: 'access administration pages'
-  options:
-    _admin_route: TRUE
 vih_subscription.admin.edbbrugsen.settings_form:
   path: '/admin/config/vih_subscription/edbbrugsen/settings'
   defaults:
     _form: '\Drupal\vih_subscription\Form\EdbbrugsenSettingsForm'
-    _title: 'EDBBrugsen integration settings'
+    _title: 'KomIT integration settings'
   requirements:
     _permission: 'access administration pages'
   options:
     _admin_route: TRUE
-vih_subscription.admin.terms_and_conditions.settings_form:
-  path: '/admin/config/vih_subscription/terms_and_conditions/settings'
+vih_subscription.admin.subscriptions_general.settings_form:
+  path: '/admin/config/vih_subscription/settings'
   defaults:
-    _form: '\Drupal\vih_subscription\Form\TermsAndConditionsSettingsForm'
-    _title: 'VIH Subscription Terms and Conditions settings'
-  requirements:
-    _permission: 'access administration pages'
-  options:
-    _admin_route: TRUE
-vih_subscription.admin.redirection_pages.settings_form:
-  path: '/admin/config/vih_subscription/redirection_pages/settings'
-  defaults:
-    _form: '\Drupal\vih_subscription\Form\RedirectionPagesSettingsForm'
-    _title: 'VIH redirection pages settings'
-  requirements:
-    _permission: 'access administration pages'
-  options:
-    _admin_route: TRUE
-vih_subscription.admin.long_course_subscription.settings_form:
-  path: '/admin/config/vih_subscription/long_course_subscription/settings'
-  defaults:
-    _form: '\Drupal\vih_subscription\Form\LongCourseSubscriptionSettingsForm'
-    _title: 'VIH long course subscription settings'
+    _form: '\Drupal\vih_subscription\Form\SubscriptionsGeneralSettingsForm'
+    _title: 'VIH subscriptions general settings'
   requirements:
     _permission: 'access administration pages'
   options:

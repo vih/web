@@ -29,7 +29,7 @@ settings:
   default_draft_saved_message: 'Formular gemt. Du kan vende tilbage senere og gendanne standardv&aelig;rdierne.'
   default_draft_loaded_message: 'A partially-completed form was found. Please complete the remaining portions.'
   default_confirmation_message: 'New submission added to [webform:title].'
-  default_confirmation_back_label: 'Back to form'
+  default_confirmation_back_label: 'Tilbage til formularen'
   confirmation_classes: "messages messages--error\r\nmessages messages--warning\r\nmessages messages--status\r\n"
   confirmation_back_classes: "button\r\n"
   default_submission_label: '[webform_submission:submitted-to]: Submission #[webform_submission:serial]'

@@ -7,15 +7,14 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 use Drupal\Core\Site\Settings;
+use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\vih_subscription\Form\EdbbrugsenSettingsForm;
-use Drupal\vih_subscription\Form\NotificationsSettingsForm;
+use Drupal\vih_subscription\Form\SubscriptionsGeneralSettingsForm;
 use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
-use Drupal\vih_subscription\Form\RedirectionPagesSettingsForm;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Drupal\Core\Url;
 
 /**
  * An example controller.
@@ -30,7 +29,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
       $this->registerOrder($subject, $order);
 
       $order_type = $order->type->entity->get('type');
-      $config = $this->config(RedirectionPagesSettingsForm::$configName);
+      $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
       $redirection_page_id = NULL;
       switch ($order_type) {
         case "vih_short_course_order":
@@ -74,16 +73,16 @@ class SubscriptionSuccessfulController extends ControllerBase {
    */
   private function registerOrder(NodeInterface $subject, NodeInterface $order) {
     //Send email
-    $notificationsConfig = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
+    $notificationsConfig = \Drupal::configFactory()->getEditable(SubscriptionsGeneralSettingsForm::$configName);
     $message = array();
     $node_view = node_view($order, 'email_teaser');
     $order_rendered = render($node_view)->__toString();
 
     $logo = '<div style="background-color:#009bec; width:100%; text-align:center">'
-        . '<img src="'
-        . \Drupal::request()->getSchemeAndHttpHost()
-        . '/themes/custom/site/dist/images/layout-header-logo.png" alt="VIH" />'
-        . '</div><br>';
+      . '<img src="'
+      . \Drupal::request()->getSchemeAndHttpHost()
+      . '/themes/custom/site/dist/images/layout-header-logo.png" alt="VIH" />'
+      . '</div><br>';
 
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
@@ -143,7 +142,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
         $subject->getTitle(),
         $order->field_vih_lco_first_name->value . ' ' . $order->field_vih_lco_last_name->value,
         !empty($courseDate) ? mb_strtolower($courseDate) : '',
-        '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
+        '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()
+          ->setAbsolute()->toString() . '</a>',
         $order_rendered,
       ];
 
@@ -200,13 +200,15 @@ class SubscriptionSuccessfulController extends ControllerBase {
         //course date
         $courseDate = NULL;
         if ($subject->field_vih_sc_start_date->value) {
-          $courseDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_start_date->value), "long");
+          $courseDate = \Drupal::service('date.formatter')
+            ->format(strtotime($subject->field_vih_sc_start_date->value), "long");
         }
         if ($subject->field_vih_sc_end_date->value) {
           if (!(empty($courseDate))) {
             $courseDate .= ' - ';
           }
-          $courseDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_sc_end_date->value), "long");
+          $courseDate .= \Drupal::service('date.formatter')
+            ->format(strtotime($subject->field_vih_sc_end_date->value), "long");
         }
 
         $message = [
@@ -219,7 +221,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
           !empty($courseDate) ? mb_strtolower($courseDate) : '',
-          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
+          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()
+            ->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
       }
@@ -275,13 +278,15 @@ class SubscriptionSuccessfulController extends ControllerBase {
         //event date
         $eventDate = NULL;
         if ($subject->field_vih_event_start_date->value) {
-          $eventDate = \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_start_date->value), "long");
+          $eventDate = \Drupal::service('date.formatter')
+            ->format(strtotime($subject->field_vih_event_start_date->value), "long");
         }
         if ($subject->field_vih_event_end_date->value) {
           if (!(empty($eventDate))) {
             $eventDate .= ' - ';
           }
-          $eventDate .= \Drupal::service('date.formatter')->format(strtotime($subject->field_vih_event_end_date->value), "long");
+          $eventDate .= \Drupal::service('date.formatter')
+            ->format(strtotime($subject->field_vih_event_end_date->value), "long");
         }
 
         $message = [
@@ -294,7 +299,8 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $subject->getTitle(),
           $firstName . ' ' . $lastName,
           !empty($eventDate) ? mb_strtolower($eventDate) : '',
-          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()->setAbsolute()->toString() . '</a>',
+          '<a href="' . $subject->toUrl()->setAbsolute()->toString() . '"target=_blank >' . $subject->toUrl()
+            ->setAbsolute()->toString() . '</a>',
           $order_rendered,
         ];
       }
@@ -303,12 +309,12 @@ class SubscriptionSuccessfulController extends ControllerBase {
       $order->set('field_vih_eo_status', 'confirmed');
       $order->save();
     }
-//Add logo to message body
+
+    // Add logo to message body.
     $message['body'] = $logo . $message['body'];
     if (!empty($message)) {
       VihSubscriptionUtils::makeReplacements($message, $token, $replacement);
       VihSubscriptionUtils::sendMail($message);
     }
   }
-
 }

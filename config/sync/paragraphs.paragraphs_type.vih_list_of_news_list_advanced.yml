@@ -1,0 +1,9 @@
+uuid: dbf4969d-2ebe-49cb-b34a-10dd42990995
+langcode: da
+status: true
+dependencies: {  }
+id: vih_list_of_news_list_advanced
+label: 'Liste af nyheder'
+icon_uuid: null
+description: 'Viser en liste af nyheder'
+behavior_plugins: {  }

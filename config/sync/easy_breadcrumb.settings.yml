@@ -1,5 +1,5 @@
 include_home_segment: true
-home_segment_title: Home
+home_segment_title: Hjem
 home_segment_keep: 0
 include_title_segment: false
 language_path_prefix_as_segment: false

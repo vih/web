@@ -14,8 +14,11 @@
     "src/javascripts/layout.js",
     "src/javascripts/app.js"
   ],
-  "styles": [
-    "src/styles/stylesheet.scss"
+  "styles_vih": [
+    "src/styles/vih.scss"
+  ],
+  "styles_vies": [
+    "src/styles/vies.scss"
   ],
   "fonts": [
     "src/styles/icomoon/fonts/icomoon.*",

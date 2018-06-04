@@ -1,0 +1,29 @@
+uuid: ee8fde73-3a21-4b89-be6b-3ca0e242c5dc
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_vih_user
+    - paragraphs.paragraphs_type.vih_contact_person
+id: paragraph.vih_contact_person.field_vih_user
+field_name: field_vih_user
+entity_type: paragraph
+bundle: vih_contact_person
+label: Underviser
+description: 'Vælg den bruger hvorfra der skal udtrækkes data'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: field_vih_user_name_first
+      direction: ASC
+    auto_create: false
+field_type: entity_reference
