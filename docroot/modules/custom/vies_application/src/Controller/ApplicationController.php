@@ -6,7 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Url;
 
 /**
- * An example controller.
+ * Application controller.
  */
 class ApplicationController extends ControllerBase {
 
