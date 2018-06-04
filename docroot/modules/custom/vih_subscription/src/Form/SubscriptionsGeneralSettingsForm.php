@@ -82,21 +82,39 @@ class SubscriptionsGeneralSettingsForm extends ConfigFormBase {
       '#description' => $this->t('Provide a page, which allows international users to enquiry the price.'),
     ];
 
-    // Long course notification.
-    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs'] = [
+    // Long course notification DA.
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs_da'] = [
       '#type' => 'details',
-      '#title' => $this->t('Notifications'),
+      '#title' => $this->t('Notifications (danish)'),
       '#open' => FALSE,
     ];
-    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs']['vih_subscription_long_course_notifications_subject'] = [
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs_da']['vih_subscription_long_course_notifications_subject_da'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
-      '#default_value' => $config->get('vih_subscription_long_course_notifications_subject'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_subject_da'),
     ];
-    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs']['vih_subscription_long_course_notifications_body'] = [
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs_da']['vih_subscription_long_course_notifications_body_da'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
-      '#default_value' => $config->get('vih_subscription_long_course_notifications_body'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_body_da'),
+      '#description' => $notification_description,
+    ];
+    
+    // Long course notification EN.
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs_en'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Notifications (english)'),
+      '#open' => FALSE,
+    ];
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs_en']['vih_subscription_long_course_notifications_subject_en'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Subject'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_subject_en'),
+    ];
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs_en']['vih_subscription_long_course_notifications_body_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Body'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_body_en'),
       '#description' => $notification_description,
     ];
     /**
@@ -132,21 +150,38 @@ class SubscriptionsGeneralSettingsForm extends ConfigFormBase {
       '#description' => $this->t("You can use any 'page' node to redirect after order submitted successfully"),
     ];
 
-    // Short course notification.
-    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs'] = [
+    // Short course notification DA.
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs_da'] = [
       '#type' => 'details',
-      '#title' => $this->t('Short course notifications'),
+      '#title' => $this->t('Short course notifications (danish)'),
       '#open' => FALSE,
     ];
-    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs']['vih_subscription_short_course_notifications_subject'] = [
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs_da']['vih_subscription_short_course_notifications_subject_da'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
-      '#default_value' => $config->get('vih_subscription_short_course_notifications_subject'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_subject_da'),
     ];
-    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs']['vih_subscription_short_course_notifications_body'] = [
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs_da']['vih_subscription_short_course_notifications_body_da'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
-      '#default_value' => $config->get('vih_subscription_short_course_notifications_body'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_body_da'),
+      '#description' => $notification_description
+    ];
+        // Short course notification EN.
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs_en'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Short course notifications (english)'),
+      '#open' => FALSE,
+    ];
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs_en']['vih_subscription_short_course_notifications_subject_en'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Subject'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_subject_en'),
+    ];
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs_en']['vih_subscription_short_course_notifications_body_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Body'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_body_en'),
       '#description' => $notification_description
     ];
     /**
@@ -182,21 +217,38 @@ class SubscriptionsGeneralSettingsForm extends ConfigFormBase {
       '#description' => $this->t("You can use any 'page' node to redirect after order submitted successfully"),
     ];
 
-    // Event notification settings.
-    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs'] = [
+    // Event notification settings DA.
+    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs_da'] = [
       '#type' => 'details',
-      '#title' => $this->t('Event notifications'),
+      '#title' => $this->t('Event notifications (danish)'),
       '#open' => FALSE,
     ];
-    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs']['vih_subscription_event_notifications_subject'] = [
+    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs_da']['vih_subscription_event_notifications_subject_da'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
-      '#default_value' => $config->get('vih_subscription_event_notifications_subject'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_subject_da'),
     ];
-    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs']['vih_subscription_event_notifications_body'] = [
+    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs_da']['vih_subscription_event_notifications_body_da'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
-      '#default_value' => $config->get('vih_subscription_event_notifications_body'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_body_da'),
+      '#description' => $notification_description
+    ];
+        // Event notification settings EN.
+    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs_en'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Event notifications (english)'),
+      '#open' => FALSE,
+    ];
+    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs_en']['vih_subscription_event_notifications_subject_en'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Subject'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_subject_en'),
+    ];
+    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs_en']['vih_subscription_event_notifications_body_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Body'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_body_en'),
       '#description' => $notification_description
     ];
     /**
