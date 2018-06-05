@@ -76,6 +76,14 @@
       color: $btn-secondary-color;
     }
   }
+  // vih-teacher-class-description paragraph is always with white text background.
+  &.sectioned--skewed--background-image.paragraph--type--vih-teacher-class-description {
+
+    .field--name-field-vih-heading {
+      color: $headings-color;
+    }
+  }
+
 }
 
 // --------------------------------------------------
