@@ -248,11 +248,19 @@ function site_preprocess_node(array &$variables) {
                 $variables['content']['classes_packages'][$class_package->id()] = [
                   'period_id' => $period->id(),
                   'id' => $class_package->id(),
+                  'weight' => $class_package->getWeight(),
                   'name' => $class_package->getName(),
                   'term' => \Drupal::entityTypeManager()
                     ->getViewBuilder('taxonomy_term')
                     ->view($class_package, 'vih_class_package_accordion'),
                 ];
+                // Sorting array by taxonimy weights
+                uasort($variables['content']['classes_packages'], function($a, $b) {
+                  if ($a['weight'] == $b['weight']) {
+                    return strcasecmp($a['name'], $b['name']);
+                  }
+                  return ($a['weight'] < $b['weight']) ? -1 : 1;
+                });
               }
 
               // For listing inside modal
