@@ -6,8 +6,8 @@ vih_subscription_short_course_redirection_page: '25'
 vih_subscription_event_terms_and_conditions_page: '22'
 vih_subscription_event_redirection_page: '26'
 submit: 'Save configuration'
-form_build_id: form-d8DiOU50labP9WU9vSo5Gz_i3tZsLSfmqrnZUxR1EF8
-form_token: M1FZFBakqmbP0DeC1B7HIEL9Og5hTBhv3PTUAb276vE
+form_build_id: form-h90zi5Zw-SnDwchbC2nPxBnvKPPdU2_SVp-qK8TQl0Y
+form_token: X7__Yywna9bZISclSYX-BRSfZ59V--z6NTtdDrHvwEI
 form_id: vih_subscription_subscriptons_general_settings_form
 op: 'Save configuration'
 vih_subscription_long_course_notifications_subject_da: 'Order of @subject_name'
