@@ -1,18 +1,18 @@
-uuid: 14407b51-8118-4697-abf1-e8e8c86309be
+uuid: 4adac7e0-7abf-41a3-82ea-656526018e7d
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_city
+    - field.storage.node.field_vies_city
     - node.type.vies_application_form
-id: node.vies_application_form.field_vih_lco_city
-field_name: field_vih_lco_city
+id: node.vies_application_form.field_vies_city
+field_name: field_vies_city
 entity_type: node
 bundle: vies_application_form
 label: City
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

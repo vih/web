@@ -253,6 +253,10 @@ class EventOrderForm extends FormBase {
     $form_state->setCached(FALSE);
 
     $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
+
+    $form['#registration_text'] = (\Drupal::languageManager()->getCurrentLanguage()
+        ->getId() === 'en') ? $config->get('vih_subscription_event_registration_page_text_en') : $config->get('vih_subscription_event_registration_page_text_da');
+
     if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_event_terms_and_conditions_page'))) {
       $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
       $form['terms_and_conditions'] = array(

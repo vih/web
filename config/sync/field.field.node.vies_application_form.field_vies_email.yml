@@ -1,18 +1,18 @@
-uuid: 75c05c99-16a5-43f1-aed5-a51d60cc65e7
+uuid: f6b98731-ff61-430a-a702-292890ce09c9
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_municipality
+    - field.storage.node.field_vies_email
     - node.type.vies_application_form
-id: node.vies_application_form.field_vih_lco_municipality
-field_name: field_vih_lco_municipality
+id: node.vies_application_form.field_vies_email
+field_name: field_vies_email
 entity_type: node
 bundle: vies_application_form
-label: Municipality
+label: Email
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

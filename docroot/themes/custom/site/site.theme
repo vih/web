@@ -248,11 +248,19 @@ function site_preprocess_node(array &$variables) {
                 $variables['content']['classes_packages'][$class_package->id()] = [
                   'period_id' => $period->id(),
                   'id' => $class_package->id(),
+                  'weight' => $class_package->getWeight(),
                   'name' => $class_package->getName(),
                   'term' => \Drupal::entityTypeManager()
                     ->getViewBuilder('taxonomy_term')
                     ->view($class_package, 'vih_class_package_accordion'),
                 ];
+                // Sorting array by taxonimy weights
+                uasort($variables['content']['classes_packages'], function($a, $b) {
+                  if ($a['weight'] == $b['weight']) {
+                    return strcasecmp($a['name'], $b['name']);
+                  }
+                  return ($a['weight'] < $b['weight']) ? -1 : 1;
+                });
               }
 
               // For listing inside modal
@@ -426,7 +434,7 @@ function site_preprocess_paragraph__vih_contact_person(&$variables) {
   }
 
   if (count($teacher_uids)) {
-    $variables['content']['teacher'] = User::load($teacher_uids[0]);
+    $variables['content']['#teacher'] = User::load($teacher_uids[0]);
   }
 }
 
@@ -575,7 +583,7 @@ function site_preprocess_paragraph__vih_teacher_class_description(&$variables) {
   }
 
   if (count($teacher_uids)) {
-    $variables['content']['teacher'] = User::load($teacher_uids[0]);
+    $variables['content']['#teacher'] = User::load($teacher_uids[0]);
   }
 }
 
@@ -758,7 +766,7 @@ function site_bootstrap_colorize_text_alter(&$texts) {
 function site_views_pre_render(\Drupal\views\ViewExecutable $view) {
 
   // We need to remove duplicates from vih_long_courses/embed_list_advanced_future view.
-  if ($view->id() == "vih_long_courses" && $view->current_display == 'embed_list_advanced_future') {
+  if ($view->id() == "vih_long_courses" && ($view->current_display == 'embed_list_advanced_future' || $view->current_display == 'embed_list_advanced_contain_class')) {
     $node_id = [];
     foreach($view->result as $key => $value){
       if(in_array($value->_entity->id(), $node_id)){

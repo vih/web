@@ -1,18 +1,18 @@
-uuid: f6776f4c-c489-46b7-89ee-252c374a0957
+uuid: db1023ed-a4b9-4728-90f4-f2fc69ba966b
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_address
+    - field.storage.node.field_vies_gender
     - node.type.vies_application_form
-id: node.vies_application_form.field_vih_lco_address
-field_name: field_vih_lco_address
+id: node.vies_application_form.field_vies_gender
+field_name: field_vies_gender
 entity_type: node
 bundle: vies_application_form
-label: Address
+label: Gender
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

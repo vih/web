@@ -34,6 +34,7 @@ $modal-margin: 70px;
 
   .modal-content {
     overflow-x: auto;
+    max-height: none !important;
   }
 }
 

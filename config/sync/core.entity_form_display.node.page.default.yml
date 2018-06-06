@@ -73,11 +73,12 @@ third_party_settings:
       weight: 3
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
+        label: Andet
+        formatter: open
         description: ''
         required_fields: true
+        id: ''
+        classes: ''
       label: Andet
       region: content
 _core:

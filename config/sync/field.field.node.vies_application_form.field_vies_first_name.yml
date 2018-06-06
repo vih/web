@@ -1,18 +1,18 @@
-uuid: 93eec53f-78b0-4741-87ad-ea70f44f7932
+uuid: 99650cfb-9a0c-4148-b147-77c3fa31b8ec
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_first_name
+    - field.storage.node.field_vies_first_name
     - node.type.vies_application_form
-id: node.vies_application_form.field_vih_lco_first_name
-field_name: field_vih_lco_first_name
+id: node.vies_application_form.field_vies_first_name
+field_name: field_vies_first_name
 entity_type: node
 bundle: vies_application_form
 label: 'First name'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

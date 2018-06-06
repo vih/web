@@ -51,7 +51,6 @@ third_party_settings:
     group_content:
       children:
         - title
-        - field_vih_course_heading
         - field_vih_course_subheading
         - body
         - field_short_description
@@ -70,7 +69,6 @@ third_party_settings:
     group_misc:
       children:
         - field_metatag
-        - langcode
         - uid
         - created
         - translation
@@ -78,15 +76,17 @@ third_party_settings:
         - sticky
         - path
         - scheduled_update
+        - langcode
       parent_name: ''
       weight: 4
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
-        formatter: closed
+        label: Andet
+        formatter: open
         description: ''
         required_fields: true
+        id: ''
+        classes: ''
       label: Andet
       region: content
     group_course_details:
@@ -126,7 +126,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 15
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -259,14 +259,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 13
+    weight: 20
     settings:
       include_locked: true
     third_party_settings: {  }
     region: content
   path:
     type: path
-    weight: 19
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -274,11 +274,11 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 17
+    weight: 16
     third_party_settings: {  }
     region: content
   scheduled_update:
-    weight: 20
+    weight: 19
     settings:
       form_mode: default
       override_labels: false
@@ -294,7 +294,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 18
+    weight: 17
     third_party_settings: {  }
     region: content
   title:
@@ -306,13 +306,13 @@ content:
     third_party_settings: {  }
     region: content
   translation:
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 14
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60

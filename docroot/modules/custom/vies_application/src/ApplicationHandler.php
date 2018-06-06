@@ -7,8 +7,9 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Core\Url;
 use Drupal\vih_subscription\Form\EdbbrugsenSettingsForm;
-use Drupal\vih_subscription\Form\NotificationsSettingsForm;
+use Drupal\vih_subscription\Form\SubscriptionsGeneralSettingsForm;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
+use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -176,7 +177,7 @@ class ApplicationHandler {
       $school_code = $edb_brugsen_config->get('school_code');
       $book_number = $edb_brugsen_config->get('book_number');
 
-      $edb_brugsen_integration = new EDBBrugsenIntegrationVies($username, $password, $school_code, $book_number);
+      $edb_brugsen_integration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
       $registration = $edb_brugsen_integration->convertApplicationToRegistration($this->data);
       $edb_brugsen_integration->addRegistration($registration);
     }
@@ -197,20 +198,20 @@ class ApplicationHandler {
         '@date' => \Drupal::service('date.formatter')->format(time(), 'short'),
       ]),
       // Application references.
-      'field_vih_lco_course' => $this->data['course'],
+      'field_vies_course' => $this->data['course'],
       'field_vies_period' => $this->data['period'],
       'field_vies_class' => $this->data['classes'],
       // Student information.
-      'field_vih_lco_first_name' => $this->data['firstName'],
-      'field_vih_lco_last_name' => $this->data['lastName'],
-      'field_vih_lco_telefon' => $this->data['telefon'],
-      'field_vih_lco_email' => $this->data['email'],
-      'field_vih_lco_newsletter' => $this->data['newsletter'],
-      'field_vih_lco_address' => $this->data['fullAddress'],
-      'field_vih_lco_city' => $this->data['city'],
-      'field_vih_lco_municipality' => $this->data['municipality'],
-      'field_vih_lco_zip' => $this->data['zip'],
-      'field_vies_sex' => $this->data['sex'],
+      'field_vies_first_name' => $this->data['firstName'],
+      'field_vies_last_name' => $this->data['lastName'],
+      'field_vies_telefon' => $this->data['telefon'],
+      'field_vies_email' => $this->data['email'],
+      'field_vies_newsletter' => $this->data['newsletter'],
+      'field_vies_address' => $this->data['fullAddress'],
+      'field_vies_city' => $this->data['city'],
+      'field_vies_municipality' => $this->data['municipality'],
+      'field_vies_zip' => $this->data['zip'],
+      'field_vies_gender' => $this->data['gender'],
     ];
 
     // Parents information.
@@ -299,7 +300,7 @@ class ApplicationHandler {
    */
   public function sendNotification() {
     // Send email.
-    $notifications_config = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
+    $notifications_config = \Drupal::configFactory()->getEditable(SubscriptionsGeneralSettingsForm::$configName);
     $node_view = node_view($this->application, 'email_teaser');
     $application_rendered = render($node_view)->__toString();
 
@@ -312,7 +313,7 @@ class ApplicationHandler {
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
     $message = [
-      'to' => $this->application->field_vih_lco_email->value,
+      'to' => $this->application->field_vies_email->value,
       'subject' => $notifications_config->get('vih_subscription_long_course_notifications_subject'),
       'body' => $notifications_config->get('vih_subscription_long_course_notifications_body')
     ];
@@ -361,8 +362,8 @@ class ApplicationHandler {
     $application_url = Url::fromRoute('vies_application.application_form')->setAbsolute()->toString();
     $replacement = [
       $this->data['courseTitle'],
-      $this->application->field_vih_lco_first_name->value . ' ' .
-      $this->application->field_vih_lco_last_name->value,
+      $this->application->field_vies_first_name->value . ' ' .
+      $this->application->field_vies_last_name->value,
       !empty($course_date) ? mb_strtolower(implode(' - ', $course_date)) : '',
       '<a href="' . $application_url . '"target=_blank >' . $application_url . '</a>',
       $application_rendered,

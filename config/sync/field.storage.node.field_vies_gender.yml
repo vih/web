@@ -1,11 +1,11 @@
-uuid: cff92d51-4878-4644-960b-6d61ff564a7e
+uuid: a40ebfce-499b-47f3-896b-c9ad5071ea3b
 langcode: da
 status: true
 dependencies:
   module:
     - node
-id: node.field_vies_sex
-field_name: field_vies_sex
+id: node.field_vies_gender
+field_name: field_vies_gender
 entity_type: node
 type: string
 settings:

@@ -82,23 +82,77 @@ class SubscriptionsGeneralSettingsForm extends ConfigFormBase {
       '#description' => $this->t('Provide a page, which allows international users to enquiry the price.'),
     ];
 
-    // Long course notification.
-    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs'] = [
+    // Long course language specific START.
+    $form['vih_subscription_settings_long_course_fs']['vih_subscription_long_course_language_specific'] = array(
+      '#type' => 'vertical_tabs',
+      '#default_tab' => 'edit-vih-subscription-long-course-da',
+    );
+
+    $form['vih_subscription_long_course_da'] = array(
       '#type' => 'details',
-      '#title' => $this->t('Notifications'),
+      '#title' => $this
+          ->t('Danish'),
+      '#group' => 'vih_subscription_long_course_language_specific',
+      '#weight' => -1
+    );
+
+    // Long course page registration text DA.
+    $form['vih_subscription_long_course_da']['vih_subscription_long_course_registration_page_text_da'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Registration page text (Danish)'),
+      '#default_value' => $config->get('vih_subscription_long_course_registration_page_text_da'),
+    ];
+
+    // Long course notification DA.
+    $form['vih_subscription_long_course_da']['vih_subscription_notifications_long_course_fs_da'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Notifications (danish)'),
       '#open' => FALSE,
     ];
-    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs']['vih_subscription_long_course_notifications_subject'] = [
+    $form['vih_subscription_long_course_da']['vih_subscription_notifications_long_course_fs_da']['vih_subscription_long_course_notifications_subject_da'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
-      '#default_value' => $config->get('vih_subscription_long_course_notifications_subject'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_subject_da'),
     ];
-    $form['vih_subscription_settings_long_course_fs']['vih_subscription_notifications_long_course_fs']['vih_subscription_long_course_notifications_body'] = [
+    $form['vih_subscription_long_course_da']['vih_subscription_notifications_long_course_fs_da']['vih_subscription_long_course_notifications_body_da'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
-      '#default_value' => $config->get('vih_subscription_long_course_notifications_body'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_body_da'),
       '#description' => $notification_description,
     ];
+
+    $form['vih_subscription_long_course_en'] = array(
+      '#type' => 'details',
+      '#title' => $this
+          ->t('English'),
+      '#group' => 'vih_subscription_long_course_language_specific',
+    );
+
+    // Long course page registration text EN.
+    $form['vih_subscription_long_course_en']['vih_subscription_long_course_registration_page_text_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Registration page text (English)'),
+      '#default_value' => $config->get('vih_subscription_long_course_registration_page_text_en'),
+    ];
+
+    // Long course notification EN.
+    $form['vih_subscription_long_course_en']['vih_subscription_notifications_long_course_fs_en'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Notifications (english)'),
+      '#open' => FALSE,
+    ];
+    $form['vih_subscription_long_course_en']['vih_subscription_notifications_long_course_fs_en']['vih_subscription_long_course_notifications_subject_en'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Subject'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_subject_en'),
+    ];
+    $form['vih_subscription_long_course_en']['vih_subscription_notifications_long_course_fs_en']['vih_subscription_long_course_notifications_body_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Body'),
+      '#default_value' => $config->get('vih_subscription_long_course_notifications_body_en'),
+      '#description' => $notification_description,
+    ];
+    // Long course language specific END.
     /**
      * Long course end.
      */
@@ -132,23 +186,77 @@ class SubscriptionsGeneralSettingsForm extends ConfigFormBase {
       '#description' => $this->t("You can use any 'page' node to redirect after order submitted successfully"),
     ];
 
-    // Short course notification.
-    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs'] = [
+    // Short course language specific START.
+    $form['vih_subscription_settings_short_course_fs']['vih_subscription_short_course_language_specific'] = array(
+      '#type' => 'vertical_tabs',
+      '#default_tab' => 'edit-vih-subscription-short-course-da',
+    );
+
+    $form['vih_subscription_short_course_da'] = array(
       '#type' => 'details',
-      '#title' => $this->t('Short course notifications'),
+      '#title' => $this
+          ->t('Danish'),
+      '#group' => 'vih_subscription_short_course_language_specific',
+      '#weight' => -1
+    );
+
+    // Short course page registration text DA.
+    $form['vih_subscription_short_course_da']['vih_subscription_short_course_registration_page_text_da'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Registration page text (Danish)'),
+      '#default_value' => $config->get('vih_subscription_short_course_registration_page_text_da'),
+    ];
+
+    // Short course notification DA.
+    $form['vih_subscription_short_course_da']['vih_subscription_notifications_short_course_fs_da'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Short course notifications (danish)'),
       '#open' => FALSE,
     ];
-    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs']['vih_subscription_short_course_notifications_subject'] = [
+    $form['vih_subscription_short_course_da']['vih_subscription_notifications_short_course_fs_da']['vih_subscription_short_course_notifications_subject_da'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
-      '#default_value' => $config->get('vih_subscription_short_course_notifications_subject'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_subject_da'),
     ];
-    $form['vih_subscription_settings_short_course_fs']['vih_subscription_notifications_short_course_fs']['vih_subscription_short_course_notifications_body'] = [
+    $form['vih_subscription_short_course_da']['vih_subscription_notifications_short_course_fs_da']['vih_subscription_short_course_notifications_body_da'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
-      '#default_value' => $config->get('vih_subscription_short_course_notifications_body'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_body_da'),
       '#description' => $notification_description
     ];
+
+    $form['vih_subscription_short_course_en'] = array(
+      '#type' => 'details',
+      '#title' => $this
+          ->t('English'),
+      '#group' => 'vih_subscription_short_course_language_specific',
+    );
+
+    // Short course page registration text EN.
+    $form['vih_subscription_short_course_en']['vih_subscription_short_course_registration_page_text_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Registration page text (English)'),
+      '#default_value' => $config->get('vih_subscription_short_course_registration_page_text_en'),
+    ];
+
+    // Short course notification EN.
+    $form['vih_subscription_short_course_en']['vih_subscription_notifications_short_course_fs_en'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Short course notifications (english)'),
+      '#open' => FALSE,
+    ];
+    $form['vih_subscription_short_course_en']['vih_subscription_notifications_short_course_fs_en']['vih_subscription_short_course_notifications_subject_en'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Subject'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_subject_en'),
+    ];
+    $form['vih_subscription_short_course_en']['vih_subscription_notifications_short_course_fs_en']['vih_subscription_short_course_notifications_body_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Body'),
+      '#default_value' => $config->get('vih_subscription_short_course_notifications_body_en'),
+      '#description' => $notification_description
+    ];
+    // Short course language specific END.
     /**
      * Short course end.
      */
@@ -182,23 +290,77 @@ class SubscriptionsGeneralSettingsForm extends ConfigFormBase {
       '#description' => $this->t("You can use any 'page' node to redirect after order submitted successfully"),
     ];
 
-    // Event notification settings.
-    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs'] = [
+    // Event language specific START.
+    $form['vih_subscription_settings_event_fs']['vih_subscription_event_language_specific'] = array(
+      '#type' => 'vertical_tabs',
+      '#default_tab' => 'edit-vih-subscription-event-da',
+    );
+
+    $form['vih_subscription_event_da'] = array(
       '#type' => 'details',
-      '#title' => $this->t('Event notifications'),
+      '#title' => $this
+          ->t('Danish'),
+      '#group' => 'vih_subscription_event_language_specific',
+      '#weight' => -1
+    );
+
+    // Event page registration text DA.
+    $form['vih_subscription_event_da']['vih_subscription_event_registration_page_text_da'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Registration page text (Danish)'),
+      '#default_value' => $config->get('vih_subscription_event_registration_page_text_da'),
+    ];
+
+    // Event notification settings DA.
+    $form['vih_subscription_event_da']['vih_subscription_notifications_event_fs_da'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Event notifications (danish)'),
       '#open' => FALSE,
     ];
-    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs']['vih_subscription_event_notifications_subject'] = [
+    $form['vih_subscription_event_da']['vih_subscription_notifications_event_fs_da']['vih_subscription_event_notifications_subject_da'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Subject'),
-      '#default_value' => $config->get('vih_subscription_event_notifications_subject'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_subject_da'),
     ];
-    $form['vih_subscription_settings_event_fs']['vih_subscription_notifications_event_fs']['vih_subscription_event_notifications_body'] = [
+    $form['vih_subscription_event_da']['vih_subscription_notifications_event_fs_da']['vih_subscription_event_notifications_body_da'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Body'),
-      '#default_value' => $config->get('vih_subscription_event_notifications_body'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_body_da'),
       '#description' => $notification_description
     ];
+
+    $form['vih_subscription_event_en'] = array(
+      '#type' => 'details',
+      '#title' => $this
+          ->t('English'),
+      '#group' => 'vih_subscription_event_language_specific',
+    );
+
+    // Event page registration text EN.
+    $form['vih_subscription_event_en']['vih_subscription_event_registration_page_text_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Registration page text (English)'),
+      '#default_value' => $config->get('vih_subscription_event_registration_page_text_en'),
+    ];
+
+    // Event notification settings EN.
+    $form['vih_subscription_event_en']['vih_subscription_notifications_event_fs_en'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Event notifications (english)'),
+      '#open' => FALSE,
+    ];
+    $form['vih_subscription_event_en']['vih_subscription_notifications_event_fs_en']['vih_subscription_event_notifications_subject_en'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Subject'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_subject_en'),
+    ];
+    $form['vih_subscription_event_en']['vih_subscription_notifications_event_fs_en']['vih_subscription_event_notifications_body_en'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Body'),
+      '#default_value' => $config->get('vih_subscription_event_notifications_body_en'),
+      '#description' => $notification_description
+    ];
+    // Event language specific END.
     /**
      * Event end.
      */
