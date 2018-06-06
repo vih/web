@@ -29,12 +29,12 @@
 
                             <table class="table table-bordered">
                                 <tr>
-                                    <td class="user-image" style="background-image: url({{ content.teacher.field_vih_user_photo.entity.image.entity.fileuri | image_style('vih_person_teaser') }});">
-                                        {% if content.teacher.field_vih_user_name_first.value and content.teacher.field_vih_user_name_last.value %}
+                                    <td class="user-image" style="background-image: url({{ content['#teacher'].field_vih_user_photo.entity.image.entity.fileuri | image_style('vih_person_teaser') }});">
+                                        {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
                                             <div class="photo__overlay">
                                                 <div class="photo__overlay__text">
-                                                    {{ content.teacher.field_vih_user_name_first.value }}
-                                                    {{ content.teacher.field_vih_user_name_last.value }}
+                                                    {{ content['#teacher'].field_vih_user_name_first.value }}
+                                                    {{ content['#teacher'].field_vih_user_name_last.value }}
                                                 </div>
                                             </div>
                                         {% endif %}
@@ -42,8 +42,8 @@
                                     <td class="hidden-xs">
 
                                         {# Begin - name #}
-                                        {% if content.teacher.field_vih_user_name_first.value and content.teacher.field_vih_user_name_last.value %}
-                                            <h3>{{ content.teacher.field_vih_user_name_first.value }} {{ content.teacher.field_vih_user_name_last.value }}</h3>
+                                        {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
+                                            <h3>{{ content['#teacher'].field_vih_user_name_first.value }} {{ content['#teacher'].field_vih_user_name_last.value }}</h3>
                                         {% endif %}
                                         {# End - name #}
 
@@ -54,15 +54,15 @@
                                         <h5>{{ "Contact information"|trans }}:</h5>
 
                                         {# Begin - phone #}
-                                        {% if content.teacher.field_vih_user_phone.value %}
-                                            <span class="teacher-phone"><span class="icon icon-phone"></span> {{ content.teacher.field_vih_user_phone }}</span>
+                                        {% if content['#teacher'].field_vih_user_phone.value %}
+                                            <span class="teacher-phone"><span class="icon icon-phone"></span> {{ content['#teacher'].field_vih_user_phone }}</span>
 
                                             <br>
                                         {% endif %}
                                         {# End - phone #}
 
                                         {# Begin - email #}
-                                        <span class="teacher-mail"><span class="icon icon-mail"></span> {{ content.teacher.email }}</span>
+                                        <span class="teacher-mail"><span class="icon icon-mail"></span> {{ content['#teacher'].email }}</span>
                                         {# End - email #}
 
                                     </td>
@@ -71,8 +71,8 @@
                                     <td colspan="2">
 
                                         {# Begin - name #}
-                                        {% if content.teacher.field_vih_user_name_first.value and content.teacher.field_vih_user_name_last.value %}
-                                            <h3>{{ content.teacher.field_vih_user_name_first.value }} {{ content.teacher.field_vih_user_name_last.value }}</h3>
+                                        {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
+                                            <h3>{{ content['#teacher'].field_vih_user_name_first.value }} {{ content['#teacher'].field_vih_user_name_last.value }}</h3>
                                         {% endif %}
                                         {# End - name #}
 
@@ -85,15 +85,15 @@
                                         <h5>{{ "Contact information"|trans }}:</h5>
 
                                         {# Begin - phone #}
-                                        {% if content.teacher.field_vih_user_phone.value %}
-                                            <span class="teacher-phone"><span class="icon icon-phone"></span> {{ content.teacher.field_vih_user_phone }}</span>
+                                        {% if content['#teacher'].field_vih_user_phone.value %}
+                                            <span class="teacher-phone"><span class="icon icon-phone"></span> {{ content['#teacher'].field_vih_user_phone }}</span>
 
                                             <br>
                                         {% endif %}
                                         {# End - phone #}
 
                                         {# Begin - email #}
-                                        <span class="teacher-mail"><span class="icon icon-mail"></span> {{ content.teacher.email }}</span>
+                                        <span class="teacher-mail"><span class="icon icon-mail"></span> {{ content['#teacher'].email }}</span>
                                         {# End - email #}
 
                                     </td>

@@ -1,6 +1,6 @@
 uuid: 7338335b-05ef-492b-8abe-a02317a45c06
 langcode: da
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.paragraph.embedded

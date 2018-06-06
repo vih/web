@@ -38,7 +38,7 @@
 
   // Background image
   &.sectioned--skewed--background-image {
-
+    
     .field--name-field-vih-description {
 
       &,
@@ -110,6 +110,19 @@
       h1, h2, h3, h4, h5, h6,
       p {
         color: $btn-secondary-color;
+      }
+    }
+  }
+
+  // vih-teacher-class-description paragraph is always with white text background.
+  &.sectioned--skewed--background-image.paragraph--type--vih-teacher-class-description {
+
+    .field--name-field-vih-description {
+
+      &,
+      h1, h2, h3, h4, h5, h6,
+      p {
+        color: $text-color;
       }
     }
   }

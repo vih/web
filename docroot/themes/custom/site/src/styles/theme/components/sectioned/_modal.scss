@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Wrapper
+// | Modal
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .paragraph--type--vih-wrapper
+// | - .modal
 // |
 
 // --------------------------------------------------
@@ -14,18 +14,36 @@
 // Mixins
 // --------------------------------------------------
 
-@mixin paragraph-type-wrapper-mixin() {}
+@mixin modal-mixin() {}
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-.paragraph--type--vih-wrapper {
+.modal {
+
+  .field {
+
+    + .field--name-field-vih-paragraphs {
+      margin-top: $grid-gutter-width;
+    }
+  }
 
   .field--item {
 
     .sectioned,
     .sectioned--skewed {
+
+      .container {
+        width: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .sectioned__inner {
+        padding-top: ($grid-gutter-width / 2) !important;
+        padding-bottom: ($grid-gutter-width / 2) !important;
+      }
 
       .sectioned--skewed-angle-top {
         margin-top: 0 !important;

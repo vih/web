@@ -60,7 +60,10 @@
         "drupal/easy_breadcrumb": "^1.8",
         "drupal/block_scheduler": "^1.0",
         "drupal/eu_cookie_compliance": "1.x-dev",
-        "drupal/entity_clone": "1.x-dev"
+        "drupal/entity_clone": "1.x-dev",
+        "drupal/honeypot": "^1.27",
+        "drupal/mailsystem": "^4.1",
+        "drupal/smtp": "^1.0@beta"
     },
     "repositories": [
         {
@@ -118,7 +121,8 @@
         "patches": {
             "drupal/core": {
                 "2868294 - Call to a member function getThirdPartySetting() on null in ContentTranslationManager": "https://www.drupal.org/files/issues/2868294-12.patch",
-                "2449895 - Imported PO files have no public URL but have a link at admin/content/files" : "https://www.drupal.org/files/issues/2449895-20.patch"
+                "2449895 - Imported PO files have no public URL but have a link at admin/content/files" : "https://www.drupal.org/files/issues/2449895-20.patch",
+                "2407761 - Add a way to edit block content on the block layout page" : "https://www.drupal.org/files/issues/add_edit_link_to_block_list-2407761-5.patch"
             },
             "drupal/photoswipe": {
                 "2921487 - Load PhotoSwipe on all non-admin pages" : "https://www.drupal.org/files/issues/edit_load_photoswipe_on-2921487-2.patch",

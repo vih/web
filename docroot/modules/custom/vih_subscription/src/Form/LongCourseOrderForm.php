@@ -326,6 +326,10 @@ class LongCourseOrderForm extends FormBase {
     $form['#theme'] = 'vih_subscription_long_course_order_form';
 
     $config = $this->config(SubscriptionsGeneralSettingsForm::$configName);
+
+    $form['#registration_text'] = (\Drupal::languageManager()->getCurrentLanguage()
+        ->getId() === 'en') ? $config->get('vih_subscription_long_course_registration_page_text_en') : $config->get('vih_subscription_long_course_registration_page_text_da');
+
     if (!empty($terms_and_conditions_page_id = $config->get('vih_subscription_long_course_terms_and_conditions_page'))) {
       $terms_and_conditions_link = CommonFormUtils::getTermsAndConditionsLink($terms_and_conditions_page_id);
       $form['terms_and_conditions']['accepted'] = array(
