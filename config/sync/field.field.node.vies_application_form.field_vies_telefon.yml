@@ -1,18 +1,18 @@
-uuid: dac5c5cb-2af5-41eb-8796-060f0ccf6193
+uuid: 921c09f2-9e9a-4199-a630-6c577c517385
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_email
+    - field.storage.node.field_vies_telefon
     - node.type.vies_application_form
-id: node.vies_application_form.field_vih_lco_email
-field_name: field_vih_lco_email
+id: node.vies_application_form.field_vies_telefon
+field_name: field_vies_telefon
 entity_type: node
 bundle: vies_application_form
-label: Email
+label: Telefon
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

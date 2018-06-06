@@ -1,18 +1,18 @@
-uuid: fab96e61-685e-410a-b5b8-991426f93768
+uuid: 7390b9b2-dd73-4d02-ad23-8a658b7c6ff0
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_zip
+    - field.storage.node.field_vies_municipality
     - node.type.vies_application_form
-id: node.vies_application_form.field_vih_lco_zip
-field_name: field_vih_lco_zip
+id: node.vies_application_form.field_vies_municipality
+field_name: field_vies_municipality
 entity_type: node
 bundle: vies_application_form
-label: ZIP
+label: Municipality
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

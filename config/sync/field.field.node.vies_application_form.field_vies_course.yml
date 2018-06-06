@@ -1,19 +1,19 @@
-uuid: e864bc29-af49-4706-9ef2-b67342834b52
+uuid: 566df5b2-042a-44f3-b76b-7e4dec40593b
 langcode: da
 status: true
 dependencies:
   config:
-    - field.storage.node.field_vih_lco_course
+    - field.storage.node.field_vies_course
     - node.type.vies_application_form
     - node.type.vih_long_cource
-id: node.vies_application_form.field_vih_lco_course
-field_name: field_vih_lco_course
+id: node.vies_application_form.field_vies_course
+field_name: field_vies_course
 entity_type: node
 bundle: vies_application_form
 label: Course
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

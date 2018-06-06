@@ -332,7 +332,7 @@ class ApplicationForm extends FormBase {
       '#theme' => 'vies_application_section',
     ];
     $personal_data = $this->getPersonalDataForm();
-    $personal_data['left']['sex'] = [
+    $personal_data['left']['gender'] = [
       '#type' => 'select',
       '#title' => 'Køn',
       '#options' => [

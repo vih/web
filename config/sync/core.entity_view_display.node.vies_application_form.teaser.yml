@@ -16,4 +16,21 @@ content:
     weight: 100
     region: content
 hidden:
+  field_vies_about_school: true
+  field_vies_afterschool: true
+  field_vies_class: true
+  field_vies_class_questions: true
+  field_vies_parents: true
+  field_vies_period: true
+  field_vies_sex: true
+  field_vih_lco_address: true
+  field_vih_lco_city: true
+  field_vih_lco_course: true
+  field_vih_lco_email: true
+  field_vih_lco_first_name: true
+  field_vih_lco_last_name: true
+  field_vih_lco_municipality: true
+  field_vih_lco_newsletter: true
+  field_vih_lco_telefon: true
+  field_vih_lco_zip: true
   langcode: true
