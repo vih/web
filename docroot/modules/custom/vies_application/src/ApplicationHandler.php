@@ -7,8 +7,9 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\Core\Url;
 use Drupal\vih_subscription\Form\EdbbrugsenSettingsForm;
-use Drupal\vih_subscription\Form\NotificationsSettingsForm;
+use Drupal\vih_subscription\Form\SubscriptionsGeneralSettingsForm;
 use Drupal\vih_subscription\Misc\VihSubscriptionUtils;
+use Drupal\vih_subscription\Misc\EDBBrugsenIntegration;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
@@ -176,7 +177,7 @@ class ApplicationHandler {
       $school_code = $edb_brugsen_config->get('school_code');
       $book_number = $edb_brugsen_config->get('book_number');
 
-      $edb_brugsen_integration = new EDBBrugsenIntegrationVies($username, $password, $school_code, $book_number);
+      $edb_brugsen_integration = new EDBBrugsenIntegration($username, $password, $school_code, $book_number);
       $registration = $edb_brugsen_integration->convertApplicationToRegistration($this->data);
       $edb_brugsen_integration->addRegistration($registration);
     }
@@ -299,7 +300,7 @@ class ApplicationHandler {
    */
   public function sendNotification() {
     // Send email.
-    $notifications_config = \Drupal::configFactory()->getEditable(NotificationsSettingsForm::$configName);
+    $notifications_config = \Drupal::configFactory()->getEditable(SubscriptionsGeneralSettingsForm::$configName);
     $node_view = node_view($this->application, 'email_teaser');
     $application_rendered = render($node_view)->__toString();
 
