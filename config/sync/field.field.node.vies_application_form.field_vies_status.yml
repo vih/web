@@ -1,0 +1,29 @@
+uuid: 037f3c00-5f94-4fe9-a2de-93f10cc88968
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vies_status
+    - node.type.vies_application_form
+    - taxonomy.vocabulary.valuation_statuses
+id: node.vies_application_form.field_vies_status
+field_name: field_vies_status
+entity_type: node
+bundle: vies_application_form
+label: 'Valuation statuses'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      valuation_statuses: valuation_statuses
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

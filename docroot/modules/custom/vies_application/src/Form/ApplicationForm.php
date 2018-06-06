@@ -335,10 +335,7 @@ class ApplicationForm extends FormBase {
     $personal_data['left']['gender'] = [
       '#type' => 'select',
       '#title' => 'Køn',
-      '#options' => [
-        'm' => 'Mand',
-        'f' => 'Kvinde',
-      ],
+      '#options' => ApplicationHandler::$gender,
       '#empty_label' => 'None',
       '#required' => TRUE,
     ];

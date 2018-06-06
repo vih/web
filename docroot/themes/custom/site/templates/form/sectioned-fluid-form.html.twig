@@ -1,0 +1,23 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+
+<section
+    class="sectioned sectioned--content" {{ content_attributes.addClass('content') }}>
+  <div class="sectioned__inner">
+    <div class="container-fluid">
+      {{ form | without('actions') }}
+      <hr>
+      <!-- Begin - form controls -->
+      <div class="partial partial--form-controls">
+        <div class="partial__body">
+          <div class="text-right">
+            {{ form['actions'] }}
+          </div>
+        </div>
+      </div>
+      <!-- End - form controls -->
+
+    </div>
+  </div>
+</section>

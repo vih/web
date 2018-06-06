@@ -1,0 +1,29 @@
+uuid: 01768289-13e9-45bb-a62c-cc3f1c543a97
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vies_label
+    - node.type.vies_application_form
+    - taxonomy.vocabulary.valuation_labels
+id: node.vies_application_form.field_vies_label
+field_name: field_vies_label
+entity_type: node
+bundle: vies_application_form
+label: 'Valuation labels'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      valuation_labels: valuation_labels
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

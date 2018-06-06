@@ -796,3 +796,17 @@ function site_preprocess_file_link(&$variables) {
     $variables['link'] = $link;
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function site_theme() {
+  return [
+    'region_sectioned' => [
+      'render element' => 'content',
+    ],
+    'region_sectioned_fluid' => [
+      'render element' => 'content',
+    ],
+  ];
+}

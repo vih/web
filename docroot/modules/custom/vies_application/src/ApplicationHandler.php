@@ -47,6 +47,14 @@ class ApplicationHandler {
   ];
 
   /**
+   * Gender key labels definition.
+   */
+  public static $gender = [
+    'm' => 'Mand',
+    'f' => 'Kvinde',
+  ];
+
+  /**
    * Construct.
    *
    * @param array $data
@@ -118,7 +126,7 @@ class ApplicationHandler {
         }
         if (!empty($question_term)) {
           $this->data['questions'][$class_tid][$tid] = [
-            'class' => $class_term->getName(),
+            'question_reference' => $tid,
             'question' => $question_term->getName(),
             'answer' => $answer,
           ];
@@ -244,6 +252,7 @@ class ApplicationHandler {
         $question = Paragraph::create([
           'type' => 'app_answer',
           'field_question' => $question_data['question'],
+          'field_question_reference' => $question_data['question_reference'],
           'field_answer' => $question_data['answer'],
         ]);
         $question->isNew();

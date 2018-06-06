@@ -1,0 +1,54 @@
+// |--------------------------------------------------------------------------
+// | Valuation
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .view-vies-valuated-application
+// | - #valuation-form-wrapper
+// |
+
+#valuation-form-wrapper {
+  margin: 3em 0;
+
+  #studentsWrapper {
+    tr td {
+      &:first-child {
+        width: 20%;
+      }
+      &:last-child {
+        width: 10%;
+      }
+    }
+  }
+}
+
+.view-vies-valuated-application {
+  .bef-exposed-form .form--inline {
+    & > #edit-field-vies-label-target-id-1--wrapper,
+    & > #edit-field-vies-status-target-id-1--wrapper {
+      width: 40%;
+    }
+
+    & > #edit-actions {
+      width: 20%;
+    }
+
+    .form-type-checkbox {
+      margin-right: 10px;
+    }
+  }
+
+
+  .views-field-field {
+    &-vies-first-name {
+      width: 30%;
+    }
+    &-vies-label {
+      width: 20%;
+    }
+    &-vies-status {
+      width: 20%;
+    }
+
+  }
+}

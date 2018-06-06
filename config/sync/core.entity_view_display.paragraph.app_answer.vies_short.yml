@@ -1,0 +1,25 @@
+uuid: d80c2b65-253c-4945-b52d-04d7b90004a7
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.vies_short
+    - field.field.paragraph.app_answer.field_answer
+    - field.field.paragraph.app_answer.field_question
+    - field.field.paragraph.app_answer.field_question_reference
+    - paragraphs.paragraphs_type.app_answer
+id: paragraph.app_answer.vies_short
+targetEntityType: paragraph
+bundle: app_answer
+mode: vies_short
+content:
+  field_answer:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  field_question: true
+  field_question_reference: true

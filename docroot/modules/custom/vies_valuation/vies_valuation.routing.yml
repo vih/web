@@ -1,4 +1,4 @@
-vies_valuation.valuation_form:
+vies_valuation:
   path: 'taxonomy/term/{taxonomy_term}/valuation'
   defaults:
     _controller: '\Drupal\vies_valuation\Controller\ValuationController::page'

@@ -1,0 +1,9 @@
+uuid: cee1ad49-f54c-4cb7-9b03-505f91b318b0
+langcode: und
+status: true
+dependencies: {  }
+name: 'Valuation labels'
+vid: valuation_labels
+description: ''
+hierarchy: 0
+weight: 0

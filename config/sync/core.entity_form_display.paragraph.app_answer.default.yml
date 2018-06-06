@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.app_answer.field_answer
     - field.field.paragraph.app_answer.field_question
+    - field.field.paragraph.app_answer.field_question_reference
     - paragraphs.paragraphs_type.app_answer
   module:
     - workbench_moderation
@@ -28,6 +29,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_question_reference:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
 hidden:
   created: true

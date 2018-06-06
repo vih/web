@@ -1,0 +1,9 @@
+uuid: 5c387922-c954-4004-8428-0d2c71a624b6
+langcode: und
+status: true
+dependencies: {  }
+name: 'Valuation statuses'
+vid: valuation_statuses
+description: ''
+hierarchy: 0
+weight: 0

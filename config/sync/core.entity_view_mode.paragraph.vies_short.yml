@@ -1,0 +1,14 @@
+uuid: 28edf94b-e9ba-4d94-bd92-83949e1fa7c8
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - paragraphs
+third_party_settings:
+  lightning_core:
+    description: ''
+id: paragraph.vies_short
+label: Short
+targetEntityType: paragraph
+cache: true

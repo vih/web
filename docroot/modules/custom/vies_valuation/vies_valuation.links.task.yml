@@ -1,0 +1,4 @@
+vies_valuation:
+  title: 'Valuate'
+  route_name: vies_valuation
+  base_route: entity.taxonomy_term.canonical
