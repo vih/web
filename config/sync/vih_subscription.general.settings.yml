@@ -5,11 +5,11 @@ vih_subscription_short_course_terms_and_conditions_page: '21'
 vih_subscription_short_course_redirection_page: '25'
 vih_subscription_event_terms_and_conditions_page: '22'
 vih_subscription_event_redirection_page: '26'
-submit: 'Save configuration'
-form_build_id: form-h90zi5Zw-SnDwchbC2nPxBnvKPPdU2_SVp-qK8TQl0Y
-form_token: X7__Yywna9bZISclSYX-BRSfZ59V--z6NTtdDrHvwEI
+submit: 'Gem indstillinger'
+form_build_id: form-2VrXNLdACIMV4WpRNMuR54YfAmff_rhuQNvRGs0CHew
+form_token: ArNN1kRh504q3Ep0bDs2vD8aItMZkA_1tTRBsEO8lKE
 form_id: vih_subscription_subscriptons_general_settings_form
-op: 'Save configuration'
+op: 'Gem indstillinger'
 vih_subscription_long_course_notifications_subject_da: 'Order of @subject_name'
 vih_subscription_long_course_notifications_body_da: "Hello @person_name,\r\n\r\nthank you for ordering course @subject_name.\r\n\r\nOrder details:"
 vih_subscription_long_course_notifications_subject_en: 'Order of @subject_name'
@@ -22,3 +22,12 @@ vih_subscription_event_notifications_subject_da: 'Order of @subject_name'
 vih_subscription_event_notifications_body_da: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe event will take place on @date, more information available here: @url."
 vih_subscription_event_notifications_subject_en: 'Order of @subject_name'
 vih_subscription_event_notifications_body_en: "Hello @person_name,\r\n\r\nthank you for ordering event @subject_name.\r\n\r\nOrder details:\r\n@order\r\n\r\nThe event will take place on @date, more information available here: @url."
+vih_subscription_long_course_language_specific__active_tab: edit-vih-subscription-long-course-da
+vih_subscription_long_course_registration_page_text_da: ''
+vih_subscription_long_course_registration_page_text_en: ''
+vih_subscription_short_course_language_specific__active_tab: edit-vih-subscription-short-course-da
+vih_subscription_short_course_registration_page_text_da: ''
+vih_subscription_short_course_registration_page_text_en: ''
+vih_subscription_event_language_specific__active_tab: edit-vih-subscription-event-da
+vih_subscription_event_registration_page_text_da: 'Det spiller'
+vih_subscription_event_registration_page_text_en: ''
