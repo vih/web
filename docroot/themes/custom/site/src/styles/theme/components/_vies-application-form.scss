@@ -1,0 +1,38 @@
+// |--------------------------------------------------------------------------
+// |
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - #application-form
+// |
+
+#application-form {
+  #coursePeriods {
+    .boxy {
+      margin-bottom: 0;
+    }
+  }
+
+  #questions {
+    .panel-title {
+      padding: 14px 15px;
+    }
+
+    .panel {
+      h5 {
+        margin-top: 0;
+      }
+    }
+
+    legend {
+      .fieldset-legend {
+        color: #888;
+        font-size: 16px;
+        text-transform: none;
+        font-family: Lato, sans-serif;
+        letter-spacing: normal;
+        font-weight: bold;
+      }
+    }
+  }
+}

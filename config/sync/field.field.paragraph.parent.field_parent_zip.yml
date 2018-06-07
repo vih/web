@@ -1,0 +1,19 @@
+uuid: dedc4756-b904-4bf1-b78e-4da2e2864819
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parent_zip
+    - paragraphs.paragraphs_type.parent
+id: paragraph.parent.field_parent_zip
+field_name: field_parent_zip
+entity_type: paragraph
+bundle: parent
+label: ZIP
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: f7ab7ae7-96e1-4169-b5a0-aa08c98cd97e
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vies_zip
+    - node.type.vies_application_form
+id: node.vies_application_form.field_vies_zip
+field_name: field_vies_zip
+entity_type: node
+bundle: vies_application_form
+label: ZIP
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

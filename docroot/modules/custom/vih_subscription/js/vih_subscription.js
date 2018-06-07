@@ -3,7 +3,7 @@
 
   Drupal.behaviors.accordionClassSelection = {
     attach: function (context, settings) {
-      var $buttons = $('.btn-radio-select');
+      var $buttons = $('.btn-radio-select').once('btn-radio-select');
 
       // Run through all buttons to check if any has a selected radio button
       // inside If so, we can add an active class to the button
@@ -121,6 +121,8 @@
               .find('input[type=radio]')
               .prop('checked', true);
         }
+
+        $element.find('input[type=radio]').change();
       });
     }
   };

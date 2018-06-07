@@ -1,0 +1,19 @@
+uuid: 624e7ed1-93d3-4ddc-8c24-7432608055b9
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vies_last_name
+    - node.type.vies_application_form
+id: node.vies_application_form.field_vies_last_name
+field_name: field_vies_last_name
+entity_type: node
+bundle: vies_application_form
+label: 'Last name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

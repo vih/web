@@ -1,0 +1,23 @@
+uuid: 2253d70c-e425-42a2-908e-2b66dc61fb24
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parent_newsletter
+    - paragraphs.paragraphs_type.parent
+id: paragraph.parent.field_parent_newsletter
+field_name: field_parent_newsletter
+entity_type: paragraph
+bundle: parent
+label: Newsletter
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

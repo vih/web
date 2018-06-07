@@ -1,0 +1,19 @@
+uuid: aa19d892-1b7c-4582-9a8f-c139a29cfa2f
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_vies_address
+    - node.type.vies_application_form
+id: node.vies_application_form.field_vies_address
+field_name: field_vies_address
+entity_type: node
+bundle: vies_application_form
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
