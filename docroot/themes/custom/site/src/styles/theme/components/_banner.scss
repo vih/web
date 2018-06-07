@@ -100,6 +100,10 @@ $lg-banner-title-font-size: 46px;
   bottom: 0;
 
   background-color: transparent;
+
+  polygon {
+    fill: rgba($brand-primary, .85);
+  }
 }
 .banner__logo__image {
   position: absolute;

@@ -18,9 +18,9 @@ $button-sm-icon-wrapper-width: 30px;
 $button-sm-arrow-width: 14px;
 
 // Variants
-$button-primary-icon-background: $brand-cyan;
+$button-primary-icon-background: lighten($brand-primary, 10%);
 $button-secondary-icon-background: darken($btn-secondary-bg, 14%);
-$button-info-icon-background: $brand-cyan;
+$button-info-icon-background: lighten($brand-primary, 10%);
 $button-success-icon-background: lighten($btn-success-bg, 14%);
 $button-danger-icon-background: lighten($btn-danger-bg, 14%);
 
