@@ -192,7 +192,7 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: closed
+      edit_mode: open
       closed_mode: summary
       autocollapse: all
       add_mode: modal

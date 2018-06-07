@@ -1,11 +1,9 @@
-{%
-    set classes = [
+{% set classes = [
     'sectioned',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-]
-%}
+] %}
 <section{{ attributes.addClass(classes) }}>
     <div class="sectioned--skewed-angle-top">
         <div class="sectioned--skewed-angle-bottom">
@@ -13,7 +11,8 @@
             {% if background_image %}
                 <div class="angled-background-image-wrapper">
                     <div class="cover-overlay"></div>
-                    <div class="angled-background-image-element" style="background-image: url({{ background_image }})"></div>
+                    <div class="angled-background-image-element"
+                         style="background-image: url({{ background_image }})"></div>
                 </div>
             {% endif %}
 
@@ -29,16 +28,19 @@
 
                             <table class="table table-bordered">
                                 <tr>
-                                    <td class="user-image" style="background-image: url({{ content['#teacher'].field_vih_user_photo.entity.image.entity.fileuri | image_style('vih_person_teaser') }});">
-                                        {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
-                                            <div class="photo__overlay">
-                                                <div class="photo__overlay__text">
-                                                    {{ content['#teacher'].field_vih_user_name_first.value }}
-                                                    {{ content['#teacher'].field_vih_user_name_last.value }}
+                                    {% if content['#teacher'].field_vih_user_photo.entity.image.entity.fileuri %}
+                                        <td class="user-image"
+                                            style="background-image: url({{ content['#teacher'].field_vih_user_photo.entity.image.entity.fileuri | image_style('vih_person_teaser') }});">
+                                            {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
+                                                <div class="photo__overlay">
+                                                    <div class="photo__overlay__text">
+                                                        {{ content['#teacher'].field_vih_user_name_first.value }}
+                                                        {{ content['#teacher'].field_vih_user_name_last.value }}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        {% endif %}
-                                    </td>
+                                            {% endif %}
+                                        </td>
+                                    {% endif %}
                                     <td class="hidden-xs">
 
                                         {# Begin - name #}
@@ -55,14 +57,18 @@
 
                                         {# Begin - phone #}
                                         {% if content['#teacher'].field_vih_user_phone.value %}
-                                            <span class="teacher-phone"><span class="icon icon-phone"></span> {{ content['#teacher'].field_vih_user_phone }}</span>
+                                            <span class="teacher-phone"><span
+                                                        class="icon icon-phone"></span> {{ content['#teacher'].field_vih_user_phone.value }}</span>
 
                                             <br>
                                         {% endif %}
                                         {# End - phone #}
 
                                         {# Begin - email #}
-                                        <span class="teacher-mail"><span class="icon icon-mail"></span> {{ content['#teacher'].email }}</span>
+                                        {% if content['#teacher'].email.value %}
+                                            <span class="teacher-mail"><span
+                                                        class="icon icon-mail"></span> {{ content['#teacher'].email.value }}</span>
+                                        {% endif %}
                                         {# End - email #}
 
                                     </td>
@@ -86,14 +92,18 @@
 
                                         {# Begin - phone #}
                                         {% if content['#teacher'].field_vih_user_phone.value %}
-                                            <span class="teacher-phone"><span class="icon icon-phone"></span> {{ content['#teacher'].field_vih_user_phone }}</span>
+                                            <span class="teacher-phone"><span
+                                                        class="icon icon-phone"></span> {{ content['#teacher'].field_vih_user_phone.value }}</span>
 
                                             <br>
                                         {% endif %}
                                         {# End - phone #}
 
                                         {# Begin - email #}
-                                        <span class="teacher-mail"><span class="icon icon-mail"></span> {{ content['#teacher'].email }}</span>
+                                        {% if content['#teacher'].email.value %}
+                                            <span class="teacher-mail"><span
+                                                        class="icon icon-mail"></span> {{ content['#teacher'].email.value }}</span>
+                                        {% endif %}
                                         {# End - email #}
 
                                     </td>

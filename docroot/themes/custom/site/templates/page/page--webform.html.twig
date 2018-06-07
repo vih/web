@@ -89,17 +89,13 @@
                         <h1>{{ page['#title'] | raw }}</h1>
                     </div>
 
-                    {% if node or user %}
-                        {{ page.content }}
-                    {% else %}
-                        <section class="sectioned sectioned--content">
-                            <div class="sectioned__inner">
-                                <div class="container">
-                                    {{ page.content }}
-                                </div>
+                    <section class="sectioned sectioned--content">
+                        <div class="sectioned__inner">
+                            <div class="container">
+                                {{ page.content }}
                             </div>
-                        </section>
-                    {% endif %}
+                        </div>
+                    </section>
                     <!-- End - content -->
                 {% endblock %}
             </div>
