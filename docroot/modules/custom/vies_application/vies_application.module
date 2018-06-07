@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Contains vies_application.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function vies_application_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the vies_application module.
+    case 'help.page.vies_application':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('VIES Students application') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vies_application_theme() {
+  return [
+    'vies_application_form' => [
+      'render element' => 'form',
+    ],
+    'vies_application_periods' => [
+      'render element' => 'form',
+    ],
+    'vies_application_personal_data' => [
+      'render element' => 'form',
+    ],
+    'vies_application_section' => [
+      'render element' => 'form',
+    ],
+    'vies_application_questions' => [
+      'render element' => 'form',
+    ],
+    'vies_application_submit_message' => [
+      'variables' => [
+        'title' => NULL,
+        'message' => NULL,
+        'backlink' => NULL,
+      ],
+    ],
+  ];
+}

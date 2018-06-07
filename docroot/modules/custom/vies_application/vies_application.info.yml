@@ -1,0 +1,8 @@
+name: vies_application
+type: module
+description: VIES Students application
+core: 8.x
+package: VIES
+
+dependencies:
+  - vih_subscription

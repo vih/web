@@ -1,0 +1,21 @@
+uuid: cacc65f8-8a6e-427a-89a8-c14f5fb22d36
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_parent_city
+field_name: field_parent_city
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

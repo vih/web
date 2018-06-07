@@ -1,0 +1,16 @@
+uuid: bb0484c9-a0cc-4e41-a43c-69894180c244
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.questions
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.questions
+target_entity_type_id: taxonomy_term
+target_bundle: questions
+default_langcode: site_default
+language_alterable: true

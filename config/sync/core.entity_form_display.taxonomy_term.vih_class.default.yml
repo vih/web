@@ -5,6 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.media_browser
     - field.field.taxonomy_term.vih_class.field_metatag
+    - field.field.taxonomy_term.vih_class.field_questions
     - field.field.taxonomy_term.vih_class.field_short_description
     - field.field.taxonomy_term.vih_class.field_vih_class_class_packages
     - field.field.taxonomy_term.vih_class.field_vih_class_color
@@ -123,6 +124,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
+    region: content
+  field_questions:
+    weight: 22
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_short_description:
     weight: 6

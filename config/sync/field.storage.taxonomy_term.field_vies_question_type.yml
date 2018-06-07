@@ -1,0 +1,36 @@
+uuid: 17f1452a-d374-4290-ab8e-844afafee173
+langcode: da
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_vies_question_type
+field_name: field_vies_question_type
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: textfield
+      label: Textfield
+    -
+      value: textarea
+      label: Textarea
+    -
+      value: select
+      label: Selectbox
+    -
+      value: radios
+      label: Radiobuttons
+    -
+      value: checkboxes
+      label: Checkboxes
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

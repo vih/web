@@ -1,0 +1,9 @@
+uuid: ba8b298d-55cd-438f-a520-5512d222fd7e
+langcode: da
+status: true
+dependencies: {  }
+id: parent
+label: Parent
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

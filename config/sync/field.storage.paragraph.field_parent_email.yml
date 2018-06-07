@@ -1,0 +1,21 @@
+uuid: 0f5bc1dd-7b9a-42f8-850e-72eb2f58afab
+langcode: da
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_parent_email
+field_name: field_parent_email
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,9 @@
+uuid: da0cbb3b-70b8-48e9-912b-e136e7571bc5
+langcode: und
+status: true
+dependencies: {  }
+name: Sprøgsmåler
+vid: questions
+description: ''
+hierarchy: 0
+weight: 0

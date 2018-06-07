@@ -1,0 +1,20 @@
+uuid: caecb90a-fc6d-49ee-99c6-6f1cbe63e3f3
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+    - paragraphs
+id: node.field_vies_class_questions
+field_name: field_vies_class_questions
+entity_type: node
+type: entity_reference
+settings:
+  target_type: paragraph
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
