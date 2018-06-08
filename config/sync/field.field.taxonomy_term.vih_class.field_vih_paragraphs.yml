@@ -34,7 +34,7 @@ bundle: vih_class
 label: Sektioner
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -47,8 +47,8 @@ settings:
       article: article
       event_list: event_list
       file: file
-      list_of_news_teasers: list_of_news_teasers
       social_media_embed: social_media_embed
+      list_of_news_teasers: list_of_news_teasers
       long_course_list_: long_course_list_
       employee: employee
       vih_list_of_news_list_advanced: vih_list_of_news_list_advanced
@@ -78,10 +78,10 @@ settings:
       file:
         enabled: true
         weight: 27
-      list_of_news_teasers:
+      social_media_embed:
         enabled: true
         weight: 28
-      social_media_embed:
+      list_of_news_teasers:
         enabled: true
         weight: 28
       long_course_list_:
@@ -108,6 +108,9 @@ settings:
       video:
         enabled: true
         weight: 34
+      app_answer:
+        weight: 35
+        enabled: false
       vih_class_groups_accordion:
         enabled: true
         weight: 35
@@ -143,6 +146,9 @@ settings:
         enabled: false
       vih_single_class_group:
         weight: 44
+        enabled: false
+      parent:
+        weight: 45
         enabled: false
       vih_teacher_class_description:
         enabled: true
