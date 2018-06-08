@@ -55,6 +55,15 @@ class ApplicationHandler {
   ];
 
   /**
+   * Adult type.
+   */
+  public static $adultType = [
+    'mother' => 'Mor',
+    'father' => 'Far',
+    'other'  => 'Andre',
+  ];
+
+  /**
    * Construct.
    *
    * @param array $data
@@ -226,6 +235,7 @@ class ApplicationHandler {
     foreach ($this->data['parents'] as $parent_data) {
       $parent = Paragraph::create([
         'type' => 'parent',
+        'field_parent_type' => $parent_data['type'],
         'field_parent_first_name' => $parent_data['firstName'],
         'field_parent_last_name' => $parent_data['lastName'],
         'field_parent_telefon' => $parent_data['telefon'],

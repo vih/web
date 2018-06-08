@@ -144,6 +144,7 @@ class EDBBrugsenIntegration {
 
     // Adult information.
     $parent = array_shift($data['parents']);
+    $registration['Voksen.Type'] = $parent['type'];
     $registration['Voksen.Fornavn'] = $parent['firstName'];
     $registration['Voksen.Efternavn'] = $parent['lastName'];
     $registration['Voksen.Adresse'] = $parent['address'];

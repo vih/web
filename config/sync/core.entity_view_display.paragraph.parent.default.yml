@@ -10,6 +10,7 @@ dependencies:
     - field.field.paragraph.parent.field_parent_last_name
     - field.field.paragraph.parent.field_parent_newsletter
     - field.field.paragraph.parent.field_parent_telefon
+    - field.field.paragraph.parent.field_parent_type
     - field.field.paragraph.parent.field_parent_zip
     - paragraphs.paragraphs_type.parent
 id: paragraph.parent.default
@@ -69,6 +70,14 @@ content:
     region: content
   field_parent_telefon:
     weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_parent_type:
+    weight: 9
     label: above
     settings:
       link_to_entity: false

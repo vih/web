@@ -17,10 +17,21 @@ content:
     region: content
 hidden:
   field_vies_about_school: true
+  field_vies_address: true
   field_vies_afterschool: true
+  field_vies_city: true
   field_vies_class: true
   field_vies_class_questions: true
+  field_vies_course: true
+  field_vies_email: true
+  field_vies_first_name: true
+  field_vies_gender: true
+  field_vies_last_name: true
+  field_vies_municipality: true
+  field_vies_newsletter: true
   field_vies_parents: true
   field_vies_period: true
   field_vies_sex: true
+  field_vies_telefon: true
+  field_vies_zip: true
   langcode: true

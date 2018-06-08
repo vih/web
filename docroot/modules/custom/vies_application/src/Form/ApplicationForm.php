@@ -254,7 +254,7 @@ class ApplicationForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
     foreach ($values['parents'] as $key => &$parent) {
-      $parent = $parent['left'] + $parent['right'];
+      $parent = $parent['top'] + $parent['left'] + $parent['right'];
     }
 
     $application = new ApplicationHandler($values);
@@ -382,8 +382,19 @@ class ApplicationForm extends FormBase {
     ];
 
     for ($i = 0; $i < $num_parents; $i++) {
-      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm($i == 0) +
-      ['#attributes' => ['class' => ['clearfix']]];
+      $form['parentsWrapper']['parents'][$i] = $this->getPersonalDataForm($i == 0) + [
+        'top' => [
+          '#type' => 'container',
+          '#attributes' => ['class' => ['form-inline']],
+          'type' => [
+            '#type' => 'radios',
+            '#options' => ApplicationHandler::$adultType,
+            '#weight' => -1,
+            '#required' => TRUE,
+          ],
+        ],
+        '#attributes' => ['class' => ['clearfix']],
+      ];
     }
 
     $form['parentsWrapper']['actions'] = [
