@@ -62,7 +62,7 @@ display:
             general:
               allow_secondary: false
               secondary_label: 'Avancerede indstillinger'
-              autosubmit: false
+              autosubmit: true
               autosubmit_exclude_textfield: false
               autosubmit_hide: true
             field_vies_label_target_id_1:
