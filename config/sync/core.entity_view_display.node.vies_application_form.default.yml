@@ -23,6 +23,12 @@ dependencies:
     - node.type.vies_application_form
   module:
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vies_application_form.default
 targetEntityType: node
 bundle: vies_application_form
