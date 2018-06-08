@@ -4,16 +4,27 @@ status: true
 dependencies:
   config:
     - block_content.type.notify
+    - field.field.block_content.notify.field_vih_block_expire_date
     - field.field.block_content.notify.field_vih_heading
     - field.field.block_content.notify.field_vih_highlighted_text
     - field.field.block_content.notify.field_vih_link
   module:
+    - datetime
     - link
 id: block_content.notify.default
 targetEntityType: block_content
 bundle: notify
 mode: default
 content:
+  field_vih_block_expire_date:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_vih_heading:
     type: string
     weight: 2

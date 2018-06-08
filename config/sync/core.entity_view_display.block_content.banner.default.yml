@@ -5,7 +5,9 @@ dependencies:
   config:
     - block_content.type.banner
     - field.field.block_content.banner.field_vih_banner_slides
+    - field.field.block_content.banner.field_vih_block_expire_date
   module:
+    - datetime
     - entity_reference_revisions
 id: block_content.banner.default
 targetEntityType: block_content
@@ -20,6 +22,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_vih_block_expire_date:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
 hidden:
   langcode: true

@@ -1,0 +1,21 @@
+uuid: 0953be25-cb3b-4354-a298-e7abb96de5c4
+langcode: da
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_vih_block_expire_date
+  module:
+    - datetime
+id: block_content.banner.field_vih_block_expire_date
+field_name: field_vih_block_expire_date
+entity_type: block_content
+bundle: banner
+label: 'Expire date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
