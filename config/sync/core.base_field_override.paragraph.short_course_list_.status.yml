@@ -8,7 +8,7 @@ id: paragraph.short_course_list_.status
 field_name: status
 entity_type: paragraph
 bundle: short_course_list_
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: true

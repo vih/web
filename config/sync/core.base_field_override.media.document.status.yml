@@ -8,7 +8,7 @@ id: media.document.status
 field_name: status
 entity_type: media
 bundle: document
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

@@ -8,7 +8,7 @@ id: paragraph.employee.status
 field_name: status
 entity_type: paragraph
 bundle: employee
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: true

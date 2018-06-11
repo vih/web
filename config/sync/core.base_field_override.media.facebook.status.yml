@@ -8,7 +8,7 @@ id: media.facebook.status
 field_name: status
 entity_type: media
 bundle: facebook
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

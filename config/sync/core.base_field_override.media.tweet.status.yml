@@ -8,7 +8,7 @@ id: media.tweet.status
 field_name: status
 entity_type: media
 bundle: tweet
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

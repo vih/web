@@ -8,7 +8,7 @@ id: node.vih_event_order.status
 field_name: status
 entity_type: node
 bundle: vih_event_order
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false
