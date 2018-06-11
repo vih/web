@@ -5,7 +5,9 @@ dependencies:
   config:
     - block_content.type.basic
     - field.field.block_content.basic.body
+    - field.field.block_content.basic.field_vih_block_expire_date
   module:
+    - datetime
     - text
 _core:
   default_config_hash: oP4XjchjosP5e4irTezr6NvjLhl11qmfjEB1QUscZt4
@@ -20,6 +22,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_vih_block_expire_date:
+    weight: 1
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
     region: content
 hidden:
   langcode: true

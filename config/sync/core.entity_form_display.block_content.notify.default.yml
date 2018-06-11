@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - block_content.type.notify
+    - field.field.block_content.notify.field_vih_block_expire_date
     - field.field.block_content.notify.field_vih_heading
     - field.field.block_content.notify.field_vih_highlighted_text
     - field.field.block_content.notify.field_vih_link
   module:
+    - datetime
     - link
     - workbench_moderation
 id: block_content.notify.default
@@ -15,6 +17,12 @@ targetEntityType: block_content
 bundle: notify
 mode: default
 content:
+  field_vih_block_expire_date:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   field_vih_heading:
     type: string_textfield
     weight: 0
@@ -54,4 +62,7 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
 hidden: {  }

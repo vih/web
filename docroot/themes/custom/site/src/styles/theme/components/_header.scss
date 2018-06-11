@@ -199,7 +199,7 @@ $breakpoint-mobile-to-tablet: "screen and (max-width: #{$screen-sm-max})";
 
   .layout__header-logo {
     position: absolute;
-    background: $brand-primary url('../images/layout-header-logo.png') center center no-repeat;
+    background: $layout-header-logo-background-color url('../images/layout-header-logo.png') center center no-repeat;
     background-size: 100%;
     width: 105px;
     height: 105px;

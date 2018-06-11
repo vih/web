@@ -26,24 +26,26 @@
                             {% if paragraph.field_vih_photo.value %}
                                 <div class="row row--equal-height-columns">
                                     <div class="col-xs-12 col-sm-4 col-md-3">
-                                        <a href="{{ path('entity.user.canonical', {'user': content['#teacher'].id}) }}" class="photo element-wrapper-link">
+                                        {% if content['#teacher'] %}
+                                          <a href="{{ path('entity.user.canonical', {'user': content['#teacher'].id}) }}" class="photo element-wrapper-link">
 
-                                            {# Begin - photo #}
-                                            {{ content.field_vih_photo }}
-                                            {# End - photo #}
+                                              {# Begin - photo #}
+                                              {{ content.field_vih_photo }}
+                                              {# End - photo #}
 
-                                            {# Begin - name #}
-                                            {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
-                                            <div class="photo__overlay">
-                                                <div class="photo__overlay__text">
-                                                    {{ content['#teacher'].field_vih_user_name_first.value }}
-                                                    {{ content['#teacher'].field_vih_user_name_last.value }}
-                                                </div>
-                                            </div>
-                                            {% endif %}
-                                            {# End - name #}
+                                              {# Begin - name #}
+                                              {% if content['#teacher'].field_vih_user_name_first.value and content['#teacher'].field_vih_user_name_last.value %}
+                                              <div class="photo__overlay">
+                                                  <div class="photo__overlay__text">
+                                                      {{ content['#teacher'].field_vih_user_name_first.value }}
+                                                      {{ content['#teacher'].field_vih_user_name_last.value }}
+                                                  </div>
+                                              </div>
+                                              {% endif %}
+                                              {# End - name #}
 
-                                        </a>
+                                          </a>
+                                        {% endif %}
                                     </div>
                                     <div class="col-xs-12 col-sm-8 col-md-9">
                                         <div class="content">

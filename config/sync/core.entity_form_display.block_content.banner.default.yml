@@ -5,7 +5,9 @@ dependencies:
   config:
     - block_content.type.banner
     - field.field.block_content.banner.field_vih_banner_slides
+    - field.field.block_content.banner.field_vih_block_expire_date
   module:
+    - datetime
     - paragraphs
     - workbench_moderation
 id: block_content.banner.default
@@ -27,6 +29,12 @@ content:
       default_paragraph_type: vih_banner_slide
     third_party_settings: {  }
     region: content
+  field_vih_block_expire_date:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
   info:
     type: string_textfield
     weight: 0
@@ -35,5 +43,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
 hidden:
   langcode: true

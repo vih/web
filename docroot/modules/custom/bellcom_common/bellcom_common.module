@@ -18,3 +18,22 @@ function vih_subscription_field_widget_form_alter(&$element, $form_state, $conte
     $element['uri']['#autocomplete_route_parameters'] = ['linkit_profile_id' => 'internal'];
   }
 }
+
+/**
+ * Implement hook_block_view_alter().
+ *
+ * Hides block content depending on the expire date field value.
+ */
+function bellcom_common_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  $uuid = $block->getDerivativeId();
+  if ($uuid) {
+    $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+    if ($block_content) {
+      $expire_date = $block_content->field_vih_block_expire_date->value;
+
+      if ($expire_date && strtotime($expire_date) < time()) {
+        $build = array();
+      }
+    }
+  }
+}
