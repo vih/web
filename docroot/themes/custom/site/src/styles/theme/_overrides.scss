@@ -80,6 +80,14 @@ img {
   }
 }
 
+.form-type-radio {
+  margin-right: 10px;
+
+  input {
+    margin-right: 3px;
+  }
+}
+
 // The form-group class has been added to all views by the Bootstrap base theme.
 // This hack removes the extra margin at the bottom.
 .views-element-container.form-group {

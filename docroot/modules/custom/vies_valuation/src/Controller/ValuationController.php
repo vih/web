@@ -21,13 +21,7 @@ class ValuationController extends ControllerBase {
     $build['to_valuate'] = $this->formBuilder()->getForm('Drupal\vies_valuation\Form\ValuationForm', $taxonomy_term);
 
     // Load valuated aplpication.
-    $args = [$taxonomy_term->id()];
-    $view = Views::getView('vies_valuated_application');
-    $view->setArguments($args);
-    $view->setDisplay('default');
-    $view->preExecute();
-    $view->execute();
-    $build['valuated'] = $view->render();
+    $build['valuated'] = $this->formBuilder()->getForm('Drupal\vies_valuation\Form\ValuatedApplicationForm', $taxonomy_term);
 
     return $build;
   }

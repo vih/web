@@ -22,32 +22,21 @@
   }
 }
 
-.view-vies-valuated-application {
-  .bef-exposed-form .form--inline {
-    & > #edit-field-vies-label-target-id-1--wrapper,
-    & > #edit-field-vies-status-target-id-1--wrapper {
-      width: 40%;
-    }
+.valuated-application-form {
+  .form-type-checkbox {
+    margin-right: 10px;
 
-    & > #edit-actions {
-      width: 20%;
-    }
-
-    .form-type-checkbox {
-      margin-right: 10px;
+    input {
+      margin-right: 3px;
     }
   }
 
-
-  .views-field-field {
-    &-vies-first-name {
-      width: 30%;
-    }
-    &-vies-label {
+  .valuated-applications tr td {
+    &:first-child {
       width: 20%;
     }
-    &-vies-status {
-      width: 20%;
+    &:last-child {
+      width: 10%;
     }
 
   }
