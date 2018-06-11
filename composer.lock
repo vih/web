@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f0eb19dd39a45656d0a3c46aceec627",
+    "content-hash": "28141743306f77d10fd971013c934830",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -5339,17 +5339,17 @@
         },
         {
             "name": "drupal/smtp",
-            "version": "1.0.0-beta4",
+            "version": "1.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/smtp",
-                "reference": "8.x-1.0-beta4"
+                "reference": "8.x-1.0-beta3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.0-beta4.zip",
-                "reference": "8.x-1.0-beta4",
-                "shasum": "80a4df4b2fd2d1b2dc653552d232ce98cb54bb9d"
+                "url": "https://ftp.drupal.org/files/projects/smtp-8.x-1.0-beta3.zip",
+                "reference": "8.x-1.0-beta3",
+                "shasum": "a351dac3765b9570933fd07f1e029aa22e5c69b0"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5360,7 +5360,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta4",
+                    "version": "8.x-1.0-beta3",
                     "datestamp": "1527598380",
                     "security-coverage": {
                         "status": "not-covered",
@@ -13271,8 +13271,7 @@
         "drupal/owlcarousel": 15,
         "drupal/menu_multilingual": 15,
         "drupal/eu_cookie_compliance": 20,
-        "drupal/entity_clone": 20,
-        "drupal/smtp": 10
+        "drupal/entity_clone": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
