@@ -1,0 +1,18 @@
+uuid: eb3a287d-2cd8-4ce0-8e54-d0947a00110c
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+third_party_settings:
+  lightning_core:
+    description: ''
+id: moderator
+label: Moderator
+weight: 7
+is_admin: null
+permissions:
+  - 'access valuation'
+  - 'edit any vies_application_form content'
+  - 'edit own vies_application_form content'
+  - 'view the administration theme'
