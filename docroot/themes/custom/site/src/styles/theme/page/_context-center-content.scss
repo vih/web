@@ -24,14 +24,11 @@
 
 .context-center-content {
 
-  &:not(.path-webform) {
+  .region-content {
+    @extend .container;
 
-    .region-content {
-      @extend .container;
-
-      padding-bottom: 30px;
-      margin-bottom: $xs-sectioned-skewed-angle-height * 1px;
-    }
+    padding-bottom: 30px;
+    margin-bottom: $xs-sectioned-skewed-angle-height * 1px;
   }
 }
 
