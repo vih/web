@@ -13,16 +13,25 @@ dependencies:
     - field.field.node.vies_application_form.field_vies_email
     - field.field.node.vies_application_form.field_vies_first_name
     - field.field.node.vies_application_form.field_vies_gender
+    - field.field.node.vies_application_form.field_vies_label
     - field.field.node.vies_application_form.field_vies_last_name
     - field.field.node.vies_application_form.field_vies_municipality
     - field.field.node.vies_application_form.field_vies_newsletter
     - field.field.node.vies_application_form.field_vies_parents
     - field.field.node.vies_application_form.field_vies_period
+    - field.field.node.vies_application_form.field_vies_status
     - field.field.node.vies_application_form.field_vies_telefon
     - field.field.node.vies_application_form.field_vies_zip
     - node.type.vies_application_form
   module:
+    - panelizer
     - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
 id: node.vies_application_form.default
 targetEntityType: node
 bundle: vies_application_form
@@ -108,6 +117,14 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_vies_label:
+    weight: 131
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_vies_last_name:
     weight: 125
     label: above
@@ -150,6 +167,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_vies_status:
+    weight: 130
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_vies_telefon:
     weight: 127
     label: above
@@ -169,5 +194,7 @@ content:
   links:
     weight: 100
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

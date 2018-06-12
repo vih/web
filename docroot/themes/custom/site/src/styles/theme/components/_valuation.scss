@@ -1,0 +1,43 @@
+// |--------------------------------------------------------------------------
+// | Valuation
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .view-vies-valuated-application
+// | - #valuation-form-wrapper
+// |
+
+#valuation-form-wrapper {
+  margin: 3em 0;
+
+  #studentsWrapper {
+    tr td {
+      &:first-child {
+        width: 20%;
+      }
+      &:last-child {
+        width: 10%;
+      }
+    }
+  }
+}
+
+.valuated-application-form {
+  .form-type-checkbox {
+    margin-right: 10px;
+
+    input {
+      margin-right: 3px;
+    }
+  }
+
+  .valuated-applications tr td {
+    &:first-child {
+      width: 20%;
+    }
+    &:last-child {
+      width: 10%;
+    }
+
+  }
+}

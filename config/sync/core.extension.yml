@@ -3,6 +3,7 @@ module:
   admin_toolbar_tools: 0
   bellcom_common: 0
   bellcom_quickpay_integration: 0
+  better_exposed_filters: 0
   block: 0
   block_content: 0
   block_scheduler: 0
@@ -124,6 +125,7 @@ module:
   video_embed_media: 0
   video_embed_wysiwyg: 0
   vies_application: 0
+  vies_valuation: 0
   views_infinite_scroll: 0
   views_send: 0
   views_ui: 0

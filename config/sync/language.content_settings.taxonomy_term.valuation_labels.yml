@@ -1,0 +1,11 @@
+uuid: 37ea3333-01ec-4476-afa0-b7f770915d93
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.valuation_labels
+id: taxonomy_term.valuation_labels
+target_entity_type_id: taxonomy_term
+target_bundle: valuation_labels
+default_langcode: und
+language_alterable: false
