@@ -8,7 +8,7 @@ id: media.instagram.status
 field_name: status
 entity_type: media
 bundle: instagram
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

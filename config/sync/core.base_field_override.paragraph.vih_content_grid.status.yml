@@ -8,7 +8,7 @@ id: paragraph.vih_content_grid.status
 field_name: status
 entity_type: paragraph
 bundle: vih_content_grid
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

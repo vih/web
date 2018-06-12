@@ -3,11 +3,13 @@ langcode: da
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_browser
     - field.field.paragraph.vih_banner_slide.field_vih_banner_image
     - field.field.paragraph.vih_banner_slide.field_vih_banner_text
     - field.field.paragraph.vih_banner_slide.field_vih_link
     - paragraphs.paragraphs_type.vih_banner_slide
   module:
+    - entity_browser
     - link
     - workbench_moderation
 id: paragraph.vih_banner_slide.default
@@ -17,7 +19,7 @@ mode: default
 content:
   field_vih_banner_image:
     type: entity_browser_entity_reference
-    weight: 6
+    weight: 2
     settings:
       entity_browser: media_browser
       field_widget_display: rendered_entity
@@ -30,7 +32,7 @@ content:
     region: content
     third_party_settings: {  }
   field_vih_banner_text:
-    weight: 1
+    weight: 0
     settings:
       size: 60
       placeholder: ''
@@ -38,14 +40,20 @@ content:
     type: string_textfield
     region: content
   field_vih_link:
-    weight: 2
+    weight: 1
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
   uid: true

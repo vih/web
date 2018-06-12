@@ -82,11 +82,18 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 10
+  status:
+    type: boolean_checkbox
+    weight: 5
     region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
-  translation: true
   uid: true

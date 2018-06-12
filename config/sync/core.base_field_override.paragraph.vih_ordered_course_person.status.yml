@@ -8,7 +8,7 @@ id: paragraph.vih_ordered_course_person.status
 field_name: status
 entity_type: paragraph
 bundle: vih_ordered_course_person
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

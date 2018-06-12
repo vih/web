@@ -8,7 +8,7 @@ id: media.video.status
 field_name: status
 entity_type: media
 bundle: video
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

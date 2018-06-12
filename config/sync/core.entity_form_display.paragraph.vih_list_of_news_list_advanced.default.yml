@@ -22,7 +22,7 @@ third_party_settings:
         - field_vih_background_img
         - field_vih_background_color
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: tab
       format_settings:
         label: Udseende
@@ -80,7 +80,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
   uid: true

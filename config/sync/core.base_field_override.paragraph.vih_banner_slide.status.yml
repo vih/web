@@ -8,7 +8,7 @@ id: paragraph.vih_banner_slide.status
 field_name: status
 entity_type: paragraph
 bundle: vih_banner_slide
-label: Published
+label: Udgivet
 description: ''
 required: false
 translatable: false

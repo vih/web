@@ -14,7 +14,7 @@ bundle: vih_single_class_group
 mode: default
 content:
   field_vih_scg_classes:
-    weight: 7
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -23,17 +23,25 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vih_scg_group_title:
-    weight: 6
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  translation:
-    weight: 10
+  status:
+    type: boolean_checkbox
+    weight: 3
     region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
   uid: true

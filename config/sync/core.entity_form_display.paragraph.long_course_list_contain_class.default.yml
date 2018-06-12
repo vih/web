@@ -14,7 +14,7 @@ bundle: long_course_list_contain_class
 mode: default
 content:
   field_vih_empty_message:
-    weight: 7
+    weight: 1
     settings:
       rows: 5
       placeholder: ''
@@ -22,14 +22,25 @@ content:
     type: string_textarea
     region: content
   field_vih_heading:
-    weight: 6
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
   uid: true
