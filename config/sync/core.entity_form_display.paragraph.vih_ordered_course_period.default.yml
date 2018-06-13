@@ -15,7 +15,7 @@ bundle: vih_ordered_course_period
 mode: default
 content:
   field_vih_ocp_course_period:
-    weight: 6
+    weight: 0
     settings:
       match_operator: CONTAINS
       size: 60
@@ -25,7 +25,7 @@ content:
     region: content
   field_vih_ocp_order_course_slots:
     type: entity_reference_paragraphs
-    weight: 7
+    weight: 1
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -35,7 +35,13 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     region: content
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true
   uid: true
