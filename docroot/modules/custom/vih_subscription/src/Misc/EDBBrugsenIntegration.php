@@ -129,6 +129,9 @@ class EDBBrugsenIntegration {
     $registration = array();
 
     $registration['Kursus'] = $data['courseTitle'];
+    $registration['Elev.Linje'] = $data['classTitle'];
+    $registration['Elev.Klasse'] = $data['Elev.Klasse'];
+
     // Student information.
     $registration['Elev.Fornavn'] = $data['firstName'];
     $registration['Elev.Efternavn'] = $data['lastName'];
@@ -141,6 +144,7 @@ class EDBBrugsenIntegration {
     $registration['Elev.Mobil'] = $data['telefon'];
     $registration['Elev.Email'] = $data['email'];
     $registration['Elev.CprNr'] = $data['cpr'];
+    $registration['Elev.Land'] = $data['country'];
 
     // Adult information.
     $parent = array_shift($data['parents']);
@@ -156,6 +160,9 @@ class EDBBrugsenIntegration {
     $registration['Voksen.Mobil'] = $parent['telefon'];
     $registration['Voksen.Email'] = $parent['email'];
     $registration['Voksen.CprNr'] = $parent['cpr'];
+    $registration['Voksen.Land'] = $parent['country'];
+
+    $registration['Elev.TidlSkole'] = $data['schoolFrom']['answer'];
 
     // Fill in the rest key values;
     $registration += $this->getDefaultRegistrationValues();

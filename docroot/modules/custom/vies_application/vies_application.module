@@ -50,5 +50,8 @@ function vies_application_theme() {
         'backlink' => NULL,
       ],
     ],
+    'vies_added_parents' => array(
+      'render element' => 'container',
+    )
   ];
 }

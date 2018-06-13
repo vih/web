@@ -1,0 +1,21 @@
+uuid: d87ebc77-3e2f-4114-b661-ba64976ee63f
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_vies_country
+field_name: field_vies_country
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
