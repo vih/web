@@ -210,11 +210,24 @@ class VihSubscriptionUtils {
    * @return int
    */
   public static function calculateOptionUsageCount($course, $optionGroup, $option) {
-    $optionGroupTitleDa = $optionGroup->getTranslation('da')->field_vih_og_title->value;
-    $optionGroupTitleEn = $optionGroup->getTranslation('en')->field_vih_og_title->value;
+    $optionGroupTitleDa = NULL;
+    $optionGroupTitleEn = NULL;
+    if ($optionGroup->hasTranslation('da')) {
+      $optionGroupTitleDa = $optionGroup->getTranslation('da')->field_vih_og_title->value;
+    }
+    if ($optionGroup->hasTranslation('en')) {
+      $optionGroupTitleEn = $optionGroup->getTranslation('en')->field_vih_og_title->value;
+    }
 
-    $optionTitleDa = $option->getTranslation('da')->field_vih_option_title->value;
-    $optionTitleEn = $option->getTranslation('en')->field_vih_option_title->value;
+    $optionTitleDa = NULL;
+    $optionTitleEn = NULL;
+
+    if ($option->hasTranslation('da')) {
+      $optionTitleDa = $option->getTranslation('da')->field_vih_option_title->value;
+    }
+    if ($option->hasTranslation('en')) {
+      $optionTitleEn = $option->getTranslation('en')->field_vih_option_title->value;
+    }
 
     $courseOrderNids = \Drupal::entityQuery('node')
       ->condition('type', 'vih_short_course_order')
@@ -229,10 +242,11 @@ class VihSubscriptionUtils {
     foreach ($courseOrders as $courseOrder) {
       foreach ($courseOrder->field_vih_sco_persons->referencedEntities() as $orderedPerson) {
         foreach ($orderedPerson->field_vih_ocp_ordered_options->referencedEntities() as $orderedOption) {
-          if (($orderedOption->field_vih_oo_group_name->value === $optionGroupTitleDa ||
-              $orderedOption->field_vih_oo_group_name->value === $optionGroupTitleEn)
-              &&
-              ($orderedOption->field_vih_oo_option_name->value === $optionTitleDa || $orderedOption->field_vih_oo_option_name->value === $optionTitleEn)) {
+          if ((($optionGroupTitleDa && $orderedOption->field_vih_oo_group_name->value === $optionGroupTitleDa) ||
+              ($optionGroupTitleEn && $orderedOption->field_vih_oo_group_name->value === $optionGroupTitleEn))
+            &&
+            (($optionTitleDa && $orderedOption->field_vih_oo_option_name->value === $optionTitleDa) || ($optionTitleEn && $orderedOption->field_vih_oo_option_name->value === $optionTitleEn))
+          ) {
             $count++;
           }
         }
