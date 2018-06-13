@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.vih_short_course_order.body
     - field.field.node.vih_short_course_order.field_vih_sco_comment
     - field.field.node.vih_short_course_order.field_vih_sco_course
-    - field.field.node.vih_short_course_order.field_vih_sco_ordered_options
     - field.field.node.vih_short_course_order.field_vih_sco_persons
     - field.field.node.vih_short_course_order.field_vih_sco_price
     - field.field.node.vih_short_course_order.field_vih_sco_status
@@ -52,18 +51,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_vih_sco_ordered_options:
-    type: entity_reference_paragraphs
-    weight: 32
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
     region: content
   field_vih_sco_persons:
     type: entity_reference_paragraphs

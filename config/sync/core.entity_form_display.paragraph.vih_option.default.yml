@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.vih_option.field_vih_option_price_addition
+    - field.field.paragraph.vih_option.field_vih_option_stock_amount
     - field.field.paragraph.vih_option.field_vih_option_suboptions
     - field.field.paragraph.vih_option.field_vih_option_title
     - paragraphs.paragraphs_type.vih_option
@@ -15,14 +16,21 @@ bundle: vih_option
 mode: default
 content:
   field_vih_option_price_addition:
-    weight: 7
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_vih_option_stock_amount:
+    weight: 1
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_vih_option_suboptions:
-    weight: 8
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -30,7 +38,7 @@ content:
     type: string_textfield
     region: content
   field_vih_option_title:
-    weight: 6
+    weight: 0
     settings:
       size: 60
       placeholder: ''
@@ -38,8 +46,10 @@ content:
     type: string_textfield
     region: content
   translation:
-    weight: 10
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   status: true

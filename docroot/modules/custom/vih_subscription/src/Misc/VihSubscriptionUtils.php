@@ -22,6 +22,7 @@ class VihSubscriptionUtils {
    * - body
    * - sender
    * - subject
+   *
    * @return BOOLEAN
    */
   public static function sendMail($message) {
@@ -62,6 +63,7 @@ class VihSubscriptionUtils {
    *
    * @param NodeInterface $subject
    * @param NodeInterface $order
+   *
    * @return string
    */
   public static function generateChecksum(NodeInterface $subject, NodeInterface $order) {
@@ -72,28 +74,34 @@ class VihSubscriptionUtils {
    * Returns a boolean if more people can suscribe to that subject
    *
    * @param NodeInterface $subject
+   *
    * @return boolean
    */
   public static function acceptsMoreSubscriptions(NodeInterface $subject) {
     if ($subject->getType() == 'vih_long_cource') {
       //0 for unlimited
-      if ($subject->field_vih_course_persons_limit->value == 0 ) {
+      if ($subject->field_vih_course_persons_limit->value == 0) {
         return TRUE;
-      } else {
+      }
+      else {
         return ($subject->field_vih_course_persons_limit->value > VihSubscriptionUtils::calculateSubscribedPeopleNumber($subject));
       }
-    } elseif ($subject->getType() == 'vih_short_course') {
+    }
+    elseif ($subject->getType() == 'vih_short_course') {
       //0 for unlimited
       if ($subject->field_vih_sc_persons_limit->value == 0) {
         return TRUE;
-      } else {
+      }
+      else {
         return ($subject->field_vih_sc_persons_limit->value > VihSubscriptionUtils::calculateSubscribedPeopleNumber($subject));
       }
-    } elseif ($subject->getType() == 'event') {
+    }
+    elseif ($subject->getType() == 'event') {
       //0 for unlimited
       if ($subject->field_vih_event_persons_limit->value == 0) {
         return TRUE;
-      } else {
+      }
+      else {
         return ($subject->field_vih_event_persons_limit->value > VihSubscriptionUtils::calculateSubscribedPeopleNumber($subject));
       }
     }
@@ -103,6 +111,7 @@ class VihSubscriptionUtils {
    * Calculates the number of people that have already subscribed to this subject
    *
    * @param NodeInterface $event
+   *
    * @return int
    */
   public static function calculateSubscribedPeopleNumber(NodeInterface $subject) {
@@ -116,7 +125,8 @@ class VihSubscriptionUtils {
 
       //TODO: how many people is each order?
       return count($courseOrderNids);
-    } elseif ($subject->getType() == 'vih_short_course') {
+    }
+    elseif ($subject->getType() == 'vih_short_course') {
       $courseOrderNids = \Drupal::entityQuery('node')
         ->condition('type', 'vih_short_course_order')
         //->condition('status', '1')new nodes are saved as unpublished
@@ -131,7 +141,8 @@ class VihSubscriptionUtils {
       }
 
       return $subscribedPeopleNumber;
-    } elseif ($subject->getType() == 'event') {
+    }
+    elseif ($subject->getType() == 'event') {
       $eventOrderNids = \Drupal::entityQuery('node')
         ->condition('type', 'vih_event_order')
         //->condition('status', '1')new nodes are saved as unpublished
@@ -184,9 +195,50 @@ class VihSubscriptionUtils {
         );
         mailchimp_subscribe($list_id, $merge_vars['EMAIL'], $merge_vars, FALSE, FALSE);
       }
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       \Drupal::logger('vih_subscription')->error($e->getMessage());
     }
+  }
+
+  /**
+   * Calculates usage of a single option in all course orders marked as confirmed.
+   *
+   * @param $course
+   * @param $optionGroup
+   * @param $option
+   *
+   * @return int
+   */
+  public static function calculateOptionUsageCount($course, $optionGroup, $option) {
+    $optionGroupTitleDa = $optionGroup->getTranslation('da')->field_vih_og_title->value;
+    $optionGroupTitleEn = $optionGroup->getTranslation('en')->field_vih_og_title->value;
+
+    $optionTitleDa = $option->getTranslation('da')->field_vih_option_title->value;
+    $optionTitleEn = $option->getTranslation('en')->field_vih_option_title->value;
+
+    $courseOrderNids = \Drupal::entityQuery('node')
+      ->condition('type', 'vih_short_course_order')
+      //->condition('status', '1')new nodes are saved as unpublished
+      ->condition('field_vih_sco_course', $course->id())
+      ->condition('field_vih_sco_status', 'confirmed')
+      ->execute();
+
+    $courseOrders = Node::loadMultiple($courseOrderNids);
+
+    $count = 0;
+    foreach ($courseOrders as $courseOrder) {
+      foreach ($courseOrder->field_vih_sco_persons->referencedEntities() as $orderedPerson) {
+        foreach ($orderedPerson->field_vih_ocp_ordered_options->referencedEntities() as $orderedOption) {
+          if (($orderedOption->field_vih_oo_group_name->value === $optionGroupTitleDa ||
+              $orderedOption->field_vih_oo_group_name->value === $optionGroupTitleEn)
+              &&
+              ($orderedOption->field_vih_oo_option_name->value === $optionTitleDa || $orderedOption->field_vih_oo_option_name->value === $optionTitleEn)) {
+            $count++;
+          }
+        }
+      }
+    }
+
+    return $count;
   }
 }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.vih_option.field_vih_option_price_addition
+    - field.field.paragraph.vih_option.field_vih_option_stock_amount
     - field.field.paragraph.vih_option.field_vih_option_suboptions
     - field.field.paragraph.vih_option.field_vih_option_title
     - paragraphs.paragraphs_type.vih_option
@@ -22,6 +23,15 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_decimal
+    region: content
+  field_vih_option_stock_amount:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   field_vih_option_suboptions:
     weight: 2

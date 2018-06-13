@@ -53,26 +53,28 @@ class ShortCourseOrderForm extends FormBase {
     $form['#attached']['library'][] = 'vih_subscription/vih-subscription-suboptions-container';
 
     //START VARIABLES INIT //
+    $course = \Drupal::service('entity.repository')->getTranslationFromContext($course);
+
     $this->course = $course;
     $this->price = $course->field_vih_sc_price->value;
 
     $optionGroups = array();
     $optionGroupOptions = array();
     $optionGroupOptionsPrices = array();
-    $optionGroupOptionsWithPrice = array();
     $optionGroupSuboptions = array();
 
     foreach ($course->field_vih_sc_option_groups->referencedEntities() as $optionGroupDelta => $optionGroup) {
+      $optionGroup = \Drupal::service('entity.repository')->getTranslationFromContext($optionGroup);
+
       $optionGroups[$optionGroupDelta] = $optionGroup->field_vih_og_title->value;
 
       foreach ($optionGroup->field_vih_og_options->referencedEntities() as $optionDelta => $option) {
+        $option = \Drupal::service('entity.repository')->getTranslationFromContext($option);
+
         $optionGroupOptions[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value;
-        $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] = $option->field_vih_option_title->value;
 
         $additionalPrice = $option->field_vih_option_price_addition->value;
-
         if (isset($additionalPrice) && floatval($additionalPrice) !== 0.00) {
-          $optionGroupOptionsWithPrice[$optionGroupDelta][$optionDelta] .= " (+ kr. $additionalPrice)";
           $optionGroupOptionsPrices[$optionGroupDelta][$optionDelta] = $additionalPrice;
         }
 
@@ -263,10 +265,15 @@ class ShortCourseOrderForm extends FormBase {
         $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['option'] = array(
           '#title' => $optionGroupName,
           '#type' => 'radios',
-          '#options' => $optionGroupOptionsWithPrice[$optionGroupDelta],
+          '#options' => $this->getOptionGroupOptionsWithPrice($form_state, $optionGroupDelta),
           '#empty_value' => -1,
           '#required' => TRUE
         );
+
+        // Disabled options which reached the limit.
+        foreach($this->getOptionGroupOptionsDisabled($form_state, $optionGroupDelta) as $disabledOption) {
+          $form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['option'][$disabledOption]['#disabled'] = TRUE;
+        }
 
         //adding suboptions, if any
         foreach ($optionGroupOptions[$optionGroupDelta] as $optionDelta => $optionName) {
@@ -340,7 +347,6 @@ class ShortCourseOrderForm extends FormBase {
 
     //adding edit/remove buttons
     if ($addedParticipants && is_array($addedParticipants)) {
-
       foreach ($addedParticipants as $addedParticipantDelta => $addedParticipant) {
 
         $form['addedParticipantsContainer']['controlButtons']['editButton-' . $addedParticipantDelta] = [
@@ -710,6 +716,20 @@ class ShortCourseOrderForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $triggeringElement = $form_state->getTriggeringElement();
 
+    // Add participant button.
+    if ($triggeringElement['#id'] == 'add-participant-options') {
+      $userInput = $form_state->getUserInput();
+
+      // Checking that we don't have any option selected of option that reached the stock value limit.
+      foreach ($this->course->field_vih_sc_option_groups->referencedEntities() as $optionGroupDelta => $optionGroup) {
+        $selectedOptionDelta = $userInput['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['option'];
+
+        if (in_array($selectedOptionDelta, $this->getOptionGroupOptionsDisabled($form_state, $optionGroupDelta))) {
+          $form_state->setError($form['availableOptionsContainer']['optionGroups'][$optionGroupDelta]['option'], $this->t('This option exceeds limit and cannot be selected'));
+        }
+      }
+    }
+
     //submit button
     if ($triggeringElement['#id'] == 'vih-course-submit' or $triggeringElement['#id'] == 'vih-course-submit-extra') {
       $form_state->clearErrors();
@@ -988,5 +1008,92 @@ class ShortCourseOrderForm extends FormBase {
     $form_state->set('addedParticipants', $addedParticipants);
 
     $form['order_comment']['#default_value'] = $courseOrder->field_vih_sco_comment->value;
+  }
+
+  /**
+   * Calculates how many time has a certain option has been already used.
+   *
+   * Adds up the newly added participants (to this course) to the others orders' option usages.
+   *
+   * @param $form_state
+   * @param $optionGroup
+   * @param $option
+   */
+  private function calculateOptionCurrentUsageCount($form_state, $optionGroupDelta, $optionGroup, $optionDelta, $option) {
+    $count = 0;
+    $addedParticipants = $form_state->get('addedParticipants');
+
+    if (isset($addedParticipants)) {
+      foreach($addedParticipants as $addedParticipant) {
+        if (isset($addedParticipant['orderedOptions'])) {
+          if (intval($addedParticipant['orderedOptions'][$optionGroupDelta]['option']['delta']) == $optionDelta) {
+            $count++;
+          }
+        }
+      }
+    }
+
+    $count += VihSubscriptionUtils::calculateOptionUsageCount($this->course, $optionGroup, $option);
+
+    return $count;
+  }
+
+  /**
+   * Returns a list of deltas of options for a single option group, that reached or exceeded the limit of their stock amount.
+   *
+   * @param $form_state
+   * @param $optionGroupDelta
+   *
+   * @return array
+   */
+  private function getOptionGroupOptionsDisabled($form_state, $optionGroupDelta) {
+    $optionGroupOptionsDisabled = array();
+
+    $optionGroup = $this->course->field_vih_sc_option_groups->referencedEntities()[$optionGroupDelta];
+
+    foreach ($optionGroup->field_vih_og_options->referencedEntities() as $optionDelta => $option) {
+      $option = \Drupal::service('entity.repository')->getTranslationFromContext($option);
+
+      $stockAmount = $option->field_vih_option_stock_amount->value;
+      if ($stockAmount) {
+        $optionCurrentUsageCount = $this->calculateOptionCurrentUsageCount($form_state, $optionGroupDelta, $optionGroup, $optionDelta, $option);
+        if ($optionCurrentUsageCount >= $stockAmount) {
+          $optionGroupOptionsDisabled[$optionDelta] = $optionDelta;
+        }
+      }
+    }
+
+    return $optionGroupOptionsDisabled;
+  }
+
+  /**
+   * Returns a list of options for a single options group. Options are mapped as delta => Option name with price and stock value
+   *
+   * @param $form_state
+   * @param $optionGroupDelta
+   */
+  private function getOptionGroupOptionsWithPrice($form_state, $optionGroupDelta) {
+    $optionGroupOptionsWithPrice = array();
+
+    $optionGroup = $this->course->field_vih_sc_option_groups->referencedEntities()[$optionGroupDelta];
+
+    foreach ($optionGroup->field_vih_og_options->referencedEntities() as $optionDelta => $option) {
+      $option = \Drupal::service('entity.repository')->getTranslationFromContext($option);
+
+      $optionGroupOptionsWithPrice[$optionDelta] = $option->field_vih_option_title->value;
+
+      $additionalPrice = $option->field_vih_option_price_addition->value;
+      if (isset($additionalPrice) && floatval($additionalPrice) !== 0.00) {
+        $optionGroupOptionsWithPrice[$optionDelta] .= " (+ kr. $additionalPrice)";
+      }
+
+      $stockAmount = $option->field_vih_option_stock_amount->value;
+      if ($stockAmount) {
+        $optionCurrentUsageCount = $this->calculateOptionCurrentUsageCount($form_state, $optionGroupDelta, $optionGroup, $optionDelta, $option);
+        $optionGroupOptionsWithPrice[$optionDelta] .= " $optionCurrentUsageCount / $stockAmount ";
+      }
+    }
+
+    return $optionGroupOptionsWithPrice;
   }
 }
