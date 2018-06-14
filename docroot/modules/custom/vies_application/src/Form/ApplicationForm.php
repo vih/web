@@ -237,10 +237,6 @@ class ApplicationForm extends FormBase {
         $form_state->setErrorByName($radio_key, 'Venligst foretag et valg i linjefag.');
       }
     }
-
-    if (empty($values['questions'])) {
-      $form_state->setErrorByName('questions', 'Vælg venligst linjefag og besvar spørgsmål');
-    }
   }
 
   /**
@@ -254,6 +250,12 @@ class ApplicationForm extends FormBase {
     $parents = $form_state->get('parents');
     $parents[] = $current_parent['left'] + $current_parent['right'];
     $values['parents'] = $parents;
+
+    if (empty($values['questions'])) {
+      drupal_set_message('Noget galt med formular spørgsmål. Prøv igen', 'error');
+      $form_state->setRedirect('vies_application.application_form');
+      return;
+    }
 
     $application = new ApplicationHandler($values);
     if ($application->process()) {
