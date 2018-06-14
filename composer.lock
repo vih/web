@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28141743306f77d10fd971013c934830",
+    "content-hash": "477f671cd966f23d336fd5d92d732ca9",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -2923,6 +2923,9 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2979295 - Add a option to open privacy policy link in a modal window": "https://www.drupal.org/files/issues/2018-06-13/eu_cookie_compliance_privacy_policy_link_in_modal_window.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3293,17 +3296,17 @@
         },
         {
             "name": "drupal/focal_point",
-            "version": "1.0.0-beta5",
+            "version": "1.0.0-beta6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/focal_point",
-                "reference": "8.x-1.0-beta5"
+                "reference": "8.x-1.0-beta6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/focal_point-8.x-1.0-beta5.zip",
-                "reference": "8.x-1.0-beta5",
-                "shasum": "ab5eb9a0e6d487998e3c30fa50a3f73349a76983"
+                "url": "https://ftp.drupal.org/files/projects/focal_point-8.x-1.0-beta6.zip",
+                "reference": "8.x-1.0-beta6",
+                "shasum": "b06d3540ee49113e266191b2dba3af5d82990f38"
             },
             "require": {
                 "drupal/core": "*",
@@ -3318,8 +3321,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta5",
-                    "datestamp": "1507560540",
+                    "version": "8.x-1.0-beta6",
+                    "datestamp": "1519932484",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -5070,7 +5073,7 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -13331,7 +13334,6 @@
         "drupal/menu_multilingual": 15,
         "drupal/eu_cookie_compliance": 20,
         "drupal/entity_clone": 20,
-        "drupal/smtp": 10,
         "drupal/better_exposed_filters": 15
     },
     "prefer-stable": true,
