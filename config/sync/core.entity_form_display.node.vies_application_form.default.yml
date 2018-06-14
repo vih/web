@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.vies_application_form.field_vies_about_school
     - field.field.node.vies_application_form.field_vies_address
     - field.field.node.vies_application_form.field_vies_afterschool
+    - field.field.node.vies_application_form.field_vies_birthday
     - field.field.node.vies_application_form.field_vies_city
     - field.field.node.vies_application_form.field_vies_class
     - field.field.node.vies_application_form.field_vies_class_questions
+    - field.field.node.vies_application_form.field_vies_country
     - field.field.node.vies_application_form.field_vies_course
     - field.field.node.vies_application_form.field_vies_email
     - field.field.node.vies_application_form.field_vies_first_name
@@ -32,7 +34,7 @@ bundle: vies_application_form
 mode: default
 content:
   field_vies_about_school:
-    weight: 14
+    weight: 16
     settings:
       form_mode: default
       override_labels: false
@@ -45,7 +47,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_vies_address:
-    weight: 7
+    weight: 9
     settings:
       size: 60
       placeholder: ''
@@ -53,7 +55,7 @@ content:
     type: string_textfield
     region: content
   field_vies_afterschool:
-    weight: 16
+    weight: 18
     settings:
       form_mode: default
       label_singular: ''
@@ -65,8 +67,16 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
+  field_vies_birthday:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vies_city:
-    weight: 8
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -95,6 +105,14 @@ content:
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
+  field_vies_country:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_vies_course:
     weight: 0
     settings:
@@ -105,7 +123,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vies_email:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -121,7 +139,7 @@ content:
     type: string_textfield
     region: content
   field_vies_gender:
-    weight: 12
+    weight: 14
     settings:
       size: 60
       placeholder: ''
@@ -129,7 +147,7 @@ content:
     type: string_textfield
     region: content
   field_vies_label:
-    weight: 28
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -143,7 +161,7 @@ content:
     type: string_textfield
     region: content
   field_vies_municipality:
-    weight: 9
+    weight: 11
     settings:
       size: 60
       placeholder: ''
@@ -151,14 +169,14 @@ content:
     type: string_textfield
     region: content
   field_vies_newsletter:
-    weight: 13
+    weight: 15
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_vies_parents:
-    weight: 15
+    weight: 17
     settings:
       form_mode: default
       override_labels: false
@@ -180,13 +198,13 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_vies_status:
-    weight: 27
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_vies_telefon:
-    weight: 11
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -194,7 +212,7 @@ content:
     type: string_textfield
     region: content
   field_vies_zip:
-    weight: 10
+    weight: 12
     settings:
       size: 60
       placeholder: ''

@@ -99,6 +99,15 @@ class ApplicationHandler {
       $this->data['classes'][] = $this->data[$key];
     }
 
+    $period = Node::load($this->data['period']);
+    $period_title = explode(' ', $period->getTitle());
+    $this->data['Elev.Klasse'] = substr(trim($period_title[0]), 0, 2);
+
+    $class = Term::load($this->data['classes'][0]);
+    $this->data['classTitle'] = $class->getName();
+
+    $this->data['birthday'] = substr($this->data['cpr'], 0, 6);
+
     $this->data['fullAddress'] = $this->getFullAddress($this->data);
     foreach ($this->data['parents'] as $key => $parent) {
       $this->data['parents'][$key]['fullAddress'] = $this->getFullAddress($parent);
@@ -106,7 +115,6 @@ class ApplicationHandler {
 
     // Classes questions.
     foreach ($this->data['questions'] as $class_tid => $questions) {
-      $class_term = Term::load($class_tid);
       foreach ($questions as $tid => $answer) {
         $question_term = Term::load($tid);
         $type_value = $question_term->get('field_vies_question_type')->getValue();
@@ -229,6 +237,8 @@ class ApplicationHandler {
       'field_vies_municipality' => $this->data['municipality'],
       'field_vies_zip' => $this->data['zip'],
       'field_vies_gender' => $this->data['gender'],
+      'field_vies_country' => $this->data['country'],
+      'field_vies_birthday' => $this->data['birthday'],
     ];
 
     // Parents information.
@@ -245,6 +255,7 @@ class ApplicationHandler {
         'field_parent_city' => $parent_data['city'],
         'field_parent_municipality' => $parent_data['municipality'],
         'field_parent_zip' => $this->data['zip'],
+        'field_parent_country' => $this->data['country'],
       ]);
       $parent->isNew();
       $parent->save();
