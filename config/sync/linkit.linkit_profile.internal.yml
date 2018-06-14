@@ -8,14 +8,12 @@ dependencies:
 id: internal
 label: Intern
 description: ''
-attributes: {  }
 matchers:
   138d2504-44f8-4746-8510-cca952981003:
     uuid: 138d2504-44f8-4746-8510-cca952981003
     id: 'entity:node'
     weight: 0
     settings:
-      result_description: ''
       bundles:
         event: event
         news: news
@@ -25,12 +23,15 @@ matchers:
         vih_short_course: vih_short_course
       group_by_bundle: false
       include_unpublished: false
+      substitution_type: canonical
+      metadata: ''
   9859665a-78e6-4a31-b6b1-ad018bdbb00b:
     uuid: 9859665a-78e6-4a31-b6b1-ad018bdbb00b
     id: 'entity:taxonomy_term'
     weight: 0
     settings:
-      result_description: ''
       bundles:
         vih_class: vih_class
       group_by_bundle: false
+      substitution_type: canonical
+      metadata: ''

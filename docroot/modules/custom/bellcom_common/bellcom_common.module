@@ -37,3 +37,9 @@ function bellcom_common_block_view_alter(array &$build, \Drupal\Core\Block\Block
     }
   }
 }
+
+function bellcom_common_pathologic_alter(&$url_params, $parts, $settings) {
+  if ($url_params['options']['language']) {
+    $url_params['path'] = $url_params['options']['language']->getId() . '/' . $url_params['path'];
+  }
+}
