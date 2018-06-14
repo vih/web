@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.vies_application_form.field_vies_about_school
     - field.field.node.vies_application_form.field_vies_address
     - field.field.node.vies_application_form.field_vies_afterschool
+    - field.field.node.vies_application_form.field_vies_birthday
     - field.field.node.vies_application_form.field_vies_city
     - field.field.node.vies_application_form.field_vies_class
     - field.field.node.vies_application_form.field_vies_class_questions
+    - field.field.node.vies_application_form.field_vies_country
     - field.field.node.vies_application_form.field_vies_course
     - field.field.node.vies_application_form.field_vies_email
     - field.field.node.vies_application_form.field_vies_first_name
@@ -61,6 +63,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_vies_birthday:
+    weight: 133
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_vies_city:
     weight: 122
     label: above
@@ -84,6 +94,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_vies_country:
+    weight: 132
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_vies_course:
     weight: 119
