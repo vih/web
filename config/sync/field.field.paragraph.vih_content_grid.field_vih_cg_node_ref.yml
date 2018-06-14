@@ -13,7 +13,7 @@ bundle: vih_content_grid
 label: Reference
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
