@@ -5,6 +5,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - pathologic
     - url_embed
     - video_embed_wysiwyg
 _core:
@@ -96,3 +97,13 @@ filters:
     weight: 0
     settings:
       url_prefix: ''
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: true
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''

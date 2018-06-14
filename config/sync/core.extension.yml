@@ -92,6 +92,7 @@ module:
   panels: 0
   panels_ipe: 0
   path: 0
+  pathologic: 0
   photoswipe: 0
   rdf: 0
   recreate_block_content: 0
