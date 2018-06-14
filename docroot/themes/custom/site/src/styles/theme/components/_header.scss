@@ -199,12 +199,22 @@ $breakpoint-mobile-to-tablet: "screen and (max-width: #{$screen-sm-max})";
 
   .layout__header-logo {
     position: absolute;
-    background: $layout-header-logo-background-color url('../images/layout-header-logo.png') center center no-repeat;
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: $layout-header-logo-background-color;
     width: 105px;
     height: 105px;
     z-index: 3;
+
+    .is-vies & {
+      background-image: url('../images/layout-header-logo-vies.png');
+    }
+    .is-vih & {
+      background-image: url('../images/layout-header-logo-vih.png');
+    }
   }
+
 
   .layout-navigation__link__icon {
     max-width: 68px;
