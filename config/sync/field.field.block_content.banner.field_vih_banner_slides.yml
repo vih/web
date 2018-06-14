@@ -15,7 +15,7 @@ bundle: banner
 label: 'Banner slides'
 description: 'Der skal tilføjes minimum 2 slides da banneret ellers vil blinke uhensigtsmæssigt.'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
