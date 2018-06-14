@@ -440,7 +440,7 @@ class ApplicationForm extends FormBase {
         ];
         $parents[$key]['type_value'] = ApplicationHandler::$adultType[$parent['type']];
       }
-      $form['parentsWrapper']['parents']['added']['#parents'] = $parents;
+      $form['parentsWrapper']['parents']['added']['#list'] = $parents;
     }
 
     $form['parentsWrapper']['parents']['current'] = $this->getPersonalDataForm($default_values) + [

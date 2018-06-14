@@ -5,7 +5,7 @@
     </h4>
   </div>
   <div class="boxy__body">
-    {% for key, parent in container['#parents'] %}
+    {% for key, parent in container['#list'] %}
       <div class="parent">
         <h5>{{ parent['type_value'] }}: {{ parent['firstName'] }} {{ parent['lastName'] }}</h5>
         {% if parent['cpr'] %}
