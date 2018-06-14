@@ -13,7 +13,7 @@ field_name: field_vih_banner_slides
 entity_type: block_content
 bundle: banner
 label: 'Banner slides'
-description: ''
+description: 'Der skal tilføjes minimum 2 slides da banneret ellers vil blinke uhensigtsmæssigt.'
 required: false
 translatable: true
 default_value: {  }

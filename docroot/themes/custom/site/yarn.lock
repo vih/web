@@ -3404,16 +3404,6 @@ jpegtran-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
-jquery-slinky@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/jquery-slinky/-/jquery-slinky-3.0.0.tgz#bb95528bb782b9784408071847285e45d6a1dc7a"
-  dependencies:
-    jquery "^3.1.0"
-
-jquery@^3.1.0:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
-
 js-base64@^2.1.8:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"

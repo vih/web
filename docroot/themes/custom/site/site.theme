@@ -11,8 +11,10 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 function site_preprocess_html(&$variables) {
   if (strpos($_SERVER['SERVER_NAME'], 'vies') !== false) {
     $variables['#attached']['library'][] =  'site/styles_vies';
+    $variables['attributes']['class'][] = 'is-vies';
   } else {
     $variables['#attached']['library'][] =  'site/styles_vih';
+    $variables['attributes']['class'][] = 'is-vih';
   }
 
   $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();

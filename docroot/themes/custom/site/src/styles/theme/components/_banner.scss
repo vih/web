@@ -111,8 +111,17 @@ $lg-banner-title-font-size: 46px;
   right: 50px;
   bottom: 8%;
 
-  background: url('../images/banner-logo.png') center center no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: 100%;
+
+  .is-vih & {
+    background-image: url('../images/banner-logo-vih.png');
+  }
+
+  .is-vies & {
+    background-image: url('../images/banner-logo-vies.png');
+  }
 }
 
 .region-banner {

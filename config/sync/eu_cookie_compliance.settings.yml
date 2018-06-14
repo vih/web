@@ -5,7 +5,7 @@ domains_list: ''
 eu_only: null
 eu_only_js: null
 exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
-exclude_admin_theme: false
+exclude_admin_theme: true
 langcode: da
 popup_agreed:
   value: "<h2>Thank you for accepting cookies</h2>\r\n\r\n<p>You can now hide this message or find out more about cookies.</p>\r\n"
@@ -57,3 +57,4 @@ withdraw_message:
 withdraw_action_button_label: 'Withdraw consent'
 withdraw_tab_button_label: 'Privacy settings'
 withdraw_enabled: true
+popup_link_target: modal_window

@@ -28,6 +28,7 @@ module:
   dblog: 0
   easy_breadcrumb: 0
   editor: 0
+  editor_advanced_link: 0
   embed: 0
   entity: 0
   entity_block: 0
@@ -92,6 +93,7 @@ module:
   panels: 0
   panels_ipe: 0
   path: 0
+  pathologic: 0
   photoswipe: 0
   rdf: 0
   recreate_block_content: 0

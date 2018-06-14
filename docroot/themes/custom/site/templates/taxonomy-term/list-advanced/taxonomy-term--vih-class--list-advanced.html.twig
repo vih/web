@@ -18,9 +18,11 @@
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
         <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('list_advanced') }});" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
-            <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
-                {{ name }}
-            </div>
+            <a class="link-cover" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.id}) }}" target="_blank">  
+                <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
+                    {{ name }}
+                </div>
+            </a>
         </div>
     {% endif %}
     {# End - image #}
@@ -37,42 +39,10 @@
 
     <!-- Begin - action -->
     <div class="entity-list-advanced__action">
-        <button class="btn btn-default" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
+        <a class="btn btn-default" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.id}) }}" target="_blank">
             <span class="icon icon-info-circle"></span>
-        </button>
+        </a>
     </div>
     <!-- End - action -->
-
-    {# Begin - modal #}
-    <div class="modal fade" id="{{ class_modal_id }}" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-
-                {# Begin - header #}
-                {% if term.field_vih_class_image.value %}
-                    <div class="modal-header" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('modal')}});" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="{{ 'Close' | trans }}">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-
-                        <h3 class="modal-title heading-h1">{{ name }}</h3>
-                    </div>
-                {% endif %}
-                {# End - header #}
-
-                {# Begin - body #}
-                <div class="modal-body">
-                    {{ content.description }}
-
-                    {# Begin - paragraphs #}
-                    {{ content.field_vih_paragraphs }}
-                    {# End - paragraphs #}
-                </div>
-                {# End - body #}
-
-            </div>
-        </div>
-    </div>
-    {# End - modal #}
 
 </div>
