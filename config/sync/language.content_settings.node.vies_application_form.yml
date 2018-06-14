@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - node.type.vies_application_form
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
 id: node.vies_application_form
 target_entity_type_id: node
 target_bundle: vies_application_form
