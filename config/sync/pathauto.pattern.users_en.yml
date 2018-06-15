@@ -1,0 +1,25 @@
+uuid: 79fafa48-2cf6-49de-b28e-09ab456ace23
+langcode: da
+status: true
+dependencies:
+  module:
+    - language
+    - user
+id: users_en
+label: 'Brugere -EN'
+type: 'canonical_entities:user'
+pattern: '/employee/[user:field_vih_user_name_first]-[user:field_vih_user_name_last]'
+selection_criteria:
+  765c2e62-dd4e-486f-90fc-0bc011c401f1:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'user:langcode:language'
+    uuid: 765c2e62-dd4e-486f-90fc-0bc011c401f1
+selection_logic: and
+weight: -5
+relationships:
+  'user:langcode:language':
+    label: Sprog

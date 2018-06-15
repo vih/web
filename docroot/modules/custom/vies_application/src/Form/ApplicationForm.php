@@ -171,7 +171,7 @@ class ApplicationForm extends FormBase {
       }
 
       // Load questions from classes terms.
-      $values = $form_state->getValues();
+      $values = $form_state->getUserInput();
       $pattern = '/^course-period-(\d)-courseSlot-(\d)-availableClasses$/';
       foreach (preg_grep($pattern, array_keys($values)) as $radio_key) {
         if (empty($values[$radio_key])) {
@@ -310,6 +310,7 @@ class ApplicationForm extends FormBase {
     $parents = $form_state->get('parents');
     unset($parents[$parent_index]);
     $form_state->set('parents', $parents);
+    $form_state->setRebuild();
   }
 
   /**
@@ -411,7 +412,7 @@ class ApplicationForm extends FormBase {
         'wrapper' => 'parents-wrapper',
       ],
       '#type' => 'submit',
-      '#limit_validation_errors' => array(),
+      '#limit_validation_errors' => [],
     ];
     if (!empty($parents)) {
       $form['parentsWrapper']['parents']['added'] = [
@@ -440,7 +441,7 @@ class ApplicationForm extends FormBase {
         ];
         $parents[$key]['type_value'] = ApplicationHandler::$adultType[$parent['type']];
       }
-      $form['parentsWrapper']['parents']['added']['#parents'] = $parents;
+      $form['parentsWrapper']['parents']['added']['#list'] = $parents;
     }
 
     $form['parentsWrapper']['parents']['current'] = $this->getPersonalDataForm($default_values) + [

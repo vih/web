@@ -30,7 +30,7 @@ content:
     third_party_settings: {  }
     region: content
   field_vih_block_expire_date:
-    weight: 26
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -43,8 +43,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 10
+  langcode:
+    type: language_select
+    weight: 4
     region: content
-hidden:
-  langcode: true
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

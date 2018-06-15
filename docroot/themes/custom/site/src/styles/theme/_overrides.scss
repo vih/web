@@ -177,6 +177,7 @@ img {
       display: flex;
 
       flex-wrap: wrap;
+      flex-grow: 1;
 
       > [class*='col-'] {
         display: flex;
