@@ -9,7 +9,7 @@ dependencies:
     - image.style.medium
     - media.type.image
   module:
-    - image_widget_crop
+    - focal_point
     - lightning_media
     - workbench_moderation
 _core:
@@ -27,17 +27,13 @@ content:
     third_party_settings: {  }
     region: content
   image:
-    type: image_widget_crop
+    type: image_focal_point
     weight: 0
     settings:
-      show_crop_area: true
-      show_default_crop: true
       preview_image_style: medium
-      crop_preview_image_style: crop_thumbnail
       progress_indicator: throbber
-      crop_list:
-        - focal_point
-      warn_multiple_usages: false
+      preview_link: true
+      offsets: '50,50'
     third_party_settings:
       lightning_media:
         file_links: false
@@ -64,6 +60,11 @@ content:
       display_label: true
     weight: 4
     region: content
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true

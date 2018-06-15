@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.media.image.field_media_in_library
     - field.field.media.image.image
-    - image.style.crop_focal_point
+    - image.style.large
     - media.type.image
   module:
     - focal_point
@@ -29,7 +29,7 @@ content:
     type: image_focal_point
     weight: 0
     settings:
-      preview_image_style: crop_focal_point
+      preview_image_style: large
       progress_indicator: throbber
       preview_link: true
       offsets: '50,50'
@@ -46,6 +46,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
