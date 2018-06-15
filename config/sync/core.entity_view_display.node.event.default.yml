@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_metatag
     - field.field.node.event.field_short_description
-    - field.field.node.event.field_vih_cource_contact_person
     - field.field.node.event.field_vih_course_subheading
     - field.field.node.event.field_vih_event_end_date
     - field.field.node.event.field_vih_event_persons_limit
@@ -58,15 +57,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
-    region: content
-  field_vih_cource_contact_person:
-    weight: 8
-    label: hidden
-    settings:
-      view_mode: compact
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
     region: content
   field_vih_course_subheading:
     weight: 9

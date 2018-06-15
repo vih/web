@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.vih_short_course.field_metatag
     - field.field.node.vih_short_course.field_short_description
     - field.field.node.vih_short_course.field_vih_course_subheading
-    - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_paragraphs
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
@@ -78,7 +77,6 @@ hidden:
   field_banner: true
   field_metatag: true
   field_vih_course_subheading: true
-  field_vih_cs_contact_person: true
   field_vih_paragraphs: true
   field_vih_sc_option_groups: true
   field_vih_sc_persons_limit: true

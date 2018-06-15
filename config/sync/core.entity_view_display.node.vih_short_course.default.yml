@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.vih_short_course.field_metatag
     - field.field.node.vih_short_course.field_short_description
     - field.field.node.vih_short_course.field_vih_course_subheading
-    - field.field.node.vih_short_course.field_vih_cs_contact_person
     - field.field.node.vih_short_course.field_vih_paragraphs
     - field.field.node.vih_short_course.field_vih_sc_end_date
     - field.field.node.vih_short_course.field_vih_sc_image
@@ -67,15 +66,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_vih_cs_contact_person:
-    weight: 4
-    label: hidden
-    settings:
-      view_mode: compact
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
     region: content
   field_vih_paragraphs:
     weight: 6
