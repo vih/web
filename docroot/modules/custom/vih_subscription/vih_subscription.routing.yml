@@ -121,5 +121,14 @@ vih_subscription.admin.subscriptions_general.settings_form:
     _permission: 'access administration pages'
   options:
     _admin_route: TRUE
-
-
+vih_subscription.vih_cs_classes_modal:
+  path: '/vih_cs_classes/modal/{class}'
+  options:
+    parameters:
+      class:
+        type: entity:term
+  defaults:
+    _controller: '\Drupal\vih_subscription\Controller\SubscriptionModalController::vih_cs_classes'
+    _title: 'System'
+  requirements:
+    _permission: 'access administration pages'

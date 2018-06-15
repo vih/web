@@ -1,0 +1,14 @@
+uuid: d03e3e67-086a-4b61-8dac-c6b79a002d87
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - taxonomy
+third_party_settings:
+  lightning_core:
+    description: ''
+id: taxonomy_term.modal_window
+label: 'Modal window'
+targetEntityType: taxonomy_term
+cache: true
