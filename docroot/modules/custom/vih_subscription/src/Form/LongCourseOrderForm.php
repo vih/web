@@ -295,7 +295,6 @@ class LongCourseOrderForm extends FormBase {
       '#required' => TRUE,
     );
 
-    ////////
     $form['message'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Message'),
@@ -306,17 +305,6 @@ class LongCourseOrderForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Continue'),
     );
-
-    foreach ($course->field_vih_cource_contact_person->referencedEntities() as $contact_person) {
-      //Adding contact person to form
-      $user_view_builder = \Drupal::entityTypeManager()->getViewBuilder('user');
-      $contact_person_build = $user_view_builder->view($contact_person, 'compact');
-      $contact_person_output = render($contact_person_build);
-
-      $form['#contact_person'] = array(
-        'person' => $contact_person_output,
-      );
-    }
 
     //preloading data
     if ($this->courseOrder != NULL) {
