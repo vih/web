@@ -69,11 +69,9 @@
       }
     }
 
-    .sectioned--skewed-background-color {
-
-      .sectioned__inner {
-        background-color: transparent !important;
-      }
+    .sectioned__inner {
+      background-image: none !important;
+      background-color: transparent !important;
     }
   }
 }
