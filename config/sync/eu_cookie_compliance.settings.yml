@@ -52,8 +52,8 @@ whitelisted_cookies: ''
 disabled_javascripts: ''
 consent_storage_method: do_not_store
 withdraw_message:
-  value: '<h2>We use cookies on this site to enhance your user experience</h2><p>You have given your consent for us to set cookies.</p>'
-  format: plain_text
+  value: "<h2>We use cookies on this site to enhance your user experience</h2>\r\n\r\n<p>You have given your consent for us to set cookies.</p>\r\n"
+  format: rich_text
 withdraw_action_button_label: 'Withdraw consent'
 withdraw_tab_button_label: 'Privacy settings'
 withdraw_enabled: true

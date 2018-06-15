@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.parent.field_parent_address
     - field.field.paragraph.parent.field_parent_city
+    - field.field.paragraph.parent.field_parent_country
     - field.field.paragraph.parent.field_parent_email
     - field.field.paragraph.parent.field_parent_first_name
     - field.field.paragraph.parent.field_parent_last_name
@@ -28,6 +29,14 @@ content:
     region: content
   field_parent_city:
     weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_parent_country:
+    weight: 10
     label: above
     settings:
       link_to_entity: false

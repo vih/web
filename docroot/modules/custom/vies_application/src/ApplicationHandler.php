@@ -99,6 +99,15 @@ class ApplicationHandler {
       $this->data['classes'][] = $this->data[$key];
     }
 
+    $period = Node::load($this->data['period']);
+    $period_title = explode(' ', $period->getTitle());
+    $this->data['Elev.Klasse'] = substr(trim($period_title[0]), 0, 2);
+
+    $class = Term::load($this->data['classes'][0]);
+    $this->data['classTitle'] = $class->getName();
+
+    $this->data['birthday'] = substr($this->data['cpr'], 0, 6);
+
     $this->data['fullAddress'] = $this->getFullAddress($this->data);
     foreach ($this->data['parents'] as $key => $parent) {
       $this->data['parents'][$key]['fullAddress'] = $this->getFullAddress($parent);
@@ -106,7 +115,6 @@ class ApplicationHandler {
 
     // Classes questions.
     foreach ($this->data['questions'] as $class_tid => $questions) {
-      $class_term = Term::load($class_tid);
       foreach ($questions as $tid => $answer) {
         $question_term = Term::load($tid);
         $type_value = $question_term->get('field_vies_question_type')->getValue();
@@ -229,6 +237,8 @@ class ApplicationHandler {
       'field_vies_municipality' => $this->data['municipality'],
       'field_vies_zip' => $this->data['zip'],
       'field_vies_gender' => $this->data['gender'],
+      'field_vies_country' => $this->data['country'],
+      'field_vies_birthday' => $this->data['birthday'],
     ];
 
     // Parents information.
@@ -245,6 +255,7 @@ class ApplicationHandler {
         'field_parent_city' => $parent_data['city'],
         'field_parent_municipality' => $parent_data['municipality'],
         'field_parent_zip' => $this->data['zip'],
+        'field_parent_country' => $this->data['country'],
       ]);
       $parent->isNew();
       $parent->save();
@@ -319,7 +330,6 @@ class ApplicationHandler {
    */
   public function sendNotification() {
     // Send email.
-    $notifications_config = \Drupal::configFactory()->getEditable(SubscriptionsGeneralSettingsForm::$configName);
     $node_view = node_view($this->application, 'email_teaser');
     $application_rendered = render($node_view)->__toString();
 
@@ -329,61 +339,17 @@ class ApplicationHandler {
       . '/themes/custom/site/dist/images/layout-header-logo.png" alt="VIH" />'
       . '</div><br>';
 
-    $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
-
+    $token = ['@subject_name', '@person_name', '@url', '@application'];
     $message = [
       'to' => $this->application->field_vies_email->value,
-      'subject' => $notifications_config->get('vih_subscription_long_course_notifications_subject'),
-      'body' => $notifications_config->get('vih_subscription_long_course_notifications_body')
+      'subject' => "Ansøgning til @subject_name",
+      'body' => "Hej @person_name,\r\ntak for din ansøgning @subject_name.\r\nAnsøgnings detaljer: @application\r\nMere information tilgængelig her: @url."
     ];
-
-    // Getting the start and end date for long course START
-    // FIXME: that is a copy paste from site.theme preprocess_node function, consider refactoring
-    $start_course_date = '';
-    $end_course_date = '';
-    $period = Node::load($this->data['period']);
-    if (!empty($period->field_vih_cp_start_date->getValue()[0])) {
-      if (is_array($period->field_vih_cp_start_date->getValue()[0])) {
-        $curr_start_date = array_pop($period->field_vih_cp_start_date->getValue()[0]);
-      }
-    }
-    if (!empty($period->field_vih_cp_end_date->getValue()[0])) {
-      if (is_array($period->field_vih_cp_end_date->getValue()[0])) {
-        $curr_end_date = array_pop($period->field_vih_cp_end_date->getValue()[0]);
-      }
-    }
-    if ($start_course_date) {
-      if (strtotime($curr_start_date) < strtotime($start_course_date)) {
-        $start_course_date = $curr_start_date;
-      }
-    }
-    else {
-      $start_course_date = $curr_start_date;
-    }
-    if ($end_course_date) {
-      if (strtotime($curr_end_date) > strtotime($end_course_date)) {
-        $end_course_date = $curr_end_date;
-      }
-    }
-    else {
-      $end_course_date = $curr_end_date;
-    }
-
-    // Getting start/end dates for the long course.
-    $course_date = [];
-    if ($start_course_date) {
-      $course_date[] = \Drupal::service('date.formatter')->format(strtotime($start_course_date), "long");
-    }
-    if ($end_course_date) {
-      $course_date[] .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "long");
-    }
 
     $application_url = Url::fromRoute('vies_application.application_form')->setAbsolute()->toString();
     $replacement = [
       $this->data['courseTitle'],
-      $this->application->field_vies_first_name->value . ' ' .
-      $this->application->field_vies_last_name->value,
-      !empty($course_date) ? mb_strtolower(implode(' - ', $course_date)) : '',
+      $this->application->field_vies_first_name->value . ' ' . $this->application->field_vies_last_name->value,
       '<a href="' . $application_url . '"target=_blank >' . $application_url . '</a>',
       $application_rendered,
     ];
@@ -394,6 +360,11 @@ class ApplicationHandler {
     if (!empty($message)) {
       VihSubscriptionUtils::makeReplacements($message, $token, $replacement);
       VihSubscriptionUtils::sendMail($message);
+
+      foreach ($this->data['parents'] as $parent) {
+        $message['to'] = $parent['email'];
+        VihSubscriptionUtils::sendMail($message);
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ id: taxonomy_term.vih_class.field_questions
 field_name: field_questions
 entity_type: taxonomy_term
 bundle: vih_class
-label: Sprøgsmåler
+label: Spørgsmåler
 description: ''
 required: false
 translatable: false

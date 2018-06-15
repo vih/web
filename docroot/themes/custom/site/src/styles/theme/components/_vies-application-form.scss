@@ -13,6 +13,18 @@
     }
   }
 
+  #accordion fieldset {
+    margin-bottom: 0;
+
+    legend {
+      display: none;
+    }
+
+    .fieldset-wrapper {
+      margin: 0;
+    }
+  }
+
   #questions {
     .panel-title {
       padding: 14px 15px;
@@ -32,6 +44,37 @@
         font-family: Lato, sans-serif;
         letter-spacing: normal;
         font-weight: bold;
+      }
+    }
+  }
+
+  #parents-wrapper {
+    .parent {
+      margin: 1em 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .actions {
+      margin-top: 1em;
+    }
+
+    .parents-top {
+      margin: 0 0 38px 0;
+      legend {
+        .fieldset-legend {
+          color: #888;
+          font-size: 16px;
+          text-transform: none;
+          font-family: Lato, sans-serif;
+          letter-spacing: normal;
+          font-weight: bold;
+        }
       }
     }
   }

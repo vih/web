@@ -1,0 +1,61 @@
+<div class="boxy boxy--added-participant col-sm-12">
+  <div class="boxy__heading">
+    <h4 class="boxy__heading__title">
+      {{ 'Forældre' | trans }}
+    </h4>
+  </div>
+  <div class="boxy__body">
+    {% for key, parent in container['#list'] %}
+      <div class="parent">
+        <h5>{{ parent['type_value'] }}: {{ parent['firstName'] }} {{ parent['lastName'] }}</h5>
+        {% if parent['cpr'] %}
+          <div>
+            {{ "CPR"|t }}: {{ parent['cpr'] }}
+          </div>
+        {% endif %}
+        {% if parent['email'] %}
+          <div>
+            {{ "Email"|t }}: {{ parent['email'] }}
+          </div>
+        {% endif %}
+        {% if parent['address'] %}
+          <div>
+            {{ "Address"|t }}: {{ parent['address'] }}
+            {% if parent['house'] %}
+              {% if parent['house']['houseNumber'] %}
+                {{ parent['house']['houseNumber'] }},
+              {% endif %}
+              {% if parent['house']['houseLetter'] %}
+                {{ parent['house']['houseLetter'] }},
+              {% endif %}
+              {% if parent['house']['houseFloor'] %}
+                {{ parent['house']['houseFloor'] }}
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if parent['city'] %}
+          <div>
+            {{ "City"|t }}:
+            {% if parent['zip'] %}
+                {{ parent['zip'] }}
+            {% endif %}
+            {{ parent['city'] }}
+          </div>
+        {% endif %}
+
+        <div>
+          {{ "Newsletter"|t }}:
+          {% if parent['newsletter'] %}
+            {{ "yes"|t }}
+          {% else %}
+            {{ "no"|t }}
+          {% endif %}
+        </div>
+        <div class="actions">
+          {{ container['control-buttons'][key] }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
