@@ -38,8 +38,29 @@ function bellcom_common_block_view_alter(array &$build, \Drupal\Core\Block\Block
   }
 }
 
+/**
+ * Implements hook_pathologic_alter().
+ *
+ * Adds a language prefix to the links.
+ */
 function bellcom_common_pathologic_alter(&$url_params, $parts, $settings) {
   if ($url_params['options']['language']) {
     $url_params['path'] = $url_params['options']['language']->getId() . '/' . $url_params['path'];
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Create a translation for media entity if it does not exist.
+ */
+function bellcom_common_media_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  foreach ($entity->bundle->referencedEntities() as $bundle) {
+    if ($bundle->id() === 'image') {
+      if ($entity && !$entity->hasTranslation('en')) {
+        $entity->addTranslation('en', ['name' => $entity->name, 'image' => $entity->image]);
+      }
+      break;
+    }
   }
 }
