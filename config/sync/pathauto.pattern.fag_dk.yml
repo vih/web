@@ -1,4 +1,4 @@
-uuid: 5b45689d-26a6-4197-8dd1-52721843757a
+uuid: 35b38b41-9fbe-41df-a9f1-697cd88d31db
 langcode: da
 status: true
 dependencies:
@@ -6,33 +6,27 @@ dependencies:
     - ctools
     - language
     - taxonomy
-id: terms
-label: Termer
+id: fag_dk
+label: 'Fag - DK'
 type: 'canonical_entities:taxonomy_term'
-pattern: '/[term:parent:url:path]/[term:name]'
+pattern: '/fag/[term:name]'
 selection_criteria:
-  81b35efd-3ba4-4364-859d-a40e135fe846:
+  12d133b4-d08b-4d90-ab46-d6651c1eb3e7:
     id: 'entity_bundle:taxonomy_term'
     bundles:
-      questions: questions
-      news_tags: news_tags
-      user_types: user_types
-      valuation_labels: valuation_labels
-      valuation_statuses: valuation_statuses
-      vih_class_package: vih_class_package
+      vih_class: vih_class
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 81b35efd-3ba4-4364-859d-a40e135fe846
-  045a54a6-2be7-4b8f-b28b-57e4f58c14f0:
+    uuid: 12d133b4-d08b-4d90-ab46-d6651c1eb3e7
+  85cbd7cb-ec78-45da-9762-b0f76331a747:
     id: language
     langcodes:
       da: da
-      en: en
     negate: false
     context_mapping:
       language: 'taxonomy_term:langcode:language'
-    uuid: 045a54a6-2be7-4b8f-b28b-57e4f58c14f0
+    uuid: 85cbd7cb-ec78-45da-9762-b0f76331a747
 selection_logic: and
 weight: -10
 relationships:

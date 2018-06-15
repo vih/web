@@ -1,0 +1,25 @@
+uuid: b0e20571-d0fe-42c1-afd5-9039d5738752
+langcode: da
+status: true
+dependencies:
+  module:
+    - language
+    - user
+id: users_dk
+label: 'Brugere -DK'
+type: 'canonical_entities:user'
+pattern: '/ansat/[user:field_vih_user_name_first]-[user:field_vih_user_name_last]'
+selection_criteria:
+  c8b99d8a-b9b8-4eea-b9a6-d6bccb62bff6:
+    id: language
+    langcodes:
+      da: da
+    negate: false
+    context_mapping:
+      language: 'user:langcode:language'
+    uuid: c8b99d8a-b9b8-4eea-b9a6-d6bccb62bff6
+selection_logic: and
+weight: -5
+relationships:
+  'user:langcode:language':
+    label: Sprog
