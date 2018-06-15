@@ -1,6 +1,6 @@
-@import url('vies-blessed1.css?z=18');
+@import url('vies-blessed1.css?z=80');
 
-@import url('vies-blessed2.css?z=18');
+@import url('vies-blessed2.css?z=80');
 
 .btn.btn-white .icon,
 .banner .field--name-field-vih-link a.btn-white .icon,
@@ -1525,8 +1525,8 @@ html[lang="en"] .btn-radio-select:after {
 .btn-radio-select.active:hover,
 .btn-radio-select.active:focus {
   color: #fff;
-  background-color: #222;
-  border-color: black;
+  background-color: #FF8100;
+  border-color: #ad5800;
 }
 
 html[lang="da"] .btn-radio-select.active:after {
@@ -1542,14 +1542,14 @@ html[lang="en"] .btn-radio-select.active:after {
 .paragraph .field--name-field-vih-link a.btn-white:before,
 .paragraph.sectioned--skewed--background-color-primary .field--name-field-vih-link a:before {
   color: #fff;
-  background-color: #3c3c3c;
+  background-color: #ff9a33;
 }
 
 .btn.btn-white:after,
 .banner .field--name-field-vih-link a.btn-white:after,
 .paragraph .field--name-field-vih-link a.btn-white:after,
 .paragraph.sectioned--skewed--background-color-primary .field--name-field-vih-link a:after {
-  border-left-color: #3c3c3c;
+  border-left-color: #ff9a33;
 }
 
 .btn.btn-primary:before,
@@ -1563,7 +1563,7 @@ html[lang="en"] .btn-radio-select.active:after {
 .paragraph.sectioned--skewed--background-color-gray .field--name-field-vih-link a:before,
 .paragraph.sectioned--skewed--background-color-secondary .field--name-field-vih-link a:before {
   color: #fff;
-  background-color: #3c3c3c;
+  background-color: #ff9a33;
 }
 
 .btn.btn-primary:after,
@@ -1576,33 +1576,33 @@ html[lang="en"] .btn-radio-select.active:after {
 .paragraph.sectioned--skewed--background-color-light-gray .field--name-field-vih-link a:after,
 .paragraph.sectioned--skewed--background-color-gray .field--name-field-vih-link a:after,
 .paragraph.sectioned--skewed--background-color-secondary .field--name-field-vih-link a:after {
-  border-left-color: #3c3c3c;
+  border-left-color: #ff9a33;
 }
 
 .btn.btn-secondary:before,
 .banner .field--name-field-vih-link a.btn-secondary:before,
 .paragraph .field--name-field-vih-link a.btn-secondary:before {
   color: #fff;
-  background-color: #b85d00;
+  background-color: black;
 }
 
 .btn.btn-secondary:after,
 .banner .field--name-field-vih-link a.btn-secondary:after,
 .paragraph .field--name-field-vih-link a.btn-secondary:after {
-  border-left-color: #b85d00;
+  border-left-color: black;
 }
 
 .btn.btn-info:before,
 .banner .field--name-field-vih-link a.btn-info:before,
 .paragraph .field--name-field-vih-link a.btn-info:before {
   color: #fff;
-  background-color: #3c3c3c;
+  background-color: #ff9a33;
 }
 
 .btn.btn-info:after,
 .banner .field--name-field-vih-link a.btn-info:after,
 .paragraph .field--name-field-vih-link a.btn-info:after {
-  border-left-color: #3c3c3c;
+  border-left-color: #ff9a33;
 }
 
 .btn.btn-success:before,
@@ -1811,7 +1811,7 @@ legend + .fieldset-wrapper {
 
   .navbar-toggle:hover,
   .navbar-toggle:focus {
-    background-color: #222;
+    background-color: #FF8100;
   }
 
   .navbar-toggle .icon-bar {
@@ -1873,7 +1873,7 @@ legend + .fieldset-wrapper {
 
 .notify__highlighted {
   padding: 5px 15px;
-  background-color: #FF8100;
+  background-color: #222;
   color: #fff;
 }
 
@@ -2082,7 +2082,7 @@ legend + .fieldset-wrapper {
 .time-period__icon .course-periods-accordion .panel .class-selection .btn-radio-select.active:after,
 .course-periods-accordion .panel .class-selection .time-period__icon .btn-radio-select.active:after {
   font-size: 32px;
-  color: #FF8100;
+  color: #222;
 }
 
 .time-period__icon + .time-period__list {
@@ -2265,17 +2265,17 @@ article .field .slinky-menu .header .field--label,
 .photo__overlay {
   position: relative;
   position: absolute;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 15px;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
 }
 
 .photo__overlay::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(34,34,34)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(255,129,0)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2349,11 +2349,11 @@ article .field .slinky-menu .header .field--label,
 .photo__overlay--color-blue {
   position: relative;
   position: absolute;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
 }
 
 .photo__overlay--color-blue::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(34,34,34)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(255,129,0)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -3437,19 +3437,19 @@ article .field .paragraph.sectioned--skewed--background-image.paragraph--type--v
 }
 
 .paragraph.sectioned--skewed--background-color-white .field--name-field-vih-highlighted {
-  color: #FF8100;
+  color: #222;
 }
 
 .paragraph.sectioned--skewed--background-color-light-gray .field--name-field-vih-highlighted {
-  color: #FF8100;
+  color: #222;
 }
 
 .paragraph.sectioned--skewed--background-color-gray .field--name-field-vih-highlighted {
-  color: #FF8100;
+  color: #222;
 }
 
 .paragraph.sectioned--skewed--background-color-primary .field--name-field-vih-highlighted {
-  color: #FF8100;
+  color: #222;
 }
 
 .paragraph.sectioned--skewed--background-color-secondary .field--name-field-vih-highlighted {
@@ -4979,7 +4979,7 @@ article .field .paragraph .field--name-field-vih-description .page-node-type-vih
 
 .entity-teaser__published-at {
   font-weight: 700;
-  color: #FF8100;
+  color: #222;
 }
 
 .entity-teaser__image {
@@ -4995,7 +4995,7 @@ article .field .paragraph .field--name-field-vih-description .page-node-type-vih
 .entity-teaser__image__overlay {
   position: relative;
   position: absolute;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -5005,11 +5005,11 @@ article .field .paragraph .field--name-field-vih-description .page-node-type-vih
   text-align: right;
   font-weight: 700;
   color: #fff;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
 }
 
 .entity-teaser__image__overlay::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(34,34,34)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(255,129,0)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -5077,11 +5077,11 @@ article .field .paragraph .field--name-field-vih-description .page-node-type-vih
 .entity-teaser__image__overlay--color-blue {
   position: relative;
   position: absolute;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
 }
 
 .entity-teaser__image__overlay--color-blue::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(34,34,34)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(255,129,0)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -5254,7 +5254,7 @@ article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygo
 }
 
 article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-blue {
-  fill: #222;
+  fill: #FF8100;
 }
 
 article.teaser .content .teaser-image .svg-container-polygon .svg-content-polygon polygon.color-cyan {
@@ -5468,7 +5468,7 @@ article.teaser .content .teaser-button .paragraph .field--name-field-vih-link a,
 
 .node-list-simple-updated-at {
   font-weight: 700;
-  color: #222;
+  color: #FF8100;
 }
 
 .views-row .node-list-simple {
@@ -5538,7 +5538,7 @@ article.teaser .content .teaser-button .paragraph .field--name-field-vih-link a,
 .entity-list-advanced__image__overlay {
   position: relative;
   position: absolute;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -5548,11 +5548,11 @@ article.teaser .content .teaser-button .paragraph .field--name-field-vih-link a,
   text-align: right;
   font-weight: 700;
   color: #fff;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
 }
 
 .entity-list-advanced__image__overlay::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(34,34,34)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(255,129,0)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -5768,11 +5768,11 @@ article.teaser .content .teaser-button .paragraph .field--name-field-vih-link a,
 .entity-list-advanced__image__overlay--color-blue {
   position: relative;
   position: absolute;
-  background-color: rgba(34, 34, 34, 0.85);
+  background-color: rgba(255, 129, 0, 0.85);
 }
 
 .entity-list-advanced__image__overlay--color-blue::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(34,34,34)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 100 40' fill='rgb(255,129,0)' fill-opacity='0.85'%3E%3Cpolygon points='0,40 100,40 100,0'%3E%3C/polygon%3E%3C/svg%3E");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -5951,7 +5951,7 @@ article.teaser .content .teaser-button .paragraph .field--name-field-vih-link a,
 }
 
 .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-blue {
-  fill: #222;
+  fill: #FF8100;
 }
 
 .user.compact td.user-image .field--name-field-vih-user-photo .svg-container-polygon .svg-content-polygon polygon.color-cyan {
@@ -6193,7 +6193,7 @@ article.teaser .content .teaser-button .paragraph .field--name-field-vih-link a,
 .vih_class.teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue,
 .vih_class.vih_class_table_teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue,
 .vih_class.vih_class_table_teaser .field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-blue {
-  fill: #222;
+  fill: #FF8100;
 }
 
 .vih_class.teaser .field--name-field-vih-class-image .svg-container-polygon .svg-content-polygon polygon.color-cyan,
