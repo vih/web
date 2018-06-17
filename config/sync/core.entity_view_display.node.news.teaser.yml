@@ -36,10 +36,12 @@ content:
     region: content
 hidden:
   field_metatag: true
+  field_vih_course_subheading: true
   field_vih_image: true
   field_vih_news_tags: true
   field_vih_paragraphs: true
   field_vih_top_banner: true
+  field_vih_top_banner_text: true
   langcode: true
   links: true
   scheduled_update: true

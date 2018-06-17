@@ -7,6 +7,13 @@ dependencies:
 name: gallery_thumbnail
 label: 'Galleri - thumbnail'
 effects:
+  a05a564b-142e-4d70-ba9b-ca7a54687c8e:
+    uuid: a05a564b-142e-4d70-ba9b-ca7a54687c8e
+    id: image_scale_and_crop
+    weight: -8
+    data:
+      width: 220
+      height: 150
   d81807ed-ed7a-42a7-af19-aed401de9af7:
     uuid: d81807ed-ed7a-42a7-af19-aed401de9af7
     id: focal_point_scale_and_crop
@@ -15,10 +22,3 @@ effects:
       width: 220
       height: 150
       crop_type: focal_point
-  a05a564b-142e-4d70-ba9b-ca7a54687c8e:
-    uuid: a05a564b-142e-4d70-ba9b-ca7a54687c8e
-    id: image_scale_and_crop
-    weight: -8
-    data:
-      width: 220
-      height: 150

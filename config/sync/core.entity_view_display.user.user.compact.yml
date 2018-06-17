@@ -75,6 +75,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_banner: true
+  field_metatag: true
   field_vih_top_banner: true
   field_vih_top_banner_text: true
   field_vih_user_birthday: true
@@ -85,3 +86,4 @@ hidden:
   field_vih_user_type_id: true
   langcode: true
   member_for: true
+  vih_user_status: true
