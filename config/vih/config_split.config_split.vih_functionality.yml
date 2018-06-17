@@ -1,0 +1,21 @@
+uuid: 0f7dd760-156e-46c8-b26b-8e39e88cce34
+langcode: da
+status: true
+dependencies: {  }
+id: vih_functionality
+label: 'VIH functionality'
+folder: ../config/vih
+module: {  }
+theme: {  }
+blacklist:
+  - config_split.config_split.vih_functionality
+  - 'node.type.news*'
+  - 'node.type.event*'
+  - 'node.type.vih_event_order*'
+  - 'node.type.vih_long_course_order*'
+  - 'node.type.vih_short_course*'
+  - 'node.type.vih_short_course_order*'
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
