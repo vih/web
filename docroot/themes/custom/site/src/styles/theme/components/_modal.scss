@@ -161,6 +161,32 @@ $modal-margin: 70px;
   }
 }
 
+#drupal-modal{
+  & .modal-header{
+    min-height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 70px;
+    content: '';
+    &::after{
+      display: none;
+      content: '';
+    }
+    & .modal-title{
+      display: none;
+    }
+    & .close{
+      z-index: 1;
+
+    }
+  }
+  & .sectioned--content{
+    &:after{
+      display: none;
+    }
+    margin-bottom: 0px;
+  }
+}
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -170,13 +196,32 @@ $modal-margin: 70px;
 // --------------------------------------------------
 
 // Mobile - and up
-@media #{$breakpoint-mobile-and-up} {}
+@media #{$breakpoint-mobile-and-up} {
+  #drupal-modal{
+    & .modal-dialog{
+      width: auto;
+      & .modal-body{
+        & .banner{
+          margin-top: -90px;
+          margin-right: -15px;
+          margin-left: -15px;
+        }
+      }
+    }
+  }
+}
 
 // Mobile - only
 @media #{$breakpoint-mobile-only} {}
 
 // Tablet - and up
-@media #{$breakpoint-tablet-and-up} {}
+@media #{$breakpoint-tablet-and-up} {
+  #drupal-modal{
+    & .modal-dialog{
+      width: 600px;
+    }
+  }
+}
 
 // Tablet - only
 @media #{$breakpoint-tablet-only} {}
@@ -188,9 +233,16 @@ $modal-margin: 70px;
     padding: 20px 70px 70px 70px;
   }
 
-  .modal.terms-and-conditions{
+  #drupal-modal{
     & .modal-dialog{
-      width: 800px;
+      width: 1050px;
+      & .modal-body{
+        & .banner{
+          margin-top: -90px;
+          margin-right: -70px;
+          margin-left: -70px;
+        }
+      }
     }
   }
 }

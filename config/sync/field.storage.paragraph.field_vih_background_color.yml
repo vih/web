@@ -22,10 +22,10 @@ settings:
       label: Grå
     -
       value: primary
-      label: Blå
+      label: Primær
     -
       value: secondary
-      label: Rød
+      label: Sekundær
   allowed_values_function: ''
 module: options
 locked: false

@@ -64,3 +64,44 @@ function bellcom_common_media_presave(Drupal\Core\Entity\EntityInterface $entity
     }
   }
 }
+
+/**
+ * Implement hook_breadcrumba_alter().
+ */
+function bellcom_common_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrumb &$breadcrumb, \Drupal\Core\Routing\RouteMatchInterface $route_match, array $context) {
+  if (!empty($breadcrumb)) {
+    $links = $breadcrumb->getLinks();
+
+    //user/xx page
+    if ($user = $route_match->getParameter('user')) {
+      $request = \Drupal::request();
+      $route_match = \Drupal::routeMatch();
+      $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+      $firstName = $user->field_vih_user_name_first->value;
+      $lastName = $user->field_vih_user_name_last->value;
+
+      if ($firstName && $lastName) {
+        $page_title = $firstName . ' ' . $lastName;
+      }
+
+      $links[] = \Drupal\Core\Link::createFromRoute($page_title, '<none>');
+    }
+    elseif(!\Drupal::service('path.matcher')->isFrontPage()) {
+      $request = \Drupal::request();
+      $route_match = \Drupal::routeMatch();
+      $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+      $links[] = \Drupal\Core\Link::createFromRoute($page_title, '<none>');
+    }
+
+    $breadcrumb = new \Drupal\Core\Breadcrumb\Breadcrumb();
+    $breadcrumb->setLinks($links);
+  }
+}
+
+function bellcom_common_preprocess_breadcrumb(&$variables){
+  $breadcrumb = &$variables['breadcrumb'];
+
+  // Making last item active.
+  $breadcrumb[count($breadcrumb)-1]['attributes'] = new \Drupal\Core\Template\Attribute(['class' => ['active']]);
+}

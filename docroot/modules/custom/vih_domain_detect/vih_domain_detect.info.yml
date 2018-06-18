@@ -1,0 +1,5 @@
+name: 'Domain detect'
+type: module
+description: 'Adds a CSS class to the html for CSS to detect the domain.'
+core: 8.x
+package: 'VIH'

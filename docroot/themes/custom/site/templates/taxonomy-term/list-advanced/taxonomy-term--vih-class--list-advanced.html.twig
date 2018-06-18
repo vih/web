@@ -18,7 +18,7 @@
     {# Begin - image #}
     {% if term.field_vih_class_image.value %}
         <div class="entity-list-advanced__image" style="background-image: url({{ term.field_vih_class_image.entity.image.entity.fileuri | image_style('list_advanced') }});" data-toggle="modal" data-target="#{{ class_modal_id }}" data-backdrop="static">
-            <a class="link-cover" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.id}) }}" target="_blank">  
+            <a data-dialog-type="modal"  class="use-ajax" href="{{ path('vih_subscription.vih_cs_classes_modal', {'class': term.id}) }}">  
                 <div class="entity-list-advanced__image__overlay entity-list-advanced__image__overlay--{{ term.field_vih_class_color.value }}">
                     {{ name }}
                 </div>
@@ -39,7 +39,7 @@
 
     <!-- Begin - action -->
     <div class="entity-list-advanced__action">
-        <a class="btn btn-default" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.id}) }}" target="_blank">
+        <a data-dialog-type="modal"  class="use-ajax btn btn-default" href="{{ path('vih_subscription.vih_cs_classes_modal', {'class': term.id}) }}">
             <span class="icon icon-info-circle"></span>
         </a>
     </div>

@@ -1090,7 +1090,9 @@ class ShortCourseOrderForm extends FormBase {
       $stockAmount = $option->field_vih_option_stock_amount->value;
       if ($stockAmount) {
         $optionCurrentUsageCount = $this->calculateOptionCurrentUsageCount($form_state, $optionGroupDelta, $optionGroup, $optionDelta, $option);
-        $optionGroupOptionsWithPrice[$optionDelta] .= " $optionCurrentUsageCount / $stockAmount ";
+        $remainingAmount = $stockAmount - $optionCurrentUsageCount;
+
+        $optionGroupOptionsWithPrice[$optionDelta] .= ' ' . $this->t("@remaining available", ['@remaining' => $remainingAmount]);
       }
     }
 

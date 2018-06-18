@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Contains vih_bgcolor_display.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function vih_bgcolor_display_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the vih_bgcolor_display module.
+    case 'help.page.vih_bgcolor_display':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Turns the primary, secondary etc. selectors into a viewable color.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function vih_bgcolor_display_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'vih_bgcolor_display/drupal.vih-background-color-display';
+}

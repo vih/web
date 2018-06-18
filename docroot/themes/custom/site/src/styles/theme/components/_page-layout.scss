@@ -118,6 +118,11 @@ html {
   padding: 0 !important;
   margin-bottom: 220px;
 }
+.paragraph, .modal{
+  & span.ajax-throbber{
+    display: none;
+  }
+}
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
