@@ -1,8 +1,0 @@
-uuid: ea182a01-2754-45e9-8cd4-1cdeadb2c322
-langcode: da
-status: true
-dependencies: {  }
-id: notify
-label: Underretning
-revision: 1
-description: 'Vises som en alert i bunden af skærmen.'

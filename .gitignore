@@ -77,3 +77,42 @@ private
 /config/sync/field.storage.node.panelizer.yml
 bellcom_quickpay_integration.settings.yml
 mailchimp.settings.yml
+
+# Exclude all config from git index
+/config/sync/*
+/config/vih/*
+/config/vies/*
+
+## Except of listed below
+# Folder settings
+!config/*/.htaccess
+
+# Config management config
+!config/*/config_ignore.*
+!config/*/config_split.*
+
+# Except core config
+!config/*/core.base_field_override.*
+!config/*/core.date_format.*
+!config/*/core.entity_form_display.*
+!config/*/core.entity_form_mode.*
+!config/*/core.entity_view_display.*
+!config/*/core.entity_view_mode.*
+!config/*/core.extension.yml
+!config/*/core.menu.static_menu_link_overrides.yml
+!config/*/entity_browser.*
+!config/*/field.field.*
+!config/*/field.settings.yml
+!config/*/field.storage.*
+!config/*/filter.format.*
+!config/*/image.style.*
+!config/*/language.yml
+!config/*/language.*
+!config/*/node.settings.yml
+!config/*/node.type.*
+!config/*/paragraphs.paragraphs_type.*
+!config/*/taxonomy.settings.yml
+!config/*/taxonomy.vocabulary.*
+!config/*/user.*
+!config/*/views_send.settings.yml
+!config/*/views.*

@@ -1,8 +1,0 @@
-uuid: 37fa14e7-483b-484a-932e-4b695e3d8f41
-langcode: da
-status: true
-dependencies: {  }
-id: footer-second
-label: 'Sidefod - shortcuts'
-description: 'Placeres i footer - third'
-locked: false

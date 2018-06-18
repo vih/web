@@ -47,6 +47,7 @@ content:
 hidden:
   description: true
   field_metatag: true
+  field_questions: true
   field_vih_class_class_packages: true
   field_vih_class_color: true
   field_vih_class_material_price: true
@@ -54,4 +55,5 @@ hidden:
   field_vih_paragraphs: true
   field_vih_subheading: true
   field_vih_top_banner: true
+  field_vih_top_banner_text: true
   langcode: true
