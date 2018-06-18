@@ -82,6 +82,10 @@ $breadcrumb-active-background-color: $brand-primary;
       text-transform: uppercase;
     }
   }
+
+  .path-frontpage & {
+    display: none;
+  }
 }
 
 // --------------------------------------------------
