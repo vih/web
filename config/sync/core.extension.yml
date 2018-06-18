@@ -97,6 +97,7 @@ module:
   photoswipe: 0
   rdf: 0
   recreate_block_content: 0
+  redirect: 0
   scheduled_updates: 0
   schema_article: 0
   schema_event: 0
