@@ -132,6 +132,8 @@ module:
   views_send: 0
   views_ui: 0
   viewsreference: 0
+  vih_bgcolor_display: 0
+  vih_domain_detect: 0
   vih_subscription: 0
   webform: 0
   webform_mailchimp: 0
