@@ -1,0 +1,14 @@
+uuid: c4d69a4c-d3e7-47a0-a977-551c397dabda
+langcode: da
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - node
+third_party_settings:
+  lightning_core:
+    description: ''
+id: node.modal_window
+label: 'Modal window'
+targetEntityType: node
+cache: true

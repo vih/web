@@ -30,7 +30,7 @@ mobile_popup_info:
   value: ''
   format: rich_text
 mobile_breakpoint: 768
-popup_link: /privatlivspolitik
+popup_link: /vih_node_modal/19
 popup_link_new_window: true
 popup_position: false
 fixed_top_position: true

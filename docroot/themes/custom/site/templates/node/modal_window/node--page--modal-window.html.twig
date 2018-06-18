@@ -1,0 +1,65 @@
+{% set classes = [
+node.bundle|clean_class,
+node.isPromoted() ? 'is-promoted',
+node.isSticky() ? 'is-sticky',
+not node.isPublished() ? 'is-unpublished',
+view_mode ? view_mode|clean_class,
+'clearfix',
+] %}
+{# Begin - banner #}
+
+  {% if node.field_vih_top_banner.value %}
+
+    {# Begin - image #}
+      {% set banner_background_image = node.field_vih_top_banner.entity.image.entity.fileuri | image_style('banner_small') %}
+    {# End - image #}
+
+    <div class="banner banner--small" style="background-image: url({{ banner_background_image }})">
+      <div class="banner__inner">
+        <div class="container">
+          <div class="banner__heading">
+            {% if node.field_vih_top_banner_text.value %}
+              <h1 class="banner__heading__title">{{ node.field_vih_top_banner_text.value }}</h1>
+            {% else %}
+              <h1 class="banner__heading__title">{{ node.title.value | raw }}</h1>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{# End - banner #}
+<article{{ attributes.addClass(classes) }}>
+  <!-- Begin - content -->
+  <section class="sectioned sectioned--content">
+    <div class="sectioned__inner">
+      <div class="container">
+
+        <!-- Begin - heading -->
+        <div class="sectioned__heading">
+          <h2 class="sectioned__heading__title">{{ label }}</h2>
+        </div>
+        <!-- End - heading -->
+
+        {% if node.field_vih_course_subheading.value %}
+          <!-- Begin - subheading -->
+          <div class="sectioned__subheading">
+            <h3 class="sectioned__subheading__title heading-h4">{{ content.field_vih_course_subheading.0 }}</h3>
+          </div>
+          <!-- End - subheading -->
+        {% endif %}
+
+        {# Begin - body #}
+        {{ content.body }}
+        {# End - body #}
+
+      </div>
+    </div>
+  </section>
+  <!-- End - content -->
+
+  {# Begin - paragraphs #}
+  {{ content.field_vih_paragraphs }}
+  {# End - paragraphs #}
+
+</article>
