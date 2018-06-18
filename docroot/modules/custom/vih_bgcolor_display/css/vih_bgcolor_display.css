@@ -1,0 +1,26 @@
+.field--name-field-vih-background-color .description span {
+  padding: 3px 10px;
+  margin-right: 5px;
+
+  border-radius: 3px;
+}
+
+/* VIH */
+.is-vih .field--name-field-vih-background-color .description span.primary {
+  background-color: #009bec;
+  color: #fff;
+}
+.is-vih .field--name-field-vih-background-color .description span.secondary {
+  background-color: #ff6400;
+  color: #fff;
+}
+
+/* VIES */
+.is-vies .field--name-field-vih-background-color .description span.primary {
+  background-color: #FF8100;
+  color: #fff;
+}
+.is-vies .field--name-field-vih-background-color .description span.secondary {
+  background-color: #222;
+  color: #fff;
+}

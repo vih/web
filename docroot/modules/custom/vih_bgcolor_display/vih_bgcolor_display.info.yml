@@ -1,0 +1,5 @@
+name: 'Background color display'
+type: module
+description: 'Turns the primary, secondary etc. selectors inside paragraphs into a viewable color.'
+core: 8.x
+package: 'VIH'

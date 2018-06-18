@@ -1,0 +1,5 @@
+drupal.vih-background-color-display:
+  version: VERSION
+  css:
+    component:
+      css/vih_bgcolor_display.css: {}
