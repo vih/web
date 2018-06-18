@@ -5,6 +5,20 @@
   border-radius: 3px;
 }
 
+/* Shared colors */
+.field--name-field-vih-background-color .description span.white {
+  background-color: #009bec;
+  color: #fff;
+}
+.field--name-field-vih-background-color .description span.light-gray {
+  background-color: #ecf2f4;
+  color: #222;
+}
+.field--name-field-vih-background-color .description span.gray {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
 /* VIH */
 .is-vih .field--name-field-vih-background-color .description span.primary {
   background-color: #009bec;
