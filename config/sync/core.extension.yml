@@ -47,6 +47,7 @@ module:
   file: 0
   filter: 0
   focal_point: 0
+  google_tag: 0
   help: 0
   history: 0
   honeypot: 0
@@ -125,6 +126,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   twig_xdebug: 0
+  update: 0
   url_embed: 0
   user: 0
   video_embed_field: 0
