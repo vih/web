@@ -161,12 +161,12 @@ function site_preprocess_node(array &$variables) {
     $variables['content']['is_closed'] = ($node->field_vih_event_status->value == 'closed');
    
     if($node->field_vih_event_start_date->date->format('Y-m-d') == $node->field_vih_event_end_date->date->format('Y-m-d')){
-      $start_date_str = $node->field_vih_event_start_date->date->format('d M Y') . ' ' . $node->field_vih_event_start_date->date->format('H:i');
+      $start_date_str = $node->field_vih_event_start_date->date->format('d. M Y') . ' ' . $node->field_vih_event_start_date->date->format('H:i');
       $end_date_str = $node->field_vih_event_end_date->date->format('H:i');
       $one_day = TRUE;
     } else {
-      $start_date_str = $node->field_vih_event_start_date->date->format('d M Y H:i');
-      $end_date_str = $node->field_vih_event_end_date->date->format('d M Y H:i');
+      $start_date_str = $node->field_vih_event_start_date->date->format('d. M Y H:i');
+      $end_date_str = $node->field_vih_event_end_date->date->format('d. M Y H:i');
       $one_day = FALSE;
     }
     $variables['content']['start_date_str'] = $start_date_str;
