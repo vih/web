@@ -28,8 +28,11 @@ $modal-inner-spacing: 70px;
 
     + .field--name-field-vih-paragraphs {
       margin-top: $grid-gutter-width;
-      margin-bottom: 0 - $modal-inner-spacing;
     }
+  }
+
+  .field--name-field-vih-paragraphs {
+    margin-bottom: 0 - $modal-inner-spacing;
   }
 
   .field--item {
