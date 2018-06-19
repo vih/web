@@ -183,22 +183,26 @@ class LongCourseOrderForm extends FormBase {
       '#placeholder' => $this->t('Floor'),
       //'#required' => TRUE,
     );
+    $form['personalDataRight']['zip'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Zipcode'),
+      '#placeholder' => $this->t('Zipcode'),
+      '#required' => TRUE,
+      '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-4">',
+      '#suffix' => '</div>',
+    );
     $form['personalDataRight']['city'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('City'),
       '#placeholder' => $this->t('City'),
       '#required' => TRUE,
+      '#prefix' => '<div class="col-xs-12 col-sm-8">',
+      '#suffix' => '</div></div>',
     );
     $form['personalDataRight']['municipality'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Municipality'),
       '#placeholder' => $this->t('Municipality'),
-      '#required' => TRUE,
-    );
-    $form['personalDataRight']['zip'] = array(
-      '#type' => 'textfield',
-      '#title' => $this->t('Zipcode'),
-      '#placeholder' => $this->t('Zipcode'),
       '#required' => TRUE,
     );
     $form['personalDataRight']['education'] = array(
@@ -282,17 +286,21 @@ class LongCourseOrderForm extends FormBase {
       '#placeholder' => $this->t('Floor'),
       //'#required' => TRUE,
     );
-    $form['adultDataRight']['adultCity'] = array(
-      '#type' => 'textfield',
-      '#title' => $this->t('City'),
-      '#placeholder' => $this->t('City'),
-      '#required' => TRUE,
-    );
     $form['adultDataRight']['adultZip'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Zipcode'),
       '#placeholder' => $this->t('Zipcode'),
       '#required' => TRUE,
+      '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-4">',
+      '#suffix' => '</div>',
+    );
+    $form['adultDataRight']['adultCity'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('City'),
+      '#placeholder' => $this->t('City'),
+      '#required' => TRUE,
+      '#prefix' => '<div class="col-xs-12 col-sm-8">',
+      '#suffix' => '</div></div>',
     );
 
     $form['message'] = array(

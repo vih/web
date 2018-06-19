@@ -10,6 +10,8 @@
 // Variables
 // --------------------------------------------------
 
+$modal-inner-spacing: 70px;
+
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
@@ -29,10 +31,16 @@
     }
   }
 
+  .field--name-field-vih-paragraphs {
+    margin-bottom: 0 - $modal-inner-spacing;
+  }
+
   .field--item {
 
     .sectioned,
     .sectioned--skewed {
+      margin-left: 0 - $modal-inner-spacing;
+      margin-right: 0 - $modal-inner-spacing;
 
       .container {
         width: 100% !important;
@@ -43,6 +51,8 @@
       .sectioned__inner {
         padding-top: ($grid-gutter-width / 2) !important;
         padding-bottom: ($grid-gutter-width / 2) !important;
+        padding-left: $modal-inner-spacing;
+        padding-right: $modal-inner-spacing;
       }
 
       .sectioned--skewed-angle-top {
@@ -71,7 +81,7 @@
 
     .sectioned__inner {
       background-image: none !important;
-      background-color: transparent !important;
+      //background-color: transparent !important;
     }
   }
 }
