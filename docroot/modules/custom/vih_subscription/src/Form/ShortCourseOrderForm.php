@@ -226,17 +226,21 @@ class ShortCourseOrderForm extends FormBase {
         '#prefix' => '<div class="col-xs-4">',
         '#suffix' => '</div></div>',
       );
-      $form['newParticipantContainer']['newParticipantFieldset']['city'] = array(
-        '#type' => 'textfield',
-        '#title' => $this->t('City'),
-        '#placeholder' => $this->t('City'),
-        '#required' => TRUE,
-      );
       $form['newParticipantContainer']['newParticipantFieldset']['zip'] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Zipcode'),
         '#placeholder' => $this->t('Zipcode'),
         '#required' => TRUE,
+        '#prefix' => '<div class="row"><div class="col-xs-12 col-sm-4">',
+        '#suffix' => '</div>',
+      );
+      $form['newParticipantContainer']['newParticipantFieldset']['city'] = array(
+        '#type' => 'textfield',
+        '#title' => $this->t('City'),
+        '#placeholder' => $this->t('City'),
+        '#required' => TRUE,
+        '#prefix' => '<div class="col-xs-12 col-sm-8">',
+        '#suffix' => '</div></div>',
       );
       $form['newParticipantContainer']['newParticipantFieldset']['country'] = array(
         '#type' => 'select',
