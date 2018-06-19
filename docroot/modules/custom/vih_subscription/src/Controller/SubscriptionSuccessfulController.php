@@ -75,7 +75,7 @@ class SubscriptionSuccessfulController extends ControllerBase {
     //Send email
     $notificationsConfig = \Drupal::configFactory()->getEditable(SubscriptionsGeneralSettingsForm::$configName);
     $message = array();
-    $node_view = node_view($order, 'email_teaser');
+    $node_view = node_view($order, 'email_teaser', \Drupal::languageManager()->getCurrentLanguage()->getId());
     $order_rendered = render($node_view)->__toString();
 
     $logo = '<div style="background-color:#009bec; width:100%; text-align:center">'
@@ -87,10 +87,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
     $token = ['@subject_name', '@person_name', '@date', '@url', '@order'];
 
     if ($subject->getType() == 'vih_long_cource') {
+      $notification_template = $notificationsConfig->get('vih_subscription_long_course_notifications_body_' . \Drupal::languageManager()->getCurrentLanguage()->getId());
+      $notification_template = preg_replace("/\r\n|\r|\n/",'<br/>', $notification_template);
+
       $message = [
         'to' => $order->field_vih_lco_email->value,
         'subject' => $notificationsConfig->get('vih_subscription_long_course_notifications_subject_' . \Drupal::languageManager()->getCurrentLanguage()->getId()),
-        'body' => $notificationsConfig->get('vih_subscription_long_course_notifications_body_' . \Drupal::languageManager()->getCurrentLanguage()->getId())
+        'body' => $notification_template,
       ];
 
       //getting the start and end date for long course START
@@ -129,13 +132,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
       // course date
       $courseDate = NULL;
       if ($start_course_date) {
-        $courseDate = \Drupal::service('date.formatter')->format(strtotime($start_course_date), "long");
+        $courseDate = \Drupal::service('date.formatter')->format(strtotime($start_course_date), "long_w_a_time");
       }
       if ($end_course_date) {
         if (!(empty($courseDate))) {
           $courseDate .= ' - ';
         }
-        $courseDate .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "long");
+        $courseDate .= \Drupal::service('date.formatter')->format(strtotime($end_course_date), "long_w_a_time");
       }
 
       $replacement = [
@@ -210,11 +213,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $courseDate .= \Drupal::service('date.formatter')
             ->format(strtotime($subject->field_vih_sc_end_date->value), "long");
         }
-
+        $notification_template = $notificationsConfig->get('vih_subscription_short_course_notifications_body_' . \Drupal::languageManager()->getCurrentLanguage()->getId());
+        $notification_template = preg_replace("/\r\n|\r|\n/",'<br/>', $notification_template);
+      
         $message = [
           'to' => $email,
           'subject' => $notificationsConfig->get('vih_subscription_short_course_notifications_subject_' . \Drupal::languageManager()->getCurrentLanguage()->getId()),
-          'body' => $notificationsConfig->get('vih_subscription_short_course_notifications_body_' . \Drupal::languageManager()->getCurrentLanguage()->getId()),
+          'body' => $notification_template,
         ];
 
         $replacement = [
@@ -288,11 +293,13 @@ class SubscriptionSuccessfulController extends ControllerBase {
           $eventDate .= \Drupal::service('date.formatter')
             ->format(strtotime($subject->field_vih_event_end_date->value), "long");
         }
+        $notification_template = $notificationsConfig->get('vih_subscription_event_notifications_body_' . \Drupal::languageManager()->getCurrentLanguage()->getId());
+        $notification_template = preg_replace("/\r\n|\r|\n/",'<br/>', $notification_template);
 
         $message = [
           'to' => $email,
           'subject' => $notificationsConfig->get('vih_subscription_event_notifications_subject_' . \Drupal::languageManager()->getCurrentLanguage()->getId()),
-          'body' => $notificationsConfig->get('vih_subscription_event_notifications_body_' . \Drupal::languageManager()->getCurrentLanguage()->getId())
+          'body' => $notification_template,
         ];
 
         $replacement = [

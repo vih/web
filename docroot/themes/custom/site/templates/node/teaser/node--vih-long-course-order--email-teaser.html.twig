@@ -14,21 +14,21 @@
       <b>{{ 'Name' | trans }}:</b><br>
       {{ node.field_vih_lco_first_name.value }} {{ node.field_vih_lco_last_name.value }}
       <p>
-        <b>{{ node.field_vih_lco_address.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_address.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_address.value }},
         {{ node.field_vih_lco_zip.value }}, {{ node.field_vih_lco_city.value }}<br>
         {{ node.field_vih_lco_municipality.value }}
       </p>
       <p>
-        <b>{{ node.field_vih_lco_nationality.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_nationality.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_nationality.value }}
       </p>
       <p>
-        <b>{{ node.field_vih_lco_telefon.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_telefon.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_telefon.value }}
       </p>
       <p>
-        <b>{{ node.field_vih_lco_email.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_email.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_email.value }}
       </p>
     </td>
@@ -40,54 +40,31 @@
       {{ node.field_vih_lco_adult_first_name.value }} {{ node.field_vih_lco_adult_last_name.value }}
       <p>
       <p>
-        <b>{{ node.field_vih_lco_adult_address.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_adult_address.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_adult_address.value }},
 
         {{ node.field_vih_lco_adult_zip.value }}, {{ node.field_vih_lco_adult_city.value }}<br>
         {{ node.field_vih_lco_adult_municipality.value }}
       </p>
       <p>
-        <b>{{ node.field_vih_lco_adult_nationality.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_adult_nationality.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_adult_nationality.value }}
       </p>
       <p>
-        <b>{{ node.field_vih_lco_adult_telefon.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_adult_telefon.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_adult_telefon.value }}
       </p>
       <p>
-        <b>{{ node.field_vih_lco_adult_email.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_adult_email.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_adult_email.value }}
-      </p>
-      <p>
-        <b>{{ node.field_vih_lco_adult_newsletter.fieldDefinition.label }}:</b><br>
-        {% if node.field_vih_lco_adult_newsletter.value == 0 %}
-          {{ 'Off' | trans }}
-        {% else %}
-          {{ 'On' | trans }}
-        {% endif %}
-      </p>
-      <p>
-        <b>{{ node.field_vih_lco_education.fieldDefinition.label }}:</b><br>
-        {{ node.field_vih_lco_education.value }}
-      </p>
-      <p>
-        <b>{{ node.field_vih_lco_newsletter.fieldDefinition.label }}:</b><br>
-        {% if node.field_vih_lco_newsletter.value == 0 %}
-          {{ 'Off' | trans }}
-        {% else %}
-          {{ 'On' | trans }}
-        {% endif %}
-      </p>
-      <p>
-        <b>{{ node.field_vih_lco_found_from.fieldDefinition.label }}:</b><br>
-        {{ node.field_vih_lco_found_from.value }}
       </p>
     </td>
   </tr>
   <tr>
     <td colspan="4">
+      <br>
       <p>
-        <b>{{ node.field_vih_lco_message.fieldDefinition.label }}:</b><br>
+        <b>{{ node.field_vih_lco_message.fieldDefinition.label | trans }}:</b><br>
         {{ node.field_vih_lco_message.value }}
       </p>
     </td>
