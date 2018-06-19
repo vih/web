@@ -26,7 +26,7 @@
   @include sectioned-skewed-mixin-angle-bottom($body-bg, $xs-sectioned-skewed-angle-height);
 
   .sectioned__inner {
-    padding-top: 0;
+    padding-top: 30px;
     padding-bottom: 30px;
     //padding-bottom: floor( ( ( 1px * $xs-sectioned-skewed-angle-height ) + $xs-sectioned-inner-spacing ) );
   }
